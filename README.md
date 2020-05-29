@@ -7,9 +7,14 @@ The project depends on Nvidia Optix 6.0 (https://developer.nvidia.com/optix), IT
 provided examples (). So if removed, you can compile the code without those dependencies. The easiest way to compile the code is to run Cmake at superbuild folder.
 However, the compilation was tested only with Visual Studio 2015. 
 
-Most of the examples codes are collected at src\Application.cpp and are called from src\main.cpp one after another.
 
 Please note that the presented research is a work in progress. The main target is to provide a demonstration examples of introduced approach flexibility and user friendliness. However, the source code is a quickly extracted part of a bigger project that currently in a state of active development and very draft codes does present. 
+
+Most of the examples codes are collected at src\Application.cpp and are called from src\main.cpp one after another.
+
+Example3. Multi-scale dynamic features.
+![Example3](/images/Example3.png)
+Format: ![Example3](url)
 
 
 
