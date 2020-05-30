@@ -1,0 +1,14 @@
+
+.DS_Store
+
+src/core/src/doc/
+
+src/core/src/html/
+
+src/core/src/latex/
+
+sutil/
+
+src/lib/catch/
+
+src/lib/pybind11/

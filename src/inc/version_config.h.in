@@ -1,0 +1,13 @@
+#ifndef VERSION_CONFIG_H
+#define VERSION_CONFIG_H
+
+
+#define LIBRARY_NAME "@PROJECT_NAME@"
+
+// alternatively you could add your global method getLibInterfaceVersion here
+static const char* getLibName()
+{
+    return "@PROJECT_NAME@";
+}
+
+#endif // VERSION_CONFIG_H
