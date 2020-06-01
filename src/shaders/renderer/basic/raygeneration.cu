@@ -3,6 +3,8 @@
 
 #include "default.h"
 #include "../../basic_lights.h"
+
+ //rtDeclareVariable(float, TimeSound, , );
  //for sdf
 typedef rtCallableProgramId<float(float3, float3)> callTBackSDF;
 rtDeclareVariable(callTBackSDF, sdfPrimBack, , );
@@ -144,7 +146,7 @@ inline __device__  void render_HeteroVolume(int pN, PerRayData& prd, float3 orig
     float Ks = 0.9;
     cellPrimDesc cell = prd.cellPrimitives[pN];
     primParamDesc prim = prd.prims[pN];
-    float tstep = 0.1;
+    float tstep = 0.05;
     float dist = cell.intersectionDist;
 
     float3 pos = origin + direction*dist;
@@ -168,7 +170,7 @@ inline __device__  void render_HeteroVolume(int pN, PerRayData& prd, float3 orig
 
     while (i < max) //s2 < 0.01)
     {
-        if (s1 < tstep / 2)
+        if (s1 < tstep)
         {
             // if (abs(s1) > tstep) //sum transparency
             {
@@ -186,11 +188,11 @@ inline __device__  void render_HeteroVolume(int pN, PerRayData& prd, float3 orig
                 //float3 color = Ka *  cell.color;// ambient_light_color;
                 //float3 color2 = Ka *  cell.color;
                 float3 c = evalCol(pos, prim);//	optix::float3 hit_point = origin + theIntersectionDistance * direction;
-                float4 col = make_float4(c.x, c.y, c.z, cell.color.w*Ka);// make_float4(color2.x, color2.y, color2.z, trp*Ka);
-                col.w = trp*Ka;
+                float4 col = make_float4(c.x, c.y, c.z, cell.color.w);// make_float4(color2.x, color2.y, color2.z, trp*Ka);
+                //col.w = trp*Ka;
 
                 //Beer–Lambert law
-                float F = exp(-trp*abs(s1) * 200);
+                float F = exp(-cell.color.w*abs(s1) * 200);
                 col = col*(1.0 - F);
                 sum = sum + col*(1.0f - sum.w);
 
@@ -452,8 +454,8 @@ static __device__ __inline__  optix::Ray ComputeDirPos(PerRayData& prd)
     const float3 origin = sysCameraPosition;
     const float3 direction = optix::normalize(ndc.x * sysCameraU + ndc.y * sysCameraV + sysCameraW);
 
-    if (isDynamic)
-        prd.TimeSound = TimeSound;
+    //if (isDynamic)
+    prd.TimeSound = TimeSound;
 
     //TODO: we now just compute optical_LaunchDim/auditory_LaunchDim ratio
 

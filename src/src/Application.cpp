@@ -522,14 +522,8 @@ void SceneManager::createMolSolventScene()
     /*
     Creates mapper
     */
-    //  vaMapper* map3 = new vaMapper();
-    //  map3->SetContext(m.GetOutput());
-    //  map3->SetDescInput(mol.GetOutputDesc());
-    //  map3->AddMaterial(mSdf.GetOutput(), mSdf.GetType()); /*<Sets optical object properties*/
-    //  map3->SetScalarModeOn();
-      // map2->Update();
 
-      /* Mapper, simillar to vtkMapper*/
+    /* Mapper, simillar to vtkMapper*/
     vaMapper* map2 = new vaMapper();
     map2->SetContext(m.GetOutput());
     map2->SetDescInput(tex.GetOutputDesc());
@@ -775,7 +769,7 @@ void SceneManager::Example3()
     */
     vaMapper* map3 = new vaMapper();
     map3->SetContext(m.GetOutput());
-    map3->SetInput(mol.GetOutput());
+    map3->SetDescInput(mol.GetOutputDesc());
     map3->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType()); /*<Sets optical object properties*/
     map3->SetScalarModeOn();
     // map3->AddMaterial(mVSdf2.GetOutput(), mVSdf2.GetType()); /*<Sets auditory object properties*/
@@ -800,8 +794,6 @@ void SceneManager::Example3()
 
 void SceneManager::Example31()
 {
-    // ren->SetDynamic(true);
-
     int postProcess = 1;
     sdfMolReader read;
     read.Setfile("es.sdf");// "water2.sdf");
@@ -847,7 +839,7 @@ void SceneManager::Example31()
     texMaterial.SetContext(m.GetOutput());
     texMaterial.SetPostprocess(postProcess); //manually set post processing
 
-    texMaterial.SetSDFProg(mol.GetCallableProg()); /*<Gets sdf primitive optix callable program reference*/
+    texMaterial.SetSDFProg(mol.GetCallableProg()); //<Gets sdf primitive optix callable program reference
     texMaterial.Update();
 
     /*
@@ -855,7 +847,7 @@ void SceneManager::Example31()
     */
     vaMapper* map3 = new vaMapper();
     map3->SetContext(m.GetOutput());
-    map3->SetInput(mol.GetOutput());
+    map3->SetDescInput(mol.GetOutputDesc());
     map3->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType()); /*<Sets optical object properties*/
     map3->SetScalarModeOn();
     // map3->AddMaterial(mVSdf2.GetOutput(), mVSdf2.GetType()); /*<Sets auditory object properties*/
@@ -873,100 +865,6 @@ void SceneManager::Example31()
     ren->AddActor(acSdfMol);
     if (postProcess > 0)
         ren->SetPostProcessMaterial(texMaterial.GetEvalProg(), texMaterial.GetColorProg());
-    //store
-    actorSdf.push_back(acSdfMol);
-    mappers.push_back(map3);
-}
-
-void SceneManager::createCrystalSceneMol2()
-{
-    /*Read molecule data from XYZ file.
-    For info on XYZ file format:
-    //http://wiki.jmol.org/index.php/File_formats/Formats/XYZ
-    */
-    sdfReader read;
-    read.Setfile("quaz_big.mol");// "water2.sdf");
-    read.Update();
-
-    /*Molecule CPK representation as sdf primitive
-    For info on representation:
-    https://en.wikipedia.org/wiki/Space-filling_model
-    */
-    sdfBallSticksMol mol;
-    mol.SetContext(m.GetOutput());
-    //mol.SetNumFrames(1);
-    mol.SetCenter(read.GetOutput1()); /*<Sets atoms centers*/
-             /*                            //mol.SimulateDynamic(6, read.GetOutput1()); - works, but we will try collapse of cluster
-    mol.SetCenter(read2.GetOutput1(), 2);
-    mol.SetCenter(read.GetOutput1(), 3);*/
-    mol.SetRadius(read.GetOutput2()); /*<Sets atoms radii specified for element type,
-                                      for info: https://en.wikipedia.org/wiki/Atomic_radius*/
-    mol.SetType(read.GetOutput3()); /*<Sets atom type*/
-                                    //after all to correctly fix number
-    mol.SetBonds(read.GetOutput4()); /*<Sets atoms centers*/
-
-    mol.SetMaterialType(0);
-    mol.Update();
-
-    vaColorScheme sc;
-    sc.SetContext(m.GetOutput());
-    sc.SetIdType(); //map  by atom types
-    optix::float2 r = mol.GetTypeRange();
-    sc.SetRange(optix::make_float2(0, r.y));
-    std::cout << "Range " << r.y << std::endl;
-    //fill colors for CPK scheme for selected range of atoms
-    for (int i = 0; i < int(r.y); i++) {
-        sc.AddColor(CPK_GetColorById(i)); //maps atoms ids to colors according to CPK scheme
-    }
-    sc.Update(); /*<generates optixBuffer and callable program*/
-
-                 /*
-                 *Creates optical matrial
-                 */
-                 /*vaMolVolume2 mSdf;
-                 mSdf.SetContext(m.GetOutput());
-                 mSdf.SetSDFProg(mol.GetCallableProg());
-                 mSdf.SetColorScheme(sc.GetOutput());
-                 mSdf.Update();*/
-
-    vaComplexVolumeMaterial mSdf;
-    mSdf.SetContext(m.GetOutput());
-    //mSdf.SetSDFProg(sdf.GetCallableProg());
-    mSdf.SetSDFProg(mol.GetCallableProg());
-
-    mSdf.SetColorScheme(sc.GetOutput());
-    mSdf.Update();
-
-    /*
-    Creates auditory material
-    */
-
-    /*
-    Creates mapper
-    */
-    vaMapper* map3 = new vaMapper();
-    map3->SetContext(m.GetOutput());
-    //map3->SetInput(mol.GetOutput());
-    map3->SetDescInput(mol.GetOutputDesc());
-    map3->AddMaterial(mSdf.GetOutput(), mSdf.GetType()); /*<Sets optical object properties*/
-    map3->SetScalarModeOn();
-    //map3->AddMaterial(mVSdf2.GetOutput(), mVSdf2.GetType()); /*<Sets auditory object properties*/
-    map3->Update();
-
-    /*
- Creates actor
- */
-    vaActor* acSdfMol = new vaActor();
-    acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
-    acSdfMol->AddMapper(map3);
-    acSdfMol->Update();
-
-    ren->AddActor(acSdfMol);
-
-    //asign prog
-   // ren->SetMissProgSDFProg(sdf.GetCallableProg());
-    ren->SetMissProgSDFProg2(mol.GetCallableProg());
-
     //store
     actorSdf.push_back(acSdfMol);
     mappers.push_back(map3);
@@ -1394,12 +1292,6 @@ void SceneManager::createAuditoryMoleculeSceneMolDynam()
     acSdfMol->AddMapper(map3);
     acSdfMol->Update();
 
-    //RTvisibilitymask mask;
-    //rtGeometryGroupGetVisibilityMask(acSdfMol->GetOutput(), &mask)
-    //RTvisibilitymask mask = acSdfMol->GetOutput()->getVisibilityMask();
-    //std::cout << " VIS Mask = " << mask << std::endl;
-    //acSdfMol->GetOutput()->setVisibilityMask(2);
-
     ren->AddActor(acSdfMol);
     //store
     actorSdf.push_back(acSdfMol);
@@ -1585,10 +1477,14 @@ void SceneManager::createScene()
             Example2();
             break;
         case 3:
-            Example31();
+            Example31(); //createAuditoryMoleculeSceneMol2();//
             break;
         case 4:
             ExampleTetra();
+            break;
+        case 5:
+            createAuditoryMoleculeSceneMolDynam();// a lot of spheres dynamic ray-casting
+            //not volume. Just a test for comparison with volume
             break;
         case 6:
             createDynamicHeterogeneousObjectScene();

@@ -50,7 +50,7 @@ inline __device__ float3 transfer_function(int t, float d)
         return make_float3(1, 1, 1);
         break;
     case 2: //C
-        return make_float3(0.4);
+        return make_float3(0.5);
         break;
     case 3: //N
         return make_float3(0, 0, 0.5);
@@ -59,7 +59,7 @@ inline __device__ float3 transfer_function(int t, float d)
         return make_float3(1, 1, 0);
         break;
     case 5: //O
-        return make_float3(1, 0, 0);
+        return make_float3(1, 0, d);
         break;
     case 6: //P
         return make_float3(1, 0.5, 0);
@@ -159,6 +159,18 @@ inline __device__ float4  blendColor(float dMd, float3 x, float3 dir, float3 pos
     return make_float4(col.x, col.y, col.z, tr);
 }
 
+inline __device__ float3 InterpolateColorRad(float3 x, float3 pos, float3 pos2, float r1, float r2, float3 col1, float3 col2)
+{
+    float d1 = length(x - pos) - r1;
+    float d2 = length(x - pos2) - r2;
+    float d = length(pos - pos2);
+    if (d1 <= 0) return col1;
+    if (d2 <= 0) return col2;
+    float3 col = d1 / d*col2 + d2 / d*col1;
+
+    return col;
+}
+
 RT_CALLABLE_PROGRAM float3 GetColorBlend(float3 x, primParamDesc desc)
 {
     //---level of detail
@@ -177,6 +189,24 @@ RT_CALLABLE_PROGRAM float3 GetColorBlend(float3 x, primParamDesc desc)
     float3 col2 = transfer_function(desc.types[1], d);
     float3 col3 = transfer_function(desc.types[2], d);
 
+    float3 col11 = InterpolateColorRad(x, desc.pos[0], desc.pos[1], desc.rad[0], desc.rad[1], col1, col2);
+    float3 col12 = InterpolateColorRad(x, desc.pos[0], desc.pos[2], desc.rad[0], desc.rad[2], col1, col3);
+
+    float3 dir = normalize(x - desc.pos[0]);
+    float3 dir2 = normalize(desc.pos[1] - desc.pos[0]);
+    float3 dir3 = normalize(desc.pos[2] - desc.pos[0]);
+    float cos1 = abs(dot(dir2, dir));
+    float cos2 = abs(dot(dir3, dir));
+
+    float d1 = length(x - desc.pos[1]);
+    float d2 = length(x - desc.pos[2]);
+    float td = length(desc.pos[1] - desc.pos[2]);
+    //float cos2=normalize(dot(desc.pos[2] - desc.pos[0], dir));
+    float3 colB1 = col12*d1 / td + col11*d2 / td;
+    float3 colB2 = make_float3(0);
+
+    //return col;
+
     //--------level of detail continue
     float rad1 = desc.rad[0];
     float rad2 = desc.rad[1];
@@ -187,15 +217,12 @@ RT_CALLABLE_PROGRAM float3 GetColorBlend(float3 x, primParamDesc desc)
     vib_color[1] = make_float3(0, 0.0, 1.0); //blue
     vib_color[2] = make_float3(1.0, 1.0, 0); //yellow
 
-    float3 col21;
-    float3 col31;
+   // float3 col21;
+   // float3 col31;
 
-    //return mod1*d + (1.0 - d)*mod2;
-    float r1 = d*rad1 / 2 + (1 - d)*rad1;
-    float r2 = d*rad2 / 2 + (1 - d)*rad2;
-    float r3 = d*rad3 / 2 + (1 - d)*rad3;
+    float weights[3];
 
-    float3 weights[3];
+    float3 resCol = colB1;
 
     if (d <= 1.0)
     {
@@ -220,23 +247,98 @@ RT_CALLABLE_PROGRAM float3 GetColorBlend(float3 x, primParamDesc desc)
         float d_min = 0;
         int vib_min = 0;
 
-        for (int i = 0; i < 2; i++)
+        int l = 0;
+        float dmax = 0;
+        float dmin = 100;
+        float dminprev = 100;
+
+        float num = 3;
+        if (MultiscaleParam <= 1)  num = 1;
+        else
+        {
+            if (MultiscaleParam <= 2)
+                num = 2;
+        }
+
+        for (int i = 0; i < num; i++)
         {
             float3 pp3 = pos3 + vib3[i];
             float3 pp2 = pos2 + vib2[i];
+            float d1 = length(x - pp2);
+            float d2 = length(x - pp3);
 
-            col31 = d*col3 + (1 - d)*vib_color[i] * 1.5;
-            col21 = d*col2 + (1 - d)*vib_color[i] * 1.5;
-
-            color += blendColor(d, x, theRay.direction, pos, pp2, pp3, r1, r2, r3, col1, col21, col31);
+            dmin = fminf(fminf(d1, dmin), d2);
+            if (dmin < dminprev) {
+                l = i;
+                dminprev = dmin;
+            }
+            dmax = fmaxf(fmaxf(d1, dmin), d2);
         }
-        color;///= 3.0;
-    }
-    else {
-        color = blendColor(d, x, theRay.direction, desc.pos[0], desc.pos[1], desc.pos[2], r1, r2, r3, col1, col2, col3);
+        weights[0] = 0.1;
+        weights[1] = 0.1;
+        weights[2] = 0.1;
+        weights[l] = 1.5;
+
+        float3 cols[3];
+        for (int j = 0; j < num; j++)
+        {
+            cols[j] = make_float3(0);
+            //Get current position
+            float3 pp3 = pos3 + vib3[j];
+            float3 pp2 = pos2 + vib2[j];
+
+            float3 col21 = InterpolateColorRad(x, desc.pos[0], pp2, desc.rad[0], desc.rad[1], col1, vib_color[j]);
+            float3 col31 = InterpolateColorRad(x, desc.pos[0], pp3, desc.rad[0], desc.rad[2], col1, vib_color[j]);
+
+            //col31 = d*col3 + (1 - d)*vib_color[i] * 1.5;
+            //col21 = d*col2 + (1 - d)*vib_color[i] * 1.5;
+
+            float3 dir = normalize(x - desc.pos[0]);
+            float3 dir2 = normalize(pp2 - desc.pos[0]);
+            float3 dir3 = normalize(pp3 - desc.pos[0]);
+            cos1 = dot(dir2, dir);
+            float cos2 = dot(dir3, dir);
+            //float cos2=normalize(dot(desc.pos[2] - desc.pos[0], dir));
+            colB2 = (1 - cos2)*col31 + (1 - cos1)*col21;
+
+            bool interpolate = true;
+            float d1 = length(x - pp2);// -rad2 / 4;
+            float d2 = length(x - pp3);// -rad3 / 4;
+            if (d1 <= 0) {
+                cols[j] = col21;
+                interpolate = false;
+            }
+            if (d2 <= 0) {
+                cols[j] = col31;
+                interpolate = false;
+            }
+
+            if (interpolate) {
+                float dt = length(pp2 - pp3);
+
+                float dmin1 = fminf(d1, d2);
+                cols[j] = d1 / dt*col31 + d2 / dt*col21;
+                weights[j] = dmin / (dmin1*dmin1);
+            }
+            else {
+                //d1 = length(x - pp2);
+                //d2 = length(x - pp3);
+                weights[j] = 1.0;// dmin / fminf(d1, d2);
+            }
+
+            // colB2 += colB21;
+             //color += blendColor(d, x, theRay.direction, pos, pp2, pp3, r1, r2, r3, col1, col21, col31);
+        }
+        for (int j = 0; j < num; j++)
+        {
+            colB2 += weights[j] * cols[j];
+        }
+        colB2 /= 3.0;
+
+        resCol = d*colB1 + (1 - d)*colB2;
     }
 
-    return make_float3(color.x, color.y, color.z);
+    return resCol;
 }
 
 inline __device__  float4  GetColor(float3 x)
@@ -432,6 +534,7 @@ RT_PROGRAM void volume_hetero_any()
 
         //thePrd.result += make_float4(col.x, col.y, col.z, 0.1);
         cell.color = GetColor(infoH.hit_point);
+        cell.color.w = 0.009;
         cell.maxDist = infoH.maxDist;
 
         thePrd.cellPrimitives[thePrd.cur_prim - 1] = cell;

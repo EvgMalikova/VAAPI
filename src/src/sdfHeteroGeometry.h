@@ -39,6 +39,11 @@ public:
         m_primType = ObjectType::GENERAL;
     };
     ~sdfHeterogeneous() {};
+
+    virtual sdfGeo* GetOutputDesc() {
+        return optixSDFGeometry::GetOutputDesc();
+    }
+
     static std::string GetPrimProgramName(ObjectType type);
     //--------
     /* Reading data

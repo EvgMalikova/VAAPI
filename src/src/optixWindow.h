@@ -262,7 +262,7 @@ public:
     void createFrepScene();
     void createMolSolventScene();
     void createMicrostructureScene();
-    void createCrystalSceneMol2();
+    //void createCrystalSceneMol2();
     void createMicrostuctureMOlScene();
     /* Performance comparison example
     sdfHetoreneous vs sdfHeterogeneous0D

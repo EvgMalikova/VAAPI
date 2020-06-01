@@ -179,8 +179,8 @@ RT_CALLABLE_PROGRAM float sdfBondSphereMolBlob(float3 p, float3 a, float3 b, flo
 
     //float f = sdf_opSmoothUnion(f1, bf,0.8);
     //return sdf_opSmoothUnion(f2, f);
-    float f = sdf_opSmoothUnion(f2, f1, 0.8);
-    return  sdf_opSmoothUnion(f3, f, 0.8);
+    float f = sdf_opSmoothUnion(f2, f1, 1.0);
+    return  sdf_opSmoothUnion(f3, f, 1.0);
 }
 
 RT_CALLABLE_PROGRAM float sminp(float a, float b, float k)
@@ -483,22 +483,22 @@ RT_CALLABLE_PROGRAM float sdfMolBondSphere(float3 p, float3 a, float3 b, float3 
         if (f[i] == f1[i]) //trace central part
         {
             //f[i]+=rad1/2; //get proper radius
-            bf[i] = bond(p, a, (b + vib2[i]), 0.02);
-            bf2[i] = bond(p, a, (c + vib3[i]), 0.02);
-            f[i] = sdf_opSmoothUnion(f[i], bf[i], 0.05);
-            f[i] = sdf_opSmoothUnion(f[i], bf2[i], 0.05);
+            bf[i] = bond(p, a, (b + vib2[i]), 0.06);
+            bf2[i] = bond(p, a, (c + vib3[i]), 0.06);
+            f[i] = sdf_opSmoothUnion(f[i], bf[i], 0.09);
+            f[i] = sdf_opSmoothUnion(f[i], bf2[i], 0.09);
         }
         else {
             if (f[i] == f2[i]) //trace left part
             {
                 //f[i]+=rad2/2; //get proper radius
-                bf[i] = bond(p, a, (b + vib2[i]), 0.02);
-                f[i] = sdf_opSmoothUnion(f[i], bf[i], 0.05);
+                bf[i] = bond(p, a, (b + vib2[i]), 0.06);
+                f[i] = sdf_opSmoothUnion(f[i], bf[i], 0.09);
             }
             else {
                 //f[i]+=rad3/2; //get proper radius
-                bf2[i] = bond(p, a, (c + vib3[i]), 0.02);
-                f[i] = sdf_opSmoothUnion(f[i], bf2[i], 0.05);
+                bf2[i] = bond(p, a, (c + vib3[i]), 0.06);
+                f[i] = sdf_opSmoothUnion(f[i], bf2[i], 0.09);
             }
         }
     }
