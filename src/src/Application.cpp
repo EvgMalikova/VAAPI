@@ -22,7 +22,7 @@
 
 #include "optixSDFOperations.h"
 #include "vaColorScheme.h"
-#include "vaSoundMapScheme.h"
+//#include "vaSoundMapScheme.h"
 #include "vaRayCastBaseWidget.h"
 
 static optix::float3 CPK_GetColorById(int t)
@@ -73,7 +73,7 @@ SceneManager::SceneManager()
     m_widget->SetContext(m.GetOutput());
 
     ren->SetOpticalDims(width, height);
-    ren->SetAuditoryDims(5, 5);
+    //   ren->SetAuditoryDims(5, 5);
     ren->SetCamera(m_pinholeCamera.get());
 
     //TODO: add separately
@@ -88,12 +88,12 @@ SceneManager::SceneManager()
     //This should be done before interactor SetUp() procedure
     // that does the final setups of all renderer stuff,
     // like setting RayGenerationProgam for visual and auditory context ray tracing
-    if (m_widget->isRayCast()) {
+   /* if (m_widget->isRayCast()) {
         ren->SetAuditoryRayGenerationFromWidget("widget_ray_cast", dynamic_cast<vaRayCastBaseWidget*>(m_widget.get())->GetRayCastProg());
         //auditoryMapper* m = dynamic_cast<auditoryMapper*>(new auditoryMapperPlucked());
 
         ren->SetAuditoryMapModel(new auditoryMapperPlucked());
-    }
+    }*/
 }
 
 SceneManager::SceneManager(const int width,

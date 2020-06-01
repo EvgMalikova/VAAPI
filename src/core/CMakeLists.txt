@@ -27,8 +27,6 @@ OPTIX_add_library( ${PROJECT_NAME}
    src/vaColorScheme.h
   src/vaColorScheme.cpp
   
-  src/vaSoundMapScheme.h
-  src/vaSoundMapScheme.cpp
   
   src/optixSDFGeometry.h
   src/optixSDFGeometry.cpp
@@ -49,15 +47,10 @@ OPTIX_add_library( ${PROJECT_NAME}
 	
   src/vaOpticModel.h
   src/vaOpticModel.cpp
-  src/vaAudioModel.h
-  src/vaAudioModel.cpp
 
   
   src/vaWidgetHandle.h
   src/vaWidgetHandle.cpp
-   
-  src/stkSound.h
-  src/stkSound.cpp
   
   src/vaActor.h
   src/vaActor.cpp

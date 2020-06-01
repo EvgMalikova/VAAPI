@@ -375,7 +375,7 @@ void RenderWindowInteractor::guiSoundRenderingProc()
 {
     std::cout << "Prepare for registering " << std::endl;
     int w, h;
-    m_window->GetRenderer()->GetAuditoryDims(w, h);
+    //    m_window->GetRenderer()->GetAuditoryDims(w, h);
     if (GetWidget()->isRayCast()) {
         dynamic_cast<vaRayCastBaseWidget*>(GetWidget())->SetRayCastSize(w, h);
     }
@@ -383,17 +383,14 @@ void RenderWindowInteractor::guiSoundRenderingProc()
     for (int i = 0; i < m_window->GetRenderer()->GetNumOfActors(); i++) {
         vaBasicActor* a = m_window->GetRenderer()->GetActor(i);
         //a->PrintInfo();  - works
-        a->SetAuditoryModel();
+    //    a->SetAuditoryModel();
     }
     std::cout << "auditory model is set" << std::endl;
     //TODO: now context should be launched
-    m_window->GetRenderer()->LaunchAuditoryContext();
+   // m_window->GetRenderer()->LaunchAuditoryContext();
     //change to next node to make sure we do it only once
 
     //GEt sound Buffer
-    m_window->GetRenderer()->UpdateAudioBuffer();  //compute auditory Rays
-
-    m_window->GetRenderer()->RenderAudio();
 
     //---------------------
     std::cout << "START registering " << std::endl;

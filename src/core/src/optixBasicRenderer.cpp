@@ -20,7 +20,7 @@ vaBasicRenderer::vaBasicRenderer(bool init) {
     }
     else {
         opticM = nullptr;
-        audioM = nullptr;
+        //        audioM = nullptr;
     }
 }
 
@@ -45,7 +45,7 @@ void vaBasicRenderer::InitDefaults()
 void  vaBasicRenderer::InitDefaultModels()
 {
     opticM = std::unique_ptr<opticalModel>(new opticalModel());
-    audioM = std::unique_ptr<auditoryModel>(new auditoryModel());
+    //    audioM = std::unique_ptr<auditoryModel>(new auditoryModel());
     std::cout << "DEFAULT" << std::endl;
 }
 
@@ -126,9 +126,9 @@ void vaBasicRenderer::InitRenderer()
         SetBoundingBox(bmin, bmax);
         //Similarly bind Auditory Buffer and set Variables
 
-        audioM->BindBuffer(vaBasicObject::GetContext());
-        audioM->SetBufferSize();
-        setAudioBuffer();
+        ///audioM->BindBuffer(vaBasicObject::GetContext());
+        //audioM->SetBufferSize();
+        //setAudioBuffer();
 
         SetTime(0);
 
@@ -171,21 +171,6 @@ void vaBasicRenderer::SetAuditoryRayGenerationFromWidget(std::string name, optix
     // std::cout << "AUDIO Program set " << name << std::endl;
 }
 
-void vaBasicRenderer::UpdateAudioBuffer()
-{
-    audioM->UpdateBuffer();
-    audioM->MapBuffer();
-}
-
-void vaBasicRenderer::RenderAudio()
-{
-    audioM->Render();
-}
-
-void vaBasicRenderer::SetAuditoryMapModel(auditoryMapper*m)
-{
-    audioM->SetAuditoryMapper(m);
-}
 void vaBasicRenderer::SetAuditoryExceptionProg()
 {
     InitProg("auditory_exception", "exception.cu", "auditory_exception");
@@ -319,7 +304,7 @@ void vaBasicRenderer::AddActor(vaBasicActor* act)
 
 void vaBasicRenderer::LaunchAuditoryContext()
 {
-    vaBasicObject::GetContext()->launch(AUDITORY_RAYCASTING, audioM->GetWidth(), audioM->GetHeight());
+    //    vaBasicObject::GetContext()->launch(AUDITORY_RAYCASTING, audioM->GetWidth(), audioM->GetHeight());
 }
 
 bool vaBasicRenderer::PlayAnimation(float play_time)
@@ -339,14 +324,11 @@ void vaBasicRenderer::SetUpRenderer()
     if (opticM == nullptr) {
         opticM = std::unique_ptr<opticalModel>(new opticalModel());
     }
-    if (audioM == nullptr) {
-        audioM = std::unique_ptr<auditoryModel>(new auditoryModel());
-    }
 
     opticM->Init();
-    audioM->Init();
-    //TODO: should be restructured and moved to Update()
-    //so before all parameters like is auditory should be set
+    //    audioM->Init();
+        //TODO: should be restructured and moved to Update()
+        //so before all parameters like is auditory should be set
     InitializePrograms(); //bind programs to stack
 
     InitRenderer(); //call programs

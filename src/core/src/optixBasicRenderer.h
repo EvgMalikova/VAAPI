@@ -19,7 +19,6 @@ Module:    vaBasicRenderer.h
 
 #include "predefined.h"
 #include "vaOpticModel.h"
-#include "vaAudioModel.h"
 
 #include "optixBasicActor.h"
 
@@ -56,36 +55,31 @@ public:
     * 1) Gets to host the ray-casted buffer of audio model
     2) Maps to auditory stimuli according to specified auditory model mapping
     */
-    void UpdateAudioBuffer();
-    /* Plays sound */
-    void RenderAudio();
+    //   void UpdateAudioBuffer();
+       /* Plays sound */
+     //  void RenderAudio();
 
-    /*Sets external auditory mapper*/
-    void SetAuditoryMapModel(auditoryMapper*m);
+       /*Sets external auditory mapper*/
+    //   void SetAuditoryMapModel(auditoryMapper*m);
 
-    optix::Buffer GetOutputSoundBuffer() {
-        return audioM->GetOutput();
-        //return vaBasicObject::GetContext()["sysAuditoryOutputBuffer"]->getBuffer();
-    };
+    //   optix::Buffer GetOutputSoundBuffer() {
+    //       return audioM->GetOutput();
+           //return vaBasicObject::GetContext()["sysAuditoryOutputBuffer"]->getBuffer();
+    //   };
 
-    /**
-*Binds a buffer of a particular name to audio output buffer
-*/
-    void setAudioBuffer() {
-        vaBasicObject::GetContext()[AudioOutputBuffer]->setBuffer(audioM->GetOutput());
-        vaBasicObject::GetContext()[AudioMode]->setInt(int(audioM->GetMode()));
-    }
-    /**
-    *Binds a buffer of a particular name to visual output buffer
-    */
+       /**
+   *Binds a buffer of a particular name to audio output buffer
+   */
+   //    void setAudioBuffer() {
+   //        vaBasicObject::GetContext()[AudioOutputBuffer]->setBuffer(audioM->GetOutput());
+   //        vaBasicObject::GetContext()[AudioMode]->setInt(int(audioM->GetMode()));
+   //    }
+       /**
+       *Binds a buffer of a particular name to visual output buffer
+       */
     void setOpticBuffer()
     {
         vaBasicObject::GetContext()[OutputBuffer]->set(opticM->GetOutput());
-    }
-
-    void GetAudioDim(int& w, int& h) {
-        h = audioM->GetHeight();
-        w = audioM->GetWidth();
     }
 
     enum {
@@ -135,12 +129,6 @@ public:
         opticM = std::unique_ptr<vaBasicModel>(m);
     }
 
-    /*
-    Sets external auditory model*/
-    virtual void SetAudioModel(auditoryModel* m)
-    {
-        audioM = std::unique_ptr<auditoryModel>(m);
-    }
     /**
     *Sets dimensions for optical Model
     */
@@ -155,23 +143,6 @@ public:
         //std::cout << "OPtical set 2" << std::endl;
     }
 
-    /**
-    *Sets dimensions for optical Model
-    */
-    void SetAuditoryDims(int width, int height)
-    {
-        if (audioM == nullptr) {
-            audioM = std::unique_ptr<auditoryModel>(new auditoryModel());
-        }
-        audioM->SetDim(width, height);
-    }
-
-    void GetAuditoryDims(int& width, int& height)
-    {
-        height = audioM->GetHeight();
-        width = audioM->GetWidth();
-        // GetDim(width, height);
-    }
     RenderModes GetMode() { return m_mode; };
     void SetMode(RenderModes m) { m_mode = m; };
     virtual void Update() {};
@@ -286,10 +257,10 @@ protected:
     /*
     *References to auditory  model
     */
-    std::unique_ptr<auditoryModel> audioM;
-    /*
-    *References to optical  model
-    */
+    //    std::unique_ptr<auditoryModel> audioM;
+        /*
+        *References to optical  model
+        */
     std::unique_ptr<vaBasicModel> opticM;
     /*
     Inits main ray-tracing parameters.

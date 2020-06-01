@@ -64,22 +64,11 @@ include(${ITK_USE_FILE})
 
 
 
-set (OPENAL_INCLUDE_DIR ${INSTALL_DEPENDENCIES_DIR}/include/AL)
 
 LINK_DIRECTORIES(${INSTALL_DEPENDENCIES_DIR}/lib/)
 
-set (OPENAL_LIBRARY} ${INSTALL_DEPENDENCIES_DIR}/lib/OpenAL32)
-set (ALUT_LIBRARY} ${INSTALL_DEPENDENCIES_DIR}/lib/alut)
-include_directories(${OPENAL_INCLUDE_DIR})
 include_directories(${INSTALL_DEPENDENCIES_DIR}/include)
 
-SET( OPENAL_LIBRARIES ${OPENAL_LIBRARY} )
-
-
-include_directories(  
-"./stk-master/include"
-
-)
 
 SET(LIB_POSTFIX "_x86.lib")
 IF(WIN32)
@@ -216,10 +205,8 @@ set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 add_subdirectory( support/glfw )
 
-##################################################################
-# stk compilation
-file(GLOB stk_lib_SRC ${CMAKE_CURRENT_SOURCE_DIR}/stk-master/src/*.cpp)
-add_library(stk STATIC ${stk_lib_SRC})
+
+
 
 
 #########################################################
@@ -262,9 +249,6 @@ function(OPTIX_add_sample_executable target_name)
     optix
     glfw
     imgui
-	stk
-	alut 
-	OpenAL32
 	VAAPIcore
 	VAAPIfrep
 	${LIBRARIES}
@@ -323,83 +307,12 @@ target_link_libraries( ${target_name}
     optix
     glfw
     imgui
-	stk
-	alut 
-	OpenAL32
 	${LIBRARIES}
     ${OPENGL_gl_LIBRARY}
     ${optix_rpath}
     )
 
 endfunction()
-
-
-
-
-
-
-
-
-
-
-#########################################################
-# OPTIX_add_sample_python_lib
-#
-# Convience function for adding samples to the code.  You can copy the contents of this
-# funtion into your individual project if you wish to customize the behavior.  Note that
-# in CMake, functions have their own scope, whereas macros use the scope of the caller.
-function(OPTIX_add_sample_python_lib target_name)
-
-  # These calls will group PTX and CUDA files into their own directories in the Visual
-  # Studio projects.
-  source_group("PTX Files"  REGULAR_EXPRESSION ".+\\.ptx$")
-  source_group("CUDA Files" REGULAR_EXPRESSION ".+\\.cu$")
-
-  # Separate the sources from the CMake and CUDA options fed to the macro.  This code
-  # comes from the CUDA_COMPILE_PTX macro found in FindCUDA.cmake.  We are copying the
-  # code here, so that we can use our own name for the target.  target_name is used in the
-  # creation of the output file names, and we want this to be unique for each target in
-  # the SDK.
-  CUDA_GET_SOURCES_AND_OPTIONS(source_files cmake_options options ${ARGN})
-
-  # Create the rules to build the PTX from the CUDA files.
-  CUDA_WRAP_SRCS( ${target_name} PTX generated_files ${source_files} ${cmake_options}
-    OPTIONS ${options} )
-
-  # Here is where we create the rule to make the executable.  We define a target name and
-  # list all the source files used to create the target.  In addition we also pass along
-  # the cmake_options parsed out of the arguments.
-  
-  add_subdirectory(lib/pybind11)
-  pybind11_add_module(${target_name} ${source_files}
-    ${generated_files}
-    ${cmake_options})
-
-   # Most of the samples link against sutil, optix, and glfw.  Here is the
-  # rule that specifies this linkage.
-  target_link_libraries( ${target_name}
-    sutil_sdk
-    optix
-    glfw
-    imgui
-	stk
-	alut 
-	OpenAL32
-	${LIBRARIES}
-    ${OPENGL_gl_LIBRARY}
-    ${optix_rpath}
-    )
-	
-  if(USING_GNU_CXX)
-    target_link_libraries( ${target_name} m ) # Explicitly link against math library (C samples don't do that by default)
-	
-  endif()
-  
-  
-
-
-endfunction()
-
 
 
 #########################################################

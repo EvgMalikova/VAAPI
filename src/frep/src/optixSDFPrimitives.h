@@ -187,6 +187,11 @@ public:
 
     optix::float2 GetTypeRange() { return m_typeRange; };
     void SetNumFrames(int fr) { numFrames = fr; };
+
+    virtual sdfGeo* GetOutputDesc() {
+        return optixSDFGeometry::GetOutputDesc();
+    }
+
 protected:
     float m_scale;
     optix::float3 m_shift;
