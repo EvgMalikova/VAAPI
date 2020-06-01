@@ -3,7 +3,7 @@ An example of visualisation framework for dynamic heterogeneous and multi-scale 
 
 This is a source code of the project, submitted to HPG 2020 student competition.
 
-The project depends on Nvidia Optix 6.0 (https://developer.nvidia.com/optix), ITK (http://itk.org) and Leap Motion SDK (https://developer.leapmotion.com/). However, the last two libraries are used only in one of the 
+The project depends on Nvidia Optix 6.0 (https://developer.nvidia.com/optix), ITK 5.1 (http://itk.org) and Leap Motion SDK (https://developer.leapmotion.com/). However, the last two libraries are used only in one of the 
 provided examples. So if removed, you can compile the code without those dependencies. Use CMake to compile the code. The build was tested only with Visual Studio 2015. 
 
 
