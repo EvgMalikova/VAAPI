@@ -1,4 +1,5 @@
 #pragma once
+/*
 #include "itkImage.h"
 #include <vector>
 constexpr unsigned int Dimension = 3;
@@ -21,3 +22,4 @@ namespace itkUtil {
 	void ComputeCenters(FloatImageType*fl_image, float lowerthreshold, FloatPoints& points);
 	void ComputeMIDIfromSDF(FloatImageType* midi_image, const FloatImageType*fl_image, float min);
 }
+*/

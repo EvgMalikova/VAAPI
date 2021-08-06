@@ -436,70 +436,7 @@ int main_tutor()
 
     return 0;
 }
-int leapMotion()
-{
-    int  windowWidth = 1512;
-    int  windowHeight = 1512;
-    int  devices = 3210;  // Decimal digits encode OptiX device ordinals. Default 3210 means to use all four first installed devices, when available.
-    bool interop = true;  // Use OpenGL interop Pixel-Bufferobject to display the resulting image. Disable this when running on multi-GPU or TCC driver mode.
-    int  stackSize = 1024;  // Command line parameter just to be able to find the smallest working size.
 
-    GLFW_Window optixWindowProc;
-    //creates scene
-    std::cout << "INITED" << std::endl;
-
-    //number of example to run
-
-    SceneManager g_app;
-    //g_app.SetDims(windowWidth, windowHeight,
-    //   devices, stackSize, interop);
-
-    //chose an example to display
-    g_app.SetExample(6);
-
-    optixWindowProc.SetDim(windowWidth, windowHeight);
-    optixWindowProc.SetRenderer(g_app.ren);
-    optixWindowProc.SetContext(g_app.GetContext());
-    optixWindowProc.SetCamera(g_app.m_pinholeCamera.get());
-
-    RenderWindowInteractor iren; //TODO always check that basic still works
-    iren.SetWidget(g_app.m_widget.get());
-    iren.SetWindow(&optixWindowProc);
-    //setting number of type frames to play
-    iren.SetTimeFrames(2);
-    //iren.SetTimeFrames(3);//5);
-    iren.SetTSpeed(0.02);
-
-    //attaching a leap motion controller
-    //not used in most of the demonstration examples
-    //so it is just commented if not used
-
-    //can be as well commented in main cmake file
-    Leap::Controller controller;
-    controller.enableGesture(Leap::Gesture::TYPE_SWIPE);
-    if (iren.SetUp()) //does update of WindowProc
-    {
-        unsigned int accumulation_frame = 0;
-        //all should be called after setUp
-        Render::CallbackData cb = { (g_app.m_pinholeCamera).get(), &iren, g_app.ren, accumulation_frame };
-        glfwSetWindowUserPointer(optixWindowProc.GetOutput(), &cb);
-        //sets user defined callback
-        iren.SetKeyCallback(keyCallback);
-        g_app.Init(); //scene creation
-                      // Main loop
-        iren.GetWidget()->Hide();
-        //attaching controller. Works
-        iren.SetController(&controller);
-        iren.Start();
-    }
-
-    // Cleanup
-    //delete g_app;
-
-    glfwTerminate();
-
-    return 0;
-}
 int examples(int exampleNumber)
 {
     int  windowWidth = 1512;
@@ -574,17 +511,19 @@ int main(int argc, char *argv[])
     examples(1);
 
     examples(3);
+    examples(31);
 
     examples(4);
+    
     /*
     Not related to heterogeneous objects tests
     */
     //leap motion example
     // leap motion device is required
-    leapMotion();
+    //leapMotion();
 
     //test for writing
     //simple constructive tree
     //within basic vtk like pipeline test
-    main_tutor();
+   // main_tutor();
 }

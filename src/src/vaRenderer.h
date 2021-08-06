@@ -55,7 +55,7 @@ public:
     };
     ~vaRenderer() {};
 
-    virtual void SetContext(optix::Context&context) {
+    virtual void SetContext(optix::Context context) {
         vaBasicObject::SetContext(context);
         SetInterop(true);
         SetMultiscaleParam(0.0);

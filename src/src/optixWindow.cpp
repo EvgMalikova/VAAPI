@@ -274,10 +274,11 @@ bool BasicRenderWindowInteractor::SetUp()
     return false;
 }
 
+/*
 void BasicRenderWindowInteractor::SetController(Leap::Controller* control)
 {
     m_controller = control;
-}
+}*/
 void BasicRenderWindowInteractor::Start()
 {
     GLFWwindow* window = m_window->GetOutput();
@@ -539,7 +540,7 @@ void BasicRenderWindowInteractor::guiWidgetProc()
     const int y = int(mousePosition.y);
     bool useController = false;
     optix::float3 poswidj = optix::make_float3(0);
-    if (m_controller != nullptr) {
+   /* if (m_controller != nullptr) {
         const Leap::Frame frame = m_controller->frame();
         //// std::cout << "Frame id: " << frame.id()
         //     << ", timestamp: " << frame.timestamp()
@@ -564,10 +565,11 @@ void BasicRenderWindowInteractor::guiWidgetProc()
         poswidj = optix::make_float3(position.x, position.y, position.z);
         useController = true;
         //m_window->m_pinholeCamera->pan(position.x, position.y);
-    }
+    }*/
     //Update widget
 
-    else {
+  //  else 
+    {
         if (m_widget != nullptr)
         {
             //   m_widget->SetBaseCoordinates(x, y);

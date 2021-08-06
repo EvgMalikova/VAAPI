@@ -50,7 +50,7 @@ Program:   GLFW_Window
 #include "optixReader.h"
 
 #include "vaBaseWidget.h"
-#include "Leap.h"
+//#include "Leap.h"
 class basicGLFW_Window
 {
 public:
@@ -178,13 +178,13 @@ public:
         m_window = nullptr;
         m_guiState = GUI_STATE_NONE;
         m_widget = nullptr;
-        m_controller = nullptr;
+       // m_controller = nullptr;
     };
     ~BasicRenderWindowInteractor() { glfwTerminate(); };
     void SetWindow(GLFW_Window*window) { m_window = window; };
     virtual bool SetUp();
     virtual void Start();
-    void SetController(Leap::Controller* control);
+    //void SetController(Leap::Controller* control);
 
     void SetKeyCallback(void(*f)(GLFWwindow*, int, int, int, int)) {
         GLFWwindow* window = m_window->GetOutput();
@@ -195,7 +195,7 @@ public:
 private:
 
     bool m_isWindowVisible;
-    Leap::Controller* m_controller;
+    //Leap::Controller* m_controller;
     GuiState m_guiState;
     vaBaseWidget* m_widget;
 protected:

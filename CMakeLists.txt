@@ -32,6 +32,8 @@ set(BUILD_SHARED_LIBS ON)
 ##########
 # Process our custom setup scripts here.
 
+# Process our custom setup scripts here.
+
 # Include all CMake Macros.
 include(Macros)
 # Determine information about the compiler
@@ -57,13 +59,6 @@ if ( OPENGL_FOUND AND OPENGL_INCLUDE_DIR )
   include_directories( ${OPENGL_INCLUDE_DIR} )
 endif()
 
-find_package( ITK REQUIRED )
- include_directories(  ${ITK_INCLUDE_DIRS} )
-
-include(${ITK_USE_FILE})
-
-
-
 
 LINK_DIRECTORIES(${INSTALL_DEPENDENCIES_DIR}/lib/)
 
@@ -88,15 +83,14 @@ ENDIF()
 #set(NVFlEX_LIB3  ${NVFLEX_LIB_DIR}/NvFlexDeviceRelease${LIB_POSTFIX})
 #set (NVFlEX_LIBRARIES ${NVFlEX_LIB1} ${NVFlEX_LIB2} ${NVFlEX_LIB3})
 
-SET(LIBRARIES  ${ITK_LIBRARIES} ) #${NVFlEX_LIBRARIES}
+
 
 #include_directories(${NVFLEX_INCLUDE_DIR})
 
 
 #message("Flex library: ${NVFlEX_LIBRARIES}")
 
-set(leapdir ${CMAKE_CURRENT_SOURCE_DIR}/LeapSDK/ )
-include_directories(${leapdir}/include)
+
 
 
 
@@ -109,7 +103,7 @@ mark_as_advanced(CLEAR CUDA_64_BIT_DEVICE_CODE)
 # wish from the GUI or from ccmake.
 if(NOT PASSED_FIRST_CONFIGURE)
 
-  list(APPEND default_nvcc_flags "--use_fast_math" "-arch sm_30" "-lineinfo")
+  list(APPEND default_nvcc_flags "--use_fast_math" "-arch sm_75" "--gpu-architecture=sm_75"  "-lineinfo")
 
   if( APPLE )
     # Undef'ing __BLOCKS__ for OSX builds.  This is due to a name clash between OSX 10.6
@@ -156,6 +150,8 @@ if( APPLE )
   set( CUDA_TOOLKIT_RPATH_FLAG "-Wl,-rpath,${CUDA_TOOLKIT_ROOT_DIR}/lib" )
 endif()
 
+# Locate the NVRT distribution.  Search the SDK first, then look in the system.
+set(OptiX_INSTALL_DIR "${CMAKE_SOURCE_DIR}/../" CACHE PATH "Path to OptiX installed location.")
 
 # Search for the OptiX libraries and include files.
 find_package(OptiX REQUIRED)
@@ -251,10 +247,10 @@ function(OPTIX_add_sample_executable target_name)
     imgui
 	VAAPIcore
 	VAAPIfrep
-	${LIBRARIES}
+	
     ${OPENGL_gl_LIBRARY}
     ${optix_rpath}
-	${leapdir}/lib/x64/Leap.lib
+	
     )
 	
   if(USING_GNU_CXX)
@@ -307,7 +303,7 @@ target_link_libraries( ${target_name}
     optix
     glfw
     imgui
-	${LIBRARIES}
+	
     ${OPENGL_gl_LIBRARY}
     ${optix_rpath}
     )

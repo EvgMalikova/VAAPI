@@ -27,7 +27,7 @@ public:
     /* Conventional procedure for setting optix context
     */
 
-    virtual void SetContext(optix::Context &context);
+    virtual void SetContext(optix::Context context);
 
     // bool updateCam;
     /* Gets current x,y position of the mouse on screen*/

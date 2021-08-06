@@ -63,7 +63,7 @@ class sdfReader : public optixReader<MOL>
 public:
     sdfReader()
     {
-        optixReader<MOL>::optixReader();
+        
     };
     ~sdfReader() {};
 
@@ -112,7 +112,7 @@ class tetReader : public optixReader<TETRAHEDRAS>
 public:
     tetReader()
     {
-        optixReader<TETRAHEDRAS>::optixReader();
+        
     };
     ~tetReader() {};
 

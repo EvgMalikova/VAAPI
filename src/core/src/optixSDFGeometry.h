@@ -8,6 +8,7 @@ Module:    optixSDFGeometry.h
 #define optixSDFGeometry_h
 
 #include <optix.h>
+#include <internal/optix_declarations.h>
 #include <optixu/optixpp_namespace.h>
 #include <optixu/optixu_math_namespace.h>
 #include <optixu/optixu_matrix_namespace.h>
@@ -60,7 +61,7 @@ public:
     optixSDFGeometry();
     ~optixSDFGeometry() {};
 
-    virtual void SetContext(optix::Context &context); /**<Sets optix context that will store all generated optix geometry*/
+    virtual void SetContext(optix::Context context); /**<Sets optix context that will store all generated optix geometry*/
     virtual void Update();/**<Runs the process of computation of optix geometry and setting up all necessary cuda programs and geometry parameters*/
     virtual optix::Geometry GetOutput() { return geo; }; /**<Returns ready to use output, that is optix geometry*/
     virtual sdfGeo* GetOutputDesc() { return geometryDesc.get(); }; /**<Returns description, a more detailed info, that is optix geometry and description wheter it is dynamic, auditory and etc.*/
@@ -112,8 +113,7 @@ protected:
     virtual void Modified() {};
     virtual void CreateGeometry() {}; /**<TODO: potentialy read file with points here*/
     virtual void Initialize() {}; /**<read cuda procedure for SDF generation, the process is linked to name*/
-    template<class T> optix::Buffer optixSDFGeometry::InitializeInputBuffer(T Attributes, std::vector<T> attributes, optix::RTbuffermapflag mode);
-
+    template<class T> optix::Buffer InitializeInputBuffer(T Attributes, std::vector<T> attributes);
     void SetIntersectionProg();
     void SetBoundingBoxProg();
     void InitProg(std::string prog, std::string file, std::string name);

@@ -13,7 +13,7 @@
 //------------------------------------
 //SDF unary program
 
-void optixSDFUnaryOp::SetContext(optix::Context &context)
+void optixSDFUnaryOp::SetContext(optix::Context context)
 {
     vaBasicObject::SetContext(context);
     //no new geometry creation
@@ -110,7 +110,7 @@ void optixSDFUnaryOp::SetMainPrograms()
 //------------------------------------
 //SDF Binary program
 
-void optixSDFBinaryOp::SetContext(optix::Context &context)
+void optixSDFBinaryOp::SetContext(optix::Context context)
 {
     vaBasicObject::SetContext(context);
     //no new geometry creation

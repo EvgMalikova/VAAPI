@@ -45,7 +45,7 @@ class xyzReader : public optixReader<XYZ>
 public:
     xyzReader()
     {
-        optixReader<XYZ>::optixReader();
+        
     };
     ~xyzReader() {};
 

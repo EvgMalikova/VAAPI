@@ -19,7 +19,7 @@ for (auto group : groups)
 selector->addChild(group);
 }
 */
-void vaWidgetHandle::SetContext(optix::Context &context)
+void vaWidgetHandle::SetContext(optix::Context context)
 {
     vaBasicObject::SetContext(context);
     Initialize();

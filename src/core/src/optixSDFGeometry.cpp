@@ -39,7 +39,7 @@ template<>RTformat getFormat<int>()
 
 optixSDFGeometry::optixSDFGeometry()
 {
-vaBasicObject::vaBasicObject();
+
 
 bounding_box = "bounding_box";
 intersection_program = "intersection_program";
@@ -59,7 +59,7 @@ const Matrix4x4 frame_inv = frame.inverse();
 */
 };
 
-template<class T> optix::Buffer optixSDFGeometry::InitializeInputBuffer(T Attributes, std::vector<T> attributes, optix::RTbuffermapflag mode)
+template<class T> optix::Buffer optixSDFGeometry::InitializeInputBuffer(T Attributes, std::vector<T> attributes)
 {
     optix::Buffer attributesBuffer;
     if (getFormat<T>() == RT_FORMAT_USER)
@@ -68,8 +68,8 @@ template<class T> optix::Buffer optixSDFGeometry::InitializeInputBuffer(T Attrib
         attributesBuffer->setElementSize(sizeof(Attributes));
         attributesBuffer->setSize(attributes.size());
 
-        void *dst = attributesBuffer->map(0, mode);
-        memcpy(dst, attributes.data(), sizeof(Attributes) * attributes.size());
+
+        memcpy(attributesBuffer->map(), attributes.data(), sizeof(Attributes) * attributes.size());
         attributesBuffer->unmap();
         std::cout << "user type of data" << std::endl;
     }
@@ -83,7 +83,7 @@ template<class T> optix::Buffer optixSDFGeometry::InitializeInputBuffer(T Attrib
         indicesBuffer->unmap();
         */
         attributesBuffer = vaBasicObject::GetContext()->createBuffer(RT_BUFFER_INPUT, getFormat<T>(), attributes.size());
-        memcpy(dst, attributes.data(), sizeof(Attributes) * attributes.size());
+        memcpy(attributesBuffer->map(), attributes.data(), sizeof(Attributes) * attributes.size());
         attributesBuffer->unmap();
 
     }
@@ -176,7 +176,7 @@ void optixSDFGeometry::Update()
 }
 
 
-void optixSDFGeometry::SetContext(optix::Context &context)
+void optixSDFGeometry::SetContext(optix::Context context)
 {
     vaBasicObject::SetContext(context);
     geo = vaBasicObject::GetContext()->createGeometry();

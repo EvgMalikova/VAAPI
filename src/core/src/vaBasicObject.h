@@ -23,7 +23,7 @@ public:
     ~vaBasicObject() {};
 
     //Set
-    virtual void SetContext(optix::Context &context)
+    virtual void SetContext(optix::Context context)
     {
         m_context = context;
     }

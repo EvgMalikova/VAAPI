@@ -49,7 +49,7 @@ class optixTriGeometry : public vaBasicObject
 {
 public:
     optixTriGeometry() {
-        vaBasicObject::vaBasicObject();
+        
     };
     ~optixTriGeometry() {};
 
@@ -75,10 +75,10 @@ class optixGeomBasic : public optixTriGeometry {
 public:
 
     optixGeomBasic() {
-        optixTriGeometry::optixTriGeometry();
+       
     };
 
-    virtual void SetContext(optix::Context &context);
+    virtual void SetContext(optix::Context context);
 
     ~optixGeomBasic() {};
 
@@ -106,7 +106,7 @@ protected:
 class optixPlane : public optixGeomBasic {
 public:
 
-    optixPlane() { optixGeomBasic::optixGeomBasic(); };
+    optixPlane() {  };
     ~optixPlane() {};
 
     //@{

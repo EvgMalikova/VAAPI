@@ -201,6 +201,7 @@ RT_PROGRAM void intersection_mol(int primIdx)
     float eps = 0.001;
     if (eps > sysSceneEpsilon) eps = sysSceneEpsilon;
 
+	epsilon=0.05;
     /* ------------------
     /* 1) Reading data and accessing current positions for current time
     /---------------------------------------------------------------*/

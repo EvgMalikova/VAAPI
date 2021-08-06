@@ -1,10 +1,10 @@
 #include "vaRayCastBaseWidget.h"
 
 //For registration
-#include "itkTranslationTransform.h"
-#include "itkEuclideanDistancePointMetric.h"
-#include "itkLevenbergMarquardtOptimizer.h"
-#include "itkPointSetToPointSetRegistrationMethod.h"
+//#include "itkTranslationTransform.h"
+//#include "itkEuclideanDistancePointMetric.h"
+//#include "itkLevenbergMarquardtOptimizer.h"
+//#include "itkPointSetToPointSetRegistrationMethod.h"
 //---------------
 
 void vaRayCastBaseWidget::UpdateHandlePosition()
@@ -28,7 +28,7 @@ void vaRayCastBaseWidget::CreateGeometryHandle()
     }
 }
 
-vaRayCastBaseWidget::PointType vaRayCastBaseWidget::GetPoint(optix::float3 pp)
+/*vaRayCastBaseWidget::PointType vaRayCastBaseWidget::GetPoint(optix::float3 pp)
 {
     //TODO:
     PointType p;
@@ -36,7 +36,7 @@ vaRayCastBaseWidget::PointType vaRayCastBaseWidget::GetPoint(optix::float3 pp)
     p[1] = pp.y;
     p[2] = pp.z;
     return p;
-}
+}*/
 
 void vaRayCastBaseWidget::UpdateWidgetPos()
 {
@@ -48,7 +48,7 @@ void vaRayCastBaseWidget::UpdateWidgetPos()
         //std::cout << "POS " << pos.x << "," << pos.y << "," << pos.z << std::endl;
     }
 }
-void vaRayCastBaseWidget::SetContext(optix::Context &context)
+void vaRayCastBaseWidget::SetContext(optix::Context context)
 {
     vaBasicObject::SetContext(context);
     //TODO: set correct algorithm for this
@@ -73,11 +73,11 @@ void vaRayCastBaseWidget::SetRayCastSize(int width, int height)
 //-----------------------------
 void vaRayCastBaseWidget::RegisterBuffers()
 {
-    if (isRayCast()) {
+    /*if (isRayCast()) {
         PointSetType::Pointer fixedPointSet = PointSetType::New();
         PointSetType::Pointer movingPointSet = PointSetType::New();
 
-        //using PointType = PointSetType::PointType;
+        
 
         using PointsContainer = PointSetType::PointsContainer;
 
@@ -93,6 +93,7 @@ void vaRayCastBaseWidget::RegisterBuffers()
         movingPointSet->SetPoints(movingPointContainer);
         std::cout << "Number of moving Points = " << movingPointSet->GetNumberOfPoints()
             << std::endl;
+         
 
         // Software Guide : BeginLatex
         //
@@ -211,6 +212,7 @@ void vaRayCastBaseWidget::RegisterBuffers()
         m_prog["varCenter"]->setFloat(c.x, c.y, c.z);
         //m_geo->markDirty();
     }
+    */
 }
 
 void vaRayCastBaseWidget::BindRayCastBuffers()
@@ -239,9 +241,9 @@ void vaRayCastBaseWidget::SetHandleAsCallableProg() {
         }
     }
 }
-void vaRayCastBaseWidget::UpdateRayCastBuffers(PointsContainer* fPoints, PointsContainer* mPoints)
+ /*void vaRayCastBaseWidget::UpdateRayCastBuffers(PointsContainer* fPoints, PointsContainer* mPoints)
 {
-    optix::float3* FixedImageData = (optix::float3*)(m_FixedBuffer->map());
+   optix::float3* FixedImageData = (optix::float3*)(m_FixedBuffer->map());
     optix::float3* MovingImageData = (optix::float3*)(m_MovingBuffer->map());
 
     // int w, h;
@@ -279,4 +281,4 @@ void vaRayCastBaseWidget::UpdateRayCastBuffers(PointsContainer* fPoints, PointsC
     m_MovingBuffer->unmap();
 
     std::cout << "Copied " << std::endl;
-}
+}*/

@@ -30,7 +30,7 @@ class vaBasicActor :public vaBasicObject
 {
 public:
     vaBasicActor() {
-        vaBasicObject::vaBasicObject();
+        //vaBasicObject::vaBasicObject();
 
         //TODO: BVH acceleration true only for triangular
         //and array of geometrical objects,
@@ -43,10 +43,7 @@ public:
         m_triangulated = false;
     };
     ~vaBasicActor() {};
-    virtual void SetContext(optix::Context &context)
-    {
-        vaBasicObject::SetContext(context);
-    }
+   
 
     void AddMapper(vaMapper* map) {
         m_mapper.push_back(map);

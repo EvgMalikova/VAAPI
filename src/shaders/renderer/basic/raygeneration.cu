@@ -17,6 +17,7 @@ rtDeclareVariable(callM, evalF, , );
 
 typedef rtCallableProgramId<float3(float3, primParamDesc)> callC;
 rtDeclareVariable(callC, evalCol, , );
+
 __device__
 inline float  plane(float3 p, float3 c, float3 n)
 {
@@ -53,6 +54,56 @@ inline float3 getCenterTetra(float4 p0, float4 p1, float4 p2, float4 p3)
     float3 center = make_float3((p0 + p1 + p2 + p3) / 4.0);
     return center;
 }
+/*
+RT_CALLABLE_PROGRAM float sminp(float a, float b, float k)
+{
+    float h = optix::max(k - abs(a - b), 0.0) / k;
+    return optix::min(a, b) - h*h*k*(1.0 / 4.0);
+}
+
+RT_CALLABLE_PROGRAM float sdfMicrostructure2(float3 p, float rad1)
+{
+    float t = TimeSound * 4;
+
+    float3 scale = 0.3*make_float3(abs(sin(t)), abs(cos(t)), abs(cos(t)));
+    float dens_scale = abs(cos(t)) / 2;
+
+    // float sphere1 = optix::length(p) - rad.x;// sdSphere(p, rad);
+    // float sphere2 = optix::length(p) - rad.x / 2.2;// sdSphere(p, rad / 20);
+
+    float rad2 = rad1 - 0.1;
+    float sphere1 = optix::length(p) - rad2;
+    float sphere2 = optix::length(p) - (rad2 - 0.1);
+    float shell = max(sphere1, -sphere2);
+    shell = max(shell, p.z);
+
+    float3 tiled = make_float3(dens_scale);
+    float3 tiled2 = 0.2 + tiled;
+
+    float3 x = p + 0.5*tiled;
+    // x - y * floor(x / y).
+    float3 mod = x - tiled2*floor(x / tiled2);//modf(p + 0.5*tiled, tiled)
+    float3 inX = mod - 0.5*tiled2;
+
+    float3 c = make_float3(0., 0., 0.03 + 0.06*dens_scale);
+    float cyly = length(make_float2(inX.x, inX.z) - make_float2(c.x, c.y)) - c.z;
+    float cylx = length(make_float2(inX.y, inX.z) - make_float2(c.x, c.y)) - c.z;
+    float cylz = length(make_float2(inX.x, inX.y) - make_float2(c.x, c.y)) - c.z;
+
+    float mics = sminp(cylx, sminp(cyly, cylz, 0.08), 0.08);
+
+    float res = sminp(shell, mics, 0.1);
+    res = max(max(res, sphere1), x.z);
+    // res = max(res, x.z);
+    return res;
+}
+
+__device__
+inline float  evalF(float3 p, primParamDesc param)
+{
+
+return sdfMicrostructure2(p-param.pos[0].,param.rad[0]);
+}*/
 
 RT_CALLABLE_PROGRAM
 float sdTetra(float3 p, float3 v0, float3 v1, float3 v2, float3 v3)
@@ -146,7 +197,7 @@ inline __device__  void render_HeteroVolume(int pN, PerRayData& prd, float3 orig
     float Ks = 0.9;
     cellPrimDesc cell = prd.cellPrimitives[pN];
     primParamDesc prim = prd.prims[pN];
-    float tstep = 0.05;
+    float tstep = 0.09;
     float dist = cell.intersectionDist;
 
     float3 pos = origin + direction*dist;
@@ -192,7 +243,7 @@ inline __device__  void render_HeteroVolume(int pN, PerRayData& prd, float3 orig
                 //col.w = trp*Ka;
 
                 //Beer–Lambert law
-                float F = exp(-cell.color.w*abs(s1) * 200);
+                float F = exp(-cell.color.w*abs(s1) * 500);
                 col = col*(1.0 - F);
                 sum = sum + col*(1.0f - sum.w);
 
@@ -226,7 +277,7 @@ inline __device__  void render_HeteroVolume(int pN, PerRayData& prd, float3 orig
         }
 
         pos += step;
-        if (sum.w >= 1.0) {
+        if (sum.w >= 0.8) {
             i = max + 1;
         }
         else

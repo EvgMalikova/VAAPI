@@ -17,8 +17,8 @@
 #include <sstream>
 #include "optixXYZReader.h"
 #include "sdfReader.h"
-#include "optixTextureReader.h"
-#include "plySdfTextureReader.h"
+//#include "optixTextureReader.h"
+//#include "plySdfTextureReader.h"
 
 #include "optixSDFOperations.h"
 #include "vaColorScheme.h"
@@ -340,210 +340,12 @@ void SceneManager::createFrepScene()
 
 void SceneManager::createDynamicHeterogeneousObjectScene()
 {
-    /*
-    *Reading dynamic electron density and electrostatic potential fields data: initial and final state
-    */
-    /*<Basic file reader of scalar field data on structural grid, those output is an SDF Texture Sampler*/
-    /* Reading electron density field, in the initial state, before geometry optimisation*/
-    sdfTextureReader<float> readSDFTex1;
-    readSDFTex1.SetContext(m.GetOutput());
-    readSDFTex1.SetSize(139, 150, 160);
-    readSDFTex1.SetThreshold(0.26);/*<defines field isosurface that will define the molecule boundary*/
-    readSDFTex1.Setfile("ed1.txt");
-    readSDFTex1.Update();
-    /* Reading electron density field, in the final state, after geometry optimisation*/
-    sdfTextureReader<float> readSDFTex2;
-    readSDFTex2.SetContext(m.GetOutput());
-    readSDFTex2.SetSize(138, 150, 160);
-    readSDFTex2.SetThreshold(0.26);
-    readSDFTex2.Setfile("ed2.txt");
-    readSDFTex2.Update();
-
-    /*<Basic file reader of scalar field data on structural grid, those output is an optix Texture Sampler*/
-    /* Reading electrostatic potential field, in the initial state, before geometry optimisation*/
-    texReader<float> readR1;
-    readR1.SetContext(m.GetOutput());
-    readR1.SetSize(139, 150, 160);
-    readR1.Setfile("p1.txt");
-    readR1.Update();
-
-    /* Reading electrostatic potential field, in the final state, after geometry optimisation*/
-    texReader<float> readR2;
-    readR2.SetContext(m.GetOutput());
-    readR2.SetSize(138, 150, 160);
-    readR2.Setfile("p2.txt");
-    readR2.Update();
-
-    /* Creating a dynamic sdf primitive on GPU, representing molecule boundary, described with electron density field*/
-    sdfTexture tex;
-    tex.SetContext(m.GetOutput());
-    tex.SetTexture(readSDFTex1.GetTexture(), readSDFTex1.GetParam());
-    tex.SetTexture(readSDFTex2.GetTexture(), readSDFTex1.GetParam());
-    tex.Update();
-
-    BasicLight l1;
-    l1.color = optix::make_float3(1.0);
-    l1.pos = optix::make_float3(1.0);
-
-    BasicLight l2;
-    l2.color = optix::make_float3(1.0);
-    l2.pos = optix::make_float3(0, 0, 1.0);
-
-    /*A general material, that implements rendering of two scalar fields in following modes:
-    * -Emission-absorption optical model for Volume Rendering with transfer function that
-    *  highlights the internal structure of both electron density and electrostaric potential fields
-    *
-    * -Colors geometry surface with mapped to color values of  electrostaric potential field
-    */
-
-    //Error in material
-    vaEAVolume texMaterial;
-    texMaterial.SetContext(m.GetOutput());
-    texMaterial.AddLight(&l1);
-    texMaterial.AddLight(&l2);
-    texMaterial.SetSDFProg(tex.GetCallableProg()); /*<Gets sdf primitive optix callable program reference*/
-    texMaterial.SetType(vaEAVolume::MaterialType::VOLUME); /*<Volume rendering mode*/
-    texMaterial.SetTexture(readR1.GetTexture());
-    texMaterial.SetTexture(readR2.GetTexture());
-    texMaterial.Update();
-
-    //SDFSubtractionOp opBlend;
-    SDFBlendUnionOp   opBlend;
-    opBlend.SetContext(m.GetOutput());
-    opBlend.AddOpperand1(&tex);
-    opBlend.AddOpperand2(m_widget->GetHandle());
-    opBlend.SetKoeff(0.3);
-    opBlend.Update();
-
-    /* Mapper, simillar to vtkMapper*/
-    vaMapper* map2 = new vaMapper();
-    map2->SetContext(m.GetOutput());
-    map2->SetDescInput(tex.GetOutputDesc());
-    map2->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType());
-    map2->Update();
-
-    /*Actor, simillar to vtkActor*/
-    vaActor* acSdf = new vaActor();
-    acSdf->SetContext(m.GetOutput());
-    acSdf->AddMapper(map2);
-    acSdf->Update();
-
-    /*Add actor to the rendere*/
-    ren->AddActor(acSdf);
-
-    //store
-    actorSdf.push_back(acSdf);
-    mappers.push_back(map2);
+   
 }
 
 void SceneManager::createMolSolventScene()
 {
-    //ren->SetAudioBuffer()
-    /*
-    *Reading dynamic electron density and electrostatic potential fields data: initial and final state
-    */
-    /*<Basic file reader of scalar field data on structural grid, those output is an SDF Texture Sampler*/
-    /* Reading electron density field, in the initial state, before geometry optimisation*/
-    plySdfTextureReader<float> readSDFTex1;
-    readSDFTex1.SetContext(m.GetOutput());
-    readSDFTex1.SetSize(250, 250, 250);
-    readSDFTex1.SetReduce(250);
-    readSDFTex1.SetSpacing(0.4); //0.2 for original beta1
-    //  readSDFTex1.SetOrigin(-50.0, -50.0, -30.0); //for  surfBig331
-     //readSDFTex1.SetOrigin(-60.0, -80.0, -50.0); //for rec.obj
-   // readSDFTex1.SetOrigin(-30.0, -30.0, -30.0); //for solvent and surf - cavities
-   //readSDFTex1.SetOrigin(7.5, -45.0, -42.5); //for alpha.obj
-   // readSDFTex1.SetOrigin(-50.0, -55.0, -35.0);//beta
-    readSDFTex1.SetOrigin(-35.0, 50.0, 0.0); //gamma
-    readSDFTex1.SetThreshold(0.26);/*<defines field isosurface that will define the molecule boundary*/
-    readSDFTex1.Setfile("beta.obj");// solvent.obj");//surfBig331.obj");
-    readSDFTex1.Update();
-    //https://en.wikipedia.org/wiki/Abalone_(molecular_mechanics) - pictures
-
-    m_widget->SetRadius(1.4 / 100);// (250 * 0.4)); //normalization to water size for solvent
-
-    plySdfTextureReader<float> readSDFTex2;
-    readSDFTex2.SetContext(m.GetOutput());
-    readSDFTex2.SetSize(250, 250, 250);
-    readSDFTex2.SetReduce(250);
-    readSDFTex2.SetSpacing(0.4); //0.4
-                                 //  readSDFTex1.SetOrigin(-50.0, -50.0, -30.0); //for  surfBig331
-                                 //readSDFTex1.SetOrigin(-60.0, -80.0, -50.0); //for rec.obj
-                                 // readSDFTex1.SetOrigin(-30.0, -30.0, -30.0); //for solvent and surf - cavities
-                                 //readSDFTex1.SetOrigin(7.5, -45.0, -42.5); //for alpha.obj
-    //readSDFTex2.SetOrigin(-50.0, -55.0, -35.0);//beta
-    readSDFTex2.SetOrigin(-35.0, 50.0, 0.0); //gamma
-    readSDFTex2.SetThreshold(0.26);/*<defines field isosurface that will define the molecule boundary*/
-    readSDFTex2.Setfile("gamma.obj");// solvent.obj");//surfBig331.obj");
-    readSDFTex2.Update();
-
-    vaBasicMaterial mSdf;
-    mSdf.SetContext(m.GetOutput());
-    mSdf.Update();
-
-    /* Creating a dynamic sdf primitive on GPU, representing molecule boundary, described with electron density field*/
-    sdfTexture tex;
-    tex.SetContext(m.GetOutput());
-    tex.SetTexture(readSDFTex1.GetTexture(), readSDFTex1.GetParam());
-    //tex.SetTexture(readSDFTex2.GetTexture(), readSDFTex2.GetParam());
-
-    tex.Update();
-
-    BasicLight l1;
-    l1.color = optix::make_float3(1.0);
-    l1.pos = optix::make_float3(1.0);
-
-    BasicLight l2;
-    l2.color = optix::make_float3(1.0);
-    l2.pos = optix::make_float3(0, 0, 1.0);
-
-    /*A general material, that implements rendering of two scalar fields in following modes:
-    * -Emission-absorption optical model for Volume Rendering with transfer function that
-    *  highlights the internal structure of both electron density and electrostaric potential fields
-    *
-    * -Colors geometry surface with mapped to color values of  electrostaric potential field
-    */
-
-    SDFSubtractionOp opBlend;
-    opBlend.SetContext(m.GetOutput());
-    opBlend.AddOpperand1(&tex);
-    opBlend.AddOpperand2(m_widget->GetHandle());
-    // opBlend.SetKoeff(0.3);
-    opBlend.Update();
-
-    /*
-    Creates auditory material
-    */
-    // SDFAudioVolumeMaterial mVSdf2;
-    SDFAudioRayTraceMaterial mVSdf2;
-    mVSdf2.SetContext(m.GetOutput());
-    mVSdf2.Update();
-
-    /*
-    Creates mapper
-    */
-
-    /* Mapper, simillar to vtkMapper*/
-    vaMapper* map2 = new vaMapper();
-    map2->SetContext(m.GetOutput());
-    map2->SetDescInput(tex.GetOutputDesc());
-    map2->AddMaterial(mSdf.GetOutput(), mSdf.GetType());
-    map2->AddMaterial(mVSdf2.GetOutput(), mVSdf2.GetType()); /*<Sets auditory object properties*/
-
-    map2->Update();
-
-    /*Actor, simillar to vtkActor*/
-    vaActor* acSdf = new vaActor();
-    acSdf->SetContext(m.GetOutput());
-    acSdf->AddMapper(map2);
-    acSdf->Update();
-
-    /*Add actor to the rendere*/
-    ren->AddActor(acSdf);
-
-    //store
-    actorSdf.push_back(acSdf);
-    mappers.push_back(map2);
+    
 }
 
 #define IGN_VISIBILITY_SELECTABLE      0x00000002
@@ -990,17 +792,7 @@ void SceneManager::createMicrostuctureMOlScene()
 
     //-----------
 
-    vaColorScheme sc;
-    sc.SetContext(m.GetOutput());
-    sc.SetIdType(); //map  by atom types
-    optix::float2 r = mol.GetTypeRange();
-    sc.SetRange(optix::make_float2(0, r.y));
 
-    //fill colors for CPK scheme for selected range of atoms
-    for (int i = 0; i < int(r.y); i++) {
-        sc.AddColor(CPK_GetColorById(i)); //maps atoms ids to colors according to CPK scheme
-    }
-    sc.Update(); /*<generates optixBuffer and callable program*/
 
                  /*
                  *Creates optical matrial
@@ -1016,7 +808,7 @@ void SceneManager::createMicrostuctureMOlScene()
     //mSdf.SetSDFProg(sdf.GetCallableProg());
     mSdf.SetSDFProg(mol.GetCallableProg());
 
-    mSdf.SetColorScheme(sc.GetOutput());
+    //mSdf.SetColorScheme(sc.GetOutput());
     mSdf.Update();
 
     /*
@@ -1132,17 +924,7 @@ void SceneManager::createAuditoryMoleculeScene2()
     mVSdf.Update();
     */
 
-    vaColorScheme sc;
-    sc.SetContext(m.GetOutput());
-    sc.SetIdType(); //map  by atom types
-    optix::float2 r = mol.GetTypeRange();
-    sc.SetRange(optix::make_float2(0, r.y));
 
-    //fill colors for CPK scheme for selected range of atoms
-    for (int i = 0; i < int(r.y); i++) {
-        sc.AddColor(CPK_GetColorById(i)); //maps atoms ids to colors according to CPK scheme
-    }
-    sc.Update(); /*<generates optixBuffer and callable program*/
 
                  /*
                  *Creates optical matrial
@@ -1153,7 +935,7 @@ void SceneManager::createAuditoryMoleculeScene2()
     automatically switch to mapping mode data to color,
     not default color*/
 
-    mSdf.SetColorScheme(sc.GetOutput());
+   // mSdf.SetColorScheme(sc.GetOutput());
     mSdf.Update();
 
     /*
@@ -1242,7 +1024,7 @@ void SceneManager::createAuditoryMoleculeSceneMolDynam()
     mVSdf.Update();
     */
 
-    vaColorScheme sc;
+   /* vaColorScheme sc;
     sc.SetContext(m.GetOutput());
     sc.SetIdType(); //map  by atom types
     optix::float2 r = mol.GetTypeRange();
@@ -1252,7 +1034,9 @@ void SceneManager::createAuditoryMoleculeSceneMolDynam()
     for (int i = 0; i < int(r.y); i++) {
         sc.AddColor(CPK_GetColorById(i)); //maps atoms ids to colors according to CPK scheme
     }
-    sc.Update(); /*<generates optixBuffer and callable program*/
+    sc.Update(); 
+    */
+    /*<generates optixBuffer and callable program*/
 
                  /*
                  *Creates optical matrial
@@ -1263,7 +1047,7 @@ void SceneManager::createAuditoryMoleculeSceneMolDynam()
     automatically switch to mapping mode data to color,
     not default color*/
 
-    mSdf.SetColorScheme(sc.GetOutput());
+    //mSdf.SetColorScheme(sc.GetOutput());
     mSdf.Update();
 
     /*
@@ -1305,14 +1089,16 @@ void SceneManager::Example0()
     http://wiki.jmol.org/index.php/File_formats/Formats/XYZ
     */
     xyzReader read;
-    read.Setfile("slice.xyz");
+    read.Setfile("diffusion.xyz");
     read.Update();
+    
+    
 
     /*Molecule CPK representation as sdf primitive
     For info on representation:
     https://en.wikipedia.org/wiki/Space-filling_model
     */
-    sdfHMicro mol;//sdfHMicrostructure mol;// // sdfHeterogeneous mol;//sdfCPKMol mol; //
+    sdfHMicro mol;//sdfHMicro mol;//sdfHMicrostructure mol;// // sdfHeterogeneous mol;//sdfHCPKMol mol - veru slow with all callables; //
     mol.SetContext(m.GetOutput());
     mol.SetCenter(read.GetOutput1()); /*<Sets atoms centers*/
     mol.SetRadius(read.GetOutput2()); /*<Sets atoms radii specified for element type,
@@ -1489,6 +1275,10 @@ void SceneManager::createScene()
         case 6:
             createDynamicHeterogeneousObjectScene();
             break;
+        case 31:
+            Example3(); //createAuditoryMoleculeSceneMol2();//
+            break;
+       
         }
         //
         //experiments with heterogeneous objects

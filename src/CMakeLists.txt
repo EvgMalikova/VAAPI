@@ -45,8 +45,8 @@ OPTIX_add_sample_executable( ${PROJECT_NAME}
 #look to optix_add_samples executable
 #  src/core/optixAbstractMaterial.h
 #  src/core/optixAbstractMaterial.cpp
- src/itkUtil.cpp
- src/itkUtil.h
+ #src/itkUtil.cpp
+ #src/itkUtil.h
 
   src/main.cpp
   

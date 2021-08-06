@@ -22,7 +22,7 @@ public:
 
     virtual optix::Selector GetOutput() { return m_sel; };
 
-    virtual void SetContext(optix::Context &context);
+    virtual void SetContext(optix::Context context);
     virtual void Update();
     void Show();
     void Hide();

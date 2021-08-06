@@ -41,8 +41,8 @@ void optixTriGeometry::CreateGeometry(std::vector<VertexAttributes> const& attri
         attributesBuffer->unmap();
 
         optix::Buffer indicesBuffer = vaBasicObject::GetContext()->createBuffer(RT_BUFFER_INPUT, RT_FORMAT_UNSIGNED_INT3, indices.size() / 3);
-        dst = indicesBuffer->map(0, RT_BUFFER_MAP_WRITE_DISCARD);
-        memcpy(dst, indices.data(), sizeof(optix::uint3) * indices.size() / 3);
+       // dst = indicesBuffer->map(0, RT_BUFFER_MAP_WRITE_DISCARD);
+        memcpy(indicesBuffer->map(), indices.data(), sizeof(optix::uint3) * indices.size() / 3);
         indicesBuffer->unmap();
 
         std::map<std::string, optix::Program>::const_iterator it = m_mapOfPrograms.find("boundingbox_triangle_indexed");

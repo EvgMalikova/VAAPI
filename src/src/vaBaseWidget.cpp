@@ -42,7 +42,7 @@ vaBaseWidget::vaBaseWidget()
     m_Radius = 1.4;
 }
 
-void vaBaseWidget::SetContext(optix::Context &context)
+void vaBaseWidget::SetContext(optix::Context context)
 {
     vaBasicObject::SetContext(context);
     //TODO: set correct algorithm for this

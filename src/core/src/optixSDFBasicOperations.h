@@ -36,7 +36,7 @@ public:
         return m_sdf->GetOutput();
     }
     //redefine context proc
-    virtual void SetContext(optix::Context &context);
+    virtual void SetContext(optix::Context context);
     virtual void SetInput(optix::Geometry geo1) { g1 = geo1; };
     optix::Geometry GetInput() { return g1; };
 
@@ -92,7 +92,7 @@ public:
         return m_sdf1->GetOutput();
     }
     //redefine context proc
-    virtual void SetContext(optix::Context &context);
+    virtual void SetContext(optix::Context context);
     virtual void SetInput1(optix::Geometry geo1) { g1 = geo1; };
     optix::Geometry GetInput1() { return g1; };
     virtual void SetInput2(optix::Geometry geo1) { g2 = geo1; };

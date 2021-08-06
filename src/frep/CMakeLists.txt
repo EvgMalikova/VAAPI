@@ -13,8 +13,8 @@ OPTIX_add_library( ${PROJECT_NAME}
 #core modules
 #todo: make as described here https://stackoverflow.com/questions/8304190/cmake-with-include-and-source-paths-basic-setup
 #look to optix_add_samples executable
-  src/texReader.h
-  src/texReader.hpp
+#  src/texReader.h
+#  src/texReader.hpp
 
   src/optixTextureReader.h
   src/optixTextureReader.hpp

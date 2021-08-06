@@ -6,7 +6,7 @@
 
 #include "vaBaseWidget.h"
 //---For registration
-#include "itkPointSet.h"
+//#include "itkPointSet.h"
 
 class vaRayCastBaseWidget : public vaBaseWidget
 {
@@ -14,13 +14,11 @@ public:
 
     // constexpr unsigned int Dimension = 3;
 
-    typedef  itk::PointSet<float, 3> PointSetType;
-    typedef PointSetType::PointType PointType;
-    typedef typename  PointSetType::PointsContainer PointsContainer;
+    
     /*
     Redefines procedure for ray-casting widget
     */
-    virtual void SetContext(optix::Context &context);
+    virtual void SetContext(optix::Context context);
     vaRayCastBaseWidget() {
         m_SoundWidth = 1;
         m_SoundHeight = 1;
@@ -36,12 +34,12 @@ public:
     virtual void UpdateHandlePosition();
     void SetRayCastProgName(std::string c) { callable_program = c; }
 
-    PointType GetPoint(optix::float3 pp);
+    //PointType GetPoint(optix::float3 pp);
 
     virtual void CreateGeometryHandle();
 
     void BindRayCastBuffers();
-    void UpdateRayCastBuffers(PointsContainer* fPoints, PointsContainer* mPoints);
+   // void UpdateRayCastBuffers(PointsContainer* fPoints, PointsContainer* mPoints);
 
     std::string GetRayCastProgName() { return callable_program; }
     optix::Program GetRayCastProg() {
