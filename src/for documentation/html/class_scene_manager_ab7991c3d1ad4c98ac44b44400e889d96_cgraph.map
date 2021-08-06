@@ -1,0 +1,40 @@
+<map id="SceneManager::createTriangulatedScene" name="SceneManager::createTriangulatedScene">
+<area shape="rect" id="node1" title=" " alt="" coords="5,1041,228,1082"/>
+<area shape="rect" id="node2" href="$classva_basic_renderer.html#aaead572254da5407fe05670e81504b69" title=" " alt="" coords="281,5,462,32"/>
+<area shape="rect" id="node4" href="$classoptix_basic_actor.html#a68ed9c6a2f966b8a42b71bb8f79ae46e" title=" " alt="" coords="277,56,465,83"/>
+<area shape="rect" id="node6" href="$classva_mapper.html#aea3ef068acdb6b1b86f7b5ff8b8e38e2" title=" " alt="" coords="294,107,449,133"/>
+<area shape="rect" id="node7" href="$classva_auditory_material.html#a15fadc1f1b43e4530f6b9a789f119c76" title=" " alt="" coords="803,122,931,163"/>
+<area shape="rect" id="node8" href="$classcontext_manager.html#a952b95215eb2a19410bc1da46edc9a06" title=" " alt="" coords="280,1251,463,1277"/>
+<area shape="rect" id="node9" href="$classoptix_plane.html#af44c1c3ab0e1a556f4c0b7efe74976cc" title=" " alt="" coords="296,1301,447,1328"/>
+<area shape="rect" id="node11" href="$classva_auditory_material.html#abbaed9f80e51941e5ec3c21dd16d5980" title=" " alt="" coords="307,1353,435,1394"/>
+<area shape="rect" id="node12" href="$classva_basic_object.html#a084579231006f44f03b6834e723316b6" title=" " alt="" coords="533,1223,711,1249"/>
+<area shape="rect" id="node13" href="$classoptix_basic_actor.html#a3380d4c2063c0901bf25a1ed05712a16" title=" " alt="" coords="278,1149,465,1176"/>
+<area shape="rect" id="node14" href="$classoptix_geom_basic.html#aac65665a778073a0a616b6deb3861c58" title=" " alt="" coords="276,1099,467,1125"/>
+<area shape="rect" id="node18" href="$classva_mapper.html#a778f09202a3f15a52170f3ad433612f8" title=" " alt="" coords="305,1419,438,1445"/>
+<area shape="rect" id="node19" href="$classva_auditory_material.html#a01ee816d1474fea493409dbae151e761" title=" " alt="" coords="307,477,435,518"/>
+<area shape="rect" id="node31" href="$classoptix_basic_actor.html#afa46b76f029abca941b2d80c46422fef" title=" " alt="" coords="290,867,453,893"/>
+<area shape="rect" id="node35" href="$classoptix_geom_basic.html#afb9b648f01e49e0d000d13feb315f0c1" title=" " alt="" coords="288,997,455,1024"/>
+<area shape="rect" id="node38" href="$classva_mapper.html#a840064e5c0c1af154d46cdd9ec4f19ca" title=" " alt="" coords="308,1048,435,1075"/>
+<area shape="rect" id="node3" href="$classoptix_basic_actor.html#a420fe60c61514549698f48af1975988d" title=" " alt="" coords="531,5,713,32"/>
+<area shape="rect" id="node5" href="$classva_mapper.html#ae9309eb077ed5dfa28b89f9b80b216c3" title=" " alt="" coords="549,56,695,83"/>
+<area shape="rect" id="node10" href="$classoptix_tri_geometry.html#affe05758e8564cce36ae371922eded5e" title=" " alt="" coords="527,1301,717,1328"/>
+<area shape="rect" id="node15" href="$classoptix_tri_geometry.html#a4ea47f07fef99a0f67742edcbc9c51db" title=" " alt="" coords="534,1172,710,1199"/>
+<area shape="rect" id="node16" href="$classva_basic_object.html#a08873bcc6cdc91521e86319c77e81453" title=" " alt="" coords="777,877,956,904"/>
+<area shape="rect" id="node17" href="$classva_basic_object.html#ad0e350d8b638c38ccf8a380a6ea75b82" title=" " alt="" coords="787,1172,946,1199"/>
+<area shape="rect" id="node20" href="$classva_auditory_material.html#a08d15b51cf3fb53e1a7d9877dc92180c" title=" " alt="" coords="556,510,688,551"/>
+<area shape="rect" id="node21" href="$classva_auditory_material.html#a59fd566e70f7892fc15c6b6fd80bd35a" title=" " alt="" coords="558,575,686,617"/>
+<area shape="rect" id="node22" href="$classva_auditory_material.html#ac9226d5880ff8b47d788fbfffd9b4088" title=" " alt="" coords="558,641,686,682"/>
+<area shape="rect" id="node23" href="$classva_auditory_material.html#abebe495b4fcd6189962b194352f39eef" title=" " alt="" coords="558,249,686,290"/>
+<area shape="rect" id="node25" href="$classva_auditory_material.html#a9eb66833d2fb771cfdb924c04cd99295" title=" " alt="" coords="553,445,691,486"/>
+<area shape="rect" id="node27" href="$classva_auditory_material.html#a90a1c22c9fe0dea686b57ed8377ec1e0" title=" " alt="" coords="558,183,686,225"/>
+<area shape="rect" id="node29" href="$classva_auditory_material.html#a8e56efb4fa650ea1967250601e66ad27" title=" " alt="" coords="558,379,686,421"/>
+<area shape="rect" id="node30" href="$classva_auditory_material.html#a9b860091c807eb66930578cfe4d108d6" title=" " alt="" coords="541,314,703,355"/>
+<area shape="rect" id="node24" href="$classva_auditory_material.html#a93255d97e588dbc548e6cca7480230b8" title=" " alt="" coords="791,253,942,294"/>
+<area shape="rect" id="node26" href="$classva_auditory_material.html#ad8c9d0d030a70117e7e071312ba7dee4" title=" " alt="" coords="781,445,953,486"/>
+<area shape="rect" id="node28" href="$classva_auditory_material.html#a1964615f76e4de6aac5db20b2ee10036" title=" " alt="" coords="785,187,948,229"/>
+<area shape="rect" id="node32" href="$classoptix_basic_actor.html#a1672183c77a641e56356644e8e40b869" title=" " alt="" coords="515,808,729,835"/>
+<area shape="rect" id="node33" href="$classoptix_basic_actor.html#afec1c4b08192e0c1209cfbd0f610e38f" title=" " alt="" coords="539,859,705,901"/>
+<area shape="rect" id="node34" href="$classoptix_basic_actor.html#ad89629fb4509f3b279cfd4df66efa7a8" title=" " alt="" coords="515,925,729,966"/>
+<area shape="rect" id="node36" href="$classoptix_tri_geometry.html#af66167f674d0301ff85d730e0bc93d0e" title=" " alt="" coords="539,990,705,1031"/>
+<area shape="rect" id="node37" href="$classoptix_geom_basic.html#ac5f07e06d607259ad5c4478caa1dff99" title=" " alt="" coords="533,1055,711,1097"/>
+</map>

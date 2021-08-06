@@ -1,0 +1,201 @@
+\doxysection{optix\+Basic\+Actor Class Reference}
+\label{classoptix_basic_actor}\index{optixBasicActor@{optixBasicActor}}
+
+
+basic abstract actor class  
+
+
+
+
+{\ttfamily \#include $<$optix\+Basic\+Actor.\+h$>$}
+
+
+
+Inheritance diagram for optix\+Basic\+Actor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classoptix_basic_actor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for optix\+Basic\+Actor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classoptix_basic_actor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ optix\+Basic\+Actor} ()
+\item 
+\textbf{ $\sim$optix\+Basic\+Actor} ()
+\item 
+virtual void \textbf{ Set\+Context} (optix\+::\+Context \&context)
+\item 
+void \textbf{ Add\+Mapper} (\textbf{ va\+Mapper} $\ast$map)
+\item 
+void \textbf{ Set\+Auditory\+Model} ()
+\item 
+void \textbf{ Set\+Optical\+Model} ()
+\item 
+void \textbf{ Update} ()
+\item 
+optix\+::\+Geometry\+Group \textbf{ Get\+Output} ()
+\item 
+void \textbf{ Set\+Time} (float time)
+\item 
+void \textbf{ Print\+Info} ()
+\item 
+optix\+::\+Acceleration \textbf{ Get\+Acceleration} ()
+\item 
+void \textbf{ Set\+Acceleration\+Type} (std\+::string type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Set\+Acceleration\+Properties} ()
+\item 
+virtual void \textbf{ Rebuild\+Accel} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ m\+\_\+builder}
+\item 
+optix\+::\+Geometry\+Group \textbf{ gg}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+basic abstract actor class 
+
+The class creates a basic Actor for Optix use. Architecture much inspired by V\+TK ({\texttt{ http\+://vtk.\+org}}) implementation 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classoptix_basic_actor_ae87cd94ffa0e5e54eeffadda0685810d}} 
+\index{optixBasicActor@{optixBasicActor}!optixBasicActor@{optixBasicActor}}
+\index{optixBasicActor@{optixBasicActor}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{optixBasicActor()}
+{\footnotesize\ttfamily optix\+Basic\+Actor\+::optix\+Basic\+Actor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_actor_a3faad33060cd23e9428ecb22b94335c3}} 
+\index{optixBasicActor@{optixBasicActor}!````~optixBasicActor@{$\sim$optixBasicActor}}
+\index{````~optixBasicActor@{$\sim$optixBasicActor}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{$\sim$optixBasicActor()}
+{\footnotesize\ttfamily optix\+Basic\+Actor\+::$\sim$optix\+Basic\+Actor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classoptix_basic_actor_a68ed9c6a2f966b8a42b71bb8f79ae46e}} 
+\index{optixBasicActor@{optixBasicActor}!AddMapper@{AddMapper}}
+\index{AddMapper@{AddMapper}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{AddMapper()}
+{\footnotesize\ttfamily void optix\+Basic\+Actor\+::\+Add\+Mapper (\begin{DoxyParamCaption}\item[{\textbf{ va\+Mapper} $\ast$}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_actor_a1672183c77a641e56356644e8e40b869}} 
+\index{optixBasicActor@{optixBasicActor}!GetAcceleration@{GetAcceleration}}
+\index{GetAcceleration@{GetAcceleration}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{GetAcceleration()}
+{\footnotesize\ttfamily optix\+::\+Acceleration optix\+Basic\+Actor\+::\+Get\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_actor_a420fe60c61514549698f48af1975988d}} 
+\index{optixBasicActor@{optixBasicActor}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{GetOutput()}
+{\footnotesize\ttfamily optix\+::\+Geometry\+Group optix\+Basic\+Actor\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_actor_a60dce9d929e75d12888b7081eda05932}} 
+\index{optixBasicActor@{optixBasicActor}!PrintInfo@{PrintInfo}}
+\index{PrintInfo@{PrintInfo}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{PrintInfo()}
+{\footnotesize\ttfamily void optix\+Basic\+Actor\+::\+Print\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_actor_afec1c4b08192e0c1209cfbd0f610e38f}} 
+\index{optixBasicActor@{optixBasicActor}!RebuildAccel@{RebuildAccel}}
+\index{RebuildAccel@{RebuildAccel}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{RebuildAccel()}
+{\footnotesize\ttfamily virtual void optix\+Basic\+Actor\+::\+Rebuild\+Accel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ va\+Actor} \doxyref{}{p.}{classva_actor_a4e1a3f029183ed3bc23fd2830bf5b465}.
+
+\mbox{\label{classoptix_basic_actor_ad89629fb4509f3b279cfd4df66efa7a8}} 
+\index{optixBasicActor@{optixBasicActor}!SetAccelerationProperties@{SetAccelerationProperties}}
+\index{SetAccelerationProperties@{SetAccelerationProperties}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{SetAccelerationProperties()}
+{\footnotesize\ttfamily virtual void optix\+Basic\+Actor\+::\+Set\+Acceleration\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ optix\+T\+R\+I\+Actor} \doxyref{}{p.}{classoptix_t_r_i_actor_a9776f69820937067fa4443cb9d3cf52f}.
+
+\mbox{\label{classoptix_basic_actor_a490fd8382bf7195beb018bf8ebdc1219}} 
+\index{optixBasicActor@{optixBasicActor}!SetAccelerationType@{SetAccelerationType}}
+\index{SetAccelerationType@{SetAccelerationType}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{SetAccelerationType()}
+{\footnotesize\ttfamily void optix\+Basic\+Actor\+::\+Set\+Acceleration\+Type (\begin{DoxyParamCaption}\item[{std\+::string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_actor_a3a8d9907a81c60fc4f426409e1290319}} 
+\index{optixBasicActor@{optixBasicActor}!SetAuditoryModel@{SetAuditoryModel}}
+\index{SetAuditoryModel@{SetAuditoryModel}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{SetAuditoryModel()}
+{\footnotesize\ttfamily void optix\+Basic\+Actor\+::\+Set\+Auditory\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_actor_a3380d4c2063c0901bf25a1ed05712a16}} 
+\index{optixBasicActor@{optixBasicActor}!SetContext@{SetContext}}
+\index{SetContext@{SetContext}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{SetContext()}
+{\footnotesize\ttfamily virtual void optix\+Basic\+Actor\+::\+Set\+Context (\begin{DoxyParamCaption}\item[{optix\+::\+Context \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ va\+Basic\+Object} \doxyref{}{p.}{classva_basic_object_a084579231006f44f03b6834e723316b6}.
+
+\mbox{\label{classoptix_basic_actor_a2e960559eb04faa182883f40e74dc56b}} 
+\index{optixBasicActor@{optixBasicActor}!SetOpticalModel@{SetOpticalModel}}
+\index{SetOpticalModel@{SetOpticalModel}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{SetOpticalModel()}
+{\footnotesize\ttfamily void optix\+Basic\+Actor\+::\+Set\+Optical\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_actor_aa9d430c0010dd47424b72c81a83309b1}} 
+\index{optixBasicActor@{optixBasicActor}!SetTime@{SetTime}}
+\index{SetTime@{SetTime}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{SetTime()}
+{\footnotesize\ttfamily void optix\+Basic\+Actor\+::\+Set\+Time (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_actor_afa46b76f029abca941b2d80c46422fef}} 
+\index{optixBasicActor@{optixBasicActor}!Update@{Update}}
+\index{Update@{Update}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily void optix\+Basic\+Actor\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classoptix_basic_actor_ab0d495a35ed45bc44f5f46f88695a526}} 
+\index{optixBasicActor@{optixBasicActor}!gg@{gg}}
+\index{gg@{gg}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{gg}
+{\footnotesize\ttfamily optix\+::\+Geometry\+Group optix\+Basic\+Actor\+::gg\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_actor_a832e6e9b8d3c0a7c36e1e58d4e18930a}} 
+\index{optixBasicActor@{optixBasicActor}!m\_builder@{m\_builder}}
+\index{m\_builder@{m\_builder}!optixBasicActor@{optixBasicActor}}
+\doxysubsubsection{m\_builder}
+{\footnotesize\ttfamily std\+::string optix\+Basic\+Actor\+::m\+\_\+builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ optix\+Basic\+Actor.\+h}\item 
+\textbf{ optix\+Basic\+Actor.\+cpp}\end{DoxyCompactItemize}

@@ -18,3 +18,6 @@ rtDeclareVariable(callT4, sdfPrim4, , );
 
 typedef rtCallableProgramId<float(float3, float3, float3, float3, float, float, float)> callT3;
 rtDeclareVariable(callT3, sdfPrim3, , );
+
+typedef rtCallableProgramId<float(float3, float3, float3, float3, float3, float, float)> callT5;
+rtDeclareVariable(callT5, sdfPrim5, , );

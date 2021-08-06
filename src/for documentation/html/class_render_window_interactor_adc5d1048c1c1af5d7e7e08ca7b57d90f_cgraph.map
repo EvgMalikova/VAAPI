@@ -1,0 +1,16 @@
+<map id="RenderWindowInteractor::guiSoundRenderingProc" name="RenderWindowInteractor::guiSoundRenderingProc">
+<area shape="rect" id="node1" title=" " alt="" coords="5,285,175,326"/>
+<area shape="rect" id="node2" href="$classva_basic_renderer.html#a728a51a54eca4be7e1a9f41ebbbcfba1" title=" " alt="" coords="249,66,423,107"/>
+<area shape="rect" id="node3" href="$classva_basic_renderer.html#a9d4ffe60c8af2bc3e68ad56a878119f1" title=" " alt="" coords="502,15,681,41"/>
+<area shape="rect" id="node4" href="$classva_basic_renderer.html#ab4bfbf785e833db18ea5a05d09cf1e0e" title=" " alt="" coords="497,131,685,173"/>
+<area shape="rect" id="node6" href="$classva_basic_renderer.html#a4b92084c59ed1df112303f128cd77b53" title=" " alt="" coords="223,183,449,209"/>
+<area shape="rect" id="node7" href="$class_g_l_f_w___window.html#a8285db983ad37a0c0c64e3a80fd93733" title=" " alt="" coords="239,233,433,260"/>
+<area shape="rect" id="node8" href="$class_basic_render_window_interactor.html#a8a2fdd5a330f1a78664a50977157a76e" title=" " alt="" coords="238,285,434,326"/>
+<area shape="rect" id="node9" href="$classva_basic_renderer.html#a29934d24ea69403e9232f25ba3db4b72" title=" " alt="" coords="227,350,445,391"/>
+<area shape="rect" id="node11" href="$classva_basic_renderer.html#aefeaf678e80e8a65e9cc831bb0a8daa5" title=" " alt="" coords="235,416,437,443"/>
+<area shape="rect" id="node12" href="$classoptix_basic_actor.html#a3a8d9907a81c60fc4f426409e1290319" title=" " alt="" coords="241,467,431,509"/>
+<area shape="rect" id="node13" href="$classva_basic_renderer.html#ab4ac023dd0557d46866554031f23237b" title=" " alt="" coords="247,533,425,560"/>
+<area shape="rect" id="node14" href="$classva_basic_renderer.html#ab45ca39532ea7f4830df1b7c5af3267a" title=" " alt="" coords="235,585,437,626"/>
+<area shape="rect" id="node5" href="$classoptix_basic_actor.html#a2e960559eb04faa182883f40e74dc56b" title=" " alt="" coords="500,66,683,107"/>
+<area shape="rect" id="node10" href="$classva_basic_object.html#a08873bcc6cdc91521e86319c77e81453" title=" " alt="" coords="502,357,681,384"/>
+</map>

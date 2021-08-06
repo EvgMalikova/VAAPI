@@ -1,0 +1,5 @@
+<map id="optixSDFMolBalls" name="optixSDFMolBalls">
+<area shape="rect" id="node1" title="Example class for simple molecular geometry." alt="" coords="9,155,135,181"/>
+<area shape="rect" id="node2" href="$classoptix_s_d_f_geometry.html" title="Abstract class for SDF Geometry. A basic class. All SDF geometry inherits it&#39;s functions." alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node3" href="$classoptix_object.html" title=" " alt="" coords="28,5,116,32"/>
+</map>

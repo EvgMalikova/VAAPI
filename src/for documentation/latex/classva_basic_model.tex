@@ -1,0 +1,201 @@
+\hypertarget{classva_basic_model}{}\doxysection{va\+Basic\+Model Class Reference}
+\label{classva_basic_model}\index{vaBasicModel@{vaBasicModel}}
+
+
+The class responsible for rendering auditory propertis.  
+
+
+
+
+{\ttfamily \#include $<$va\+Basic\+Model.\+h$>$}
+
+
+
+Inheritance diagram for va\+Basic\+Model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classva_basic_model__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classva_basic_model_a526d778026a7858c0967e976bb4a4542}{va\+Basic\+Model}} ()
+\item 
+\mbox{\hyperlink{classva_basic_model_a253c43d729c9b38c78012963ed46caf0}{$\sim$va\+Basic\+Model}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_model_a80796e5073c8ded7e73f3e6e4af71504}{Init}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_model_a527c4e4789be7edcdcca658a6ae27450}{Render}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_model_aacdca8b20e787a051ba3f07eb87d6f56}{Bind\+Buffer}} (optix\+::\+Context context)
+\item 
+virtual void \mbox{\hyperlink{classva_basic_model_ad5ff69a20c739b941ef58e48e6010353}{Update\+Buffer}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_model_afdedda8cfb876fc1c5c58e69b8923452}{Reshape}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classva_basic_model_ab08240ce0f89d8697ec7477e07f26250}{Set\+Dim}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classva_basic_model_a31b2d6767159abcb9efe6b47d624b214}{Set\+Buffer\+Size}} ()
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classva_basic_model_a8a0e4a85ad69a5054fa4a8cd38e88084}{Get\+Output}} ()
+\item 
+int \mbox{\hyperlink{classva_basic_model_a0ecfe31fafe00867dde418a850d61382}{Get\+Width}} ()
+\item 
+int \mbox{\hyperlink{classva_basic_model_a26c81e9b8d1e89da5b9174b2a4b21817}{Get\+Height}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_model_abb528fec7bbc5aaa4f09a9464d0da92b}{Set\+Interop}} (bool inter)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classva_basic_model_a4e29474d055005b20ccf5f4ff4b725d4}{m\+\_\+buffer\+Output}}
+\item 
+int \mbox{\hyperlink{classva_basic_model_a69e54c2e319fd16c596772e531341d5d}{m\+\_\+width}}
+\item 
+int \mbox{\hyperlink{classva_basic_model_a69c81252be23e03da2fae6d00df8d8ae}{m\+\_\+height}}
+\item 
+bool \mbox{\hyperlink{classva_basic_model_ae372b42348cf3c4dde5e4f3ef720708f}{m\+\_\+interop}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class responsible for rendering auditory propertis. 
+
+The class implements basic features, common for both optical and auditory models 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classva_basic_model_a526d778026a7858c0967e976bb4a4542}\label{classva_basic_model_a526d778026a7858c0967e976bb4a4542}} 
+\index{vaBasicModel@{vaBasicModel}!vaBasicModel@{vaBasicModel}}
+\index{vaBasicModel@{vaBasicModel}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{vaBasicModel()}{vaBasicModel()}}
+{\footnotesize\ttfamily va\+Basic\+Model\+::va\+Basic\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_model_a253c43d729c9b38c78012963ed46caf0}\label{classva_basic_model_a253c43d729c9b38c78012963ed46caf0}} 
+\index{vaBasicModel@{vaBasicModel}!````~vaBasicModel@{$\sim$vaBasicModel}}
+\index{````~vaBasicModel@{$\sim$vaBasicModel}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{$\sim$vaBasicModel()}{~vaBasicModel()}}
+{\footnotesize\ttfamily va\+Basic\+Model\+::$\sim$va\+Basic\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classva_basic_model_aacdca8b20e787a051ba3f07eb87d6f56}\label{classva_basic_model_aacdca8b20e787a051ba3f07eb87d6f56}} 
+\index{vaBasicModel@{vaBasicModel}!BindBuffer@{BindBuffer}}
+\index{BindBuffer@{BindBuffer}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{BindBuffer()}{BindBuffer()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Model\+::\+Bind\+Buffer (\begin{DoxyParamCaption}\item[{optix\+::\+Context}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptical_model_abe62f18aaeff4cd1fcac05c9f61abfcd}{optical\+Model}}, \mbox{\hyperlink{classauditory_model_a5ae3ffc945b89327e163354ed82d97da}{auditory\+Model}}, \mbox{\hyperlink{classoptical_model_ad4188a348f9c0b4d2354eef0d6f10b04}{optical\+Model}}, and \mbox{\hyperlink{classauditory_model_a707860c223ce72eb847038a3e81fcffb}{auditory\+Model}}.
+
+\mbox{\Hypertarget{classva_basic_model_a26c81e9b8d1e89da5b9174b2a4b21817}\label{classva_basic_model_a26c81e9b8d1e89da5b9174b2a4b21817}} 
+\index{vaBasicModel@{vaBasicModel}!GetHeight@{GetHeight}}
+\index{GetHeight@{GetHeight}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
+{\footnotesize\ttfamily int va\+Basic\+Model\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_model_a8a0e4a85ad69a5054fa4a8cd38e88084}\label{classva_basic_model_a8a0e4a85ad69a5054fa4a8cd38e88084}} 
+\index{vaBasicModel@{vaBasicModel}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily optix\+::\+Buffer va\+Basic\+Model\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_model_a0ecfe31fafe00867dde418a850d61382}\label{classva_basic_model_a0ecfe31fafe00867dde418a850d61382}} 
+\index{vaBasicModel@{vaBasicModel}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
+{\footnotesize\ttfamily int va\+Basic\+Model\+::\+Get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_model_a80796e5073c8ded7e73f3e6e4af71504}\label{classva_basic_model_a80796e5073c8ded7e73f3e6e4af71504}} 
+\index{vaBasicModel@{vaBasicModel}!Init@{Init}}
+\index{Init@{Init}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Model\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classauditory_model_a086406bf0497992f75ae1c6c127a5619}{auditory\+Model}}, and \mbox{\hyperlink{classoptical_model_aa30d6682e06cecfb05541d15ee4ce4e7}{optical\+Model}}.
+
+\mbox{\Hypertarget{classva_basic_model_a527c4e4789be7edcdcca658a6ae27450}\label{classva_basic_model_a527c4e4789be7edcdcca658a6ae27450}} 
+\index{vaBasicModel@{vaBasicModel}!Render@{Render}}
+\index{Render@{Render}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Model\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptical_model_ab2b930feaaead24c7640519f64ed3c7f}{optical\+Model}}, \mbox{\hyperlink{classauditory_model_a7da67e1b4fce2b78fbffabce6aee25d2}{auditory\+Model}}, \mbox{\hyperlink{classoptical_model_ab2b930feaaead24c7640519f64ed3c7f}{optical\+Model}}, and \mbox{\hyperlink{classauditory_model_a2aa470ad66857b8154ce7fbebed21f13}{auditory\+Model}}.
+
+\mbox{\Hypertarget{classva_basic_model_afdedda8cfb876fc1c5c58e69b8923452}\label{classva_basic_model_afdedda8cfb876fc1c5c58e69b8923452}} 
+\index{vaBasicModel@{vaBasicModel}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{Reshape()}{Reshape()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Model\+::\+Reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptical_model_ac6b4dd1076034bd973d8cbd05383bd71}{optical\+Model}}, \mbox{\hyperlink{classauditory_model_af4dc551e9abceb3079e21bfdc028d84d}{auditory\+Model}}, \mbox{\hyperlink{classoptical_model_a0860dc50c13a5fad3062aad4e0b2582d}{optical\+Model}}, and \mbox{\hyperlink{classauditory_model_a39d4000d37b928db7fb765ad40265cbe}{auditory\+Model}}.
+
+\mbox{\Hypertarget{classva_basic_model_a31b2d6767159abcb9efe6b47d624b214}\label{classva_basic_model_a31b2d6767159abcb9efe6b47d624b214}} 
+\index{vaBasicModel@{vaBasicModel}!SetBufferSize@{SetBufferSize}}
+\index{SetBufferSize@{SetBufferSize}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{SetBufferSize()}{SetBufferSize()}}
+{\footnotesize\ttfamily void va\+Basic\+Model\+::\+Set\+Buffer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_model_ab08240ce0f89d8697ec7477e07f26250}\label{classva_basic_model_ab08240ce0f89d8697ec7477e07f26250}} 
+\index{vaBasicModel@{vaBasicModel}!SetDim@{SetDim}}
+\index{SetDim@{SetDim}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{SetDim()}{SetDim()}}
+{\footnotesize\ttfamily void va\+Basic\+Model\+::\+Set\+Dim (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_model_abb528fec7bbc5aaa4f09a9464d0da92b}\label{classva_basic_model_abb528fec7bbc5aaa4f09a9464d0da92b}} 
+\index{vaBasicModel@{vaBasicModel}!SetInterop@{SetInterop}}
+\index{SetInterop@{SetInterop}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{SetInterop()}{SetInterop()}}
+{\footnotesize\ttfamily void va\+Basic\+Model\+::\+Set\+Interop (\begin{DoxyParamCaption}\item[{bool}]{inter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_model_ad5ff69a20c739b941ef58e48e6010353}\label{classva_basic_model_ad5ff69a20c739b941ef58e48e6010353}} 
+\index{vaBasicModel@{vaBasicModel}!UpdateBuffer@{UpdateBuffer}}
+\index{UpdateBuffer@{UpdateBuffer}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{UpdateBuffer()}{UpdateBuffer()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Model\+::\+Update\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classauditory_model_a890b44708f3f7808c6b12ee1a7ca0b8c}{auditory\+Model}}, and \mbox{\hyperlink{classoptical_model_a1d7c939d8d66801a56f15ae93fbd86c8}{optical\+Model}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classva_basic_model_a4e29474d055005b20ccf5f4ff4b725d4}\label{classva_basic_model_a4e29474d055005b20ccf5f4ff4b725d4}} 
+\index{vaBasicModel@{vaBasicModel}!m\_bufferOutput@{m\_bufferOutput}}
+\index{m\_bufferOutput@{m\_bufferOutput}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{m\_bufferOutput}{m\_bufferOutput}}
+{\footnotesize\ttfamily optix\+::\+Buffer va\+Basic\+Model\+::m\+\_\+buffer\+Output\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classva_basic_model_a69c81252be23e03da2fae6d00df8d8ae}\label{classva_basic_model_a69c81252be23e03da2fae6d00df8d8ae}} 
+\index{vaBasicModel@{vaBasicModel}!m\_height@{m\_height}}
+\index{m\_height@{m\_height}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{m\_height}{m\_height}}
+{\footnotesize\ttfamily int va\+Basic\+Model\+::m\+\_\+height\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classva_basic_model_ae372b42348cf3c4dde5e4f3ef720708f}\label{classva_basic_model_ae372b42348cf3c4dde5e4f3ef720708f}} 
+\index{vaBasicModel@{vaBasicModel}!m\_interop@{m\_interop}}
+\index{m\_interop@{m\_interop}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{m\_interop}{m\_interop}}
+{\footnotesize\ttfamily bool va\+Basic\+Model\+::m\+\_\+interop\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classva_basic_model_a69e54c2e319fd16c596772e531341d5d}\label{classva_basic_model_a69e54c2e319fd16c596772e531341d5d}} 
+\index{vaBasicModel@{vaBasicModel}!m\_width@{m\_width}}
+\index{m\_width@{m\_width}!vaBasicModel@{vaBasicModel}}
+\doxysubsubsection{\texorpdfstring{m\_width}{m\_width}}
+{\footnotesize\ttfamily int va\+Basic\+Model\+::m\+\_\+width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/src/\mbox{\hyperlink{va_basic_model_8h}{va\+Basic\+Model.\+h}}\end{DoxyCompactItemize}

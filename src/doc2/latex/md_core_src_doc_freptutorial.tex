@@ -1,0 +1,271 @@
+This tutorial demonstrates basics of geometry creation according to \href{http://hyperfun.org/wiki/doku.php?id=frep:what}{\texttt{ F\+Rep modelling approach}}. At the same time tutorial demonstrates the basics of A\+PI use and main concept that is much simillar to \href{http://vtk.org}{\texttt{ Visualisation Toolkit}}. For similarities and differences with V\+TK see \mbox{\hyperlink{vtkstyle_8md}{Main logic and similarities with V\+TK A\+PI}}\hypertarget{md_core_src_doc_freptutorial_autotoc_md5}{}\doxysection{F\+Rep primitive creation and rendering}\label{md_core_src_doc_freptutorial_autotoc_md5}
+Below is simple program, creating S\+DF box primitive. Simillar to V\+TK A\+PI, the Camera, Renderer, G\+L\+FW Window and Interactor to process interactive manipulations with scene are created. For syntacsis comparison with simple V\+TK primitive creation look \href{https://vtk.org/Wiki/VTK/Examples/Cxx/GeometricObjects/Cylinder}{\texttt{ wiki}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "vaWindow.h"}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "sdfPrimitives.h"}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keywordtype}{int}  windowWidth  = 512;}
+\DoxyCodeLine{  \textcolor{keywordtype}{int}  windowHeight = 512;}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  \mbox{\hyperlink{class_pinhole_camera}{PinholeCamera}} pinholeCamera; \textcolor{comment}{//creates basic camera}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  contextManager m;}
+\DoxyCodeLine{  m.Update();\textcolor{comment}{//creates context}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  vaRenderer ren;}
+\DoxyCodeLine{  ren.SetValid(m.GetValid());}
+\DoxyCodeLine{  ren.SetContext(m.GetOutput());\textcolor{comment}{//m returns the context}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{  ren.SetOpticalDims(windowWidth, windowWidth);}
+\DoxyCodeLine{  ren.SetCamera(\&pinholeCamera);}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{//set not dynamic}}
+\DoxyCodeLine{  ren.SetDynamic(\textcolor{keyword}{false});}
+\DoxyCodeLine{  ren.SetAuditory(\textcolor{keyword}{false});}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ }
+\DoxyCodeLine{  \textcolor{comment}{//window procedure}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  vaWindow optixWindowProc; }
+\DoxyCodeLine{  }
+\DoxyCodeLine{}
+\DoxyCodeLine{  optixWindowProc.SetDim(windowWidth, windowHeight);}
+\DoxyCodeLine{  optixWindowProc.SetRenderer(\&ren);}
+\DoxyCodeLine{  optixWindowProc.SetContext(m.GetOutput()); }
+\DoxyCodeLine{  optixWindowProc.SetCamera(\&pinholeCamera);}
+\DoxyCodeLine{}
+\DoxyCodeLine{  vaRenderWindowInteractor iren; \textcolor{comment}{//TODO always check that basic still works}}
+\DoxyCodeLine{  iren.SetWindow(\&optixWindowProc);}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  std::cout << \textcolor{stringliteral}{"DONE WITH WINDOW"} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (iren.SetUp()) \textcolor{comment}{//update of WindowProc is successful, we can start scene creation with predefined rendering parameters}}
+\DoxyCodeLine{  \{}
+\DoxyCodeLine{      std::cout << \textcolor{stringliteral}{"START MAIN LOOP"} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{      \textcolor{comment}{//Scene creation}}
+\DoxyCodeLine{      \textcolor{keywordflow}{try}}
+\DoxyCodeLine{      \{}
+\DoxyCodeLine{          }
+\DoxyCodeLine{}
+\DoxyCodeLine{          }
+\DoxyCodeLine{          sdfBox sdf;}
+\DoxyCodeLine{          sdf.SetContext(m.GetOutput());}
+\DoxyCodeLine{          sdf.SetCenter1(optix::make\_float3(0));}
+\DoxyCodeLine{          sdf.SetDims(optix::make\_float3(0.3,1.0,3.0));}
+\DoxyCodeLine{          sdf.Update();}
+\DoxyCodeLine{          std::cout << \textcolor{stringliteral}{"BOX created"} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{          vaBasicMaterial mSdf;}
+\DoxyCodeLine{          mSdf.SetContext(m.GetOutput());}
+\DoxyCodeLine{          mSdf.Update();}
+\DoxyCodeLine{          std::cout << \textcolor{stringliteral}{"MATERIAL created"} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{          \mbox{\hyperlink{classva_mapper}{vaMapper}} map21;}
+\DoxyCodeLine{          map21.\mbox{\hyperlink{classva_basic_object_a084579231006f44f03b6834e723316b6}{SetContext}}(m.GetOutput());}
+\DoxyCodeLine{          map21.\mbox{\hyperlink{classva_mapper_a778f09202a3f15a52170f3ad433612f8}{SetInput}}(sdf.GetOutput());}
+\DoxyCodeLine{          map21.\mbox{\hyperlink{classva_mapper_aea3ef068acdb6b1b86f7b5ff8b8e38e2}{AddMaterial}}(mSdf.GetOutput(), mSdf.GetType());}
+\DoxyCodeLine{          map21.\mbox{\hyperlink{classva_mapper_a840064e5c0c1af154d46cdd9ec4f19ca}{Update}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{          \mbox{\hyperlink{classva_actor}{vaActor}} acSdf1;}
+\DoxyCodeLine{          acSdf1.\mbox{\hyperlink{classva_basic_actor_af3c54b025cbceb8e1ffffcf8b7b4327b}{SetContext}}(m.GetOutput());}
+\DoxyCodeLine{          acSdf1.\mbox{\hyperlink{classva_basic_actor_a6fc2fc28aa7585768cf3b083224b0c3e}{AddMapper}}(\&map21);}
+\DoxyCodeLine{          acSdf1.\mbox{\hyperlink{classva_basic_actor_aaab78113ac80441c1cc774f187b1b385}{Update}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{          ren.AddActor(\&acSdf1);}
+\DoxyCodeLine{      \}}
+\DoxyCodeLine{      \textcolor{keywordflow}{catch} (optix::Exception\& e)}
+\DoxyCodeLine{      \{}
+\DoxyCodeLine{          std::cerr << e.getErrorString() << std::endl;}
+\DoxyCodeLine{      \}}
+\DoxyCodeLine{      std::cout << \textcolor{stringliteral}{"DONE WITH SCENE"} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{      \textcolor{comment}{//Main loop}}
+\DoxyCodeLine{      iren.Start();}
+\DoxyCodeLine{      std::cout << \textcolor{stringliteral}{"MAIN LOOP STARTED"} << std::endl;}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ }
+\DoxyCodeLine{}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+The output of the program is\+:
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{box.png}
+\doxyfigcaption{Rendered S\+DF box}
+\end{DoxyImage}
+  
+
+A more complex example is below\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "vaWindow.h"}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "sdfPrimitives.h"}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "sdfOperations.h"}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keywordtype}{int}  windowWidth  = 512;}
+\DoxyCodeLine{  \textcolor{keywordtype}{int}  windowHeight = 512;}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  \mbox{\hyperlink{class_pinhole_camera}{PinholeCamera}} pinholeCamera; \textcolor{comment}{//creates basic camera}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  contextManager m;}
+\DoxyCodeLine{  m.Update();\textcolor{comment}{//creates context}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  vaRenderer ren;}
+\DoxyCodeLine{  ren.SetValid(m.GetValid());}
+\DoxyCodeLine{  ren.SetContext(m.GetOutput());}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{  ren.SetOpticalDims(windowWidth, windowWidth);}
+\DoxyCodeLine{  ren.SetCamera(\&pinholeCamera);}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{//set not dynamic}}
+\DoxyCodeLine{  ren.SetDynamic(\textcolor{keyword}{false});}
+\DoxyCodeLine{  ren.SetAuditory(\textcolor{keyword}{false});}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ }
+\DoxyCodeLine{  \textcolor{comment}{//window procedure}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  vaWindow optixWindowProc; }
+\DoxyCodeLine{  }
+\DoxyCodeLine{}
+\DoxyCodeLine{  optixWindowProc.SetDim(windowWidth, windowHeight);}
+\DoxyCodeLine{  optixWindowProc.SetRenderer(\&ren);}
+\DoxyCodeLine{  optixWindowProc.SetContext(m.GetOutput()); \textcolor{comment}{//returns context}}
+\DoxyCodeLine{  optixWindowProc.SetCamera(\&pinholeCamera);}
+\DoxyCodeLine{}
+\DoxyCodeLine{  vaRenderWindowInteractor iren; \textcolor{comment}{//TODO always check that basic still works}}
+\DoxyCodeLine{  iren.SetWindow(\&optixWindowProc);}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  std::cout << \textcolor{stringliteral}{"DONE WITH WINDOW"} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (iren.SetUp()) \textcolor{comment}{//update of WindowProc}}
+\DoxyCodeLine{  \{}
+\DoxyCodeLine{      std::cout << \textcolor{stringliteral}{"START MAIN LOOP"} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{      \textcolor{comment}{//Scene creation}}
+\DoxyCodeLine{      \textcolor{keywordflow}{try}}
+\DoxyCodeLine{      \{}
+\DoxyCodeLine{          }
+\DoxyCodeLine{}
+\DoxyCodeLine{          }
+\DoxyCodeLine{          sdfBox sdf;}
+\DoxyCodeLine{          sdf.SetContext(m.GetOutput());}
+\DoxyCodeLine{          sdf.SetCenter1(optix::make\_float3(1.0));}
+\DoxyCodeLine{          sdf.SetDims(optix::make\_float3(0.3));}
+\DoxyCodeLine{          sdf.Update();}
+\DoxyCodeLine{          \textcolor{keyword}{const} \textcolor{keywordtype}{int} nums = 10;}
+\DoxyCodeLine{          sdfRoundingOp round[nums];}
+\DoxyCodeLine{          round[0].SetContext(m.GetOutput());}
+\DoxyCodeLine{          round[0].AddOpperand(\&sdf);}
+\DoxyCodeLine{          round[0].SetKoeff(0.01);}
+\DoxyCodeLine{          round[0].Update();}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{          \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < nums; i++)}
+\DoxyCodeLine{          \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{              round[i].SetContext(m.GetOutput());}
+\DoxyCodeLine{}
+\DoxyCodeLine{              round[i].AddOpperand(round[i -\/ 1].GetOutputSdfObject());\textcolor{comment}{// \&sdf);}}
+\DoxyCodeLine{              round[i].SetKoeff(0.01*i);}
+\DoxyCodeLine{              round[i].Update();}
+\DoxyCodeLine{}
+\DoxyCodeLine{          \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{          sdfTorus sdfT;}
+\DoxyCodeLine{          sdfT.SetContext(m.GetOutput());}
+\DoxyCodeLine{          sdfT.SetCenter1(optix::make\_float3(0.0));}
+\DoxyCodeLine{          sdfT.SetRadius1(optix::make\_float2(0.4, 0.1));}
+\DoxyCodeLine{          sdfT.Update();}
+\DoxyCodeLine{}
+\DoxyCodeLine{          \mbox{\hyperlink{class_s_d_f_elongate_op}{SDFElongateOp}} el;}
+\DoxyCodeLine{}
+\DoxyCodeLine{          el.\mbox{\hyperlink{classoptix_s_d_f_unary_op_ad912c0268350d6870cade47a0c054a81}{SetContext}}(m.GetOutput());}
+\DoxyCodeLine{          el.\mbox{\hyperlink{classoptix_s_d_f_unary_op_a60272b7739b4f4af8588f317ac41c6f2}{AddOpperand}}(\&sdfT);}
+\DoxyCodeLine{          el.\mbox{\hyperlink{class_s_d_f_elongate_op_a847288e63730d3894ed8df8ca2d6920f}{SetHKoeff}}(optix::make\_float3(0.0, 1.0, 2.1));}
+\DoxyCodeLine{          el.\mbox{\hyperlink{classoptix_s_d_f_unary_op_aef9cb7ca674d1b323367469988284782}{Update}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{          sdfBlendUnionOp opBlend;}
+\DoxyCodeLine{          opBlend.SetContext(m.GetOutput());}
+\DoxyCodeLine{          opBlend.AddOpperand1(\&sdf);}
+\DoxyCodeLine{          opBlend.AddOpperand2(el.\mbox{\hyperlink{classoptix_s_d_f_unary_op_a9ccbc8cec33954d5748f4924bcdbba1e}{GetOutputSdfObject}}());}
+\DoxyCodeLine{          opBlend.SetKoeff(0.3);}
+\DoxyCodeLine{          opBlend.Update();}
+\DoxyCodeLine{          }
+\DoxyCodeLine{}
+\DoxyCodeLine{          vaBasicMaterial mSdf;}
+\DoxyCodeLine{          mSdf.SetContext(m.GetOutput());}
+\DoxyCodeLine{          mSdf.Update();}
+\DoxyCodeLine{}
+\DoxyCodeLine{          \mbox{\hyperlink{classva_mapper}{vaMapper}} map21;}
+\DoxyCodeLine{          map21.\mbox{\hyperlink{classva_basic_object_a084579231006f44f03b6834e723316b6}{SetContext}}(m.GetOutput());}
+\DoxyCodeLine{          map21.\mbox{\hyperlink{classva_mapper_a778f09202a3f15a52170f3ad433612f8}{SetInput}}(sdf.GetOutput());}
+\DoxyCodeLine{          map21.\mbox{\hyperlink{classva_mapper_aea3ef068acdb6b1b86f7b5ff8b8e38e2}{AddMaterial}}(mSdf.GetOutput(), mSdf.GetType());}
+\DoxyCodeLine{          map21.\mbox{\hyperlink{classva_mapper_a840064e5c0c1af154d46cdd9ec4f19ca}{Update}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{          \mbox{\hyperlink{classva_actor}{vaActor}} acSdf1;}
+\DoxyCodeLine{          acSdf1.\mbox{\hyperlink{classva_basic_actor_af3c54b025cbceb8e1ffffcf8b7b4327b}{SetContext}}(m.GetOutput());}
+\DoxyCodeLine{          acSdf1.\mbox{\hyperlink{classva_basic_actor_a6fc2fc28aa7585768cf3b083224b0c3e}{AddMapper}}(\&map21);}
+\DoxyCodeLine{          acSdf1.\mbox{\hyperlink{classva_basic_actor_aaab78113ac80441c1cc774f187b1b385}{Update}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{          ren.AddActor(\&acSdf1);}
+\DoxyCodeLine{      \}}
+\DoxyCodeLine{      \textcolor{keywordflow}{catch} (optix::Exception\& e)}
+\DoxyCodeLine{      \{}
+\DoxyCodeLine{          std::cerr << e.getErrorString() << std::endl;}
+\DoxyCodeLine{      \}}
+\DoxyCodeLine{      std::cout << \textcolor{stringliteral}{"DONE WITH SCENE"} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{      \textcolor{comment}{//Main loop}}
+\DoxyCodeLine{      iren.Start();}
+\DoxyCodeLine{      std::cout << \textcolor{stringliteral}{"MAIN LOOP STARTED"} << std::endl;}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ }
+\DoxyCodeLine{}
+\DoxyCodeLine{  }
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+The output of the program is \+:
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{blend.png}
+\doxyfigcaption{Rendered F\+Rep modelled geometry}
+\end{DoxyImage}
+   

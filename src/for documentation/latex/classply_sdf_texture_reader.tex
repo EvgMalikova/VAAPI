@@ -1,0 +1,130 @@
+\hypertarget{classply_sdf_texture_reader}{}\doxysection{ply\+Sdf\+Texture\+Reader$<$ T $>$ Class Template Reference}
+\label{classply_sdf_texture_reader}\index{plySdfTextureReader$<$ T $>$@{plySdfTextureReader$<$ T $>$}}
+
+
+Basic class for reading Mesh from file and returning an S\+D\+Ftexture from file operates itk\+::\+Mesh\+File\+Reader$<$\+Mesh\+Type$>$ where Mesh\+Type = itk\+::\+Mesh$<$\+T, 3$>$;.  
+
+
+
+
+{\ttfamily \#include $<$ply\+Sdf\+Texture\+Reader.\+h$>$}
+
+
+
+Inheritance diagram for ply\+Sdf\+Texture\+Reader$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classply_sdf_texture_reader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ply\+Sdf\+Texture\+Reader$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classply_sdf_texture_reader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classply_sdf_texture_reader_a6b722aac8f1932f141902feef90d90d0}{ply\+Sdf\+Texture\+Reader}} ()
+\item 
+\mbox{\hyperlink{classply_sdf_texture_reader_aba6bc8b4d0407c00cde359c67cb58969}{$\sim$ply\+Sdf\+Texture\+Reader}} ()
+\item 
+\mbox{\hyperlink{structsdf_params}{sdf\+Params}} $\ast$ \mbox{\hyperlink{classply_sdf_texture_reader_a30872ad1657d803f90c903579a095e83}{Get\+Param}} ()
+\item 
+void \mbox{\hyperlink{classply_sdf_texture_reader_a36dd70fac92c668fd06b4edc2aad3b26}{Set\+Threshold}} (T tr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classply_sdf_texture_reader_a178d9d3ba55fb5202179f4fb57ba5869}{Preprocess\+Data}} (typename \mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{tex\+Reader\+::\+Output\+Image\+Type}} $\ast$fl\+\_\+image)
+\item 
+virtual void \mbox{\hyperlink{classply_sdf_texture_reader_a11c799352b25ca961c678edb2a90ecc9}{Read\+Image}} (\mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{Output\+Image\+Type}} $\ast$fl\+\_\+image, const char $\ast$\mbox{\hyperlink{volume_render__copy__comment_8cpp_ae80f820219e45772366a2a68de6a54c4}{filename}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class ply\+Sdf\+Texture\+Reader$<$ T $>$}
+
+Basic class for reading Mesh from file and returning an S\+D\+Ftexture from file operates itk\+::\+Mesh\+File\+Reader$<$\+Mesh\+Type$>$ where Mesh\+Type = itk\+::\+Mesh$<$\+T, 3$>$;. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classply_sdf_texture_reader_a6b722aac8f1932f141902feef90d90d0}\label{classply_sdf_texture_reader_a6b722aac8f1932f141902feef90d90d0}} 
+\index{plySdfTextureReader$<$ T $>$@{plySdfTextureReader$<$ T $>$}!plySdfTextureReader@{plySdfTextureReader}}
+\index{plySdfTextureReader@{plySdfTextureReader}!plySdfTextureReader$<$ T $>$@{plySdfTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{plySdfTextureReader()}{plySdfTextureReader()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{classply_sdf_texture_reader}{ply\+Sdf\+Texture\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classply_sdf_texture_reader}{ply\+Sdf\+Texture\+Reader}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classply_sdf_texture_reader_aba6bc8b4d0407c00cde359c67cb58969}\label{classply_sdf_texture_reader_aba6bc8b4d0407c00cde359c67cb58969}} 
+\index{plySdfTextureReader$<$ T $>$@{plySdfTextureReader$<$ T $>$}!````~plySdfTextureReader@{$\sim$plySdfTextureReader}}
+\index{````~plySdfTextureReader@{$\sim$plySdfTextureReader}!plySdfTextureReader$<$ T $>$@{plySdfTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$plySdfTextureReader()}{~plySdfTextureReader()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{classply_sdf_texture_reader}{ply\+Sdf\+Texture\+Reader}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classply_sdf_texture_reader}{ply\+Sdf\+Texture\+Reader}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classply_sdf_texture_reader_a30872ad1657d803f90c903579a095e83}\label{classply_sdf_texture_reader_a30872ad1657d803f90c903579a095e83}} 
+\index{plySdfTextureReader$<$ T $>$@{plySdfTextureReader$<$ T $>$}!GetParam@{GetParam}}
+\index{GetParam@{GetParam}!plySdfTextureReader$<$ T $>$@{plySdfTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetParam()}{GetParam()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{structsdf_params}{sdf\+Params}}$\ast$ \mbox{\hyperlink{classply_sdf_texture_reader}{ply\+Sdf\+Texture\+Reader}}$<$ T $>$\+::Get\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classply_sdf_texture_reader_a30872ad1657d803f90c903579a095e83_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classply_sdf_texture_reader_a178d9d3ba55fb5202179f4fb57ba5869}\label{classply_sdf_texture_reader_a178d9d3ba55fb5202179f4fb57ba5869}} 
+\index{plySdfTextureReader$<$ T $>$@{plySdfTextureReader$<$ T $>$}!PreprocessData@{PreprocessData}}
+\index{PreprocessData@{PreprocessData}!plySdfTextureReader$<$ T $>$@{plySdfTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PreprocessData()}{PreprocessData()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classply_sdf_texture_reader}{ply\+Sdf\+Texture\+Reader}}$<$ T $>$\+::Preprocess\+Data (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{tex\+Reader\+::\+Output\+Image\+Type}} $\ast$}]{fl\+\_\+image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classtex_reader_afc6df76ef4e33e60d75a63bea9686b37}{tex\+Reader$<$ T $>$}}.
+
+\mbox{\Hypertarget{classply_sdf_texture_reader_a11c799352b25ca961c678edb2a90ecc9}\label{classply_sdf_texture_reader_a11c799352b25ca961c678edb2a90ecc9}} 
+\index{plySdfTextureReader$<$ T $>$@{plySdfTextureReader$<$ T $>$}!ReadImage@{ReadImage}}
+\index{ReadImage@{ReadImage}!plySdfTextureReader$<$ T $>$@{plySdfTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ReadImage()}{ReadImage()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classply_sdf_texture_reader}{ply\+Sdf\+Texture\+Reader}}$<$ T $>$\+::Read\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{Output\+Image\+Type}} $\ast$}]{fl\+\_\+image,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classtex_reader_a91154115283d52a5822d78353e68661e}{tex\+Reader$<$ T $>$}}.
+
+\mbox{\Hypertarget{classply_sdf_texture_reader_a36dd70fac92c668fd06b4edc2aad3b26}\label{classply_sdf_texture_reader_a36dd70fac92c668fd06b4edc2aad3b26}} 
+\index{plySdfTextureReader$<$ T $>$@{plySdfTextureReader$<$ T $>$}!SetThreshold@{SetThreshold}}
+\index{SetThreshold@{SetThreshold}!plySdfTextureReader$<$ T $>$@{plySdfTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetThreshold()}{SetThreshold()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \mbox{\hyperlink{classply_sdf_texture_reader}{ply\+Sdf\+Texture\+Reader}}$<$ T $>$\+::Set\+Threshold (\begin{DoxyParamCaption}\item[{T}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classply_sdf_texture_reader_a36dd70fac92c668fd06b4edc2aad3b26_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+frep/src/\mbox{\hyperlink{ply_sdf_texture_reader_8h}{ply\+Sdf\+Texture\+Reader.\+h}}\item 
+frep/src/\mbox{\hyperlink{ply_sdf_texture_reader_8hpp}{ply\+Sdf\+Texture\+Reader.\+hpp}}\end{DoxyCompactItemize}

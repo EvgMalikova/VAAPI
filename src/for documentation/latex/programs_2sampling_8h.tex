@@ -1,0 +1,61 @@
+\hypertarget{programs_2sampling_8h}{}\doxysection{programs/sampling.h File Reference}
+\label{programs_2sampling_8h}\index{programs/sampling.h@{programs/sampling.h}}
+{\ttfamily \#include \char`\"{}vec.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}D\+Rand48.\+h\char`\"{}}\newline
+Include dependency graph for sampling.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{programs_2sampling_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{programs_2sampling_8h_a9ffc1bbaf6e227b245934fa95ee2a7ab}{R\+A\+N\+D\+V\+E\+C3F}}~\mbox{\hyperlink{structvec3f}{vec3f}}(rnd(),rnd(),rnd())
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \mbox{\hyperlink{programs_2sampling_8h_ac9184e55e3ff32ddf0c1035aea4e21ae}{random\+\_\+in\+\_\+unit\+\_\+disk}} (\mbox{\hyperlink{struct_d_rand48}{D\+Rand48}} \&local\+\_\+rand\+\_\+state)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \mbox{\hyperlink{programs_2sampling_8h_ac5ed6374fa0a4bc36ceeca3220398dd7}{random\+\_\+in\+\_\+unit\+\_\+sphere}} (\mbox{\hyperlink{struct_d_rand48}{D\+Rand48}} \&rnd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{programs_2sampling_8h_a9ffc1bbaf6e227b245934fa95ee2a7ab}\label{programs_2sampling_8h_a9ffc1bbaf6e227b245934fa95ee2a7ab}} 
+\index{sampling.h@{sampling.h}!RANDVEC3F@{RANDVEC3F}}
+\index{RANDVEC3F@{RANDVEC3F}!sampling.h@{sampling.h}}
+\doxysubsubsection{\texorpdfstring{RANDVEC3F}{RANDVEC3F}}
+{\footnotesize\ttfamily \#define R\+A\+N\+D\+V\+E\+C3F~\mbox{\hyperlink{structvec3f}{vec3f}}(rnd(),rnd(),rnd())}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{programs_2sampling_8h_ac9184e55e3ff32ddf0c1035aea4e21ae}\label{programs_2sampling_8h_ac9184e55e3ff32ddf0c1035aea4e21ae}} 
+\index{sampling.h@{sampling.h}!random\_in\_unit\_disk@{random\_in\_unit\_disk}}
+\index{random\_in\_unit\_disk@{random\_in\_unit\_disk}!sampling.h@{sampling.h}}
+\doxysubsubsection{\texorpdfstring{random\_in\_unit\_disk()}{random\_in\_unit\_disk()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} random\+\_\+in\+\_\+unit\+\_\+disk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_rand48}{D\+Rand48}} \&}]{local\+\_\+rand\+\_\+state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{programs_2sampling_8h_ac9184e55e3ff32ddf0c1035aea4e21ae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{programs_2sampling_8h_ac5ed6374fa0a4bc36ceeca3220398dd7}\label{programs_2sampling_8h_ac5ed6374fa0a4bc36ceeca3220398dd7}} 
+\index{sampling.h@{sampling.h}!random\_in\_unit\_sphere@{random\_in\_unit\_sphere}}
+\index{random\_in\_unit\_sphere@{random\_in\_unit\_sphere}!sampling.h@{sampling.h}}
+\doxysubsubsection{\texorpdfstring{random\_in\_unit\_sphere()}{random\_in\_unit\_sphere()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} random\+\_\+in\+\_\+unit\+\_\+sphere (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_rand48}{D\+Rand48}} \&}]{rnd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{programs_2sampling_8h_ac5ed6374fa0a4bc36ceeca3220398dd7_cgraph}
+\end{center}
+\end{figure}

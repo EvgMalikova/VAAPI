@@ -1,0 +1,636 @@
+\hypertarget{classoptix_s_d_f_geometry}{}\doxysection{optix\+S\+D\+F\+Geometry Class Reference}
+\label{classoptix_s_d_f_geometry}\index{optixSDFGeometry@{optixSDFGeometry}}
+
+
+Abstract class for S\+DF Geometry. A basic class. All S\+DF geometry inherits it\textquotesingle{}s functions.  
+
+
+
+
+{\ttfamily \#include $<$optix\+S\+D\+F\+Geometry.\+h$>$}
+
+
+
+Inheritance diagram for optix\+S\+D\+F\+Geometry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for optix\+S\+D\+F\+Geometry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classoptix_s_d_f_geometry__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoptix_s_d_f_geometry_a5b32867ead4a5d51fa8e6562ec329e95}{optix\+S\+D\+F\+Geometry}} ()
+\item 
+\mbox{\hyperlink{classoptix_s_d_f_geometry_aeee5ce3520d6759c19b8cfd182b72f0d}{$\sim$optix\+S\+D\+F\+Geometry}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_geometry_a63249e61355407ec0d41d59d05e1838c}{Set\+Context}} (optix\+::\+Context \&context)
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_geometry_af866243d89ffb3ed211d8e8408ee859b}{Update}} ()
+\item 
+virtual optix\+::\+Geometry \mbox{\hyperlink{classoptix_s_d_f_geometry_a8e7e0dc61bfa442a258725473c2fbc28}{Get\+Output}} ()
+\item 
+virtual \mbox{\hyperlink{structsdf_geo}{sdf\+Geo}} $\ast$ \mbox{\hyperlink{classoptix_s_d_f_geometry_a9005fe019545d2e93b76d6a84fa8e8bc}{Get\+Output\+Desc}} ()
+\item 
+std\+::string \mbox{\hyperlink{classoptix_s_d_f_geometry_a3e7ee49633be7cd4714b5509eed9f8df}{Get\+Bounding\+Box\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classoptix_s_d_f_geometry_ab4ee04b0ea47abe7508d1443ac539d5f}{Get\+Intersection\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classoptix_s_d_f_geometry_a6a8e8fa75194a3b0e81e76188e6b1b4f}{Get\+Callable\+Prog\+Name}} ()
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_geometry_a49ba281b1fb2ba6c37e2faeb2358e88f}{Set\+Bounding\+Box\+Prog\+Name}} (std\+::string bb)
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_geometry_abb375a3b46b46c587c4a190d26551d5b}{Set\+Intersection\+Prog\+Name}} (std\+::string inter)
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_geometry_ad7039f7aae50388b4a2e76a1d9cc6c9b}{Set\+Callable\+Prog\+Name}} (std\+::string c)
+\item 
+optix\+::\+Program \mbox{\hyperlink{classoptix_s_d_f_geometry_a10ba3c6b42184e6a4010db7e8d69efb1}{Get\+Callable\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_geometry_aeab9b060b42ba94a7aa45b06ce743277}{Set\+Callable\+Prog\+Manually}} (optix\+::\+Program pr)
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_geometry_af188ac95c6207906101f844d47217ec8}{Set\+Material\+Type}} (int type)
+\item 
+int \mbox{\hyperlink{classoptix_s_d_f_geometry_a1db551008125548a1e30566b80ca33ae}{Get\+Material\+Type}} ()
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_geometry_a3c49228759d12d00935d87a20b9b3bae}{Set\+Dynamic}} (bool d)
+\item 
+bool \mbox{\hyperlink{classoptix_s_d_f_geometry_a27cb69eb3dae76069f2fbfe7b3162fcc}{is\+Dynamic}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_geometry_abf90b7b0e71d01d813b1c2fb5cb2ec99}{Modified}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_geometry_a7fbf3dfeda08ee137b3253522ef6a8e3}{Create\+Geometry}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_geometry_ae4487610c220bc743d042fda69d73a0b}{Initialize}} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\optix\+::\+Buffer \mbox{\hyperlink{classoptix_s_d_f_geometry_a9809f97c7e0354f256e47d3772b370d9}{Initialize\+Input\+Buffer}} (T Attributes, std\+::vector$<$ T $>$ attributes, optix\+::\+R\+Tbuffermapflag mode)
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_geometry_aeec1ef47aabaf4ff1071cfd54a76d7da}{Set\+Intersection\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_geometry_ac627b760d247b2334d926f27f8f15740}{Set\+Bounding\+Box\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_geometry_acd94b382918c3d91aafe1d9c94f8bf22}{Init\+Prog}} (std\+::string prog, std\+::string file, std\+::string name)
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_geometry_a994075a972269f9d904eb00dff1a96fc}{Set\+Main\+Programs}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_geometry_a4a3e346306d620d5cd16d20a39141503}{Set\+Callable\+Prog}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_geometry_a8b7aaecf7e2a6878865b192b66ab367d}{Set\+Parameters}} ()
+\item 
+optix\+::\+Program \mbox{\hyperlink{classoptix_s_d_f_geometry_ab9f50ea5e21ce257ae764ff71b2f57f6}{Get\+Intersection\+Prog}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, optix\+::\+Program $>$ \mbox{\hyperlink{classoptix_s_d_f_geometry_a048f88e6666edb39ea33d4c4f391431a}{m\+\_\+map\+Of\+Programs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Abstract class for S\+DF Geometry. A basic class. All S\+DF geometry inherits it\textquotesingle{}s functions. 
+
+All S\+DF geometry inherits it\textquotesingle{}s functions, that includes\+:
+
+1)S\+DF dynamic textures
+
+2)F\+Rep modelling primitives and operations that construct dynamically Construction Tree see \href{http://hyperfun.org}{\texttt{ http\+://hyperfun.\+org}} for details
+
+3)Large objects, like molecular structures, that consist of lot\textquotesingle{}s of objects and use B\+VH for rendering
+
+...
+
+may be something else
+
+Architecture much inspired by V\+TK (\href{http://vtk.org}{\texttt{ http\+://vtk.\+org}}) implementation. Main operations similar to most of objects are much similar to V\+TK classes structure\+:
+
+virtual void \mbox{\hyperlink{classoptix_s_d_f_geometry_a63249e61355407ec0d41d59d05e1838c}{Set\+Context(optix\+::\+Context \&context)}};
+
+virtual void \mbox{\hyperlink{classoptix_s_d_f_geometry_af866243d89ffb3ed211d8e8408ee859b}{Update()}};
+
+virtual optix\+::\+Geometry \mbox{\hyperlink{classoptix_s_d_f_geometry_a8e7e0dc61bfa442a258725473c2fbc28}{Get\+Output()}}
+
+virtual sdf\+Geo$\ast$ \mbox{\hyperlink{classoptix_s_d_f_geometry_a9005fe019545d2e93b76d6a84fa8e8bc}{Get\+Output\+Desc()}}
+
+See Tutorial for more info. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a5b32867ead4a5d51fa8e6562ec329e95}\label{classoptix_s_d_f_geometry_a5b32867ead4a5d51fa8e6562ec329e95}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!optixSDFGeometry@{optixSDFGeometry}}
+\index{optixSDFGeometry@{optixSDFGeometry}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{optixSDFGeometry()}{optixSDFGeometry()}}
+{\footnotesize\ttfamily optix\+S\+D\+F\+Geometry\+::optix\+S\+D\+F\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor and destructor Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a5b32867ead4a5d51fa8e6562ec329e95_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_aeee5ce3520d6759c19b8cfd182b72f0d}\label{classoptix_s_d_f_geometry_aeee5ce3520d6759c19b8cfd182b72f0d}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!````~optixSDFGeometry@{$\sim$optixSDFGeometry}}
+\index{````~optixSDFGeometry@{$\sim$optixSDFGeometry}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{$\sim$optixSDFGeometry()}{~optixSDFGeometry()}}
+{\footnotesize\ttfamily optix\+S\+D\+F\+Geometry\+::$\sim$optix\+S\+D\+F\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a7fbf3dfeda08ee137b3253522ef6a8e3}\label{classoptix_s_d_f_geometry_a7fbf3dfeda08ee137b3253522ef6a8e3}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!CreateGeometry@{CreateGeometry}}
+\index{CreateGeometry@{CreateGeometry}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{CreateGeometry()}{CreateGeometry()}}
+{\footnotesize\ttfamily virtual void optix\+S\+D\+F\+Geometry\+::\+Create\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsdf_heterogeneous_ac2a885cd0bda6b69619123df62bf277f}{sdf\+Heterogeneous}}, \mbox{\hyperlink{classsdf_c_p_k_mol_aa6b452199dff1072bebcc9256903a1dd}{sdf\+C\+P\+K\+Mol}}, \mbox{\hyperlink{classoptix_s_d_f_binary_op_aceb3e2c322ca2c1c9cbac17737cac7c3}{optix\+S\+D\+F\+Binary\+Op}}, \mbox{\hyperlink{classoptix_s_d_f_primitive_ab7c1cf531e440646a8af4c40122ccf43}{optix\+S\+D\+F\+Primitive}}, and \mbox{\hyperlink{classoptix_s_d_f_unary_op_a8c6f6a527fcc3bee4183034191747d2e}{optix\+S\+D\+F\+Unary\+Op}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a7fbf3dfeda08ee137b3253522ef6a8e3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a3e7ee49633be7cd4714b5509eed9f8df}\label{classoptix_s_d_f_geometry_a3e7ee49633be7cd4714b5509eed9f8df}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!GetBoundingBoxProgName@{GetBoundingBoxProgName}}
+\index{GetBoundingBoxProgName@{GetBoundingBoxProgName}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{GetBoundingBoxProgName()}{GetBoundingBoxProgName()}}
+{\footnotesize\ttfamily std\+::string optix\+S\+D\+F\+Geometry\+::\+Get\+Bounding\+Box\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns description, a more detailed info, that is optix geometry and description wheter it is dynamic, auditory and etc. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a3e7ee49633be7cd4714b5509eed9f8df_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a10ba3c6b42184e6a4010db7e8d69efb1}\label{classoptix_s_d_f_geometry_a10ba3c6b42184e6a4010db7e8d69efb1}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!GetCallableProg@{GetCallableProg}}
+\index{GetCallableProg@{GetCallableProg}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{GetCallableProg()}{GetCallableProg()}}
+{\footnotesize\ttfamily optix\+::\+Program optix\+S\+D\+F\+Geometry\+::\+Get\+Callable\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a10ba3c6b42184e6a4010db7e8d69efb1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a10ba3c6b42184e6a4010db7e8d69efb1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a6a8e8fa75194a3b0e81e76188e6b1b4f}\label{classoptix_s_d_f_geometry_a6a8e8fa75194a3b0e81e76188e6b1b4f}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!GetCallableProgName@{GetCallableProgName}}
+\index{GetCallableProgName@{GetCallableProgName}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{GetCallableProgName()}{GetCallableProgName()}}
+{\footnotesize\ttfamily std\+::string optix\+S\+D\+F\+Geometry\+::\+Get\+Callable\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a6a8e8fa75194a3b0e81e76188e6b1b4f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_ab9f50ea5e21ce257ae764ff71b2f57f6}\label{classoptix_s_d_f_geometry_ab9f50ea5e21ce257ae764ff71b2f57f6}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!GetIntersectionProg@{GetIntersectionProg}}
+\index{GetIntersectionProg@{GetIntersectionProg}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{GetIntersectionProg()}{GetIntersectionProg()}}
+{\footnotesize\ttfamily optix\+::\+Program optix\+S\+D\+F\+Geometry\+::\+Get\+Intersection\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_ab9f50ea5e21ce257ae764ff71b2f57f6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_ab9f50ea5e21ce257ae764ff71b2f57f6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_ab4ee04b0ea47abe7508d1443ac539d5f}\label{classoptix_s_d_f_geometry_ab4ee04b0ea47abe7508d1443ac539d5f}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!GetIntersectionProgName@{GetIntersectionProgName}}
+\index{GetIntersectionProgName@{GetIntersectionProgName}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{GetIntersectionProgName()}{GetIntersectionProgName()}}
+{\footnotesize\ttfamily std\+::string optix\+S\+D\+F\+Geometry\+::\+Get\+Intersection\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_ab4ee04b0ea47abe7508d1443ac539d5f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a1db551008125548a1e30566b80ca33ae}\label{classoptix_s_d_f_geometry_a1db551008125548a1e30566b80ca33ae}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!GetMaterialType@{GetMaterialType}}
+\index{GetMaterialType@{GetMaterialType}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{GetMaterialType()}{GetMaterialType()}}
+{\footnotesize\ttfamily int optix\+S\+D\+F\+Geometry\+::\+Get\+Material\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a1db551008125548a1e30566b80ca33ae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a8e7e0dc61bfa442a258725473c2fbc28}\label{classoptix_s_d_f_geometry_a8e7e0dc61bfa442a258725473c2fbc28}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily virtual optix\+::\+Geometry optix\+S\+D\+F\+Geometry\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsdf_heterogeneous_acb3004834af100a5e48de669237d1311}{sdf\+Heterogeneous}}, \mbox{\hyperlink{classsdf_c_p_k_mol_ae56d7bc2a0d7cf74e6139e1a372ee1c4}{sdf\+C\+P\+K\+Mol}}, \mbox{\hyperlink{classoptix_s_d_f_binary_op_af9aa9b472106c919755db37804d38952}{optix\+S\+D\+F\+Binary\+Op}}, \mbox{\hyperlink{classoptix_s_d_f_primitive_accfbb540768936ec293c626e6a3ccca4}{optix\+S\+D\+F\+Primitive}}, and \mbox{\hyperlink{classoptix_s_d_f_unary_op_adcbae4114aa3dcab1dfb56cc438c2e84}{optix\+S\+D\+F\+Unary\+Op}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classoptix_s_d_f_geometry_a8e7e0dc61bfa442a258725473c2fbc28_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a9005fe019545d2e93b76d6a84fa8e8bc}\label{classoptix_s_d_f_geometry_a9005fe019545d2e93b76d6a84fa8e8bc}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!GetOutputDesc@{GetOutputDesc}}
+\index{GetOutputDesc@{GetOutputDesc}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{GetOutputDesc()}{GetOutputDesc()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structsdf_geo}{sdf\+Geo}}$\ast$ optix\+S\+D\+F\+Geometry\+::\+Get\+Output\+Desc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns ready to use output, that is optix geometry 
+
+Reimplemented in \mbox{\hyperlink{classsdf_ball_sticks_mol_afe729fd515b8a00c1c9a06e22e18b8e4}{sdf\+Ball\+Sticks\+Mol}}, and \mbox{\hyperlink{classsdf_c_p_k_dyn_mol_ab8bc2ba8a0308b7692f872a67e2b00a7}{sdf\+C\+P\+K\+Dyn\+Mol}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a9005fe019545d2e93b76d6a84fa8e8bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_ae4487610c220bc743d042fda69d73a0b}\label{classoptix_s_d_f_geometry_ae4487610c220bc743d042fda69d73a0b}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual void optix\+S\+D\+F\+Geometry\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+T\+O\+DO\+: potentialy read file with points here 
+
+Reimplemented in \mbox{\hyperlink{classsdf_mol_ball_sticks_mol_ac91e5692f9b6b51cf9c481e9f5efaf61}{sdf\+Mol\+Ball\+Sticks\+Mol}}, \mbox{\hyperlink{classsdf_ball_sticks_mol_a9934c25ec6f352d6367b3c091ea4ea28}{sdf\+Ball\+Sticks\+Mol}}, \mbox{\hyperlink{classsdf_c_p_k_dyn_mol_a9b46912317dfa09530fe6a6d3f792cfa}{sdf\+C\+P\+K\+Dyn\+Mol}}, \mbox{\hyperlink{classsdf_heterogeneous_a0543f1e786ee15fc9acf9e6bbb23aae6}{sdf\+Heterogeneous}}, \mbox{\hyperlink{classsdf_c_p_k_mol_ac314d0d441071f7a8c155681a6d8dff1}{sdf\+C\+P\+K\+Mol}}, \mbox{\hyperlink{classoptix_s_d_f_binary_op_abba3120603115be84acd329ad55a8d1e}{optix\+S\+D\+F\+Binary\+Op}}, \mbox{\hyperlink{classoptix_s_d_f_primitive_a055f160d6ecb9bdc7bb49a605e0bb8b9}{optix\+S\+D\+F\+Primitive}}, and \mbox{\hyperlink{classoptix_s_d_f_unary_op_a12908992b7c5b540774c4315467720ad}{optix\+S\+D\+F\+Unary\+Op}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_ae4487610c220bc743d042fda69d73a0b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a9809f97c7e0354f256e47d3772b370d9}\label{classoptix_s_d_f_geometry_a9809f97c7e0354f256e47d3772b370d9}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!InitializeInputBuffer@{InitializeInputBuffer}}
+\index{InitializeInputBuffer@{InitializeInputBuffer}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{InitializeInputBuffer()}{InitializeInputBuffer()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+optix\+::\+Buffer optix\+S\+D\+F\+Geometry\+::\+Initialize\+Input\+Buffer (\begin{DoxyParamCaption}\item[{T}]{Attributes,  }\item[{std\+::vector$<$ T $>$}]{attributes,  }\item[{optix\+::\+R\+Tbuffermapflag}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+read cuda procedure for S\+DF generation, the process is linked to name Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a9809f97c7e0354f256e47d3772b370d9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_acd94b382918c3d91aafe1d9c94f8bf22}\label{classoptix_s_d_f_geometry_acd94b382918c3d91aafe1d9c94f8bf22}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!InitProg@{InitProg}}
+\index{InitProg@{InitProg}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{InitProg()}{InitProg()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Geometry\+::\+Init\+Prog (\begin{DoxyParamCaption}\item[{std\+::string}]{prog,  }\item[{std\+::string}]{file,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_acd94b382918c3d91aafe1d9c94f8bf22_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classoptix_s_d_f_geometry_acd94b382918c3d91aafe1d9c94f8bf22_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a27cb69eb3dae76069f2fbfe7b3162fcc}\label{classoptix_s_d_f_geometry_a27cb69eb3dae76069f2fbfe7b3162fcc}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!isDynamic@{isDynamic}}
+\index{isDynamic@{isDynamic}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{isDynamic()}{isDynamic()}}
+{\footnotesize\ttfamily bool optix\+S\+D\+F\+Geometry\+::is\+Dynamic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_abf90b7b0e71d01d813b1c2fb5cb2ec99}\label{classoptix_s_d_f_geometry_abf90b7b0e71d01d813b1c2fb5cb2ec99}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!Modified@{Modified}}
+\index{Modified@{Modified}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{Modified()}{Modified()}}
+{\footnotesize\ttfamily virtual void optix\+S\+D\+F\+Geometry\+::\+Modified (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_ac627b760d247b2334d926f27f8f15740}\label{classoptix_s_d_f_geometry_ac627b760d247b2334d926f27f8f15740}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!SetBoundingBoxProg@{SetBoundingBoxProg}}
+\index{SetBoundingBoxProg@{SetBoundingBoxProg}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{SetBoundingBoxProg()}{SetBoundingBoxProg()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Geometry\+::\+Set\+Bounding\+Box\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_ac627b760d247b2334d926f27f8f15740_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_ac627b760d247b2334d926f27f8f15740_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a49ba281b1fb2ba6c37e2faeb2358e88f}\label{classoptix_s_d_f_geometry_a49ba281b1fb2ba6c37e2faeb2358e88f}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!SetBoundingBoxProgName@{SetBoundingBoxProgName}}
+\index{SetBoundingBoxProgName@{SetBoundingBoxProgName}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{SetBoundingBoxProgName()}{SetBoundingBoxProgName()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Geometry\+::\+Set\+Bounding\+Box\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{bb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a49ba281b1fb2ba6c37e2faeb2358e88f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a4a3e346306d620d5cd16d20a39141503}\label{classoptix_s_d_f_geometry_a4a3e346306d620d5cd16d20a39141503}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!SetCallableProg@{SetCallableProg}}
+\index{SetCallableProg@{SetCallableProg}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{SetCallableProg()}{SetCallableProg()}}
+{\footnotesize\ttfamily virtual void optix\+S\+D\+F\+Geometry\+::\+Set\+Callable\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Is called for setting callable prog 
+
+Reimplemented in \mbox{\hyperlink{classsdf_ball_sticks_mol_ab8610c17278ce09adfa974266c3dec72}{sdf\+Ball\+Sticks\+Mol}}, \mbox{\hyperlink{classsdf_heterogeneous_a01dc7215e0c4c0e43fee3cf110464bc5}{sdf\+Heterogeneous}}, \mbox{\hyperlink{classsdf_c_p_k_mol_a31d18eb4162d8278d6783bb493714696}{sdf\+C\+P\+K\+Mol}}, \mbox{\hyperlink{classoptix_s_d_f_binary_op_a4025f802979ec340cf6d32cb441c5bbe}{optix\+S\+D\+F\+Binary\+Op}}, \mbox{\hyperlink{classoptix_s_d_f_primitive_a19b4e4ecb944e296a29a4c9603bb1770}{optix\+S\+D\+F\+Primitive}}, and \mbox{\hyperlink{classoptix_s_d_f_unary_op_a9cb1f4d523a9200d5584402146c72143}{optix\+S\+D\+F\+Unary\+Op}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a4a3e346306d620d5cd16d20a39141503_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_aeab9b060b42ba94a7aa45b06ce743277}\label{classoptix_s_d_f_geometry_aeab9b060b42ba94a7aa45b06ce743277}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!SetCallableProgManually@{SetCallableProgManually}}
+\index{SetCallableProgManually@{SetCallableProgManually}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{SetCallableProgManually()}{SetCallableProgManually()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Geometry\+::\+Set\+Callable\+Prog\+Manually (\begin{DoxyParamCaption}\item[{optix\+::\+Program}]{pr }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_aeab9b060b42ba94a7aa45b06ce743277_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_aeab9b060b42ba94a7aa45b06ce743277_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_ad7039f7aae50388b4a2e76a1d9cc6c9b}\label{classoptix_s_d_f_geometry_ad7039f7aae50388b4a2e76a1d9cc6c9b}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!SetCallableProgName@{SetCallableProgName}}
+\index{SetCallableProgName@{SetCallableProgName}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{SetCallableProgName()}{SetCallableProgName()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Geometry\+::\+Set\+Callable\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classoptix_s_d_f_geometry_ad7039f7aae50388b4a2e76a1d9cc6c9b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a63249e61355407ec0d41d59d05e1838c}\label{classoptix_s_d_f_geometry_a63249e61355407ec0d41d59d05e1838c}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!SetContext@{SetContext}}
+\index{SetContext@{SetContext}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{SetContext()}{SetContext()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Geometry\+::\+Set\+Context (\begin{DoxyParamCaption}\item[{optix\+::\+Context \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets optix context that will store all generated optix geometry 
+
+Reimplemented from \mbox{\hyperlink{classva_basic_object_a084579231006f44f03b6834e723316b6}{va\+Basic\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptix_s_d_f_binary_op_ab0fa8e4cd564e995ad906067ed9d2ebb}{optix\+S\+D\+F\+Binary\+Op}}, and \mbox{\hyperlink{classoptix_s_d_f_unary_op_ad912c0268350d6870cade47a0c054a81}{optix\+S\+D\+F\+Unary\+Op}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a63249e61355407ec0d41d59d05e1838c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a3c49228759d12d00935d87a20b9b3bae}\label{classoptix_s_d_f_geometry_a3c49228759d12d00935d87a20b9b3bae}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!SetDynamic@{SetDynamic}}
+\index{SetDynamic@{SetDynamic}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{SetDynamic()}{SetDynamic()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Geometry\+::\+Set\+Dynamic (\begin{DoxyParamCaption}\item[{bool}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a3c49228759d12d00935d87a20b9b3bae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_aeec1ef47aabaf4ff1071cfd54a76d7da}\label{classoptix_s_d_f_geometry_aeec1ef47aabaf4ff1071cfd54a76d7da}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!SetIntersectionProg@{SetIntersectionProg}}
+\index{SetIntersectionProg@{SetIntersectionProg}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{SetIntersectionProg()}{SetIntersectionProg()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Geometry\+::\+Set\+Intersection\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_aeec1ef47aabaf4ff1071cfd54a76d7da_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_aeec1ef47aabaf4ff1071cfd54a76d7da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_abb375a3b46b46c587c4a190d26551d5b}\label{classoptix_s_d_f_geometry_abb375a3b46b46c587c4a190d26551d5b}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!SetIntersectionProgName@{SetIntersectionProgName}}
+\index{SetIntersectionProgName@{SetIntersectionProgName}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{SetIntersectionProgName()}{SetIntersectionProgName()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Geometry\+::\+Set\+Intersection\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{inter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_abb375a3b46b46c587c4a190d26551d5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a994075a972269f9d904eb00dff1a96fc}\label{classoptix_s_d_f_geometry_a994075a972269f9d904eb00dff1a96fc}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!SetMainPrograms@{SetMainPrograms}}
+\index{SetMainPrograms@{SetMainPrograms}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{SetMainPrograms()}{SetMainPrograms()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Geometry\+::\+Set\+Main\+Programs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+sets all main programs 
+
+Reimplemented in \mbox{\hyperlink{classoptix_s_d_f_binary_op_a75e2ccd0a88f97709bd82b4749f95b15}{optix\+S\+D\+F\+Binary\+Op}}, and \mbox{\hyperlink{classoptix_s_d_f_unary_op_a07ec7e0ec98759004f23fe4c79740a87}{optix\+S\+D\+F\+Unary\+Op}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a994075a972269f9d904eb00dff1a96fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a994075a972269f9d904eb00dff1a96fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_af188ac95c6207906101f844d47217ec8}\label{classoptix_s_d_f_geometry_af188ac95c6207906101f844d47217ec8}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!SetMaterialType@{SetMaterialType}}
+\index{SetMaterialType@{SetMaterialType}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{SetMaterialType()}{SetMaterialType()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Geometry\+::\+Set\+Material\+Type (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_af188ac95c6207906101f844d47217ec8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a8b7aaecf7e2a6878865b192b66ab367d}\label{classoptix_s_d_f_geometry_a8b7aaecf7e2a6878865b192b66ab367d}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!SetParameters@{SetParameters}}
+\index{SetParameters@{SetParameters}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{SetParameters()}{SetParameters()}}
+{\footnotesize\ttfamily virtual void optix\+S\+D\+F\+Geometry\+::\+Set\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+for setting custom cuda variables values 
+
+Reimplemented in \mbox{\hyperlink{classsdf_ball_sticks_mol_abbf627ccd275fc6c281ee89ec6da78b0}{sdf\+Ball\+Sticks\+Mol}}, \mbox{\hyperlink{classsdf_c_p_k_dyn_mol_ae276314896f8fb8accef32a1c227e7ca}{sdf\+C\+P\+K\+Dyn\+Mol}}, \mbox{\hyperlink{classsdf_heterogeneous_a90719a3ce2b9d095f9f1e153b4d82d81}{sdf\+Heterogeneous}}, and \mbox{\hyperlink{classsdf_texture_a82dcfcd260cd58630d6cbfcccb843b87}{sdf\+Texture}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_a8b7aaecf7e2a6878865b192b66ab367d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_af866243d89ffb3ed211d8e8408ee859b}\label{classoptix_s_d_f_geometry_af866243d89ffb3ed211d8e8408ee859b}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!Update@{Update}}
+\index{Update@{Update}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Geometry\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Runs the process of computation of optix geometry and setting up all necessary cuda programs and geometry parameters 
+
+Reimplemented in \mbox{\hyperlink{classoptix_s_d_f_binary_op_a59e852dd10a95493f3dc6e68426377ab}{optix\+S\+D\+F\+Binary\+Op}}, and \mbox{\hyperlink{classoptix_s_d_f_unary_op_aef9cb7ca674d1b323367469988284782}{optix\+S\+D\+F\+Unary\+Op}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_af866243d89ffb3ed211d8e8408ee859b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_geometry_af866243d89ffb3ed211d8e8408ee859b_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classoptix_s_d_f_geometry_a048f88e6666edb39ea33d4c4f391431a}\label{classoptix_s_d_f_geometry_a048f88e6666edb39ea33d4c4f391431a}} 
+\index{optixSDFGeometry@{optixSDFGeometry}!m\_mapOfPrograms@{m\_mapOfPrograms}}
+\index{m\_mapOfPrograms@{m\_mapOfPrograms}!optixSDFGeometry@{optixSDFGeometry}}
+\doxysubsubsection{\texorpdfstring{m\_mapOfPrograms}{m\_mapOfPrograms}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, optix\+::\+Program$>$ optix\+S\+D\+F\+Geometry\+::m\+\_\+map\+Of\+Programs\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/src/\mbox{\hyperlink{optix_s_d_f_geometry_8h}{optix\+S\+D\+F\+Geometry.\+h}}\item 
+core/src/\mbox{\hyperlink{optix_s_d_f_geometry_8cpp}{optix\+S\+D\+F\+Geometry.\+cpp}}\end{DoxyCompactItemize}

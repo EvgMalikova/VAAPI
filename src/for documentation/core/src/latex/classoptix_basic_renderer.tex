@@ -1,0 +1,516 @@
+\doxysection{optix\+Basic\+Renderer Class Reference}
+\label{classoptix_basic_renderer}\index{optixBasicRenderer@{optixBasicRenderer}}
+
+
+Architecture much inspired by V\+TK Renderer({\texttt{ http\+://vtk.\+org}}) implementation Abstract visual-\/auditory renderer.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Basic\+Renderer.\+h$>$}
+
+
+
+Inheritance diagram for optix\+Basic\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classoptix_basic_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for optix\+Basic\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classoptix_basic_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \textbf{ O\+P\+T\+I\+C\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG}, 
+\textbf{ A\+U\+D\+I\+T\+O\+R\+Y\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG}
+ \}
+\item 
+enum \textbf{ Render\+Modes} \{ \textbf{ I\+N\+T\+E\+R\+A\+C\+T\+I\+V\+E\+\_\+\+C\+A\+M\+E\+RA}, 
+\textbf{ C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+O\+U\+ND}, 
+\textbf{ P\+L\+A\+Y\+\_\+\+A\+N\+I\+M\+A\+T\+I\+ON}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+optix\+::\+Buffer \textbf{ Get\+Output\+Sound\+Buffer} ()
+\item 
+void \textbf{ set\+Audio\+Buffer} ()
+\item 
+void \textbf{ Get\+Audio\+Dim} (int \&w, int \&h)
+\item 
+\textbf{ optix\+Basic\+Renderer} ()
+\item 
+\textbf{ $\sim$optix\+Basic\+Renderer} ()
+\item 
+void \textbf{ Set\+Optical\+Dims} (int width, int height)
+\item 
+\textbf{ Render\+Modes} \textbf{ Get\+Mode} ()
+\item 
+void \textbf{ Set\+Mode} (\textbf{ Render\+Modes} m)
+\item 
+virtual void \textbf{ Update} ()
+\item 
+void \textbf{ Set\+Up\+Renderer} ()
+\item 
+void \textbf{ Set\+Dynamic} (bool type)
+\item 
+void \textbf{ Set\+Auditory} (bool type)
+\item 
+bool \textbf{ is\+Dynamic} ()
+\item 
+bool \textbf{ is\+Auditory} ()
+\item 
+void \textbf{ Set\+Time} (float time)
+\item 
+float \textbf{ Get\+Time} ()
+\item 
+void \textbf{ Add\+Actor} (\textbf{ optix\+Basic\+Actor} $\ast$act)
+\item 
+\textbf{ optix\+Basic\+Actor} $\ast$ \textbf{ Get\+Actor} (int i)
+\item 
+int \textbf{ Get\+Num\+Of\+Actors} ()
+\item 
+void \textbf{ Launch\+Optic\+Context} ()
+\item 
+void \textbf{ Launch\+Auditory\+Context} ()
+\item 
+virtual void \textbf{ Reshape} (int width, int height)
+\item 
+virtual bool \textbf{ Render} ()
+\item 
+virtual void \textbf{ Display} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \textbf{ auditory\+Model} $>$ \textbf{ audioM}
+\item 
+std\+::unique\+\_\+ptr$<$ \textbf{ basic\+Optical\+Model} $>$ \textbf{ opticM}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Init\+Renderer} ()
+\item 
+bool \textbf{ Play\+Animation} (float play\+\_\+time)
+\item 
+void \textbf{ Init\+Prog} (std\+::string prog, std\+::string file, std\+::string name)
+\item 
+void \textbf{ Set\+Ray\+Generation\+Prog} ()
+\item 
+void \textbf{ Set\+Exception\+Prog} ()
+\item 
+void \textbf{ Set\+Miss\+Prog} ()
+\item 
+void \textbf{ Set\+Auditory\+Ray\+Generation\+Prog} ()
+\item 
+void \textbf{ Set\+Auditory\+Exception\+Prog} ()
+\item 
+void \textbf{ Set\+Auditory\+Miss\+Prog} ()
+\item 
+void \textbf{ Set\+Ray\+Generation\+Prog\+Name} (std\+::string name)
+\item 
+void \textbf{ Set\+Exception\+Prog\+Name} (std\+::string name)
+\item 
+void \textbf{ Set\+Miss\+Prog\+Name} (std\+::string name)
+\item 
+void \textbf{ Set\+Auditory\+Ray\+Generation\+Prog\+Name} (std\+::string name)
+\item 
+void \textbf{ Set\+Auditory\+Exception\+Prog\+Name} (std\+::string name)
+\item 
+void \textbf{ Set\+Auditory\+Miss\+Prog\+Name} (std\+::string name)
+\item 
+std\+::string \textbf{ Get\+Ray\+Generation\+Prog\+Name} ()
+\item 
+std\+::string \textbf{ Get\+Exception\+Prog\+Name} ()
+\item 
+std\+::string \textbf{ Get\+Miss\+Prog\+Name} ()
+\item 
+std\+::string \textbf{ Get\+Auditory\+Ray\+Generation\+Prog\+Name} ()
+\item 
+std\+::string \textbf{ Get\+Auditory\+Exception\+Prog\+Name} ()
+\item 
+std\+::string \textbf{ Get\+Auditory\+Miss\+Prog\+Name} ()
+\item 
+void \textbf{ Init\+Acceleration} ()
+\item 
+void \textbf{ Set\+Programs} ()
+\item 
+void \textbf{ Initialize\+Programs} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, optix\+::\+Program $>$ \textbf{ m\+\_\+map\+Of\+Programs}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Architecture much inspired by V\+TK Renderer({\texttt{ http\+://vtk.\+org}}) implementation Abstract visual-\/auditory renderer. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\label{classoptix_basic_renderer_a39dd12d4baea1a590e4a0ab57a0b5c96}} 
+\doxysubsubsection{anonymous enum}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPTIC\_RAYCASTING@{OPTIC\_RAYCASTING}!optixBasicRenderer@{optixBasicRenderer}}\index{optixBasicRenderer@{optixBasicRenderer}!OPTIC\_RAYCASTING@{OPTIC\_RAYCASTING}}}\mbox{\label{classoptix_basic_renderer_a39dd12d4baea1a590e4a0ab57a0b5c96a4f7db3e0c21cc114e3602d4a9a224fc9}} 
+O\+P\+T\+I\+C\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AUDITORY\_RAYCASTING@{AUDITORY\_RAYCASTING}!optixBasicRenderer@{optixBasicRenderer}}\index{optixBasicRenderer@{optixBasicRenderer}!AUDITORY\_RAYCASTING@{AUDITORY\_RAYCASTING}}}\mbox{\label{classoptix_basic_renderer_a39dd12d4baea1a590e4a0ab57a0b5c96a46495eec625d0de1097644bce5b233c2}} 
+A\+U\+D\+I\+T\+O\+R\+Y\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\label{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!RenderModes@{RenderModes}}
+\index{RenderModes@{RenderModes}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{RenderModes}
+{\footnotesize\ttfamily enum \textbf{ optix\+Basic\+Renderer\+::\+Render\+Modes}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTERACTIVE\_CAMERA@{INTERACTIVE\_CAMERA}!optixBasicRenderer@{optixBasicRenderer}}\index{optixBasicRenderer@{optixBasicRenderer}!INTERACTIVE\_CAMERA@{INTERACTIVE\_CAMERA}}}\mbox{\label{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214aae7f1ea3739eecbe3a6436c12bd1a0f8}} 
+I\+N\+T\+E\+R\+A\+C\+T\+I\+V\+E\+\_\+\+C\+A\+M\+E\+RA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPUTE\_SOUND@{COMPUTE\_SOUND}!optixBasicRenderer@{optixBasicRenderer}}\index{optixBasicRenderer@{optixBasicRenderer}!COMPUTE\_SOUND@{COMPUTE\_SOUND}}}\mbox{\label{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214a7e268f6011b8e46c95d41349a0541835}} 
+C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+O\+U\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAY\_ANIMATION@{PLAY\_ANIMATION}!optixBasicRenderer@{optixBasicRenderer}}\index{optixBasicRenderer@{optixBasicRenderer}!PLAY\_ANIMATION@{PLAY\_ANIMATION}}}\mbox{\label{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214ae515fc31e8be8c0ca92ba7137f8df6d1}} 
+P\+L\+A\+Y\+\_\+\+A\+N\+I\+M\+A\+T\+I\+ON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classoptix_basic_renderer_ac20c7dde41d7f289f93874d736bf6212}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!optixBasicRenderer@{optixBasicRenderer}}
+\index{optixBasicRenderer@{optixBasicRenderer}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{optixBasicRenderer()}
+{\footnotesize\ttfamily optix\+Basic\+Renderer\+::optix\+Basic\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_a04ae3a0b372a8fd4b71d6c3474438367}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!````~optixBasicRenderer@{$\sim$optixBasicRenderer}}
+\index{````~optixBasicRenderer@{$\sim$optixBasicRenderer}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{$\sim$optixBasicRenderer()}
+{\footnotesize\ttfamily optix\+Basic\+Renderer\+::$\sim$optix\+Basic\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classoptix_basic_renderer_a1bb5dc0000982811c0d5b87987075bf0}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!AddActor@{AddActor}}
+\index{AddActor@{AddActor}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{AddActor()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Add\+Actor (\begin{DoxyParamCaption}\item[{\textbf{ optix\+Basic\+Actor} $\ast$}]{act }\end{DoxyParamCaption})}
+
+\mbox{\label{classoptix_basic_renderer_a3e3f177ea19b871a46fedeaea546451d}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!Display@{Display}}
+\index{Display@{Display}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{Display()}
+{\footnotesize\ttfamily virtual void optix\+Basic\+Renderer\+::\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classoptix_basic_renderer_a50a675aa6e9ed0e0322120c2d1148c7f}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetActor@{GetActor}}
+\index{GetActor@{GetActor}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{GetActor()}
+{\footnotesize\ttfamily \textbf{ optix\+Basic\+Actor}$\ast$ optix\+Basic\+Renderer\+::\+Get\+Actor (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_ada862c4c6580a82425a6990d1f4fd7ca}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetAudioDim@{GetAudioDim}}
+\index{GetAudioDim@{GetAudioDim}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{GetAudioDim()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Get\+Audio\+Dim (\begin{DoxyParamCaption}\item[{int \&}]{w,  }\item[{int \&}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_aeddbd219c79042d3e665f935eb546499}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetAuditoryExceptionProgName@{GetAuditoryExceptionProgName}}
+\index{GetAuditoryExceptionProgName@{GetAuditoryExceptionProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{GetAuditoryExceptionProgName()}
+{\footnotesize\ttfamily std\+::string optix\+Basic\+Renderer\+::\+Get\+Auditory\+Exception\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_af4bd9a6df6d6198d257b3a92b5a69d8f}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetAuditoryMissProgName@{GetAuditoryMissProgName}}
+\index{GetAuditoryMissProgName@{GetAuditoryMissProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{GetAuditoryMissProgName()}
+{\footnotesize\ttfamily std\+::string optix\+Basic\+Renderer\+::\+Get\+Auditory\+Miss\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a73777963c3ccc2b2f702b15b680044f1}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetAuditoryRayGenerationProgName@{GetAuditoryRayGenerationProgName}}
+\index{GetAuditoryRayGenerationProgName@{GetAuditoryRayGenerationProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{GetAuditoryRayGenerationProgName()}
+{\footnotesize\ttfamily std\+::string optix\+Basic\+Renderer\+::\+Get\+Auditory\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_ab64fd07866f8fdc5a1991f6585d5db82}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetExceptionProgName@{GetExceptionProgName}}
+\index{GetExceptionProgName@{GetExceptionProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{GetExceptionProgName()}
+{\footnotesize\ttfamily std\+::string optix\+Basic\+Renderer\+::\+Get\+Exception\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a34034b65a0db51fe7e199ee0023df8de}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetMissProgName@{GetMissProgName}}
+\index{GetMissProgName@{GetMissProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{GetMissProgName()}
+{\footnotesize\ttfamily std\+::string optix\+Basic\+Renderer\+::\+Get\+Miss\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a50230aad7a3a906fbd44da1a3026b60b}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{GetMode()}
+{\footnotesize\ttfamily \textbf{ Render\+Modes} optix\+Basic\+Renderer\+::\+Get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_a3516acb930c834979c9869a7334133d2}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetNumOfActors@{GetNumOfActors}}
+\index{GetNumOfActors@{GetNumOfActors}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{GetNumOfActors()}
+{\footnotesize\ttfamily int optix\+Basic\+Renderer\+::\+Get\+Num\+Of\+Actors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_a11c94d3349df33c5298e677a74054897}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetOutputSoundBuffer@{GetOutputSoundBuffer}}
+\index{GetOutputSoundBuffer@{GetOutputSoundBuffer}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{GetOutputSoundBuffer()}
+{\footnotesize\ttfamily optix\+::\+Buffer optix\+Basic\+Renderer\+::\+Get\+Output\+Sound\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_ad8c6f7c86a575655ae1eef9b7ad02ee8}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetRayGenerationProgName@{GetRayGenerationProgName}}
+\index{GetRayGenerationProgName@{GetRayGenerationProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{GetRayGenerationProgName()}
+{\footnotesize\ttfamily std\+::string optix\+Basic\+Renderer\+::\+Get\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a19269f4155fc16cdcdf4c71147b5f804}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetTime@{GetTime}}
+\index{GetTime@{GetTime}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{GetTime()}
+{\footnotesize\ttfamily float optix\+Basic\+Renderer\+::\+Get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_aaab078bbe57528730804c03edc4de5ab}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!InitAcceleration@{InitAcceleration}}
+\index{InitAcceleration@{InitAcceleration}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{InitAcceleration()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Init\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a1a557b7c6ae9a03301e98474d1bea5d5}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!InitializePrograms@{InitializePrograms}}
+\index{InitializePrograms@{InitializePrograms}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{InitializePrograms()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Initialize\+Programs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_ad4f712d4265eff4026e82be4294f0448}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!InitProg@{InitProg}}
+\index{InitProg@{InitProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{InitProg()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Init\+Prog (\begin{DoxyParamCaption}\item[{std\+::string}]{prog,  }\item[{std\+::string}]{file,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a54732a1f3209767b0ce5006aeb2f8d6e}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!InitRenderer@{InitRenderer}}
+\index{InitRenderer@{InitRenderer}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{InitRenderer()}
+{\footnotesize\ttfamily virtual void optix\+Basic\+Renderer\+::\+Init\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classoptix_basic_renderer_aad26759876aa6d12f4b12b5620244a8a}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!isAuditory@{isAuditory}}
+\index{isAuditory@{isAuditory}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{isAuditory()}
+{\footnotesize\ttfamily bool optix\+Basic\+Renderer\+::is\+Auditory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_aa8119896697a263a95b0144356724ca9}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!isDynamic@{isDynamic}}
+\index{isDynamic@{isDynamic}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{isDynamic()}
+{\footnotesize\ttfamily bool optix\+Basic\+Renderer\+::is\+Dynamic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_a83ba846ce5f6c1d51a4edb4d7f705d39}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!LaunchAuditoryContext@{LaunchAuditoryContext}}
+\index{LaunchAuditoryContext@{LaunchAuditoryContext}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{LaunchAuditoryContext()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Launch\+Auditory\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classoptix_basic_renderer_a6d838ae4e599ef4f889711304e63fbed}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!LaunchOpticContext@{LaunchOpticContext}}
+\index{LaunchOpticContext@{LaunchOpticContext}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{LaunchOpticContext()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Launch\+Optic\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classoptix_basic_renderer_a485d3910f4d4ea3ad817c13ad3426e3d}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!PlayAnimation@{PlayAnimation}}
+\index{PlayAnimation@{PlayAnimation}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{PlayAnimation()}
+{\footnotesize\ttfamily bool optix\+Basic\+Renderer\+::\+Play\+Animation (\begin{DoxyParamCaption}\item[{float}]{play\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a25a8a7b594c917a3f034a61bf31e45c3}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!Render@{Render}}
+\index{Render@{Render}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{Render()}
+{\footnotesize\ttfamily virtual bool optix\+Basic\+Renderer\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classoptix_basic_renderer_a172bbca9202d5ee341c61baa3f8b2526}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{Reshape()}
+{\footnotesize\ttfamily virtual void optix\+Basic\+Renderer\+::\+Reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classoptix_basic_renderer_a6deeaecbdcfc6b95b1152f027b4a103a}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!setAudioBuffer@{setAudioBuffer}}
+\index{setAudioBuffer@{setAudioBuffer}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{setAudioBuffer()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::set\+Audio\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_ae5cbc1f624c7bc76e632c6ebf9e8ced8}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditory@{SetAuditory}}
+\index{SetAuditory@{SetAuditory}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetAuditory()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory (\begin{DoxyParamCaption}\item[{bool}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_a74988f8665441fd1bb781f0818e3117a}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditoryExceptionProg@{SetAuditoryExceptionProg}}
+\index{SetAuditoryExceptionProg@{SetAuditoryExceptionProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetAuditoryExceptionProg()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory\+Exception\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a17b7d72cc6946b5e90d3018b9d2b4101}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditoryExceptionProgName@{SetAuditoryExceptionProgName}}
+\index{SetAuditoryExceptionProgName@{SetAuditoryExceptionProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetAuditoryExceptionProgName()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory\+Exception\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a35c84b01215fa11ef668e08f1cbff535}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditoryMissProg@{SetAuditoryMissProg}}
+\index{SetAuditoryMissProg@{SetAuditoryMissProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetAuditoryMissProg()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory\+Miss\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a8cde327d8977319d9d8801b00a8c4f16}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditoryMissProgName@{SetAuditoryMissProgName}}
+\index{SetAuditoryMissProgName@{SetAuditoryMissProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetAuditoryMissProgName()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory\+Miss\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a2164676f6a09fc3b968ff921c5585ae4}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditoryRayGenerationProg@{SetAuditoryRayGenerationProg}}
+\index{SetAuditoryRayGenerationProg@{SetAuditoryRayGenerationProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetAuditoryRayGenerationProg()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory\+Ray\+Generation\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a51b47bcba01930d3e0304019e69f5179}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditoryRayGenerationProgName@{SetAuditoryRayGenerationProgName}}
+\index{SetAuditoryRayGenerationProgName@{SetAuditoryRayGenerationProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetAuditoryRayGenerationProgName()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a1ef681fb1643bd87a49d334e840e19dd}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetDynamic@{SetDynamic}}
+\index{SetDynamic@{SetDynamic}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetDynamic()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Dynamic (\begin{DoxyParamCaption}\item[{bool}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_a62bd275be248844ce5fedc60f6381c8d}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetExceptionProg@{SetExceptionProg}}
+\index{SetExceptionProg@{SetExceptionProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetExceptionProg()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Exception\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a05c898dda5ea7d639009f4a9e1c1edac}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetExceptionProgName@{SetExceptionProgName}}
+\index{SetExceptionProgName@{SetExceptionProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetExceptionProgName()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Exception\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a7c16181629fb9f53af931b85de548d32}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetMissProg@{SetMissProg}}
+\index{SetMissProg@{SetMissProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetMissProg()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Miss\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_aabc93859994ffcc2aac3b1e9d4ff41fb}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetMissProgName@{SetMissProgName}}
+\index{SetMissProgName@{SetMissProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetMissProgName()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Miss\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a735dd31802e84e03ddd22e5478cc2f1b}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetMode@{SetMode}}
+\index{SetMode@{SetMode}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetMode()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Mode (\begin{DoxyParamCaption}\item[{\textbf{ Render\+Modes}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_a538eb453c3df0719cb890655a37dd7fb}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetOpticalDims@{SetOpticalDims}}
+\index{SetOpticalDims@{SetOpticalDims}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetOpticalDims()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Optical\+Dims (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_a9c551fc7db3ca8db23d40bf0b2d2ed88}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetPrograms@{SetPrograms}}
+\index{SetPrograms@{SetPrograms}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetPrograms()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Programs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_afee2ae4b2efd36a5e6f89d53a2712f35}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetRayGenerationProg@{SetRayGenerationProg}}
+\index{SetRayGenerationProg@{SetRayGenerationProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetRayGenerationProg()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Ray\+Generation\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a95ab959da011161f8282201cc1874670}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetRayGenerationProgName@{SetRayGenerationProgName}}
+\index{SetRayGenerationProgName@{SetRayGenerationProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetRayGenerationProgName()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a569a136530a53f9e0e93a8f26772a0b8}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetTime@{SetTime}}
+\index{SetTime@{SetTime}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetTime()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Time (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_basic_renderer_a206a6899cefdb6db2c5d94648b17a74a}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetUpRenderer@{SetUpRenderer}}
+\index{SetUpRenderer@{SetUpRenderer}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{SetUpRenderer()}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Up\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classoptix_basic_renderer_adcd9a2518f21e6b357c4f89bb22fdefd}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!Update@{Update}}
+\index{Update@{Update}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily virtual void optix\+Basic\+Renderer\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classoptix_basic_renderer_ac257864861b1b6e09ab63b278d4aa0a5}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!audioM@{audioM}}
+\index{audioM@{audioM}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{audioM}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\textbf{ auditory\+Model}$>$ optix\+Basic\+Renderer\+::audioM}
+
+\mbox{\label{classoptix_basic_renderer_acc26a2dc8a8611bb51feaacedb4c230e}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!m\_mapOfPrograms@{m\_mapOfPrograms}}
+\index{m\_mapOfPrograms@{m\_mapOfPrograms}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{m\_mapOfPrograms}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, optix\+::\+Program$>$ optix\+Basic\+Renderer\+::m\+\_\+map\+Of\+Programs\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_basic_renderer_a13439b4ad5019d5639fa6140dc73a201}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!opticM@{opticM}}
+\index{opticM@{opticM}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{opticM}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\textbf{ basic\+Optical\+Model}$>$ optix\+Basic\+Renderer\+::opticM}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ optix\+Basic\+Renderer.\+h}\item 
+\textbf{ optix\+Basic\+Renderer.\+cpp}\end{DoxyCompactItemize}

@@ -43,6 +43,9 @@ Handles device and interop staff
 class vaRenderer :public vaBasicRenderer
 {
 public:
+
+    vaBasicRenderer& get() { return *this; };
+
     /*customly updates camera without updating widget
     */
     virtual void UpdateParam();
@@ -77,12 +80,12 @@ public:
     void SetValid(bool t) { m_isValid = true; };
 
     //todo: rewrite through class of basic camera
-    void SetCamera(PinholeCamera* pinholeCamera) {
+    void SetCamera(std::shared_ptr<PinholeCamera> pinholeCamera) {
         m_pinholeCamera = pinholeCamera;
     }
 
     //todo: rewrite through class of basic camera
-    void SetWidget(vaBaseWidget* v) {
+    void SetWidget(std::shared_ptr<vaBaseWidget> v) {
         m_widget = v;
         AddActor(m_widget->GetActor());
     }
@@ -93,8 +96,8 @@ private:
     int m_sceneEpsilonFactor;
     unsigned int m_stackSize;
 
-    PinholeCamera* m_pinholeCamera;
-    vaBaseWidget* m_widget;
+    std::shared_ptr<PinholeCamera> m_pinholeCamera;
+    std::shared_ptr<vaBaseWidget> m_widget;
     // Application command line parameters.
     unsigned int m_devicesEncoding;
 

@@ -1,0 +1,4 @@
+﻿  Building Custom Rule D:/nvidia/volume/VAAPI/rtmidi/CMakeLists.txt
+  CMake does not need to re-run because D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/generate.stamp is up-to-date.
+  apinames.cpp
+  apinames.vcxproj -> D:\nvidia\volume\VAAPI\rtmidi\build\tests\Release\apinames.exe

@@ -1,0 +1,149 @@
+\hypertarget{class_s_d_f_rounding_op}{}\doxysection{S\+D\+F\+Rounding\+Op Class Reference}
+\label{class_s_d_f_rounding_op}\index{SDFRoundingOp@{SDFRoundingOp}}
+
+
+Smoothing operation.  
+
+
+
+
+{\ttfamily \#include $<$optix\+S\+D\+F\+Operations.\+h$>$}
+
+
+
+Inheritance diagram for S\+D\+F\+Rounding\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{class_s_d_f_rounding_op__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for S\+D\+F\+Rounding\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{class_s_d_f_rounding_op__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_f_rounding_op_a2e3407dbab62a45e43f829c46390cfb8}{S\+D\+F\+Rounding\+Op}} ()
+\item 
+\mbox{\hyperlink{class_s_d_f_rounding_op_abd470bb5fdbdca9d2337aa5b391ae8df}{$\sim$\+S\+D\+F\+Rounding\+Op}} ()
+\item 
+void \mbox{\hyperlink{class_s_d_f_rounding_op_acbe19d03f4443996f9fb083c6ce19f13}{Set\+Koeff}} (float k)
+\item 
+float \mbox{\hyperlink{class_s_d_f_rounding_op_a94b25bea162964034d1bb05d35ec4c12}{Get\+Koeff}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_s_d_f_rounding_op_afdb63d252e0ca18b4b0bfaacef0db40b}{Init\+Callable\+Prog}} ()
+\item 
+virtual void \mbox{\hyperlink{class_s_d_f_rounding_op_a066290ccbf37adff7a46598ba39c5deb}{Adjust\+Center\+And\+Bounding\+Box}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_s_d_f_rounding_op_aaf2e3e7edf312b3da477cf195dc36f7b}{m\+\_\+k}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Smoothing operation. 
+
+For math of operation \href{https://www.iquilezles.org/www/articles/distfunctions/distfunctions.htm}{\texttt{ see}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_d_f_rounding_op_a2e3407dbab62a45e43f829c46390cfb8}\label{class_s_d_f_rounding_op_a2e3407dbab62a45e43f829c46390cfb8}} 
+\index{SDFRoundingOp@{SDFRoundingOp}!SDFRoundingOp@{SDFRoundingOp}}
+\index{SDFRoundingOp@{SDFRoundingOp}!SDFRoundingOp@{SDFRoundingOp}}
+\doxysubsubsection{\texorpdfstring{SDFRoundingOp()}{SDFRoundingOp()}}
+{\footnotesize\ttfamily S\+D\+F\+Rounding\+Op\+::\+S\+D\+F\+Rounding\+Op (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_s_d_f_rounding_op_abd470bb5fdbdca9d2337aa5b391ae8df}\label{class_s_d_f_rounding_op_abd470bb5fdbdca9d2337aa5b391ae8df}} 
+\index{SDFRoundingOp@{SDFRoundingOp}!````~SDFRoundingOp@{$\sim$SDFRoundingOp}}
+\index{````~SDFRoundingOp@{$\sim$SDFRoundingOp}!SDFRoundingOp@{SDFRoundingOp}}
+\doxysubsubsection{\texorpdfstring{$\sim$SDFRoundingOp()}{~SDFRoundingOp()}}
+{\footnotesize\ttfamily S\+D\+F\+Rounding\+Op\+::$\sim$\+S\+D\+F\+Rounding\+Op (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_d_f_rounding_op_a066290ccbf37adff7a46598ba39c5deb}\label{class_s_d_f_rounding_op_a066290ccbf37adff7a46598ba39c5deb}} 
+\index{SDFRoundingOp@{SDFRoundingOp}!AdjustCenterAndBoundingBox@{AdjustCenterAndBoundingBox}}
+\index{AdjustCenterAndBoundingBox@{AdjustCenterAndBoundingBox}!SDFRoundingOp@{SDFRoundingOp}}
+\doxysubsubsection{\texorpdfstring{AdjustCenterAndBoundingBox()}{AdjustCenterAndBoundingBox()}}
+{\footnotesize\ttfamily void S\+D\+F\+Rounding\+Op\+::\+Adjust\+Center\+And\+Bounding\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_unary_op_a26a825bd6e36529584d60899978fd8ec}{optix\+S\+D\+F\+Unary\+Op}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_d_f_rounding_op_a066290ccbf37adff7a46598ba39c5deb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_s_d_f_rounding_op_a94b25bea162964034d1bb05d35ec4c12}\label{class_s_d_f_rounding_op_a94b25bea162964034d1bb05d35ec4c12}} 
+\index{SDFRoundingOp@{SDFRoundingOp}!GetKoeff@{GetKoeff}}
+\index{GetKoeff@{GetKoeff}!SDFRoundingOp@{SDFRoundingOp}}
+\doxysubsubsection{\texorpdfstring{GetKoeff()}{GetKoeff()}}
+{\footnotesize\ttfamily float S\+D\+F\+Rounding\+Op\+::\+Get\+Koeff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_s_d_f_rounding_op_afdb63d252e0ca18b4b0bfaacef0db40b}\label{class_s_d_f_rounding_op_afdb63d252e0ca18b4b0bfaacef0db40b}} 
+\index{SDFRoundingOp@{SDFRoundingOp}!InitCallableProg@{InitCallableProg}}
+\index{InitCallableProg@{InitCallableProg}!SDFRoundingOp@{SDFRoundingOp}}
+\doxysubsubsection{\texorpdfstring{InitCallableProg()}{InitCallableProg()}}
+{\footnotesize\ttfamily void S\+D\+F\+Rounding\+Op\+::\+Init\+Callable\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_unary_op_a3023c1c93f79644b43f51d2f7212062b}{optix\+S\+D\+F\+Unary\+Op}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_d_f_rounding_op_afdb63d252e0ca18b4b0bfaacef0db40b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_s_d_f_rounding_op_acbe19d03f4443996f9fb083c6ce19f13}\label{class_s_d_f_rounding_op_acbe19d03f4443996f9fb083c6ce19f13}} 
+\index{SDFRoundingOp@{SDFRoundingOp}!SetKoeff@{SetKoeff}}
+\index{SetKoeff@{SetKoeff}!SDFRoundingOp@{SDFRoundingOp}}
+\doxysubsubsection{\texorpdfstring{SetKoeff()}{SetKoeff()}}
+{\footnotesize\ttfamily void S\+D\+F\+Rounding\+Op\+::\+Set\+Koeff (\begin{DoxyParamCaption}\item[{float}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_d_f_rounding_op_acbe19d03f4443996f9fb083c6ce19f13_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_s_d_f_rounding_op_aaf2e3e7edf312b3da477cf195dc36f7b}\label{class_s_d_f_rounding_op_aaf2e3e7edf312b3da477cf195dc36f7b}} 
+\index{SDFRoundingOp@{SDFRoundingOp}!m\_k@{m\_k}}
+\index{m\_k@{m\_k}!SDFRoundingOp@{SDFRoundingOp}}
+\doxysubsubsection{\texorpdfstring{m\_k}{m\_k}}
+{\footnotesize\ttfamily float S\+D\+F\+Rounding\+Op\+::m\+\_\+k\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+frep/src/\mbox{\hyperlink{optix_s_d_f_operations_8h}{optix\+S\+D\+F\+Operations.\+h}}\item 
+frep/src/\mbox{\hyperlink{optix_s_d_f_operations_8cpp}{optix\+S\+D\+F\+Operations.\+cpp}}\end{DoxyCompactItemize}

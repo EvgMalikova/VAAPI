@@ -42,14 +42,22 @@ public:
         m_builder = std::string("Trbvh");
         m_triangulated = false;
     };
-    ~vaBasicActor() {};
+    ~vaBasicActor() {
+        m_mapper.clear();
+    };
     virtual void SetContext(optix::Context &context)
     {
         vaBasicObject::SetContext(context);
     }
 
-    void AddMapper(vaMapper* map) {
+    void AddMapper(std::shared_ptr<vaMapper> map) {
+        //vaMapper* m = map.get();
         m_mapper.push_back(map);
+        geom.push_back(std::move(map->GetOutput()));
+    };
+
+    void AddMapper2(vaMapper* map) {
+        m_mapper.push_back(std::shared_ptr<vaMapper>(map));
         geom.push_back(map->GetOutput());
     };
     //void SetInput(optix::GeometryInstance gi) { geom.push_back(gi); };
@@ -90,7 +98,7 @@ public:
 private:
 
     std::vector<optix::GeometryInstance> geom;
-    std::vector<vaMapper*> m_mapper;
+    std::vector<std::shared_ptr<vaMapper>> m_mapper;
 
     optix::Acceleration acceleration;
     bool m_triangulated;

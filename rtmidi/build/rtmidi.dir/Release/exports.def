@@ -1,0 +1,202 @@
+EXPORTS 
+	??_R0?AV?$_Iosb@H@std@@@8 	 DATA
+	??_R0?AV?$basic_ios@DU?$char_traits@D@std@@@std@@@8 	 DATA
+	??_R0?AV?$basic_ostream@DU?$char_traits@D@std@@@std@@@8 	 DATA
+	??_R0?AV?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@8 	 DATA
+	??_R0?AV?$basic_streambuf@DU?$char_traits@D@std@@@std@@@8 	 DATA
+	??_R0?AV?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@8 	 DATA
+	??_R0?AVMidiApi@@@8 	 DATA
+	??_R0?AVMidiInApi@@@8 	 DATA
+	??_R0?AVMidiInWinMM@@@8 	 DATA
+	??_R0?AVMidiOutApi@@@8 	 DATA
+	??_R0?AVMidiOutWinMM@@@8 	 DATA
+	??_R0?AVRtMidi@@@8 	 DATA
+	??_R0?AVRtMidiError@@@8 	 DATA
+	??_R0?AVRtMidiIn@@@8 	 DATA
+	??_R0?AVRtMidiOut@@@8 	 DATA
+	??_R0?AVexception@std@@@8 	 DATA
+	??_R0?AVios_base@std@@@8 	 DATA
+	rtmidi_api_names 	 DATA
+	??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z
+	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z
+	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z
+	??$_Assign@V?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@@?$vector@EV?$allocator@E@std@@@std@@QEAAXV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@1@0Uforward_iterator_tag@1@@Z
+	??$_Construct@PEBW4Api@RtMidi@@@?$vector@W4Api@RtMidi@@V?$allocator@W4Api@RtMidi@@@std@@@std@@QEAAXPEBW4Api@RtMidi@@0Uforward_iterator_tag@1@@Z
+	??$_Copy_unchecked@PEAEPEAE@std@@YAPEAEPEAE00@Z
+	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z
+	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@AEBV01@@Z
+	??0?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@H@Z
+	??0?$vector@EV?$allocator@E@std@@@std@@QEAA@AEBV01@@Z
+	??0?$vector@EV?$allocator@E@std@@@std@@QEAA@_K@Z
+	??0MidiApi@@QEAA@AEBV0@@Z
+	??0MidiApi@@QEAA@XZ
+	??0MidiInApi@@QEAA@AEBV0@@Z
+	??0MidiInApi@@QEAA@I@Z
+	??0MidiInWinMM@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
+	??0MidiMessage@MidiInApi@@QEAA@XZ
+	??0MidiOutApi@@QEAA@AEBV0@@Z
+	??0MidiOutApi@@QEAA@XZ
+	??0MidiOutWinMM@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	??0RtMidi@@IEAA@XZ
+	??0RtMidi@@QEAA@AEBV0@@Z
+	??0RtMidiError@@QEAA@AEBV0@@Z
+	??0RtMidiError@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Type@0@@Z
+	??0RtMidiIn@@QEAA@AEBV0@@Z
+	??0RtMidiIn@@QEAA@W4Api@RtMidi@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
+	??0RtMidiInData@MidiInApi@@QEAA@AEBU01@@Z
+	??0RtMidiInData@MidiInApi@@QEAA@XZ
+	??0RtMidiOut@@QEAA@AEBV0@@Z
+	??0RtMidiOut@@QEAA@W4Api@RtMidi@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	??0exception@std@@QEAA@AEBV01@@Z
+	??1?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UEAA@XZ
+	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ
+	??1?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@QEAA@XZ
+	??1?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UEAA@XZ
+	??1?$vector@EV?$allocator@E@std@@@std@@QEAA@XZ
+	??1?$vector@W4Api@RtMidi@@V?$allocator@W4Api@RtMidi@@@std@@@std@@QEAA@XZ
+	??1MidiApi@@UEAA@XZ
+	??1MidiInApi@@UEAA@XZ
+	??1MidiInWinMM@@UEAA@XZ
+	??1MidiMessage@MidiInApi@@QEAA@XZ
+	??1MidiOutApi@@UEAA@XZ
+	??1MidiOutWinMM@@UEAA@XZ
+	??1RtMidi@@MEAA@XZ
+	??1RtMidiError@@UEAA@XZ
+	??1RtMidiIn@@UEAA@XZ
+	??1RtMidiInData@MidiInApi@@QEAA@XZ
+	??1RtMidiOut@@UEAA@XZ
+	??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ
+	??1exception@std@@UEAA@XZ
+	??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ
+	??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@$$QEAV01@@Z
+	??4?$vector@EV?$allocator@E@std@@@std@@QEAAAEAV01@AEBV01@@Z
+	??4MidiApi@@QEAAAEAV0@AEBV0@@Z
+	??4MidiInApi@@QEAAAEAV0@AEBV0@@Z
+	??4MidiOutApi@@QEAAAEAV0@AEBV0@@Z
+	??4RtMidi@@QEAAAEAV0@AEBV0@@Z
+	??4RtMidiError@@QEAAAEAV0@AEBV0@@Z
+	??4RtMidiIn@@QEAAAEAV0@AEBV0@@Z
+	??4RtMidiInData@MidiInApi@@QEAAAEAU01@AEBU01@@Z
+	??4RtMidiOut@@QEAAAEAV0@AEBV0@@Z
+	??_D?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAXXZ
+	??_FRtMidiIn@@QEAAXXZ
+	??_FRtMidiOut@@QEAAXXZ
+	?_Assign_rv@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAX$$QEAV12@@Z
+	?_Buy@?$vector@EV?$allocator@E@std@@@std@@IEAA_N_K@Z
+	?_Copy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAX_K0@Z
+	?_Copy@?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@QEAAX_K0@Z
+	?_Reallocate@?$vector@EV?$allocator@E@std@@@std@@IEAAX_K@Z
+	?_Reserve@?$vector@EV?$allocator@E@std@@@std@@IEAAX_K@Z
+	?_Tidy@?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IEAAXXZ
+	?_Tidy@?$vector@EV?$allocator@E@std@@@std@@IEAAXXZ
+	?allocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QEAAPEAD_K@Z
+	?allocate@?$_Wrap_alloc@V?$allocator@E@std@@@std@@QEAAPEAE_K@Z
+	?allocate@?$allocator@D@std@@QEAAPEAD_K@Z
+	?allocate@?$allocator@W4Api@RtMidi@@@std@@QEAAPEAW4Api@RtMidi@@_K@Z
+	?allocate@?$allocator@_W@std@@QEAAPEA_W_K@Z
+	?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@AEBV12@_K1@Z
+	?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@AEBV12@_K1@Z
+	?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@PEBD_K@Z
+	?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@_KD@Z
+	?assign@?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@QEAAAEAV12@_K_W@Z
+	?cancelCallback@MidiInApi@@QEAAXXZ
+	?cancelCallback@RtMidiIn@@QEAAXXZ
+	?closePort@MidiInWinMM@@UEAAXXZ
+	?closePort@MidiOutWinMM@@UEAAXXZ
+	?closePort@RtMidiIn@@UEAAXXZ
+	?closePort@RtMidiOut@@UEAAXXZ
+	?deallocate@?$_Wrap_alloc@V?$allocator@E@std@@@std@@QEAAXPEAE_K@Z
+	?deallocate@?$allocator@D@std@@QEAAXPEAD_K@Z
+	?deallocate@?$allocator@W4Api@RtMidi@@@std@@QEAAXPEAW4Api@RtMidi@@_K@Z
+	?deallocate@?$allocator@_W@std@@QEAAXPEA_W_K@Z
+	?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@_K0@Z
+	?error@MidiApi@@QEAAXW4Type@RtMidiError@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?getApiDisplayName@RtMidi@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Api@1@@Z
+	?getApiName@RtMidi@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Api@1@@Z
+	?getCompiledApi@RtMidi@@SAXAEAV?$vector@W4Api@RtMidi@@V?$allocator@W4Api@RtMidi@@@std@@@std@@@Z
+	?getCompiledApiByName@RtMidi@@SA?AW4Api@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?getCurrentApi@MidiInWinMM@@UEAA?AW4Api@RtMidi@@XZ
+	?getCurrentApi@MidiOutWinMM@@UEAA?AW4Api@RtMidi@@XZ
+	?getCurrentApi@RtMidiIn@@QEAA?AW4Api@RtMidi@@XZ
+	?getCurrentApi@RtMidiOut@@QEAA?AW4Api@RtMidi@@XZ
+	?getMessage@MidiInApi@@QEAANPEAV?$vector@EV?$allocator@E@std@@@std@@@Z
+	?getMessage@RtMidiError@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+	?getMessage@RtMidiIn@@QEAANPEAV?$vector@EV?$allocator@E@std@@@std@@@Z
+	?getPortCount@MidiInWinMM@@UEAAIXZ
+	?getPortCount@MidiOutWinMM@@UEAAIXZ
+	?getPortCount@RtMidiIn@@UEAAIXZ
+	?getPortCount@RtMidiOut@@UEAAIXZ
+	?getPortName@MidiInWinMM@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
+	?getPortName@MidiOutWinMM@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
+	?getPortName@RtMidiIn@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
+	?getPortName@RtMidiOut@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
+	?getType@RtMidiError@@UEBAAEBW4Type@1@XZ
+	?getVersion@RtMidi@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+	?ignoreTypes@MidiInApi@@UEAAX_N00@Z
+	?ignoreTypes@RtMidiIn@@QEAAX_N00@Z
+	?initialize@MidiInWinMM@@MEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?initialize@MidiOutWinMM@@MEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?isPortOpen@MidiApi@@QEBA_NXZ
+	?isPortOpen@RtMidiIn@@UEBA_NXZ
+	?isPortOpen@RtMidiOut@@UEBA_NXZ
+	?openMidiApi@RtMidiIn@@IEAAXW4Api@RtMidi@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
+	?openMidiApi@RtMidiOut@@IEAAXW4Api@RtMidi@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?openPort@MidiInWinMM@@UEAAXIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?openPort@MidiOutWinMM@@UEAAXIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?openPort@RtMidiIn@@UEAAXIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?openPort@RtMidiOut@@UEAAXIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?openVirtualPort@MidiInWinMM@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?openVirtualPort@MidiOutWinMM@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?openVirtualPort@RtMidiIn@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?openVirtualPort@RtMidiOut@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?overflow@?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MEAAHH@Z
+	?pbackfail@?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MEAAHH@Z
+	?pop@MidiQueue@MidiInApi@@QEAA_NPEAV?$vector@EV?$allocator@E@std@@@std@@PEAN@Z
+	?printMessage@RtMidiError@@UEBAXXZ
+	?push@MidiQueue@MidiInApi@@QEAA_NAEBUMidiMessage@2@@Z
+	?push_back@?$vector@EV?$allocator@E@std@@@std@@QEAAXAEBE@Z
+	?rtmidi_error@@YAXPEAVMidiApi@@W4RtMidiErrorType@@PEBD@Z
+	?seekoff@?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MEAA?AV?$fpos@U_Mbstatet@@@2@_JHH@Z
+	?seekpos@?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MEAA?AV?$fpos@U_Mbstatet@@@2@V32@H@Z
+	?sendMessage@MidiOutWinMM@@UEAAXPEBE_K@Z
+	?sendMessage@RtMidiOut@@QEAAXPEBE_K@Z
+	?sendMessage@RtMidiOut@@QEAAXPEBV?$vector@EV?$allocator@E@std@@@std@@@Z
+	?setCallback@MidiInApi@@QEAAXP6AXNPEAV?$vector@EV?$allocator@E@std@@@std@@PEAX@Z1@Z
+	?setCallback@RtMidiIn@@QEAAXP6AXNPEAV?$vector@EV?$allocator@E@std@@@std@@PEAX@Z1@Z
+	?setClientName@MidiInWinMM@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?setClientName@MidiOutWinMM@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?setClientName@RtMidi@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?setErrorCallback@MidiApi@@QEAAXP6AXW4Type@RtMidiError@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAX@Z2@Z
+	?setErrorCallback@RtMidiIn@@UEAAXP6AXW4Type@RtMidiError@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAX@Z2@Z
+	?setErrorCallback@RtMidiOut@@UEAAXP6AXW4Type@RtMidiError@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAX@Z2@Z
+	?setPortName@MidiInWinMM@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?setPortName@MidiOutWinMM@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?setPortName@RtMidi@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+	?size@MidiQueue@MidiInApi@@QEAAIPEAI0@Z
+	?str@?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@XZ
+	?str@?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@XZ
+	?underflow@?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MEAAHXZ
+	?what@RtMidiError@@UEBAPEBDXZ
+	?what@exception@std@@UEBAPEBDXZ
+	rtmidi_api_display_name
+	rtmidi_api_name
+	rtmidi_close_port
+	rtmidi_compiled_api_by_name
+	rtmidi_get_compiled_api
+	rtmidi_get_port_count
+	rtmidi_get_port_name
+	rtmidi_in_cancel_callback
+	rtmidi_in_create
+	rtmidi_in_create_default
+	rtmidi_in_free
+	rtmidi_in_get_current_api
+	rtmidi_in_get_message
+	rtmidi_in_ignore_types
+	rtmidi_in_set_callback
+	rtmidi_open_port
+	rtmidi_open_virtual_port
+	rtmidi_out_create
+	rtmidi_out_create_default
+	rtmidi_out_free
+	rtmidi_out_get_current_api
+	rtmidi_out_send_message

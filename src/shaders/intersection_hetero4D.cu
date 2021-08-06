@@ -156,33 +156,15 @@ inline __device__  primParamDesc getTimeData(int primIdx)
         float3 pos = Positions[ids[j]];
         descPrim.pos[j] = pos;
         cent += pos;
+		 descPrim.rad[j] = BSRadius[ids[j]];
     }
-    /*
-    for (int j = 0; j < 4; j++)
-    {
-        int id = ids[j] + lower*PNum;
-        float3 pos1 = Positions[id]; //getting correct frame
-
-        if (numFrames > 0) //dynamic
-        {
-            id = ids[j] + lower*PNum;
-            pos2 = Positions[id];
-            pos = time*pos2 + (1.0 - time)*pos1; //time interpolation
-        }
-        else
-        {
-            pos = pos1; //static
-        }
-        descPrim.pos[j] = pos;
-        cent += pos;
-    }
-    */
+   
     cent /= 4;
-    const int type = BSType[primIdx];
+    //const int type = BSType[primIdx];
 
-    descPrim.rad[0] = length(cent - descPrim.pos[0]);
+   // length(cent - descPrim.pos[0]);
 
-    descPrim.types[0] = type;
+    //descPrim.types[0] = type;
 
     return descPrim;
 }

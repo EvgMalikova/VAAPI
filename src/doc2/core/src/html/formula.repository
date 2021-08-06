@@ -1,0 +1,5 @@
+\form#0:\[ f: x \rightarrow \Re, x \in \Re^n \]
+\form#1:$(F'(X)$
+\form#2:$ S'_1(X)$
+\form#3:$ o(t)=(G(t),A_1(t)): (F'(X|t),S'_1(X|t))$
+\form#4:$ m(t)=(G(t),A_o(t),A_s(t)): (F(X|t),S_o(X|t),S_s(X|t)) $

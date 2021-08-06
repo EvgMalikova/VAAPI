@@ -223,6 +223,9 @@ std::string vaVolumeSDFHetero::GetEvalProgramName()
     case sdfHeterogeneous::ObjectType::MULTISCALE:
         return "eval3";
         break;
+    case sdfHeterogeneous::ObjectType::CELL:
+        return "eval5";
+        break;
     case sdfHeterogeneous::ObjectType::DIM_4D:
         return "eval4";
         break;
@@ -295,7 +298,11 @@ void vaVolumeSDFHeteroMultiscale::CompileFunction()
     //TODO compile function depending on progName
     InitProg(nameProg, "materials_modelling_multiscale.cu", "evalMaterial");
     //compile color prog
-    InitProg("GetColorBlend", "materials_modelling_multiscale.cu", "colorMaterial");
+    if (GetHeteroObjType() == sdfHeterogeneous::ObjectType::CELL) {
+        InitProg("GetColorBlendCell", "materials_modelling_multiscale.cu", "colorMaterial");
+    }
+    else
+        InitProg("GetColorBlend", "materials_modelling_multiscale.cu", "colorMaterial");
 }
 
 //------------------------------------

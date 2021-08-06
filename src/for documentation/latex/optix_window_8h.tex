@@ -1,0 +1,136 @@
+\hypertarget{optix_window_8h}{}\doxysection{src/optix\+Window.h File Reference}
+\label{optix_window_8h}\index{src/optixWindow.h@{src/optixWindow.h}}
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$optix.\+h$>$}\newline
+{\ttfamily \#include $<$optixu/optixpp\+\_\+namespace.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}inc/\+Timer.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$imgui/imgui.\+h$>$}\newline
+{\ttfamily \#include $<$imgui/imgui\+\_\+internal.\+h$>$}\newline
+{\ttfamily \#include $<$imgui/imgui\+\_\+impl\+\_\+glfw\+\_\+gl2.\+h$>$}\newline
+{\ttfamily \#include $<$G\+L/glew.\+h$>$}\newline
+{\ttfamily \#include $<$G\+L\+F\+W/glfw3.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}optix\+Geometry.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}optix\+S\+D\+F\+Primitives.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}optix\+Material.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}va\+Actor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}optix\+Renderer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}optix\+Reader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}va\+Base\+Widget.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}va\+Widget\+Handle.\+h\char`\"{}}\newline
+Include dependency graph for optix\+Window.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{optix_window_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{optix_window_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbasic_g_l_f_w___window}{basic\+G\+L\+F\+W\+\_\+\+Window}}
+\item 
+class \mbox{\hyperlink{classcontext_manager}{context\+Manager}}
+\item 
+class \mbox{\hyperlink{class_g_l_f_w___window}{G\+L\+F\+W\+\_\+\+Window}}
+\item 
+class \mbox{\hyperlink{class_basic_render_window_interactor}{Basic\+Render\+Window\+Interactor}}
+\item 
+class \mbox{\hyperlink{class_render_window_interactor}{Render\+Window\+Interactor}}
+\item 
+class \mbox{\hyperlink{class_scene_manager}{Scene\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{optix_window_8h_a813cd083384a729307b133aacf716a94}{O\+P\+T\+I\+X\+W\+I\+N\+D\+O\+W\+\_\+H}}
+\item 
+\#define \mbox{\hyperlink{optix_window_8h_adf4d73301961430d50d7edd96f92ce38}{I\+M\+G\+U\+I\+\_\+\+D\+E\+F\+I\+N\+E\+\_\+\+M\+A\+T\+H\+\_\+\+O\+P\+E\+R\+A\+T\+O\+RS}}~1
+\item 
+\#define \mbox{\hyperlink{optix_window_8h_a97d5fc357ee7face7c84da148bc90dab}{R\+T\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+C\+O\+N\+T\+E\+XT}}(func)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64}{Gui\+State}} \{ \newline
+\mbox{\hyperlink{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a596f9a52a9a5aa6e12769ba1122e5c6c}{G\+U\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+O\+NE}}, 
+\mbox{\hyperlink{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a739940802aed8990c79d914c82ac508e}{G\+U\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+O\+R\+B\+IT}}, 
+\mbox{\hyperlink{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a9cad2e29d0bdac4c663509ebb127349d}{G\+U\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+AN}}, 
+\mbox{\hyperlink{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a1e2eaccdebbf1f33ef5831643b6feaee}{G\+U\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+O\+L\+LY}}, 
+\newline
+\mbox{\hyperlink{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a187f475ec742a089154e1d9119f262fb}{G\+U\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+O\+C\+US}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{optix_window_8h_adf4d73301961430d50d7edd96f92ce38}\label{optix_window_8h_adf4d73301961430d50d7edd96f92ce38}} 
+\index{optixWindow.h@{optixWindow.h}!IMGUI\_DEFINE\_MATH\_OPERATORS@{IMGUI\_DEFINE\_MATH\_OPERATORS}}
+\index{IMGUI\_DEFINE\_MATH\_OPERATORS@{IMGUI\_DEFINE\_MATH\_OPERATORS}!optixWindow.h@{optixWindow.h}}
+\doxysubsubsection{\texorpdfstring{IMGUI\_DEFINE\_MATH\_OPERATORS}{IMGUI\_DEFINE\_MATH\_OPERATORS}}
+{\footnotesize\ttfamily \#define I\+M\+G\+U\+I\+\_\+\+D\+E\+F\+I\+N\+E\+\_\+\+M\+A\+T\+H\+\_\+\+O\+P\+E\+R\+A\+T\+O\+RS~1}
+
+Architecture much inspired by V\+TK Window class(\href{http://vtk.org}{\texttt{ http\+://vtk.\+org}}) implementation The window handles\+: -\/interactive call back procedures -\/Renderer
+
+The window is written on base of G\+L\+FW \mbox{\Hypertarget{optix_window_8h_a813cd083384a729307b133aacf716a94}\label{optix_window_8h_a813cd083384a729307b133aacf716a94}} 
+\index{optixWindow.h@{optixWindow.h}!OPTIXWINDOW\_H@{OPTIXWINDOW\_H}}
+\index{OPTIXWINDOW\_H@{OPTIXWINDOW\_H}!optixWindow.h@{optixWindow.h}}
+\doxysubsubsection{\texorpdfstring{OPTIXWINDOW\_H}{OPTIXWINDOW\_H}}
+{\footnotesize\ttfamily \#define O\+P\+T\+I\+X\+W\+I\+N\+D\+O\+W\+\_\+H}
+
+\mbox{\Hypertarget{optix_window_8h_a97d5fc357ee7face7c84da148bc90dab}\label{optix_window_8h_a97d5fc357ee7face7c84da148bc90dab}} 
+\index{optixWindow.h@{optixWindow.h}!RT\_CHECK\_ERROR\_NO\_CONTEXT@{RT\_CHECK\_ERROR\_NO\_CONTEXT}}
+\index{RT\_CHECK\_ERROR\_NO\_CONTEXT@{RT\_CHECK\_ERROR\_NO\_CONTEXT}!optixWindow.h@{optixWindow.h}}
+\doxysubsubsection{\texorpdfstring{RT\_CHECK\_ERROR\_NO\_CONTEXT}{RT\_CHECK\_ERROR\_NO\_CONTEXT}}
+{\footnotesize\ttfamily \#define R\+T\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+C\+O\+N\+T\+E\+XT(\begin{DoxyParamCaption}\item[{}]{func }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{    RTresult code = func; \(\backslash\)}
+\DoxyCodeLine{    if (code != RT\_SUCCESS) \(\backslash\)}
+\DoxyCodeLine{      std::cerr << \textcolor{stringliteral}{"ERROR: Function "} << \#func << std::endl; \(\backslash\)}
+\DoxyCodeLine{  \} \textcolor{keywordflow}{while} (0)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64}\label{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64}} 
+\index{optixWindow.h@{optixWindow.h}!GuiState@{GuiState}}
+\index{GuiState@{GuiState}!optixWindow.h@{optixWindow.h}}
+\doxysubsubsection{\texorpdfstring{GuiState}{GuiState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64}{Gui\+State}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GUI\_STATE\_NONE@{GUI\_STATE\_NONE}!optixWindow.h@{optixWindow.h}}\index{optixWindow.h@{optixWindow.h}!GUI\_STATE\_NONE@{GUI\_STATE\_NONE}}}\mbox{\Hypertarget{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a596f9a52a9a5aa6e12769ba1122e5c6c}\label{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a596f9a52a9a5aa6e12769ba1122e5c6c}} 
+G\+U\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+O\+NE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GUI\_STATE\_ORBIT@{GUI\_STATE\_ORBIT}!optixWindow.h@{optixWindow.h}}\index{optixWindow.h@{optixWindow.h}!GUI\_STATE\_ORBIT@{GUI\_STATE\_ORBIT}}}\mbox{\Hypertarget{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a739940802aed8990c79d914c82ac508e}\label{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a739940802aed8990c79d914c82ac508e}} 
+G\+U\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+O\+R\+B\+IT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GUI\_STATE\_PAN@{GUI\_STATE\_PAN}!optixWindow.h@{optixWindow.h}}\index{optixWindow.h@{optixWindow.h}!GUI\_STATE\_PAN@{GUI\_STATE\_PAN}}}\mbox{\Hypertarget{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a9cad2e29d0bdac4c663509ebb127349d}\label{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a9cad2e29d0bdac4c663509ebb127349d}} 
+G\+U\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+AN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GUI\_STATE\_DOLLY@{GUI\_STATE\_DOLLY}!optixWindow.h@{optixWindow.h}}\index{optixWindow.h@{optixWindow.h}!GUI\_STATE\_DOLLY@{GUI\_STATE\_DOLLY}}}\mbox{\Hypertarget{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a1e2eaccdebbf1f33ef5831643b6feaee}\label{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a1e2eaccdebbf1f33ef5831643b6feaee}} 
+G\+U\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+O\+L\+LY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GUI\_STATE\_FOCUS@{GUI\_STATE\_FOCUS}!optixWindow.h@{optixWindow.h}}\index{optixWindow.h@{optixWindow.h}!GUI\_STATE\_FOCUS@{GUI\_STATE\_FOCUS}}}\mbox{\Hypertarget{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a187f475ec742a089154e1d9119f262fb}\label{optix_window_8h_a0fb3a4d7c02dcbb252e59db165128d64a187f475ec742a089154e1d9119f262fb}} 
+G\+U\+I\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+O\+C\+US&\\
+\hline
+
+\end{DoxyEnumFields}

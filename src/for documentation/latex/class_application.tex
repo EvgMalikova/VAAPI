@@ -1,0 +1,282 @@
+\hypertarget{class_application}{}\doxysection{Application Class Reference}
+\label{class_application}\index{Application@{Application}}
+
+
+{\ttfamily \#include $<$Application\+\_\+res.\+h$>$}
+
+
+
+Collaboration diagram for Application\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_application_a87f9c5caabc47d3e7042ca1ae51ec9e3}{Application}} (G\+L\+F\+Wwindow $\ast$window, const int width, const int height, const unsigned int devices, const unsigned int stack\+Size, const bool interop)
+\item 
+\mbox{\hyperlink{class_application_a748bca84fefb9c12661cfaa2f623748d}{$\sim$\+Application}} ()
+\item 
+bool \mbox{\hyperlink{class_application_ac43a11766e11d81ba483dad5d0b2539c}{is\+Valid}} ()
+\item 
+void \mbox{\hyperlink{class_application_a871917402fd2559b72c9faf0885d7f5e}{gui\+New\+Frame}} ()
+\item 
+void \mbox{\hyperlink{class_application_a0cfba85b5005f480ac47f82125897c47}{gui\+Window}} ()
+\item 
+void \mbox{\hyperlink{class_application_ad15dc1687a594c229993bae94bc1a08d}{gui\+Event\+Handler}} ()
+\item 
+void \mbox{\hyperlink{class_application_ab609278c0f7138122cb56c29f9480b8b}{gui\+Render}} ()
+\item 
+void \mbox{\hyperlink{class_application_a0ccf9be9d55345724d6fe7dfd541cfd3}{gui\+Reference\+Manual}} ()
+\item 
+optix\+::\+Context \mbox{\hyperlink{class_application_af581aec6e0b011376285bfc37ddc01dd}{Get\+Context}} ()
+\item 
+void \mbox{\hyperlink{class_application_a276388f7090c0a2b1c8b16cf033b969d}{Init}} ()
+\item 
+\mbox{\hyperlink{class_application_a0e36e5f3b3ef63cdc31fa94fdc3fa50b}{Application}} (const int width, const int height, const unsigned int devices, const unsigned int stack\+Size, const bool interop)
+\item 
+\mbox{\hyperlink{class_application_a748bca84fefb9c12661cfaa2f623748d}{$\sim$\+Application}} ()
+\item 
+bool \mbox{\hyperlink{class_application_ac43a11766e11d81ba483dad5d0b2539c}{is\+Valid}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoptix_s_d_f_mol_balls}{optix\+S\+D\+F\+Mol\+Balls}} \mbox{\hyperlink{class_application_a67a038dc3e2d5da225e3a0bdf30cbea7}{mol}}
+\item 
+\mbox{\hyperlink{classoptix_mapper}{optix\+Mapper}} \mbox{\hyperlink{class_application_acc5b6ce74cc0a52a08eb9ae60965308f}{map1}}
+\item 
+\mbox{\hyperlink{classoptix_mapper}{optix\+Mapper}} \mbox{\hyperlink{class_application_a7ef988f9245b5699a33b1dee3e1fd176}{map2}}
+\item 
+\mbox{\hyperlink{classoptix_mapper}{optix\+Mapper}} \mbox{\hyperlink{class_application_a635e94d7627f33714c52246309fd3abe}{map3}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_pinhole_camera}{Pinhole\+Camera}} $>$ \mbox{\hyperlink{class_application_a98e4a879d28cdc23d5660c49c2b8d633}{m\+\_\+pinholecamera}}
+\item 
+\mbox{\hyperlink{classoptix_renderer}{optix\+Renderer}} \mbox{\hyperlink{class_application_aad1846fe20ab648333fc3fcdd2fd1efc}{ren}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_pinhole_camera}{Pinhole\+Camera}} $>$ \mbox{\hyperlink{class_application_a6af473d535abe471ab186af5769138d8}{m\+\_\+pinhole\+Camera}}
+\item 
+\mbox{\hyperlink{classoptix_mapper}{optix\+Mapper}} \mbox{\hyperlink{class_application_a8903ac45f7a3c2791486c5a84473573b}{map21}}
+\item 
+\mbox{\hyperlink{classoptix_sdf_actor}{optix\+Sdf\+Actor}} \mbox{\hyperlink{class_application_a964382f4d85a2ec0e32b15ea682b3324}{ac\+Sdf\+Mol}}
+\item 
+\mbox{\hyperlink{classoptix_sdf_actor}{optix\+Sdf\+Actor}} \mbox{\hyperlink{class_application_a0dba2097cdaeb5ce668462ea54411af9}{ac\+Sdf}}
+\item 
+\mbox{\hyperlink{classoptix_sdf_actor}{optix\+Sdf\+Actor}} \mbox{\hyperlink{class_application_a76d6a60516c86442094b3f6031788585}{ac\+Sdf1}}
+\item 
+\mbox{\hyperlink{classoptix_t_r_i_actor}{optix\+T\+R\+I\+Actor}} \mbox{\hyperlink{class_application_ac205ec9300136d4933f9eec067a595f7}{ac}}
+\item 
+\mbox{\hyperlink{classcontext_manager}{context\+Manager}} \mbox{\hyperlink{class_application_a3d13a6dd046402242ba9c415307e5805}{m}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_application_a87f9c5caabc47d3e7042ca1ae51ec9e3}\label{class_application_a87f9c5caabc47d3e7042ca1ae51ec9e3}} 
+\index{Application@{Application}!Application@{Application}}
+\index{Application@{Application}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{Application()}{Application()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{const int}]{width,  }\item[{const int}]{height,  }\item[{const unsigned int}]{devices,  }\item[{const unsigned int}]{stack\+Size,  }\item[{const bool}]{interop }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_application_a748bca84fefb9c12661cfaa2f623748d}\label{class_application_a748bca84fefb9c12661cfaa2f623748d}} 
+\index{Application@{Application}!````~Application@{$\sim$Application}}
+\index{````~Application@{$\sim$Application}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{$\sim$Application()}{~Application()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Application\+::$\sim$\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a748bca84fefb9c12661cfaa2f623748d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_application_a0e36e5f3b3ef63cdc31fa94fdc3fa50b}\label{class_application_a0e36e5f3b3ef63cdc31fa94fdc3fa50b}} 
+\index{Application@{Application}!Application@{Application}}
+\index{Application@{Application}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{Application()}{Application()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{const int}]{width,  }\item[{const int}]{height,  }\item[{const unsigned int}]{devices,  }\item[{const unsigned int}]{stack\+Size,  }\item[{const bool}]{interop }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a0e36e5f3b3ef63cdc31fa94fdc3fa50b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_application_a748bca84fefb9c12661cfaa2f623748d}\label{class_application_a748bca84fefb9c12661cfaa2f623748d}} 
+\index{Application@{Application}!````~Application@{$\sim$Application}}
+\index{````~Application@{$\sim$Application}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{$\sim$Application()}{~Application()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Application\+::$\sim$\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_application_af581aec6e0b011376285bfc37ddc01dd}\label{class_application_af581aec6e0b011376285bfc37ddc01dd}} 
+\index{Application@{Application}!GetContext@{GetContext}}
+\index{GetContext@{GetContext}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{GetContext()}{GetContext()}}
+{\footnotesize\ttfamily optix\+::\+Context Application\+::\+Get\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_af581aec6e0b011376285bfc37ddc01dd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_application_ad15dc1687a594c229993bae94bc1a08d}\label{class_application_ad15dc1687a594c229993bae94bc1a08d}} 
+\index{Application@{Application}!guiEventHandler@{guiEventHandler}}
+\index{guiEventHandler@{guiEventHandler}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{guiEventHandler()}{guiEventHandler()}}
+{\footnotesize\ttfamily void Application\+::gui\+Event\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_application_a871917402fd2559b72c9faf0885d7f5e}\label{class_application_a871917402fd2559b72c9faf0885d7f5e}} 
+\index{Application@{Application}!guiNewFrame@{guiNewFrame}}
+\index{guiNewFrame@{guiNewFrame}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{guiNewFrame()}{guiNewFrame()}}
+{\footnotesize\ttfamily void Application\+::gui\+New\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_application_a0ccf9be9d55345724d6fe7dfd541cfd3}\label{class_application_a0ccf9be9d55345724d6fe7dfd541cfd3}} 
+\index{Application@{Application}!guiReferenceManual@{guiReferenceManual}}
+\index{guiReferenceManual@{guiReferenceManual}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{guiReferenceManual()}{guiReferenceManual()}}
+{\footnotesize\ttfamily void Application\+::gui\+Reference\+Manual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_application_ab609278c0f7138122cb56c29f9480b8b}\label{class_application_ab609278c0f7138122cb56c29f9480b8b}} 
+\index{Application@{Application}!guiRender@{guiRender}}
+\index{guiRender@{guiRender}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{guiRender()}{guiRender()}}
+{\footnotesize\ttfamily void Application\+::gui\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_application_a0cfba85b5005f480ac47f82125897c47}\label{class_application_a0cfba85b5005f480ac47f82125897c47}} 
+\index{Application@{Application}!guiWindow@{guiWindow}}
+\index{guiWindow@{guiWindow}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{guiWindow()}{guiWindow()}}
+{\footnotesize\ttfamily void Application\+::gui\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_application_a276388f7090c0a2b1c8b16cf033b969d}\label{class_application_a276388f7090c0a2b1c8b16cf033b969d}} 
+\index{Application@{Application}!Init@{Init}}
+\index{Init@{Init}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Application\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_application_a276388f7090c0a2b1c8b16cf033b969d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_application_ac43a11766e11d81ba483dad5d0b2539c}\label{class_application_ac43a11766e11d81ba483dad5d0b2539c}} 
+\index{Application@{Application}!isValid@{isValid}}
+\index{isValid@{isValid}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Application\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_application_ac43a11766e11d81ba483dad5d0b2539c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_application_ac43a11766e11d81ba483dad5d0b2539c}\label{class_application_ac43a11766e11d81ba483dad5d0b2539c}} 
+\index{Application@{Application}!isValid@{isValid}}
+\index{isValid@{isValid}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Application\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_application_ac205ec9300136d4933f9eec067a595f7}\label{class_application_ac205ec9300136d4933f9eec067a595f7}} 
+\index{Application@{Application}!ac@{ac}}
+\index{ac@{ac}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{ac}{ac}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_t_r_i_actor}{optix\+T\+R\+I\+Actor}} Application\+::ac}
+
+\mbox{\Hypertarget{class_application_a0dba2097cdaeb5ce668462ea54411af9}\label{class_application_a0dba2097cdaeb5ce668462ea54411af9}} 
+\index{Application@{Application}!acSdf@{acSdf}}
+\index{acSdf@{acSdf}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{acSdf}{acSdf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_sdf_actor}{optix\+Sdf\+Actor}} Application\+::ac\+Sdf}
+
+\mbox{\Hypertarget{class_application_a76d6a60516c86442094b3f6031788585}\label{class_application_a76d6a60516c86442094b3f6031788585}} 
+\index{Application@{Application}!acSdf1@{acSdf1}}
+\index{acSdf1@{acSdf1}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{acSdf1}{acSdf1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_sdf_actor}{optix\+Sdf\+Actor}} Application\+::ac\+Sdf1}
+
+\mbox{\Hypertarget{class_application_a964382f4d85a2ec0e32b15ea682b3324}\label{class_application_a964382f4d85a2ec0e32b15ea682b3324}} 
+\index{Application@{Application}!acSdfMol@{acSdfMol}}
+\index{acSdfMol@{acSdfMol}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{acSdfMol}{acSdfMol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_sdf_actor}{optix\+Sdf\+Actor}} Application\+::ac\+Sdf\+Mol}
+
+\mbox{\Hypertarget{class_application_a3d13a6dd046402242ba9c415307e5805}\label{class_application_a3d13a6dd046402242ba9c415307e5805}} 
+\index{Application@{Application}!m@{m}}
+\index{m@{m}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcontext_manager}{context\+Manager}} Application\+::m}
+
+\mbox{\Hypertarget{class_application_a98e4a879d28cdc23d5660c49c2b8d633}\label{class_application_a98e4a879d28cdc23d5660c49c2b8d633}} 
+\index{Application@{Application}!m\_pinholecamera@{m\_pinholecamera}}
+\index{m\_pinholecamera@{m\_pinholecamera}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{m\_pinholecamera}{m\_pinholecamera}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_pinhole_camera}{Pinhole\+Camera}}$>$ Application\+::m\+\_\+pinholecamera}
+
+\mbox{\Hypertarget{class_application_a6af473d535abe471ab186af5769138d8}\label{class_application_a6af473d535abe471ab186af5769138d8}} 
+\index{Application@{Application}!m\_pinholeCamera@{m\_pinholeCamera}}
+\index{m\_pinholeCamera@{m\_pinholeCamera}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{m\_pinholeCamera}{m\_pinholeCamera}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_pinhole_camera}{Pinhole\+Camera}} $>$ Application\+::m\+\_\+pinhole\+Camera}
+
+\mbox{\Hypertarget{class_application_acc5b6ce74cc0a52a08eb9ae60965308f}\label{class_application_acc5b6ce74cc0a52a08eb9ae60965308f}} 
+\index{Application@{Application}!map1@{map1}}
+\index{map1@{map1}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{map1}{map1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_mapper}{optix\+Mapper}} Application\+::map1}
+
+\mbox{\Hypertarget{class_application_a7ef988f9245b5699a33b1dee3e1fd176}\label{class_application_a7ef988f9245b5699a33b1dee3e1fd176}} 
+\index{Application@{Application}!map2@{map2}}
+\index{map2@{map2}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{map2}{map2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_mapper}{optix\+Mapper}} Application\+::map2}
+
+\mbox{\Hypertarget{class_application_a8903ac45f7a3c2791486c5a84473573b}\label{class_application_a8903ac45f7a3c2791486c5a84473573b}} 
+\index{Application@{Application}!map21@{map21}}
+\index{map21@{map21}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{map21}{map21}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_mapper}{optix\+Mapper}} Application\+::map21}
+
+\mbox{\Hypertarget{class_application_a635e94d7627f33714c52246309fd3abe}\label{class_application_a635e94d7627f33714c52246309fd3abe}} 
+\index{Application@{Application}!map3@{map3}}
+\index{map3@{map3}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{map3}{map3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_mapper}{optix\+Mapper}} Application\+::map3}
+
+\mbox{\Hypertarget{class_application_a67a038dc3e2d5da225e3a0bdf30cbea7}\label{class_application_a67a038dc3e2d5da225e3a0bdf30cbea7}} 
+\index{Application@{Application}!mol@{mol}}
+\index{mol@{mol}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{mol}{mol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_s_d_f_mol_balls}{optix\+S\+D\+F\+Mol\+Balls}} Application\+::mol}
+
+\mbox{\Hypertarget{class_application_aad1846fe20ab648333fc3fcdd2fd1efc}\label{class_application_aad1846fe20ab648333fc3fcdd2fd1efc}} 
+\index{Application@{Application}!ren@{ren}}
+\index{ren@{ren}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{ren}{ren}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_renderer}{optix\+Renderer}} Application\+::ren}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/\mbox{\hyperlink{_application__res_8h}{Application\+\_\+res.\+h}}\item 
+src/\mbox{\hyperlink{optix_window_8h}{optix\+Window.\+h}}\item 
+src/\mbox{\hyperlink{_application_8cpp}{Application.\+cpp}}\item 
+src/\mbox{\hyperlink{_sphere_8cpp}{Sphere.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,106 @@
+\hypertarget{materials_2transfer_function_8h}{}\doxysection{shaders/materials/transfer\+Function.h File Reference}
+\label{materials_2transfer_function_8h}\index{shaders/materials/transferFunction.h@{shaders/materials/transferFunction.h}}
+{\ttfamily \#include $<$optixu/optixu\+\_\+math\+\_\+namespace.\+h$>$}\newline
+Include dependency graph for transfer\+Function.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{materials_2transfer_function_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ float4 \mbox{\hyperlink{materials_2transfer_function_8h_a7a6c6bdb4e2bd193e9a4c60d018bc5a5}{lerp4f}} (float4 a, float4 b, float c)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ float \mbox{\hyperlink{materials_2transfer_function_8h_ae71d4c9b84cdb6b509b2d8d94a83c2a5}{lerp1f}} (float a, float b, float c)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ float3 \mbox{\hyperlink{materials_2transfer_function_8h_ac0095d5a37d899d66d536f862425988a}{pal}} (float t, float3 a, float3 b, float3 c, float3 d)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ float4 \mbox{\hyperlink{materials_2transfer_function_8h_a274f72010e290ebc5450f7b3583c4a01}{translucent\+\_\+grays}} (float drbf, float t, int type)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ float4 \mbox{\hyperlink{materials_2transfer_function_8h_ae10f2fafa02d4090fe3e396f4ef92928}{translucent\+\_\+grays2}} (float t, float t2)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ float4 \mbox{\hyperlink{materials_2transfer_function_8h_ac780f2e31757c50dcc2c76c826e472a4}{tf}} (float v, float t, const int tf\+\_\+type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{materials_2transfer_function_8h_ae71d4c9b84cdb6b509b2d8d94a83c2a5}\label{materials_2transfer_function_8h_ae71d4c9b84cdb6b509b2d8d94a83c2a5}} 
+\index{transferFunction.h@{transferFunction.h}!lerp1f@{lerp1f}}
+\index{lerp1f@{lerp1f}!transferFunction.h@{transferFunction.h}}
+\doxysubsubsection{\texorpdfstring{lerp1f()}{lerp1f()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ float lerp1f (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b,  }\item[{float}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{materials_2transfer_function_8h_a7a6c6bdb4e2bd193e9a4c60d018bc5a5}\label{materials_2transfer_function_8h_a7a6c6bdb4e2bd193e9a4c60d018bc5a5}} 
+\index{transferFunction.h@{transferFunction.h}!lerp4f@{lerp4f}}
+\index{lerp4f@{lerp4f}!transferFunction.h@{transferFunction.h}}
+\doxysubsubsection{\texorpdfstring{lerp4f()}{lerp4f()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ float4 lerp4f (\begin{DoxyParamCaption}\item[{float4}]{a,  }\item[{float4}]{b,  }\item[{float}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{materials_2transfer_function_8h_a7a6c6bdb4e2bd193e9a4c60d018bc5a5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{materials_2transfer_function_8h_ac0095d5a37d899d66d536f862425988a}\label{materials_2transfer_function_8h_ac0095d5a37d899d66d536f862425988a}} 
+\index{transferFunction.h@{transferFunction.h}!pal@{pal}}
+\index{pal@{pal}!transferFunction.h@{transferFunction.h}}
+\doxysubsubsection{\texorpdfstring{pal()}{pal()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ float3 pal (\begin{DoxyParamCaption}\item[{float}]{t,  }\item[{float3}]{a,  }\item[{float3}]{b,  }\item[{float3}]{c,  }\item[{float3}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{materials_2transfer_function_8h_ac0095d5a37d899d66d536f862425988a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{materials_2transfer_function_8h_ac780f2e31757c50dcc2c76c826e472a4}\label{materials_2transfer_function_8h_ac780f2e31757c50dcc2c76c826e472a4}} 
+\index{transferFunction.h@{transferFunction.h}!tf@{tf}}
+\index{tf@{tf}!transferFunction.h@{transferFunction.h}}
+\doxysubsubsection{\texorpdfstring{tf()}{tf()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ float4 tf (\begin{DoxyParamCaption}\item[{float}]{v,  }\item[{float}]{t,  }\item[{const int}]{tf\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{materials_2transfer_function_8h_ac780f2e31757c50dcc2c76c826e472a4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{materials_2transfer_function_8h_ac780f2e31757c50dcc2c76c826e472a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{materials_2transfer_function_8h_a274f72010e290ebc5450f7b3583c4a01}\label{materials_2transfer_function_8h_a274f72010e290ebc5450f7b3583c4a01}} 
+\index{transferFunction.h@{transferFunction.h}!translucent\_grays@{translucent\_grays}}
+\index{translucent\_grays@{translucent\_grays}!transferFunction.h@{transferFunction.h}}
+\doxysubsubsection{\texorpdfstring{translucent\_grays()}{translucent\_grays()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ float4 translucent\+\_\+grays (\begin{DoxyParamCaption}\item[{float}]{drbf,  }\item[{float}]{t,  }\item[{int}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{materials_2transfer_function_8h_a274f72010e290ebc5450f7b3583c4a01_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{materials_2transfer_function_8h_ae10f2fafa02d4090fe3e396f4ef92928}\label{materials_2transfer_function_8h_ae10f2fafa02d4090fe3e396f4ef92928}} 
+\index{transferFunction.h@{transferFunction.h}!translucent\_grays2@{translucent\_grays2}}
+\index{translucent\_grays2@{translucent\_grays2}!transferFunction.h@{transferFunction.h}}
+\doxysubsubsection{\texorpdfstring{translucent\_grays2()}{translucent\_grays2()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ float4 translucent\+\_\+grays2 (\begin{DoxyParamCaption}\item[{float}]{t,  }\item[{float}]{t2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{materials_2transfer_function_8h_ae10f2fafa02d4090fe3e396f4ef92928_cgraph}
+\end{center}
+\end{figure}

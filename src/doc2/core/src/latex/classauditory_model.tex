@@ -1,0 +1,266 @@
+\doxysection{auditory\+Model Class Reference}
+\label{classauditory_model}\index{auditoryModel@{auditoryModel}}
+
+
+The class responsible for rendering auditory propertis.  
+
+
+
+
+{\ttfamily \#include $<$va\+Audio\+Model.\+h$>$}
+
+
+
+Inheritance diagram for auditory\+Model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classauditory_model__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for auditory\+Model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classauditory_model__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ Audio\+Scan\+Mode} \{ \textbf{ L\+I\+NE}, 
+\textbf{ G\+R\+ID}, 
+\textbf{ C\+O\+NE}
+ \}
+\item 
+enum \textbf{ Audio\+Map\+Mode} \{ \textbf{ C\+M\+A\+J\+S\+C\+A\+LE}, 
+\textbf{ Pl\+U\+C\+K\+ED}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ auditory\+Model} ()
+\item 
+\textbf{ $\sim$auditory\+Model} ()
+\item 
+\textbf{ Audio\+Scan\+Mode} \textbf{ Get\+Mode} ()
+\item 
+virtual void \textbf{ Init} ()
+\item 
+void \textbf{ Set\+Auditory\+Mapper} (\textbf{ auditory\+Mapper} $\ast$mm)
+\item 
+virtual void \textbf{ Update\+Buffer} ()
+\item 
+void \textbf{ Map\+Buffer} ()
+\item 
+virtual void \textbf{ Render} ()
+\item 
+virtual void \textbf{ Bind\+Buffer} (optix\+::\+Context context)
+\item 
+virtual void \textbf{ Reshape} (int width, int height)
+\item 
+void \textbf{ Set\+Audio\+Scanning\+Param} (\textbf{ Audio\+Scan\+Mode} m)
+\item 
+float \textbf{ Get\+Norma\+Koeff} ()
+\item 
+void \textbf{ Check\+All\+Audio} (float time)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ auditory\+Mapper} $\ast$ \textbf{ map}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Compute\+Sound\+Raycast} (float dist\+Comp)
+\item 
+void \textbf{ Configure\+H\+R\+TF} ()
+\item 
+void \textbf{ Clear\+All\+Audio} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The class responsible for rendering auditory propertis. 
+
+The model is used by va\+Renderer to render auditory image of data The class is mainly responsible for cuda/open\+AL interop 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\label{classauditory_model_adb3f00eda6322a72a8f3710399940c3a}} 
+\index{auditoryModel@{auditoryModel}!AudioMapMode@{AudioMapMode}}
+\index{AudioMapMode@{AudioMapMode}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{AudioMapMode}
+{\footnotesize\ttfamily enum \textbf{ auditory\+Model\+::\+Audio\+Map\+Mode}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMAJSCALE@{CMAJSCALE}!auditoryModel@{auditoryModel}}\index{auditoryModel@{auditoryModel}!CMAJSCALE@{CMAJSCALE}}}\mbox{\label{classauditory_model_adb3f00eda6322a72a8f3710399940c3aa9029a95f03b2bba2ad32541555148beb}} 
+C\+M\+A\+J\+S\+C\+A\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PlUCKED@{PlUCKED}!auditoryModel@{auditoryModel}}\index{auditoryModel@{auditoryModel}!PlUCKED@{PlUCKED}}}\mbox{\label{classauditory_model_adb3f00eda6322a72a8f3710399940c3aaee2a7e6c3dac179354058f6e035e490c}} 
+Pl\+U\+C\+K\+ED&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\label{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45d}} 
+\index{auditoryModel@{auditoryModel}!AudioScanMode@{AudioScanMode}}
+\index{AudioScanMode@{AudioScanMode}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{AudioScanMode}
+{\footnotesize\ttfamily enum \textbf{ auditory\+Model\+::\+Audio\+Scan\+Mode}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LINE@{LINE}!auditoryModel@{auditoryModel}}\index{auditoryModel@{auditoryModel}!LINE@{LINE}}}\mbox{\label{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45da46fa2be95024f8322d6935061417b3c3}} 
+L\+I\+NE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRID@{GRID}!auditoryModel@{auditoryModel}}\index{auditoryModel@{auditoryModel}!GRID@{GRID}}}\mbox{\label{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45da634d14b718010e466b43691f49638aaf}} 
+G\+R\+ID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONE@{CONE}!auditoryModel@{auditoryModel}}\index{auditoryModel@{auditoryModel}!CONE@{CONE}}}\mbox{\label{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45da19497cbe2f722be2bea71b6ca463f38f}} 
+C\+O\+NE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classauditory_model_a48aa1566fcc55a157815276105e1f184}} 
+\index{auditoryModel@{auditoryModel}!auditoryModel@{auditoryModel}}
+\index{auditoryModel@{auditoryModel}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{auditoryModel()}
+{\footnotesize\ttfamily auditory\+Model\+::auditory\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classauditory_model_a75020b89e58db9105e80d7b16659c298}} 
+\index{auditoryModel@{auditoryModel}!````~auditoryModel@{$\sim$auditoryModel}}
+\index{````~auditoryModel@{$\sim$auditoryModel}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{$\sim$auditoryModel()}
+{\footnotesize\ttfamily auditory\+Model\+::$\sim$auditory\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classauditory_model_a707860c223ce72eb847038a3e81fcffb}} 
+\index{auditoryModel@{auditoryModel}!BindBuffer@{BindBuffer}}
+\index{BindBuffer@{BindBuffer}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{BindBuffer()}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Bind\+Buffer (\begin{DoxyParamCaption}\item[{optix\+::\+Context}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ va\+Basic\+Model} \doxyref{}{p.}{classva_basic_model_aacdca8b20e787a051ba3f07eb87d6f56}.
+
+\mbox{\label{classauditory_model_acab00059a6697ea87f89a5595daf67ce}} 
+\index{auditoryModel@{auditoryModel}!CheckAllAudio@{CheckAllAudio}}
+\index{CheckAllAudio@{CheckAllAudio}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{CheckAllAudio()}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Check\+All\+Audio (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+\mbox{\label{classauditory_model_a928ee5b67d991d7cbd9d612c8b163256}} 
+\index{auditoryModel@{auditoryModel}!ClearAllAudio@{ClearAllAudio}}
+\index{ClearAllAudio@{ClearAllAudio}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{ClearAllAudio()}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Clear\+All\+Audio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classauditory_model_ac11a216b13371a14a8ac3a4febbb5295}} 
+\index{auditoryModel@{auditoryModel}!ComputeSoundRaycast@{ComputeSoundRaycast}}
+\index{ComputeSoundRaycast@{ComputeSoundRaycast}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{ComputeSoundRaycast()}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Compute\+Sound\+Raycast (\begin{DoxyParamCaption}\item[{float}]{dist\+Comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classauditory_model_ab3e46adcbcfd93252e1a35149159acc1}} 
+\index{auditoryModel@{auditoryModel}!ConfigureHRTF@{ConfigureHRTF}}
+\index{ConfigureHRTF@{ConfigureHRTF}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{ConfigureHRTF()}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Configure\+H\+R\+TF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classauditory_model_aefc0879ec392c740c4eda396fd581ec6}} 
+\index{auditoryModel@{auditoryModel}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{GetMode()}
+{\footnotesize\ttfamily \textbf{ Audio\+Scan\+Mode} auditory\+Model\+::\+Get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classauditory_model_a022d249819672210dfbb16a068b42971}} 
+\index{auditoryModel@{auditoryModel}!GetNormaKoeff@{GetNormaKoeff}}
+\index{GetNormaKoeff@{GetNormaKoeff}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{GetNormaKoeff()}
+{\footnotesize\ttfamily float auditory\+Model\+::\+Get\+Norma\+Koeff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classauditory_model_a086406bf0497992f75ae1c6c127a5619}} 
+\index{auditoryModel@{auditoryModel}!Init@{Init}}
+\index{Init@{Init}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{Init()}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ va\+Basic\+Model} \doxyref{}{p.}{classva_basic_model_a80796e5073c8ded7e73f3e6e4af71504}.
+
+\mbox{\label{classauditory_model_a5249d1ca9e3cc5fb47222284144f700b}} 
+\index{auditoryModel@{auditoryModel}!MapBuffer@{MapBuffer}}
+\index{MapBuffer@{MapBuffer}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{MapBuffer()}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Map\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classauditory_model_a2aa470ad66857b8154ce7fbebed21f13}} 
+\index{auditoryModel@{auditoryModel}!Render@{Render}}
+\index{Render@{Render}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{Render()}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ va\+Basic\+Model} \doxyref{}{p.}{classva_basic_model_a527c4e4789be7edcdcca658a6ae27450}.
+
+\mbox{\label{classauditory_model_a39d4000d37b928db7fb765ad40265cbe}} 
+\index{auditoryModel@{auditoryModel}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{Reshape()}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ va\+Basic\+Model} \doxyref{}{p.}{classva_basic_model_afdedda8cfb876fc1c5c58e69b8923452}.
+
+\mbox{\label{classauditory_model_a502e95a6d3ebfa66b5dcf06cf8af2008}} 
+\index{auditoryModel@{auditoryModel}!SetAudioScanningParam@{SetAudioScanningParam}}
+\index{SetAudioScanningParam@{SetAudioScanningParam}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{SetAudioScanningParam()}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Set\+Audio\+Scanning\+Param (\begin{DoxyParamCaption}\item[{\textbf{ Audio\+Scan\+Mode}}]{m }\end{DoxyParamCaption})}
+
+\mbox{\label{classauditory_model_abef63e0f04636630d50a2bfb8e468073}} 
+\index{auditoryModel@{auditoryModel}!SetAuditoryMapper@{SetAuditoryMapper}}
+\index{SetAuditoryMapper@{SetAuditoryMapper}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{SetAuditoryMapper()}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Set\+Auditory\+Mapper (\begin{DoxyParamCaption}\item[{\textbf{ auditory\+Mapper} $\ast$}]{mm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classauditory_model_a890b44708f3f7808c6b12ee1a7ca0b8c}} 
+\index{auditoryModel@{auditoryModel}!UpdateBuffer@{UpdateBuffer}}
+\index{UpdateBuffer@{UpdateBuffer}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{UpdateBuffer()}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Update\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ va\+Basic\+Model} \doxyref{}{p.}{classva_basic_model_ad5ff69a20c739b941ef58e48e6010353}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classauditory_model_a5b9c53244ec94ff9b1215e56fdbee50d}} 
+\index{auditoryModel@{auditoryModel}!map@{map}}
+\index{map@{map}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{map}
+{\footnotesize\ttfamily \textbf{ auditory\+Mapper}$\ast$ auditory\+Model\+::map}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ va\+Audio\+Model.\+h}\item 
+\textbf{ va\+Audio\+Model.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,213 @@
+\hypertarget{namespacestk_sound}{}\doxysection{stk\+Sound Namespace Reference}
+\label{namespacestk_sound}\index{stkSound@{stkSound}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstk_sound_1_1sound_desc}{sound\+Desc}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacestk_sound_a2b54aaea58d4033258535243df43cf57}{Init\+AL}} (char $\ast$$\ast$$\ast$argv, int $\ast$argc)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_adb4279d1f42946b978c2ead97f14877c}{Close\+AL}} (void)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_a9928864a97a20d31cbcd7bc996924882}{Apply\+Sin}} (A\+Lfloat $\ast$data, A\+Ldouble g, A\+Luint srate, A\+Luint freq)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_a895275035c088bf412fd2e2acff513a2}{Create\+Wave}} (Stk\+Float $\ast$ptr, int srate2, int duration, A\+Luint \&buffer)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_af7d212086ace0bb4857648f6087365c9}{Init\+Env}} ()
+\item 
+void \mbox{\hyperlink{namespacestk_sound_adf56ecacdee397b09bae332360e6bcdd}{Exit\+Env}} ()
+\item 
+Stk\+Frames \mbox{\hyperlink{namespacestk_sound_a46fa59f0c2cc58d0996cd2b115752c0b}{Generate\+Noise}} (double time, double srate2, float seed)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_a2bbd6bf3025f8c18a6d523f9582d4993}{Waitfor\+Sound}} (float scale)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_a41081c932e20559c57775bd7846f96f2}{Play\+Sel\+Sound}} (A\+Luint source)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_ac59ece5f25eda653d84f58a64178ce79}{Move\+Sounds}} (std\+::vector$<$ \mbox{\hyperlink{structstk_sound_1_1sound_desc}{stk\+Sound\+::sound\+Desc}} $>$ \&desc\+Ss, std\+::vector$<$ float $>$ \&xpos, int scale)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_a7d9cad64df340ee72d088f8ad2b7adae}{Rotate\+Test}} (int scale)
+\item 
+\mbox{\hyperlink{structstk_sound_1_1sound_desc}{sound\+Desc}} \mbox{\hyperlink{namespacestk_sound_a90bf1d26df0a89886a3f9d60fb28dfb9}{Play\+Buffer}} (Stk\+Float $\ast$ptr, int time, int size, int j, optix\+::float2 xpos)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_a561adfedf528246fe05d14bdd6507dfb}{Rotate\+Angle}} (double angle, A\+Luint \&source)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_aa8338fa0bd04a2c7f616a4526edaa4b3}{Apply\+A\+D\+SR}} (stk\+::\+Stk\+Frames \&frames, int release\+Count)
+\item 
+Stk\+Frames \mbox{\hyperlink{namespacestk_sound_af26aff86da8bebe9304980b124d5671a}{Generate\+Plucked}} (int time, double srate2, double freq, double amplitude)
+\item 
+\mbox{\hyperlink{structstk_sound_1_1sound_desc}{sound\+Desc}} \mbox{\hyperlink{namespacestk_sound_a3a87b5f27ff06744d6bd0450ea8f47a9}{Play\+Buffer}} (stk\+::\+Stk\+Float $\ast$ptr, int time, int size, int j, optix\+::float2 xpos)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacestk_sound_aa8338fa0bd04a2c7f616a4526edaa4b3}\label{namespacestk_sound_aa8338fa0bd04a2c7f616a4526edaa4b3}} 
+\index{stkSound@{stkSound}!ApplyADSR@{ApplyADSR}}
+\index{ApplyADSR@{ApplyADSR}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{ApplyADSR()}{ApplyADSR()}}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Apply\+A\+D\+SR (\begin{DoxyParamCaption}\item[{stk\+::\+Stk\+Frames \&}]{frames,  }\item[{int}]{release\+Count }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacestk_sound_aa8338fa0bd04a2c7f616a4526edaa4b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacestk_sound_a9928864a97a20d31cbcd7bc996924882}\label{namespacestk_sound_a9928864a97a20d31cbcd7bc996924882}} 
+\index{stkSound@{stkSound}!ApplySin@{ApplySin}}
+\index{ApplySin@{ApplySin}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{ApplySin()}{ApplySin()}}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Apply\+Sin (\begin{DoxyParamCaption}\item[{A\+Lfloat $\ast$}]{data,  }\item[{A\+Ldouble}]{g,  }\item[{A\+Luint}]{srate,  }\item[{A\+Luint}]{freq }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestk_sound_adb4279d1f42946b978c2ead97f14877c}\label{namespacestk_sound_adb4279d1f42946b978c2ead97f14877c}} 
+\index{stkSound@{stkSound}!CloseAL@{CloseAL}}
+\index{CloseAL@{CloseAL}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{CloseAL()}{CloseAL()}}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Close\+AL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestk_sound_a895275035c088bf412fd2e2acff513a2}\label{namespacestk_sound_a895275035c088bf412fd2e2acff513a2}} 
+\index{stkSound@{stkSound}!CreateWave@{CreateWave}}
+\index{CreateWave@{CreateWave}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{CreateWave()}{CreateWave()}}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Create\+Wave (\begin{DoxyParamCaption}\item[{Stk\+Float $\ast$}]{ptr,  }\item[{int}]{srate2,  }\item[{int}]{duration,  }\item[{A\+Luint \&}]{buffer }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacestk_sound_a895275035c088bf412fd2e2acff513a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacestk_sound_adf56ecacdee397b09bae332360e6bcdd}\label{namespacestk_sound_adf56ecacdee397b09bae332360e6bcdd}} 
+\index{stkSound@{stkSound}!ExitEnv@{ExitEnv}}
+\index{ExitEnv@{ExitEnv}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{ExitEnv()}{ExitEnv()}}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Exit\+Env (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestk_sound_a46fa59f0c2cc58d0996cd2b115752c0b}\label{namespacestk_sound_a46fa59f0c2cc58d0996cd2b115752c0b}} 
+\index{stkSound@{stkSound}!GenerateNoise@{GenerateNoise}}
+\index{GenerateNoise@{GenerateNoise}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{GenerateNoise()}{GenerateNoise()}}
+{\footnotesize\ttfamily stk\+::\+Stk\+Frames stk\+Sound\+::\+Generate\+Noise (\begin{DoxyParamCaption}\item[{double}]{time,  }\item[{double}]{srate2,  }\item[{float}]{seed }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacestk_sound_a46fa59f0c2cc58d0996cd2b115752c0b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacestk_sound_af26aff86da8bebe9304980b124d5671a}\label{namespacestk_sound_af26aff86da8bebe9304980b124d5671a}} 
+\index{stkSound@{stkSound}!GeneratePlucked@{GeneratePlucked}}
+\index{GeneratePlucked@{GeneratePlucked}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{GeneratePlucked()}{GeneratePlucked()}}
+{\footnotesize\ttfamily stk\+::\+Stk\+Frames stk\+Sound\+::\+Generate\+Plucked (\begin{DoxyParamCaption}\item[{int}]{time,  }\item[{double}]{srate2,  }\item[{double}]{freq,  }\item[{double}]{amplitude }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacestk_sound_af26aff86da8bebe9304980b124d5671a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacestk_sound_a2b54aaea58d4033258535243df43cf57}\label{namespacestk_sound_a2b54aaea58d4033258535243df43cf57}} 
+\index{stkSound@{stkSound}!InitAL@{InitAL}}
+\index{InitAL@{InitAL}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{InitAL()}{InitAL()}}
+{\footnotesize\ttfamily int stk\+Sound\+::\+Init\+AL (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$$\ast$}]{argv,  }\item[{int $\ast$}]{argc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestk_sound_af7d212086ace0bb4857648f6087365c9}\label{namespacestk_sound_af7d212086ace0bb4857648f6087365c9}} 
+\index{stkSound@{stkSound}!InitEnv@{InitEnv}}
+\index{InitEnv@{InitEnv}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{InitEnv()}{InitEnv()}}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Init\+Env (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{namespacestk_sound_af7d212086ace0bb4857648f6087365c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacestk_sound_ac59ece5f25eda653d84f58a64178ce79}\label{namespacestk_sound_ac59ece5f25eda653d84f58a64178ce79}} 
+\index{stkSound@{stkSound}!MoveSounds@{MoveSounds}}
+\index{MoveSounds@{MoveSounds}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{MoveSounds()}{MoveSounds()}}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Move\+Sounds (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structstk_sound_1_1sound_desc}{stk\+Sound\+::sound\+Desc}} $>$ \&}]{desc\+Ss,  }\item[{std\+::vector$<$ float $>$ \&}]{xpos,  }\item[{int}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestk_sound_a3a87b5f27ff06744d6bd0450ea8f47a9}\label{namespacestk_sound_a3a87b5f27ff06744d6bd0450ea8f47a9}} 
+\index{stkSound@{stkSound}!PlayBuffer@{PlayBuffer}}
+\index{PlayBuffer@{PlayBuffer}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{PlayBuffer()}{PlayBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstk_sound_1_1sound_desc}{sound\+Desc}} stk\+Sound\+::\+Play\+Buffer (\begin{DoxyParamCaption}\item[{stk\+::\+Stk\+Float $\ast$}]{ptr,  }\item[{int}]{time,  }\item[{int}]{size,  }\item[{int}]{j,  }\item[{optix\+::float2}]{xpos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestk_sound_a90bf1d26df0a89886a3f9d60fb28dfb9}\label{namespacestk_sound_a90bf1d26df0a89886a3f9d60fb28dfb9}} 
+\index{stkSound@{stkSound}!PlayBuffer@{PlayBuffer}}
+\index{PlayBuffer@{PlayBuffer}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{PlayBuffer()}{PlayBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstk_sound_1_1sound_desc}{sound\+Desc}} stk\+Sound\+::\+Play\+Buffer (\begin{DoxyParamCaption}\item[{Stk\+Float $\ast$}]{ptr,  }\item[{int}]{time,  }\item[{int}]{size,  }\item[{int}]{j,  }\item[{optix\+::float2}]{xpos }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{namespacestk_sound_a90bf1d26df0a89886a3f9d60fb28dfb9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{namespacestk_sound_a90bf1d26df0a89886a3f9d60fb28dfb9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacestk_sound_a41081c932e20559c57775bd7846f96f2}\label{namespacestk_sound_a41081c932e20559c57775bd7846f96f2}} 
+\index{stkSound@{stkSound}!PlaySelSound@{PlaySelSound}}
+\index{PlaySelSound@{PlaySelSound}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{PlaySelSound()}{PlaySelSound()}}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Play\+Sel\+Sound (\begin{DoxyParamCaption}\item[{A\+Luint}]{source }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacestk_sound_a41081c932e20559c57775bd7846f96f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacestk_sound_a561adfedf528246fe05d14bdd6507dfb}\label{namespacestk_sound_a561adfedf528246fe05d14bdd6507dfb}} 
+\index{stkSound@{stkSound}!RotateAngle@{RotateAngle}}
+\index{RotateAngle@{RotateAngle}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{RotateAngle()}{RotateAngle()}}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Rotate\+Angle (\begin{DoxyParamCaption}\item[{double}]{angle,  }\item[{A\+Luint \&}]{source }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestk_sound_a7d9cad64df340ee72d088f8ad2b7adae}\label{namespacestk_sound_a7d9cad64df340ee72d088f8ad2b7adae}} 
+\index{stkSound@{stkSound}!RotateTest@{RotateTest}}
+\index{RotateTest@{RotateTest}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{RotateTest()}{RotateTest()}}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Rotate\+Test (\begin{DoxyParamCaption}\item[{int}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacestk_sound_a2bbd6bf3025f8c18a6d523f9582d4993}\label{namespacestk_sound_a2bbd6bf3025f8c18a6d523f9582d4993}} 
+\index{stkSound@{stkSound}!WaitforSound@{WaitforSound}}
+\index{WaitforSound@{WaitforSound}!stkSound@{stkSound}}
+\doxysubsubsection{\texorpdfstring{WaitforSound()}{WaitforSound()}}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Waitfor\+Sound (\begin{DoxyParamCaption}\item[{float}]{scale }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacestk_sound_a2bbd6bf3025f8c18a6d523f9582d4993_icgraph}
+\end{center}
+\end{figure}

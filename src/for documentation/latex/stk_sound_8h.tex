@@ -1,0 +1,57 @@
+\hypertarget{stk_sound_8h}{}\doxysection{core/src/stk\+Sound.h File Reference}
+\label{stk_sound_8h}\index{core/src/stkSound.h@{core/src/stkSound.h}}
+{\ttfamily \#include \char`\"{}Generator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+L/al.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+L/alc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+L/alext.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$optixu/optixpp\+\_\+namespace.\+h$>$}\newline
+{\ttfamily \#include $<$optixu/optixu\+\_\+math\+\_\+stream\+\_\+namespace.\+h$>$}\newline
+Include dependency graph for stk\+Sound.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stk_sound_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stk_sound_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstk_sound_1_1sound_desc}{stk\+Sound\+::sound\+Desc}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacestk_sound}{stk\+Sound}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Stk\+Frames \mbox{\hyperlink{namespacestk_sound_af26aff86da8bebe9304980b124d5671a}{stk\+Sound\+::\+Generate\+Plucked}} (int time, double srate2, double freq, double amplitude)
+\item 
+Stk\+Frames \mbox{\hyperlink{namespacestk_sound_a46fa59f0c2cc58d0996cd2b115752c0b}{stk\+Sound\+::\+Generate\+Noise}} (double time, double srate2, float seed)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_aa8338fa0bd04a2c7f616a4526edaa4b3}{stk\+Sound\+::\+Apply\+A\+D\+SR}} (stk\+::\+Stk\+Frames \&frames, int release\+Count)
+\item 
+sound\+Desc \mbox{\hyperlink{namespacestk_sound_a3a87b5f27ff06744d6bd0450ea8f47a9}{stk\+Sound\+::\+Play\+Buffer}} (stk\+::\+Stk\+Float $\ast$ptr, int time, int size, int j, optix\+::float2 xpos)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_af7d212086ace0bb4857648f6087365c9}{stk\+Sound\+::\+Init\+Env}} ()
+\item 
+void \mbox{\hyperlink{namespacestk_sound_adf56ecacdee397b09bae332360e6bcdd}{stk\+Sound\+::\+Exit\+Env}} ()
+\item 
+void \mbox{\hyperlink{namespacestk_sound_a561adfedf528246fe05d14bdd6507dfb}{stk\+Sound\+::\+Rotate\+Angle}} (double angle, A\+Luint \&source)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_a41081c932e20559c57775bd7846f96f2}{stk\+Sound\+::\+Play\+Sel\+Sound}} (A\+Luint source)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_ac59ece5f25eda653d84f58a64178ce79}{stk\+Sound\+::\+Move\+Sounds}} (std\+::vector$<$ \mbox{\hyperlink{structstk_sound_1_1sound_desc}{stk\+Sound\+::sound\+Desc}} $>$ \&desc\+Ss, std\+::vector$<$ float $>$ \&xpos, int scale)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_a2bbd6bf3025f8c18a6d523f9582d4993}{stk\+Sound\+::\+Waitfor\+Sound}} (float scale)
+\item 
+void \mbox{\hyperlink{namespacestk_sound_a7d9cad64df340ee72d088f8ad2b7adae}{stk\+Sound\+::\+Rotate\+Test}} (int scale)
+\end{DoxyCompactItemize}

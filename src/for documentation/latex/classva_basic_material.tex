@@ -1,0 +1,134 @@
+\hypertarget{classva_basic_material}{}\doxysection{va\+Basic\+Material Class Reference}
+\label{classva_basic_material}\index{vaBasicMaterial@{vaBasicMaterial}}
+
+
+Simple Blin-\/\+Phong shading for whitted ray-\/tracing.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Material.\+h$>$}
+
+
+
+Inheritance diagram for va\+Basic\+Material\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classva_basic_material__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for va\+Basic\+Material\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classva_basic_material__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classva_basic_material_a6c75412cee1ed359a0692fd9f877aea7}{va\+Basic\+Material}} ()
+\item 
+\mbox{\hyperlink{classva_basic_material_a5081c1ff3b741f72b2b488ea168680ca}{$\sim$va\+Basic\+Material}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_material_a0c86570fde915d5ef24aa6f2855c6be1}{Set\+Color\+Scheme}} (optix\+::\+Program pr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classva_basic_material_aac3798ca62a85b2cb935aa28fb829ae2}{Set\+Material\+Parameters}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_material_a51969ae6a9956f0656bb675538542ad0}{Initialize}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_material_abdbdd7d47d598f7ce9e466ec2902a717}{Init\+Lights}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Simple Blin-\/\+Phong shading for whitted ray-\/tracing. 
+
+The class gives idea how to create surface materials for S\+DF objects (whitted ray-\/tracing), 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classva_basic_material_a6c75412cee1ed359a0692fd9f877aea7}\label{classva_basic_material_a6c75412cee1ed359a0692fd9f877aea7}} 
+\index{vaBasicMaterial@{vaBasicMaterial}!vaBasicMaterial@{vaBasicMaterial}}
+\index{vaBasicMaterial@{vaBasicMaterial}!vaBasicMaterial@{vaBasicMaterial}}
+\doxysubsubsection{\texorpdfstring{vaBasicMaterial()}{vaBasicMaterial()}}
+{\footnotesize\ttfamily va\+Basic\+Material\+::va\+Basic\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_material_a5081c1ff3b741f72b2b488ea168680ca}\label{classva_basic_material_a5081c1ff3b741f72b2b488ea168680ca}} 
+\index{vaBasicMaterial@{vaBasicMaterial}!````~vaBasicMaterial@{$\sim$vaBasicMaterial}}
+\index{````~vaBasicMaterial@{$\sim$vaBasicMaterial}!vaBasicMaterial@{vaBasicMaterial}}
+\doxysubsubsection{\texorpdfstring{$\sim$vaBasicMaterial()}{~vaBasicMaterial()}}
+{\footnotesize\ttfamily va\+Basic\+Material\+::$\sim$va\+Basic\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classva_basic_material_a51969ae6a9956f0656bb675538542ad0}\label{classva_basic_material_a51969ae6a9956f0656bb675538542ad0}} 
+\index{vaBasicMaterial@{vaBasicMaterial}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!vaBasicMaterial@{vaBasicMaterial}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void va\+Basic\+Material\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_auditory_material_a59fd566e70f7892fc15c6b6fd80bd35a}{va\+Auditory\+Material}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_material_a51969ae6a9956f0656bb675538542ad0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_material_abdbdd7d47d598f7ce9e466ec2902a717}\label{classva_basic_material_abdbdd7d47d598f7ce9e466ec2902a717}} 
+\index{vaBasicMaterial@{vaBasicMaterial}!InitLights@{InitLights}}
+\index{InitLights@{InitLights}!vaBasicMaterial@{vaBasicMaterial}}
+\doxysubsubsection{\texorpdfstring{InitLights()}{InitLights()}}
+{\footnotesize\ttfamily void va\+Basic\+Material\+::\+Init\+Lights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_auditory_material_ac9226d5880ff8b47d788fbfffd9b4088}{va\+Auditory\+Material}}.
+
+\mbox{\Hypertarget{classva_basic_material_a0c86570fde915d5ef24aa6f2855c6be1}\label{classva_basic_material_a0c86570fde915d5ef24aa6f2855c6be1}} 
+\index{vaBasicMaterial@{vaBasicMaterial}!SetColorScheme@{SetColorScheme}}
+\index{SetColorScheme@{SetColorScheme}!vaBasicMaterial@{vaBasicMaterial}}
+\doxysubsubsection{\texorpdfstring{SetColorScheme()}{SetColorScheme()}}
+{\footnotesize\ttfamily void va\+Basic\+Material\+::\+Set\+Color\+Scheme (\begin{DoxyParamCaption}\item[{optix\+::\+Program}]{pr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classva_basic_material_a0c86570fde915d5ef24aa6f2855c6be1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_material_aac3798ca62a85b2cb935aa28fb829ae2}\label{classva_basic_material_aac3798ca62a85b2cb935aa28fb829ae2}} 
+\index{vaBasicMaterial@{vaBasicMaterial}!SetMaterialParameters@{SetMaterialParameters}}
+\index{SetMaterialParameters@{SetMaterialParameters}!vaBasicMaterial@{vaBasicMaterial}}
+\doxysubsubsection{\texorpdfstring{SetMaterialParameters()}{SetMaterialParameters()}}
+{\footnotesize\ttfamily void va\+Basic\+Material\+::\+Set\+Material\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_auditory_material_a9b860091c807eb66930578cfe4d108d6}{va\+Auditory\+Material}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_material_aac3798ca62a85b2cb935aa28fb829ae2_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{optix_material_8h}{optix\+Material.\+h}}\item 
+src/\mbox{\hyperlink{optix_material_8cpp}{optix\+Material.\+cpp}}\end{DoxyCompactItemize}

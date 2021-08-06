@@ -40,6 +40,9 @@ typedef struct {
 * Returns basic information about structure like: Type, xyz and atomic radii
 *
 */
+
+typedef std::vector<optix::float3> points;
+
 class xyzReader : public optixReader<XYZ>
 {
 public:

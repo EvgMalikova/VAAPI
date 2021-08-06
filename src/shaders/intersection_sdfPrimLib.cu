@@ -26,6 +26,10 @@ rtDeclareVariable(callT, sdfOpPrim, , );
 typedef rtCallableProgramId<float(float3, float3)> callT;
 rtDeclareVariable(callT, sdfOpPrim2, , );
 
+rtDeclareVariable(float3, sCell1, , );
+rtDeclareVariable(float3, sCell2, , );
+rtDeclareVariable(float3, sCell3, , );
+
 //------------------------------------
 // list of all used or unsued parameters
 
@@ -436,7 +440,350 @@ RT_CALLABLE_PROGRAM float sdfBondSphere(float3 p, float3 a, float3 b, float rad1
     return f;
 }
 
+/*------------*/
+__device__
+inline float Tetra(float3 p, float3 v0, float3 v1, float3 v2, float3 v3)
+{
+    float3 c0 = getCenter(v0, v2, v1);
+    float3 c1 = getCenter(v0, v3, v2);
+    float3 c2 = getCenter(v1, v3, v0);
+    float3 c3 = getCenter(v1, v2, v3);
+
+    float3 ct = (v0 + v1 + v2 + v3) / 4.0f;
+    //float rad1 = length(ct - c0);
+    float rad = length(ct - v0);
+    //rad = (rad + rad1) / (2.0*t);
+    float3 n0 = getNormal(v0, v2, v1, c0, ct);
+    float3 n1 = getNormal(v0, v3, v2, c1, ct);
+    float3 n2 = getNormal(v1, v3, v0, c2, ct);
+    float3 n3 = getNormal(v1, v2, v3, c3, ct);
+
+    float a = plane(p, c0, n0);
+    float b = plane(p, c1, n1);
+    float c = plane(p, c2, n2);
+    float d = plane(p, c3, n3);
+    return fmaxf(fmaxf(a, b), fmaxf(c, d));
+}
+__device__
+inline float TetraWire(float3 p, float3 v0, float3 v1, float3 v2, float3 v3)
+{
+    float f1 = bond(p, v0, v1, 0.4);
+    float f2 = bond(p, v0, v2, 0.4);
+    float f3 = bond(p, v0, v3, 0.4);
+    float f4 = bond(p, v1, v2, 0.4);
+    float f5 = bond(p, v1, v3, 0.4);
+
+    f1 = sminp(f2, f1, 0.4);
+    f1 = sminp(f3, f1, 0.4);
+    f1 = sminp(f4, f1, 0.4);
+    f1 = sminp(f5, f1, 0.4);
+    return f1;
+}
+
+__device__
+inline float TetraWire2(float3 p, float3 v0, float3 v1, float3 v2, float3 v3)
+{
+    float3 ct = (v0 + v1 + v2 + v3) / 4.0f;
+    float3 c0 = getCenter(v0, v2, v1);
+    float3 c1 = getCenter(v0, v3, v2);
+    float3 c2 = getCenter(v1, v3, v0);
+    float3 c3 = getCenter(v1, v2, v3);
+    float r = length(ct - v0) / 20;
+
+    float f1 = bond(p, ct, c1, r);
+    float f2 = bond(p, ct, c2, r);
+    float f3 = bond(p, ct, c3, r);
+    float f4 = bond(p, ct, c0, r);
+
+    f1 = sminp(f2, f1, 0.8);
+    f1 = sminp(f3, f1, 0.8);
+    f1 = sminp(f4, f1, 0.8);
+    return f1;
+}
+
 /* For multi-scale molecule*/
+RT_CALLABLE_PROGRAM float sdfMicroCell(float3 p, float3 b, float3 c, float3 d, float3 e, float rad1, float rad2)
+{
+    float3 a = (b + c + d + e) / 4.0;
+    float f1 = length(p - a) - rad1 / 2;
+    float f;
+    //if (TimeSound < 1.0) {
+    float bf1 = bond(p, a, b, 0.1);
+    float bf2 = bond(p, a, c, 0.1);
+    float bf3 = bond(p, a, d, 0.1);
+    float bf4 = bond(p, a, e, 0.1);
+
+    float f2 = length(p - b) - rad2 / 2;
+    float f3 = length(p - c) - rad2 / 2;
+    float f4 = length(p - d) - rad2 / 2;
+    float f5 = length(p - e) - rad2 / 2;
+
+    f = sdf_opSmoothUnion(bf2, bf1, 0.1);
+    f = sdf_opSmoothUnion(f, bf3, 0.1);
+    f = sdf_opSmoothUnion(f, bf4, 0.1);
+    f = sdf_opSmoothUnion(f, f1, 0.4);
+    f = sdf_opSmoothUnion(f, f2, 0.1);
+    f = sdf_opSmoothUnion(f, f3, 0.1);
+    f = sdf_opSmoothUnion(f, f4, 0.1);
+    f = sdf_opSmoothUnion(f, f5, 0.1);
+    //  }
+    //  else f = f1;
+
+      //--------first frame
+    float totalRad = length(sCell2 - sCell3) / 2 - 3.3;
+    float inputRad = abs(abs(sCell2.z - sCell3.z) / 2 - 9.9);
+    float cel1Rad = 3.3 * 2;// 1.65 + 3.3;
+    float cel1Rad2 = 3.3 + 1.65;
+
+    float t = clamp(TimeSound, 1.0, 4.0);// -1.0;
+    float3 cCell3 = sCell3 - make_float3(3.3*t, 3.3, 3.3);
+    float3 cCell2 = sCell2 + make_float3(3.3*t, 3.3, 3.3*t);
+    float3 cCell1 = sCell1 - make_float3(3.3*t, 3.3, 3.3);
+
+    float cel1Rad3 = 3.3 + 1.65*t;
+
+    float3 cCell4 = (cCell3 + cCell1) / 2;
+
+    int comp1 = 0;
+
+    if ((length(p - cCell1) - cel1Rad) <= 0)
+        comp1 = 1;
+    if ((length(p - cCell2) - cel1Rad2) <= 0)
+        comp1 = 2;
+    if ((length(p - cCell3) - cel1Rad) <= 0)
+        comp1 = 3;
+    //if ((length(p - cCell4) - cel1Rad) <= 0)
+    //    comp1 = 4;
+
+    float rad = length(a - b);
+    if ((length(a - cCell4) - cel1Rad3 / 2 - rad) <= 0) //-rad fix
+        comp1 = 4;
+
+    if ((length(a - cCell2) - cel1Rad2 + rad) <= 0)
+        comp1 = 5;
+
+    if (comp1 > 0)
+    {
+        //check for central only
+
+        float bB = 3.3f / 2.0f;
+
+        float rB = length(make_float3(bB));
+        // float3 bmax = a + make_float3(bB);
+         //float3 bmax = a + make_float3(bB);
+         //float rB = length(bmax);
+        float3 nb = normalize(b - a);
+        float lb = length(b - a);
+        float3 cb = a + nb*(rB - lb);
+
+        float ft1 = length(p - cb) - rad2 / 2;
+        float bt1 = bond(p, b, cb, 0.1);
+
+        //----------
+        float3 nc = normalize(c - a);
+        float3 cc = a + nc*(rB - lb);
+
+        float ft2 = length(p - cc) - rad2 / 2;
+        float bt2 = bond(p, c, cc, 0.1);
+
+        //----------
+        float3 nd = normalize(d - a);
+        float3 cd = a + nd*(rB - lb);
+
+        float ft3 = length(p - cd) - rad2 / 2;
+        float bt3 = bond(p, d, cd, 0.1);
+
+        //----------
+        float3 ne = normalize(e - a);
+        float3 ce = a + ne*(rB - lb);
+
+        float ft4 = length(p - ce) - rad2 / 2;
+        float bt4 = bond(p, e, ce, 0.1);
+
+        float fb = f;
+        if (comp1 == 5) {
+            fb = Tetra(p, b, c, d, e);
+            fb = sdf_opSmoothUnion(fb, f, 0.4);
+        }
+        if (comp1 == 4)
+        {
+            float blScale = 1.0;
+            float3 c1 = a;
+
+            c1.x += bB;
+            float rad = length(a - b);
+            fb = length(p - a) - bB / 2;// sdfMicrostructure4(p - a, bB);
+
+            if ((length(c1 - cCell4) - cel1Rad3 / 2) <= 0)
+            {
+                float f1 = length(p - c1) - bB / 4;
+                fb = sdf_opSmoothUnion(fb, f1, blScale);
+            }
+            c1 = a;
+            c1.x -= bB;
+            if ((length(c1 - cCell4) - cel1Rad3 / 2) <= 0)
+            {
+                float f1 = length(p - c1) - bB / 4;
+                fb = sdf_opSmoothUnion(fb, f1, blScale);
+            }
+            c1 = a;
+            c1.y += bB;
+
+            if ((length(c1 - cCell4) - cel1Rad3 / 2) <= 0)
+            {
+                float f1 = length(p - c1) - bB / 4;
+                fb = sdf_opSmoothUnion(fb, f1, blScale);
+            }
+
+            c1 = a;
+            c1.y -= bB;
+
+            if ((length(c1 - cCell4) - cel1Rad3 / 2) <= 0)
+            {
+                float f1 = length(p - c1) - bB / 4;
+                fb = sdf_opSmoothUnion(fb, f1, blScale);
+            }
+            c1 = a;
+            c1.z += bB;
+
+            if ((length(c1 - cCell4) - cel1Rad3 / 2) <= 0)
+            {
+                float f1 = length(p - c1) - bB / 4;
+                fb = sdf_opSmoothUnion(fb, f1, blScale);
+            }
+            c1 = a;
+            c1.z -= bB;
+
+            if ((length(c1 - cCell4) - cel1Rad3 / 2) <= 0)
+            {
+                float f1 = length(p - c1) - bB / 4;
+                fb = sdf_opSmoothUnion(fb, f1, blScale);
+            }
+
+            c1 = cb;
+
+            if ((length(c1 - cCell4) - cel1Rad3 / 2) <= 0)
+            {
+                float f1 = length(p - c1) - bB / 4;
+                fb = sdf_opSmoothUnion(fb, f1, blScale);
+            }
+
+            c1 = cd;
+
+            if ((length(c1 - cCell4) - cel1Rad3 / 2) <= 0)
+            {
+                float f1 = length(p - c1) - bB / 4;
+                fb = sdf_opSmoothUnion(fb, f1, blScale);
+            }
+
+            c1 = cc;
+
+            if ((length(c1 - cCell4) - cel1Rad3 / 2) <= 0)
+            {
+                float f1 = length(p - c1) - bB / 4;
+                fb = sdf_opSmoothUnion(fb, f1, blScale);
+            }
+            c1 = ce;
+
+            if ((length(c1 - cCell4) - cel1Rad3 / 2) <= 0)
+            {
+                float f1 = length(p - c1) - bB / 4;
+                fb = sdf_opSmoothUnion(fb, f1, blScale);
+            }
+
+            //---------------
+            float sphere1 = fb;
+            float tm = 2;
+
+            float3 scale = 0.3*make_float3(abs(sin(tm)), abs(cos(tm)), abs(cos(tm)));
+            float dens_scale = abs(cos(tm)) / 2;
+
+            float fb2 = fb + 0.1;
+            float shell = max(fb, -fb2);
+
+            fb = shell;
+            /*
+            float3 tiled = make_float3(dens_scale);
+            float3 tiled2 = 0.2 + tiled;
+
+            float3 x = p + 0.5*tiled;
+            // x - y * floor(x / y).
+            float3 mod = x - tiled2*floor(x / tiled2);//modf(p + 0.5*tiled, tiled)
+            float3 inX = mod - 0.5*tiled2;
+
+            float3 c = make_float3(0., 0., 0.03 + 0.06*dens_scale);
+            float cyly = length(make_float2(inX.x, inX.z) - make_float2(c.x, c.y)) - c.z;
+            float cylx = length(make_float2(inX.y, inX.z) - make_float2(c.x, c.y)) - c.z;
+            float cylz = length(make_float2(inX.x, inX.y) - make_float2(c.x, c.y)) - c.z;
+
+            float mics = sminp(cylx, sminp(cyly, cylz, 0.08), 0.08);
+
+            fb = sminp(shell, mics, 0.1);
+            fb = max(max(fb, sphere1), x.z);*/
+        }
+        float dB = sdf_opSmoothUnion(fb, ft1, 0.1);
+        dB = min(dB, bt1);
+
+        dB = sdf_opSmoothUnion(dB, ft2, 0.1);
+        dB = min(dB, bt2);
+
+        dB = sdf_opSmoothUnion(dB, ft3, 0.1);
+        dB = min(dB, bt3);
+
+        dB = sdf_opSmoothUnion(dB, ft4, 0.1);
+        dB = min(dB, bt4);
+
+        if (TimeSound < 1.0) {
+            float t2 = TimeSound;
+            f = abs(t2)*dB + (1 - abs(t2))*f;
+        }
+        else f = dB;
+    }
+
+    if (comp1 > 1) {
+        float bB = 3.3f / 2.0f;
+
+        float3 cb1 = a;
+        float3 cb = a;
+        cb.y += bB;
+        cb1.y -= bB;
+
+        float bt1 = bond(p, cb1, cb, 0.1);
+        float ft3 = length(p - cb1) - rad2 / 2;
+        float ft2 = length(p - cb) - rad2 / 2;
+        //float fb = Tetra(p, b, c, d, e);
+        float dB = sdf_opSmoothUnion(f, bt1, 0.2);
+        dB = sdf_opSmoothUnion(dB, ft2, 0.2);
+        dB = sdf_opSmoothUnion(dB, ft3, 0.2);
+        if (TimeSound < 1.0) {
+            float t2 = TimeSound;
+            f = abs(t2)*dB + (1 - abs(t2))*f;
+        }
+        else f = dB;
+    }
+    if (comp1 > 2) {
+        float bB = 3.3f / 2.0f;
+
+        float3 cb1 = a;
+        float3 cb = a;
+        cb.x += bB;
+        cb1.x -= bB;
+
+        float bt1 = bond(p, cb1, cb, 0.1);
+        float ft3 = length(p - cb1) - rad2 / 2;
+        float ft2 = length(p - cb) - rad2 / 2;
+        float dB = sdf_opSmoothUnion(f, bt1, 0.2);
+        dB = sdf_opSmoothUnion(dB, ft2, 0.2);
+        dB = sdf_opSmoothUnion(dB, ft3, 0.2);
+        if (TimeSound < 1.0) {
+            float t2 = TimeSound;
+            f = abs(t2)*dB + (1 - abs(t2))*f;
+        }
+        else f = dB;
+    }
+
+    return f;
+}
 
 RT_CALLABLE_PROGRAM float sdfMolBondSphere(float3 p, float3 a, float3 b, float3 c, float rad1, float rad2, float rad3)
 {

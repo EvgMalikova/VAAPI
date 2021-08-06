@@ -1,0 +1,562 @@
+\hypertarget{classva_base_widget}{}\doxysection{va\+Base\+Widget Class Reference}
+\label{classva_base_widget}\index{vaBaseWidget@{vaBaseWidget}}
+
+
+{\ttfamily \#include $<$va\+Base\+Widget.\+h$>$}
+
+
+
+Inheritance diagram for va\+Base\+Widget\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classva_base_widget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for va\+Base\+Widget\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classva_base_widget_ae987e992f04f964ce52100ce5dc4ef58}{va\+Base\+Widget}} ()
+\item 
+\mbox{\hyperlink{classva_base_widget_aa6b9778510013d9bf6e4c5cd5386c22e}{$\sim$va\+Base\+Widget}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_base_widget_a9bb6221eebc377a73ed483499fb1f65e}{Set\+Context}} (optix\+::\+Context \&context)
+\item 
+void \mbox{\hyperlink{classva_base_widget_aff36ea4df958b847485f3c7fb669f0af}{set\+Viewport}} (int w, int h)
+\item 
+void \mbox{\hyperlink{classva_base_widget_a40fbd15be9d37918b81a4b59e703cdac}{set\+Base\+Coordinates}} (int x, int y)
+\item 
+void \mbox{\hyperlink{classva_base_widget_ab70d43f8a8f8fe71c2bfbb9b7856372a}{set\+Speed\+Ratio}} (float f)
+\item 
+void \mbox{\hyperlink{classva_base_widget_a06910ab2ac5eea993f3dc06a4d908bca}{set\+Focus\+Distance}} (float f)
+\item 
+void \mbox{\hyperlink{classva_base_widget_aabaf7e573ecc2cdadfc669d914bb070b}{orbit}} (int x, int y)
+\item 
+void \mbox{\hyperlink{classva_base_widget_afeb126eba082ebbf0fd0a08ea0e38029}{pan}} (int x, int y)
+\item 
+void \mbox{\hyperlink{classva_base_widget_a0dac53043660b49b54644007eb34eba6}{dolly}} (int x, int y)
+\item 
+void \mbox{\hyperlink{classva_base_widget_aa612a5d446224cb8500f51a1d64c5781}{focus}} (int x, int y)
+\item 
+void \mbox{\hyperlink{classva_base_widget_ae5d7a0c6dc45870dbb981272e430d436}{zoom}} (float x)
+\item 
+bool \mbox{\hyperlink{classva_base_widget_a779a3237d2feedd34047b73108316e7c}{get\+Frustum}} (optix\+::float3 \&pos, optix\+::float3 \&u, optix\+::float3 \&v, optix\+::float3 \&w)
+\item 
+float \mbox{\hyperlink{classva_base_widget_a909b367f15ad3fe1f04145ad9d1e7632}{get\+Aspect\+Ratio}} () const
+\item 
+\mbox{\hyperlink{classoptix_basic_actor}{optix\+Basic\+Actor}} $\ast$ \mbox{\hyperlink{classva_base_widget_aadac0ddc3e0e94e8c45acc1fa4915234}{Get\+Actor}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_base_widget_a2329587011cbe408832615328472fb75}{Update\+Handle\+Position}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_base_widget_a0c9da7941545243d68a8e6ed82087593}{Create\+Geometry\+Handle}} ()
+\item 
+void \mbox{\hyperlink{classva_base_widget_ac4d214b9688904bed1a20091e4cef4cc}{Set\+Cam\+Parameters}} (optix\+::float3 \&pos, optix\+::float3 \&u, optix\+::float3 \&v, optix\+::float3 \&w, optix\+::float3 \&center, float \&dist)
+\item 
+void \mbox{\hyperlink{classva_base_widget_a5647fb4071e0795fe9e2ad510e427d2f}{set\+Dims}} (int w, int h)
+\item 
+void \mbox{\hyperlink{classva_base_widget_a50560ae956ba60bb541d197dc9fc5a05}{Update\+Geo}} ()
+\item 
+void \mbox{\hyperlink{classva_base_widget_af31ab6fabd5bba9492e58f868b37fd16}{Hide}} ()
+\item 
+void \mbox{\hyperlink{classva_base_widget_aba9120dae1e23b6d3ad8cc981f1f129a}{Show}} ()
+\item 
+void \mbox{\hyperlink{classva_base_widget_a79937fbb96773f04abbb1bf4770f09c2}{Set\+Radius}} (float r)
+\item 
+\mbox{\hyperlink{classoptix_s_d_f_primitive}{optix\+S\+D\+F\+Primitive}} $\ast$ \mbox{\hyperlink{classva_base_widget_ace8c1c47233bdd318ae3d98708303e3a}{Get\+Handle}} ()
+\item 
+optix\+::\+Program \mbox{\hyperlink{classva_base_widget_a3fc9b899024a22f859b37237176c76f4}{Get\+Handle\+Prog}} ()
+\item 
+bool \mbox{\hyperlink{classva_base_widget_a89a2e080098d56fb3f234284bc2dd0b2}{is\+Ray\+Cast}} ()
+\item 
+void \mbox{\hyperlink{classva_base_widget_ab6943b502d35eef82b289ebd450b40f0}{Set\+Ray\+Casting}} (bool rayC)
+\item 
+bool \mbox{\hyperlink{classva_base_widget_afa2a23f14dbe1e0df53878a119248305}{is\+Registration}} ()
+\item 
+void \mbox{\hyperlink{classva_base_widget_a39afb68b2f37043cfdc81d3f353e1c10}{Set\+Registration}} (bool rayC)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classva_base_widget_ac53074f9ed77329d1441917051c53b0d}{update\+Cam}}
+\item 
+optix\+::float3 \mbox{\hyperlink{classva_base_widget_a4842a8b87b5a76af73c95fdf52aaf5bf}{m\+\_\+center}}
+\item 
+float \mbox{\hyperlink{classva_base_widget_af9bd7c35b54218ce75ae7d29df56a4c7}{m\+\_\+distance}}
+\item 
+float \mbox{\hyperlink{classva_base_widget_adc409a0c435427b3b072ee7b93ba67da}{m\+\_\+phi}}
+\item 
+float \mbox{\hyperlink{classva_base_widget_a5fd7df111f527e72b6c30d85cade9b64}{m\+\_\+theta}}
+\item 
+float \mbox{\hyperlink{classva_base_widget_a193be4fdf8f1962a5657fb6fc87d7841}{m\+\_\+fov}}
+\item 
+\mbox{\hyperlink{classva_mapper}{va\+Mapper}} $\ast$ \mbox{\hyperlink{classva_base_widget_a3d6ee9c6dfd2ab30f3b744e6cc89fc46}{map21}}
+\item 
+\mbox{\hyperlink{classoptix_basic_actor}{optix\+Basic\+Actor}} $\ast$ \mbox{\hyperlink{classva_base_widget_adba0ccb6930e3df1fa196cd13f4f0e67}{ac\+Sdf1}}
+\item 
+optix\+::\+Program \mbox{\hyperlink{classva_base_widget_a96b6fe3e9d04627ad2ed4313de75ddfb}{m\+\_\+prog}}
+\item 
+optix\+::\+Geometry \mbox{\hyperlink{classva_base_widget_aeae11bef95ff08e3aea45dd4a00f1fc7}{m\+\_\+geo}}
+\item 
+optix\+::float3 \mbox{\hyperlink{classva_base_widget_a44af5a94a82743e7bd3234b3ff8ab2e5}{sys\+Camera\+Position}}
+\item 
+optix\+::float3 \mbox{\hyperlink{classva_base_widget_a28e5529a6e18e5d2fce368d9e0808f81}{sys\+CameraU}}
+\item 
+optix\+::float3 \mbox{\hyperlink{classva_base_widget_acb24b1f71dcccb3fba576e111235536c}{sys\+CameraV}}
+\item 
+optix\+::float3 \mbox{\hyperlink{classva_base_widget_af29d141a602c6fb6b7e886665b98c81b}{sys\+CameraW}}
+\item 
+optix\+::float3 \mbox{\hyperlink{classva_base_widget_af97687d5c00bfe9974fc3d96ddc1f75e}{sys\+Camera\+Center}}
+\item 
+float \mbox{\hyperlink{classva_base_widget_a56e2e7234657c728042ad33617fdec0b}{sys\+Camera\+Dist}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classva_base_widget_ae987e992f04f964ce52100ce5dc4ef58}\label{classva_base_widget_ae987e992f04f964ce52100ce5dc4ef58}} 
+\index{vaBaseWidget@{vaBaseWidget}!vaBaseWidget@{vaBaseWidget}}
+\index{vaBaseWidget@{vaBaseWidget}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{vaBaseWidget()}{vaBaseWidget()}}
+{\footnotesize\ttfamily va\+Base\+Widget\+::va\+Base\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_base_widget_aa6b9778510013d9bf6e4c5cd5386c22e}\label{classva_base_widget_aa6b9778510013d9bf6e4c5cd5386c22e}} 
+\index{vaBaseWidget@{vaBaseWidget}!````~vaBaseWidget@{$\sim$vaBaseWidget}}
+\index{````~vaBaseWidget@{$\sim$vaBaseWidget}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{$\sim$vaBaseWidget()}{~vaBaseWidget()}}
+{\footnotesize\ttfamily va\+Base\+Widget\+::$\sim$va\+Base\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classva_base_widget_a0c9da7941545243d68a8e6ed82087593}\label{classva_base_widget_a0c9da7941545243d68a8e6ed82087593}} 
+\index{vaBaseWidget@{vaBaseWidget}!CreateGeometryHandle@{CreateGeometryHandle}}
+\index{CreateGeometryHandle@{CreateGeometryHandle}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{CreateGeometryHandle()}{CreateGeometryHandle()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::\+Create\+Geometry\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classva_ray_cast_base_widget_a1078b1e2eca31cabfee5cd4e81fd0a17}{va\+Ray\+Cast\+Base\+Widget}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a0c9da7941545243d68a8e6ed82087593_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a0c9da7941545243d68a8e6ed82087593_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_a0dac53043660b49b54644007eb34eba6}\label{classva_base_widget_a0dac53043660b49b54644007eb34eba6}} 
+\index{vaBaseWidget@{vaBaseWidget}!dolly@{dolly}}
+\index{dolly@{dolly}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{dolly()}{dolly()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::dolly (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_base_widget_aa612a5d446224cb8500f51a1d64c5781}\label{classva_base_widget_aa612a5d446224cb8500f51a1d64c5781}} 
+\index{vaBaseWidget@{vaBaseWidget}!focus@{focus}}
+\index{focus@{focus}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{focus()}{focus()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::focus (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_aa612a5d446224cb8500f51a1d64c5781_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_aadac0ddc3e0e94e8c45acc1fa4915234}\label{classva_base_widget_aadac0ddc3e0e94e8c45acc1fa4915234}} 
+\index{vaBaseWidget@{vaBaseWidget}!GetActor@{GetActor}}
+\index{GetActor@{GetActor}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{GetActor()}{GetActor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_basic_actor}{optix\+Basic\+Actor}}$\ast$ va\+Base\+Widget\+::\+Get\+Actor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_aadac0ddc3e0e94e8c45acc1fa4915234_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_a909b367f15ad3fe1f04145ad9d1e7632}\label{classva_base_widget_a909b367f15ad3fe1f04145ad9d1e7632}} 
+\index{vaBaseWidget@{vaBaseWidget}!getAspectRatio@{getAspectRatio}}
+\index{getAspectRatio@{getAspectRatio}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{getAspectRatio()}{getAspectRatio()}}
+{\footnotesize\ttfamily float va\+Base\+Widget\+::get\+Aspect\+Ratio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classva_base_widget_a779a3237d2feedd34047b73108316e7c}\label{classva_base_widget_a779a3237d2feedd34047b73108316e7c}} 
+\index{vaBaseWidget@{vaBaseWidget}!getFrustum@{getFrustum}}
+\index{getFrustum@{getFrustum}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{getFrustum()}{getFrustum()}}
+{\footnotesize\ttfamily bool va\+Base\+Widget\+::get\+Frustum (\begin{DoxyParamCaption}\item[{optix\+::float3 \&}]{pos,  }\item[{optix\+::float3 \&}]{u,  }\item[{optix\+::float3 \&}]{v,  }\item[{optix\+::float3 \&}]{w }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_base_widget_ace8c1c47233bdd318ae3d98708303e3a}\label{classva_base_widget_ace8c1c47233bdd318ae3d98708303e3a}} 
+\index{vaBaseWidget@{vaBaseWidget}!GetHandle@{GetHandle}}
+\index{GetHandle@{GetHandle}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{GetHandle()}{GetHandle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_s_d_f_primitive}{optix\+S\+D\+F\+Primitive}}$\ast$ va\+Base\+Widget\+::\+Get\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_base_widget_a3fc9b899024a22f859b37237176c76f4}\label{classva_base_widget_a3fc9b899024a22f859b37237176c76f4}} 
+\index{vaBaseWidget@{vaBaseWidget}!GetHandleProg@{GetHandleProg}}
+\index{GetHandleProg@{GetHandleProg}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{GetHandleProg()}{GetHandleProg()}}
+{\footnotesize\ttfamily optix\+::\+Program va\+Base\+Widget\+::\+Get\+Handle\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a3fc9b899024a22f859b37237176c76f4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a3fc9b899024a22f859b37237176c76f4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_af31ab6fabd5bba9492e58f868b37fd16}\label{classva_base_widget_af31ab6fabd5bba9492e58f868b37fd16}} 
+\index{vaBaseWidget@{vaBaseWidget}!Hide@{Hide}}
+\index{Hide@{Hide}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{Hide()}{Hide()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::\+Hide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_base_widget_a89a2e080098d56fb3f234284bc2dd0b2}\label{classva_base_widget_a89a2e080098d56fb3f234284bc2dd0b2}} 
+\index{vaBaseWidget@{vaBaseWidget}!isRayCast@{isRayCast}}
+\index{isRayCast@{isRayCast}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{isRayCast()}{isRayCast()}}
+{\footnotesize\ttfamily bool va\+Base\+Widget\+::is\+Ray\+Cast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a89a2e080098d56fb3f234284bc2dd0b2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_afa2a23f14dbe1e0df53878a119248305}\label{classva_base_widget_afa2a23f14dbe1e0df53878a119248305}} 
+\index{vaBaseWidget@{vaBaseWidget}!isRegistration@{isRegistration}}
+\index{isRegistration@{isRegistration}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{isRegistration()}{isRegistration()}}
+{\footnotesize\ttfamily bool va\+Base\+Widget\+::is\+Registration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_base_widget_aabaf7e573ecc2cdadfc669d914bb070b}\label{classva_base_widget_aabaf7e573ecc2cdadfc669d914bb070b}} 
+\index{vaBaseWidget@{vaBaseWidget}!orbit@{orbit}}
+\index{orbit@{orbit}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{orbit()}{orbit()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::orbit (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_base_widget_afeb126eba082ebbf0fd0a08ea0e38029}\label{classva_base_widget_afeb126eba082ebbf0fd0a08ea0e38029}} 
+\index{vaBaseWidget@{vaBaseWidget}!pan@{pan}}
+\index{pan@{pan}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{pan()}{pan()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::pan (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_base_widget_a40fbd15be9d37918b81a4b59e703cdac}\label{classva_base_widget_a40fbd15be9d37918b81a4b59e703cdac}} 
+\index{vaBaseWidget@{vaBaseWidget}!setBaseCoordinates@{setBaseCoordinates}}
+\index{setBaseCoordinates@{setBaseCoordinates}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{setBaseCoordinates()}{setBaseCoordinates()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::set\+Base\+Coordinates (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a40fbd15be9d37918b81a4b59e703cdac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_ac4d214b9688904bed1a20091e4cef4cc}\label{classva_base_widget_ac4d214b9688904bed1a20091e4cef4cc}} 
+\index{vaBaseWidget@{vaBaseWidget}!SetCamParameters@{SetCamParameters}}
+\index{SetCamParameters@{SetCamParameters}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{SetCamParameters()}{SetCamParameters()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::\+Set\+Cam\+Parameters (\begin{DoxyParamCaption}\item[{optix\+::float3 \&}]{pos,  }\item[{optix\+::float3 \&}]{u,  }\item[{optix\+::float3 \&}]{v,  }\item[{optix\+::float3 \&}]{w,  }\item[{optix\+::float3 \&}]{center,  }\item[{float \&}]{dist }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_ac4d214b9688904bed1a20091e4cef4cc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_a9bb6221eebc377a73ed483499fb1f65e}\label{classva_base_widget_a9bb6221eebc377a73ed483499fb1f65e}} 
+\index{vaBaseWidget@{vaBaseWidget}!SetContext@{SetContext}}
+\index{SetContext@{SetContext}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{SetContext()}{SetContext()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::\+Set\+Context (\begin{DoxyParamCaption}\item[{optix\+::\+Context \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_object_a084579231006f44f03b6834e723316b6}{va\+Basic\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classva_ray_cast_base_widget_a302f909d3d36a8c32c675b357acec5e4}{va\+Ray\+Cast\+Base\+Widget}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a9bb6221eebc377a73ed483499fb1f65e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_a5647fb4071e0795fe9e2ad510e427d2f}\label{classva_base_widget_a5647fb4071e0795fe9e2ad510e427d2f}} 
+\index{vaBaseWidget@{vaBaseWidget}!setDims@{setDims}}
+\index{setDims@{setDims}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{setDims()}{setDims()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::set\+Dims (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a5647fb4071e0795fe9e2ad510e427d2f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_a06910ab2ac5eea993f3dc06a4d908bca}\label{classva_base_widget_a06910ab2ac5eea993f3dc06a4d908bca}} 
+\index{vaBaseWidget@{vaBaseWidget}!setFocusDistance@{setFocusDistance}}
+\index{setFocusDistance@{setFocusDistance}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{setFocusDistance()}{setFocusDistance()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::set\+Focus\+Distance (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a06910ab2ac5eea993f3dc06a4d908bca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_a79937fbb96773f04abbb1bf4770f09c2}\label{classva_base_widget_a79937fbb96773f04abbb1bf4770f09c2}} 
+\index{vaBaseWidget@{vaBaseWidget}!SetRadius@{SetRadius}}
+\index{SetRadius@{SetRadius}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{SetRadius()}{SetRadius()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::\+Set\+Radius (\begin{DoxyParamCaption}\item[{float}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_base_widget_ab6943b502d35eef82b289ebd450b40f0}\label{classva_base_widget_ab6943b502d35eef82b289ebd450b40f0}} 
+\index{vaBaseWidget@{vaBaseWidget}!SetRayCasting@{SetRayCasting}}
+\index{SetRayCasting@{SetRayCasting}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{SetRayCasting()}{SetRayCasting()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::\+Set\+Ray\+Casting (\begin{DoxyParamCaption}\item[{bool}]{rayC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_ab6943b502d35eef82b289ebd450b40f0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_a39afb68b2f37043cfdc81d3f353e1c10}\label{classva_base_widget_a39afb68b2f37043cfdc81d3f353e1c10}} 
+\index{vaBaseWidget@{vaBaseWidget}!SetRegistration@{SetRegistration}}
+\index{SetRegistration@{SetRegistration}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{SetRegistration()}{SetRegistration()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::\+Set\+Registration (\begin{DoxyParamCaption}\item[{bool}]{rayC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a39afb68b2f37043cfdc81d3f353e1c10_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_ab70d43f8a8f8fe71c2bfbb9b7856372a}\label{classva_base_widget_ab70d43f8a8f8fe71c2bfbb9b7856372a}} 
+\index{vaBaseWidget@{vaBaseWidget}!setSpeedRatio@{setSpeedRatio}}
+\index{setSpeedRatio@{setSpeedRatio}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{setSpeedRatio()}{setSpeedRatio()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::set\+Speed\+Ratio (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_base_widget_aff36ea4df958b847485f3c7fb669f0af}\label{classva_base_widget_aff36ea4df958b847485f3c7fb669f0af}} 
+\index{vaBaseWidget@{vaBaseWidget}!setViewport@{setViewport}}
+\index{setViewport@{setViewport}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{setViewport()}{setViewport()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::set\+Viewport (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_base_widget_aba9120dae1e23b6d3ad8cc981f1f129a}\label{classva_base_widget_aba9120dae1e23b6d3ad8cc981f1f129a}} 
+\index{vaBaseWidget@{vaBaseWidget}!Show@{Show}}
+\index{Show@{Show}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{Show()}{Show()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::\+Show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{classva_base_widget_aba9120dae1e23b6d3ad8cc981f1f129a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_aba9120dae1e23b6d3ad8cc981f1f129a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_a50560ae956ba60bb541d197dc9fc5a05}\label{classva_base_widget_a50560ae956ba60bb541d197dc9fc5a05}} 
+\index{vaBaseWidget@{vaBaseWidget}!UpdateGeo@{UpdateGeo}}
+\index{UpdateGeo@{UpdateGeo}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{UpdateGeo()}{UpdateGeo()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::\+Update\+Geo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a50560ae956ba60bb541d197dc9fc5a05_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a50560ae956ba60bb541d197dc9fc5a05_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_a2329587011cbe408832615328472fb75}\label{classva_base_widget_a2329587011cbe408832615328472fb75}} 
+\index{vaBaseWidget@{vaBaseWidget}!UpdateHandlePosition@{UpdateHandlePosition}}
+\index{UpdateHandlePosition@{UpdateHandlePosition}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{UpdateHandlePosition()}{UpdateHandlePosition()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::\+Update\+Handle\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classva_ray_cast_base_widget_a7260bc27dfc0da713fe4a2d60f40f897}{va\+Ray\+Cast\+Base\+Widget}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a2329587011cbe408832615328472fb75_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_base_widget_a2329587011cbe408832615328472fb75_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_base_widget_ae5d7a0c6dc45870dbb981272e430d436}\label{classva_base_widget_ae5d7a0c6dc45870dbb981272e430d436}} 
+\index{vaBaseWidget@{vaBaseWidget}!zoom@{zoom}}
+\index{zoom@{zoom}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{zoom()}{zoom()}}
+{\footnotesize\ttfamily void va\+Base\+Widget\+::zoom (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classva_base_widget_adba0ccb6930e3df1fa196cd13f4f0e67}\label{classva_base_widget_adba0ccb6930e3df1fa196cd13f4f0e67}} 
+\index{vaBaseWidget@{vaBaseWidget}!acSdf1@{acSdf1}}
+\index{acSdf1@{acSdf1}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{acSdf1}{acSdf1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_basic_actor}{optix\+Basic\+Actor}}$\ast$ va\+Base\+Widget\+::ac\+Sdf1}
+
+\mbox{\Hypertarget{classva_base_widget_a4842a8b87b5a76af73c95fdf52aaf5bf}\label{classva_base_widget_a4842a8b87b5a76af73c95fdf52aaf5bf}} 
+\index{vaBaseWidget@{vaBaseWidget}!m\_center@{m\_center}}
+\index{m\_center@{m\_center}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{m\_center}{m\_center}}
+{\footnotesize\ttfamily optix\+::float3 va\+Base\+Widget\+::m\+\_\+center}
+
+\mbox{\Hypertarget{classva_base_widget_af9bd7c35b54218ce75ae7d29df56a4c7}\label{classva_base_widget_af9bd7c35b54218ce75ae7d29df56a4c7}} 
+\index{vaBaseWidget@{vaBaseWidget}!m\_distance@{m\_distance}}
+\index{m\_distance@{m\_distance}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{m\_distance}{m\_distance}}
+{\footnotesize\ttfamily float va\+Base\+Widget\+::m\+\_\+distance}
+
+\mbox{\Hypertarget{classva_base_widget_a193be4fdf8f1962a5657fb6fc87d7841}\label{classva_base_widget_a193be4fdf8f1962a5657fb6fc87d7841}} 
+\index{vaBaseWidget@{vaBaseWidget}!m\_fov@{m\_fov}}
+\index{m\_fov@{m\_fov}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{m\_fov}{m\_fov}}
+{\footnotesize\ttfamily float va\+Base\+Widget\+::m\+\_\+fov}
+
+\mbox{\Hypertarget{classva_base_widget_aeae11bef95ff08e3aea45dd4a00f1fc7}\label{classva_base_widget_aeae11bef95ff08e3aea45dd4a00f1fc7}} 
+\index{vaBaseWidget@{vaBaseWidget}!m\_geo@{m\_geo}}
+\index{m\_geo@{m\_geo}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{m\_geo}{m\_geo}}
+{\footnotesize\ttfamily optix\+::\+Geometry va\+Base\+Widget\+::m\+\_\+geo}
+
+\mbox{\Hypertarget{classva_base_widget_adc409a0c435427b3b072ee7b93ba67da}\label{classva_base_widget_adc409a0c435427b3b072ee7b93ba67da}} 
+\index{vaBaseWidget@{vaBaseWidget}!m\_phi@{m\_phi}}
+\index{m\_phi@{m\_phi}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{m\_phi}{m\_phi}}
+{\footnotesize\ttfamily float va\+Base\+Widget\+::m\+\_\+phi}
+
+\mbox{\Hypertarget{classva_base_widget_a96b6fe3e9d04627ad2ed4313de75ddfb}\label{classva_base_widget_a96b6fe3e9d04627ad2ed4313de75ddfb}} 
+\index{vaBaseWidget@{vaBaseWidget}!m\_prog@{m\_prog}}
+\index{m\_prog@{m\_prog}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{m\_prog}{m\_prog}}
+{\footnotesize\ttfamily optix\+::\+Program va\+Base\+Widget\+::m\+\_\+prog}
+
+\mbox{\Hypertarget{classva_base_widget_a5fd7df111f527e72b6c30d85cade9b64}\label{classva_base_widget_a5fd7df111f527e72b6c30d85cade9b64}} 
+\index{vaBaseWidget@{vaBaseWidget}!m\_theta@{m\_theta}}
+\index{m\_theta@{m\_theta}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{m\_theta}{m\_theta}}
+{\footnotesize\ttfamily float va\+Base\+Widget\+::m\+\_\+theta}
+
+\mbox{\Hypertarget{classva_base_widget_a3d6ee9c6dfd2ab30f3b744e6cc89fc46}\label{classva_base_widget_a3d6ee9c6dfd2ab30f3b744e6cc89fc46}} 
+\index{vaBaseWidget@{vaBaseWidget}!map21@{map21}}
+\index{map21@{map21}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{map21}{map21}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classva_mapper}{va\+Mapper}}$\ast$ va\+Base\+Widget\+::map21}
+
+\mbox{\Hypertarget{classva_base_widget_af97687d5c00bfe9974fc3d96ddc1f75e}\label{classva_base_widget_af97687d5c00bfe9974fc3d96ddc1f75e}} 
+\index{vaBaseWidget@{vaBaseWidget}!sysCameraCenter@{sysCameraCenter}}
+\index{sysCameraCenter@{sysCameraCenter}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{sysCameraCenter}{sysCameraCenter}}
+{\footnotesize\ttfamily optix\+::float3 va\+Base\+Widget\+::sys\+Camera\+Center}
+
+\mbox{\Hypertarget{classva_base_widget_a56e2e7234657c728042ad33617fdec0b}\label{classva_base_widget_a56e2e7234657c728042ad33617fdec0b}} 
+\index{vaBaseWidget@{vaBaseWidget}!sysCameraDist@{sysCameraDist}}
+\index{sysCameraDist@{sysCameraDist}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{sysCameraDist}{sysCameraDist}}
+{\footnotesize\ttfamily float va\+Base\+Widget\+::sys\+Camera\+Dist}
+
+\mbox{\Hypertarget{classva_base_widget_a44af5a94a82743e7bd3234b3ff8ab2e5}\label{classva_base_widget_a44af5a94a82743e7bd3234b3ff8ab2e5}} 
+\index{vaBaseWidget@{vaBaseWidget}!sysCameraPosition@{sysCameraPosition}}
+\index{sysCameraPosition@{sysCameraPosition}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{sysCameraPosition}{sysCameraPosition}}
+{\footnotesize\ttfamily optix\+::float3 va\+Base\+Widget\+::sys\+Camera\+Position}
+
+\mbox{\Hypertarget{classva_base_widget_a28e5529a6e18e5d2fce368d9e0808f81}\label{classva_base_widget_a28e5529a6e18e5d2fce368d9e0808f81}} 
+\index{vaBaseWidget@{vaBaseWidget}!sysCameraU@{sysCameraU}}
+\index{sysCameraU@{sysCameraU}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{sysCameraU}{sysCameraU}}
+{\footnotesize\ttfamily optix\+::float3 va\+Base\+Widget\+::sys\+CameraU}
+
+\mbox{\Hypertarget{classva_base_widget_acb24b1f71dcccb3fba576e111235536c}\label{classva_base_widget_acb24b1f71dcccb3fba576e111235536c}} 
+\index{vaBaseWidget@{vaBaseWidget}!sysCameraV@{sysCameraV}}
+\index{sysCameraV@{sysCameraV}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{sysCameraV}{sysCameraV}}
+{\footnotesize\ttfamily optix\+::float3 va\+Base\+Widget\+::sys\+CameraV}
+
+\mbox{\Hypertarget{classva_base_widget_af29d141a602c6fb6b7e886665b98c81b}\label{classva_base_widget_af29d141a602c6fb6b7e886665b98c81b}} 
+\index{vaBaseWidget@{vaBaseWidget}!sysCameraW@{sysCameraW}}
+\index{sysCameraW@{sysCameraW}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{sysCameraW}{sysCameraW}}
+{\footnotesize\ttfamily optix\+::float3 va\+Base\+Widget\+::sys\+CameraW}
+
+\mbox{\Hypertarget{classva_base_widget_ac53074f9ed77329d1441917051c53b0d}\label{classva_base_widget_ac53074f9ed77329d1441917051c53b0d}} 
+\index{vaBaseWidget@{vaBaseWidget}!updateCam@{updateCam}}
+\index{updateCam@{updateCam}!vaBaseWidget@{vaBaseWidget}}
+\doxysubsubsection{\texorpdfstring{updateCam}{updateCam}}
+{\footnotesize\ttfamily bool va\+Base\+Widget\+::update\+Cam}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{va_base_widget_8h}{va\+Base\+Widget.\+h}}\item 
+src/\mbox{\hyperlink{va_base_widget_8cpp}{va\+Base\+Widget.\+cpp}}\end{DoxyCompactItemize}

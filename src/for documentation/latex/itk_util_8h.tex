@@ -1,0 +1,63 @@
+\hypertarget{itk_util_8h}{}\doxysection{src/itk\+Util.h File Reference}
+\label{itk_util_8h}\index{src/itkUtil.h@{src/itkUtil.h}}
+{\ttfamily \#include \char`\"{}itk\+Image.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for itk\+Util.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{itk_util_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{itk_util_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceitk_util}{itk\+Util}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef itk\+::\+Image$<$ float, 2 $>$ \mbox{\hyperlink{namespaceitk_util_a3a8635fb496c8e52f1026fa412e95b74}{itk\+Util\+::\+Float2\+D\+Image\+Type}}
+\item 
+typedef itk\+::\+Image$<$ float, \mbox{\hyperlink{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}{Dimension}} $>$ \mbox{\hyperlink{namespaceitk_util_a9bf4820939533536dee295a3ec75b454}{itk\+Util\+::\+Float\+Image\+Type}}
+\item 
+typedef itk\+::\+Image$<$ int, \mbox{\hyperlink{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}{Dimension}} $>$ \mbox{\hyperlink{namespaceitk_util_afba8e47d16bf230ba3c96b148077bb84}{itk\+Util\+::\+Int\+Image\+Type}}
+\item 
+typedef itk\+::\+Image$<$ int, \mbox{\hyperlink{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}{Dimension}} $>$ \mbox{\hyperlink{namespaceitk_util_a6b9f269ba431ff549f5f95368dbb4d61}{itk\+Util\+::\+Binary\+Image\+Type}}
+\item 
+typedef itk\+::\+Point$<$ float, \mbox{\hyperlink{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}{Dimension}} $>$ \mbox{\hyperlink{namespaceitk_util_ac2b06a6b60f5dcf73dfd1486eea80c1a}{itk\+Util\+::\+Float\+Point}}
+\item 
+typedef std\+::vector$<$ Float\+Point $>$ \mbox{\hyperlink{namespaceitk_util_a3959deb09b731cf41f2517547fbb5753}{itk\+Util\+::\+Float\+Points}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T\+Image $>$ }\\void \mbox{\hyperlink{namespaceitk_util_a01143785c703a691b104b42b66f6fa1a}{itk\+Util\+::\+Region\+Copy}} (typename T\+Image\+::\+Pointer input, typename T\+Image\+::\+Pointer output)
+\item 
+float \mbox{\hyperlink{namespaceitk_util_a3198144c96f1a6c97d6e20b5cb134f47}{itk\+Util\+::\+Compute\+S\+DF}} (Float\+Image\+Type $\ast$fl\+\_\+image, float lowerthreshold)
+\item 
+void \mbox{\hyperlink{namespaceitk_util_adf0aa61271012053a998199a356a1a5b}{itk\+Util\+::\+Compute\+Centers}} (Float\+Image\+Type $\ast$fl\+\_\+image, float lowerthreshold, Float\+Points \&points)
+\item 
+void \mbox{\hyperlink{namespaceitk_util_a6709f235d0158b5810b7aee334f25466}{itk\+Util\+::\+Compute\+M\+I\+D\+Ifrom\+S\+DF}} (Float\+Image\+Type $\ast$midi\+\_\+image, const Float\+Image\+Type $\ast$fl\+\_\+image, float min)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr unsigned int \mbox{\hyperlink{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}{Dimension}} = 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}\label{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}} 
+\index{itkUtil.h@{itkUtil.h}!Dimension@{Dimension}}
+\index{Dimension@{Dimension}!itkUtil.h@{itkUtil.h}}
+\doxysubsubsection{\texorpdfstring{Dimension}{Dimension}}
+{\footnotesize\ttfamily constexpr unsigned int Dimension = 3\hspace{0.3cm}{\ttfamily [constexpr]}}
+

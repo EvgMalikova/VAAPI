@@ -1,0 +1,55 @@
+\hypertarget{programs_2material_8h}{}\doxysection{programs/material.h File Reference}
+\label{programs_2material_8h}\index{programs/material.h@{programs/material.h}}
+{\ttfamily \#include \char`\"{}prd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}D\+Rand48.\+h\char`\"{}}\newline
+Include dependency graph for material.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{programs_2material_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ float \mbox{\hyperlink{programs_2material_8h_a27b70d05b0526323aff1d6e56da0f7e7}{schlick}} (float cosine, float ref\+\_\+idx)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ bool \mbox{\hyperlink{programs_2material_8h_a829123d7078e4f53b7d7bb8fe2692501}{refract}} (const \mbox{\hyperlink{structvec3f}{vec3f}} \&v, const \mbox{\hyperlink{structvec3f}{vec3f}} \&n, float ni\+\_\+over\+\_\+nt, \mbox{\hyperlink{structvec3f}{vec3f}} \&refracted)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \mbox{\hyperlink{programs_2material_8h_aba8c08a8de314129ca509fe084beb81f}{reflect}} (const \mbox{\hyperlink{structvec3f}{vec3f}} \&v, const \mbox{\hyperlink{structvec3f}{vec3f}} \&n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{programs_2material_8h_aba8c08a8de314129ca509fe084beb81f}\label{programs_2material_8h_aba8c08a8de314129ca509fe084beb81f}} 
+\index{material.h@{material.h}!reflect@{reflect}}
+\index{reflect@{reflect}!material.h@{material.h}}
+\doxysubsubsection{\texorpdfstring{reflect()}{reflect()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} reflect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{v,  }\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{programs_2material_8h_aba8c08a8de314129ca509fe084beb81f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{programs_2material_8h_a829123d7078e4f53b7d7bb8fe2692501}\label{programs_2material_8h_a829123d7078e4f53b7d7bb8fe2692501}} 
+\index{material.h@{material.h}!refract@{refract}}
+\index{refract@{refract}!material.h@{material.h}}
+\doxysubsubsection{\texorpdfstring{refract()}{refract()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ bool refract (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{v,  }\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{n,  }\item[{float}]{ni\+\_\+over\+\_\+nt,  }\item[{\mbox{\hyperlink{structvec3f}{vec3f}} \&}]{refracted }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{programs_2material_8h_a829123d7078e4f53b7d7bb8fe2692501_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{programs_2material_8h_a27b70d05b0526323aff1d6e56da0f7e7}\label{programs_2material_8h_a27b70d05b0526323aff1d6e56da0f7e7}} 
+\index{material.h@{material.h}!schlick@{schlick}}
+\index{schlick@{schlick}!material.h@{material.h}}
+\doxysubsubsection{\texorpdfstring{schlick()}{schlick()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ float schlick (\begin{DoxyParamCaption}\item[{float}]{cosine,  }\item[{float}]{ref\+\_\+idx }\end{DoxyParamCaption})}
+

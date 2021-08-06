@@ -1,0 +1,8 @@
+<map id="shaders/renderer/per_ray_data.h" name="shaders/renderer/per_ray_data.h">
+<area shape="rect" id="node1" title=" " alt="" coords="165,5,307,47"/>
+<area shape="rect" id="node2" href="$va_optic_model_8h.html" title=" " alt="" coords="110,95,221,121"/>
+<area shape="rect" id="node6" href="$va_audio_model_8cpp.html" title=" " alt="" coords="245,95,371,121"/>
+<area shape="rect" id="node3" href="$optix_basic_renderer_8h.html" title=" " alt="" coords="12,169,159,196"/>
+<area shape="rect" id="node5" href="$va_optic_model_8cpp.html" title=" " alt="" coords="183,169,308,196"/>
+<area shape="rect" id="node4" href="$optix_basic_renderer_8cpp.html" title=" " alt="" coords="5,244,165,271"/>
+</map>

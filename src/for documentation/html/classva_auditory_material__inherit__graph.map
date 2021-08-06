@@ -1,0 +1,13 @@
+<map id="vaAuditoryMaterial" name="vaAuditoryMaterial">
+<area shape="rect" id="node1" title="A basic class for auditory material." alt="" coords="159,208,287,235"/>
+<area shape="rect" id="node3" href="$class_audio_texture_volume_material.html" title=" " alt="" coords="344,5,532,32"/>
+<area shape="rect" id="node4" href="$class_dynamic_texture_volume_material.html" title=" " alt="" coords="335,56,541,83"/>
+<area shape="rect" id="node5" href="$class_lambertian.html" title="Example of material for triangulated surfaces." alt="" coords="395,107,481,133"/>
+<area shape="rect" id="node6" href="$class_s_d_f_audio_ray_trace_material.html" title=" " alt="" coords="347,157,529,184"/>
+<area shape="rect" id="node7" href="$class_s_d_f_audio_volume_material.html" title=" " alt="" coords="353,208,523,235"/>
+<area shape="rect" id="node8" href="$class_s_d_f_material2.html" title=" " alt="" coords="387,259,489,285"/>
+<area shape="rect" id="node9" href="$class_s_d_f_volume_material.html" title="Simple Volume material with interactive highlighting, applied to several objects of various types." alt="" coords="369,309,507,336"/>
+<area shape="rect" id="node10" href="$classva_basic_material.html" title="Simple Blin&#45;Phong shading for whitted ray&#45;tracing." alt="" coords="381,360,495,387"/>
+<area shape="rect" id="node11" href="$classva_e_a_volume.html" title="Emission&#45;absorption Volume." alt="" coords="390,411,486,437"/>
+<area shape="rect" id="node2" href="$classva_basic_object.html" title=" " alt="" coords="5,208,111,235"/>
+</map>

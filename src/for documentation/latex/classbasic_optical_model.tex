@@ -1,0 +1,197 @@
+\hypertarget{classbasic_optical_model}{}\doxysection{basic\+Optical\+Model Class Reference}
+\label{classbasic_optical_model}\index{basicOpticalModel@{basicOpticalModel}}
+
+
+{\ttfamily \#include $<$optix\+Audio\+Optic.\+h$>$}
+
+
+
+Inheritance diagram for basic\+Optical\+Model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classbasic_optical_model__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbasic_optical_model_a63a6cedbe472d24bd5ec419fc67da9de}{basic\+Optical\+Model}} ()
+\item 
+\mbox{\hyperlink{classbasic_optical_model_ae17388d120e4ff9d1db64903e9363d83}{$\sim$basic\+Optical\+Model}} ()
+\item 
+virtual void \mbox{\hyperlink{classbasic_optical_model_ae4f51c91f19288b70433e605b40b7c6d}{Init\+Open\+GL}} ()
+\item 
+virtual void \mbox{\hyperlink{classbasic_optical_model_aed1efcaf88780966c9299aaef28b5d6b}{Render}} ()
+\item 
+virtual void \mbox{\hyperlink{classbasic_optical_model_ad16191cd6b50a7803cbd57fdd7a9d6a6}{Bind\+Buffer}} (optix\+::\+Context context)
+\item 
+virtual void \mbox{\hyperlink{classbasic_optical_model_a757a9a7e77fbe15b03fcd6021e2b0f41}{Update\+Optical\+Buffer}} ()
+\item 
+virtual void \mbox{\hyperlink{classbasic_optical_model_a59a87e40747eb6019ccd20e6afaf102a}{Reshape}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classbasic_optical_model_a8726ca4acc013b413f5f82024c19b3b7}{Set\+Dim}} (int width, int height)
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classbasic_optical_model_add199c74bfa9a678214d88bcb9ed0c7c}{Get\+Output}} ()
+\item 
+int \mbox{\hyperlink{classbasic_optical_model_ac8c8017f735f2c192d703eaaddfbe386}{Get\+Width}} ()
+\item 
+int \mbox{\hyperlink{classbasic_optical_model_a8750ba5bac729a086d66441667bf81b9}{Get\+Height}} ()
+\item 
+void \mbox{\hyperlink{classbasic_optical_model_ad3514297d0e243bd5215fab14c00e94b}{Set\+Buffer\+Size}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classbasic_optical_model_af5de587bae921631aee7945c2a828aa8}{m\+\_\+buffer\+Output}}
+\item 
+int \mbox{\hyperlink{classbasic_optical_model_a40f44eab2d5e15f8d49b67ba42af365a}{m\+\_\+width}}
+\item 
+int \mbox{\hyperlink{classbasic_optical_model_a01de878d808681a75bf982f2ae5e49c2}{m\+\_\+height}}
+\item 
+bool \mbox{\hyperlink{classbasic_optical_model_ac08efb8bd14fbfd758093593ca583536}{m\+\_\+interop}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbasic_optical_model_a63a6cedbe472d24bd5ec419fc67da9de}\label{classbasic_optical_model_a63a6cedbe472d24bd5ec419fc67da9de}} 
+\index{basicOpticalModel@{basicOpticalModel}!basicOpticalModel@{basicOpticalModel}}
+\index{basicOpticalModel@{basicOpticalModel}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{basicOpticalModel()}{basicOpticalModel()}}
+{\footnotesize\ttfamily basic\+Optical\+Model\+::basic\+Optical\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbasic_optical_model_a63a6cedbe472d24bd5ec419fc67da9de_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbasic_optical_model_ae17388d120e4ff9d1db64903e9363d83}\label{classbasic_optical_model_ae17388d120e4ff9d1db64903e9363d83}} 
+\index{basicOpticalModel@{basicOpticalModel}!````~basicOpticalModel@{$\sim$basicOpticalModel}}
+\index{````~basicOpticalModel@{$\sim$basicOpticalModel}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{$\sim$basicOpticalModel()}{~basicOpticalModel()}}
+{\footnotesize\ttfamily basic\+Optical\+Model\+::$\sim$basic\+Optical\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbasic_optical_model_ad16191cd6b50a7803cbd57fdd7a9d6a6}\label{classbasic_optical_model_ad16191cd6b50a7803cbd57fdd7a9d6a6}} 
+\index{basicOpticalModel@{basicOpticalModel}!BindBuffer@{BindBuffer}}
+\index{BindBuffer@{BindBuffer}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{BindBuffer()}{BindBuffer()}}
+{\footnotesize\ttfamily virtual void basic\+Optical\+Model\+::\+Bind\+Buffer (\begin{DoxyParamCaption}\item[{optix\+::\+Context}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptical_model_abe62f18aaeff4cd1fcac05c9f61abfcd}{optical\+Model}}, and \mbox{\hyperlink{classoptical_model_ad4188a348f9c0b4d2354eef0d6f10b04}{optical\+Model}}.
+
+\mbox{\Hypertarget{classbasic_optical_model_a8750ba5bac729a086d66441667bf81b9}\label{classbasic_optical_model_a8750ba5bac729a086d66441667bf81b9}} 
+\index{basicOpticalModel@{basicOpticalModel}!GetHeight@{GetHeight}}
+\index{GetHeight@{GetHeight}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
+{\footnotesize\ttfamily int basic\+Optical\+Model\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classbasic_optical_model_add199c74bfa9a678214d88bcb9ed0c7c}\label{classbasic_optical_model_add199c74bfa9a678214d88bcb9ed0c7c}} 
+\index{basicOpticalModel@{basicOpticalModel}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily optix\+::\+Buffer basic\+Optical\+Model\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classbasic_optical_model_ac8c8017f735f2c192d703eaaddfbe386}\label{classbasic_optical_model_ac8c8017f735f2c192d703eaaddfbe386}} 
+\index{basicOpticalModel@{basicOpticalModel}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
+{\footnotesize\ttfamily int basic\+Optical\+Model\+::\+Get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classbasic_optical_model_ae4f51c91f19288b70433e605b40b7c6d}\label{classbasic_optical_model_ae4f51c91f19288b70433e605b40b7c6d}} 
+\index{basicOpticalModel@{basicOpticalModel}!InitOpenGL@{InitOpenGL}}
+\index{InitOpenGL@{InitOpenGL}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{InitOpenGL()}{InitOpenGL()}}
+{\footnotesize\ttfamily virtual void basic\+Optical\+Model\+::\+Init\+Open\+GL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptical_model_a54ede96686a346ff89d354fe22c50fda}{optical\+Model}}.
+
+\mbox{\Hypertarget{classbasic_optical_model_aed1efcaf88780966c9299aaef28b5d6b}\label{classbasic_optical_model_aed1efcaf88780966c9299aaef28b5d6b}} 
+\index{basicOpticalModel@{basicOpticalModel}!Render@{Render}}
+\index{Render@{Render}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily virtual void basic\+Optical\+Model\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptical_model_ab2b930feaaead24c7640519f64ed3c7f}{optical\+Model}}, and \mbox{\hyperlink{classoptical_model_ab2b930feaaead24c7640519f64ed3c7f}{optical\+Model}}.
+
+\mbox{\Hypertarget{classbasic_optical_model_a59a87e40747eb6019ccd20e6afaf102a}\label{classbasic_optical_model_a59a87e40747eb6019ccd20e6afaf102a}} 
+\index{basicOpticalModel@{basicOpticalModel}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{Reshape()}{Reshape()}}
+{\footnotesize\ttfamily virtual void basic\+Optical\+Model\+::\+Reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptical_model_ac6b4dd1076034bd973d8cbd05383bd71}{optical\+Model}}, and \mbox{\hyperlink{classoptical_model_a0860dc50c13a5fad3062aad4e0b2582d}{optical\+Model}}.
+
+\mbox{\Hypertarget{classbasic_optical_model_ad3514297d0e243bd5215fab14c00e94b}\label{classbasic_optical_model_ad3514297d0e243bd5215fab14c00e94b}} 
+\index{basicOpticalModel@{basicOpticalModel}!SetBufferSize@{SetBufferSize}}
+\index{SetBufferSize@{SetBufferSize}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{SetBufferSize()}{SetBufferSize()}}
+{\footnotesize\ttfamily void basic\+Optical\+Model\+::\+Set\+Buffer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classbasic_optical_model_a8726ca4acc013b413f5f82024c19b3b7}\label{classbasic_optical_model_a8726ca4acc013b413f5f82024c19b3b7}} 
+\index{basicOpticalModel@{basicOpticalModel}!SetDim@{SetDim}}
+\index{SetDim@{SetDim}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{SetDim()}{SetDim()}}
+{\footnotesize\ttfamily void basic\+Optical\+Model\+::\+Set\+Dim (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{classbasic_optical_model_a8726ca4acc013b413f5f82024c19b3b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbasic_optical_model_a757a9a7e77fbe15b03fcd6021e2b0f41}\label{classbasic_optical_model_a757a9a7e77fbe15b03fcd6021e2b0f41}} 
+\index{basicOpticalModel@{basicOpticalModel}!UpdateOpticalBuffer@{UpdateOpticalBuffer}}
+\index{UpdateOpticalBuffer@{UpdateOpticalBuffer}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{UpdateOpticalBuffer()}{UpdateOpticalBuffer()}}
+{\footnotesize\ttfamily virtual void basic\+Optical\+Model\+::\+Update\+Optical\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptical_model_a80e3ce111bfb51ca7f57e998d971c904}{optical\+Model}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classbasic_optical_model_af5de587bae921631aee7945c2a828aa8}\label{classbasic_optical_model_af5de587bae921631aee7945c2a828aa8}} 
+\index{basicOpticalModel@{basicOpticalModel}!m\_bufferOutput@{m\_bufferOutput}}
+\index{m\_bufferOutput@{m\_bufferOutput}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{m\_bufferOutput}{m\_bufferOutput}}
+{\footnotesize\ttfamily optix\+::\+Buffer basic\+Optical\+Model\+::m\+\_\+buffer\+Output}
+
+\mbox{\Hypertarget{classbasic_optical_model_a01de878d808681a75bf982f2ae5e49c2}\label{classbasic_optical_model_a01de878d808681a75bf982f2ae5e49c2}} 
+\index{basicOpticalModel@{basicOpticalModel}!m\_height@{m\_height}}
+\index{m\_height@{m\_height}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{m\_height}{m\_height}}
+{\footnotesize\ttfamily int basic\+Optical\+Model\+::m\+\_\+height}
+
+\mbox{\Hypertarget{classbasic_optical_model_ac08efb8bd14fbfd758093593ca583536}\label{classbasic_optical_model_ac08efb8bd14fbfd758093593ca583536}} 
+\index{basicOpticalModel@{basicOpticalModel}!m\_interop@{m\_interop}}
+\index{m\_interop@{m\_interop}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{m\_interop}{m\_interop}}
+{\footnotesize\ttfamily bool basic\+Optical\+Model\+::m\+\_\+interop}
+
+\mbox{\Hypertarget{classbasic_optical_model_a40f44eab2d5e15f8d49b67ba42af365a}\label{classbasic_optical_model_a40f44eab2d5e15f8d49b67ba42af365a}} 
+\index{basicOpticalModel@{basicOpticalModel}!m\_width@{m\_width}}
+\index{m\_width@{m\_width}!basicOpticalModel@{basicOpticalModel}}
+\doxysubsubsection{\texorpdfstring{m\_width}{m\_width}}
+{\footnotesize\ttfamily int basic\+Optical\+Model\+::m\+\_\+width}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/src/\mbox{\hyperlink{optix_audio_optic_8h}{optix\+Audio\+Optic.\+h}}\end{DoxyCompactItemize}

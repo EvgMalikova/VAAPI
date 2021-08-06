@@ -1,0 +1,241 @@
+\hypertarget{class_pinhole_camera}{}\doxysection{Pinhole\+Camera Class Reference}
+\label{class_pinhole_camera}\index{PinholeCamera@{PinholeCamera}}
+
+
+{\ttfamily \#include $<$Pinhole\+Camera.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pinhole_camera_a85197f8901712c4766083bd38177d7ff}{Pinhole\+Camera}} ()
+\item 
+\mbox{\hyperlink{class_pinhole_camera_a699d18b6eff230cc56f33add593f7cdf}{$\sim$\+Pinhole\+Camera}} ()
+\item 
+void \mbox{\hyperlink{class_pinhole_camera_ae54628a4bbaee2723b37920436ba3132}{set\+Viewport}} (int w, int h)
+\item 
+void \mbox{\hyperlink{class_pinhole_camera_a1514b260fb5f53f79a7f4daeb07b3329}{set\+Base\+Coordinates}} (int x, int y)
+\item 
+void \mbox{\hyperlink{class_pinhole_camera_ac78b0d09c675db04198f1ee1f571369f}{set\+Speed\+Ratio}} (float f)
+\item 
+void \mbox{\hyperlink{class_pinhole_camera_a2be893dfda30a5ae3887480be8359dcd}{set\+Focus\+Distance}} (float f)
+\item 
+void \mbox{\hyperlink{class_pinhole_camera_a00ebd89741c1161c042f83e61bb5cdb2}{orbit}} (int x, int y)
+\item 
+void \mbox{\hyperlink{class_pinhole_camera_af9f705f8c0f156e1fe4a243d1e087d80}{pan}} (int x, int y)
+\item 
+void \mbox{\hyperlink{class_pinhole_camera_ab23757c5a53c18efa2fae55864a2bbc2}{dolly}} (int x, int y)
+\item 
+void \mbox{\hyperlink{class_pinhole_camera_a98cf46b912a80f53a2132b490141df6c}{focus}} (int x, int y)
+\item 
+void \mbox{\hyperlink{class_pinhole_camera_ae0571c4fa46117d8373d2686ea31a0f5}{zoom}} (float x)
+\item 
+bool \mbox{\hyperlink{class_pinhole_camera_a0b7c12dae874fac4ad184d296c198ff3}{get\+Frustum}} (optix\+::float3 \&pos, optix\+::float3 \&u, optix\+::float3 \&v, optix\+::float3 \&w)
+\item 
+float \mbox{\hyperlink{class_pinhole_camera_aad26aa392019b159765082b1b0158d28}{get\+Aspect\+Ratio}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+optix\+::float3 \mbox{\hyperlink{class_pinhole_camera_a17c8600b3465a7ef1d3a5f5bb7519e75}{m\+\_\+center}}
+\item 
+float \mbox{\hyperlink{class_pinhole_camera_aa31a3cdcfe895cf4aa17d14b5d0ba6fd}{m\+\_\+distance}}
+\item 
+float \mbox{\hyperlink{class_pinhole_camera_a862c29637be16797c224469b4f326869}{m\+\_\+phi}}
+\item 
+float \mbox{\hyperlink{class_pinhole_camera_a81db054493b0b74cebb9738220c14e42}{m\+\_\+theta}}
+\item 
+float \mbox{\hyperlink{class_pinhole_camera_a4995e7cebe2fc19afa3631a905482e3e}{m\+\_\+fov}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pinhole_camera_a85197f8901712c4766083bd38177d7ff}\label{class_pinhole_camera_a85197f8901712c4766083bd38177d7ff}} 
+\index{PinholeCamera@{PinholeCamera}!PinholeCamera@{PinholeCamera}}
+\index{PinholeCamera@{PinholeCamera}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{PinholeCamera()}{PinholeCamera()}}
+{\footnotesize\ttfamily Pinhole\+Camera\+::\+Pinhole\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pinhole_camera_a699d18b6eff230cc56f33add593f7cdf}\label{class_pinhole_camera_a699d18b6eff230cc56f33add593f7cdf}} 
+\index{PinholeCamera@{PinholeCamera}!````~PinholeCamera@{$\sim$PinholeCamera}}
+\index{````~PinholeCamera@{$\sim$PinholeCamera}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{$\sim$PinholeCamera()}{~PinholeCamera()}}
+{\footnotesize\ttfamily Pinhole\+Camera\+::$\sim$\+Pinhole\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pinhole_camera_ab23757c5a53c18efa2fae55864a2bbc2}\label{class_pinhole_camera_ab23757c5a53c18efa2fae55864a2bbc2}} 
+\index{PinholeCamera@{PinholeCamera}!dolly@{dolly}}
+\index{dolly@{dolly}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{dolly()}{dolly()}}
+{\footnotesize\ttfamily void Pinhole\+Camera\+::dolly (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pinhole_camera_ab23757c5a53c18efa2fae55864a2bbc2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pinhole_camera_a98cf46b912a80f53a2132b490141df6c}\label{class_pinhole_camera_a98cf46b912a80f53a2132b490141df6c}} 
+\index{PinholeCamera@{PinholeCamera}!focus@{focus}}
+\index{focus@{focus}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{focus()}{focus()}}
+{\footnotesize\ttfamily void Pinhole\+Camera\+::focus (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pinhole_camera_a98cf46b912a80f53a2132b490141df6c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pinhole_camera_aad26aa392019b159765082b1b0158d28}\label{class_pinhole_camera_aad26aa392019b159765082b1b0158d28}} 
+\index{PinholeCamera@{PinholeCamera}!getAspectRatio@{getAspectRatio}}
+\index{getAspectRatio@{getAspectRatio}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{getAspectRatio()}{getAspectRatio()}}
+{\footnotesize\ttfamily float Pinhole\+Camera\+::get\+Aspect\+Ratio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_pinhole_camera_a0b7c12dae874fac4ad184d296c198ff3}\label{class_pinhole_camera_a0b7c12dae874fac4ad184d296c198ff3}} 
+\index{PinholeCamera@{PinholeCamera}!getFrustum@{getFrustum}}
+\index{getFrustum@{getFrustum}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{getFrustum()}{getFrustum()}}
+{\footnotesize\ttfamily bool Pinhole\+Camera\+::get\+Frustum (\begin{DoxyParamCaption}\item[{optix\+::float3 \&}]{pos,  }\item[{optix\+::float3 \&}]{u,  }\item[{optix\+::float3 \&}]{v,  }\item[{optix\+::float3 \&}]{w }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pinhole_camera_a0b7c12dae874fac4ad184d296c198ff3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pinhole_camera_a00ebd89741c1161c042f83e61bb5cdb2}\label{class_pinhole_camera_a00ebd89741c1161c042f83e61bb5cdb2}} 
+\index{PinholeCamera@{PinholeCamera}!orbit@{orbit}}
+\index{orbit@{orbit}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{orbit()}{orbit()}}
+{\footnotesize\ttfamily void Pinhole\+Camera\+::orbit (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pinhole_camera_a00ebd89741c1161c042f83e61bb5cdb2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pinhole_camera_af9f705f8c0f156e1fe4a243d1e087d80}\label{class_pinhole_camera_af9f705f8c0f156e1fe4a243d1e087d80}} 
+\index{PinholeCamera@{PinholeCamera}!pan@{pan}}
+\index{pan@{pan}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{pan()}{pan()}}
+{\footnotesize\ttfamily void Pinhole\+Camera\+::pan (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pinhole_camera_af9f705f8c0f156e1fe4a243d1e087d80_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pinhole_camera_a1514b260fb5f53f79a7f4daeb07b3329}\label{class_pinhole_camera_a1514b260fb5f53f79a7f4daeb07b3329}} 
+\index{PinholeCamera@{PinholeCamera}!setBaseCoordinates@{setBaseCoordinates}}
+\index{setBaseCoordinates@{setBaseCoordinates}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{setBaseCoordinates()}{setBaseCoordinates()}}
+{\footnotesize\ttfamily void Pinhole\+Camera\+::set\+Base\+Coordinates (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pinhole_camera_a1514b260fb5f53f79a7f4daeb07b3329_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pinhole_camera_a2be893dfda30a5ae3887480be8359dcd}\label{class_pinhole_camera_a2be893dfda30a5ae3887480be8359dcd}} 
+\index{PinholeCamera@{PinholeCamera}!setFocusDistance@{setFocusDistance}}
+\index{setFocusDistance@{setFocusDistance}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{setFocusDistance()}{setFocusDistance()}}
+{\footnotesize\ttfamily void Pinhole\+Camera\+::set\+Focus\+Distance (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pinhole_camera_a2be893dfda30a5ae3887480be8359dcd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pinhole_camera_ac78b0d09c675db04198f1ee1f571369f}\label{class_pinhole_camera_ac78b0d09c675db04198f1ee1f571369f}} 
+\index{PinholeCamera@{PinholeCamera}!setSpeedRatio@{setSpeedRatio}}
+\index{setSpeedRatio@{setSpeedRatio}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{setSpeedRatio()}{setSpeedRatio()}}
+{\footnotesize\ttfamily void Pinhole\+Camera\+::set\+Speed\+Ratio (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pinhole_camera_ac78b0d09c675db04198f1ee1f571369f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pinhole_camera_ae54628a4bbaee2723b37920436ba3132}\label{class_pinhole_camera_ae54628a4bbaee2723b37920436ba3132}} 
+\index{PinholeCamera@{PinholeCamera}!setViewport@{setViewport}}
+\index{setViewport@{setViewport}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{setViewport()}{setViewport()}}
+{\footnotesize\ttfamily void Pinhole\+Camera\+::set\+Viewport (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pinhole_camera_ae54628a4bbaee2723b37920436ba3132_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pinhole_camera_ae0571c4fa46117d8373d2686ea31a0f5}\label{class_pinhole_camera_ae0571c4fa46117d8373d2686ea31a0f5}} 
+\index{PinholeCamera@{PinholeCamera}!zoom@{zoom}}
+\index{zoom@{zoom}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{zoom()}{zoom()}}
+{\footnotesize\ttfamily void Pinhole\+Camera\+::zoom (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pinhole_camera_ae0571c4fa46117d8373d2686ea31a0f5_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_pinhole_camera_a17c8600b3465a7ef1d3a5f5bb7519e75}\label{class_pinhole_camera_a17c8600b3465a7ef1d3a5f5bb7519e75}} 
+\index{PinholeCamera@{PinholeCamera}!m\_center@{m\_center}}
+\index{m\_center@{m\_center}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{m\_center}{m\_center}}
+{\footnotesize\ttfamily optix\+::float3 Pinhole\+Camera\+::m\+\_\+center}
+
+\mbox{\Hypertarget{class_pinhole_camera_aa31a3cdcfe895cf4aa17d14b5d0ba6fd}\label{class_pinhole_camera_aa31a3cdcfe895cf4aa17d14b5d0ba6fd}} 
+\index{PinholeCamera@{PinholeCamera}!m\_distance@{m\_distance}}
+\index{m\_distance@{m\_distance}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{m\_distance}{m\_distance}}
+{\footnotesize\ttfamily float Pinhole\+Camera\+::m\+\_\+distance}
+
+\mbox{\Hypertarget{class_pinhole_camera_a4995e7cebe2fc19afa3631a905482e3e}\label{class_pinhole_camera_a4995e7cebe2fc19afa3631a905482e3e}} 
+\index{PinholeCamera@{PinholeCamera}!m\_fov@{m\_fov}}
+\index{m\_fov@{m\_fov}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{m\_fov}{m\_fov}}
+{\footnotesize\ttfamily float Pinhole\+Camera\+::m\+\_\+fov}
+
+\mbox{\Hypertarget{class_pinhole_camera_a862c29637be16797c224469b4f326869}\label{class_pinhole_camera_a862c29637be16797c224469b4f326869}} 
+\index{PinholeCamera@{PinholeCamera}!m\_phi@{m\_phi}}
+\index{m\_phi@{m\_phi}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{m\_phi}{m\_phi}}
+{\footnotesize\ttfamily float Pinhole\+Camera\+::m\+\_\+phi}
+
+\mbox{\Hypertarget{class_pinhole_camera_a81db054493b0b74cebb9738220c14e42}\label{class_pinhole_camera_a81db054493b0b74cebb9738220c14e42}} 
+\index{PinholeCamera@{PinholeCamera}!m\_theta@{m\_theta}}
+\index{m\_theta@{m\_theta}!PinholeCamera@{PinholeCamera}}
+\doxysubsubsection{\texorpdfstring{m\_theta}{m\_theta}}
+{\footnotesize\ttfamily float Pinhole\+Camera\+::m\+\_\+theta}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/\mbox{\hyperlink{_pinhole_camera_8h}{Pinhole\+Camera.\+h}}\item 
+src/\mbox{\hyperlink{_pinhole_camera_8cpp}{Pinhole\+Camera.\+cpp}}\end{DoxyCompactItemize}

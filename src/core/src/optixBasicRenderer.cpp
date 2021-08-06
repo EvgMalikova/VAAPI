@@ -20,7 +20,7 @@ vaBasicRenderer::vaBasicRenderer(bool init) {
     }
     else {
         opticM = nullptr;
-        //        audioM = nullptr;
+        audioM = nullptr;
     }
 }
 
@@ -45,7 +45,7 @@ void vaBasicRenderer::InitDefaults()
 void  vaBasicRenderer::InitDefaultModels()
 {
     opticM = std::unique_ptr<opticalModel>(new opticalModel());
-    //    audioM = std::unique_ptr<auditoryModel>(new auditoryModel());
+    audioM = std::unique_ptr<auditoryModel>(new auditoryModel());
     std::cout << "DEFAULT" << std::endl;
 }
 
@@ -93,7 +93,7 @@ void vaBasicRenderer::SetMissProg()
 void vaBasicRenderer::ActivateOpticalModel()
 {
     for (int i = 0; i < GetNumOfActors(); i++) {
-        vaBasicActor* a = GetActor(i);
+        std::shared_ptr<vaBasicActor> a = GetActor(i);
         //a->PrintInfo();  - works
         a->SetOpticalModel();
     }
@@ -126,9 +126,9 @@ void vaBasicRenderer::InitRenderer()
         SetBoundingBox(bmin, bmax);
         //Similarly bind Auditory Buffer and set Variables
 
-        ///audioM->BindBuffer(vaBasicObject::GetContext());
-        //audioM->SetBufferSize();
-        //setAudioBuffer();
+        audioM->BindBuffer(vaBasicObject::GetContext());
+        audioM->SetBufferSize();
+        setAudioBuffer();
 
         SetTime(0);
 
@@ -146,7 +146,7 @@ void vaBasicRenderer::InitRenderer()
 void vaBasicRenderer::ActivateAuditoryModel()
 {
     for (int i = 0; i < GetNumOfActors(); i++) {
-        vaBasicActor* a = GetActor(i);
+        std::shared_ptr<vaBasicActor> a = GetActor(i);
         //a->PrintInfo();  - works
         a->SetAuditoryModel();
     }
@@ -171,6 +171,21 @@ void vaBasicRenderer::SetAuditoryRayGenerationFromWidget(std::string name, optix
     // std::cout << "AUDIO Program set " << name << std::endl;
 }
 
+void vaBasicRenderer::UpdateAudioBuffer()
+{
+    audioM->UpdateBuffer();
+    audioM->MapBuffer();
+}
+
+void vaBasicRenderer::RenderAudio()
+{
+    audioM->Render();
+}
+
+void vaBasicRenderer::SetAuditoryMapModel(auditoryMapper*m)
+{
+    audioM->SetAuditoryMapper(m);
+}
 void vaBasicRenderer::SetAuditoryExceptionProg()
 {
     InitProg("auditory_exception", "exception.cu", "auditory_exception");
@@ -291,8 +306,9 @@ void vaBasicRenderer::InitAcceleration()
     vaBasicObject::GetContext()["sysTopObject"]->set(m_rootGroup); // This is where the rtTrace calls start the BVH traversal. (Same for radiance and shadow rays.)
 }
 
-void vaBasicRenderer::AddActor(vaBasicActor* act)
+void vaBasicRenderer::AddActor(std::shared_ptr<vaBasicActor> act)
 {
+    // vaBasicActor* ac = act.get();
     m_act.push_back(act);
 
     unsigned int count;
@@ -302,9 +318,20 @@ void vaBasicRenderer::AddActor(vaBasicActor* act)
     m_rootGroup->setChild(count, act->GetOutput());
 }
 
+void vaBasicRenderer::AddActor2(vaBasicActor* ac)
+{
+    m_act.push_back(std::shared_ptr<vaBasicActor>(ac));
+
+    unsigned int count;
+    // Add the transform node placeing the plane to the scene's root Group node.
+    count = m_rootGroup->getChildCount();
+    m_rootGroup->setChildCount(count + 1);
+    m_rootGroup->setChild(count, ac->GetOutput());
+}
+
 void vaBasicRenderer::LaunchAuditoryContext()
 {
-    //    vaBasicObject::GetContext()->launch(AUDITORY_RAYCASTING, audioM->GetWidth(), audioM->GetHeight());
+    vaBasicObject::GetContext()->launch(AUDITORY_RAYCASTING, audioM->GetWidth(), audioM->GetHeight());
 }
 
 bool vaBasicRenderer::PlayAnimation(float play_time)
@@ -324,11 +351,14 @@ void vaBasicRenderer::SetUpRenderer()
     if (opticM == nullptr) {
         opticM = std::unique_ptr<opticalModel>(new opticalModel());
     }
+    if (audioM == nullptr) {
+        audioM = std::unique_ptr<auditoryModel>(new auditoryModel());
+    }
 
     opticM->Init();
-    //    audioM->Init();
-        //TODO: should be restructured and moved to Update()
-        //so before all parameters like is auditory should be set
+    audioM->Init();
+    //TODO: should be restructured and moved to Update()
+    //so before all parameters like is auditory should be set
     InitializePrograms(); //bind programs to stack
 
     InitRenderer(); //call programs

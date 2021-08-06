@@ -1,0 +1,178 @@
+\doxysection{optix\+S\+D\+F\+Primitive Class Reference}
+\label{classoptix_s_d_f_primitive}\index{optixSDFPrimitive@{optixSDFPrimitive}}
+
+
+A basic class for all sdf primitives.  
+
+
+
+
+{\ttfamily \#include $<$optix\+S\+D\+F\+Basic\+Primitives.\+h$>$}
+
+
+
+Inheritance diagram for optix\+S\+D\+F\+Primitive\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classoptix_s_d_f_primitive__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for optix\+S\+D\+F\+Primitive\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classoptix_s_d_f_primitive__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ optix\+S\+D\+F\+Primitive} ()
+\item 
+\textbf{ $\sim$optix\+S\+D\+F\+Primitive} ()
+\item 
+void \textbf{ Set\+Radius} (optix\+::float3 rad)
+\item 
+optix\+::float3 \textbf{ Get\+Radius} ()
+\item 
+void \textbf{ Set\+Center} (optix\+::float3 c)
+\item 
+optix\+::float3 \textbf{ Get\+Center} ()
+\item 
+virtual optix\+::\+Geometry \textbf{ Get\+Output} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Create\+Geometry} ()
+\item 
+virtual void \textbf{ Initialize} ()
+\item 
+virtual void \textbf{ Set\+Callable\+Prog} ()
+\item 
+virtual void \textbf{ Init\+Callable\+Prog} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+optix\+::float3 \textbf{ center}
+\item 
+optix\+::float3 \textbf{ radius}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A basic class for all sdf primitives. 
+
+The class creates a basic triangular plane for Optix use. Codes from Optix advanced samples. Architecture much inspired by V\+TK ({\texttt{ http\+://vtk.\+org}}) implementation 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classoptix_s_d_f_primitive_ae90c20b5d4a64cf30ee1609644904add}} 
+\index{optixSDFPrimitive@{optixSDFPrimitive}!optixSDFPrimitive@{optixSDFPrimitive}}
+\index{optixSDFPrimitive@{optixSDFPrimitive}!optixSDFPrimitive@{optixSDFPrimitive}}
+\doxysubsubsection{optixSDFPrimitive()}
+{\footnotesize\ttfamily optix\+S\+D\+F\+Primitive\+::optix\+S\+D\+F\+Primitive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_s_d_f_primitive_a36832e831260390d17105ac1e43ba36f}} 
+\index{optixSDFPrimitive@{optixSDFPrimitive}!````~optixSDFPrimitive@{$\sim$optixSDFPrimitive}}
+\index{````~optixSDFPrimitive@{$\sim$optixSDFPrimitive}!optixSDFPrimitive@{optixSDFPrimitive}}
+\doxysubsubsection{$\sim$optixSDFPrimitive()}
+{\footnotesize\ttfamily optix\+S\+D\+F\+Primitive\+::$\sim$optix\+S\+D\+F\+Primitive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classoptix_s_d_f_primitive_ab7c1cf531e440646a8af4c40122ccf43}} 
+\index{optixSDFPrimitive@{optixSDFPrimitive}!CreateGeometry@{CreateGeometry}}
+\index{CreateGeometry@{CreateGeometry}!optixSDFPrimitive@{optixSDFPrimitive}}
+\doxysubsubsection{CreateGeometry()}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Primitive\+::\+Create\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ optix\+S\+D\+F\+Geometry} \doxyref{}{p.}{classoptix_s_d_f_geometry_a7fbf3dfeda08ee137b3253522ef6a8e3}.
+
+\mbox{\label{classoptix_s_d_f_primitive_a2bf6522c2375fa27de4e4a636abad513}} 
+\index{optixSDFPrimitive@{optixSDFPrimitive}!GetCenter@{GetCenter}}
+\index{GetCenter@{GetCenter}!optixSDFPrimitive@{optixSDFPrimitive}}
+\doxysubsubsection{GetCenter()}
+{\footnotesize\ttfamily optix\+::float3 optix\+S\+D\+F\+Primitive\+::\+Get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_s_d_f_primitive_accfbb540768936ec293c626e6a3ccca4}} 
+\index{optixSDFPrimitive@{optixSDFPrimitive}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!optixSDFPrimitive@{optixSDFPrimitive}}
+\doxysubsubsection{GetOutput()}
+{\footnotesize\ttfamily virtual optix\+::\+Geometry optix\+S\+D\+F\+Primitive\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ optix\+S\+D\+F\+Geometry} \doxyref{}{p.}{classoptix_s_d_f_geometry_a8e7e0dc61bfa442a258725473c2fbc28}.
+
+\mbox{\label{classoptix_s_d_f_primitive_a0b6a933729c0289fe1ac508e1aec501f}} 
+\index{optixSDFPrimitive@{optixSDFPrimitive}!GetRadius@{GetRadius}}
+\index{GetRadius@{GetRadius}!optixSDFPrimitive@{optixSDFPrimitive}}
+\doxysubsubsection{GetRadius()}
+{\footnotesize\ttfamily optix\+::float3 optix\+S\+D\+F\+Primitive\+::\+Get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_s_d_f_primitive_a3158ddeb53e3f989b2d83ba13a25d6ab}} 
+\index{optixSDFPrimitive@{optixSDFPrimitive}!InitCallableProg@{InitCallableProg}}
+\index{InitCallableProg@{InitCallableProg}!optixSDFPrimitive@{optixSDFPrimitive}}
+\doxysubsubsection{InitCallableProg()}
+{\footnotesize\ttfamily virtual void optix\+S\+D\+F\+Primitive\+::\+Init\+Callable\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classoptix_s_d_f_primitive_a055f160d6ecb9bdc7bb49a605e0bb8b9}} 
+\index{optixSDFPrimitive@{optixSDFPrimitive}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!optixSDFPrimitive@{optixSDFPrimitive}}
+\doxysubsubsection{Initialize()}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Primitive\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+T\+O\+DO\+: potentialy read file with points here 
+
+Reimplemented from \textbf{ optix\+S\+D\+F\+Geometry} \doxyref{}{p.}{classoptix_s_d_f_geometry_ae4487610c220bc743d042fda69d73a0b}.
+
+\mbox{\label{classoptix_s_d_f_primitive_a19b4e4ecb944e296a29a4c9603bb1770}} 
+\index{optixSDFPrimitive@{optixSDFPrimitive}!SetCallableProg@{SetCallableProg}}
+\index{SetCallableProg@{SetCallableProg}!optixSDFPrimitive@{optixSDFPrimitive}}
+\doxysubsubsection{SetCallableProg()}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Primitive\+::\+Set\+Callable\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Is called for setting callable prog 
+
+Reimplemented from \textbf{ optix\+S\+D\+F\+Geometry} \doxyref{}{p.}{classoptix_s_d_f_geometry_a4a3e346306d620d5cd16d20a39141503}.
+
+\mbox{\label{classoptix_s_d_f_primitive_a9cf22e296cbd8f75a5466965d66cb6c2}} 
+\index{optixSDFPrimitive@{optixSDFPrimitive}!SetCenter@{SetCenter}}
+\index{SetCenter@{SetCenter}!optixSDFPrimitive@{optixSDFPrimitive}}
+\doxysubsubsection{SetCenter()}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Primitive\+::\+Set\+Center (\begin{DoxyParamCaption}\item[{optix\+::float3}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_s_d_f_primitive_a0c6506ab5f74ee6fa9bf6215eefa5f8e}} 
+\index{optixSDFPrimitive@{optixSDFPrimitive}!SetRadius@{SetRadius}}
+\index{SetRadius@{SetRadius}!optixSDFPrimitive@{optixSDFPrimitive}}
+\doxysubsubsection{SetRadius()}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Primitive\+::\+Set\+Radius (\begin{DoxyParamCaption}\item[{optix\+::float3}]{rad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classoptix_s_d_f_primitive_a0c0c75eeaaa84fca1efab43189ff77c6}} 
+\index{optixSDFPrimitive@{optixSDFPrimitive}!center@{center}}
+\index{center@{center}!optixSDFPrimitive@{optixSDFPrimitive}}
+\doxysubsubsection{center}
+{\footnotesize\ttfamily optix\+::float3 optix\+S\+D\+F\+Primitive\+::center\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_s_d_f_primitive_a14df8200ec063ea2e450131143a4a69f}} 
+\index{optixSDFPrimitive@{optixSDFPrimitive}!radius@{radius}}
+\index{radius@{radius}!optixSDFPrimitive@{optixSDFPrimitive}}
+\doxysubsubsection{radius}
+{\footnotesize\ttfamily optix\+::float3 optix\+S\+D\+F\+Primitive\+::radius\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ optix\+S\+D\+F\+Basic\+Primitives.\+h}\item 
+\textbf{ optix\+S\+D\+F\+Basic\+Primitives.\+cpp}\end{DoxyCompactItemize}

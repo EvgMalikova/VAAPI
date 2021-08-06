@@ -1,0 +1,192 @@
+\hypertarget{classoptix_mapper}{}\doxysection{optix\+Mapper Class Reference}
+\label{classoptix_mapper}\index{optixMapper@{optixMapper}}
+
+
+The codes inspired by vtk\+Mapper class. Returns optix\+::\+Geometry\+Instance with assigned material. Each material suggests definition of optical model , that treats geometry defined object as a sufrace or takes geometry and hetegoreneously defined attributes and maps them to optical and/or auditory properties for more details see ..heterogeneous objects modelling.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Abstract\+Material.\+h$>$}
+
+
+
+Inheritance diagram for optix\+Mapper\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classoptix_mapper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for optix\+Mapper\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classoptix_mapper__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classoptix_mapper_a5fa48f5c682185e54046d3e047218913}{Update}} ()
+\item 
+void \mbox{\hyperlink{classoptix_mapper_a06c1a3c44d921b7a7ba97ee8ddd5f9a7}{Set\+Input}} (optix\+::\+Geometry g)
+\item 
+optix\+::\+Geometry\+Instance \mbox{\hyperlink{classoptix_mapper_a1dad136a745db7a3c8c02b1b607d12bb}{Get\+Output}} ()
+\item 
+void \mbox{\hyperlink{classoptix_mapper_aa4a2052e3577d49e646e0ff08b70da60}{Set\+Desc\+Input}} (\mbox{\hyperlink{structsdf_geo}{sdf\+Geo}} $\ast$g)
+\item 
+\mbox{\hyperlink{classoptix_mapper_a6b982722524cce191357009e1f6c260c}{optix\+Mapper}} ()
+\item 
+\mbox{\hyperlink{classoptix_mapper_a0b4687462381ad4daf3d7e4cb3980f2b}{$\sim$optix\+Mapper}} ()
+\item 
+void \mbox{\hyperlink{classoptix_mapper_ac167a282829fa8e62788f26c9081672e}{Add\+Material}} (optix\+::\+Material m, \mbox{\hyperlink{struct_material_desc}{Material\+Desc}} desc)
+\item 
+optix\+::\+Material \mbox{\hyperlink{classoptix_mapper_a32a131110a17e74cb5c4c86ad14b6911}{Get\+Material}} (int i)
+\item 
+\mbox{\hyperlink{struct_material_desc}{Material\+Desc}} \mbox{\hyperlink{classoptix_mapper_a4101077230a4f73add569b65b02aeef5}{Get\+Material\+Desc}} (int i)
+\item 
+void \mbox{\hyperlink{classoptix_mapper_a4f5892cfe69710a179ee2fcc8d984802}{Set\+Optical\+Model}} ()
+\item 
+void \mbox{\hyperlink{classoptix_mapper_ab96c8413fa663f7d768dfae3c81bdb1f}{Set\+Auditory\+Model}} ()
+\item 
+void \mbox{\hyperlink{classoptix_mapper_a78053c022aa55610a6151e780b4946ee}{Set\+Time}} (float time)
+\item 
+void \mbox{\hyperlink{classoptix_mapper_a5a68af90a08da1794ed8674f2f6ddb0f}{Print\+Info}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classoptix_mapper_ae83b1299762e4d7d9cab7b8734f24889}{Set\+Material\+Parameters}} (int i)
+\item 
+virtual void \mbox{\hyperlink{classoptix_mapper_ac3a60f83952bd9e3fec52bedfa69be35}{Modified}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The codes inspired by vtk\+Mapper class. Returns optix\+::\+Geometry\+Instance with assigned material. Each material suggests definition of optical model , that treats geometry defined object as a sufrace or takes geometry and hetegoreneously defined attributes and maps them to optical and/or auditory properties for more details see ..heterogeneous objects modelling. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoptix_mapper_a6b982722524cce191357009e1f6c260c}\label{classoptix_mapper_a6b982722524cce191357009e1f6c260c}} 
+\index{optixMapper@{optixMapper}!optixMapper@{optixMapper}}
+\index{optixMapper@{optixMapper}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{optixMapper()}{optixMapper()}}
+{\footnotesize\ttfamily optix\+Mapper\+::optix\+Mapper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_mapper_a0b4687462381ad4daf3d7e4cb3980f2b}\label{classoptix_mapper_a0b4687462381ad4daf3d7e4cb3980f2b}} 
+\index{optixMapper@{optixMapper}!````~optixMapper@{$\sim$optixMapper}}
+\index{````~optixMapper@{$\sim$optixMapper}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{$\sim$optixMapper()}{~optixMapper()}}
+{\footnotesize\ttfamily optix\+Mapper\+::$\sim$optix\+Mapper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classoptix_mapper_ac167a282829fa8e62788f26c9081672e}\label{classoptix_mapper_ac167a282829fa8e62788f26c9081672e}} 
+\index{optixMapper@{optixMapper}!AddMaterial@{AddMaterial}}
+\index{AddMaterial@{AddMaterial}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{AddMaterial()}{AddMaterial()}}
+{\footnotesize\ttfamily void optix\+Mapper\+::\+Add\+Material (\begin{DoxyParamCaption}\item[{optix\+::\+Material}]{m,  }\item[{\mbox{\hyperlink{struct_material_desc}{Material\+Desc}}}]{desc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classoptix_mapper_a32a131110a17e74cb5c4c86ad14b6911}\label{classoptix_mapper_a32a131110a17e74cb5c4c86ad14b6911}} 
+\index{optixMapper@{optixMapper}!GetMaterial@{GetMaterial}}
+\index{GetMaterial@{GetMaterial}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{GetMaterial()}{GetMaterial()}}
+{\footnotesize\ttfamily optix\+::\+Material optix\+Mapper\+::\+Get\+Material (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classoptix_mapper_a4101077230a4f73add569b65b02aeef5}\label{classoptix_mapper_a4101077230a4f73add569b65b02aeef5}} 
+\index{optixMapper@{optixMapper}!GetMaterialDesc@{GetMaterialDesc}}
+\index{GetMaterialDesc@{GetMaterialDesc}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{GetMaterialDesc()}{GetMaterialDesc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material_desc}{Material\+Desc}} optix\+Mapper\+::\+Get\+Material\+Desc (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_mapper_a1dad136a745db7a3c8c02b1b607d12bb}\label{classoptix_mapper_a1dad136a745db7a3c8c02b1b607d12bb}} 
+\index{optixMapper@{optixMapper}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily optix\+::\+Geometry\+Instance optix\+Mapper\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_mapper_a1dad136a745db7a3c8c02b1b607d12bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_mapper_ac3a60f83952bd9e3fec52bedfa69be35}\label{classoptix_mapper_ac3a60f83952bd9e3fec52bedfa69be35}} 
+\index{optixMapper@{optixMapper}!Modified@{Modified}}
+\index{Modified@{Modified}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{Modified()}{Modified()}}
+{\footnotesize\ttfamily virtual void optix\+Mapper\+::\+Modified (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classoptix_mapper_a5a68af90a08da1794ed8674f2f6ddb0f}\label{classoptix_mapper_a5a68af90a08da1794ed8674f2f6ddb0f}} 
+\index{optixMapper@{optixMapper}!PrintInfo@{PrintInfo}}
+\index{PrintInfo@{PrintInfo}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{PrintInfo()}{PrintInfo()}}
+{\footnotesize\ttfamily void optix\+Mapper\+::\+Print\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_mapper_ab96c8413fa663f7d768dfae3c81bdb1f}\label{classoptix_mapper_ab96c8413fa663f7d768dfae3c81bdb1f}} 
+\index{optixMapper@{optixMapper}!SetAuditoryModel@{SetAuditoryModel}}
+\index{SetAuditoryModel@{SetAuditoryModel}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryModel()}{SetAuditoryModel()}}
+{\footnotesize\ttfamily void optix\+Mapper\+::\+Set\+Auditory\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classoptix_mapper_aa4a2052e3577d49e646e0ff08b70da60}\label{classoptix_mapper_aa4a2052e3577d49e646e0ff08b70da60}} 
+\index{optixMapper@{optixMapper}!SetDescInput@{SetDescInput}}
+\index{SetDescInput@{SetDescInput}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{SetDescInput()}{SetDescInput()}}
+{\footnotesize\ttfamily void optix\+Mapper\+::\+Set\+Desc\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsdf_geo}{sdf\+Geo}} $\ast$}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_mapper_a06c1a3c44d921b7a7ba97ee8ddd5f9a7}\label{classoptix_mapper_a06c1a3c44d921b7a7ba97ee8ddd5f9a7}} 
+\index{optixMapper@{optixMapper}!SetInput@{SetInput}}
+\index{SetInput@{SetInput}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{SetInput()}{SetInput()}}
+{\footnotesize\ttfamily void optix\+Mapper\+::\+Set\+Input (\begin{DoxyParamCaption}\item[{optix\+::\+Geometry}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_mapper_ae83b1299762e4d7d9cab7b8734f24889}\label{classoptix_mapper_ae83b1299762e4d7d9cab7b8734f24889}} 
+\index{optixMapper@{optixMapper}!SetMaterialParameters@{SetMaterialParameters}}
+\index{SetMaterialParameters@{SetMaterialParameters}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{SetMaterialParameters()}{SetMaterialParameters()}}
+{\footnotesize\ttfamily virtual void optix\+Mapper\+::\+Set\+Material\+Parameters (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classoptix_mapper_a4f5892cfe69710a179ee2fcc8d984802}\label{classoptix_mapper_a4f5892cfe69710a179ee2fcc8d984802}} 
+\index{optixMapper@{optixMapper}!SetOpticalModel@{SetOpticalModel}}
+\index{SetOpticalModel@{SetOpticalModel}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{SetOpticalModel()}{SetOpticalModel()}}
+{\footnotesize\ttfamily void optix\+Mapper\+::\+Set\+Optical\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classoptix_mapper_a78053c022aa55610a6151e780b4946ee}\label{classoptix_mapper_a78053c022aa55610a6151e780b4946ee}} 
+\index{optixMapper@{optixMapper}!SetTime@{SetTime}}
+\index{SetTime@{SetTime}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{SetTime()}{SetTime()}}
+{\footnotesize\ttfamily void optix\+Mapper\+::\+Set\+Time (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classoptix_mapper_a78053c022aa55610a6151e780b4946ee_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_mapper_a5fa48f5c682185e54046d3e047218913}\label{classoptix_mapper_a5fa48f5c682185e54046d3e047218913}} 
+\index{optixMapper@{optixMapper}!Update@{Update}}
+\index{Update@{Update}!optixMapper@{optixMapper}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void optix\+Mapper\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classoptix_mapper_a5fa48f5c682185e54046d3e047218913_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/src/\mbox{\hyperlink{optix_abstract_material_8h}{optix\+Abstract\+Material.\+h}}\item 
+core/src/\mbox{\hyperlink{optix_abstract_material_8cpp}{optix\+Abstract\+Material.\+cpp}}\end{DoxyCompactItemize}

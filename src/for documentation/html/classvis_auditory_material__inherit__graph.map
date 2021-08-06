@@ -1,0 +1,11 @@
+<map id="visAuditoryMaterial" name="visAuditoryMaterial">
+<area shape="rect" id="node1" title=" " alt="" coords="141,157,272,184"/>
+<area shape="rect" id="node3" href="$class_audio_texture_volume_material.html" title=" " alt="" coords="329,5,517,32"/>
+<area shape="rect" id="node4" href="$class_dynamic_texture_volume_material.html" title=" " alt="" coords="320,56,527,83"/>
+<area shape="rect" id="node5" href="$class_lambertian.html" title=" " alt="" coords="380,107,467,133"/>
+<area shape="rect" id="node6" href="$class_s_d_f_audio_volume_material.html" title=" " alt="" coords="338,157,509,184"/>
+<area shape="rect" id="node7" href="$class_s_d_f_material.html" title=" " alt="" coords="376,208,471,235"/>
+<area shape="rect" id="node8" href="$class_s_d_f_material2.html" title=" " alt="" coords="373,259,474,285"/>
+<area shape="rect" id="node9" href="$class_s_d_f_volume_material.html" title=" " alt="" coords="354,309,493,336"/>
+<area shape="rect" id="node2" href="$classoptix_object.html" title=" " alt="" coords="5,157,93,184"/>
+</map>

@@ -22,7 +22,7 @@
 
 #include "optixSDFOperations.h"
 #include "vaColorScheme.h"
-//#include "vaSoundMapScheme.h"
+#include "vaSoundMapScheme.h"
 #include "vaRayCastBaseWidget.h"
 
 static optix::float3 CPK_GetColorById(int t)
@@ -65,7 +65,7 @@ SceneManager::SceneManager()
     m_example = 0;
     m.Update();//creates context
 
-    ren = new vaRenderer(); //vaAdancedRenderer
+    ren = std::shared_ptr<vaRenderer>(new vaRenderer()); //vaAdancedRenderer
     ren->SetValid(m.GetValid());
     ren->SetContext(m.GetOutput());
 
@@ -73,8 +73,8 @@ SceneManager::SceneManager()
     m_widget->SetContext(m.GetOutput());
 
     ren->SetOpticalDims(width, height);
-    //   ren->SetAuditoryDims(5, 5);
-    ren->SetCamera(m_pinholeCamera.get());
+    ren->SetAuditoryDims(5, 5);
+    ren->SetCamera(m_pinholeCamera);
 
     //TODO: add separately
 
@@ -88,12 +88,12 @@ SceneManager::SceneManager()
     //This should be done before interactor SetUp() procedure
     // that does the final setups of all renderer stuff,
     // like setting RayGenerationProgam for visual and auditory context ray tracing
-   /* if (m_widget->isRayCast()) {
+    if (m_widget->isRayCast()) {
         ren->SetAuditoryRayGenerationFromWidget("widget_ray_cast", dynamic_cast<vaRayCastBaseWidget*>(m_widget.get())->GetRayCastProg());
         //auditoryMapper* m = dynamic_cast<auditoryMapper*>(new auditoryMapperPlucked());
 
         ren->SetAuditoryMapModel(new auditoryMapperPlucked());
-    }*/
+    }
 }
 
 SceneManager::SceneManager(const int width,
@@ -106,13 +106,13 @@ SceneManager::SceneManager(const int width,
     m_pinholeCamera = std::shared_ptr<PinholeCamera>(new PinholeCamera());
     m_example = 0;
     m.Update();//creates context
-    ren = new vaAdvancedRenderer();
+    ren = std::shared_ptr<vaAdvancedRenderer>(new vaAdvancedRenderer());
     std::cout << "INITED" << std::endl;
     ren->SetValid(m.GetValid());
     ren->SetContext(m.GetOutput());
 
     ren->SetOpticalDims(width, height);
-    ren->SetCamera(m_pinholeCamera.get());
+    ren->SetCamera(m_pinholeCamera);
 
     //set not dynamic
     ren->SetDynamic(true);
@@ -122,7 +122,7 @@ void SceneManager::Init()
 {
     //add geometry handle
     m_widget->CreateGeometryHandle();
-    ren->SetWidget(m_widget.get());
+    ren->SetWidget(m_widget);
     try
     {
         m_timer.restart();
@@ -161,6 +161,10 @@ SceneManager::~SceneManager()
         m.GetOutput()->destroy();
     }
 
+    mappers.clear();
+    actorSdf.clear();
+    /*
+
     for (int i = 0; i < mappers.size(); i++)
     {
         if (mappers[i] != nullptr)
@@ -178,8 +182,9 @@ SceneManager::~SceneManager()
         if (actorTri[i] != nullptr)
             delete actorTri[i];
     }
+    */
     //destroy renderer
-    delete ren;
+//    delete ren;
 }
 
 bool SceneManager::isValid()
@@ -235,13 +240,15 @@ void SceneManager::createMicrostructureScene()
     //texMaterial.SetTexture(readR2.GetTexture());
     texMaterial.Update();
 
-    vaMapper* map21 = new vaMapper();
+    std::shared_ptr<vaMapper> map21 = std::shared_ptr<vaMapper>(new vaMapper());
+
     map21->SetContext(m.GetOutput());
     map21->SetInput(sdf.GetOutput());
     map21->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType());
     map21->Update();
 
-    vaActor* acSdf1 = new vaActor();
+    std::shared_ptr< vaActor> acSdf1 = std::shared_ptr< vaActor>(new  vaActor());
+
     acSdf1->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
 
                                        //TODO: overwrite with mapper function that returns it's instance
@@ -317,13 +324,15 @@ void SceneManager::createFrepScene()
     mSdf.SetContext(m.GetOutput());
     mSdf.Update();
 
-    vaMapper* map21 = new vaMapper();
+    std::shared_ptr<vaMapper> map21 = std::shared_ptr<vaMapper>(new vaMapper());
+
     map21->SetContext(m.GetOutput());
     map21->SetInput(sdf.GetOutput());
     map21->AddMaterial(mSdf.GetOutput(), mSdf.GetType());
     map21->Update();
 
-    vaActor* acSdf1 = new vaActor();
+    std::shared_ptr< vaActor> acSdf1 = std::shared_ptr< vaActor>(new  vaActor());
+
     acSdf1->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
 
                                       //TODO: overwrite with mapper function that returns it's instance
@@ -416,14 +425,16 @@ void SceneManager::createDynamicHeterogeneousObjectScene()
     opBlend.Update();
 
     /* Mapper, simillar to vtkMapper*/
-    vaMapper* map2 = new vaMapper();
+    std::shared_ptr<vaMapper> map2 = std::shared_ptr<vaMapper>(new vaMapper());
+
     map2->SetContext(m.GetOutput());
     map2->SetDescInput(tex.GetOutputDesc());
     map2->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType());
     map2->Update();
 
     /*Actor, simillar to vtkActor*/
-    vaActor* acSdf = new vaActor();
+    std::shared_ptr< vaActor> acSdf = std::shared_ptr< vaActor>(new  vaActor());
+
     acSdf->SetContext(m.GetOutput());
     acSdf->AddMapper(map2);
     acSdf->Update();
@@ -524,7 +535,7 @@ void SceneManager::createMolSolventScene()
     */
 
     /* Mapper, simillar to vtkMapper*/
-    vaMapper* map2 = new vaMapper();
+    std::shared_ptr<vaMapper> map2 = std::shared_ptr<vaMapper>(new vaMapper());
     map2->SetContext(m.GetOutput());
     map2->SetDescInput(tex.GetOutputDesc());
     map2->AddMaterial(mSdf.GetOutput(), mSdf.GetType());
@@ -533,7 +544,8 @@ void SceneManager::createMolSolventScene()
     map2->Update();
 
     /*Actor, simillar to vtkActor*/
-    vaActor* acSdf = new vaActor();
+    std::shared_ptr< vaActor> acSdf = std::shared_ptr< vaActor>(new  vaActor());
+
     acSdf->SetContext(m.GetOutput());
     acSdf->AddMapper(map2);
     acSdf->Update();
@@ -572,9 +584,15 @@ void SceneManager::ExampleTetra()
     mol.SetContext(m.GetOutput());
     mol.SetCenter(read.GetOutput1());
 
+    //mol.SetType(read.GetOutput3());
+    if (read.GetOutput4().size() > 0)
+        mol.SetRadius(read.GetOutput4());
+    else
+    {
+        //set constant radius
+    }
     //tetras
     mol.SetTetras(read.GetOutput2());
-    mol.SetType(read.GetOutput3());
 
     mol.SetMaterialType(0);
     mol.Update();
@@ -605,7 +623,7 @@ void SceneManager::ExampleTetra()
 
     // Creates mapper
 
-    vaMapper* map3 = new vaMapper();
+    std::shared_ptr<vaMapper> map3 = std::shared_ptr<vaMapper>(new vaMapper());
     map3->SetContext(m.GetOutput());
     map3->SetInput(mol.GetOutput());
     map3->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType());
@@ -614,7 +632,8 @@ void SceneManager::ExampleTetra()
 
     //Creates actor
 
-    vaActor* acSdfMol = new vaActor();
+    std::shared_ptr< vaActor> acSdfMol = std::shared_ptr< vaActor>(new  vaActor());
+
     acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
     acSdfMol->AddMapper(map3);
     acSdfMol->Update();
@@ -641,7 +660,7 @@ void SceneManager::Example1()
     optix::float3 cent = read.GetCenter();
     m_pinholeCamera->SetCenter(cent);
     m_pinholeCamera->m_distance = 10;
-    ren->SetBoundingBox(read.GetBMin(), read.GetBMax());
+    ren->SetBoundingBox(read.GetBMin(true), read.GetBMax(true));
 
     /*Molecule CPK representation as sdf primitive
     For info on representation:
@@ -681,7 +700,7 @@ void SceneManager::Example1()
     /*
     Creates mapper
     */
-    vaMapper* map3 = new vaMapper();
+    std::shared_ptr<vaMapper> map3 = std::shared_ptr<vaMapper>(new vaMapper());
     map3->SetContext(m.GetOutput());
     map3->SetInput(mol.GetOutput());
     map3->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType()); /*<Sets optical object properties*/
@@ -692,7 +711,7 @@ void SceneManager::Example1()
     /*
     Creates actor
     */
-    vaActor* acSdfMol = new vaActor();
+    std::shared_ptr< vaActor> acSdfMol = std::shared_ptr< vaActor>(new  vaActor());
     acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
     acSdfMol->AddMapper(map3);
     acSdfMol->Update();
@@ -722,7 +741,7 @@ void SceneManager::Example3()
     optix::float3 cent = read.GetCenter();
     m_pinholeCamera->SetCenter(cent);
     m_pinholeCamera->m_distance = 10;
-    ren->SetBoundingBox(read.GetBMin(), read.GetBMax());
+    ren->SetBoundingBox(read.GetBMin(true), read.GetBMax(true));
 
     /*Molecule CPK representation as sdf primitive
     For info on representation:
@@ -767,7 +786,7 @@ void SceneManager::Example3()
     /*
     Creates mapper
     */
-    vaMapper* map3 = new vaMapper();
+    std::shared_ptr<vaMapper> map3 = std::shared_ptr<vaMapper>(new vaMapper());
     map3->SetContext(m.GetOutput());
     map3->SetDescInput(mol.GetOutputDesc());
     map3->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType()); /*<Sets optical object properties*/
@@ -778,7 +797,84 @@ void SceneManager::Example3()
     /*
     Creates actor
     */
-    vaActor* acSdfMol = new vaActor();
+    std::shared_ptr< vaActor> acSdfMol = std::shared_ptr< vaActor>(new  vaActor());
+    acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
+    acSdfMol->AddMapper(map3);
+    acSdfMol->Update();
+
+    ren->SetHeteroObjType(0);
+    ren->AddActor(acSdfMol);
+    if (postProcess > 0)
+        ren->SetPostProcessMaterial(texMaterial.GetEvalProg(), texMaterial.GetColorProg());
+    //store
+    actorSdf.push_back(acSdfMol);
+    mappers.push_back(map3);
+}
+void SceneManager::Example6()
+{
+    int postProcess = 1;
+    sdfMolReader read;
+    read.Setfile("ice_very_big_sorted.mol");// "water2.sdf");
+    read.Update();
+
+    optix::float3 cent = read.GetCenter();
+    m_pinholeCamera->SetCenter(cent);
+    m_pinholeCamera->m_distance = 10;
+    ren->SetBoundingBox(read.GetBMin(false), read.GetBMax(false));
+    ren->SetCenter(cent);
+
+    //read2.Grow(2); TODO: implement
+    //http://www1.lsbu.ac.uk/water/escs.html
+
+    /*Molecule CPK representation as sdf primitive
+    For info on representation:
+    https://en.wikipedia.org/wiki/Space-filling_model
+    */
+
+    //sdfMolBallSticksMol mol;//
+
+    sdfMoleculeBallSticks mol;//
+    mol.SetMolSize(4);
+    mol.SetContext(m.GetOutput());
+    mol.SetNumFrames(1);
+
+    mol.SetCenter(read.GetOutput1()); /*<Sets atoms centers*/
+                                         //mol.SimulateDynamic(6, read.GetOutput1()); - works, but we will try collapse of cluster
+
+    mol.SetRadius(read.GetOutput2()); /*<Sets atoms radii specified for element type,
+                                      for info: https://en.wikipedia.org/wiki/Atomic_radius*/
+    mol.SetType(read.GetOutput3()); /*<Sets atom type*/
+                                    //after all to correctly fix number
+    mol.SetBonds(read.GetOutput4()); /*<Sets atoms centers*/
+    mol.SetMols(read.GetOutput5(), 4);
+    mol.SetMaterialType(0);
+    mol.Update();
+
+    vaVolumeSDFHeteroMultiscale texMaterial;
+    texMaterial.SetHeteroObjType(sdfHeterogeneous::ObjectType::CELL);
+
+    texMaterial.SetPostprocess(postProcess); //manually set post processing
+
+    texMaterial.SetContext(m.GetOutput());
+    texMaterial.SetSDFProg(mol.GetCallableProg()); //<Gets sdf primitive optix callable program reference
+    texMaterial.Update();
+
+    /*
+    Creates mapper
+    */
+    std::shared_ptr<vaMapper> map3 = std::shared_ptr<vaMapper>(new vaMapper());
+
+    map3->SetContext(m.GetOutput());
+    map3->SetDescInput(mol.GetOutputDesc());
+    map3->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType()); /*<Sets optical object properties*/
+    map3->SetScalarModeOn();
+    // map3->AddMaterial(mVSdf2.GetOutput(), mVSdf2.GetType()); /*<Sets auditory object properties*/
+    map3->Update();
+
+    /*
+    Creates actor
+    */
+    std::shared_ptr< vaActor> acSdfMol = std::shared_ptr< vaActor>(new  vaActor());
     acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
     acSdfMol->AddMapper(map3);
     acSdfMol->Update();
@@ -818,8 +914,10 @@ void SceneManager::Example31()
      //sdfMolBallSticksMol mol;//
 
     sdfMoleculeBallSticks mol;//
+    mol.SetMolSize(2);
     mol.SetContext(m.GetOutput());
     mol.SetNumFrames(3);
+
     mol.SetCenter(read.GetOutput1(), 1); /*<Sets atoms centers*/
                                          //mol.SimulateDynamic(6, read.GetOutput1()); - works, but we will try collapse of cluster
     mol.SetCenter(read2.GetOutput1(), 2);
@@ -836,8 +934,9 @@ void SceneManager::Example31()
     mol.Update();
 
     vaVolumeSDFHeteroMultiscale texMaterial;
-    texMaterial.SetContext(m.GetOutput());
     texMaterial.SetPostprocess(postProcess); //manually set post processing
+
+    texMaterial.SetContext(m.GetOutput());
 
     texMaterial.SetSDFProg(mol.GetCallableProg()); //<Gets sdf primitive optix callable program reference
     texMaterial.Update();
@@ -845,7 +944,7 @@ void SceneManager::Example31()
     /*
     Creates mapper
     */
-    vaMapper* map3 = new vaMapper();
+    std::shared_ptr<vaMapper> map3 = std::shared_ptr<vaMapper>(new vaMapper());
     map3->SetContext(m.GetOutput());
     map3->SetDescInput(mol.GetOutputDesc());
     map3->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType()); /*<Sets optical object properties*/
@@ -856,7 +955,7 @@ void SceneManager::Example31()
     /*
     Creates actor
     */
-    vaActor* acSdfMol = new vaActor();
+    std::shared_ptr< vaActor> acSdfMol = std::shared_ptr< vaActor>(new  vaActor());
     acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
     acSdfMol->AddMapper(map3);
     acSdfMol->Update();
@@ -974,13 +1073,15 @@ void SceneManager::createMicrostuctureMOlScene()
     texMaterial.AddLight(&l3);
     texMaterial.Update();
 
-    vaMapper* maptex = new vaMapper();
+    std::shared_ptr<vaMapper> maptex = std::shared_ptr<vaMapper>(new vaMapper());
+
     maptex->SetContext(m.GetOutput());
     maptex->SetInput(sdf.GetOutput());
     maptex->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType());
     maptex->Update();
 
-    vaActor* acSdftex = new vaActor();
+    std::shared_ptr< vaActor> acSdftex = std::shared_ptr< vaActor>(new  vaActor());
+
     acSdftex->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
 
                                        //TODO: overwrite with mapper function that returns it's instance
@@ -1022,7 +1123,7 @@ void SceneManager::createMicrostuctureMOlScene()
     /*
     Creates mapper
     */
-    vaMapper* map3 = new vaMapper();
+    std::shared_ptr<vaMapper> map3 = std::shared_ptr<vaMapper>(new vaMapper());
     map3->SetContext(m.GetOutput());
     //map3->SetInput(mol.GetOutput());
     map3->SetDescInput(mol.GetOutputDesc());
@@ -1033,7 +1134,8 @@ void SceneManager::createMicrostuctureMOlScene()
     /*
     Creates actor
     */
-    vaActor* acSdfMol = new vaActor();
+    std::shared_ptr< vaActor> acSdfMol = std::shared_ptr< vaActor>(new  vaActor());
+
     acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
     acSdfMol->AddMapper(map3);
     //acSdfMol->AddMapper(map4);
@@ -1166,7 +1268,7 @@ void SceneManager::createAuditoryMoleculeScene2()
     /*
     Creates mapper
     */
-    vaMapper* map3 = new vaMapper();
+    std::shared_ptr<vaMapper> map3 = std::shared_ptr<vaMapper>(new vaMapper());
     map3->SetContext(m.GetOutput());
     //map3->SetInput(mol.GetOutput());
     map3->SetDescInput(mol.GetOutputDesc());
@@ -1175,7 +1277,7 @@ void SceneManager::createAuditoryMoleculeScene2()
     map3->AddMaterial(mVSdf2.GetOutput(), mVSdf2.GetType()); /*<Sets auditory object properties*/
     map3->Update();
 
-    vaMapper* map4 = new vaMapper();
+    std::shared_ptr<vaMapper> map4 = std::shared_ptr<vaMapper>(new vaMapper());
     map4->SetContext(m.GetOutput());
     //map3->SetInput(mol.GetOutput());
     map4->SetInput(s1.GetOutput());
@@ -1185,7 +1287,8 @@ void SceneManager::createAuditoryMoleculeScene2()
     /*
     Creates actor
     */
-    vaActor* acSdfMol = new vaActor();
+    std::shared_ptr< vaActor> acSdfMol = std::shared_ptr< vaActor>(new  vaActor());
+
     acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
     acSdfMol->AddMapper(map3);
     //acSdfMol->AddMapper(map4);
@@ -1276,7 +1379,7 @@ void SceneManager::createAuditoryMoleculeSceneMolDynam()
     /*
     Creates mapper
     */
-    vaMapper* map3 = new vaMapper();
+    std::shared_ptr<vaMapper> map3 = std::shared_ptr<vaMapper>(new vaMapper());
     map3->SetContext(m.GetOutput());
     map3->SetDescInput(mol.GetOutputDesc());//SetInput(mol.GetOutput());
     map3->AddMaterial(mSdf.GetOutput(), mSdf.GetType()); /*<Sets optical object properties*/
@@ -1287,7 +1390,8 @@ void SceneManager::createAuditoryMoleculeSceneMolDynam()
     /*
     Creates actor
     */
-    vaActor* acSdfMol = new vaActor();
+    std::shared_ptr< vaActor> acSdfMol = std::shared_ptr< vaActor>(new  vaActor());
+
     acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
     acSdfMol->AddMapper(map3);
     acSdfMol->Update();
@@ -1297,7 +1401,98 @@ void SceneManager::createAuditoryMoleculeSceneMolDynam()
     actorSdf.push_back(acSdfMol);
     mappers.push_back(map3);
 }
+void SceneManager::SetXYZData(MPoints p, MTypes t)
+{
+    int size = p.cols()*p.rows();
+    int j = 0;
+    for (int i = 0; i < size; i += 4) {
+        optix::float3 l = optix::make_float3(p.data()[i], p.data()[i + 1], p.data()[i + 2]);
+        center.push_back(l);
+        rad.push_back(p.data()[i + 3]);
+        type.push_back(t.data()[j]);
+        j++;
+    }
+    //  SetCenter(center);
+    //   SetRadius(rad);
+    //   SetType(type);
 
+   // type.reserve(size);
+   // memcpy(type.data(), t.data(), sizeof(int) * (size_t)(size));
+    SetExample(10);
+}
+void SceneManager::Example10()
+{
+    /*Molecule CPK representation as sdf primitive
+    For info on representation:
+    https://en.wikipedia.org/wiki/Space-filling_model
+    */
+
+    sdfHMicro mol;//sdfHMicrostructure mol;// // sdfHeterogeneous mol;//sdfCPKMol mol; //
+    mol.SetContext(m.GetOutput());
+    mol.SetCenter(center); /*<Sets atoms centers*/
+    mol.SetRadius(rad); /*<Sets atoms radii specified for element type,
+                                      for info: https://en.wikipedia.org/wiki/Atomic_radius*/
+    mol.SetType(type); /*<Sets atom type*/
+
+    mol.SetMaterialType(0);
+    mol.Update();
+
+    std::cout << type.size() << " elements" << std::endl;
+    std::cout << center[0] << " elements" << std::endl;
+    std::cout << type[type.size() - 1] << " types " << type[1] << std::endl;
+
+    BasicLight l1;
+    l1.color = optix::make_float3(1.0);
+    l1.pos = optix::make_float3(10.0);
+
+    BasicLight l2;
+    l2.color = optix::make_float3(1.0);
+    l2.pos = optix::make_float3(0, 0, 10.0);
+
+    BasicLight l3;
+    l3.color = optix::make_float3(1.0);
+    l3.pos = optix::make_float3(-10.0, 0, -1.0);
+
+    vaVolumeSDFHetero texMaterial;
+
+    texMaterial.SetContext(m.GetOutput());
+    /*Get heterogeneous object type to compile the right program*/
+    texMaterial.SetHeteroObjType(mol.GetPrimType());
+    texMaterial.SetPostprocess(1);
+    texMaterial.AddLight(&l1);
+    texMaterial.AddLight(&l2);
+    //texMaterial.AddLight(&l3);
+    texMaterial.SetSDFProg(mol.GetCallableProg()); /*<Gets sdf primitive optix callable program reference*/
+    texMaterial.SetType(vaEAVolume::MaterialType::TRANSP); /*<Volume rendering mode*/
+                                                           //texMaterial.SetTexture(readR1.GetTexture());
+                                                           //texMaterial.SetTexture(readR2.GetTexture());
+    texMaterial.Update();
+
+    /*
+    Creates mapper
+    */
+    std::shared_ptr<vaMapper> map3 = std::shared_ptr<vaMapper>(new vaMapper());
+    map3->SetContext(m.GetOutput());
+    map3->SetInput(mol.GetOutput());
+    map3->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType()); /*<Sets optical object properties*/
+    map3->SetScalarModeOn();
+    // map3->AddMaterial(mVSdf2.GetOutput(), mVSdf2.GetType()); /*<Sets auditory object properties*/
+    map3->Update();
+
+    /*
+    Creates actor
+    */
+    std::shared_ptr<vaActor> acSdfMol = std::shared_ptr<vaActor>(new vaActor());
+    acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
+    acSdfMol->AddMapper(map3);
+    acSdfMol->Update();
+
+    ren->AddActor(acSdfMol);
+    ren->SetPostProcessMaterial(texMaterial.GetEvalProg(), texMaterial.GetColorProg());
+    //store
+    actorSdf.push_back(acSdfMol);
+    mappers.push_back(map3);
+}
 void SceneManager::Example0()
 {
     /*Read molecule data from XYZ file.
@@ -1352,7 +1547,7 @@ void SceneManager::Example0()
     /*
     Creates mapper
     */
-    vaMapper* map3 = new vaMapper();
+    std::shared_ptr<vaMapper> map3 = std::shared_ptr<vaMapper>(new vaMapper());
     map3->SetContext(m.GetOutput());
     map3->SetInput(mol.GetOutput());
     map3->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType()); /*<Sets optical object properties*/
@@ -1363,7 +1558,7 @@ void SceneManager::Example0()
     /*
     Creates actor
     */
-    vaActor* acSdfMol = new vaActor();
+    std::shared_ptr<vaActor> acSdfMol = std::shared_ptr<vaActor>(new vaActor());
     acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
     acSdfMol->AddMapper(map3);
     acSdfMol->Update();
@@ -1427,7 +1622,7 @@ void SceneManager::Example2()
     /*
     Creates mapper
     */
-    vaMapper* map3 = new vaMapper();
+    std::shared_ptr<vaMapper> map3 = std::shared_ptr<vaMapper>(new vaMapper());
     map3->SetContext(m.GetOutput());
     map3->SetInput(mol.GetOutput());
     map3->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType()); /*<Sets optical object properties*/
@@ -1438,7 +1633,7 @@ void SceneManager::Example2()
     /*
     Creates actor
     */
-    vaActor* acSdfMol = new vaActor();
+    std::shared_ptr<vaActor> acSdfMol = std::shared_ptr<vaActor>(new vaActor());
     acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
     acSdfMol->AddMapper(map3);
     acSdfMol->Update();
@@ -1487,7 +1682,13 @@ void SceneManager::createScene()
             //not volume. Just a test for comparison with volume
             break;
         case 6:
+            Example6();
+            break;
+        case 7:
             createDynamicHeterogeneousObjectScene();
+            break;
+        case 10:
+            Example10();
             break;
         }
         //
@@ -1529,4 +1730,222 @@ void SceneManager::createScene()
     {
         std::cerr << e.getErrorString() << std::endl;
     }
+}
+
+/*
+SceneManager2
+
+*/
+
+void SceneManager2::Example2()
+{
+    /*Read molecule data from XYZ file.
+    For info on XYZ file format:
+    http://wiki.jmol.org/index.php/File_formats/Formats/XYZ
+    */
+    xyzReader read;
+    read.Setfile("slice.xyz");
+    read.Update();
+
+    /*Molecule CPK representation as sdf primitive
+    For info on representation:
+    https://en.wikipedia.org/wiki/Space-filling_model
+    */
+    sdfHMicrostructure mol;//sdfHMicrostructure mol;// // sdfHeterogeneous mol;//sdfCPKMol mol; //
+    mol.SetContext(m.GetOutput());
+    mol.SetCenter(read.GetOutput1()); /*<Sets atoms centers*/
+    mol.SetRadius(read.GetOutput2()); /*<Sets atoms radii specified for element type,
+                                      for info: https://en.wikipedia.org/wiki/Atomic_radius*/
+    mol.SetType(read.GetOutput3()); /*<Sets atom type*/
+
+    mol.SetMaterialType(0);
+    mol.Update();
+
+    BasicLight l1;
+    l1.color = optix::make_float3(1.0);
+    l1.pos = optix::make_float3(10.0);
+
+    BasicLight l2;
+    l2.color = optix::make_float3(1.0);
+    l2.pos = optix::make_float3(0, 0, 10.0);
+
+    BasicLight l3;
+    l3.color = optix::make_float3(1.0);
+    l3.pos = optix::make_float3(-10.0, 0, -1.0);
+
+    vaVolumeSDFHetero texMaterial;
+
+    texMaterial.SetContext(m.GetOutput());
+    /*Get heterogeneous object type to compile the right program*/
+    texMaterial.SetHeteroObjType(mol.GetPrimType());
+    texMaterial.AddLight(&l1);
+    texMaterial.AddLight(&l2);
+    //texMaterial.AddLight(&l3);
+    texMaterial.SetSDFProg(mol.GetCallableProg()); /*<Gets sdf primitive optix callable program reference*/
+    texMaterial.SetType(vaEAVolume::MaterialType::TRANSP); /*<Volume rendering mode*/
+                                                           //texMaterial.SetTexture(readR1.GetTexture());
+                                                           //texMaterial.SetTexture(readR2.GetTexture());
+    texMaterial.Update();
+
+    /*
+    Creates mapper
+    */
+    std::shared_ptr<vaMapper> map3 = std::shared_ptr<vaMapper>(new vaMapper());
+    map3->SetContext(m.GetOutput());
+    map3->SetInput(mol.GetOutput());
+    map3->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType()); /*<Sets optical object properties*/
+    map3->SetScalarModeOn();
+    // map3->AddMaterial(mVSdf2.GetOutput(), mVSdf2.GetType()); /*<Sets auditory object properties*/
+    map3->Update();
+
+    /*
+    Creates actor
+    */
+    std::shared_ptr<vaActor> acSdfMol = std::shared_ptr<vaActor>(new vaActor());
+    acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
+    acSdfMol->AddMapper(map3);
+    acSdfMol->Update();
+
+    //RTvisibilitymask mask;
+    //rtGeometryGroupGetVisibilityMask(acSdfMol->GetOutput(), &mask)
+    //RTvisibilitymask mask = acSdfMol->GetOutput()->getVisibilityMask();
+    //std::cout << " VIS Mask = " << mask << std::endl;
+    //acSdfMol->GetOutput()->setVisibilityMask(2);
+
+    ren->AddActor(acSdfMol);
+    //store
+//    actorSdf.push_back(acSdfMol);
+ //   mappers.push_back(map3);
+}
+// Scene testing all materials on a single geometry instanced via transforms and sharing one acceleration structure.
+void SceneManager2::createScene()
+{
+    ren->SetBackground(optix::make_float3(0, 0, 0));
+    //initMaterials();
+    std::cout << "Start" << std::endl;
+    try
+    {
+        ///Look to
+
+        m.GetOutput()->setMaxCallableProgramDepth(80);
+        Example2();
+    }
+    catch (optix::Exception& e)
+    {
+        std::cerr << e.getErrorString() << std::endl;
+    }
+}
+
+SceneManager2::SceneManager2()
+
+{
+    int width = 1512;
+    int height = 1512;
+    m_pinholeCamera = std::shared_ptr<PinholeCamera>(new PinholeCamera());
+    m_example = 0;
+    m.Update();//creates context
+
+    ren = std::shared_ptr<vaRenderer>(new vaRenderer()); //vaAdancedRenderer
+    ren->SetValid(m.GetValid());
+    ren->SetContext(m.GetOutput());
+
+    m_widget = std::shared_ptr<vaBaseWidget>(new vaRayCastBaseWidget());
+    m_widget->SetContext(m.GetOutput());
+
+    ren->SetOpticalDims(width, height);
+    ren->SetAuditoryDims(5, 5);
+    ren->SetCamera(m_pinholeCamera);
+
+    //TODO: add separately
+
+    //
+
+    //set not dynamic
+    ren->SetDynamic(true);
+    ren->SetAuditory(true);
+
+    //overwrites auditory ray-generation
+    //This should be done before interactor SetUp() procedure
+    // that does the final setups of all renderer stuff,
+    // like setting RayGenerationProgam for visual and auditory context ray tracing
+    if (m_widget->isRayCast()) {
+        ren->SetAuditoryRayGenerationFromWidget("widget_ray_cast", dynamic_cast<vaRayCastBaseWidget*>(m_widget.get())->GetRayCastProg());
+        //auditoryMapper* m = dynamic_cast<auditoryMapper*>(new auditoryMapperPlucked());
+
+        ren->SetAuditoryMapModel(new auditoryMapperPlucked());
+    }
+}
+
+void SceneManager2::Init()
+{
+    //add geometry handle
+    m_widget->CreateGeometryHandle();
+    ren->SetWidget(m_widget);
+    try
+    {
+        m_timer.restart();
+        const double timeInit = m_timer.getTime();
+
+        std::cout << "createScene()" << std::endl;
+        createScene();
+        const double timeScene = m_timer.getTime();
+
+        std::cout << "m_context->validate()" << std::endl;
+        //ren->Update();
+        //m_context->validate();
+        const double timeValidate = m_timer.getTime();
+
+        std::cout << "m_context->launch()" << std::endl;
+        // m_context->launch(0, 0, 0); // Dummy launch to build everything (entrypoint, width, height)
+        const double timeLaunch = m_timer.getTime();
+
+        std::cout << "initScene(): " << timeLaunch - timeInit << " seconds overall" << std::endl;
+        std::cout << "{" << std::endl;
+        std::cout << "  createScene() = " << timeScene - timeInit << " seconds" << std::endl;
+        std::cout << "  validate()    = " << timeValidate - timeScene << " seconds" << std::endl;
+        std::cout << "  launch()      = " << timeLaunch - timeValidate << " seconds" << std::endl;
+        std::cout << "}" << std::endl;
+    }
+    catch (optix::Exception& e)
+    {
+        std::cerr << e.getErrorString() << std::endl;
+    }
+}
+SceneManager2::~SceneManager2()
+{
+    // DAR FIXME Do any other destruction here.
+    if (ren->IsValid())
+    {
+        m.GetOutput()->destroy();
+    }
+
+    //    mappers.clear();
+    //    actorSdf.clear();
+        /*
+
+        for (int i = 0; i < mappers.size(); i++)
+        {
+        if (mappers[i] != nullptr)
+        delete mappers[i];
+        }
+
+        for (int i = 0; i < actorSdf.size(); i++)
+        {
+        if (actorSdf[i] != nullptr)
+        delete actorSdf[i];
+        }
+
+        for (int i = 0; i < actorTri.size(); i++)
+        {
+        if (actorTri[i] != nullptr)
+        delete actorTri[i];
+        }
+        */
+        //destroy renderer
+        //    delete ren;
+}
+
+bool SceneManager2::isValid()
+{
+    return ren->IsValid();
 }

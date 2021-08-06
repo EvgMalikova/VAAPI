@@ -1,0 +1,126 @@
+\hypertarget{volume_render__copy__comment_8cpp}{}\doxysection{src/volume\+Render\+\_\+copy\+\_\+comment.cpp File Reference}
+\label{volume_render__copy__comment_8cpp}\index{src/volumeRender\_copy\_comment.cpp@{src/volumeRender\_copy\_comment.cpp}}
+{\ttfamily \#include \char`\"{}Renderer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}itk\+Util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}itk\+Cast\+Image\+Filter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}itk\+Binary\+Threshold\+Image\+Filter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$itk\+Image\+File\+Writer.\+h$>$}\newline
+{\ttfamily \#include $<$itk\+Nrrd\+Image\+I\+O.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}vtk\+Sound\+Rendering.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stk\+Sound.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Nv\+Flex.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Nv\+Flex\+Ext.\+h$>$}\newline
+{\ttfamily \#include $<$Nv\+Flex\+Device.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../flex/core/types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../flex/core/maths.\+h\char`\"{}}\newline
+Include dependency graph for volume\+Render\+\_\+copy\+\_\+comment.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{volume_render__copy__comment_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef X\+Vector4$<$ float $>$ \mbox{\hyperlink{volume_render__copy__comment_8cpp_aed5ce2b55e853b3c68dfdeb35de923a9}{Vec4}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{volume_render__copy__comment_8cpp_a028d394845fbeda459fe66b32c28d65c}{Flex\+Proc}} (int n, float dt)
+\item 
+void \mbox{\hyperlink{volume_render__copy__comment_8cpp_a8d8d6efa5a1917cf3a5848242bcdc551}{init\+Cuda}} (void $\ast$h\+\_\+volume, void $\ast$sdf\+\_\+volume, void $\ast$h\+\_\+volume2, void $\ast$sdf\+\_\+volume2, cuda\+Extent volume\+Size)
+\item 
+int \mbox{\hyperlink{volume_render__copy__comment_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Renderer \mbox{\hyperlink{volume_render__copy__comment_8cpp_a98cbcdf9071f62ea4c45bdcd33324b47}{ren}}
+\item 
+std\+::string \mbox{\hyperlink{volume_render__copy__comment_8cpp_ae80f820219e45772366a2a68de6a54c4}{filename}} = \char`\"{}ed1.\+txt\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{volume_render__copy__comment_8cpp_aa2acae7a24ef92b81b98a81c8032f326}{filename2}} = \char`\"{}p1.\+txt\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{volume_render__copy__comment_8cpp_a429d99d79400d3c8281a250093e69f30}{filename21}} = \char`\"{}ed2.\+txt\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{volume_render__copy__comment_8cpp_a626372ee3d224740ab1b5c9af2b5b37a}{filename22}} = \char`\"{}p2.\+txt\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{volume_render__copy__comment_8cpp_aed5ce2b55e853b3c68dfdeb35de923a9}\label{volume_render__copy__comment_8cpp_aed5ce2b55e853b3c68dfdeb35de923a9}} 
+\index{volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}!Vec4@{Vec4}}
+\index{Vec4@{Vec4}!volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}}
+\doxysubsubsection{\texorpdfstring{Vec4}{Vec4}}
+{\footnotesize\ttfamily typedef X\+Vector4$<$float$>$ \mbox{\hyperlink{volume_render__copy__comment_8cpp_aed5ce2b55e853b3c68dfdeb35de923a9}{Vec4}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{volume_render__copy__comment_8cpp_a028d394845fbeda459fe66b32c28d65c}\label{volume_render__copy__comment_8cpp_a028d394845fbeda459fe66b32c28d65c}} 
+\index{volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}!FlexProc@{FlexProc}}
+\index{FlexProc@{FlexProc}!volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}}
+\doxysubsubsection{\texorpdfstring{FlexProc()}{FlexProc()}}
+{\footnotesize\ttfamily void Flex\+Proc (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{float}]{dt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{volume_render__copy__comment_8cpp_a8d8d6efa5a1917cf3a5848242bcdc551}\label{volume_render__copy__comment_8cpp_a8d8d6efa5a1917cf3a5848242bcdc551}} 
+\index{volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}!initCuda@{initCuda}}
+\index{initCuda@{initCuda}!volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}}
+\doxysubsubsection{\texorpdfstring{initCuda()}{initCuda()}}
+{\footnotesize\ttfamily void init\+Cuda (\begin{DoxyParamCaption}\item[{void $\ast$}]{h\+\_\+volume,  }\item[{void $\ast$}]{sdf\+\_\+volume,  }\item[{void $\ast$}]{h\+\_\+volume2,  }\item[{void $\ast$}]{sdf\+\_\+volume2,  }\item[{cuda\+Extent}]{volume\+Size }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{volume_render__copy__comment_8cpp_a8d8d6efa5a1917cf3a5848242bcdc551_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{volume_render__copy__comment_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{volume_render__copy__comment_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}!main@{main}}
+\index{main@{main}!volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{volume_render__copy__comment_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{volume_render__copy__comment_8cpp_ae80f820219e45772366a2a68de6a54c4}\label{volume_render__copy__comment_8cpp_ae80f820219e45772366a2a68de6a54c4}} 
+\index{volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}!filename@{filename}}
+\index{filename@{filename}!volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily std\+::string filename = \char`\"{}ed1.\+txt\char`\"{}}
+
+\mbox{\Hypertarget{volume_render__copy__comment_8cpp_aa2acae7a24ef92b81b98a81c8032f326}\label{volume_render__copy__comment_8cpp_aa2acae7a24ef92b81b98a81c8032f326}} 
+\index{volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}!filename2@{filename2}}
+\index{filename2@{filename2}!volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}}
+\doxysubsubsection{\texorpdfstring{filename2}{filename2}}
+{\footnotesize\ttfamily std\+::string filename2 = \char`\"{}p1.\+txt\char`\"{}}
+
+\mbox{\Hypertarget{volume_render__copy__comment_8cpp_a429d99d79400d3c8281a250093e69f30}\label{volume_render__copy__comment_8cpp_a429d99d79400d3c8281a250093e69f30}} 
+\index{volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}!filename21@{filename21}}
+\index{filename21@{filename21}!volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}}
+\doxysubsubsection{\texorpdfstring{filename21}{filename21}}
+{\footnotesize\ttfamily std\+::string filename21 = \char`\"{}ed2.\+txt\char`\"{}}
+
+\mbox{\Hypertarget{volume_render__copy__comment_8cpp_a626372ee3d224740ab1b5c9af2b5b37a}\label{volume_render__copy__comment_8cpp_a626372ee3d224740ab1b5c9af2b5b37a}} 
+\index{volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}!filename22@{filename22}}
+\index{filename22@{filename22}!volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}}
+\doxysubsubsection{\texorpdfstring{filename22}{filename22}}
+{\footnotesize\ttfamily std\+::string filename22 = \char`\"{}p2.\+txt\char`\"{}}
+
+\mbox{\Hypertarget{volume_render__copy__comment_8cpp_a98cbcdf9071f62ea4c45bdcd33324b47}\label{volume_render__copy__comment_8cpp_a98cbcdf9071f62ea4c45bdcd33324b47}} 
+\index{volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}!ren@{ren}}
+\index{ren@{ren}!volumeRender\_copy\_comment.cpp@{volumeRender\_copy\_comment.cpp}}
+\doxysubsubsection{\texorpdfstring{ren}{ren}}
+{\footnotesize\ttfamily Renderer ren}
+

@@ -1,0 +1,11 @@
+A scalar field is a mapping \[ f: x \rightarrow \Re, x \in \Re^n \], which associates any point in space with a scalar value. The conventional Volume Rendering scheme suggests that volume boundary (or scalar field domain) is defined as a bounding box and the ray/volume intersection is computed to define the ray\textquotesingle{}s start and end points to solve the Volume Rendering equation with the ray-\/marching procedure. In the general case, the scalar field can be defined on an arbitrary domain and the object boundary can have a more complex representation and can change dynamically in time.
+
+Let us consider the case of the molecular structure, that is a result of quantum simulation. The molecule is usually defined with electron density field and electrostatic potential fields. The entire structure can be treated as heterogeneous object, where first field defines the molecule interaction boundary $(F\text{'}(X)$ , and the second field represents the physical property, namely the charge distribution $ S\text{'}_1(X)$. We take advantage of the Hyper\+Volume (HV) model to define the initial structure and the visual-\/auditory pipeline, where initial data is represented with HV model\+: $ o(t)=(G(t),A_1(t)): (F\text{'}(X|t),S\text{'}_1(X|t))$
+
+,where t -\/ is time parameter as in general case the researcher has to deal with dynamic molecules.
+
+Via application of functional mapping procedures, that define optic and auditory transfer function, we receive a HV representation\+: $ m(t)=(G(t),A_o(t),A_s(t)): (F(X|t),S_o(X|t),S_s(X|t)) $
+
+, that represents an abstract heterogeneous object with visual and auditory properties.\doxysection{Rendering optical model and geometry}\label{md_doc_approach_autotoc_md2}
+Optix engine, optical materials\doxysection{Auditory rendering}\label{md_doc_approach_autotoc_md3}
+Optix engine, auditory materials 

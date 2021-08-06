@@ -1,0 +1,243 @@
+\hypertarget{classoptix_texture_reader}{}\doxysection{optix\+Texture\+Reader$<$ T $>$ Class Template Reference}
+\label{classoptix_texture_reader}\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+
+
+Basic class for reading texture from file.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Texture\+Reader.\+h$>$}
+
+
+
+Inheritance diagram for optix\+Texture\+Reader$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classoptix_texture_reader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for optix\+Texture\+Reader$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classoptix_texture_reader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef itk\+::\+Image$<$ T, \mbox{\hyperlink{optix_texture_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}} $>$ \mbox{\hyperlink{classoptix_texture_reader_acb93da1f5d649e4b8f0c8f34f7575ce1}{Output\+Image\+Type}}
+\item 
+typedef Output\+Image\+Type\+::\+Size\+Type \mbox{\hyperlink{classoptix_texture_reader_ac187e178511ba4116c994920be1c1f55}{Size\+Type}}
+\item 
+typedef Output\+Image\+Type\+::\+Spacing\+Type \mbox{\hyperlink{classoptix_texture_reader_a57f22dbccb618e5751ff67b660969e38}{Spacing\+Type}}
+\item 
+typedef itk\+::\+Image$<$ int, \mbox{\hyperlink{optix_texture_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}} $>$ \mbox{\hyperlink{classoptix_texture_reader_ad351e5833e03a19bebc486adc69f451c}{Int\+Image\+Type}}
+\item 
+typedef itk\+::\+Image$<$ int, \mbox{\hyperlink{optix_texture_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}} $>$ \mbox{\hyperlink{classoptix_texture_reader_afafd38a244f8e3bb97110e25b8997b6a}{Binary\+Image\+Type}}
+\item 
+typedef itk\+::\+Point$<$ T, \mbox{\hyperlink{optix_texture_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}} $>$ \mbox{\hyperlink{classoptix_texture_reader_a9457cda2968e3abde5782c4ce61941bb}{Float\+Point}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{classoptix_texture_reader_a9457cda2968e3abde5782c4ce61941bb}{Float\+Point}} $>$ \mbox{\hyperlink{classoptix_texture_reader_a3f82fc7497886bde35e756610f2d5e0a}{Float\+Points}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classoptix_texture_reader_aa438d26edc397b26e1debe0112443d67}{Set\+Context}} (optix\+::\+Context c)
+\item 
+optix\+::\+Context \mbox{\hyperlink{classoptix_texture_reader_aa4d7c00c66be44d6e1aafdf2031b9680}{Get\+Context}} ()
+\item 
+\mbox{\hyperlink{classoptix_texture_reader_aac241f8d667125a3007716ccd36fc831}{optix\+Texture\+Reader}} ()
+\item 
+\mbox{\hyperlink{classoptix_texture_reader_a1ece4cd8fe51309f8fe9a4a9328e1522}{$\sim$optix\+Texture\+Reader}} ()
+\item 
+int \mbox{\hyperlink{classoptix_texture_reader_a8cdee64439d9f2254aad74e123802208}{Get\+Reduce}} ()
+\item 
+optix\+::\+Texture\+Sampler \mbox{\hyperlink{classoptix_texture_reader_a554b1ce48674229ab72a8b12ab550998}{Get\+Texture}} ()
+\item 
+void \mbox{\hyperlink{classoptix_texture_reader_a4c740786413febdf18e40c7aa1b6d37e}{Set\+Size}} (int x, int y, int z)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classoptix_texture_reader_a471ac1a9bd2b3feb6130cdeddf5e354d}{Read\+File}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_texture_reader_a61a8114678e98285e1da33796935134c}{Compute\+Sampler}} ()
+\item 
+void \mbox{\hyperlink{classoptix_texture_reader_a046e82d02dd9bd95e6ef1c3b25661e1d}{Read\+Image}} (\mbox{\hyperlink{classoptix_texture_reader_acb93da1f5d649e4b8f0c8f34f7575ce1}{Output\+Image\+Type}} $\ast$fl\+\_\+image, const char $\ast$\mbox{\hyperlink{volume_render__copy__comment_8cpp_ae80f820219e45772366a2a68de6a54c4}{filename}})
+\item 
+virtual void \mbox{\hyperlink{classoptix_texture_reader_a5aaf89f6eaae3a72fa394f1e6010f378}{Preprocess\+Data}} (typename \mbox{\hyperlink{classoptix_texture_reader_acb93da1f5d649e4b8f0c8f34f7575ce1}{optix\+Texture\+Reader\+::\+Output\+Image\+Type}} $\ast$fl\+\_\+image)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class optix\+Texture\+Reader$<$ T $>$}
+
+Basic class for reading texture from file. 
+
+Read texture from file and applies signed distance transfrom to generate S\+DF texture.
+
+Architecture much inspired by V\+TK (\href{http://vtk.org}{\texttt{ http\+://vtk.\+org}}) implementation
+
+Uses itk signed distance transform 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classoptix_texture_reader_afafd38a244f8e3bb97110e25b8997b6a}\label{classoptix_texture_reader_afafd38a244f8e3bb97110e25b8997b6a}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!BinaryImageType@{BinaryImageType}}
+\index{BinaryImageType@{BinaryImageType}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BinaryImageType}{BinaryImageType}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef itk\+::\+Image$<$int, \mbox{\hyperlink{optix_texture_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}}$>$ \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classoptix_texture_reader_afafd38a244f8e3bb97110e25b8997b6a}{Binary\+Image\+Type}}}
+
+\mbox{\Hypertarget{classoptix_texture_reader_a9457cda2968e3abde5782c4ce61941bb}\label{classoptix_texture_reader_a9457cda2968e3abde5782c4ce61941bb}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!FloatPoint@{FloatPoint}}
+\index{FloatPoint@{FloatPoint}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{FloatPoint}{FloatPoint}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef itk\+::\+Point$<$T, \mbox{\hyperlink{optix_texture_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}}$>$ \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classoptix_texture_reader_a9457cda2968e3abde5782c4ce61941bb}{Float\+Point}}}
+
+\mbox{\Hypertarget{classoptix_texture_reader_a3f82fc7497886bde35e756610f2d5e0a}\label{classoptix_texture_reader_a3f82fc7497886bde35e756610f2d5e0a}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!FloatPoints@{FloatPoints}}
+\index{FloatPoints@{FloatPoints}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{FloatPoints}{FloatPoints}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef std\+::vector$<$\mbox{\hyperlink{classoptix_texture_reader_a9457cda2968e3abde5782c4ce61941bb}{Float\+Point}}$>$ \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classoptix_texture_reader_a3f82fc7497886bde35e756610f2d5e0a}{Float\+Points}}}
+
+\mbox{\Hypertarget{classoptix_texture_reader_ad351e5833e03a19bebc486adc69f451c}\label{classoptix_texture_reader_ad351e5833e03a19bebc486adc69f451c}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!IntImageType@{IntImageType}}
+\index{IntImageType@{IntImageType}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{IntImageType}{IntImageType}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef itk\+::\+Image$<$int, \mbox{\hyperlink{optix_texture_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}}$>$ \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classoptix_texture_reader_ad351e5833e03a19bebc486adc69f451c}{Int\+Image\+Type}}}
+
+\mbox{\Hypertarget{classoptix_texture_reader_acb93da1f5d649e4b8f0c8f34f7575ce1}\label{classoptix_texture_reader_acb93da1f5d649e4b8f0c8f34f7575ce1}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!OutputImageType@{OutputImageType}}
+\index{OutputImageType@{OutputImageType}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{OutputImageType}{OutputImageType}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef itk\+::\+Image$<$T, \mbox{\hyperlink{optix_texture_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}}$>$ \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classoptix_texture_reader_acb93da1f5d649e4b8f0c8f34f7575ce1}{Output\+Image\+Type}}}
+
+\mbox{\Hypertarget{classoptix_texture_reader_ac187e178511ba4116c994920be1c1f55}\label{classoptix_texture_reader_ac187e178511ba4116c994920be1c1f55}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!SizeType@{SizeType}}
+\index{SizeType@{SizeType}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SizeType}{SizeType}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef Output\+Image\+Type\+::\+Size\+Type \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classoptix_texture_reader_ac187e178511ba4116c994920be1c1f55}{Size\+Type}}}
+
+\mbox{\Hypertarget{classoptix_texture_reader_a57f22dbccb618e5751ff67b660969e38}\label{classoptix_texture_reader_a57f22dbccb618e5751ff67b660969e38}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!SpacingType@{SpacingType}}
+\index{SpacingType@{SpacingType}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SpacingType}{SpacingType}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef Output\+Image\+Type\+::\+Spacing\+Type \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classoptix_texture_reader_a57f22dbccb618e5751ff67b660969e38}{Spacing\+Type}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoptix_texture_reader_aac241f8d667125a3007716ccd36fc831}\label{classoptix_texture_reader_aac241f8d667125a3007716ccd36fc831}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!optixTextureReader@{optixTextureReader}}
+\index{optixTextureReader@{optixTextureReader}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{optixTextureReader()}{optixTextureReader()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_texture_reader_a1ece4cd8fe51309f8fe9a4a9328e1522}\label{classoptix_texture_reader_a1ece4cd8fe51309f8fe9a4a9328e1522}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!````~optixTextureReader@{$\sim$optixTextureReader}}
+\index{````~optixTextureReader@{$\sim$optixTextureReader}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$optixTextureReader()}{~optixTextureReader()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classoptix_texture_reader_a61a8114678e98285e1da33796935134c}\label{classoptix_texture_reader_a61a8114678e98285e1da33796935134c}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!ComputeSampler@{ComputeSampler}}
+\index{ComputeSampler@{ComputeSampler}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ComputeSampler()}{ComputeSampler()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::Compute\+Sampler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classoptix_texture_reader_aa4d7c00c66be44d6e1aafdf2031b9680}\label{classoptix_texture_reader_aa4d7c00c66be44d6e1aafdf2031b9680}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!GetContext@{GetContext}}
+\index{GetContext@{GetContext}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetContext()}{GetContext()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+optix\+::\+Context \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::Get\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_texture_reader_a8cdee64439d9f2254aad74e123802208}\label{classoptix_texture_reader_a8cdee64439d9f2254aad74e123802208}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!GetReduce@{GetReduce}}
+\index{GetReduce@{GetReduce}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetReduce()}{GetReduce()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::Get\+Reduce (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_texture_reader_a554b1ce48674229ab72a8b12ab550998}\label{classoptix_texture_reader_a554b1ce48674229ab72a8b12ab550998}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!GetTexture@{GetTexture}}
+\index{GetTexture@{GetTexture}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetTexture()}{GetTexture()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+optix\+::\+Texture\+Sampler \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::Get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_texture_reader_a5aaf89f6eaae3a72fa394f1e6010f378}\label{classoptix_texture_reader_a5aaf89f6eaae3a72fa394f1e6010f378}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!PreprocessData@{PreprocessData}}
+\index{PreprocessData@{PreprocessData}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PreprocessData()}{PreprocessData()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::Preprocess\+Data (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classoptix_texture_reader_acb93da1f5d649e4b8f0c8f34f7575ce1}{Output\+Image\+Type}} $\ast$}]{fl\+\_\+image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptix_s_d_f_texture_reader_a2c839f7c55f48cd85489827ab1265806}{optix\+S\+D\+F\+Texture\+Reader$<$ T $>$}}.
+
+\mbox{\Hypertarget{classoptix_texture_reader_a471ac1a9bd2b3feb6130cdeddf5e354d}\label{classoptix_texture_reader_a471ac1a9bd2b3feb6130cdeddf5e354d}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!ReadFile@{ReadFile}}
+\index{ReadFile@{ReadFile}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ReadFile()}{ReadFile()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::Read\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_reader_adfb807ebf0b6d76de1065dffde71d41d}{optix\+Reader$<$ T $>$}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classoptix_texture_reader_a471ac1a9bd2b3feb6130cdeddf5e354d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_texture_reader_a046e82d02dd9bd95e6ef1c3b25661e1d}\label{classoptix_texture_reader_a046e82d02dd9bd95e6ef1c3b25661e1d}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!ReadImage@{ReadImage}}
+\index{ReadImage@{ReadImage}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ReadImage()}{ReadImage()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::Read\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoptix_texture_reader_acb93da1f5d649e4b8f0c8f34f7575ce1}{Output\+Image\+Type}} $\ast$}]{fl\+\_\+image,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classoptix_texture_reader_aa438d26edc397b26e1debe0112443d67}\label{classoptix_texture_reader_aa438d26edc397b26e1debe0112443d67}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!SetContext@{SetContext}}
+\index{SetContext@{SetContext}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetContext()}{SetContext()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::Set\+Context (\begin{DoxyParamCaption}\item[{optix\+::\+Context}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_texture_reader_a4c740786413febdf18e40c7aa1b6d37e}\label{classoptix_texture_reader_a4c740786413febdf18e40c7aa1b6d37e}} 
+\index{optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}!SetSize@{SetSize}}
+\index{SetSize@{SetSize}!optixTextureReader$<$ T $>$@{optixTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetSize()}{SetSize()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classoptix_texture_reader}{optix\+Texture\+Reader}}$<$ T $>$\+::Set\+Size (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+frep/src/\mbox{\hyperlink{optix_texture_reader_8h}{optix\+Texture\+Reader.\+h}}\item 
+frep/src/\mbox{\hyperlink{optix_texture_reader_8hpp}{optix\+Texture\+Reader.\+hpp}}\item 
+src/\+New folder/\mbox{\hyperlink{optix_texture_reader_8cpp}{optix\+Texture\+Reader.\+cpp}}\end{DoxyCompactItemize}

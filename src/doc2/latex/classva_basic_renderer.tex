@@ -1,0 +1,1129 @@
+\hypertarget{classva_basic_renderer}{}\doxysection{va\+Basic\+Renderer Class Reference}
+\label{classva_basic_renderer}\index{vaBasicRenderer@{vaBasicRenderer}}
+
+
+Abstract visual-\/auditory renderer.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Basic\+Renderer.\+h$>$}
+
+
+
+Inheritance diagram for va\+Basic\+Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classva_basic_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for va\+Basic\+Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classva_basic_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classva_basic_renderer_ad399c4099d224c948c602a741f123d4dafe3dbdf26059530c90e516e2f2da59af}{O\+P\+T\+I\+C\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG}}, 
+\mbox{\hyperlink{classva_basic_renderer_ad399c4099d224c948c602a741f123d4dad3e7f9abe7b673b7c6db04da90d79db2}{A\+U\+D\+I\+T\+O\+R\+Y\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG}}
+ \}
+\item 
+enum \mbox{\hyperlink{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9f}{Render\+Modes}} \{ \mbox{\hyperlink{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa76a4399202e73495fbb8f4a776dd6480}{I\+N\+T\+E\+R\+A\+C\+T\+I\+V\+E\+\_\+\+C\+A\+M\+E\+RA}}, 
+\mbox{\hyperlink{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa7ced917b43ef5f85d18471cabee516b8}{C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+O\+U\+ND}}, 
+\mbox{\hyperlink{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa9a8ca32769782be39ac44fd89cb3b054}{P\+L\+A\+Y\+\_\+\+A\+N\+I\+M\+A\+T\+I\+ON}}, 
+\mbox{\hyperlink{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa7e861b849f10ba4c588123a41888022c}{I\+N\+T\+E\+R\+A\+C\+T\+I\+V\+E\+\_\+\+W\+I\+D\+G\+ET}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_a485019d064101e010ce725df717aa8f0}{Set\+Background}} (optix\+::float3 bg)
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_ab45ca39532ea7f4830df1b7c5af3267a}{Update\+Audio\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_aefeaf678e80e8a65e9cc831bb0a8daa5}{Render\+Audio}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a287a8ce904d0493ec57105dba7bbcabf}{Set\+Auditory\+Map\+Model}} (\mbox{\hyperlink{classauditory_mapper}{auditory\+Mapper}} $\ast$m)
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classva_basic_renderer_ab2eb10ee9cb29add9315c86ed4fccc8d}{Get\+Output\+Sound\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a39d0aa561b4672f0f5a918ebc14c2008}{set\+Audio\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a9c1a91b60379673dd0b693348c11c6ba}{set\+Optic\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a642debd3004e460d034dbbcdc0a6ac03}{Get\+Audio\+Dim}} (int \&w, int \&h)
+\item 
+\mbox{\hyperlink{classva_basic_renderer_a81c7281423644943a6c5b048ffe2b548}{va\+Basic\+Renderer}} (bool init)
+\item 
+\mbox{\hyperlink{classva_basic_renderer_a9c1a45eb4f1c95956b2855ce61fe1502}{$\sim$va\+Basic\+Renderer}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a06ccb02a33eadb8fbdd3b348661c73bc}{Set\+Interop}} (bool inter)
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_a2c35f1a6898361e913026f436c674aa5}{Set\+Optic\+Model}} (\mbox{\hyperlink{classva_basic_model}{va\+Basic\+Model}} $\ast$m)
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_a19ed8e98326a2f0e3b4eca9c59e280e6}{Set\+Audio\+Model}} (\mbox{\hyperlink{classauditory_model}{auditory\+Model}} $\ast$m)
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a4fa1af5283087ea91cb1d8702d81270a}{Set\+Optical\+Dims}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a6d8586548527489b22b841e8934dc11f}{Set\+Auditory\+Dims}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a4b92084c59ed1df112303f128cd77b53}{Get\+Auditory\+Dims}} (int \&width, int \&height)
+\item 
+\mbox{\hyperlink{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9f}{Render\+Modes}} \mbox{\hyperlink{classva_basic_renderer_a013cceedeaf7374f11760591e7d2eb47}{Get\+Mode}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_ab4ac023dd0557d46866554031f23237b}{Set\+Mode}} (\mbox{\hyperlink{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9f}{Render\+Modes}} m)
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_aecf71df595f929b009ef12e4b3639c0d}{Update}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a6c6a04cc84a6ed9e14ac1d211753c924}{Set\+Up\+Renderer}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_af4a16fc60f5c3153f163baf955015b9c}{Set\+Dynamic}} (bool type)
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a10bc57a75c2d6ff93a44fb4a0506871b}{Set\+Auditory}} (bool type)
+\item 
+bool \mbox{\hyperlink{classva_basic_renderer_a92d8fa28c0a213000054e270b0a7d4ae}{is\+Dynamic}} ()
+\item 
+bool \mbox{\hyperlink{classva_basic_renderer_a0c6b842bc67d66a2b89aba5235ec67e9}{is\+Auditory}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a73183517f82895474be6a5e39973bea5}{Set\+Time}} (float time)
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_ada8aba288b5d437029a8d0fb0d87e40c}{Set\+Multiscale\+Param}} (float time)
+\item 
+float \mbox{\hyperlink{classva_basic_renderer_af004130f64220b3b96f1e7a0be8354d0}{Get\+Multiscale\+Param}} ()
+\item 
+float \mbox{\hyperlink{classva_basic_renderer_af97ece209eadc40b8cea16c6c51230cf}{Get\+Time}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a48c5b134c91d6b5656d9224e76bdcb65}{Add\+Actor}} (\mbox{\hyperlink{classva_basic_actor}{va\+Basic\+Actor}} $\ast$act)
+\item 
+\mbox{\hyperlink{classva_basic_actor}{va\+Basic\+Actor}} $\ast$ \mbox{\hyperlink{classva_basic_renderer_a5108dd20b3e46420f950177107df7a47}{Get\+Actor}} (int i)
+\item 
+int \mbox{\hyperlink{classva_basic_renderer_ab4bfbf785e833db18ea5a05d09cf1e0e}{Get\+Num\+Of\+Actors}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_a86cdcb90839937790fd0e6242900179f}{Launch\+Optic\+Context}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a29934d24ea69403e9232f25ba3db4b72}{Launch\+Auditory\+Context}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_aa18b42581e83c941e425749fd21674c5}{Reshape}} (int width, int height)
+\item 
+virtual bool \mbox{\hyperlink{classva_basic_renderer_a263ec75ed17e17f3d84317fe4e5430a3}{Render}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_abaaa7b7530160ff43391b824b35bb73c}{Display}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a728a51a54eca4be7e1a9f41ebbbcfba1}{Activate\+Optical\+Model}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a2f97d8985d1d1a9ddb3bfde480eacf49}{Activate\+Auditory\+Model}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a16b671fd275ffa7c2c6475f6b45cc33d}{Set\+Auditory\+Ray\+Generation\+From\+Widget}} (std\+::string name, optix\+::\+Program prog)
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_ab61736cc23d0f081260f01fcf9cd8834}{Update\+Param}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a6f4e04c4b3bda84c1b37b44072c05959}{Set\+Miss\+Prog\+S\+D\+F\+Prog}} (optix\+::\+Program sdf\+Prog)
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a54a9c02be1c6b70bce728fdb80e14ae3}{Set\+Miss\+Prog\+S\+D\+F\+Prog2}} (optix\+::\+Program sdf\+Prog)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_af26b7abdeeab448df84da30b69b3778c}{Init\+Default\+Models}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a743432612ab413ad61b7b9b41edcf94a}{Init\+Defaults}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_a10fd3be163c1aac620e59a95cfdfd50a}{Init\+Renderer}} ()
+\item 
+bool \mbox{\hyperlink{classva_basic_renderer_a234c554b49ee27922adebe730973676b}{Play\+Animation}} (float play\+\_\+time)
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a08bd686112e66c7785167e1324e191ea}{Init\+Prog}} (std\+::string prog, std\+::string file, std\+::string name)
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_a84481d1bd9ae7adf132b9bc78d672a74}{Set\+Ray\+Generation\+Prog}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_a0032039e5c6f5f4061c5233828f0aec5}{Set\+Exception\+Prog}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_a60289a106ac6737033103b0b86431c1b}{Set\+Miss\+Prog}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_renderer_a9b95c381d17e1c27cdc0c442c2bec358}{Set\+Auditory\+Ray\+Generation\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_aa7dcdec5bd37f67b81cc7e85c58a6274}{Set\+Auditory\+Exception\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a548e91d6eebca6260ef3bc8aa50dd4f5}{Set\+Auditory\+Miss\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a1763f30f206918e2d7d703be6a17441e}{Set\+Ray\+Generation\+Prog\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_afd94d4a02b8c9681cf331a9501b9739f}{Set\+Exception\+Prog\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a4d71f621e2beed8da88f7fccca66e8b1}{Set\+Miss\+Prog\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_af79e90f5f16a4a2248abd9b4515fdea8}{Set\+Auditory\+Ray\+Generation\+Prog\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a2ea4b97752273379423d159cfe87d015}{Set\+Auditory\+Exception\+Prog\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a910b1f496268d76b93333366fa4f428e}{Set\+Auditory\+Miss\+Prog\+Name}} (std\+::string name)
+\item 
+std\+::string \mbox{\hyperlink{classva_basic_renderer_aa73a7691ea7e8791da8da140aecdc706}{Get\+Ray\+Generation\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classva_basic_renderer_a8a640ec33bf7368c0265c5bf353f453c}{Get\+Exception\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classva_basic_renderer_ab1e47af59161dc7fc0554b14a3370a4d}{Get\+Miss\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classva_basic_renderer_a3a61bceb1c3ec741febc3ad571b73b84}{Get\+Auditory\+Ray\+Generation\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classva_basic_renderer_a69b40f3dd9d151d7e76300bd9660623f}{Get\+Auditory\+Exception\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classva_basic_renderer_aa55aa7fa4bf5226bdb62c818cb90e3e6}{Get\+Auditory\+Miss\+Prog\+Name}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a19b70836f23a0a120cd71cdc1055f9c1}{Init\+Acceleration}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_a4e73649af6a397abd268777761d8243e}{Set\+Programs}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_renderer_ad00959e8a8650a53f056fa3a84ca3a2d}{Initialize\+Programs}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classauditory_model}{auditory\+Model}} $>$ \mbox{\hyperlink{classva_basic_renderer_a829b64627811dd706a091362fcb08f53}{audioM}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classva_basic_model}{va\+Basic\+Model}} $>$ \mbox{\hyperlink{classva_basic_renderer_ad0883704d66e74b5fb90a2fb6564cc4d}{opticM}}
+\item 
+std\+::map$<$ std\+::string, optix\+::\+Program $>$ \mbox{\hyperlink{classva_basic_renderer_aeaee5a254e87de6c21e0da8bdf91e923}{m\+\_\+map\+Of\+Programs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Abstract visual-\/auditory renderer. 
+
+Abstract visual-\/auditory renderer. The class is responsible for\+:
+\begin{DoxyItemize}
+\item setting optical model
+\item setting auditory model
+\item specifies main rendering modes in A\+PI enum Render\+Modes
+\item launches ray-\/tracing of visual and optical stimuli 
+\end{DoxyItemize}
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classva_basic_renderer_ad399c4099d224c948c602a741f123d4d}\label{classva_basic_renderer_ad399c4099d224c948c602a741f123d4d}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPTIC\_RAYCASTING@{OPTIC\_RAYCASTING}!vaBasicRenderer@{vaBasicRenderer}}\index{vaBasicRenderer@{vaBasicRenderer}!OPTIC\_RAYCASTING@{OPTIC\_RAYCASTING}}}\mbox{\Hypertarget{classva_basic_renderer_ad399c4099d224c948c602a741f123d4dafe3dbdf26059530c90e516e2f2da59af}\label{classva_basic_renderer_ad399c4099d224c948c602a741f123d4dafe3dbdf26059530c90e516e2f2da59af}} 
+O\+P\+T\+I\+C\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AUDITORY\_RAYCASTING@{AUDITORY\_RAYCASTING}!vaBasicRenderer@{vaBasicRenderer}}\index{vaBasicRenderer@{vaBasicRenderer}!AUDITORY\_RAYCASTING@{AUDITORY\_RAYCASTING}}}\mbox{\Hypertarget{classva_basic_renderer_ad399c4099d224c948c602a741f123d4dad3e7f9abe7b673b7c6db04da90d79db2}\label{classva_basic_renderer_ad399c4099d224c948c602a741f123d4dad3e7f9abe7b673b7c6db04da90d79db2}} 
+A\+U\+D\+I\+T\+O\+R\+Y\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9f}\label{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9f}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!RenderModes@{RenderModes}}
+\index{RenderModes@{RenderModes}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{RenderModes}{RenderModes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9f}{va\+Basic\+Renderer\+::\+Render\+Modes}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTERACTIVE\_CAMERA@{INTERACTIVE\_CAMERA}!vaBasicRenderer@{vaBasicRenderer}}\index{vaBasicRenderer@{vaBasicRenderer}!INTERACTIVE\_CAMERA@{INTERACTIVE\_CAMERA}}}\mbox{\Hypertarget{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa76a4399202e73495fbb8f4a776dd6480}\label{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa76a4399202e73495fbb8f4a776dd6480}} 
+I\+N\+T\+E\+R\+A\+C\+T\+I\+V\+E\+\_\+\+C\+A\+M\+E\+RA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPUTE\_SOUND@{COMPUTE\_SOUND}!vaBasicRenderer@{vaBasicRenderer}}\index{vaBasicRenderer@{vaBasicRenderer}!COMPUTE\_SOUND@{COMPUTE\_SOUND}}}\mbox{\Hypertarget{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa7ced917b43ef5f85d18471cabee516b8}\label{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa7ced917b43ef5f85d18471cabee516b8}} 
+C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+O\+U\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAY\_ANIMATION@{PLAY\_ANIMATION}!vaBasicRenderer@{vaBasicRenderer}}\index{vaBasicRenderer@{vaBasicRenderer}!PLAY\_ANIMATION@{PLAY\_ANIMATION}}}\mbox{\Hypertarget{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa9a8ca32769782be39ac44fd89cb3b054}\label{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa9a8ca32769782be39ac44fd89cb3b054}} 
+P\+L\+A\+Y\+\_\+\+A\+N\+I\+M\+A\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTERACTIVE\_WIDGET@{INTERACTIVE\_WIDGET}!vaBasicRenderer@{vaBasicRenderer}}\index{vaBasicRenderer@{vaBasicRenderer}!INTERACTIVE\_WIDGET@{INTERACTIVE\_WIDGET}}}\mbox{\Hypertarget{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa7e861b849f10ba4c588123a41888022c}\label{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa7e861b849f10ba4c588123a41888022c}} 
+I\+N\+T\+E\+R\+A\+C\+T\+I\+V\+E\+\_\+\+W\+I\+D\+G\+ET&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classva_basic_renderer_a81c7281423644943a6c5b048ffe2b548}\label{classva_basic_renderer_a81c7281423644943a6c5b048ffe2b548}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!vaBasicRenderer@{vaBasicRenderer}}
+\index{vaBasicRenderer@{vaBasicRenderer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{vaBasicRenderer()}{vaBasicRenderer()}}
+{\footnotesize\ttfamily va\+Basic\+Renderer\+::va\+Basic\+Renderer (\begin{DoxyParamCaption}\item[{bool}]{init }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a81c7281423644943a6c5b048ffe2b548_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a9c1a45eb4f1c95956b2855ce61fe1502}\label{classva_basic_renderer_a9c1a45eb4f1c95956b2855ce61fe1502}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!````~vaBasicRenderer@{$\sim$vaBasicRenderer}}
+\index{````~vaBasicRenderer@{$\sim$vaBasicRenderer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{$\sim$vaBasicRenderer()}{~vaBasicRenderer()}}
+{\footnotesize\ttfamily va\+Basic\+Renderer\+::$\sim$va\+Basic\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classva_basic_renderer_a2f97d8985d1d1a9ddb3bfde480eacf49}\label{classva_basic_renderer_a2f97d8985d1d1a9ddb3bfde480eacf49}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!ActivateAuditoryModel@{ActivateAuditoryModel}}
+\index{ActivateAuditoryModel@{ActivateAuditoryModel}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{ActivateAuditoryModel()}{ActivateAuditoryModel()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Activate\+Auditory\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a2f97d8985d1d1a9ddb3bfde480eacf49_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a728a51a54eca4be7e1a9f41ebbbcfba1}\label{classva_basic_renderer_a728a51a54eca4be7e1a9f41ebbbcfba1}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!ActivateOpticalModel@{ActivateOpticalModel}}
+\index{ActivateOpticalModel@{ActivateOpticalModel}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{ActivateOpticalModel()}{ActivateOpticalModel()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Activate\+Optical\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a728a51a54eca4be7e1a9f41ebbbcfba1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a48c5b134c91d6b5656d9224e76bdcb65}\label{classva_basic_renderer_a48c5b134c91d6b5656d9224e76bdcb65}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!AddActor@{AddActor}}
+\index{AddActor@{AddActor}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{AddActor()}{AddActor()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Add\+Actor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classva_basic_actor}{va\+Basic\+Actor}} $\ast$}]{act }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a48c5b134c91d6b5656d9224e76bdcb65_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_abaaa7b7530160ff43391b824b35bb73c}\label{classva_basic_renderer_abaaa7b7530160ff43391b824b35bb73c}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!Display@{Display}}
+\index{Display@{Display}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{Display()}{Display()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Renderer\+::\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_a5108dd20b3e46420f950177107df7a47}\label{classva_basic_renderer_a5108dd20b3e46420f950177107df7a47}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetActor@{GetActor}}
+\index{GetActor@{GetActor}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetActor()}{GetActor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classva_basic_actor}{va\+Basic\+Actor}}$\ast$ va\+Basic\+Renderer\+::\+Get\+Actor (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a5108dd20b3e46420f950177107df7a47_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a642debd3004e460d034dbbcdc0a6ac03}\label{classva_basic_renderer_a642debd3004e460d034dbbcdc0a6ac03}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetAudioDim@{GetAudioDim}}
+\index{GetAudioDim@{GetAudioDim}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetAudioDim()}{GetAudioDim()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Get\+Audio\+Dim (\begin{DoxyParamCaption}\item[{int \&}]{w,  }\item[{int \&}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_a4b92084c59ed1df112303f128cd77b53}\label{classva_basic_renderer_a4b92084c59ed1df112303f128cd77b53}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetAuditoryDims@{GetAuditoryDims}}
+\index{GetAuditoryDims@{GetAuditoryDims}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetAuditoryDims()}{GetAuditoryDims()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Get\+Auditory\+Dims (\begin{DoxyParamCaption}\item[{int \&}]{width,  }\item[{int \&}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_a69b40f3dd9d151d7e76300bd9660623f}\label{classva_basic_renderer_a69b40f3dd9d151d7e76300bd9660623f}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetAuditoryExceptionProgName@{GetAuditoryExceptionProgName}}
+\index{GetAuditoryExceptionProgName@{GetAuditoryExceptionProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetAuditoryExceptionProgName()}{GetAuditoryExceptionProgName()}}
+{\footnotesize\ttfamily std\+::string va\+Basic\+Renderer\+::\+Get\+Auditory\+Exception\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_aa55aa7fa4bf5226bdb62c818cb90e3e6}\label{classva_basic_renderer_aa55aa7fa4bf5226bdb62c818cb90e3e6}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetAuditoryMissProgName@{GetAuditoryMissProgName}}
+\index{GetAuditoryMissProgName@{GetAuditoryMissProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetAuditoryMissProgName()}{GetAuditoryMissProgName()}}
+{\footnotesize\ttfamily std\+::string va\+Basic\+Renderer\+::\+Get\+Auditory\+Miss\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_a3a61bceb1c3ec741febc3ad571b73b84}\label{classva_basic_renderer_a3a61bceb1c3ec741febc3ad571b73b84}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetAuditoryRayGenerationProgName@{GetAuditoryRayGenerationProgName}}
+\index{GetAuditoryRayGenerationProgName@{GetAuditoryRayGenerationProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetAuditoryRayGenerationProgName()}{GetAuditoryRayGenerationProgName()}}
+{\footnotesize\ttfamily std\+::string va\+Basic\+Renderer\+::\+Get\+Auditory\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_a8a640ec33bf7368c0265c5bf353f453c}\label{classva_basic_renderer_a8a640ec33bf7368c0265c5bf353f453c}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetExceptionProgName@{GetExceptionProgName}}
+\index{GetExceptionProgName@{GetExceptionProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetExceptionProgName()}{GetExceptionProgName()}}
+{\footnotesize\ttfamily std\+::string va\+Basic\+Renderer\+::\+Get\+Exception\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_ab1e47af59161dc7fc0554b14a3370a4d}\label{classva_basic_renderer_ab1e47af59161dc7fc0554b14a3370a4d}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetMissProgName@{GetMissProgName}}
+\index{GetMissProgName@{GetMissProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetMissProgName()}{GetMissProgName()}}
+{\footnotesize\ttfamily std\+::string va\+Basic\+Renderer\+::\+Get\+Miss\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_a013cceedeaf7374f11760591e7d2eb47}\label{classva_basic_renderer_a013cceedeaf7374f11760591e7d2eb47}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetMode()}{GetMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9f}{Render\+Modes}} va\+Basic\+Renderer\+::\+Get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_af004130f64220b3b96f1e7a0be8354d0}\label{classva_basic_renderer_af004130f64220b3b96f1e7a0be8354d0}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetMultiscaleParam@{GetMultiscaleParam}}
+\index{GetMultiscaleParam@{GetMultiscaleParam}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetMultiscaleParam()}{GetMultiscaleParam()}}
+{\footnotesize\ttfamily float va\+Basic\+Renderer\+::\+Get\+Multiscale\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_af004130f64220b3b96f1e7a0be8354d0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_ab4bfbf785e833db18ea5a05d09cf1e0e}\label{classva_basic_renderer_ab4bfbf785e833db18ea5a05d09cf1e0e}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetNumOfActors@{GetNumOfActors}}
+\index{GetNumOfActors@{GetNumOfActors}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetNumOfActors()}{GetNumOfActors()}}
+{\footnotesize\ttfamily int va\+Basic\+Renderer\+::\+Get\+Num\+Of\+Actors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_ab4bfbf785e833db18ea5a05d09cf1e0e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_ab2eb10ee9cb29add9315c86ed4fccc8d}\label{classva_basic_renderer_ab2eb10ee9cb29add9315c86ed4fccc8d}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetOutputSoundBuffer@{GetOutputSoundBuffer}}
+\index{GetOutputSoundBuffer@{GetOutputSoundBuffer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetOutputSoundBuffer()}{GetOutputSoundBuffer()}}
+{\footnotesize\ttfamily optix\+::\+Buffer va\+Basic\+Renderer\+::\+Get\+Output\+Sound\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_aa73a7691ea7e8791da8da140aecdc706}\label{classva_basic_renderer_aa73a7691ea7e8791da8da140aecdc706}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetRayGenerationProgName@{GetRayGenerationProgName}}
+\index{GetRayGenerationProgName@{GetRayGenerationProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetRayGenerationProgName()}{GetRayGenerationProgName()}}
+{\footnotesize\ttfamily std\+::string va\+Basic\+Renderer\+::\+Get\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_af97ece209eadc40b8cea16c6c51230cf}\label{classva_basic_renderer_af97ece209eadc40b8cea16c6c51230cf}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetTime@{GetTime}}
+\index{GetTime@{GetTime}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetTime()}{GetTime()}}
+{\footnotesize\ttfamily float va\+Basic\+Renderer\+::\+Get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_a19b70836f23a0a120cd71cdc1055f9c1}\label{classva_basic_renderer_a19b70836f23a0a120cd71cdc1055f9c1}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!InitAcceleration@{InitAcceleration}}
+\index{InitAcceleration@{InitAcceleration}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{InitAcceleration()}{InitAcceleration()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Init\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a19b70836f23a0a120cd71cdc1055f9c1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a19b70836f23a0a120cd71cdc1055f9c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_af26b7abdeeab448df84da30b69b3778c}\label{classva_basic_renderer_af26b7abdeeab448df84da30b69b3778c}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!InitDefaultModels@{InitDefaultModels}}
+\index{InitDefaultModels@{InitDefaultModels}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{InitDefaultModels()}{InitDefaultModels()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Init\+Default\+Models (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_af26b7abdeeab448df84da30b69b3778c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a743432612ab413ad61b7b9b41edcf94a}\label{classva_basic_renderer_a743432612ab413ad61b7b9b41edcf94a}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!InitDefaults@{InitDefaults}}
+\index{InitDefaults@{InitDefaults}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{InitDefaults()}{InitDefaults()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Init\+Defaults (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a743432612ab413ad61b7b9b41edcf94a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_ad00959e8a8650a53f056fa3a84ca3a2d}\label{classva_basic_renderer_ad00959e8a8650a53f056fa3a84ca3a2d}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!InitializePrograms@{InitializePrograms}}
+\index{InitializePrograms@{InitializePrograms}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{InitializePrograms()}{InitializePrograms()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Initialize\+Programs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_ad00959e8a8650a53f056fa3a84ca3a2d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_ad00959e8a8650a53f056fa3a84ca3a2d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a08bd686112e66c7785167e1324e191ea}\label{classva_basic_renderer_a08bd686112e66c7785167e1324e191ea}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!InitProg@{InitProg}}
+\index{InitProg@{InitProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{InitProg()}{InitProg()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Init\+Prog (\begin{DoxyParamCaption}\item[{std\+::string}]{prog,  }\item[{std\+::string}]{file,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a08bd686112e66c7785167e1324e191ea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a08bd686112e66c7785167e1324e191ea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a10fd3be163c1aac620e59a95cfdfd50a}\label{classva_basic_renderer_a10fd3be163c1aac620e59a95cfdfd50a}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!InitRenderer@{InitRenderer}}
+\index{InitRenderer@{InitRenderer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{InitRenderer()}{InitRenderer()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Init\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a10fd3be163c1aac620e59a95cfdfd50a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a10fd3be163c1aac620e59a95cfdfd50a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a0c6b842bc67d66a2b89aba5235ec67e9}\label{classva_basic_renderer_a0c6b842bc67d66a2b89aba5235ec67e9}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!isAuditory@{isAuditory}}
+\index{isAuditory@{isAuditory}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{isAuditory()}{isAuditory()}}
+{\footnotesize\ttfamily bool va\+Basic\+Renderer\+::is\+Auditory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a0c6b842bc67d66a2b89aba5235ec67e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a92d8fa28c0a213000054e270b0a7d4ae}\label{classva_basic_renderer_a92d8fa28c0a213000054e270b0a7d4ae}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!isDynamic@{isDynamic}}
+\index{isDynamic@{isDynamic}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{isDynamic()}{isDynamic()}}
+{\footnotesize\ttfamily bool va\+Basic\+Renderer\+::is\+Dynamic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_a29934d24ea69403e9232f25ba3db4b72}\label{classva_basic_renderer_a29934d24ea69403e9232f25ba3db4b72}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!LaunchAuditoryContext@{LaunchAuditoryContext}}
+\index{LaunchAuditoryContext@{LaunchAuditoryContext}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{LaunchAuditoryContext()}{LaunchAuditoryContext()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Launch\+Auditory\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a29934d24ea69403e9232f25ba3db4b72_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a86cdcb90839937790fd0e6242900179f}\label{classva_basic_renderer_a86cdcb90839937790fd0e6242900179f}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!LaunchOpticContext@{LaunchOpticContext}}
+\index{LaunchOpticContext@{LaunchOpticContext}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{LaunchOpticContext()}{LaunchOpticContext()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Launch\+Optic\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a86cdcb90839937790fd0e6242900179f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a234c554b49ee27922adebe730973676b}\label{classva_basic_renderer_a234c554b49ee27922adebe730973676b}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!PlayAnimation@{PlayAnimation}}
+\index{PlayAnimation@{PlayAnimation}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{PlayAnimation()}{PlayAnimation()}}
+{\footnotesize\ttfamily bool va\+Basic\+Renderer\+::\+Play\+Animation (\begin{DoxyParamCaption}\item[{float}]{play\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a234c554b49ee27922adebe730973676b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a263ec75ed17e17f3d84317fe4e5430a3}\label{classva_basic_renderer_a263ec75ed17e17f3d84317fe4e5430a3}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!Render@{Render}}
+\index{Render@{Render}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily virtual bool va\+Basic\+Renderer\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_aefeaf678e80e8a65e9cc831bb0a8daa5}\label{classva_basic_renderer_aefeaf678e80e8a65e9cc831bb0a8daa5}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!RenderAudio@{RenderAudio}}
+\index{RenderAudio@{RenderAudio}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{RenderAudio()}{RenderAudio()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Render\+Audio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_basic_renderer_aa18b42581e83c941e425749fd21674c5}\label{classva_basic_renderer_aa18b42581e83c941e425749fd21674c5}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{Reshape()}{Reshape()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Renderer\+::\+Reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_a39d0aa561b4672f0f5a918ebc14c2008}\label{classva_basic_renderer_a39d0aa561b4672f0f5a918ebc14c2008}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!setAudioBuffer@{setAudioBuffer}}
+\index{setAudioBuffer@{setAudioBuffer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{setAudioBuffer()}{setAudioBuffer()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::set\+Audio\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Binds a buffer of a particular name to audio output buffer Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a39d0aa561b4672f0f5a918ebc14c2008_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a39d0aa561b4672f0f5a918ebc14c2008_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a19ed8e98326a2f0e3b4eca9c59e280e6}\label{classva_basic_renderer_a19ed8e98326a2f0e3b4eca9c59e280e6}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAudioModel@{SetAudioModel}}
+\index{SetAudioModel@{SetAudioModel}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAudioModel()}{SetAudioModel()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Renderer\+::\+Set\+Audio\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classauditory_model}{auditory\+Model}} $\ast$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_a10bc57a75c2d6ff93a44fb4a0506871b}\label{classva_basic_renderer_a10bc57a75c2d6ff93a44fb4a0506871b}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditory@{SetAuditory}}
+\index{SetAuditory@{SetAuditory}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditory()}{SetAuditory()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory (\begin{DoxyParamCaption}\item[{bool}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a10bc57a75c2d6ff93a44fb4a0506871b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a6d8586548527489b22b841e8934dc11f}\label{classva_basic_renderer_a6d8586548527489b22b841e8934dc11f}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryDims@{SetAuditoryDims}}
+\index{SetAuditoryDims@{SetAuditoryDims}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryDims()}{SetAuditoryDims()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Dims (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets dimensions for optical Model \mbox{\Hypertarget{classva_basic_renderer_aa7dcdec5bd37f67b81cc7e85c58a6274}\label{classva_basic_renderer_aa7dcdec5bd37f67b81cc7e85c58a6274}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryExceptionProg@{SetAuditoryExceptionProg}}
+\index{SetAuditoryExceptionProg@{SetAuditoryExceptionProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryExceptionProg()}{SetAuditoryExceptionProg()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Exception\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_aa7dcdec5bd37f67b81cc7e85c58a6274_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_aa7dcdec5bd37f67b81cc7e85c58a6274_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a2ea4b97752273379423d159cfe87d015}\label{classva_basic_renderer_a2ea4b97752273379423d159cfe87d015}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryExceptionProgName@{SetAuditoryExceptionProgName}}
+\index{SetAuditoryExceptionProgName@{SetAuditoryExceptionProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryExceptionProgName()}{SetAuditoryExceptionProgName()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Exception\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a2ea4b97752273379423d159cfe87d015_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a287a8ce904d0493ec57105dba7bbcabf}\label{classva_basic_renderer_a287a8ce904d0493ec57105dba7bbcabf}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryMapModel@{SetAuditoryMapModel}}
+\index{SetAuditoryMapModel@{SetAuditoryMapModel}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryMapModel()}{SetAuditoryMapModel()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Map\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classauditory_mapper}{auditory\+Mapper}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_basic_renderer_a548e91d6eebca6260ef3bc8aa50dd4f5}\label{classva_basic_renderer_a548e91d6eebca6260ef3bc8aa50dd4f5}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryMissProg@{SetAuditoryMissProg}}
+\index{SetAuditoryMissProg@{SetAuditoryMissProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryMissProg()}{SetAuditoryMissProg()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Miss\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a548e91d6eebca6260ef3bc8aa50dd4f5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a548e91d6eebca6260ef3bc8aa50dd4f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a910b1f496268d76b93333366fa4f428e}\label{classva_basic_renderer_a910b1f496268d76b93333366fa4f428e}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryMissProgName@{SetAuditoryMissProgName}}
+\index{SetAuditoryMissProgName@{SetAuditoryMissProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryMissProgName()}{SetAuditoryMissProgName()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Miss\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a910b1f496268d76b93333366fa4f428e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a16b671fd275ffa7c2c6475f6b45cc33d}\label{classva_basic_renderer_a16b671fd275ffa7c2c6475f6b45cc33d}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryRayGenerationFromWidget@{SetAuditoryRayGenerationFromWidget}}
+\index{SetAuditoryRayGenerationFromWidget@{SetAuditoryRayGenerationFromWidget}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryRayGenerationFromWidget()}{SetAuditoryRayGenerationFromWidget()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Ray\+Generation\+From\+Widget (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{optix\+::\+Program}]{prog }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a16b671fd275ffa7c2c6475f6b45cc33d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a9b95c381d17e1c27cdc0c442c2bec358}\label{classva_basic_renderer_a9b95c381d17e1c27cdc0c442c2bec358}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryRayGenerationProg@{SetAuditoryRayGenerationProg}}
+\index{SetAuditoryRayGenerationProg@{SetAuditoryRayGenerationProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryRayGenerationProg()}{SetAuditoryRayGenerationProg()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Ray\+Generation\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a9b95c381d17e1c27cdc0c442c2bec358_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a9b95c381d17e1c27cdc0c442c2bec358_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_af79e90f5f16a4a2248abd9b4515fdea8}\label{classva_basic_renderer_af79e90f5f16a4a2248abd9b4515fdea8}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryRayGenerationProgName@{SetAuditoryRayGenerationProgName}}
+\index{SetAuditoryRayGenerationProgName@{SetAuditoryRayGenerationProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryRayGenerationProgName()}{SetAuditoryRayGenerationProgName()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_af79e90f5f16a4a2248abd9b4515fdea8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a485019d064101e010ce725df717aa8f0}\label{classva_basic_renderer_a485019d064101e010ce725df717aa8f0}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetBackground@{SetBackground}}
+\index{SetBackground@{SetBackground}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetBackground()}{SetBackground()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Renderer\+::\+Set\+Background (\begin{DoxyParamCaption}\item[{optix\+::float3}]{bg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a485019d064101e010ce725df717aa8f0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_af4a16fc60f5c3153f163baf955015b9c}\label{classva_basic_renderer_af4a16fc60f5c3153f163baf955015b9c}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetDynamic@{SetDynamic}}
+\index{SetDynamic@{SetDynamic}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetDynamic()}{SetDynamic()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Dynamic (\begin{DoxyParamCaption}\item[{bool}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_af4a16fc60f5c3153f163baf955015b9c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a0032039e5c6f5f4061c5233828f0aec5}\label{classva_basic_renderer_a0032039e5c6f5f4061c5233828f0aec5}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetExceptionProg@{SetExceptionProg}}
+\index{SetExceptionProg@{SetExceptionProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetExceptionProg()}{SetExceptionProg()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Exception\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a0032039e5c6f5f4061c5233828f0aec5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a0032039e5c6f5f4061c5233828f0aec5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_afd94d4a02b8c9681cf331a9501b9739f}\label{classva_basic_renderer_afd94d4a02b8c9681cf331a9501b9739f}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetExceptionProgName@{SetExceptionProgName}}
+\index{SetExceptionProgName@{SetExceptionProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetExceptionProgName()}{SetExceptionProgName()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Exception\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_afd94d4a02b8c9681cf331a9501b9739f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a06ccb02a33eadb8fbdd3b348661c73bc}\label{classva_basic_renderer_a06ccb02a33eadb8fbdd3b348661c73bc}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetInterop@{SetInterop}}
+\index{SetInterop@{SetInterop}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetInterop()}{SetInterop()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Interop (\begin{DoxyParamCaption}\item[{bool}]{inter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_a60289a106ac6737033103b0b86431c1b}\label{classva_basic_renderer_a60289a106ac6737033103b0b86431c1b}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetMissProg@{SetMissProg}}
+\index{SetMissProg@{SetMissProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetMissProg()}{SetMissProg()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Miss\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a60289a106ac6737033103b0b86431c1b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a60289a106ac6737033103b0b86431c1b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a4d71f621e2beed8da88f7fccca66e8b1}\label{classva_basic_renderer_a4d71f621e2beed8da88f7fccca66e8b1}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetMissProgName@{SetMissProgName}}
+\index{SetMissProgName@{SetMissProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetMissProgName()}{SetMissProgName()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Miss\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a4d71f621e2beed8da88f7fccca66e8b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a6f4e04c4b3bda84c1b37b44072c05959}\label{classva_basic_renderer_a6f4e04c4b3bda84c1b37b44072c05959}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetMissProgSDFProg@{SetMissProgSDFProg}}
+\index{SetMissProgSDFProg@{SetMissProgSDFProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetMissProgSDFProg()}{SetMissProgSDFProg()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Miss\+Prog\+S\+D\+F\+Prog (\begin{DoxyParamCaption}\item[{optix\+::\+Program}]{sdf\+Prog }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a6f4e04c4b3bda84c1b37b44072c05959_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a54a9c02be1c6b70bce728fdb80e14ae3}\label{classva_basic_renderer_a54a9c02be1c6b70bce728fdb80e14ae3}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetMissProgSDFProg2@{SetMissProgSDFProg2}}
+\index{SetMissProgSDFProg2@{SetMissProgSDFProg2}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetMissProgSDFProg2()}{SetMissProgSDFProg2()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Miss\+Prog\+S\+D\+F\+Prog2 (\begin{DoxyParamCaption}\item[{optix\+::\+Program}]{sdf\+Prog }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a54a9c02be1c6b70bce728fdb80e14ae3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_ab4ac023dd0557d46866554031f23237b}\label{classva_basic_renderer_ab4ac023dd0557d46866554031f23237b}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetMode@{SetMode}}
+\index{SetMode@{SetMode}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetMode()}{SetMode()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9f}{Render\+Modes}}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_ada8aba288b5d437029a8d0fb0d87e40c}\label{classva_basic_renderer_ada8aba288b5d437029a8d0fb0d87e40c}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetMultiscaleParam@{SetMultiscaleParam}}
+\index{SetMultiscaleParam@{SetMultiscaleParam}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetMultiscaleParam()}{SetMultiscaleParam()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Multiscale\+Param (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_ada8aba288b5d437029a8d0fb0d87e40c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a4fa1af5283087ea91cb1d8702d81270a}\label{classva_basic_renderer_a4fa1af5283087ea91cb1d8702d81270a}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetOpticalDims@{SetOpticalDims}}
+\index{SetOpticalDims@{SetOpticalDims}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetOpticalDims()}{SetOpticalDims()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Optical\+Dims (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets dimensions for optical Model \mbox{\Hypertarget{classva_basic_renderer_a9c1a91b60379673dd0b693348c11c6ba}\label{classva_basic_renderer_a9c1a91b60379673dd0b693348c11c6ba}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!setOpticBuffer@{setOpticBuffer}}
+\index{setOpticBuffer@{setOpticBuffer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{setOpticBuffer()}{setOpticBuffer()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::set\+Optic\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Binds a buffer of a particular name to visual output buffer Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a9c1a91b60379673dd0b693348c11c6ba_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a9c1a91b60379673dd0b693348c11c6ba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a2c35f1a6898361e913026f436c674aa5}\label{classva_basic_renderer_a2c35f1a6898361e913026f436c674aa5}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetOpticModel@{SetOpticModel}}
+\index{SetOpticModel@{SetOpticModel}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetOpticModel()}{SetOpticModel()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Renderer\+::\+Set\+Optic\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classva_basic_model}{va\+Basic\+Model}} $\ast$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_a4e73649af6a397abd268777761d8243e}\label{classva_basic_renderer_a4e73649af6a397abd268777761d8243e}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetPrograms@{SetPrograms}}
+\index{SetPrograms@{SetPrograms}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetPrograms()}{SetPrograms()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Programs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a4e73649af6a397abd268777761d8243e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a4e73649af6a397abd268777761d8243e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a84481d1bd9ae7adf132b9bc78d672a74}\label{classva_basic_renderer_a84481d1bd9ae7adf132b9bc78d672a74}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetRayGenerationProg@{SetRayGenerationProg}}
+\index{SetRayGenerationProg@{SetRayGenerationProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetRayGenerationProg()}{SetRayGenerationProg()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Ray\+Generation\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a84481d1bd9ae7adf132b9bc78d672a74_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a84481d1bd9ae7adf132b9bc78d672a74_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a1763f30f206918e2d7d703be6a17441e}\label{classva_basic_renderer_a1763f30f206918e2d7d703be6a17441e}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetRayGenerationProgName@{SetRayGenerationProgName}}
+\index{SetRayGenerationProgName@{SetRayGenerationProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetRayGenerationProgName()}{SetRayGenerationProgName()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a1763f30f206918e2d7d703be6a17441e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a73183517f82895474be6a5e39973bea5}\label{classva_basic_renderer_a73183517f82895474be6a5e39973bea5}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetTime@{SetTime}}
+\index{SetTime@{SetTime}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetTime()}{SetTime()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Time (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a73183517f82895474be6a5e39973bea5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a73183517f82895474be6a5e39973bea5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_a6c6a04cc84a6ed9e14ac1d211753c924}\label{classva_basic_renderer_a6c6a04cc84a6ed9e14ac1d211753c924}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetUpRenderer@{SetUpRenderer}}
+\index{SetUpRenderer@{SetUpRenderer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetUpRenderer()}{SetUpRenderer()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Up\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_renderer_a6c6a04cc84a6ed9e14ac1d211753c924_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_renderer_aecf71df595f929b009ef12e4b3639c0d}\label{classva_basic_renderer_aecf71df595f929b009ef12e4b3639c0d}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!Update@{Update}}
+\index{Update@{Update}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Renderer\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_ab45ca39532ea7f4830df1b7c5af3267a}\label{classva_basic_renderer_ab45ca39532ea7f4830df1b7c5af3267a}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!UpdateAudioBuffer@{UpdateAudioBuffer}}
+\index{UpdateAudioBuffer@{UpdateAudioBuffer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{UpdateAudioBuffer()}{UpdateAudioBuffer()}}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Update\+Audio\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+1) Gets to host the ray-\/casted buffer of audio model 2) Maps to auditory stimuli according to specified auditory model mapping \mbox{\Hypertarget{classva_basic_renderer_ab61736cc23d0f081260f01fcf9cd8834}\label{classva_basic_renderer_ab61736cc23d0f081260f01fcf9cd8834}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!UpdateParam@{UpdateParam}}
+\index{UpdateParam@{UpdateParam}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{UpdateParam()}{UpdateParam()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Renderer\+::\+Update\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classva_basic_renderer_a829b64627811dd706a091362fcb08f53}\label{classva_basic_renderer_a829b64627811dd706a091362fcb08f53}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!audioM@{audioM}}
+\index{audioM@{audioM}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{audioM}{audioM}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classauditory_model}{auditory\+Model}}$>$ va\+Basic\+Renderer\+::audioM\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_aeaee5a254e87de6c21e0da8bdf91e923}\label{classva_basic_renderer_aeaee5a254e87de6c21e0da8bdf91e923}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!m\_mapOfPrograms@{m\_mapOfPrograms}}
+\index{m\_mapOfPrograms@{m\_mapOfPrograms}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_mapOfPrograms}{m\_mapOfPrograms}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, optix\+::\+Program$>$ va\+Basic\+Renderer\+::m\+\_\+map\+Of\+Programs\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classva_basic_renderer_ad0883704d66e74b5fb90a2fb6564cc4d}\label{classva_basic_renderer_ad0883704d66e74b5fb90a2fb6564cc4d}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!opticM@{opticM}}
+\index{opticM@{opticM}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{opticM}{opticM}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classva_basic_model}{va\+Basic\+Model}}$>$ va\+Basic\+Renderer\+::opticM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/src/\mbox{\hyperlink{optix_basic_renderer_8h}{optix\+Basic\+Renderer.\+h}}\item 
+core/src/\mbox{\hyperlink{optix_basic_renderer_8cpp}{optix\+Basic\+Renderer.\+cpp}}\end{DoxyCompactItemize}

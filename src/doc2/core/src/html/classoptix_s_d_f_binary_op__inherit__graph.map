@@ -1,0 +1,5 @@
+<map id="optixSDFBinaryOp" name="optixSDFBinaryOp">
+<area shape="rect" id="node1" title="Binary operation." alt="" coords="5,652,221,1008"/>
+<area shape="rect" id="node2" href="$classoptix_s_d_f_geometry.html" title="Abstract class for SDF Geometry. A basic class. All SDF geometry inherits it&#39;s functions." alt="" coords="13,219,214,604"/>
+<area shape="rect" id="node3" href="$classva_basic_object.html" title=" " alt="" coords="32,5,195,171"/>
+</map>

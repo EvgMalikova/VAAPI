@@ -1,0 +1,419 @@
+\hypertarget{classsdf_heterogeneous}{}\doxysection{sdf\+Heterogeneous Class Reference}
+\label{classsdf_heterogeneous}\index{sdfHeterogeneous@{sdfHeterogeneous}}
+
+
+Main class for heterogeneous objects with simple molecular geometry.  
+
+
+
+
+{\ttfamily \#include $<$optix\+S\+D\+F\+Primitives.\+h$>$}
+
+
+
+Inheritance diagram for sdf\+Heterogeneous\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classsdf_heterogeneous__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sdf\+Heterogeneous\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classsdf_heterogeneous__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsdf_heterogeneous_a3c16aa48337eae5e9949d2ad40dfb7da}{sdf\+Heterogeneous}} ()
+\item 
+\mbox{\hyperlink{classsdf_heterogeneous_a450225a0ea98dfa67a117187271a4380}{$\sim$sdf\+Heterogeneous}} ()
+\item 
+virtual optix\+::\+Geometry \mbox{\hyperlink{classsdf_heterogeneous_acb3004834af100a5e48de669237d1311}{Get\+Output}} ()
+\item 
+optix\+::float2 $\ast$ \mbox{\hyperlink{classsdf_heterogeneous_a1195777a8bafa6879e70024be56885b1}{Get\+Type\+Range}} ()
+\item 
+void \mbox{\hyperlink{classsdf_heterogeneous_afdf82ab008b9d38cb551811282644a3e}{Set\+Num\+Frames}} (int fr)
+\item 
+std\+::string \mbox{\hyperlink{classsdf_heterogeneous_aa57b3f7431e51b469020ba04b0f4a9c8}{Get\+Constructive\+Tree\+Optimisation\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classsdf_heterogeneous_a54442bf4a7358ed7c0214de518d97511}{Get\+Read\+Data\+Prog\+Name}} ()
+\item 
+int \mbox{\hyperlink{classsdf_heterogeneous_a01d5ab33433f74d596aedf14f0a3a543}{Get\+Num\+Frames}} ()
+\item 
+int \mbox{\hyperlink{classsdf_heterogeneous_a408144663f8a5757c5aab8fa1f9b40de}{Get\+Prim\+Number}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classsdf_heterogeneous_ac2a885cd0bda6b69619123df62bf277f}{Create\+Geometry}} ()
+\item 
+virtual void \mbox{\hyperlink{classsdf_heterogeneous_a0543f1e786ee15fc9acf9e6bbb23aae6}{Initialize}} ()
+\item 
+virtual void \mbox{\hyperlink{classsdf_heterogeneous_a01dc7215e0c4c0e43fee3cf110464bc5}{Set\+Callable\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classsdf_heterogeneous_adca06c6ffe8ec5581785f35dd70cd430}{Set\+Prim\+Number}} (int n)
+\item 
+virtual void \mbox{\hyperlink{classsdf_heterogeneous_af3abe55211c4e023ba4814c244fb075a}{Init\+Main\+Intersection\+Prog}} ()
+\item 
+virtual void \mbox{\hyperlink{classsdf_heterogeneous_a13e093ff4ffc9d78171b8d3ca897548f}{Init\+Bounding\+Box\+Prog}} ()
+\item 
+virtual void \mbox{\hyperlink{classsdf_heterogeneous_a677c177b3fb9c2536d7bb1175adaa5a3}{Init\+S\+D\+F\+Primitive\+Prog}} ()
+\item 
+virtual void \mbox{\hyperlink{classsdf_heterogeneous_a4725193d6f8222c48c3bfbac33ebef36}{Init\+Constructive\+Tree\+Optimisation\+Prog}} ()
+\item 
+virtual void \mbox{\hyperlink{classsdf_heterogeneous_a53a7d0b712a40207fc8e7801d737df33}{Init\+Read\+Data\+Prog}} ()
+\item 
+optix\+::\+Program \mbox{\hyperlink{classsdf_heterogeneous_aca501b91dab3a47039bc0d0f5b00cd1e}{Get\+Prog\+By\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classsdf_heterogeneous_a2e7e9263147e47c06b9ba268c663fdcb}{Set\+Constructive\+Tree\+Optimisation\+Prog\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classsdf_heterogeneous_abf55ea525d6c9612d3a6408379b441f6}{Set\+Read\+Data\+Prog\+Name}} (std\+::string name)
+\item 
+virtual void \mbox{\hyperlink{classsdf_heterogeneous_a90719a3ce2b9d095f9f1e153b4d82d81}{Set\+Parameters}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Main class for heterogeneous objects with simple molecular geometry. 
+
+Uses S\+DF sphere primitive to render molecule atoms. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsdf_heterogeneous_a3c16aa48337eae5e9949d2ad40dfb7da}\label{classsdf_heterogeneous_a3c16aa48337eae5e9949d2ad40dfb7da}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!sdfHeterogeneous@{sdfHeterogeneous}}
+\index{sdfHeterogeneous@{sdfHeterogeneous}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{sdfHeterogeneous()}{sdfHeterogeneous()}}
+{\footnotesize\ttfamily sdf\+Heterogeneous\+::sdf\+Heterogeneous (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsdf_heterogeneous_a450225a0ea98dfa67a117187271a4380}\label{classsdf_heterogeneous_a450225a0ea98dfa67a117187271a4380}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!````~sdfHeterogeneous@{$\sim$sdfHeterogeneous}}
+\index{````~sdfHeterogeneous@{$\sim$sdfHeterogeneous}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{$\sim$sdfHeterogeneous()}{~sdfHeterogeneous()}}
+{\footnotesize\ttfamily sdf\+Heterogeneous\+::$\sim$sdf\+Heterogeneous (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsdf_heterogeneous_ac2a885cd0bda6b69619123df62bf277f}\label{classsdf_heterogeneous_ac2a885cd0bda6b69619123df62bf277f}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!CreateGeometry@{CreateGeometry}}
+\index{CreateGeometry@{CreateGeometry}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{CreateGeometry()}{CreateGeometry()}}
+{\footnotesize\ttfamily void sdf\+Heterogeneous\+::\+Create\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_a7fbf3dfeda08ee137b3253522ef6a8e3}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_ac2a885cd0bda6b69619123df62bf277f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_aa57b3f7431e51b469020ba04b0f4a9c8}\label{classsdf_heterogeneous_aa57b3f7431e51b469020ba04b0f4a9c8}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!GetConstructiveTreeOptimisationProgName@{GetConstructiveTreeOptimisationProgName}}
+\index{GetConstructiveTreeOptimisationProgName@{GetConstructiveTreeOptimisationProgName}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{GetConstructiveTreeOptimisationProgName()}{GetConstructiveTreeOptimisationProgName()}}
+{\footnotesize\ttfamily std\+::string sdf\+Heterogeneous\+::\+Get\+Constructive\+Tree\+Optimisation\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_aa57b3f7431e51b469020ba04b0f4a9c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_a01d5ab33433f74d596aedf14f0a3a543}\label{classsdf_heterogeneous_a01d5ab33433f74d596aedf14f0a3a543}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!GetNumFrames@{GetNumFrames}}
+\index{GetNumFrames@{GetNumFrames}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{GetNumFrames()}{GetNumFrames()}}
+{\footnotesize\ttfamily int sdf\+Heterogeneous\+::\+Get\+Num\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_a01d5ab33433f74d596aedf14f0a3a543_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_acb3004834af100a5e48de669237d1311}\label{classsdf_heterogeneous_acb3004834af100a5e48de669237d1311}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily virtual optix\+::\+Geometry sdf\+Heterogeneous\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_a8e7e0dc61bfa442a258725473c2fbc28}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_acb3004834af100a5e48de669237d1311_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_a408144663f8a5757c5aab8fa1f9b40de}\label{classsdf_heterogeneous_a408144663f8a5757c5aab8fa1f9b40de}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!GetPrimNumber@{GetPrimNumber}}
+\index{GetPrimNumber@{GetPrimNumber}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{GetPrimNumber()}{GetPrimNumber()}}
+{\footnotesize\ttfamily int sdf\+Heterogeneous\+::\+Get\+Prim\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsdf_heterogeneous_aca501b91dab3a47039bc0d0f5b00cd1e}\label{classsdf_heterogeneous_aca501b91dab3a47039bc0d0f5b00cd1e}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!GetProgByName@{GetProgByName}}
+\index{GetProgByName@{GetProgByName}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{GetProgByName()}{GetProgByName()}}
+{\footnotesize\ttfamily optix\+::\+Program sdf\+Heterogeneous\+::\+Get\+Prog\+By\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_aca501b91dab3a47039bc0d0f5b00cd1e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_a54442bf4a7358ed7c0214de518d97511}\label{classsdf_heterogeneous_a54442bf4a7358ed7c0214de518d97511}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!GetReadDataProgName@{GetReadDataProgName}}
+\index{GetReadDataProgName@{GetReadDataProgName}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{GetReadDataProgName()}{GetReadDataProgName()}}
+{\footnotesize\ttfamily std\+::string sdf\+Heterogeneous\+::\+Get\+Read\+Data\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_a54442bf4a7358ed7c0214de518d97511_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_a1195777a8bafa6879e70024be56885b1}\label{classsdf_heterogeneous_a1195777a8bafa6879e70024be56885b1}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!GetTypeRange@{GetTypeRange}}
+\index{GetTypeRange@{GetTypeRange}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{GetTypeRange()}{GetTypeRange()}}
+{\footnotesize\ttfamily optix\+::float2$\ast$ sdf\+Heterogeneous\+::\+Get\+Type\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_a1195777a8bafa6879e70024be56885b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_a13e093ff4ffc9d78171b8d3ca897548f}\label{classsdf_heterogeneous_a13e093ff4ffc9d78171b8d3ca897548f}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!InitBoundingBoxProg@{InitBoundingBoxProg}}
+\index{InitBoundingBoxProg@{InitBoundingBoxProg}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{InitBoundingBoxProg()}{InitBoundingBoxProg()}}
+{\footnotesize\ttfamily virtual void sdf\+Heterogeneous\+::\+Init\+Bounding\+Box\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsdf_h_tetra_a4e132987bc7a3b93ba6bae3400fc6d4c}{sdf\+H\+Tetra}}, and \mbox{\hyperlink{classsdf_h_c_p_k_mol_acbae5697e4a459d131ad7ecdda89edc9}{sdf\+H\+C\+P\+K\+Mol}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_a13e093ff4ffc9d78171b8d3ca897548f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_a4725193d6f8222c48c3bfbac33ebef36}\label{classsdf_heterogeneous_a4725193d6f8222c48c3bfbac33ebef36}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!InitConstructiveTreeOptimisationProg@{InitConstructiveTreeOptimisationProg}}
+\index{InitConstructiveTreeOptimisationProg@{InitConstructiveTreeOptimisationProg}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{InitConstructiveTreeOptimisationProg()}{InitConstructiveTreeOptimisationProg()}}
+{\footnotesize\ttfamily virtual void sdf\+Heterogeneous\+::\+Init\+Constructive\+Tree\+Optimisation\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsdf_h_tetra_a14af0a18d716db7b70f9d1dc866af4dd}{sdf\+H\+Tetra}}, and \mbox{\hyperlink{classsdf_h_c_p_k_mol_a4f2517354905c03cb36a1d47cc838b9f}{sdf\+H\+C\+P\+K\+Mol}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_a4725193d6f8222c48c3bfbac33ebef36_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_a0543f1e786ee15fc9acf9e6bbb23aae6}\label{classsdf_heterogeneous_a0543f1e786ee15fc9acf9e6bbb23aae6}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void sdf\+Heterogeneous\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+T\+O\+DO\+: potentialy read file with points here 
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_ae4487610c220bc743d042fda69d73a0b}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_a0543f1e786ee15fc9acf9e6bbb23aae6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_af3abe55211c4e023ba4814c244fb075a}\label{classsdf_heterogeneous_af3abe55211c4e023ba4814c244fb075a}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!InitMainIntersectionProg@{InitMainIntersectionProg}}
+\index{InitMainIntersectionProg@{InitMainIntersectionProg}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{InitMainIntersectionProg()}{InitMainIntersectionProg()}}
+{\footnotesize\ttfamily void sdf\+Heterogeneous\+::\+Init\+Main\+Intersection\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_af3abe55211c4e023ba4814c244fb075a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_af3abe55211c4e023ba4814c244fb075a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_a53a7d0b712a40207fc8e7801d737df33}\label{classsdf_heterogeneous_a53a7d0b712a40207fc8e7801d737df33}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!InitReadDataProg@{InitReadDataProg}}
+\index{InitReadDataProg@{InitReadDataProg}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{InitReadDataProg()}{InitReadDataProg()}}
+{\footnotesize\ttfamily virtual void sdf\+Heterogeneous\+::\+Init\+Read\+Data\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsdf_h_tetra_a0f6d3aad776d489203109e92f901bd60}{sdf\+H\+Tetra}}, and \mbox{\hyperlink{classsdf_h_c_p_k_mol_aaabfb01655bc2d137b22a3ca2ffcd47a}{sdf\+H\+C\+P\+K\+Mol}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_a53a7d0b712a40207fc8e7801d737df33_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_a677c177b3fb9c2536d7bb1175adaa5a3}\label{classsdf_heterogeneous_a677c177b3fb9c2536d7bb1175adaa5a3}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!InitSDFPrimitiveProg@{InitSDFPrimitiveProg}}
+\index{InitSDFPrimitiveProg@{InitSDFPrimitiveProg}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{InitSDFPrimitiveProg()}{InitSDFPrimitiveProg()}}
+{\footnotesize\ttfamily virtual void sdf\+Heterogeneous\+::\+Init\+S\+D\+F\+Primitive\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsdf_h_tetra_a714757496eb65ad5541c269e22bfe876}{sdf\+H\+Tetra}}, \mbox{\hyperlink{classsdf_h_microstructure_a5569eaaabaaa405a349334891ef72fcc}{sdf\+H\+Microstructure}}, and \mbox{\hyperlink{classsdf_h_c_p_k_mol_ad6a0756015a01e9fa623dd6409d8f986}{sdf\+H\+C\+P\+K\+Mol}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_a677c177b3fb9c2536d7bb1175adaa5a3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_a01dc7215e0c4c0e43fee3cf110464bc5}\label{classsdf_heterogeneous_a01dc7215e0c4c0e43fee3cf110464bc5}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!SetCallableProg@{SetCallableProg}}
+\index{SetCallableProg@{SetCallableProg}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{SetCallableProg()}{SetCallableProg()}}
+{\footnotesize\ttfamily void sdf\+Heterogeneous\+::\+Set\+Callable\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Is called for setting callable prog 
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_a4a3e346306d620d5cd16d20a39141503}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_a01dc7215e0c4c0e43fee3cf110464bc5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_a2e7e9263147e47c06b9ba268c663fdcb}\label{classsdf_heterogeneous_a2e7e9263147e47c06b9ba268c663fdcb}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!SetConstructiveTreeOptimisationProgName@{SetConstructiveTreeOptimisationProgName}}
+\index{SetConstructiveTreeOptimisationProgName@{SetConstructiveTreeOptimisationProgName}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{SetConstructiveTreeOptimisationProgName()}{SetConstructiveTreeOptimisationProgName()}}
+{\footnotesize\ttfamily void sdf\+Heterogeneous\+::\+Set\+Constructive\+Tree\+Optimisation\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_a2e7e9263147e47c06b9ba268c663fdcb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_afdf82ab008b9d38cb551811282644a3e}\label{classsdf_heterogeneous_afdf82ab008b9d38cb551811282644a3e}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!SetNumFrames@{SetNumFrames}}
+\index{SetNumFrames@{SetNumFrames}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{SetNumFrames()}{SetNumFrames()}}
+{\footnotesize\ttfamily void sdf\+Heterogeneous\+::\+Set\+Num\+Frames (\begin{DoxyParamCaption}\item[{int}]{fr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsdf_heterogeneous_a90719a3ce2b9d095f9f1e153b4d82d81}\label{classsdf_heterogeneous_a90719a3ce2b9d095f9f1e153b4d82d81}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!SetParameters@{SetParameters}}
+\index{SetParameters@{SetParameters}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{SetParameters()}{SetParameters()}}
+{\footnotesize\ttfamily void sdf\+Heterogeneous\+::\+Set\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+for setting custom cuda variables values 
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_a8b7aaecf7e2a6878865b192b66ab367d}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_a90719a3ce2b9d095f9f1e153b4d82d81_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_adca06c6ffe8ec5581785f35dd70cd430}\label{classsdf_heterogeneous_adca06c6ffe8ec5581785f35dd70cd430}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!SetPrimNumber@{SetPrimNumber}}
+\index{SetPrimNumber@{SetPrimNumber}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{SetPrimNumber()}{SetPrimNumber()}}
+{\footnotesize\ttfamily void sdf\+Heterogeneous\+::\+Set\+Prim\+Number (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_adca06c6ffe8ec5581785f35dd70cd430_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_heterogeneous_abf55ea525d6c9612d3a6408379b441f6}\label{classsdf_heterogeneous_abf55ea525d6c9612d3a6408379b441f6}} 
+\index{sdfHeterogeneous@{sdfHeterogeneous}!SetReadDataProgName@{SetReadDataProgName}}
+\index{SetReadDataProgName@{SetReadDataProgName}!sdfHeterogeneous@{sdfHeterogeneous}}
+\doxysubsubsection{\texorpdfstring{SetReadDataProgName()}{SetReadDataProgName()}}
+{\footnotesize\ttfamily void sdf\+Heterogeneous\+::\+Set\+Read\+Data\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_heterogeneous_abf55ea525d6c9612d3a6408379b441f6_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+frep/src/\mbox{\hyperlink{optix_s_d_f_primitives_8h}{optix\+S\+D\+F\+Primitives.\+h}}\item 
+frep/src/\mbox{\hyperlink{optix_s_d_f_primitives_8cpp}{optix\+S\+D\+F\+Primitives.\+cpp}}\end{DoxyCompactItemize}

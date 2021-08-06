@@ -1,0 +1,8 @@
+﻿  -- Install configuration: "Release"
+  -- Installing: D:/nvidia/volume/VAAPI/rtmidi/INSTALL/lib/rtmidi.lib
+  -- Installing: D:/nvidia/volume/VAAPI/rtmidi/INSTALL/bin/rtmidi.dll
+  -- Installing: D:/nvidia/volume/VAAPI/rtmidi/INSTALL/include/RtMidi.h
+  -- Installing: D:/nvidia/volume/VAAPI/rtmidi/INSTALL/share/rtmidi/RtMidiConfig.cmake
+  -- Installing: D:/nvidia/volume/VAAPI/rtmidi/INSTALL/share/rtmidi/RtMidiTargets.cmake
+  -- Installing: D:/nvidia/volume/VAAPI/rtmidi/INSTALL/share/rtmidi/RtMidiTargets-release.cmake
+  -- Installing: D:/nvidia/volume/VAAPI/rtmidi/INSTALL/lib/pkgconfig/rtmidi.pc

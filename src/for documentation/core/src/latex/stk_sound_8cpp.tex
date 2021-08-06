@@ -1,0 +1,69 @@
+\doxysection{stk\+Sound.\+cpp File Reference}
+\label{stk_sound_8cpp}\index{stkSound.cpp@{stkSound.cpp}}
+{\ttfamily \#include \char`\"{}Sine\+Wave.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+D\+S\+R.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Plucked.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}File\+Wv\+Out.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Noise.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Modulate.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}A\+L/al.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+L/alc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+L/alext.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$mmsystem.\+h$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include \char`\"{}A\+L/alut.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stk\+Sound.\+h\char`\"{}}\newline
+Include dependency graph for stk\+Sound.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stk_sound_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ stk\+Sound}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ stk\+Sound\+::\+Init\+AL} (char $\ast$$\ast$$\ast$argv, int $\ast$argc)
+\item 
+void \textbf{ stk\+Sound\+::\+Close\+AL} (void)
+\item 
+void \textbf{ stk\+Sound\+::\+Apply\+Sin} (A\+Lfloat $\ast$data, A\+Ldouble g, A\+Luint srate, A\+Luint freq)
+\item 
+void \textbf{ stk\+Sound\+::\+Create\+Wave} (Stk\+Float $\ast$ptr, int srate2, int duration, A\+Luint \&buffer)
+\item 
+void \textbf{ stk\+Sound\+::\+Init\+Env} ()
+\item 
+void \textbf{ stk\+Sound\+::\+Exit\+Env} ()
+\item 
+Stk\+Frames \textbf{ stk\+Sound\+::\+Generate\+Noise} (double time, double srate2, float seed)
+\item 
+void \textbf{ stk\+Sound\+::\+Waitfor\+Sound} (float scale)
+\item 
+void \textbf{ stk\+Sound\+::\+Play\+Sel\+Sound} (A\+Luint source)
+\item 
+void \textbf{ stk\+Sound\+::\+Move\+Sounds} (std\+::vector$<$ \textbf{ stk\+Sound\+::sound\+Desc} $>$ \&desc\+Ss, std\+::vector$<$ float $>$ \&xpos, int scale)
+\item 
+void \textbf{ stk\+Sound\+::\+Rotate\+Test} (int scale)
+\item 
+sound\+Desc \textbf{ stk\+Sound\+::\+Play\+Buffer} (Stk\+Float $\ast$ptr, int time, int size, int j, optix\+::float2 xpos)
+\item 
+void \textbf{ stk\+Sound\+::\+Rotate\+Angle} (double angle, A\+Luint \&source)
+\item 
+void \textbf{ stk\+Sound\+::\+Apply\+A\+D\+SR} (stk\+::\+Stk\+Frames \&frames, int release\+Count)
+\item 
+Stk\+Frames \textbf{ stk\+Sound\+::\+Generate\+Plucked} (int time, double srate2, double freq, double amplitude)
+\end{DoxyCompactItemize}

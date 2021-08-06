@@ -1,0 +1,57 @@
+\doxysection{stk\+Sound.\+h File Reference}
+\label{stk_sound_8h}\index{stkSound.h@{stkSound.h}}
+{\ttfamily \#include \char`\"{}Generator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+L/al.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+L/alc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+L/alext.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$optixu/optixpp\+\_\+namespace.\+h$>$}\newline
+{\ttfamily \#include $<$optixu/optixu\+\_\+math\+\_\+stream\+\_\+namespace.\+h$>$}\newline
+Include dependency graph for stk\+Sound.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stk_sound_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stk_sound_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ stk\+Sound\+::sound\+Desc}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ stk\+Sound}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Stk\+Frames \textbf{ stk\+Sound\+::\+Generate\+Plucked} (int time, double srate2, double freq, double amplitude)
+\item 
+Stk\+Frames \textbf{ stk\+Sound\+::\+Generate\+Noise} (double time, double srate2, float seed)
+\item 
+void \textbf{ stk\+Sound\+::\+Apply\+A\+D\+SR} (stk\+::\+Stk\+Frames \&frames, int release\+Count)
+\item 
+sound\+Desc \textbf{ stk\+Sound\+::\+Play\+Buffer} (stk\+::\+Stk\+Float $\ast$ptr, int time, int size, int j, optix\+::float2 xpos)
+\item 
+void \textbf{ stk\+Sound\+::\+Init\+Env} ()
+\item 
+void \textbf{ stk\+Sound\+::\+Exit\+Env} ()
+\item 
+void \textbf{ stk\+Sound\+::\+Rotate\+Angle} (double angle, A\+Luint \&source)
+\item 
+void \textbf{ stk\+Sound\+::\+Play\+Sel\+Sound} (A\+Luint source)
+\item 
+void \textbf{ stk\+Sound\+::\+Move\+Sounds} (std\+::vector$<$ \textbf{ stk\+Sound\+::sound\+Desc} $>$ \&desc\+Ss, std\+::vector$<$ float $>$ \&xpos, int scale)
+\item 
+void \textbf{ stk\+Sound\+::\+Waitfor\+Sound} (float scale)
+\item 
+void \textbf{ stk\+Sound\+::\+Rotate\+Test} (int scale)
+\end{DoxyCompactItemize}

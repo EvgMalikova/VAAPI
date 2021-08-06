@@ -1,0 +1,5 @@
+<map id="optixSDFPrimitive" name="optixSDFPrimitive">
+<area shape="rect" id="node1" title="A basic class for all sdf primitives." alt="" coords="29,652,183,920"/>
+<area shape="rect" id="node2" href="$classoptix_s_d_f_geometry.html" title="Abstract class for SDF Geometry. A basic class. All SDF geometry inherits it&#39;s functions." alt="" coords="5,219,207,604"/>
+<area shape="rect" id="node3" href="$classva_basic_object.html" title=" " alt="" coords="25,5,187,171"/>
+</map>

@@ -1,0 +1,54 @@
+\hypertarget{shaders_2material__old_2material_8h}{}\doxysection{shaders/material\+\_\+old/material.h File Reference}
+\label{shaders_2material__old_2material_8h}\index{shaders/material\_old/material.h@{shaders/material\_old/material.h}}
+{\ttfamily \#include \char`\"{}D\+Rand48.\+h\char`\"{}}\newline
+Include dependency graph for material.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{shaders_2material__old_2material_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ float \mbox{\hyperlink{shaders_2material__old_2material_8h_a27b70d05b0526323aff1d6e56da0f7e7}{schlick}} (float cosine, float ref\+\_\+idx)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ bool \mbox{\hyperlink{shaders_2material__old_2material_8h_af25721008b0edef05cd612fe8aa72362}{refract}} (const optix\+::float3 \&v, const optix\+::float3 \&n, float ni\+\_\+over\+\_\+nt, optix\+::float3 \&refracted)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ optix\+::float3 \mbox{\hyperlink{shaders_2material__old_2material_8h_a5b439aded77b229c7b4864d018de5f5f}{reflect}} (const optix\+::float3 \&v, const optix\+::float3 \&n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shaders_2material__old_2material_8h_a5b439aded77b229c7b4864d018de5f5f}\label{shaders_2material__old_2material_8h_a5b439aded77b229c7b4864d018de5f5f}} 
+\index{material.h@{material.h}!reflect@{reflect}}
+\index{reflect@{reflect}!material.h@{material.h}}
+\doxysubsubsection{\texorpdfstring{reflect()}{reflect()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ optix\+::float3 reflect (\begin{DoxyParamCaption}\item[{const optix\+::float3 \&}]{v,  }\item[{const optix\+::float3 \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{shaders_2material__old_2material_8h_a5b439aded77b229c7b4864d018de5f5f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{shaders_2material__old_2material_8h_af25721008b0edef05cd612fe8aa72362}\label{shaders_2material__old_2material_8h_af25721008b0edef05cd612fe8aa72362}} 
+\index{material.h@{material.h}!refract@{refract}}
+\index{refract@{refract}!material.h@{material.h}}
+\doxysubsubsection{\texorpdfstring{refract()}{refract()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ bool refract (\begin{DoxyParamCaption}\item[{const optix\+::float3 \&}]{v,  }\item[{const optix\+::float3 \&}]{n,  }\item[{float}]{ni\+\_\+over\+\_\+nt,  }\item[{optix\+::float3 \&}]{refracted }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{shaders_2material__old_2material_8h_af25721008b0edef05cd612fe8aa72362_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{shaders_2material__old_2material_8h_a27b70d05b0526323aff1d6e56da0f7e7}\label{shaders_2material__old_2material_8h_a27b70d05b0526323aff1d6e56da0f7e7}} 
+\index{material.h@{material.h}!schlick@{schlick}}
+\index{schlick@{schlick}!material.h@{material.h}}
+\doxysubsubsection{\texorpdfstring{schlick()}{schlick()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ float schlick (\begin{DoxyParamCaption}\item[{float}]{cosine,  }\item[{float}]{ref\+\_\+idx }\end{DoxyParamCaption})}
+

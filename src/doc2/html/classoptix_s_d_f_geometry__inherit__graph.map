@@ -1,0 +1,27 @@
+<map id="optixSDFGeometry" name="optixSDFGeometry">
+<area shape="rect" id="node1" title="Abstract class for SDF Geometry. A basic class. All SDF geometry inherits it&#39;s functions." alt="" coords="159,537,292,564"/>
+<area shape="rect" id="node3" href="$classoptix_s_d_f_binary_op.html" title="Binary operation." alt="" coords="340,107,471,133"/>
+<area shape="rect" id="node8" href="$classoptix_s_d_f_primitive.html" title="A basic class for all sdf primitives." alt="" coords="343,360,468,387"/>
+<area shape="rect" id="node15" href="$classoptix_s_d_f_unary_op.html" title="Unary operation." alt="" coords="342,537,469,564"/>
+<area shape="rect" id="node18" href="$classsdf_c_p_k_mol.html" title="Example class for simple molecular geometry." alt="" coords="362,613,449,640"/>
+<area shape="rect" id="node22" href="$classsdf_heterogeneous.html" title="Main class for heterogeneous objects with simple molecular geometry." alt="" coords="342,715,469,741"/>
+<area shape="rect" id="node2" href="$classva_basic_object.html" title=" " alt="" coords="5,537,111,564"/>
+<area shape="rect" id="node4" href="$class_s_d_f_blend_intersection_op.html" title=" " alt="" coords="519,5,684,32"/>
+<area shape="rect" id="node5" href="$class_s_d_f_blend_subtraction_op.html" title=" " alt="" coords="519,56,683,83"/>
+<area shape="rect" id="node6" href="$class_s_d_f_blend_union_op.html" title="Blending union operation." alt="" coords="536,107,667,133"/>
+<area shape="rect" id="node7" href="$class_s_d_f_subtraction_op.html" title=" " alt="" coords="536,157,667,184"/>
+<area shape="rect" id="node9" href="$classoptix_s_d_f_box.html" title="SDF Box primitive." alt="" coords="552,208,651,235"/>
+<area shape="rect" id="node10" href="$classoptix_s_d_f_hand.html" title="SDF Hand primitive for leap motion." alt="" coords="548,259,655,285"/>
+<area shape="rect" id="node11" href="$classoptix_s_d_f_sphere.html" title="SDF sphere primitive." alt="" coords="543,309,660,336"/>
+<area shape="rect" id="node12" href="$classoptix_s_d_f_torus.html" title="SDF Torus primitive." alt="" coords="547,360,655,387"/>
+<area shape="rect" id="node13" href="$classsdf_microsturcture.html" title="An example of simple microstructure." alt="" coords="540,411,663,437"/>
+<area shape="rect" id="node14" href="$classsdf_texture.html" title="Generates a dynamic SDF primitive on base of sdf textures." alt="" coords="560,461,643,488"/>
+<area shape="rect" id="node16" href="$class_s_d_f_elongate_op.html" title="Elongation operation." alt="" coords="543,512,659,539"/>
+<area shape="rect" id="node17" href="$class_s_d_f_rounding_op.html" title="Smoothing operation." alt="" coords="542,563,661,589"/>
+<area shape="rect" id="node19" href="$classsdf_ball_sticks_mol.html" title="Example class for simple Balls and sticks molecular geometry." alt="" coords="542,613,661,640"/>
+<area shape="rect" id="node21" href="$classsdf_c_p_k_dyn_mol.html" title="Example class for dynamic molecular geometry." alt="" coords="546,664,657,691"/>
+<area shape="rect" id="node20" href="$classsdf_mol_ball_sticks_mol.html" title="Example class for simple Balls and sticks molecular geometry." alt="" coords="732,613,872,640"/>
+<area shape="rect" id="node23" href="$classsdf_h_c_p_k_mol.html" title=" " alt="" coords="553,715,649,741"/>
+<area shape="rect" id="node25" href="$classsdf_h_tetra.html" title="Class for tetrahedral meshes Redefines: *SDF primitive Bounding box as center is to be evaluated Cons..." alt="" coords="563,765,640,792"/>
+<area shape="rect" id="node24" href="$classsdf_h_microstructure.html" title="Example class that redefines mapping with just microstructure prim." alt="" coords="737,715,867,741"/>
+</map>

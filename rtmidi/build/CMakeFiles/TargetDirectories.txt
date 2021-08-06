@@ -1,0 +1,17 @@
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/Continuous.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/midiclock.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/Nightly.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/rtmidi.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/sysextest.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/NightlyMemoryCheck.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/Experimental.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/midiout.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/cmidiin.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/midiprobe.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/qmidiin.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/apinames.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/uninstall.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/RUN_TESTS.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/INSTALL.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/ALL_BUILD.dir
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/ZERO_CHECK.dir

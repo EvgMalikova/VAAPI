@@ -1,0 +1,7 @@
+D:/nvidia/volume/VAAPI/rtmidi/INSTALL/lib/rtmidi.lib
+D:/nvidia/volume/VAAPI/rtmidi/INSTALL/bin/rtmidi.dll
+D:/nvidia/volume/VAAPI/rtmidi/INSTALL/include/RtMidi.h
+D:/nvidia/volume/VAAPI/rtmidi/INSTALL/share/rtmidi/RtMidiConfig.cmake
+D:/nvidia/volume/VAAPI/rtmidi/INSTALL/share/rtmidi/RtMidiTargets.cmake
+D:/nvidia/volume/VAAPI/rtmidi/INSTALL/share/rtmidi/RtMidiTargets-release.cmake
+D:/nvidia/volume/VAAPI/rtmidi/INSTALL/lib/pkgconfig/rtmidi.pc

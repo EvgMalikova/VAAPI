@@ -1,0 +1,331 @@
+\hypertarget{classtex_reader}{}\doxysection{tex\+Reader$<$ T $>$ Class Template Reference}
+\label{classtex_reader}\index{texReader$<$ T $>$@{texReader$<$ T $>$}}
+
+
+{\ttfamily \#include $<$tex\+Reader.\+h$>$}
+
+
+
+Inheritance diagram for tex\+Reader$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{classtex_reader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tex\+Reader$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classtex_reader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef itk\+::\+Image$<$ T, \mbox{\hyperlink{tex_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}} $>$ \mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{Output\+Image\+Type}}
+\item 
+typedef Output\+Image\+Type\+::\+Size\+Type \mbox{\hyperlink{classtex_reader_a37f0fae9bea5df00912290b32e48f1db}{Size\+Type}}
+\item 
+typedef Output\+Image\+Type\+::\+Spacing\+Type \mbox{\hyperlink{classtex_reader_af1e20334ca1ca0b8eeec564fb1becafc}{Spacing\+Type}}
+\item 
+typedef Output\+Image\+Type\+::\+Point\+Type \mbox{\hyperlink{classtex_reader_afb681b2985ecb1af09dfacd9da1f3063}{Point\+Type}}
+\item 
+typedef itk\+::\+Image$<$ int, \mbox{\hyperlink{tex_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}} $>$ \mbox{\hyperlink{classtex_reader_a8bb5fbd1c35c2a4f220dd9b0670db83e}{Int\+Image\+Type}}
+\item 
+typedef itk\+::\+Image$<$ int, \mbox{\hyperlink{tex_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}} $>$ \mbox{\hyperlink{classtex_reader_ae42d1219d62a53d1635206c06b0c7d97}{Binary\+Image\+Type}}
+\item 
+typedef itk\+::\+Point$<$ T, \mbox{\hyperlink{tex_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}} $>$ \mbox{\hyperlink{classtex_reader_a4d9f6ce13d27947c3272ba2916f4ac39}{Float\+Point}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{classtex_reader_a4d9f6ce13d27947c3272ba2916f4ac39}{Float\+Point}} $>$ \mbox{\hyperlink{classtex_reader_a0da8be8beb28935cc1c7bb58bee75dd6}{Float\+Points}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtex_reader_af6e08e80678f006effcb6a2bf0de9bac}{Set\+Context}} (optix\+::\+Context c)
+\item 
+optix\+::\+Context \mbox{\hyperlink{classtex_reader_ae119e587a4252c52ca577085f5c0f233}{Get\+Context}} ()
+\item 
+\mbox{\hyperlink{classtex_reader_a5c3b361db451d79ab745683fa399197e}{tex\+Reader}} ()
+\item 
+\mbox{\hyperlink{classtex_reader_ad9394cfb45f4910e7c4e48e8c51e1eb5}{$\sim$tex\+Reader}} ()
+\item 
+int \mbox{\hyperlink{classtex_reader_af84599b17eea76d72f12b41cda25ef92}{Get\+Reduce}} ()
+\item 
+void \mbox{\hyperlink{classtex_reader_abc696886ca711acf64b2b5937b7a3bf5}{Set\+Reduce}} (int r)
+\item 
+void \mbox{\hyperlink{classtex_reader_ab41c36b3a30523da164cb91182374f36}{Set\+Spacing}} (T s)
+\item 
+void \mbox{\hyperlink{classtex_reader_a0088fc71e642b97949b88719e720f37e}{Set\+Origin}} (T x, T y, T z)
+\item 
+optix\+::\+Texture\+Sampler \mbox{\hyperlink{classtex_reader_add4bc13d89aac2937792703f1e213534}{Get\+Texture}} ()
+\item 
+void \mbox{\hyperlink{classtex_reader_a7439702c99e2037d9c204941b3943ce2}{Set\+Size}} (int x, int y, int z)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtex_reader_a17b9a34fa68ecd7e820898f17fa7457d}{Prepare\+Images}} (\mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{Output\+Image\+Type}} $\ast$sdf\+\_\+image, \mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{Output\+Image\+Type}} $\ast$fl\+\_\+image)
+\item 
+virtual void \mbox{\hyperlink{classtex_reader_ae86c8aeb4f5ff2f061e178b3e8ba6a90}{Read\+File}} ()
+\item 
+virtual void \mbox{\hyperlink{classtex_reader_a80c45a3f57a8e7732cb3ece853f6b9f4}{Compute\+Sampler}} ()
+\item 
+virtual void \mbox{\hyperlink{classtex_reader_a91154115283d52a5822d78353e68661e}{Read\+Image}} (\mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{Output\+Image\+Type}} $\ast$fl\+\_\+image, const char $\ast$\mbox{\hyperlink{volume_render__copy__comment_8cpp_ae80f820219e45772366a2a68de6a54c4}{filename}})
+\item 
+virtual void \mbox{\hyperlink{classtex_reader_afc6df76ef4e33e60d75a63bea9686b37}{Preprocess\+Data}} (typename \mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{tex\+Reader\+::\+Output\+Image\+Type}} $\ast$fl\+\_\+image)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+R\+Ttexturereadmode \mbox{\hyperlink{classtex_reader_abb1c421c93da253ced383a1360ab6c60}{m\+\_\+\+Read\+Mode}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classtex_reader_ae42d1219d62a53d1635206c06b0c7d97}\label{classtex_reader_ae42d1219d62a53d1635206c06b0c7d97}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!BinaryImageType@{BinaryImageType}}
+\index{BinaryImageType@{BinaryImageType}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BinaryImageType}{BinaryImageType}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+typedef itk\+::\+Image$<$int, \mbox{\hyperlink{tex_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}}$>$ \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classtex_reader_ae42d1219d62a53d1635206c06b0c7d97}{Binary\+Image\+Type}}}
+
+\mbox{\Hypertarget{classtex_reader_a4d9f6ce13d27947c3272ba2916f4ac39}\label{classtex_reader_a4d9f6ce13d27947c3272ba2916f4ac39}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!FloatPoint@{FloatPoint}}
+\index{FloatPoint@{FloatPoint}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{FloatPoint}{FloatPoint}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+typedef itk\+::\+Point$<$T, \mbox{\hyperlink{tex_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}}$>$ \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classtex_reader_a4d9f6ce13d27947c3272ba2916f4ac39}{Float\+Point}}}
+
+\mbox{\Hypertarget{classtex_reader_a0da8be8beb28935cc1c7bb58bee75dd6}\label{classtex_reader_a0da8be8beb28935cc1c7bb58bee75dd6}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!FloatPoints@{FloatPoints}}
+\index{FloatPoints@{FloatPoints}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{FloatPoints}{FloatPoints}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+typedef std\+::vector$<$\mbox{\hyperlink{classtex_reader_a4d9f6ce13d27947c3272ba2916f4ac39}{Float\+Point}}$>$ \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classtex_reader_a0da8be8beb28935cc1c7bb58bee75dd6}{Float\+Points}}}
+
+\mbox{\Hypertarget{classtex_reader_a8bb5fbd1c35c2a4f220dd9b0670db83e}\label{classtex_reader_a8bb5fbd1c35c2a4f220dd9b0670db83e}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!IntImageType@{IntImageType}}
+\index{IntImageType@{IntImageType}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{IntImageType}{IntImageType}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+typedef itk\+::\+Image$<$int, \mbox{\hyperlink{tex_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}}$>$ \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classtex_reader_a8bb5fbd1c35c2a4f220dd9b0670db83e}{Int\+Image\+Type}}}
+
+\mbox{\Hypertarget{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}\label{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!OutputImageType@{OutputImageType}}
+\index{OutputImageType@{OutputImageType}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{OutputImageType}{OutputImageType}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+typedef itk\+::\+Image$<$T, \mbox{\hyperlink{tex_reader_8h_a8e73cd35bea134d0f0c21b91239faa9a}{Dim}}$>$ \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{Output\+Image\+Type}}}
+
+\mbox{\Hypertarget{classtex_reader_afb681b2985ecb1af09dfacd9da1f3063}\label{classtex_reader_afb681b2985ecb1af09dfacd9da1f3063}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!PointType@{PointType}}
+\index{PointType@{PointType}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PointType}{PointType}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+typedef Output\+Image\+Type\+::\+Point\+Type \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classtex_reader_afb681b2985ecb1af09dfacd9da1f3063}{Point\+Type}}}
+
+\mbox{\Hypertarget{classtex_reader_a37f0fae9bea5df00912290b32e48f1db}\label{classtex_reader_a37f0fae9bea5df00912290b32e48f1db}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!SizeType@{SizeType}}
+\index{SizeType@{SizeType}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SizeType}{SizeType}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+typedef Output\+Image\+Type\+::\+Size\+Type \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classtex_reader_a37f0fae9bea5df00912290b32e48f1db}{Size\+Type}}}
+
+\mbox{\Hypertarget{classtex_reader_af1e20334ca1ca0b8eeec564fb1becafc}\label{classtex_reader_af1e20334ca1ca0b8eeec564fb1becafc}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!SpacingType@{SpacingType}}
+\index{SpacingType@{SpacingType}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SpacingType}{SpacingType}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+typedef Output\+Image\+Type\+::\+Spacing\+Type \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classtex_reader_af1e20334ca1ca0b8eeec564fb1becafc}{Spacing\+Type}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtex_reader_a5c3b361db451d79ab745683fa399197e}\label{classtex_reader_a5c3b361db451d79ab745683fa399197e}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!texReader@{texReader}}
+\index{texReader@{texReader}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{texReader()}{texReader()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classtex_reader}{tex\+Reader}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtex_reader_ad9394cfb45f4910e7c4e48e8c51e1eb5}\label{classtex_reader_ad9394cfb45f4910e7c4e48e8c51e1eb5}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!````~texReader@{$\sim$texReader}}
+\index{````~texReader@{$\sim$texReader}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$texReader()}{~texReader()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classtex_reader}{tex\+Reader}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtex_reader_a80c45a3f57a8e7732cb3ece853f6b9f4}\label{classtex_reader_a80c45a3f57a8e7732cb3ece853f6b9f4}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!ComputeSampler@{ComputeSampler}}
+\index{ComputeSampler@{ComputeSampler}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ComputeSampler()}{ComputeSampler()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+virtual void \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::Compute\+Sampler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classtex_reader_ae119e587a4252c52ca577085f5c0f233}\label{classtex_reader_ae119e587a4252c52ca577085f5c0f233}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!GetContext@{GetContext}}
+\index{GetContext@{GetContext}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetContext()}{GetContext()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+optix\+::\+Context \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::Get\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtex_reader_af84599b17eea76d72f12b41cda25ef92}\label{classtex_reader_af84599b17eea76d72f12b41cda25ef92}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!GetReduce@{GetReduce}}
+\index{GetReduce@{GetReduce}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetReduce()}{GetReduce()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+int \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::Get\+Reduce (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtex_reader_add4bc13d89aac2937792703f1e213534}\label{classtex_reader_add4bc13d89aac2937792703f1e213534}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!GetTexture@{GetTexture}}
+\index{GetTexture@{GetTexture}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetTexture()}{GetTexture()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+optix\+::\+Texture\+Sampler \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::Get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtex_reader_add4bc13d89aac2937792703f1e213534_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtex_reader_a17b9a34fa68ecd7e820898f17fa7457d}\label{classtex_reader_a17b9a34fa68ecd7e820898f17fa7457d}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!PrepareImages@{PrepareImages}}
+\index{PrepareImages@{PrepareImages}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PrepareImages()}{PrepareImages()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::Prepare\+Images (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{Output\+Image\+Type}} $\ast$}]{sdf\+\_\+image,  }\item[{\mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{Output\+Image\+Type}} $\ast$}]{fl\+\_\+image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtex_reader_afc6df76ef4e33e60d75a63bea9686b37}\label{classtex_reader_afc6df76ef4e33e60d75a63bea9686b37}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!PreprocessData@{PreprocessData}}
+\index{PreprocessData@{PreprocessData}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PreprocessData()}{PreprocessData()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+virtual void \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::Preprocess\+Data (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{Output\+Image\+Type}} $\ast$}]{fl\+\_\+image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classply_sdf_texture_reader_a178d9d3ba55fb5202179f4fb57ba5869}{ply\+Sdf\+Texture\+Reader$<$ T $>$}}, and \mbox{\hyperlink{classsdf_texture_reader_aca937f77e8cb7231de6e6a60823ba1ae}{sdf\+Texture\+Reader$<$ T $>$}}.
+
+\mbox{\Hypertarget{classtex_reader_ae86c8aeb4f5ff2f061e178b3e8ba6a90}\label{classtex_reader_ae86c8aeb4f5ff2f061e178b3e8ba6a90}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!ReadFile@{ReadFile}}
+\index{ReadFile@{ReadFile}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ReadFile()}{ReadFile()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::Read\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_reader_adfb807ebf0b6d76de1065dffde71d41d}{optix\+Reader$<$ T $>$}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classtex_reader_ae86c8aeb4f5ff2f061e178b3e8ba6a90_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtex_reader_a91154115283d52a5822d78353e68661e}\label{classtex_reader_a91154115283d52a5822d78353e68661e}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!ReadImage@{ReadImage}}
+\index{ReadImage@{ReadImage}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ReadImage()}{ReadImage()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::Read\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{Output\+Image\+Type}} $\ast$}]{fl\+\_\+image,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classply_sdf_texture_reader_a11c799352b25ca961c678edb2a90ecc9}{ply\+Sdf\+Texture\+Reader$<$ T $>$}}.
+
+\mbox{\Hypertarget{classtex_reader_af6e08e80678f006effcb6a2bf0de9bac}\label{classtex_reader_af6e08e80678f006effcb6a2bf0de9bac}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!SetContext@{SetContext}}
+\index{SetContext@{SetContext}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetContext()}{SetContext()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::Set\+Context (\begin{DoxyParamCaption}\item[{optix\+::\+Context}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtex_reader_af6e08e80678f006effcb6a2bf0de9bac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtex_reader_a0088fc71e642b97949b88719e720f37e}\label{classtex_reader_a0088fc71e642b97949b88719e720f37e}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!SetOrigin@{SetOrigin}}
+\index{SetOrigin@{SetOrigin}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetOrigin()}{SetOrigin()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::Set\+Origin (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{T}]{y,  }\item[{T}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtex_reader_a0088fc71e642b97949b88719e720f37e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtex_reader_abc696886ca711acf64b2b5937b7a3bf5}\label{classtex_reader_abc696886ca711acf64b2b5937b7a3bf5}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!SetReduce@{SetReduce}}
+\index{SetReduce@{SetReduce}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetReduce()}{SetReduce()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::Set\+Reduce (\begin{DoxyParamCaption}\item[{int}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtex_reader_abc696886ca711acf64b2b5937b7a3bf5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtex_reader_a7439702c99e2037d9c204941b3943ce2}\label{classtex_reader_a7439702c99e2037d9c204941b3943ce2}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!SetSize@{SetSize}}
+\index{SetSize@{SetSize}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetSize()}{SetSize()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::Set\+Size (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtex_reader_a7439702c99e2037d9c204941b3943ce2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtex_reader_ab41c36b3a30523da164cb91182374f36}\label{classtex_reader_ab41c36b3a30523da164cb91182374f36}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!SetSpacing@{SetSpacing}}
+\index{SetSpacing@{SetSpacing}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetSpacing()}{SetSpacing()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::Set\+Spacing (\begin{DoxyParamCaption}\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtex_reader_ab41c36b3a30523da164cb91182374f36_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtex_reader_abb1c421c93da253ced383a1360ab6c60}\label{classtex_reader_abb1c421c93da253ced383a1360ab6c60}} 
+\index{texReader$<$ T $>$@{texReader$<$ T $>$}!m\_ReadMode@{m\_ReadMode}}
+\index{m\_ReadMode@{m\_ReadMode}!texReader$<$ T $>$@{texReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_ReadMode}{m\_ReadMode}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+R\+Ttexturereadmode \mbox{\hyperlink{classtex_reader}{tex\+Reader}}$<$ T $>$\+::m\+\_\+\+Read\+Mode\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+frep/src/\mbox{\hyperlink{tex_reader_8h}{tex\+Reader.\+h}}\item 
+frep/src/\mbox{\hyperlink{tex_reader_8hpp}{tex\+Reader.\+hpp}}\end{DoxyCompactItemize}

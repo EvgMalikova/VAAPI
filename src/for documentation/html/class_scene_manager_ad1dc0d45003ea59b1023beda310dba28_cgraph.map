@@ -1,0 +1,29 @@
+<map id="SceneManager::createAuditoryMoleculeScene2" name="SceneManager::createAuditoryMoleculeScene2">
+<area shape="rect" id="node1" title=" " alt="" coords="5,429,207,470"/>
+<area shape="rect" id="node2" href="$classva_color_scheme.html#aaabf99988b9566f6e3c79fe74b6633e4" title=" " alt="" coords="285,5,459,32"/>
+<area shape="rect" id="node3" href="$classcontext_manager.html#a952b95215eb2a19410bc1da46edc9a06" title=" " alt="" coords="281,56,463,83"/>
+<area shape="rect" id="node4" href="$classsdf_reader.html#ae0166614d2dac181fab1f7a91b41cb7b" title=" " alt="" coords="295,208,449,235"/>
+<area shape="rect" id="node6" href="$classsdf_reader.html#a7edaba995edfed50af58a987ecd25e02" title=" " alt="" coords="295,259,449,285"/>
+<area shape="rect" id="node7" href="$classsdf_reader.html#a6fa93227baa2b4a7ff46282f75a65a57" title=" " alt="" coords="295,107,449,133"/>
+<area shape="rect" id="node8" href="$classsdf_reader.html#a5bd3fb58cd433f9c37eb042cf228a1dc" title=" " alt="" coords="295,157,449,184"/>
+<area shape="rect" id="node9" href="$classsdf_c_p_k_mol.html#abec0d6f7e4ba5653795fa7c057c5aac6" title=" " alt="" coords="281,309,463,336"/>
+<area shape="rect" id="node10" href="$classsdf_ball_sticks_mol.html#a8390c5878c82d60ce9e224022f13af33" title=" " alt="" coords="280,360,464,387"/>
+<area shape="rect" id="node14" href="$classsdf_c_p_k_mol.html#a58dd4c76159371ce3938f2bf4ab05e16" title=" " alt="" coords="295,563,449,589"/>
+<area shape="rect" id="node16" href="$classva_basic_object.html#a084579231006f44f03b6834e723316b6" title=" " alt="" coords="562,664,741,691"/>
+<area shape="rect" id="node17" href="$classoptix_s_d_f_geometry.html#a63249e61355407ec0d41d59d05e1838c" title=" " alt="" coords="269,613,475,640"/>
+<area shape="rect" id="node19" href="$classva_base_map_scheme.html#ae2dccd11e763763aaf31d0e24b67e19b" title=" " alt="" coords="271,715,473,741"/>
+<area shape="rect" id="node20" href="$classoptix_s_d_f_geometry.html#af188ac95c6207906101f844d47217ec8" title=" " alt="" coords="255,411,489,437"/>
+<area shape="rect" id="node21" href="$classsdf_c_p_k_mol.html#a9e4d39ca58a114d1eff90ba3c10af1d9" title=" " alt="" coords="295,461,449,488"/>
+<area shape="rect" id="node22" href="$classva_base_map_scheme.html#a20a225ee5f121b0d230de98e7cea144c" title=" " alt="" coords="271,765,473,792"/>
+<area shape="rect" id="node23" href="$classsdf_c_p_k_mol.html#a3cde4e17ccf2803dd7670fcefb4b5234" title=" " alt="" coords="301,512,443,539"/>
+<area shape="rect" id="node24" href="$classoptix_reader.html#aede6a13fd818d3d3d39b9d1f122394d1" title=" " alt="" coords="302,816,442,843"/>
+<area shape="rect" id="node25" href="$classoptix_s_d_f_geometry.html#af866243d89ffb3ed211d8e8408ee859b" title=" " alt="" coords="281,867,463,893"/>
+<area shape="rect" id="node5" href="$classoptix_reader.html#a70022346c4394976c1c7e252ff802bdc" title=" " alt="" coords="572,183,731,209"/>
+<area shape="rect" id="node11" href="$classva_basic_object.html#a08873bcc6cdc91521e86319c77e81453" title=" " alt="" coords="562,512,741,539"/>
+<area shape="rect" id="node12" href="$classoptix_s_d_f_geometry.html#a8e7e0dc61bfa442a258725473c2fbc28" title=" " alt="" coords="551,461,752,488"/>
+<area shape="rect" id="node13" href="$classsdf_ball_sticks_mol.html#abbf627ccd275fc6c281ee89ec6da78b0" title=" " alt="" coords="544,360,759,387"/>
+<area shape="rect" id="node15" href="$classoptix_s_d_f_geometry.html#a3c49228759d12d00935d87a20b9b3bae" title=" " alt="" coords="545,563,757,589"/>
+<area shape="rect" id="node18" href="$classoptix_s_d_f_geometry.html#ae4487610c220bc743d042fda69d73a0b" title=" " alt="" coords="557,613,745,640"/>
+<area shape="rect" id="node26" href="$classoptix_s_d_f_geometry.html#a7fbf3dfeda08ee137b3253522ef6a8e3" title=" " alt="" coords="562,889,741,930"/>
+<area shape="rect" id="node27" href="$classoptix_s_d_f_geometry.html#a8b7aaecf7e2a6878865b192b66ab367d" title=" " alt="" coords="537,837,765,864"/>
+</map>

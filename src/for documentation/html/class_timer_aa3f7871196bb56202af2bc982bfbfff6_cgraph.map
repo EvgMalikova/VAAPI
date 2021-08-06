@@ -1,0 +1,5 @@
+<map id="Timer::restart" name="Timer::restart">
+<area shape="rect" id="node1" title="Resets the timer and starts it." alt="" coords="5,31,104,57"/>
+<area shape="rect" id="node2" href="$class_timer.html#a9020542d73357a4eef512eefaf57524b" title="Resets the timer." alt="" coords="152,5,243,32"/>
+<area shape="rect" id="node3" href="$class_timer.html#a3a8b5272198d029779dc9302a54305a8" title="Starts the timer." alt="" coords="153,56,241,83"/>
+</map>

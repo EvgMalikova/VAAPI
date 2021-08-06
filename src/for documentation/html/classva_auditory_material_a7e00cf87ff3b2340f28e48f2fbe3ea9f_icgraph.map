@@ -1,0 +1,12 @@
+<map id="vaAuditoryMaterial::InitProg" name="vaAuditoryMaterial::InitProg">
+<area shape="rect" id="node1" title=" " alt="" coords="459,179,587,221"/>
+<area shape="rect" id="node2" href="$class_lambertian.html#a7c63cf1adc4cf85a7ef7a25eb31b4924" title=" " alt="" coords="237,5,378,32"/>
+<area shape="rect" id="node3" href="$classva_basic_material.html#a51969ae6a9956f0656bb675538542ad0" title=" " alt="" coords="223,56,391,83"/>
+<area shape="rect" id="node4" href="$classva_e_a_volume.html#a09402d7b9647c321c54dced86ead9431" title=" " alt="" coords="232,107,383,133"/>
+<area shape="rect" id="node5" href="$class_s_d_f_material2.html#a66baa55f099c36e49785e59d2dffad6d" title=" " alt="" coords="229,157,385,184"/>
+<area shape="rect" id="node7" href="$class_s_d_f_volume_material.html#afa35adf24e56f762b3927c791fe9a3d8" title=" " alt="" coords="234,209,381,250"/>
+<area shape="rect" id="node8" href="$class_s_d_f_audio_volume_material.html#a3c45834e62f1687d426b4676cff9d7c2" title=" " alt="" coords="222,274,393,315"/>
+<area shape="rect" id="node9" href="$class_s_d_f_audio_ray_trace_material.html#adc50aaeea98a87521a18a69224b5c423" title=" " alt="" coords="216,339,399,381"/>
+<area shape="rect" id="node10" href="$class_dynamic_texture_volume_material.html#a7686549c28b4c4bd726ed59cc1ce9cd2" title=" " alt="" coords="204,405,411,446"/>
+<area shape="rect" id="node6" href="$class_s_d_f_material2.html#aeb6574eb67cdc9a6c52b8a44b40eb02e" title=" " alt="" coords="5,157,156,184"/>
+</map>

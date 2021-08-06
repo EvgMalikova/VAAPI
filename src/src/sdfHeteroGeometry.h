@@ -10,6 +10,32 @@ Module:    optixSDFPrimitives.h
 #include "optixSDFPrimitives.h"
 #include "renderTypes.h"
 
+class MPoints {
+public:
+    MPoints(size_t rows, size_t cols) : m_rows(rows), m_cols(cols) {
+        m_data = new float[rows*cols];
+    }
+    float *data() { return m_data; }
+    size_t rows() const { return m_rows; }
+    size_t cols() const { return m_cols; }
+private:
+    size_t m_rows, m_cols;
+    float *m_data;
+};
+
+class MTypes {
+public:
+    MTypes(size_t rows, size_t cols) : m_rows(rows), m_cols(cols) {
+        m_data = new int[rows*cols];
+    }
+    int *data() { return m_data; }
+    size_t rows() const { return m_rows; }
+    size_t cols() const { return m_cols; }
+private:
+    size_t m_rows, m_cols;
+    int *m_data;
+};
+
 /**
 * \class  sdfHeterogeneous
 * \brief  Main class for heterogeneous objects with simple molecular geometry
@@ -24,6 +50,7 @@ public:
         DIM_1D, //geometry and topology, points connected with lines
         DIM_4D,  //Cell volume, example tetrahedron in mesh
         MULTISCALE,
+        CELL,
         GENERAL  //defalt description with not prespecified type
     };
     sdfHeterogeneous() {
@@ -49,8 +76,11 @@ public:
     /* Reading data
     */
     //at least points without any topological info are read
+
     void SetCenter(std::vector<optix::float3> c);
     void SetCenter(std::vector<optix::float3> c, int frame);
+    void SetC(std::vector<optix::float3> c) { SetCenter(c); };
+    void SetCs(std::vector<optix::float3> c, int frame) { SetCenter(c, frame); };
 
     optix::Buffer GetCenter() { return centersBuffer; }
 
@@ -77,6 +107,8 @@ public:
     }
     void SetShift(optix::float3 sc);
     ObjectType GetPrimType() { return m_primType; };
+
+    ObjectType m_primType;
 protected:
     /*Returns name of callable id function in cuda code*/
     std::string GetPrimProgName();
@@ -118,7 +150,7 @@ protected:
 
     virtual void SetParameters();
 private:
-    ObjectType m_primType;
+
     optix::float3 m_shift;
     optix::Buffer centersBuffer;
     int primNumber;
@@ -205,6 +237,10 @@ public:
     void SetType(std::vector<int> type);
 
     void SetScale(float sc);
+
+    void SetCenterRad(MPoints p);
+
+    void SetTypes(MTypes t);
 
 protected:
     float m_scale;
@@ -331,6 +367,7 @@ public:
     };
     ~sdfMoleculeBallSticks() {};
 
+    void SetMolSize(int m) { m_MolSize = m; };
     void SetMols(std::vector<Molecule> c, int maxMolSize);
     optix::Buffer GetMols() { return molsBuffer; }
 
@@ -347,6 +384,8 @@ protected:
     virtual void InitBoundingBoxProg();
     virtual void Initialize();
     virtual void InitSDFPrimitiveProg();
+
+    int  m_MolSize;
 };
 /**
 * \class  sdfHeterogeneous1D
@@ -366,6 +405,7 @@ public:
     //General procedures for simple primitives
     //Set
     void SetTetras(std::vector<optix::int4> c);
+
     optix::Buffer GetTetras() { return tetBuffer; }
 
 protected:

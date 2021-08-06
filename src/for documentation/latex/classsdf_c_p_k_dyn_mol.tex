@@ -1,0 +1,184 @@
+\hypertarget{classsdf_c_p_k_dyn_mol}{}\doxysection{sdf\+C\+P\+K\+Dyn\+Mol Class Reference}
+\label{classsdf_c_p_k_dyn_mol}\index{sdfCPKDynMol@{sdfCPKDynMol}}
+
+
+Example class for dynamic molecular geometry.  
+
+
+
+
+{\ttfamily \#include $<$optix\+S\+D\+F\+Primitives.\+h$>$}
+
+
+
+Inheritance diagram for sdf\+C\+P\+K\+Dyn\+Mol\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classsdf_c_p_k_dyn_mol__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sdf\+C\+P\+K\+Dyn\+Mol\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classsdf_c_p_k_dyn_mol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsdf_c_p_k_dyn_mol_a97f5c2e2875539c9a0a39e6f28cfadf5}{sdf\+C\+P\+K\+Dyn\+Mol}} ()
+\item 
+\mbox{\hyperlink{classsdf_c_p_k_dyn_mol_aa2ab717096044a8ce118ddf98bfd5031}{$\sim$sdf\+C\+P\+K\+Dyn\+Mol}} ()
+\item 
+void \mbox{\hyperlink{classsdf_c_p_k_dyn_mol_aa7ea717d788ef0e9a97a1ccd199e272e}{Set\+Center2}} (std\+::vector$<$ optix\+::float3 $>$ c)
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classsdf_c_p_k_dyn_mol_a52b1443ff4474132f77d2d8a76c6e1c2}{Get\+Center2}} ()
+\item 
+virtual \mbox{\hyperlink{structsdf_geo}{sdf\+Geo}} $\ast$ \mbox{\hyperlink{classsdf_c_p_k_dyn_mol_ab8bc2ba8a0308b7692f872a67e2b00a7}{Get\+Output\+Desc}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classsdf_c_p_k_dyn_mol_a9b46912317dfa09530fe6a6d3f792cfa}{Initialize}} ()
+\item 
+virtual void \mbox{\hyperlink{classsdf_c_p_k_dyn_mol_ae276314896f8fb8accef32a1c227e7ca}{Set\+Parameters}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classsdf_c_p_k_dyn_mol_a276c09b31c1f282490cfaa82e410bd8c}{centers\+Buffer2}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Example class for dynamic molecular geometry. 
+
+Uses S\+DF sphere primitive to render molecule atoms. A simple C\+PK molecule representation 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsdf_c_p_k_dyn_mol_a97f5c2e2875539c9a0a39e6f28cfadf5}\label{classsdf_c_p_k_dyn_mol_a97f5c2e2875539c9a0a39e6f28cfadf5}} 
+\index{sdfCPKDynMol@{sdfCPKDynMol}!sdfCPKDynMol@{sdfCPKDynMol}}
+\index{sdfCPKDynMol@{sdfCPKDynMol}!sdfCPKDynMol@{sdfCPKDynMol}}
+\doxysubsubsection{\texorpdfstring{sdfCPKDynMol()}{sdfCPKDynMol()}}
+{\footnotesize\ttfamily sdf\+C\+P\+K\+Dyn\+Mol\+::sdf\+C\+P\+K\+Dyn\+Mol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsdf_c_p_k_dyn_mol_aa2ab717096044a8ce118ddf98bfd5031}\label{classsdf_c_p_k_dyn_mol_aa2ab717096044a8ce118ddf98bfd5031}} 
+\index{sdfCPKDynMol@{sdfCPKDynMol}!````~sdfCPKDynMol@{$\sim$sdfCPKDynMol}}
+\index{````~sdfCPKDynMol@{$\sim$sdfCPKDynMol}!sdfCPKDynMol@{sdfCPKDynMol}}
+\doxysubsubsection{\texorpdfstring{$\sim$sdfCPKDynMol()}{~sdfCPKDynMol()}}
+{\footnotesize\ttfamily sdf\+C\+P\+K\+Dyn\+Mol\+::$\sim$sdf\+C\+P\+K\+Dyn\+Mol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsdf_c_p_k_dyn_mol_a52b1443ff4474132f77d2d8a76c6e1c2}\label{classsdf_c_p_k_dyn_mol_a52b1443ff4474132f77d2d8a76c6e1c2}} 
+\index{sdfCPKDynMol@{sdfCPKDynMol}!GetCenter2@{GetCenter2}}
+\index{GetCenter2@{GetCenter2}!sdfCPKDynMol@{sdfCPKDynMol}}
+\doxysubsubsection{\texorpdfstring{GetCenter2()}{GetCenter2()}}
+{\footnotesize\ttfamily optix\+::\+Buffer sdf\+C\+P\+K\+Dyn\+Mol\+::\+Get\+Center2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsdf_c_p_k_dyn_mol_ab8bc2ba8a0308b7692f872a67e2b00a7}\label{classsdf_c_p_k_dyn_mol_ab8bc2ba8a0308b7692f872a67e2b00a7}} 
+\index{sdfCPKDynMol@{sdfCPKDynMol}!GetOutputDesc@{GetOutputDesc}}
+\index{GetOutputDesc@{GetOutputDesc}!sdfCPKDynMol@{sdfCPKDynMol}}
+\doxysubsubsection{\texorpdfstring{GetOutputDesc()}{GetOutputDesc()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structsdf_geo}{sdf\+Geo}}$\ast$ sdf\+C\+P\+K\+Dyn\+Mol\+::\+Get\+Output\+Desc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns ready to use output, that is optix geometry 
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_a9005fe019545d2e93b76d6a84fa8e8bc}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_dyn_mol_ab8bc2ba8a0308b7692f872a67e2b00a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_dyn_mol_ab8bc2ba8a0308b7692f872a67e2b00a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_c_p_k_dyn_mol_a9b46912317dfa09530fe6a6d3f792cfa}\label{classsdf_c_p_k_dyn_mol_a9b46912317dfa09530fe6a6d3f792cfa}} 
+\index{sdfCPKDynMol@{sdfCPKDynMol}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!sdfCPKDynMol@{sdfCPKDynMol}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Dyn\+Mol\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+T\+O\+DO\+: potentialy read file with points here 
+
+Reimplemented from \mbox{\hyperlink{classsdf_c_p_k_mol_ac314d0d441071f7a8c155681a6d8dff1}{sdf\+C\+P\+K\+Mol}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_dyn_mol_a9b46912317dfa09530fe6a6d3f792cfa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_c_p_k_dyn_mol_aa7ea717d788ef0e9a97a1ccd199e272e}\label{classsdf_c_p_k_dyn_mol_aa7ea717d788ef0e9a97a1ccd199e272e}} 
+\index{sdfCPKDynMol@{sdfCPKDynMol}!SetCenter2@{SetCenter2}}
+\index{SetCenter2@{SetCenter2}!sdfCPKDynMol@{sdfCPKDynMol}}
+\doxysubsubsection{\texorpdfstring{SetCenter2()}{SetCenter2()}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Dyn\+Mol\+::\+Set\+Center2 (\begin{DoxyParamCaption}\item[{std\+::vector$<$ optix\+::float3 $>$}]{c }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_dyn_mol_aa7ea717d788ef0e9a97a1ccd199e272e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_dyn_mol_aa7ea717d788ef0e9a97a1ccd199e272e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_c_p_k_dyn_mol_ae276314896f8fb8accef32a1c227e7ca}\label{classsdf_c_p_k_dyn_mol_ae276314896f8fb8accef32a1c227e7ca}} 
+\index{sdfCPKDynMol@{sdfCPKDynMol}!SetParameters@{SetParameters}}
+\index{SetParameters@{SetParameters}!sdfCPKDynMol@{sdfCPKDynMol}}
+\doxysubsubsection{\texorpdfstring{SetParameters()}{SetParameters()}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Dyn\+Mol\+::\+Set\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+for setting custom cuda variables values 
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_a8b7aaecf7e2a6878865b192b66ab367d}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_dyn_mol_ae276314896f8fb8accef32a1c227e7ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_dyn_mol_ae276314896f8fb8accef32a1c227e7ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsdf_c_p_k_dyn_mol_a276c09b31c1f282490cfaa82e410bd8c}\label{classsdf_c_p_k_dyn_mol_a276c09b31c1f282490cfaa82e410bd8c}} 
+\index{sdfCPKDynMol@{sdfCPKDynMol}!centersBuffer2@{centersBuffer2}}
+\index{centersBuffer2@{centersBuffer2}!sdfCPKDynMol@{sdfCPKDynMol}}
+\doxysubsubsection{\texorpdfstring{centersBuffer2}{centersBuffer2}}
+{\footnotesize\ttfamily optix\+::\+Buffer sdf\+C\+P\+K\+Dyn\+Mol\+::centers\+Buffer2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+frep/src/\mbox{\hyperlink{optix_s_d_f_primitives_8h}{optix\+S\+D\+F\+Primitives.\+h}}\item 
+frep/src/\mbox{\hyperlink{optix_s_d_f_primitives_8cpp}{optix\+S\+D\+F\+Primitives.\+cpp}}\end{DoxyCompactItemize}

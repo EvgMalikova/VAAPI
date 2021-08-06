@@ -182,6 +182,9 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 #include "optixSDFPrimitives.h"
 #include "optixSDFOperations.h"
 #include "sdfReader.h"
+#include "optixXYZReader.h"
+#include "vaRayCastBaseWidget.h"
+/*
 int example3()
 {
     int  windowWidth = 1512;
@@ -225,88 +228,61 @@ int example3()
 
         //Scene creation
 
-            /*Read molecule data from XYZ file.
-            For info on XYZ file format:
-            //http://wiki.jmol.org/index.php/File_formats/Formats/XYZ
-            */
-        sdfMolReader read;
-        read.Setfile("es.sdf");// "water2.sdf");
-        read.Update();
+sdfMolReader read;
+read.Setfile("es.sdf");// "water2.sdf");
+read.Update();
 
-        sdfMolReader read2;
-        read2.Setfile("cs.sdf");// "water2.sdf");
-        read2.Update();
-        //read2.Grow(2); TODO: implement
-        //http://www1.lsbu.ac.uk/water/escs.html
+sdfMolReader read2;
+read2.Setfile("cs.sdf");// "water2.sdf");
+read2.Update();
+//read2.Grow(2); TODO: implement
+//http://www1.lsbu.ac.uk/water/escs.html
 
-        /*Molecule CPK representation as sdf primitive
-        For info on representation:
-        https://en.wikipedia.org/wiki/Space-filling_model
-        */
-        sdfMolBallSticksMol mol;//
-        mol.SetContext(m.GetOutput());
-        mol.SetNumFrames(3);
-        mol.SetCenter(read.GetOutput1(), 1); /*<Sets atoms centers*/
-                                             //mol.SimulateDynamic(6, read.GetOutput1()); - works, but we will try collapse of cluster
-        mol.SetCenter(read2.GetOutput1(), 2);
-        //mol.SetCenter(read2.GetOutput1(), 3);
-        mol.SetCenter(read.GetOutput1(), 3);
+sdfMolBallSticksMol mol;//
+mol.SetContext(m.GetOutput());
+mol.SetNumFrames(3);
+mol.SetCenter(read.GetOutput1(), 1);
 
-        mol.SetRadius(read.GetOutput2()); /*<Sets atoms radii specified for element type,
-                                          for info: https://en.wikipedia.org/wiki/Atomic_radius*/
-        mol.SetType(read.GetOutput3()); /*<Sets atom type*/
-                                        //after all to correctly fix number
-        mol.SetBonds(read.GetOutput4()); /*<Sets atoms centers*/
-        mol.SetMols(read.GetOutput5(), 2);
-        mol.SetMaterialType(0);
-        mol.Update();
+mol.SetCenter(read2.GetOutput1(), 2);
+//mol.SetCenter(read2.GetOutput1(), 3);
+mol.SetCenter(read.GetOutput1(), 3);
 
-        vaBasicMaterial mSdfS;
-        mSdfS.SetContext(m.GetOutput());
-        /*<Sets callable program for color mapping
-        automatically switch to mapping mode data to color,
-        not default color*/
+mol.SetRadius(read.GetOutput2());
+mol.SetType(read.GetOutput3());
+mol.SetBonds(read.GetOutput4());
+mol.SetMols(read.GetOutput5(), 2);
+mol.SetMaterialType(0);
+mol.Update();
 
-        //mSdfS.SetColorScheme(opB1.GetOutput());
-        mSdfS.Update();
+vaBasicMaterial mSdfS;
+mSdfS.SetContext(m.GetOutput());
 
-        vaMolVolume mSdf;
-        mSdf.SetContext(m.GetOutput());
-        /*<Sets callable program for color mapping
-        automatically switch to mapping mode data to color,
-        not default color*/
+//mSdfS.SetColorScheme(opB1.GetOutput());
+mSdfS.Update();
 
-        mSdf.Update();
+vaMolVolume mSdf;
+mSdf.SetContext(m.GetOutput());
 
-        /*
-        Creates auditory material
-        */
-        SDFAudioVolumeMaterial mVSdf2;
-        mVSdf2.SetContext(m.GetOutput());
-        mVSdf2.Update();
+mSdf.Update();
 
-        /*
-        Creates mapper
-        */
+SDFAudioVolumeMaterial mVSdf2;
+mVSdf2.SetContext(m.GetOutput());
+mVSdf2.Update();
 
-        map3->SetContext(m.GetOutput());
-        //map3->SetInput(mol.GetOutput());
-        map3->SetDescInput(mol.GetOutputDesc());
-        map3->AddMaterial(mSdf.GetOutput(), mSdf.GetType()); /*<Sets optical object properties*/
-        map3->SetScalarModeOn();
-        map3->AddMaterial(mVSdf2.GetOutput(), mVSdf2.GetType()); /*<Sets auditory object properties*/
-        map3->Update();
+map3->SetContext(m.GetOutput());
+//map3->SetInput(mol.GetOutput());
+map3->SetDescInput(mol.GetOutputDesc());
+map3->AddMaterial(mSdf.GetOutput(), mSdf.GetType());
+map3->SetScalarModeOn();
+map3->AddMaterial(mVSdf2.GetOutput(), mVSdf2.GetType());
+map3->Update();
 
-        /*
-        Creates actor
-        */
+acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
+acSdfMol->AddMapper(map3);
 
-        acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
-        acSdfMol->AddMapper(map3);
+acSdfMol->Update();
 
-        acSdfMol->Update();
-
-        ren.AddActor(acSdfMol);
+ren.AddActor(acSdfMol);
     }
 
     std::cout << "DONE WITH SCENE" << std::endl;
@@ -321,7 +297,139 @@ int example3()
 
     return 0;
 }
+*/
+int main_tutor2()
+{
+    int  windowWidth = 1512;
+    int  windowHeight = 1512;
 
+    std::shared_ptr<PinholeCamera> pinholeCamera = std::shared_ptr<PinholeCamera>(new PinholeCamera()); //creates basic camera
+
+    contextManager m;
+    m.Update();//creates context
+
+    std::shared_ptr< vaRenderer> ren = std::shared_ptr< vaRenderer>(new vaRenderer());
+    ren->SetValid(m.GetValid());
+    ren->SetContext(m.GetOutput());
+
+    std::shared_ptr<vaBaseWidget> widget = std::shared_ptr<vaBaseWidget>(new vaRayCastBaseWidget());
+    widget->SetContext(m.GetOutput());
+
+    ren->SetOpticalDims(windowWidth, windowWidth);
+    ren->SetCamera(pinholeCamera);
+
+    //set not dynamic
+    ren->SetDynamic(false);
+    ren->SetAuditory(false);
+
+    //window procedure
+
+    std::shared_ptr<GLFW_Window> optixWindowProc = std::shared_ptr<GLFW_Window>(new GLFW_Window());
+
+    // vaBasicRenderer va = ren.get();
+    optixWindowProc->SetDim(windowWidth, windowHeight);
+    optixWindowProc->SetRenderer(ren);
+    optixWindowProc->SetContext(m.GetOutput()); //returns context
+    optixWindowProc->SetCamera(pinholeCamera);
+
+    RenderWindowInteractor iren; //TODO always check that basic still works
+    iren.SetWindow(optixWindowProc);
+    iren.SetTimeFrames(3);
+    iren.SetTSpeed(0.2);
+
+    /*
+    Creates actor
+    */
+    std::shared_ptr<vaActor> acSdfMol = std::shared_ptr<vaActor>(new vaActor());
+    /*
+    Creates mapper
+    */
+    std::shared_ptr<vaMapper> map3 = std::shared_ptr<vaMapper>(new vaMapper());
+
+    std::cout << "DONE WITH WINDOW" << std::endl;
+
+    if (iren.SetUp()) //update of WindowProc
+    {
+        std::cout << "START MAIN LOOP" << std::endl;
+        widget->CreateGeometryHandle();
+        ren->SetWidget(widget);
+        //Scene creation
+        try
+        {
+            xyzReader read;
+            read.Setfile("slice.xyz");
+            read.Update();
+
+            /*Molecule CPK representation as sdf primitive
+            For info on representation:
+            https://en.wikipedia.org/wiki/Space-filling_model
+            */
+            sdfHMicro mol;//sdfHMicrostructure mol;// // sdfHeterogeneous mol;//sdfCPKMol mol; //
+            mol.SetContext(m.GetOutput());
+            mol.SetCenter(read.GetOutput1()); /*<Sets atoms centers*/
+            mol.SetRadius(read.GetOutput2()); /*<Sets atoms radii specified for element type,
+                                              for info: https://en.wikipedia.org/wiki/Atomic_radius*/
+            mol.SetType(read.GetOutput3()); /*<Sets atom type*/
+
+            mol.SetMaterialType(0);
+            mol.Update();
+
+            BasicLight l1;
+            l1.color = optix::make_float3(1.0);
+            l1.pos = optix::make_float3(10.0);
+
+            BasicLight l2;
+            l2.color = optix::make_float3(1.0);
+            l2.pos = optix::make_float3(0, 0, 10.0);
+
+            BasicLight l3;
+            l3.color = optix::make_float3(1.0);
+            l3.pos = optix::make_float3(-10.0, 0, -1.0);
+
+            vaVolumeSDFHetero texMaterial;
+
+            texMaterial.SetContext(m.GetOutput());
+            /*Get heterogeneous object type to compile the right program*/
+            texMaterial.SetHeteroObjType(mol.GetPrimType());
+            texMaterial.SetPostprocess(1);
+            //texMaterial.AddLight(&l1);
+           // texMaterial.AddLight(&l2);
+            //texMaterial.AddLight(&l3);
+            texMaterial.SetSDFProg(mol.GetCallableProg()); /*<Gets sdf primitive optix callable program reference*/
+            //texMaterial.SetType(vaEAVolume::MaterialType::TRANSP); /*<Volume rendering mode*/
+                                                                   //texMaterial.SetTexture(readR1.GetTexture());
+                                                                   //texMaterial.SetTexture(readR2.GetTexture());
+            texMaterial.Update();
+
+            map3->SetContext(m.GetOutput());
+            map3->SetInput(mol.GetOutput());
+            map3->AddMaterial(texMaterial.GetOutput(), texMaterial.GetType()); /*<Sets optical object properties*/
+            map3->SetScalarModeOn();
+            // map3->AddMaterial(mVSdf2.GetOutput(), mVSdf2.GetType()); /*<Sets auditory object properties*/
+            map3->Update();
+
+            acSdfMol->SetContext(m.GetOutput()); //sets context and initialize acceleration properties
+            acSdfMol->AddMapper(map3);
+            acSdfMol->Update();
+
+            ren->AddActor(acSdfMol);
+            ren->SetPostProcessMaterial(texMaterial.GetEvalProg(), texMaterial.GetColorProg());
+            //store
+        }
+        catch (optix::Exception& e)
+        {
+            std::cerr << e.getErrorString() << std::endl;
+        }
+        std::cout << "DONE WITH SCENE" << std::endl;
+
+        //Main loop
+        iren.Start();
+        std::cout << "MAIN LOOP STARTED" << std::endl;
+    }
+    glfwTerminate();
+    return 0;
+}
+/*
 int main_tutor()
 {
     int  windowWidth = 1512;
@@ -348,12 +456,12 @@ int main_tutor()
     GLFW_Window optixWindowProc;
 
     optixWindowProc.SetDim(windowWidth, windowHeight);
-    optixWindowProc.SetRenderer(&ren);
+    optixWindowProc.SetRenderer(ren);
     optixWindowProc.SetContext(m.GetOutput()); //returns context
-    optixWindowProc.SetCamera(&pinholeCamera);
+    optixWindowProc.SetCamera(pinholeCamera);
 
     RenderWindowInteractor iren; //TODO always check that basic still works
-    iren.SetWindow(&optixWindowProc);
+    iren.SetWindow(optixWindowProc);
     iren.SetTimeFrames(3);
     iren.SetTSpeed(0.2);
     std::cout << "DONE WITH WINDOW" << std::endl;
@@ -410,18 +518,18 @@ int main_tutor()
             mSdf.SetContext(m.GetOutput());
             mSdf.Update();
 
-            vaMapper map21;
-            map21.SetContext(m.GetOutput());
-            map21.SetInput(sdf.GetOutput());
-            map21.AddMaterial(mSdf.GetOutput(), mSdf.GetType());
-            map21.Update();
+            std::shared_ptr<vaMapper> map21;
+            map21->SetContext(m.GetOutput());
+            map21->SetInput(sdf.GetOutput());
+            map21->AddMaterial(mSdf.GetOutput(), mSdf.GetType());
+            map21->Update();
 
-            vaActor acSdf1;
-            acSdf1.SetContext(m.GetOutput());
-            acSdf1.AddMapper(&map21);
-            acSdf1.Update();
+            std::shared_ptr<vaActor> acSdf1;
+            acSdf1->SetContext(m.GetOutput());
+            acSdf1->AddMapper(map21);
+            acSdf1->Update();
 
-            ren.AddActor(&acSdf1);
+            ren.AddActor(acSdf1);
         }
         catch (optix::Exception& e)
         {
@@ -436,6 +544,7 @@ int main_tutor()
 
     return 0;
 }
+*/
 int leapMotion()
 {
     int  windowWidth = 1512;
@@ -444,7 +553,7 @@ int leapMotion()
     bool interop = true;  // Use OpenGL interop Pixel-Bufferobject to display the resulting image. Disable this when running on multi-GPU or TCC driver mode.
     int  stackSize = 1024;  // Command line parameter just to be able to find the smallest working size.
 
-    GLFW_Window optixWindowProc;
+    std::shared_ptr<GLFW_Window> optixWindowProc;
     //creates scene
     std::cout << "INITED" << std::endl;
 
@@ -457,14 +566,14 @@ int leapMotion()
     //chose an example to display
     g_app.SetExample(6);
 
-    optixWindowProc.SetDim(windowWidth, windowHeight);
-    optixWindowProc.SetRenderer(g_app.ren);
-    optixWindowProc.SetContext(g_app.GetContext());
-    optixWindowProc.SetCamera(g_app.m_pinholeCamera.get());
+    optixWindowProc->SetDim(windowWidth, windowHeight);
+    optixWindowProc->SetRenderer(g_app.ren);
+    optixWindowProc->SetContext(g_app.GetContext());
+    optixWindowProc->SetCamera(g_app.m_pinholeCamera);
 
     RenderWindowInteractor iren; //TODO always check that basic still works
-    iren.SetWidget(g_app.m_widget.get());
-    iren.SetWindow(&optixWindowProc);
+    iren.SetWidget(g_app.m_widget);
+    iren.SetWindow(optixWindowProc);
     //setting number of type frames to play
     iren.SetTimeFrames(2);
     //iren.SetTimeFrames(3);//5);
@@ -481,8 +590,8 @@ int leapMotion()
     {
         unsigned int accumulation_frame = 0;
         //all should be called after setUp
-        Render::CallbackData cb = { (g_app.m_pinholeCamera).get(), &iren, g_app.ren, accumulation_frame };
-        glfwSetWindowUserPointer(optixWindowProc.GetOutput(), &cb);
+        Render::CallbackData cb = { (g_app.m_pinholeCamera).get(), &iren, g_app.ren.get(), accumulation_frame };
+        glfwSetWindowUserPointer(optixWindowProc->GetOutput(), &cb);
         //sets user defined callback
         iren.SetKeyCallback(keyCallback);
         g_app.Init(); //scene creation
@@ -508,29 +617,29 @@ int examples(int exampleNumber)
     bool interop = true;  // Use OpenGL interop Pixel-Bufferobject to display the resulting image. Disable this when running on multi-GPU or TCC driver mode.
     int  stackSize = 1024;  // Command line parameter just to be able to find the smallest working size.
 
-    GLFW_Window optixWindowProc;
+    std::shared_ptr<GLFW_Window> optixWindowProc = std::shared_ptr<GLFW_Window>(new GLFW_Window());
     //creates scene
     std::cout << "INITED" << std::endl;
 
     //number of example to run
 
-    SceneManager g_app;
+    SceneManager2 g_app;
     //g_app.SetDims(windowWidth, windowHeight,
     //   devices, stackSize, interop);
 
     //chose an example to display
-    g_app.SetExample(exampleNumber);
+   // g_app.SetExample(exampleNumber);
 
-    optixWindowProc.SetDim(windowWidth, windowHeight);
-    optixWindowProc.SetRenderer(g_app.ren);
-    optixWindowProc.SetContext(g_app.GetContext());
-    optixWindowProc.SetCamera(g_app.m_pinholeCamera.get());
+    optixWindowProc->SetDim(windowWidth, windowHeight);
+    optixWindowProc->SetRenderer(g_app.GetRenderer());
+    optixWindowProc->SetContext(g_app.GetContext());
+    optixWindowProc->SetCamera(g_app.GetCamera());
 
     RenderWindowInteractor iren; //TODO always check that basic still works
-    iren.SetWidget(g_app.m_widget.get());
-    iren.SetWindow(&optixWindowProc);
+    //iren.SetWidget(g_app.GetWidget());
+    iren.SetWindow(optixWindowProc);
     //setting number of type frames to play
-    iren.SetTimeFrames(2);
+    iren.SetTimeFrames(3); //3
     //iren.SetTimeFrames(3);//5);
     iren.SetTSpeed(0.02);
 
@@ -545,13 +654,13 @@ int examples(int exampleNumber)
     {
         unsigned int accumulation_frame = 0;
         //all should be called after setUp
-        Render::CallbackData cb = { (g_app.m_pinholeCamera).get(), &iren, g_app.ren, accumulation_frame };
-        glfwSetWindowUserPointer(optixWindowProc.GetOutput(), &cb);
+        Render::CallbackData cb = { (g_app.GetCamera()).get(), &iren, g_app.GetRenderer().get(), accumulation_frame };
+        glfwSetWindowUserPointer(optixWindowProc->GetOutput(), &cb);
         //sets user defined callback
         iren.SetKeyCallback(keyCallback);
         g_app.Init(); //scene creation
                       // Main loop
-        iren.GetWidget()->Hide();
+        //iren.GetWidget()->Hide();
         //attaching controller. Works
         // iren.SetController(&controller);
         iren.Start();
@@ -569,16 +678,18 @@ int main(int argc, char *argv[])
     //For description of scenes please look at Application.cpp
     //Run first example
 
+    main_tutor2();
     examples(0);
+
     //Other example
-    examples(1);
+    /*examples(1);
 
     examples(3);
 
     examples(4);
-    /*
-    Not related to heterogeneous objects tests
-    */
+
+   // Not related to heterogeneous objects tests
+
     //leap motion example
     // leap motion device is required
     leapMotion();
@@ -587,4 +698,5 @@ int main(int argc, char *argv[])
     //simple constructive tree
     //within basic vtk like pipeline test
     main_tutor();
+    */
 }

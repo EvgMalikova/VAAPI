@@ -1,0 +1,568 @@
+\doxysection{va\+Basic\+Renderer Class Reference}
+\label{classva_basic_renderer}\index{vaBasicRenderer@{vaBasicRenderer}}
+
+
+Abstract visual-\/auditory renderer.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Basic\+Renderer.\+h$>$}
+
+
+
+Inheritance diagram for va\+Basic\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classva_basic_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for va\+Basic\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classva_basic_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \textbf{ O\+P\+T\+I\+C\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG}, 
+\textbf{ A\+U\+D\+I\+T\+O\+R\+Y\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG}
+ \}
+\item 
+enum \textbf{ Render\+Modes} \{ \textbf{ I\+N\+T\+E\+R\+A\+C\+T\+I\+V\+E\+\_\+\+C\+A\+M\+E\+RA}, 
+\textbf{ C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+O\+U\+ND}, 
+\textbf{ P\+L\+A\+Y\+\_\+\+A\+N\+I\+M\+A\+T\+I\+ON}, 
+\textbf{ I\+N\+T\+E\+R\+A\+C\+T\+I\+V\+E\+\_\+\+W\+I\+D\+G\+ET}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Update\+Audio\+Buffer} ()
+\item 
+void \textbf{ Render\+Audio} ()
+\item 
+optix\+::\+Buffer \textbf{ Get\+Output\+Sound\+Buffer} ()
+\item 
+void \textbf{ set\+Audio\+Buffer} ()
+\item 
+void \textbf{ set\+Optic\+Buffer} ()
+\item 
+void \textbf{ Get\+Audio\+Dim} (int \&w, int \&h)
+\item 
+\textbf{ va\+Basic\+Renderer} ()
+\item 
+\textbf{ $\sim$va\+Basic\+Renderer} ()
+\item 
+void \textbf{ Set\+Optical\+Dims} (int width, int height)
+\item 
+void \textbf{ Set\+Auditory\+Dims} (int width, int height)
+\item 
+\textbf{ Render\+Modes} \textbf{ Get\+Mode} ()
+\item 
+void \textbf{ Set\+Mode} (\textbf{ Render\+Modes} m)
+\item 
+virtual void \textbf{ Update} ()
+\item 
+void \textbf{ Set\+Up\+Renderer} ()
+\item 
+void \textbf{ Set\+Dynamic} (bool type)
+\item 
+void \textbf{ Set\+Auditory} (bool type)
+\item 
+bool \textbf{ is\+Dynamic} ()
+\item 
+bool \textbf{ is\+Auditory} ()
+\item 
+void \textbf{ Set\+Time} (float time)
+\item 
+float \textbf{ Get\+Time} ()
+\item 
+void \textbf{ Add\+Actor} (\textbf{ optix\+Basic\+Actor} $\ast$act)
+\item 
+\textbf{ optix\+Basic\+Actor} $\ast$ \textbf{ Get\+Actor} (int i)
+\item 
+int \textbf{ Get\+Num\+Of\+Actors} ()
+\item 
+void \textbf{ Launch\+Optic\+Context} ()
+\item 
+void \textbf{ Launch\+Auditory\+Context} ()
+\item 
+virtual void \textbf{ Reshape} (int width, int height)
+\item 
+virtual bool \textbf{ Render} ()
+\item 
+virtual void \textbf{ Display} ()
+\item 
+void \textbf{ Activate\+Optical\+Model} ()
+\item 
+void \textbf{ Activate\+Auditory\+Model} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Init\+Renderer} ()
+\item 
+bool \textbf{ Play\+Animation} (float play\+\_\+time)
+\item 
+void \textbf{ Init\+Prog} (std\+::string prog, std\+::string file, std\+::string name)
+\item 
+void \textbf{ Set\+Ray\+Generation\+Prog} ()
+\item 
+void \textbf{ Set\+Exception\+Prog} ()
+\item 
+void \textbf{ Set\+Miss\+Prog} ()
+\item 
+void \textbf{ Set\+Auditory\+Ray\+Generation\+Prog} ()
+\item 
+void \textbf{ Set\+Auditory\+Exception\+Prog} ()
+\item 
+void \textbf{ Set\+Auditory\+Miss\+Prog} ()
+\item 
+void \textbf{ Set\+Ray\+Generation\+Prog\+Name} (std\+::string name)
+\item 
+void \textbf{ Set\+Exception\+Prog\+Name} (std\+::string name)
+\item 
+void \textbf{ Set\+Miss\+Prog\+Name} (std\+::string name)
+\item 
+void \textbf{ Set\+Auditory\+Ray\+Generation\+Prog\+Name} (std\+::string name)
+\item 
+void \textbf{ Set\+Auditory\+Exception\+Prog\+Name} (std\+::string name)
+\item 
+void \textbf{ Set\+Auditory\+Miss\+Prog\+Name} (std\+::string name)
+\item 
+std\+::string \textbf{ Get\+Ray\+Generation\+Prog\+Name} ()
+\item 
+std\+::string \textbf{ Get\+Exception\+Prog\+Name} ()
+\item 
+std\+::string \textbf{ Get\+Miss\+Prog\+Name} ()
+\item 
+std\+::string \textbf{ Get\+Auditory\+Ray\+Generation\+Prog\+Name} ()
+\item 
+std\+::string \textbf{ Get\+Auditory\+Exception\+Prog\+Name} ()
+\item 
+std\+::string \textbf{ Get\+Auditory\+Miss\+Prog\+Name} ()
+\item 
+void \textbf{ Init\+Acceleration} ()
+\item 
+void \textbf{ Set\+Programs} ()
+\item 
+void \textbf{ Initialize\+Programs} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \textbf{ auditory\+Model} $>$ \textbf{ audioM}
+\item 
+std\+::unique\+\_\+ptr$<$ \textbf{ va\+Basic\+Model} $>$ \textbf{ opticM}
+\item 
+std\+::map$<$ std\+::string, optix\+::\+Program $>$ \textbf{ m\+\_\+map\+Of\+Programs}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract visual-\/auditory renderer. 
+
+Architecture much inspired by V\+TK Renderer({\texttt{ http\+://vtk.\+org}}) implementation Abstract visual-\/auditory renderer 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\label{classva_basic_renderer_ad399c4099d224c948c602a741f123d4d}} 
+\doxysubsubsection{anonymous enum}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPTIC\_RAYCASTING@{OPTIC\_RAYCASTING}!vaBasicRenderer@{vaBasicRenderer}}\index{vaBasicRenderer@{vaBasicRenderer}!OPTIC\_RAYCASTING@{OPTIC\_RAYCASTING}}}\mbox{\label{classva_basic_renderer_ad399c4099d224c948c602a741f123d4dafe3dbdf26059530c90e516e2f2da59af}} 
+O\+P\+T\+I\+C\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AUDITORY\_RAYCASTING@{AUDITORY\_RAYCASTING}!vaBasicRenderer@{vaBasicRenderer}}\index{vaBasicRenderer@{vaBasicRenderer}!AUDITORY\_RAYCASTING@{AUDITORY\_RAYCASTING}}}\mbox{\label{classva_basic_renderer_ad399c4099d224c948c602a741f123d4dad3e7f9abe7b673b7c6db04da90d79db2}} 
+A\+U\+D\+I\+T\+O\+R\+Y\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\label{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9f}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!RenderModes@{RenderModes}}
+\index{RenderModes@{RenderModes}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{RenderModes}
+{\footnotesize\ttfamily enum \textbf{ va\+Basic\+Renderer\+::\+Render\+Modes}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTERACTIVE\_CAMERA@{INTERACTIVE\_CAMERA}!vaBasicRenderer@{vaBasicRenderer}}\index{vaBasicRenderer@{vaBasicRenderer}!INTERACTIVE\_CAMERA@{INTERACTIVE\_CAMERA}}}\mbox{\label{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa76a4399202e73495fbb8f4a776dd6480}} 
+I\+N\+T\+E\+R\+A\+C\+T\+I\+V\+E\+\_\+\+C\+A\+M\+E\+RA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPUTE\_SOUND@{COMPUTE\_SOUND}!vaBasicRenderer@{vaBasicRenderer}}\index{vaBasicRenderer@{vaBasicRenderer}!COMPUTE\_SOUND@{COMPUTE\_SOUND}}}\mbox{\label{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa7ced917b43ef5f85d18471cabee516b8}} 
+C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+O\+U\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAY\_ANIMATION@{PLAY\_ANIMATION}!vaBasicRenderer@{vaBasicRenderer}}\index{vaBasicRenderer@{vaBasicRenderer}!PLAY\_ANIMATION@{PLAY\_ANIMATION}}}\mbox{\label{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa9a8ca32769782be39ac44fd89cb3b054}} 
+P\+L\+A\+Y\+\_\+\+A\+N\+I\+M\+A\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTERACTIVE\_WIDGET@{INTERACTIVE\_WIDGET}!vaBasicRenderer@{vaBasicRenderer}}\index{vaBasicRenderer@{vaBasicRenderer}!INTERACTIVE\_WIDGET@{INTERACTIVE\_WIDGET}}}\mbox{\label{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9fa7e861b849f10ba4c588123a41888022c}} 
+I\+N\+T\+E\+R\+A\+C\+T\+I\+V\+E\+\_\+\+W\+I\+D\+G\+ET&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classva_basic_renderer_a50d5d6a95945edf4ba1506261e6f93d1}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!vaBasicRenderer@{vaBasicRenderer}}
+\index{vaBasicRenderer@{vaBasicRenderer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{vaBasicRenderer()}
+{\footnotesize\ttfamily va\+Basic\+Renderer\+::va\+Basic\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_a9c1a45eb4f1c95956b2855ce61fe1502}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!````~vaBasicRenderer@{$\sim$vaBasicRenderer}}
+\index{````~vaBasicRenderer@{$\sim$vaBasicRenderer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{$\sim$vaBasicRenderer()}
+{\footnotesize\ttfamily va\+Basic\+Renderer\+::$\sim$va\+Basic\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classva_basic_renderer_a2f97d8985d1d1a9ddb3bfde480eacf49}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!ActivateAuditoryModel@{ActivateAuditoryModel}}
+\index{ActivateAuditoryModel@{ActivateAuditoryModel}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{ActivateAuditoryModel()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Activate\+Auditory\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classva_basic_renderer_a728a51a54eca4be7e1a9f41ebbbcfba1}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!ActivateOpticalModel@{ActivateOpticalModel}}
+\index{ActivateOpticalModel@{ActivateOpticalModel}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{ActivateOpticalModel()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Activate\+Optical\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classva_basic_renderer_aaead572254da5407fe05670e81504b69}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!AddActor@{AddActor}}
+\index{AddActor@{AddActor}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{AddActor()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Add\+Actor (\begin{DoxyParamCaption}\item[{\textbf{ optix\+Basic\+Actor} $\ast$}]{act }\end{DoxyParamCaption})}
+
+\mbox{\label{classva_basic_renderer_abaaa7b7530160ff43391b824b35bb73c}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!Display@{Display}}
+\index{Display@{Display}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{Display()}
+{\footnotesize\ttfamily virtual void va\+Basic\+Renderer\+::\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classva_basic_renderer_a9d4ffe60c8af2bc3e68ad56a878119f1}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetActor@{GetActor}}
+\index{GetActor@{GetActor}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{GetActor()}
+{\footnotesize\ttfamily \textbf{ optix\+Basic\+Actor}$\ast$ va\+Basic\+Renderer\+::\+Get\+Actor (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_a642debd3004e460d034dbbcdc0a6ac03}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetAudioDim@{GetAudioDim}}
+\index{GetAudioDim@{GetAudioDim}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{GetAudioDim()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Get\+Audio\+Dim (\begin{DoxyParamCaption}\item[{int \&}]{w,  }\item[{int \&}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_a69b40f3dd9d151d7e76300bd9660623f}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetAuditoryExceptionProgName@{GetAuditoryExceptionProgName}}
+\index{GetAuditoryExceptionProgName@{GetAuditoryExceptionProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{GetAuditoryExceptionProgName()}
+{\footnotesize\ttfamily std\+::string va\+Basic\+Renderer\+::\+Get\+Auditory\+Exception\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_aa55aa7fa4bf5226bdb62c818cb90e3e6}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetAuditoryMissProgName@{GetAuditoryMissProgName}}
+\index{GetAuditoryMissProgName@{GetAuditoryMissProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{GetAuditoryMissProgName()}
+{\footnotesize\ttfamily std\+::string va\+Basic\+Renderer\+::\+Get\+Auditory\+Miss\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a3a61bceb1c3ec741febc3ad571b73b84}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetAuditoryRayGenerationProgName@{GetAuditoryRayGenerationProgName}}
+\index{GetAuditoryRayGenerationProgName@{GetAuditoryRayGenerationProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{GetAuditoryRayGenerationProgName()}
+{\footnotesize\ttfamily std\+::string va\+Basic\+Renderer\+::\+Get\+Auditory\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a8a640ec33bf7368c0265c5bf353f453c}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetExceptionProgName@{GetExceptionProgName}}
+\index{GetExceptionProgName@{GetExceptionProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{GetExceptionProgName()}
+{\footnotesize\ttfamily std\+::string va\+Basic\+Renderer\+::\+Get\+Exception\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_ab1e47af59161dc7fc0554b14a3370a4d}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetMissProgName@{GetMissProgName}}
+\index{GetMissProgName@{GetMissProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{GetMissProgName()}
+{\footnotesize\ttfamily std\+::string va\+Basic\+Renderer\+::\+Get\+Miss\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a013cceedeaf7374f11760591e7d2eb47}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{GetMode()}
+{\footnotesize\ttfamily \textbf{ Render\+Modes} va\+Basic\+Renderer\+::\+Get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_ab4bfbf785e833db18ea5a05d09cf1e0e}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetNumOfActors@{GetNumOfActors}}
+\index{GetNumOfActors@{GetNumOfActors}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{GetNumOfActors()}
+{\footnotesize\ttfamily int va\+Basic\+Renderer\+::\+Get\+Num\+Of\+Actors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_ab2eb10ee9cb29add9315c86ed4fccc8d}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetOutputSoundBuffer@{GetOutputSoundBuffer}}
+\index{GetOutputSoundBuffer@{GetOutputSoundBuffer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{GetOutputSoundBuffer()}
+{\footnotesize\ttfamily optix\+::\+Buffer va\+Basic\+Renderer\+::\+Get\+Output\+Sound\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_aa73a7691ea7e8791da8da140aecdc706}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetRayGenerationProgName@{GetRayGenerationProgName}}
+\index{GetRayGenerationProgName@{GetRayGenerationProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{GetRayGenerationProgName()}
+{\footnotesize\ttfamily std\+::string va\+Basic\+Renderer\+::\+Get\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_af97ece209eadc40b8cea16c6c51230cf}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!GetTime@{GetTime}}
+\index{GetTime@{GetTime}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{GetTime()}
+{\footnotesize\ttfamily float va\+Basic\+Renderer\+::\+Get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_a19b70836f23a0a120cd71cdc1055f9c1}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!InitAcceleration@{InitAcceleration}}
+\index{InitAcceleration@{InitAcceleration}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{InitAcceleration()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Init\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_ad00959e8a8650a53f056fa3a84ca3a2d}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!InitializePrograms@{InitializePrograms}}
+\index{InitializePrograms@{InitializePrograms}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{InitializePrograms()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Initialize\+Programs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a08bd686112e66c7785167e1324e191ea}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!InitProg@{InitProg}}
+\index{InitProg@{InitProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{InitProg()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Init\+Prog (\begin{DoxyParamCaption}\item[{std\+::string}]{prog,  }\item[{std\+::string}]{file,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a10fd3be163c1aac620e59a95cfdfd50a}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!InitRenderer@{InitRenderer}}
+\index{InitRenderer@{InitRenderer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{InitRenderer()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Init\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classva_basic_renderer_a0c6b842bc67d66a2b89aba5235ec67e9}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!isAuditory@{isAuditory}}
+\index{isAuditory@{isAuditory}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{isAuditory()}
+{\footnotesize\ttfamily bool va\+Basic\+Renderer\+::is\+Auditory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_a92d8fa28c0a213000054e270b0a7d4ae}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!isDynamic@{isDynamic}}
+\index{isDynamic@{isDynamic}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{isDynamic()}
+{\footnotesize\ttfamily bool va\+Basic\+Renderer\+::is\+Dynamic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_a29934d24ea69403e9232f25ba3db4b72}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!LaunchAuditoryContext@{LaunchAuditoryContext}}
+\index{LaunchAuditoryContext@{LaunchAuditoryContext}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{LaunchAuditoryContext()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Launch\+Auditory\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classva_basic_renderer_a86cdcb90839937790fd0e6242900179f}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!LaunchOpticContext@{LaunchOpticContext}}
+\index{LaunchOpticContext@{LaunchOpticContext}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{LaunchOpticContext()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Launch\+Optic\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classva_basic_renderer_a234c554b49ee27922adebe730973676b}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!PlayAnimation@{PlayAnimation}}
+\index{PlayAnimation@{PlayAnimation}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{PlayAnimation()}
+{\footnotesize\ttfamily bool va\+Basic\+Renderer\+::\+Play\+Animation (\begin{DoxyParamCaption}\item[{float}]{play\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a263ec75ed17e17f3d84317fe4e5430a3}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!Render@{Render}}
+\index{Render@{Render}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{Render()}
+{\footnotesize\ttfamily virtual bool va\+Basic\+Renderer\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classva_basic_renderer_aefeaf678e80e8a65e9cc831bb0a8daa5}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!RenderAudio@{RenderAudio}}
+\index{RenderAudio@{RenderAudio}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{RenderAudio()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Render\+Audio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_aa18b42581e83c941e425749fd21674c5}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{Reshape()}
+{\footnotesize\ttfamily virtual void va\+Basic\+Renderer\+::\+Reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classva_basic_renderer_a39d0aa561b4672f0f5a918ebc14c2008}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!setAudioBuffer@{setAudioBuffer}}
+\index{setAudioBuffer@{setAudioBuffer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{setAudioBuffer()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::set\+Audio\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Binds a buffer of a particular name to audio output buffer \mbox{\label{classva_basic_renderer_a10bc57a75c2d6ff93a44fb4a0506871b}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditory@{SetAuditory}}
+\index{SetAuditory@{SetAuditory}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetAuditory()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory (\begin{DoxyParamCaption}\item[{bool}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_a6d8586548527489b22b841e8934dc11f}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryDims@{SetAuditoryDims}}
+\index{SetAuditoryDims@{SetAuditoryDims}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetAuditoryDims()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Dims (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets dimensions for optical Model \mbox{\label{classva_basic_renderer_aa7dcdec5bd37f67b81cc7e85c58a6274}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryExceptionProg@{SetAuditoryExceptionProg}}
+\index{SetAuditoryExceptionProg@{SetAuditoryExceptionProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetAuditoryExceptionProg()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Exception\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a2ea4b97752273379423d159cfe87d015}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryExceptionProgName@{SetAuditoryExceptionProgName}}
+\index{SetAuditoryExceptionProgName@{SetAuditoryExceptionProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetAuditoryExceptionProgName()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Exception\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a548e91d6eebca6260ef3bc8aa50dd4f5}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryMissProg@{SetAuditoryMissProg}}
+\index{SetAuditoryMissProg@{SetAuditoryMissProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetAuditoryMissProg()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Miss\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a910b1f496268d76b93333366fa4f428e}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryMissProgName@{SetAuditoryMissProgName}}
+\index{SetAuditoryMissProgName@{SetAuditoryMissProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetAuditoryMissProgName()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Miss\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a9b95c381d17e1c27cdc0c442c2bec358}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryRayGenerationProg@{SetAuditoryRayGenerationProg}}
+\index{SetAuditoryRayGenerationProg@{SetAuditoryRayGenerationProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetAuditoryRayGenerationProg()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Ray\+Generation\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_af79e90f5f16a4a2248abd9b4515fdea8}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetAuditoryRayGenerationProgName@{SetAuditoryRayGenerationProgName}}
+\index{SetAuditoryRayGenerationProgName@{SetAuditoryRayGenerationProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetAuditoryRayGenerationProgName()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Auditory\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_af4a16fc60f5c3153f163baf955015b9c}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetDynamic@{SetDynamic}}
+\index{SetDynamic@{SetDynamic}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetDynamic()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Dynamic (\begin{DoxyParamCaption}\item[{bool}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_a0032039e5c6f5f4061c5233828f0aec5}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetExceptionProg@{SetExceptionProg}}
+\index{SetExceptionProg@{SetExceptionProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetExceptionProg()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Exception\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_afd94d4a02b8c9681cf331a9501b9739f}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetExceptionProgName@{SetExceptionProgName}}
+\index{SetExceptionProgName@{SetExceptionProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetExceptionProgName()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Exception\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a60289a106ac6737033103b0b86431c1b}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetMissProg@{SetMissProg}}
+\index{SetMissProg@{SetMissProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetMissProg()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Miss\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a4d71f621e2beed8da88f7fccca66e8b1}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetMissProgName@{SetMissProgName}}
+\index{SetMissProgName@{SetMissProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetMissProgName()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Miss\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_ab4ac023dd0557d46866554031f23237b}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetMode@{SetMode}}
+\index{SetMode@{SetMode}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetMode()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Mode (\begin{DoxyParamCaption}\item[{\textbf{ Render\+Modes}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_a4fa1af5283087ea91cb1d8702d81270a}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetOpticalDims@{SetOpticalDims}}
+\index{SetOpticalDims@{SetOpticalDims}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetOpticalDims()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Optical\+Dims (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets dimensions for optical Model \mbox{\label{classva_basic_renderer_a9c1a91b60379673dd0b693348c11c6ba}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!setOpticBuffer@{setOpticBuffer}}
+\index{setOpticBuffer@{setOpticBuffer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{setOpticBuffer()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::set\+Optic\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Binds a buffer of a particular name to visual output buffer \mbox{\label{classva_basic_renderer_a4e73649af6a397abd268777761d8243e}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetPrograms@{SetPrograms}}
+\index{SetPrograms@{SetPrograms}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetPrograms()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Programs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a84481d1bd9ae7adf132b9bc78d672a74}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetRayGenerationProg@{SetRayGenerationProg}}
+\index{SetRayGenerationProg@{SetRayGenerationProg}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetRayGenerationProg()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Ray\+Generation\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a1763f30f206918e2d7d703be6a17441e}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetRayGenerationProgName@{SetRayGenerationProgName}}
+\index{SetRayGenerationProgName@{SetRayGenerationProgName}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetRayGenerationProgName()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_a73183517f82895474be6a5e39973bea5}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetTime@{SetTime}}
+\index{SetTime@{SetTime}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetTime()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Time (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_basic_renderer_a6c6a04cc84a6ed9e14ac1d211753c924}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!SetUpRenderer@{SetUpRenderer}}
+\index{SetUpRenderer@{SetUpRenderer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{SetUpRenderer()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Set\+Up\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classva_basic_renderer_aecf71df595f929b009ef12e4b3639c0d}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!Update@{Update}}
+\index{Update@{Update}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily virtual void va\+Basic\+Renderer\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classva_basic_renderer_ab45ca39532ea7f4830df1b7c5af3267a}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!UpdateAudioBuffer@{UpdateAudioBuffer}}
+\index{UpdateAudioBuffer@{UpdateAudioBuffer}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{UpdateAudioBuffer()}
+{\footnotesize\ttfamily void va\+Basic\+Renderer\+::\+Update\+Audio\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets to host the buffer of audio model 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classva_basic_renderer_a829b64627811dd706a091362fcb08f53}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!audioM@{audioM}}
+\index{audioM@{audioM}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{audioM}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\textbf{ auditory\+Model}$>$ va\+Basic\+Renderer\+::audioM\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_aeaee5a254e87de6c21e0da8bdf91e923}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!m\_mapOfPrograms@{m\_mapOfPrograms}}
+\index{m\_mapOfPrograms@{m\_mapOfPrograms}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{m\_mapOfPrograms}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, optix\+::\+Program$>$ va\+Basic\+Renderer\+::m\+\_\+map\+Of\+Programs\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_basic_renderer_ad0883704d66e74b5fb90a2fb6564cc4d}} 
+\index{vaBasicRenderer@{vaBasicRenderer}!opticM@{opticM}}
+\index{opticM@{opticM}!vaBasicRenderer@{vaBasicRenderer}}
+\doxysubsubsection{opticM}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\textbf{ va\+Basic\+Model}$>$ va\+Basic\+Renderer\+::opticM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ optix\+Basic\+Renderer.\+h}\item 
+\textbf{ optix\+Basic\+Renderer.\+cpp}\end{DoxyCompactItemize}

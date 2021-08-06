@@ -1,0 +1,5 @@
+<map id="vaBasicModel" name="vaBasicModel">
+<area shape="rect" id="node1" title="The class responsible for rendering auditory propertis." alt="" coords="67,5,169,32"/>
+<area shape="rect" id="node2" href="$classauditory_model.html" title="Architecture much inspired by VTK Renderer(http://vtk.org) implementation The classes are mainly resp..." alt="" coords="5,80,108,107"/>
+<area shape="rect" id="node3" href="$classoptical_model.html" title="Actual binding through texture of the cuda output." alt="" coords="132,80,227,107"/>
+</map>

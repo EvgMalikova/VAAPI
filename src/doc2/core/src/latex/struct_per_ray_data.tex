@@ -1,0 +1,170 @@
+\doxysection{Per\+Ray\+Data Struct Reference}
+\label{struct_per_ray_data}\index{PerRayData@{PerRayData}}
+
+
+{\ttfamily \#include $<$per\+\_\+ray\+\_\+data.\+h$>$}
+
+
+
+Collaboration diagram for Per\+Ray\+Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{struct_per_ray_data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \textbf{ Time\+Sound}
+\item 
+int \textbf{ is\+Dynamic}
+\item 
+optix\+::float3 \textbf{ wo}
+\item 
+optix\+::float3 \textbf{ wi}
+\item 
+optix\+::float3 \textbf{ pos}
+\item 
+int \textbf{ flags}
+\item 
+optix\+::float3 \textbf{ f\+\_\+over\+\_\+pdf}
+\item 
+float \textbf{ pdf}
+\item 
+unsigned int \textbf{ seed}
+\item 
+float \textbf{ rnd}
+\item 
+int \textbf{ depth}
+\item 
+optix\+::float3 \textbf{ radiance}
+\item 
+optix\+::float4 \textbf{ result}
+\item 
+int \textbf{ cur\+\_\+prim}
+\item 
+bool \textbf{ is\+Sound\+Ray}
+\item 
+int \textbf{ numS}
+\item 
+\textbf{ auditory\+Prim} \textbf{ primitives}
+\item 
+optix\+::float3 \textbf{ Distances} [\textbf{ M\+A\+X\+\_\+\+P\+R\+I\+M\+\_\+\+A\+L\+O\+N\+G\+\_\+\+R\+AY}]
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{struct_per_ray_data_ad8609ef637e277a193ced4f8b06ca0f7}} 
+\index{PerRayData@{PerRayData}!cur\_prim@{cur\_prim}}
+\index{cur\_prim@{cur\_prim}!PerRayData@{PerRayData}}
+\doxysubsubsection{cur\_prim}
+{\footnotesize\ttfamily int Per\+Ray\+Data\+::cur\+\_\+prim}
+
+\mbox{\label{struct_per_ray_data_a13ede5cbd4e812b366d12d61c3f44b8c}} 
+\index{PerRayData@{PerRayData}!depth@{depth}}
+\index{depth@{depth}!PerRayData@{PerRayData}}
+\doxysubsubsection{depth}
+{\footnotesize\ttfamily int Per\+Ray\+Data\+::depth}
+
+\mbox{\label{struct_per_ray_data_aae67997b7b7aabe962ada900d51076d5}} 
+\index{PerRayData@{PerRayData}!Distances@{Distances}}
+\index{Distances@{Distances}!PerRayData@{PerRayData}}
+\doxysubsubsection{Distances}
+{\footnotesize\ttfamily optix\+::float3 Per\+Ray\+Data\+::\+Distances[\textbf{ M\+A\+X\+\_\+\+P\+R\+I\+M\+\_\+\+A\+L\+O\+N\+G\+\_\+\+R\+AY}]}
+
+\mbox{\label{struct_per_ray_data_a816430d2b7b1912d621d003a80a46aba}} 
+\index{PerRayData@{PerRayData}!f\_over\_pdf@{f\_over\_pdf}}
+\index{f\_over\_pdf@{f\_over\_pdf}!PerRayData@{PerRayData}}
+\doxysubsubsection{f\_over\_pdf}
+{\footnotesize\ttfamily optix\+::float3 Per\+Ray\+Data\+::f\+\_\+over\+\_\+pdf}
+
+\mbox{\label{struct_per_ray_data_ae094e4df812ab0a60e556ec04247ebeb}} 
+\index{PerRayData@{PerRayData}!flags@{flags}}
+\index{flags@{flags}!PerRayData@{PerRayData}}
+\doxysubsubsection{flags}
+{\footnotesize\ttfamily int Per\+Ray\+Data\+::flags}
+
+\mbox{\label{struct_per_ray_data_a4ba1ba360bccd21f2a92dcabafd92b75}} 
+\index{PerRayData@{PerRayData}!isDynamic@{isDynamic}}
+\index{isDynamic@{isDynamic}!PerRayData@{PerRayData}}
+\doxysubsubsection{isDynamic}
+{\footnotesize\ttfamily int Per\+Ray\+Data\+::is\+Dynamic}
+
+\mbox{\label{struct_per_ray_data_a5c43ef8e34c6928e3ef8fa4a02ba8bbf}} 
+\index{PerRayData@{PerRayData}!isSoundRay@{isSoundRay}}
+\index{isSoundRay@{isSoundRay}!PerRayData@{PerRayData}}
+\doxysubsubsection{isSoundRay}
+{\footnotesize\ttfamily bool Per\+Ray\+Data\+::is\+Sound\+Ray}
+
+\mbox{\label{struct_per_ray_data_aeb2efb7cf6b9abb1dc0daca655f7e18b}} 
+\index{PerRayData@{PerRayData}!numS@{numS}}
+\index{numS@{numS}!PerRayData@{PerRayData}}
+\doxysubsubsection{numS}
+{\footnotesize\ttfamily int Per\+Ray\+Data\+::numS}
+
+\mbox{\label{struct_per_ray_data_a0f264e13082893643d3c07ab9db766dc}} 
+\index{PerRayData@{PerRayData}!pdf@{pdf}}
+\index{pdf@{pdf}!PerRayData@{PerRayData}}
+\doxysubsubsection{pdf}
+{\footnotesize\ttfamily float Per\+Ray\+Data\+::pdf}
+
+\mbox{\label{struct_per_ray_data_aa908c697d3e86ff8f620d39bcf70c1ee}} 
+\index{PerRayData@{PerRayData}!pos@{pos}}
+\index{pos@{pos}!PerRayData@{PerRayData}}
+\doxysubsubsection{pos}
+{\footnotesize\ttfamily optix\+::float3 Per\+Ray\+Data\+::pos}
+
+\mbox{\label{struct_per_ray_data_a2d38219c3332679904568bca64dc648f}} 
+\index{PerRayData@{PerRayData}!primitives@{primitives}}
+\index{primitives@{primitives}!PerRayData@{PerRayData}}
+\doxysubsubsection{primitives}
+{\footnotesize\ttfamily \textbf{ auditory\+Prim} Per\+Ray\+Data\+::primitives}
+
+\mbox{\label{struct_per_ray_data_a7b5366aee51f3c0d0849c9b90d274e67}} 
+\index{PerRayData@{PerRayData}!radiance@{radiance}}
+\index{radiance@{radiance}!PerRayData@{PerRayData}}
+\doxysubsubsection{radiance}
+{\footnotesize\ttfamily optix\+::float3 Per\+Ray\+Data\+::radiance}
+
+\mbox{\label{struct_per_ray_data_acd263cd69be805ccb780ed757dc00697}} 
+\index{PerRayData@{PerRayData}!result@{result}}
+\index{result@{result}!PerRayData@{PerRayData}}
+\doxysubsubsection{result}
+{\footnotesize\ttfamily optix\+::float4 Per\+Ray\+Data\+::result}
+
+\mbox{\label{struct_per_ray_data_a224899d846da1bc33c694f27198207db}} 
+\index{PerRayData@{PerRayData}!rnd@{rnd}}
+\index{rnd@{rnd}!PerRayData@{PerRayData}}
+\doxysubsubsection{rnd}
+{\footnotesize\ttfamily float Per\+Ray\+Data\+::rnd}
+
+\mbox{\label{struct_per_ray_data_a8139ef9b1aa24e7fbcb5d75a457b652a}} 
+\index{PerRayData@{PerRayData}!seed@{seed}}
+\index{seed@{seed}!PerRayData@{PerRayData}}
+\doxysubsubsection{seed}
+{\footnotesize\ttfamily unsigned int Per\+Ray\+Data\+::seed}
+
+\mbox{\label{struct_per_ray_data_a8d46a49b4e546d2fe7b448c3ffb16f72}} 
+\index{PerRayData@{PerRayData}!TimeSound@{TimeSound}}
+\index{TimeSound@{TimeSound}!PerRayData@{PerRayData}}
+\doxysubsubsection{TimeSound}
+{\footnotesize\ttfamily float Per\+Ray\+Data\+::\+Time\+Sound}
+
+\mbox{\label{struct_per_ray_data_a1b058b067fc707b6776de47f5f86f242}} 
+\index{PerRayData@{PerRayData}!wi@{wi}}
+\index{wi@{wi}!PerRayData@{PerRayData}}
+\doxysubsubsection{wi}
+{\footnotesize\ttfamily optix\+::float3 Per\+Ray\+Data\+::wi}
+
+\mbox{\label{struct_per_ray_data_aa5d32844de15807c63d26f8e9552f80e}} 
+\index{PerRayData@{PerRayData}!wo@{wo}}
+\index{wo@{wo}!PerRayData@{PerRayData}}
+\doxysubsubsection{wo}
+{\footnotesize\ttfamily optix\+::float3 Per\+Ray\+Data\+::wo}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+shaders/renderer/\textbf{ per\+\_\+ray\+\_\+data.\+h}\end{DoxyCompactItemize}

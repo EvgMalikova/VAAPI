@@ -1,0 +1,109 @@
+\hypertarget{namespaceitk_util}{}\doxysection{itk\+Util Namespace Reference}
+\label{namespaceitk_util}\index{itkUtil@{itkUtil}}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef itk\+::\+Image$<$ float, 2 $>$ \mbox{\hyperlink{namespaceitk_util_a3a8635fb496c8e52f1026fa412e95b74}{Float2\+D\+Image\+Type}}
+\item 
+typedef itk\+::\+Image$<$ float, \mbox{\hyperlink{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}{Dimension}} $>$ \mbox{\hyperlink{namespaceitk_util_a9bf4820939533536dee295a3ec75b454}{Float\+Image\+Type}}
+\item 
+typedef itk\+::\+Image$<$ int, \mbox{\hyperlink{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}{Dimension}} $>$ \mbox{\hyperlink{namespaceitk_util_afba8e47d16bf230ba3c96b148077bb84}{Int\+Image\+Type}}
+\item 
+typedef itk\+::\+Image$<$ int, \mbox{\hyperlink{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}{Dimension}} $>$ \mbox{\hyperlink{namespaceitk_util_a6b9f269ba431ff549f5f95368dbb4d61}{Binary\+Image\+Type}}
+\item 
+typedef itk\+::\+Point$<$ float, \mbox{\hyperlink{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}{Dimension}} $>$ \mbox{\hyperlink{namespaceitk_util_ac2b06a6b60f5dcf73dfd1486eea80c1a}{Float\+Point}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{namespaceitk_util_ac2b06a6b60f5dcf73dfd1486eea80c1a}{Float\+Point}} $>$ \mbox{\hyperlink{namespaceitk_util_a3959deb09b731cf41f2517547fbb5753}{Float\+Points}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T\+Image $>$ }\\void \mbox{\hyperlink{namespaceitk_util_a01143785c703a691b104b42b66f6fa1a}{Region\+Copy}} (typename T\+Image\+::\+Pointer input, typename T\+Image\+::\+Pointer output)
+\item 
+void \mbox{\hyperlink{namespaceitk_util_adf0aa61271012053a998199a356a1a5b}{Compute\+Centers}} (\mbox{\hyperlink{namespaceitk_util_a9bf4820939533536dee295a3ec75b454}{Float\+Image\+Type}} $\ast$fl\+\_\+image, float lowerthreshold, \mbox{\hyperlink{namespaceitk_util_a3959deb09b731cf41f2517547fbb5753}{Float\+Points}} \&points)
+\item 
+float \mbox{\hyperlink{namespaceitk_util_a3198144c96f1a6c97d6e20b5cb134f47}{Compute\+S\+DF}} (\mbox{\hyperlink{namespaceitk_util_a9bf4820939533536dee295a3ec75b454}{Float\+Image\+Type}} $\ast$fl\+\_\+image, float lowerthreshold)
+\item 
+void \mbox{\hyperlink{namespaceitk_util_a6709f235d0158b5810b7aee334f25466}{Compute\+M\+I\+D\+Ifrom\+S\+DF}} (\mbox{\hyperlink{namespaceitk_util_a9bf4820939533536dee295a3ec75b454}{Float\+Image\+Type}} $\ast$midi\+\_\+image, const \mbox{\hyperlink{namespaceitk_util_a9bf4820939533536dee295a3ec75b454}{Float\+Image\+Type}} $\ast$fl\+\_\+image, float min)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceitk_util_a6b9f269ba431ff549f5f95368dbb4d61}\label{namespaceitk_util_a6b9f269ba431ff549f5f95368dbb4d61}} 
+\index{itkUtil@{itkUtil}!BinaryImageType@{BinaryImageType}}
+\index{BinaryImageType@{BinaryImageType}!itkUtil@{itkUtil}}
+\doxysubsubsection{\texorpdfstring{BinaryImageType}{BinaryImageType}}
+{\footnotesize\ttfamily typedef itk\+::\+Image$<$int, \mbox{\hyperlink{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}{Dimension}}$>$ \mbox{\hyperlink{namespaceitk_util_a6b9f269ba431ff549f5f95368dbb4d61}{itk\+Util\+::\+Binary\+Image\+Type}}}
+
+\mbox{\Hypertarget{namespaceitk_util_a3a8635fb496c8e52f1026fa412e95b74}\label{namespaceitk_util_a3a8635fb496c8e52f1026fa412e95b74}} 
+\index{itkUtil@{itkUtil}!Float2DImageType@{Float2DImageType}}
+\index{Float2DImageType@{Float2DImageType}!itkUtil@{itkUtil}}
+\doxysubsubsection{\texorpdfstring{Float2DImageType}{Float2DImageType}}
+{\footnotesize\ttfamily typedef itk\+::\+Image$<$float, 2$>$ \mbox{\hyperlink{namespaceitk_util_a3a8635fb496c8e52f1026fa412e95b74}{itk\+Util\+::\+Float2\+D\+Image\+Type}}}
+
+\mbox{\Hypertarget{namespaceitk_util_a9bf4820939533536dee295a3ec75b454}\label{namespaceitk_util_a9bf4820939533536dee295a3ec75b454}} 
+\index{itkUtil@{itkUtil}!FloatImageType@{FloatImageType}}
+\index{FloatImageType@{FloatImageType}!itkUtil@{itkUtil}}
+\doxysubsubsection{\texorpdfstring{FloatImageType}{FloatImageType}}
+{\footnotesize\ttfamily typedef itk\+::\+Image$<$float, \mbox{\hyperlink{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}{Dimension}}$>$ \mbox{\hyperlink{namespaceitk_util_a9bf4820939533536dee295a3ec75b454}{itk\+Util\+::\+Float\+Image\+Type}}}
+
+\mbox{\Hypertarget{namespaceitk_util_ac2b06a6b60f5dcf73dfd1486eea80c1a}\label{namespaceitk_util_ac2b06a6b60f5dcf73dfd1486eea80c1a}} 
+\index{itkUtil@{itkUtil}!FloatPoint@{FloatPoint}}
+\index{FloatPoint@{FloatPoint}!itkUtil@{itkUtil}}
+\doxysubsubsection{\texorpdfstring{FloatPoint}{FloatPoint}}
+{\footnotesize\ttfamily typedef itk\+::\+Point$<$float, \mbox{\hyperlink{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}{Dimension}}$>$ \mbox{\hyperlink{namespaceitk_util_ac2b06a6b60f5dcf73dfd1486eea80c1a}{itk\+Util\+::\+Float\+Point}}}
+
+\mbox{\Hypertarget{namespaceitk_util_a3959deb09b731cf41f2517547fbb5753}\label{namespaceitk_util_a3959deb09b731cf41f2517547fbb5753}} 
+\index{itkUtil@{itkUtil}!FloatPoints@{FloatPoints}}
+\index{FloatPoints@{FloatPoints}!itkUtil@{itkUtil}}
+\doxysubsubsection{\texorpdfstring{FloatPoints}{FloatPoints}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{namespaceitk_util_ac2b06a6b60f5dcf73dfd1486eea80c1a}{Float\+Point}}$>$ \mbox{\hyperlink{namespaceitk_util_a3959deb09b731cf41f2517547fbb5753}{itk\+Util\+::\+Float\+Points}}}
+
+\mbox{\Hypertarget{namespaceitk_util_afba8e47d16bf230ba3c96b148077bb84}\label{namespaceitk_util_afba8e47d16bf230ba3c96b148077bb84}} 
+\index{itkUtil@{itkUtil}!IntImageType@{IntImageType}}
+\index{IntImageType@{IntImageType}!itkUtil@{itkUtil}}
+\doxysubsubsection{\texorpdfstring{IntImageType}{IntImageType}}
+{\footnotesize\ttfamily typedef itk\+::\+Image$<$int, \mbox{\hyperlink{itk_util_8h_a68ef790493722b015c51663e02b6f1ca}{Dimension}}$>$ \mbox{\hyperlink{namespaceitk_util_afba8e47d16bf230ba3c96b148077bb84}{itk\+Util\+::\+Int\+Image\+Type}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceitk_util_adf0aa61271012053a998199a356a1a5b}\label{namespaceitk_util_adf0aa61271012053a998199a356a1a5b}} 
+\index{itkUtil@{itkUtil}!ComputeCenters@{ComputeCenters}}
+\index{ComputeCenters@{ComputeCenters}!itkUtil@{itkUtil}}
+\doxysubsubsection{\texorpdfstring{ComputeCenters()}{ComputeCenters()}}
+{\footnotesize\ttfamily void itk\+Util\+::\+Compute\+Centers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceitk_util_a9bf4820939533536dee295a3ec75b454}{Float\+Image\+Type}} $\ast$}]{fl\+\_\+image,  }\item[{float}]{lowerthreshold,  }\item[{\mbox{\hyperlink{namespaceitk_util_a3959deb09b731cf41f2517547fbb5753}{Float\+Points}} \&}]{points }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{namespaceitk_util_adf0aa61271012053a998199a356a1a5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceitk_util_a6709f235d0158b5810b7aee334f25466}\label{namespaceitk_util_a6709f235d0158b5810b7aee334f25466}} 
+\index{itkUtil@{itkUtil}!ComputeMIDIfromSDF@{ComputeMIDIfromSDF}}
+\index{ComputeMIDIfromSDF@{ComputeMIDIfromSDF}!itkUtil@{itkUtil}}
+\doxysubsubsection{\texorpdfstring{ComputeMIDIfromSDF()}{ComputeMIDIfromSDF()}}
+{\footnotesize\ttfamily void itk\+Util\+::\+Compute\+M\+I\+D\+Ifrom\+S\+DF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceitk_util_a9bf4820939533536dee295a3ec75b454}{Float\+Image\+Type}} $\ast$}]{midi\+\_\+image,  }\item[{const \mbox{\hyperlink{namespaceitk_util_a9bf4820939533536dee295a3ec75b454}{Float\+Image\+Type}} $\ast$}]{fl\+\_\+image,  }\item[{float}]{min }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceitk_util_a3198144c96f1a6c97d6e20b5cb134f47}\label{namespaceitk_util_a3198144c96f1a6c97d6e20b5cb134f47}} 
+\index{itkUtil@{itkUtil}!ComputeSDF@{ComputeSDF}}
+\index{ComputeSDF@{ComputeSDF}!itkUtil@{itkUtil}}
+\doxysubsubsection{\texorpdfstring{ComputeSDF()}{ComputeSDF()}}
+{\footnotesize\ttfamily float itk\+Util\+::\+Compute\+S\+DF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceitk_util_a9bf4820939533536dee295a3ec75b454}{Float\+Image\+Type}} $\ast$}]{fl\+\_\+image,  }\item[{float}]{lowerthreshold }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{namespaceitk_util_a3198144c96f1a6c97d6e20b5cb134f47_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceitk_util_a01143785c703a691b104b42b66f6fa1a}\label{namespaceitk_util_a01143785c703a691b104b42b66f6fa1a}} 
+\index{itkUtil@{itkUtil}!RegionCopy@{RegionCopy}}
+\index{RegionCopy@{RegionCopy}!itkUtil@{itkUtil}}
+\doxysubsubsection{\texorpdfstring{RegionCopy()}{RegionCopy()}}
+{\footnotesize\ttfamily template$<$typename T\+Image $>$ \\
+void itk\+Util\+::\+Region\+Copy (\begin{DoxyParamCaption}\item[{typename T\+Image\+::\+Pointer}]{input,  }\item[{typename T\+Image\+::\+Pointer}]{output }\end{DoxyParamCaption})}
+

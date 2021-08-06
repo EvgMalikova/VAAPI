@@ -1,0 +1,7 @@
+<map id="vaBaseWidget" name="vaBaseWidget">
+<area shape="rect" id="node1" title=" " alt="" coords="221,171,326,197"/>
+<area shape="rect" id="node2" href="$classva_base_programmable_object.html" title=" " alt="" coords="5,81,192,108"/>
+<area shape="rect" id="node3" href="$classva_basic_object.html" title=" " alt="" coords="221,5,326,32"/>
+<area shape="rect" id="node4" href="$classoptix_basic_actor.html" title="basic abstract actor class" alt="" coords="216,81,331,108"/>
+<area shape="rect" id="node5" href="$classva_mapper.html" title="A basic mapper that suggest application of one visual and one auditory material to one geometry insta..." alt="" coords="355,81,432,108"/>
+</map>

@@ -1,0 +1,324 @@
+\hypertarget{class_scene_manager}{}\doxysection{Scene\+Manager Class Reference}
+\label{class_scene_manager}\index{SceneManager@{SceneManager}}
+
+
+{\ttfamily \#include $<$optix\+Window.\+h$>$}
+
+
+
+Collaboration diagram for Scene\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_scene_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_scene_manager_ab7991c3d1ad4c98ac44b44400e889d96}{create\+Triangulated\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_scene_manager_acc63df8ad92992f7150493779b9d908d}{create\+Mol\+Solvent\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_scene_manager_a02f6cc82400eaeb3072055d9c0f42199}{create\+Dynamic\+Heterogeneous\+Object\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_scene_manager_af6a75717f60fa2fb0814f66507b31563}{create\+Frep\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_scene_manager_a98c9176331c9a5abc3e684fd543534b2}{create\+Auditory\+Molecule\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_scene_manager_a389d9de536479846961bbc01a57cebb3}{create\+Auditory\+Molecule\+Scene\+Mol\+Dynam}} ()
+\item 
+void \mbox{\hyperlink{class_scene_manager_ad1dc0d45003ea59b1023beda310dba28}{create\+Auditory\+Molecule\+Scene2}} ()
+\item 
+void \mbox{\hyperlink{class_scene_manager_a30c99571b498200bf4d03a9315adfd28}{create\+Auditory\+Molecule\+Scene\+Dynamic}} ()
+\item 
+optix\+::\+Context \mbox{\hyperlink{class_scene_manager_abd7e80b23984bce0e12f1d7ebd9d58c7}{Get\+Context}} ()
+\item 
+void \mbox{\hyperlink{class_scene_manager_a2682ac5e419812cb1eeab1fec6a1ce86}{Init}} ()
+\item 
+\mbox{\hyperlink{class_scene_manager_a52085e6737c23b491c228e86781af808}{Scene\+Manager}} ()
+\item 
+\mbox{\hyperlink{class_scene_manager_ac45626e7a2da79dab27cd76b7c49594e}{Scene\+Manager}} (const int width, const int height, const unsigned int devices, const unsigned int stack\+Size, const bool interop)
+\item 
+\mbox{\hyperlink{class_scene_manager_a2bb376a85d29e85f47753e26c7539229}{$\sim$\+Scene\+Manager}} ()
+\item 
+bool \mbox{\hyperlink{class_scene_manager_a4dfb5986397cd6ad42503258db9a3ee2}{is\+Valid}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classva_mapper}{va\+Mapper}} $\ast$ $>$ \mbox{\hyperlink{class_scene_manager_ac04caa12748a45f646a1d0a980217f65}{mappers}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classva_actor}{va\+Actor}} $\ast$ $>$ \mbox{\hyperlink{class_scene_manager_a08a312e81a5aad247fb6756232ddfe57}{actor\+Sdf}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classoptix_t_r_i_actor}{optix\+T\+R\+I\+Actor}} $\ast$ $>$ \mbox{\hyperlink{class_scene_manager_abb32b11813eb6e8dd84f46bbb8be51da}{actor\+Tri}}
+\item 
+\mbox{\hyperlink{classcontext_manager}{context\+Manager}} \mbox{\hyperlink{class_scene_manager_a36dfb472af6125c675b2a8fb7d830bd7}{m}}
+\item 
+\mbox{\hyperlink{classva_widget_handle}{va\+Widget\+Handle}} \mbox{\hyperlink{class_scene_manager_a480fa2f42feeddae109caab9ad84ca73}{w}}
+\item 
+\mbox{\hyperlink{classva_renderer}{va\+Renderer}} \mbox{\hyperlink{class_scene_manager_a02bbeebdd6098dc98175f6c5a8c4aaf1}{ren}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_pinhole_camera}{Pinhole\+Camera}} $>$ \mbox{\hyperlink{class_scene_manager_ab08ff26702fbed9309e2cf13ae9d1557}{m\+\_\+pinhole\+Camera}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classva_base_widget}{va\+Base\+Widget}} $>$ \mbox{\hyperlink{class_scene_manager_ad84d862c738e7e4eea39272b2148b5bd}{m\+\_\+widget}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_scene_manager_a52085e6737c23b491c228e86781af808}\label{class_scene_manager_a52085e6737c23b491c228e86781af808}} 
+\index{SceneManager@{SceneManager}!SceneManager@{SceneManager}}
+\index{SceneManager@{SceneManager}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{SceneManager()}{SceneManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Scene\+Manager\+::\+Scene\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_manager_a52085e6737c23b491c228e86781af808_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_manager_ac45626e7a2da79dab27cd76b7c49594e}\label{class_scene_manager_ac45626e7a2da79dab27cd76b7c49594e}} 
+\index{SceneManager@{SceneManager}!SceneManager@{SceneManager}}
+\index{SceneManager@{SceneManager}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{SceneManager()}{SceneManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Scene\+Manager\+::\+Scene\+Manager (\begin{DoxyParamCaption}\item[{const int}]{width,  }\item[{const int}]{height,  }\item[{const unsigned int}]{devices,  }\item[{const unsigned int}]{stack\+Size,  }\item[{const bool}]{interop }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_manager_ac45626e7a2da79dab27cd76b7c49594e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_manager_a2bb376a85d29e85f47753e26c7539229}\label{class_scene_manager_a2bb376a85d29e85f47753e26c7539229}} 
+\index{SceneManager@{SceneManager}!````~SceneManager@{$\sim$SceneManager}}
+\index{````~SceneManager@{$\sim$SceneManager}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$SceneManager()}{~SceneManager()}}
+{\footnotesize\ttfamily Scene\+Manager\+::$\sim$\+Scene\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_manager_a2bb376a85d29e85f47753e26c7539229_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scene_manager_a98c9176331c9a5abc3e684fd543534b2}\label{class_scene_manager_a98c9176331c9a5abc3e684fd543534b2}} 
+\index{SceneManager@{SceneManager}!createAuditoryMoleculeScene@{createAuditoryMoleculeScene}}
+\index{createAuditoryMoleculeScene@{createAuditoryMoleculeScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{createAuditoryMoleculeScene()}{createAuditoryMoleculeScene()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::create\+Auditory\+Molecule\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_manager_a98c9176331c9a5abc3e684fd543534b2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_manager_ad1dc0d45003ea59b1023beda310dba28}\label{class_scene_manager_ad1dc0d45003ea59b1023beda310dba28}} 
+\index{SceneManager@{SceneManager}!createAuditoryMoleculeScene2@{createAuditoryMoleculeScene2}}
+\index{createAuditoryMoleculeScene2@{createAuditoryMoleculeScene2}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{createAuditoryMoleculeScene2()}{createAuditoryMoleculeScene2()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::create\+Auditory\+Molecule\+Scene2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_manager_ad1dc0d45003ea59b1023beda310dba28_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_manager_a30c99571b498200bf4d03a9315adfd28}\label{class_scene_manager_a30c99571b498200bf4d03a9315adfd28}} 
+\index{SceneManager@{SceneManager}!createAuditoryMoleculeSceneDynamic@{createAuditoryMoleculeSceneDynamic}}
+\index{createAuditoryMoleculeSceneDynamic@{createAuditoryMoleculeSceneDynamic}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{createAuditoryMoleculeSceneDynamic()}{createAuditoryMoleculeSceneDynamic()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::create\+Auditory\+Molecule\+Scene\+Dynamic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_manager_a30c99571b498200bf4d03a9315adfd28_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_manager_a389d9de536479846961bbc01a57cebb3}\label{class_scene_manager_a389d9de536479846961bbc01a57cebb3}} 
+\index{SceneManager@{SceneManager}!createAuditoryMoleculeSceneMolDynam@{createAuditoryMoleculeSceneMolDynam}}
+\index{createAuditoryMoleculeSceneMolDynam@{createAuditoryMoleculeSceneMolDynam}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{createAuditoryMoleculeSceneMolDynam()}{createAuditoryMoleculeSceneMolDynam()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::create\+Auditory\+Molecule\+Scene\+Mol\+Dynam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_manager_a389d9de536479846961bbc01a57cebb3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_manager_a02f6cc82400eaeb3072055d9c0f42199}\label{class_scene_manager_a02f6cc82400eaeb3072055d9c0f42199}} 
+\index{SceneManager@{SceneManager}!createDynamicHeterogeneousObjectScene@{createDynamicHeterogeneousObjectScene}}
+\index{createDynamicHeterogeneousObjectScene@{createDynamicHeterogeneousObjectScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{createDynamicHeterogeneousObjectScene()}{createDynamicHeterogeneousObjectScene()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::create\+Dynamic\+Heterogeneous\+Object\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_scene_manager_a02f6cc82400eaeb3072055d9c0f42199_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_manager_af6a75717f60fa2fb0814f66507b31563}\label{class_scene_manager_af6a75717f60fa2fb0814f66507b31563}} 
+\index{SceneManager@{SceneManager}!createFrepScene@{createFrepScene}}
+\index{createFrepScene@{createFrepScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{createFrepScene()}{createFrepScene()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::create\+Frep\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_scene_manager_af6a75717f60fa2fb0814f66507b31563_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_manager_acc63df8ad92992f7150493779b9d908d}\label{class_scene_manager_acc63df8ad92992f7150493779b9d908d}} 
+\index{SceneManager@{SceneManager}!createMolSolventScene@{createMolSolventScene}}
+\index{createMolSolventScene@{createMolSolventScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{createMolSolventScene()}{createMolSolventScene()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::create\+Mol\+Solvent\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_scene_manager_acc63df8ad92992f7150493779b9d908d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_manager_ab7991c3d1ad4c98ac44b44400e889d96}\label{class_scene_manager_ab7991c3d1ad4c98ac44b44400e889d96}} 
+\index{SceneManager@{SceneManager}!createTriangulatedScene@{createTriangulatedScene}}
+\index{createTriangulatedScene@{createTriangulatedScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{createTriangulatedScene()}{createTriangulatedScene()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::create\+Triangulated\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_manager_ab7991c3d1ad4c98ac44b44400e889d96_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_manager_abd7e80b23984bce0e12f1d7ebd9d58c7}\label{class_scene_manager_abd7e80b23984bce0e12f1d7ebd9d58c7}} 
+\index{SceneManager@{SceneManager}!GetContext@{GetContext}}
+\index{GetContext@{GetContext}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{GetContext()}{GetContext()}}
+{\footnotesize\ttfamily optix\+::\+Context Scene\+Manager\+::\+Get\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_manager_abd7e80b23984bce0e12f1d7ebd9d58c7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{class_scene_manager_abd7e80b23984bce0e12f1d7ebd9d58c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_manager_a2682ac5e419812cb1eeab1fec6a1ce86}\label{class_scene_manager_a2682ac5e419812cb1eeab1fec6a1ce86}} 
+\index{SceneManager@{SceneManager}!Init@{Init}}
+\index{Init@{Init}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_manager_a2682ac5e419812cb1eeab1fec6a1ce86_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{class_scene_manager_a2682ac5e419812cb1eeab1fec6a1ce86_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_manager_a4dfb5986397cd6ad42503258db9a3ee2}\label{class_scene_manager_a4dfb5986397cd6ad42503258db9a3ee2}} 
+\index{SceneManager@{SceneManager}!isValid@{isValid}}
+\index{isValid@{isValid}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool Scene\+Manager\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_scene_manager_a4dfb5986397cd6ad42503258db9a3ee2_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_scene_manager_a08a312e81a5aad247fb6756232ddfe57}\label{class_scene_manager_a08a312e81a5aad247fb6756232ddfe57}} 
+\index{SceneManager@{SceneManager}!actorSdf@{actorSdf}}
+\index{actorSdf@{actorSdf}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{actorSdf}{actorSdf}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classva_actor}{va\+Actor}} $\ast$$>$ Scene\+Manager\+::actor\+Sdf}
+
+\mbox{\Hypertarget{class_scene_manager_abb32b11813eb6e8dd84f46bbb8be51da}\label{class_scene_manager_abb32b11813eb6e8dd84f46bbb8be51da}} 
+\index{SceneManager@{SceneManager}!actorTri@{actorTri}}
+\index{actorTri@{actorTri}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{actorTri}{actorTri}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classoptix_t_r_i_actor}{optix\+T\+R\+I\+Actor}}$\ast$ $>$ Scene\+Manager\+::actor\+Tri}
+
+\mbox{\Hypertarget{class_scene_manager_a36dfb472af6125c675b2a8fb7d830bd7}\label{class_scene_manager_a36dfb472af6125c675b2a8fb7d830bd7}} 
+\index{SceneManager@{SceneManager}!m@{m}}
+\index{m@{m}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcontext_manager}{context\+Manager}} Scene\+Manager\+::m}
+
+\mbox{\Hypertarget{class_scene_manager_ab08ff26702fbed9309e2cf13ae9d1557}\label{class_scene_manager_ab08ff26702fbed9309e2cf13ae9d1557}} 
+\index{SceneManager@{SceneManager}!m\_pinholeCamera@{m\_pinholeCamera}}
+\index{m\_pinholeCamera@{m\_pinholeCamera}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{m\_pinholeCamera}{m\_pinholeCamera}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_pinhole_camera}{Pinhole\+Camera}}$>$ Scene\+Manager\+::m\+\_\+pinhole\+Camera}
+
+\mbox{\Hypertarget{class_scene_manager_ad84d862c738e7e4eea39272b2148b5bd}\label{class_scene_manager_ad84d862c738e7e4eea39272b2148b5bd}} 
+\index{SceneManager@{SceneManager}!m\_widget@{m\_widget}}
+\index{m\_widget@{m\_widget}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{m\_widget}{m\_widget}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classva_base_widget}{va\+Base\+Widget}}$>$ Scene\+Manager\+::m\+\_\+widget}
+
+\mbox{\Hypertarget{class_scene_manager_ac04caa12748a45f646a1d0a980217f65}\label{class_scene_manager_ac04caa12748a45f646a1d0a980217f65}} 
+\index{SceneManager@{SceneManager}!mappers@{mappers}}
+\index{mappers@{mappers}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{mappers}{mappers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classva_mapper}{va\+Mapper}} $\ast$$>$ Scene\+Manager\+::mappers}
+
+\mbox{\Hypertarget{class_scene_manager_a02bbeebdd6098dc98175f6c5a8c4aaf1}\label{class_scene_manager_a02bbeebdd6098dc98175f6c5a8c4aaf1}} 
+\index{SceneManager@{SceneManager}!ren@{ren}}
+\index{ren@{ren}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{ren}{ren}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classva_renderer}{va\+Renderer}} Scene\+Manager\+::ren}
+
+\mbox{\Hypertarget{class_scene_manager_a480fa2f42feeddae109caab9ad84ca73}\label{class_scene_manager_a480fa2f42feeddae109caab9ad84ca73}} 
+\index{SceneManager@{SceneManager}!w@{w}}
+\index{w@{w}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classva_widget_handle}{va\+Widget\+Handle}} Scene\+Manager\+::w}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{optix_window_8h}{optix\+Window.\+h}}\item 
+src/\mbox{\hyperlink{_application_8cpp}{Application.\+cpp}}\end{DoxyCompactItemize}

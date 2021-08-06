@@ -1,0 +1,107 @@
+\hypertarget{classsdf_texture_reader}{}\doxysection{sdf\+Texture\+Reader$<$ T $>$ Class Template Reference}
+\label{classsdf_texture_reader}\index{sdfTextureReader$<$ T $>$@{sdfTextureReader$<$ T $>$}}
+
+
+Read texture from file and applies signed distance transfrom to generate S\+DF texture.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Texture\+Reader.\+h$>$}
+
+
+
+Inheritance diagram for sdf\+Texture\+Reader$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classsdf_texture_reader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sdf\+Texture\+Reader$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classsdf_texture_reader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsdf_texture_reader_a7a8d77555c317c9d07d5a42674b491eb}{sdf\+Texture\+Reader}} ()
+\item 
+\mbox{\hyperlink{classsdf_texture_reader_af359fc2bf232c4a144bf015d2984ad63}{$\sim$sdf\+Texture\+Reader}} ()
+\item 
+\mbox{\hyperlink{structsdf_params}{sdf\+Params}} $\ast$ \mbox{\hyperlink{classsdf_texture_reader_a0da1cc5f98f9ef9870ec3d2e0cccab9b}{Get\+Param}} ()
+\item 
+void \mbox{\hyperlink{classsdf_texture_reader_acf968f12553363600c0cf306f8e8d45f}{Set\+Threshold}} (T tr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classsdf_texture_reader_aca937f77e8cb7231de6e6a60823ba1ae}{Preprocess\+Data}} (typename \mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{tex\+Reader\+::\+Output\+Image\+Type}} $\ast$fl\+\_\+image)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class sdf\+Texture\+Reader$<$ T $>$}
+
+Read texture from file and applies signed distance transfrom to generate S\+DF texture. 
+
+Uses itk signed distance transform 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsdf_texture_reader_a7a8d77555c317c9d07d5a42674b491eb}\label{classsdf_texture_reader_a7a8d77555c317c9d07d5a42674b491eb}} 
+\index{sdfTextureReader$<$ T $>$@{sdfTextureReader$<$ T $>$}!sdfTextureReader@{sdfTextureReader}}
+\index{sdfTextureReader@{sdfTextureReader}!sdfTextureReader$<$ T $>$@{sdfTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{sdfTextureReader()}{sdfTextureReader()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{classsdf_texture_reader}{sdf\+Texture\+Reader}}$<$ T $>$\+::\mbox{\hyperlink{classsdf_texture_reader}{sdf\+Texture\+Reader}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsdf_texture_reader_af359fc2bf232c4a144bf015d2984ad63}\label{classsdf_texture_reader_af359fc2bf232c4a144bf015d2984ad63}} 
+\index{sdfTextureReader$<$ T $>$@{sdfTextureReader$<$ T $>$}!````~sdfTextureReader@{$\sim$sdfTextureReader}}
+\index{````~sdfTextureReader@{$\sim$sdfTextureReader}!sdfTextureReader$<$ T $>$@{sdfTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$sdfTextureReader()}{~sdfTextureReader()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{classsdf_texture_reader}{sdf\+Texture\+Reader}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classsdf_texture_reader}{sdf\+Texture\+Reader}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsdf_texture_reader_a0da1cc5f98f9ef9870ec3d2e0cccab9b}\label{classsdf_texture_reader_a0da1cc5f98f9ef9870ec3d2e0cccab9b}} 
+\index{sdfTextureReader$<$ T $>$@{sdfTextureReader$<$ T $>$}!GetParam@{GetParam}}
+\index{GetParam@{GetParam}!sdfTextureReader$<$ T $>$@{sdfTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetParam()}{GetParam()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{structsdf_params}{sdf\+Params}}$\ast$ \mbox{\hyperlink{classsdf_texture_reader}{sdf\+Texture\+Reader}}$<$ T $>$\+::Get\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsdf_texture_reader_aca937f77e8cb7231de6e6a60823ba1ae}\label{classsdf_texture_reader_aca937f77e8cb7231de6e6a60823ba1ae}} 
+\index{sdfTextureReader$<$ T $>$@{sdfTextureReader$<$ T $>$}!PreprocessData@{PreprocessData}}
+\index{PreprocessData@{PreprocessData}!sdfTextureReader$<$ T $>$@{sdfTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PreprocessData()}{PreprocessData()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classsdf_texture_reader}{sdf\+Texture\+Reader}}$<$ T $>$\+::Preprocess\+Data (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classtex_reader_a55d0deee59938427b1a3fcf41a99a379}{tex\+Reader\+::\+Output\+Image\+Type}} $\ast$}]{fl\+\_\+image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classtex_reader_afc6df76ef4e33e60d75a63bea9686b37}{tex\+Reader$<$ T $>$}}.
+
+\mbox{\Hypertarget{classsdf_texture_reader_acf968f12553363600c0cf306f8e8d45f}\label{classsdf_texture_reader_acf968f12553363600c0cf306f8e8d45f}} 
+\index{sdfTextureReader$<$ T $>$@{sdfTextureReader$<$ T $>$}!SetThreshold@{SetThreshold}}
+\index{SetThreshold@{SetThreshold}!sdfTextureReader$<$ T $>$@{sdfTextureReader$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetThreshold()}{SetThreshold()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \mbox{\hyperlink{classsdf_texture_reader}{sdf\+Texture\+Reader}}$<$ T $>$\+::Set\+Threshold (\begin{DoxyParamCaption}\item[{T}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+frep/src/\mbox{\hyperlink{optix_texture_reader_8h}{optix\+Texture\+Reader.\+h}}\item 
+frep/src/\mbox{\hyperlink{optix_texture_reader_8hpp}{optix\+Texture\+Reader.\+hpp}}\end{DoxyCompactItemize}

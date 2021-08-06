@@ -1,0 +1,102 @@
+\hypertarget{class_s_d_f_volume_material}{}\doxysection{S\+D\+F\+Volume\+Material Class Reference}
+\label{class_s_d_f_volume_material}\index{SDFVolumeMaterial@{SDFVolumeMaterial}}
+
+
+Simple Volume material with interactive highlighting, applied to several objects of various types.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Material.\+h$>$}
+
+
+
+Inheritance diagram for S\+D\+F\+Volume\+Material\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{class_s_d_f_volume_material__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for S\+D\+F\+Volume\+Material\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{class_s_d_f_volume_material__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_f_volume_material_aaad17c34b75c1e2a90ab02b78d057f4f}{S\+D\+F\+Volume\+Material}} ()
+\item 
+\mbox{\hyperlink{class_s_d_f_volume_material_a9982c22863df71acf68837c9c678f8de}{$\sim$\+S\+D\+F\+Volume\+Material}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_s_d_f_volume_material_a9ce0edcc7c8ff2ec39a455f2a6afa223}{Set\+Material\+Parameters}} ()
+\item 
+virtual void \mbox{\hyperlink{class_s_d_f_volume_material_afa35adf24e56f762b3927c791fe9a3d8}{Initialize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Simple Volume material with interactive highlighting, applied to several objects of various types. 
+
+Example of volume material with interactive highlightment
+
+Volume material with interactive highlightment. Emission-\/absorption model. The material suggests application to several objects of various types thus it works with optix\+::\+Buffers defining the types of object and transfer function. There is a dynamic highlightment of the objects as well, defined through concept of ray propagation. For details see how it works with auditory rendering. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_d_f_volume_material_aaad17c34b75c1e2a90ab02b78d057f4f}\label{class_s_d_f_volume_material_aaad17c34b75c1e2a90ab02b78d057f4f}} 
+\index{SDFVolumeMaterial@{SDFVolumeMaterial}!SDFVolumeMaterial@{SDFVolumeMaterial}}
+\index{SDFVolumeMaterial@{SDFVolumeMaterial}!SDFVolumeMaterial@{SDFVolumeMaterial}}
+\doxysubsubsection{\texorpdfstring{SDFVolumeMaterial()}{SDFVolumeMaterial()}}
+{\footnotesize\ttfamily S\+D\+F\+Volume\+Material\+::\+S\+D\+F\+Volume\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_s_d_f_volume_material_a9982c22863df71acf68837c9c678f8de}\label{class_s_d_f_volume_material_a9982c22863df71acf68837c9c678f8de}} 
+\index{SDFVolumeMaterial@{SDFVolumeMaterial}!````~SDFVolumeMaterial@{$\sim$SDFVolumeMaterial}}
+\index{````~SDFVolumeMaterial@{$\sim$SDFVolumeMaterial}!SDFVolumeMaterial@{SDFVolumeMaterial}}
+\doxysubsubsection{\texorpdfstring{$\sim$SDFVolumeMaterial()}{~SDFVolumeMaterial()}}
+{\footnotesize\ttfamily S\+D\+F\+Volume\+Material\+::$\sim$\+S\+D\+F\+Volume\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_d_f_volume_material_afa35adf24e56f762b3927c791fe9a3d8}\label{class_s_d_f_volume_material_afa35adf24e56f762b3927c791fe9a3d8}} 
+\index{SDFVolumeMaterial@{SDFVolumeMaterial}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!SDFVolumeMaterial@{SDFVolumeMaterial}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void S\+D\+F\+Volume\+Material\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_auditory_material_a59fd566e70f7892fc15c6b6fd80bd35a}{va\+Auditory\+Material}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_d_f_volume_material_afa35adf24e56f762b3927c791fe9a3d8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_s_d_f_volume_material_a9ce0edcc7c8ff2ec39a455f2a6afa223}\label{class_s_d_f_volume_material_a9ce0edcc7c8ff2ec39a455f2a6afa223}} 
+\index{SDFVolumeMaterial@{SDFVolumeMaterial}!SetMaterialParameters@{SetMaterialParameters}}
+\index{SetMaterialParameters@{SetMaterialParameters}!SDFVolumeMaterial@{SDFVolumeMaterial}}
+\doxysubsubsection{\texorpdfstring{SetMaterialParameters()}{SetMaterialParameters()}}
+{\footnotesize\ttfamily virtual void S\+D\+F\+Volume\+Material\+::\+Set\+Material\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_auditory_material_a9b860091c807eb66930578cfe4d108d6}{va\+Auditory\+Material}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{optix_material_8h}{optix\+Material.\+h}}\item 
+src/\mbox{\hyperlink{optix_material_8cpp}{optix\+Material.\+cpp}}\end{DoxyCompactItemize}

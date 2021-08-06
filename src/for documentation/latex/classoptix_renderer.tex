@@ -1,0 +1,318 @@
+\hypertarget{classoptix_renderer}{}\doxysection{optix\+Renderer Class Reference}
+\label{classoptix_renderer}\index{optixRenderer@{optixRenderer}}
+
+
+Architecture much inspired by V\+TK Renderer(\href{http://vtk.org}{\texttt{ http\+://vtk.\+org}}) implementation An example of interactive renderer with non-\/progressive rendering approach.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Renderer.\+h$>$}
+
+
+
+Inheritance diagram for optix\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classoptix_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for optix\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classoptix_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classoptix_renderer_a64e06a8694c2333dd80400d8e08f3309}{Set\+Interop}} (bool inter)
+\item 
+\mbox{\hyperlink{classoptix_renderer_a36376343911bd8184a67eec55dce478c}{optix\+Renderer}} ()
+\item 
+\mbox{\hyperlink{classoptix_renderer_aef0f21249a50c376d031118a5bae2fef}{$\sim$optix\+Renderer}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_renderer_a33e2ab24e39a488df34a7c9558562ddd}{Set\+Context}} (optix\+::\+Context \&context)
+\item 
+\mbox{\hyperlink{classoptix_renderer_a68975a042e84e521f9d1738f0cb68f3d}{opx\+Set\+Macro}} (m\+\_\+stack\+Size, unsigned int)
+\item 
+\mbox{\hyperlink{classoptix_renderer_ae14a8396011c5a744d227e35044f5300}{opx\+Get\+Macro}} (m\+\_\+stack\+Size, unsigned int)
+\item 
+\mbox{\hyperlink{classoptix_renderer_ab0927a2213bd6c2163abc93122f2b372}{opx\+Set\+Macro}} (m\+\_\+devices\+Encoding, unsigned int)
+\item 
+\mbox{\hyperlink{classoptix_renderer_adbd963d6cbc8dac8344841289e7e0c59}{opx\+Get\+Macro}} (m\+\_\+devices\+Encoding, unsigned int)
+\item 
+bool \mbox{\hyperlink{classoptix_renderer_a2af8ff13b82d9040cebc487bc7f0c7e7}{Is\+Valid}} ()
+\item 
+virtual bool \mbox{\hyperlink{classoptix_renderer_a54c22f066b1a0e5f3eb83d49e73916b8}{Render}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_renderer_abb2f0f93b67bc602b3e93fdddab0d969}{Display}} ()
+\item 
+void \mbox{\hyperlink{classoptix_renderer_ae3b25995493b156da48abb0b303aae71}{Reshape}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classoptix_renderer_a3d3419e2ddbf300cfe01bc06534d3739}{Set\+Valid}} (bool t)
+\item 
+void \mbox{\hyperlink{classoptix_renderer_a624f6941a9ab28b891918d20fb191129}{Set\+Camera}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_pinhole_camera}{Pinhole\+Camera}} $>$ pinhole\+Camera)
+\item 
+virtual void \mbox{\hyperlink{classoptix_renderer_a7384ac3f59071ef1f6194edcbe4add73}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classoptix_renderer_a2a053d318201ba20de97685689a7a71a}{Init\+Renderer}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_renderer_af327efd9e9b91b8e85856a2321fd6055}{Modified}} ()
+\item 
+void \mbox{\hyperlink{classoptix_renderer_ace6ac1402ab5b4a563a83d2e9fb1db54}{Set\+Camera\+Default\+Parameters}} ()
+\item 
+void \mbox{\hyperlink{classoptix_renderer_af9a36b8c900fddcd2f0277fc6f8c95ac}{Update\+Camera}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Architecture much inspired by V\+TK Renderer(\href{http://vtk.org}{\texttt{ http\+://vtk.\+org}}) implementation An example of interactive renderer with non-\/progressive rendering approach. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoptix_renderer_a36376343911bd8184a67eec55dce478c}\label{classoptix_renderer_a36376343911bd8184a67eec55dce478c}} 
+\index{optixRenderer@{optixRenderer}!optixRenderer@{optixRenderer}}
+\index{optixRenderer@{optixRenderer}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{optixRenderer()}{optixRenderer()}}
+{\footnotesize\ttfamily optix\+Renderer\+::optix\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_renderer_aef0f21249a50c376d031118a5bae2fef}\label{classoptix_renderer_aef0f21249a50c376d031118a5bae2fef}} 
+\index{optixRenderer@{optixRenderer}!````~optixRenderer@{$\sim$optixRenderer}}
+\index{````~optixRenderer@{$\sim$optixRenderer}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{$\sim$optixRenderer()}{~optixRenderer()}}
+{\footnotesize\ttfamily optix\+Renderer\+::$\sim$optix\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classoptix_renderer_abb2f0f93b67bc602b3e93fdddab0d969}\label{classoptix_renderer_abb2f0f93b67bc602b3e93fdddab0d969}} 
+\index{optixRenderer@{optixRenderer}!Display@{Display}}
+\index{Display@{Display}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{Display()}{Display()}}
+{\footnotesize\ttfamily virtual void optix\+Renderer\+::\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_basic_renderer_a3e3f177ea19b871a46fedeaea546451d}{optix\+Basic\+Renderer}}.
+
+\mbox{\Hypertarget{classoptix_renderer_a2a053d318201ba20de97685689a7a71a}\label{classoptix_renderer_a2a053d318201ba20de97685689a7a71a}} 
+\index{optixRenderer@{optixRenderer}!InitRenderer@{InitRenderer}}
+\index{InitRenderer@{InitRenderer}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{InitRenderer()}{InitRenderer()}}
+{\footnotesize\ttfamily void optix\+Renderer\+::\+Init\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_basic_renderer_a54732a1f3209767b0ce5006aeb2f8d6e}{optix\+Basic\+Renderer}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_renderer_a2a053d318201ba20de97685689a7a71a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_renderer_a2af8ff13b82d9040cebc487bc7f0c7e7}\label{classoptix_renderer_a2af8ff13b82d9040cebc487bc7f0c7e7}} 
+\index{optixRenderer@{optixRenderer}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily bool optix\+Renderer\+::\+Is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_renderer_a2af8ff13b82d9040cebc487bc7f0c7e7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_renderer_af327efd9e9b91b8e85856a2321fd6055}\label{classoptix_renderer_af327efd9e9b91b8e85856a2321fd6055}} 
+\index{optixRenderer@{optixRenderer}!Modified@{Modified}}
+\index{Modified@{Modified}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{Modified()}{Modified()}}
+{\footnotesize\ttfamily virtual void optix\+Renderer\+::\+Modified (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classoptix_renderer_adbd963d6cbc8dac8344841289e7e0c59}\label{classoptix_renderer_adbd963d6cbc8dac8344841289e7e0c59}} 
+\index{optixRenderer@{optixRenderer}!opxGetMacro@{opxGetMacro}}
+\index{opxGetMacro@{opxGetMacro}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{opxGetMacro()}{opxGetMacro()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily optix\+Renderer\+::opx\+Get\+Macro (\begin{DoxyParamCaption}\item[{m\+\_\+devices\+Encoding}]{,  }\item[{unsigned int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classoptix_renderer_ae14a8396011c5a744d227e35044f5300}\label{classoptix_renderer_ae14a8396011c5a744d227e35044f5300}} 
+\index{optixRenderer@{optixRenderer}!opxGetMacro@{opxGetMacro}}
+\index{opxGetMacro@{opxGetMacro}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{opxGetMacro()}{opxGetMacro()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily optix\+Renderer\+::opx\+Get\+Macro (\begin{DoxyParamCaption}\item[{m\+\_\+stack\+Size}]{,  }\item[{unsigned int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classoptix_renderer_ab0927a2213bd6c2163abc93122f2b372}\label{classoptix_renderer_ab0927a2213bd6c2163abc93122f2b372}} 
+\index{optixRenderer@{optixRenderer}!opxSetMacro@{opxSetMacro}}
+\index{opxSetMacro@{opxSetMacro}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{opxSetMacro()}{opxSetMacro()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily optix\+Renderer\+::opx\+Set\+Macro (\begin{DoxyParamCaption}\item[{m\+\_\+devices\+Encoding}]{,  }\item[{unsigned int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classoptix_renderer_a68975a042e84e521f9d1738f0cb68f3d}\label{classoptix_renderer_a68975a042e84e521f9d1738f0cb68f3d}} 
+\index{optixRenderer@{optixRenderer}!opxSetMacro@{opxSetMacro}}
+\index{opxSetMacro@{opxSetMacro}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{opxSetMacro()}{opxSetMacro()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily optix\+Renderer\+::opx\+Set\+Macro (\begin{DoxyParamCaption}\item[{m\+\_\+stack\+Size}]{,  }\item[{unsigned int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classoptix_renderer_a54c22f066b1a0e5f3eb83d49e73916b8}\label{classoptix_renderer_a54c22f066b1a0e5f3eb83d49e73916b8}} 
+\index{optixRenderer@{optixRenderer}!Render@{Render}}
+\index{Render@{Render}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily bool optix\+Renderer\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_basic_renderer_a25a8a7b594c917a3f034a61bf31e45c3}{optix\+Basic\+Renderer}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_renderer_a54c22f066b1a0e5f3eb83d49e73916b8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_renderer_ae3b25995493b156da48abb0b303aae71}\label{classoptix_renderer_ae3b25995493b156da48abb0b303aae71}} 
+\index{optixRenderer@{optixRenderer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{Reshape()}{Reshape()}}
+{\footnotesize\ttfamily void optix\+Renderer\+::\+Reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_basic_renderer_a172bbca9202d5ee341c61baa3f8b2526}{optix\+Basic\+Renderer}}.
+
+\mbox{\Hypertarget{classoptix_renderer_a624f6941a9ab28b891918d20fb191129}\label{classoptix_renderer_a624f6941a9ab28b891918d20fb191129}} 
+\index{optixRenderer@{optixRenderer}!SetCamera@{SetCamera}}
+\index{SetCamera@{SetCamera}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{SetCamera()}{SetCamera()}}
+{\footnotesize\ttfamily void optix\+Renderer\+::\+Set\+Camera (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_pinhole_camera}{Pinhole\+Camera}} $>$}]{pinhole\+Camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_renderer_a624f6941a9ab28b891918d20fb191129_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_renderer_ace6ac1402ab5b4a563a83d2e9fb1db54}\label{classoptix_renderer_ace6ac1402ab5b4a563a83d2e9fb1db54}} 
+\index{optixRenderer@{optixRenderer}!SetCameraDefaultParameters@{SetCameraDefaultParameters}}
+\index{SetCameraDefaultParameters@{SetCameraDefaultParameters}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{SetCameraDefaultParameters()}{SetCameraDefaultParameters()}}
+{\footnotesize\ttfamily void optix\+Renderer\+::\+Set\+Camera\+Default\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_renderer_ace6ac1402ab5b4a563a83d2e9fb1db54_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_renderer_ace6ac1402ab5b4a563a83d2e9fb1db54_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_renderer_a33e2ab24e39a488df34a7c9558562ddd}\label{classoptix_renderer_a33e2ab24e39a488df34a7c9558562ddd}} 
+\index{optixRenderer@{optixRenderer}!SetContext@{SetContext}}
+\index{SetContext@{SetContext}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{SetContext()}{SetContext()}}
+{\footnotesize\ttfamily void optix\+Renderer\+::\+Set\+Context (\begin{DoxyParamCaption}\item[{optix\+::\+Context \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_object_a862159839f82c74cb65ee6de9aafce26}{optix\+Object}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_renderer_a33e2ab24e39a488df34a7c9558562ddd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_renderer_a33e2ab24e39a488df34a7c9558562ddd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_renderer_a64e06a8694c2333dd80400d8e08f3309}\label{classoptix_renderer_a64e06a8694c2333dd80400d8e08f3309}} 
+\index{optixRenderer@{optixRenderer}!SetInterop@{SetInterop}}
+\index{SetInterop@{SetInterop}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{SetInterop()}{SetInterop()}}
+{\footnotesize\ttfamily void optix\+Renderer\+::\+Set\+Interop (\begin{DoxyParamCaption}\item[{bool}]{inter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_renderer_a64e06a8694c2333dd80400d8e08f3309_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_renderer_a3d3419e2ddbf300cfe01bc06534d3739}\label{classoptix_renderer_a3d3419e2ddbf300cfe01bc06534d3739}} 
+\index{optixRenderer@{optixRenderer}!SetValid@{SetValid}}
+\index{SetValid@{SetValid}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{SetValid()}{SetValid()}}
+{\footnotesize\ttfamily void optix\+Renderer\+::\+Set\+Valid (\begin{DoxyParamCaption}\item[{bool}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_renderer_a3d3419e2ddbf300cfe01bc06534d3739_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_renderer_a7384ac3f59071ef1f6194edcbe4add73}\label{classoptix_renderer_a7384ac3f59071ef1f6194edcbe4add73}} 
+\index{optixRenderer@{optixRenderer}!Update@{Update}}
+\index{Update@{Update}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void optix\+Renderer\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_basic_renderer_adcd9a2518f21e6b357c4f89bb22fdefd}{optix\+Basic\+Renderer}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_renderer_a7384ac3f59071ef1f6194edcbe4add73_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_renderer_af9a36b8c900fddcd2f0277fc6f8c95ac}\label{classoptix_renderer_af9a36b8c900fddcd2f0277fc6f8c95ac}} 
+\index{optixRenderer@{optixRenderer}!UpdateCamera@{UpdateCamera}}
+\index{UpdateCamera@{UpdateCamera}!optixRenderer@{optixRenderer}}
+\doxysubsubsection{\texorpdfstring{UpdateCamera()}{UpdateCamera()}}
+{\footnotesize\ttfamily void optix\+Renderer\+::\+Update\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_renderer_af9a36b8c900fddcd2f0277fc6f8c95ac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_renderer_af9a36b8c900fddcd2f0277fc6f8c95ac_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{optix_renderer_8h}{optix\+Renderer.\+h}}\item 
+src/\mbox{\hyperlink{optix_renderer_8cpp}{optix\+Renderer.\+cpp}}\end{DoxyCompactItemize}

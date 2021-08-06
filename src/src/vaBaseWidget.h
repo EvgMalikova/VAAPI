@@ -40,7 +40,7 @@ public:
 
     float getAspectRatio() const;
 
-    vaBasicActor *GetActor() { return acSdf1; };
+    std::shared_ptr<vaBasicActor> GetActor() { return acSdf1; };
     virtual void UpdateHandlePosition();
     void SetHandlePosition(optix::float3 coord);
     void SetFingerPosition(int i, optix::float3 coord);
@@ -111,8 +111,8 @@ public:
 private:
     bool useController;
     float m_shift; //shift of point
-    vaMapper* map21;
-    vaBasicActor* acSdf1;
+    std::shared_ptr<vaMapper> map21;
+    std::shared_ptr<vaBasicActor> acSdf1;
 
     optix::float3 sysCameraPosition;
     optix::float3 sysCameraU;

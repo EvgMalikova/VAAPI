@@ -3,6 +3,7 @@
 
 #include "default.h"
 #include "../../basic_lights.h"
+#include "../../materials/transferFunction.h"
 
  //rtDeclareVariable(float, TimeSound, , );
  //for sdf
@@ -11,6 +12,11 @@ rtDeclareVariable(callTBackSDF, sdfPrimBack, , );
 
 rtDeclareVariable(float3, bbox_min, , );
 rtDeclareVariable(float3, bbox_max, , );
+rtDeclareVariable(float3, bbox_center, , );
+
+rtDeclareVariable(float3, sCell1, , );
+rtDeclareVariable(float3, sCell2, , );
+rtDeclareVariable(float3, sCell3, , );
 
 typedef rtCallableProgramId<float(float3, primParamDesc)> callM;
 rtDeclareVariable(callM, evalF, , );
@@ -54,8 +60,28 @@ inline float3 getCenterTetra(float4 p0, float4 p1, float4 p2, float4 p3)
     return center;
 }
 
-RT_CALLABLE_PROGRAM
-float sdTetra(float3 p, float3 v0, float3 v1, float3 v2, float3 v3)
+__device__
+inline float smaxp(float a, float b, float k)
+{
+    float h = optix::max(k - abs(a - b), 0.0) / k;
+    return optix::max(a, b) - h*h*k*(1.0 / 4.0);
+}
+__device__
+inline float sminp(float a, float b, float k)
+{
+    float h = optix::max(k - abs(a - b), 0.0) / k;
+    return optix::min(a, b) - h*h*k*(1.0 / 4.0);
+}
+__device__
+inline float bond(float3 p, float3 a, float3 b, float r)
+{
+    float3 pa = p - a;
+    float3 ba = b - a;
+    float h = clamp(dot(pa, ba) / dot(ba, ba), 0.0, 1.0);
+    return length(pa - ba*h) - r;
+}
+__device__
+inline float Tetra(float3 p, float3 v0, float3 v1, float3 v2, float3 v3)
 {
     float3 c0 = getCenter(v0, v2, v1);
     float3 c1 = getCenter(v0, v3, v2);
@@ -63,8 +89,9 @@ float sdTetra(float3 p, float3 v0, float3 v1, float3 v2, float3 v3)
     float3 c3 = getCenter(v1, v2, v3);
 
     float3 ct = (v0 + v1 + v2 + v3) / 4.0f;
+    //float rad1 = length(ct - c0);
     float rad = length(ct - v0);
-
+    //rad = (rad + rad1) / (2.0*t);
     float3 n0 = getNormal(v0, v2, v1, c0, ct);
     float3 n1 = getNormal(v0, v3, v2, c1, ct);
     float3 n2 = getNormal(v1, v3, v0, c2, ct);
@@ -74,76 +101,394 @@ float sdTetra(float3 p, float3 v0, float3 v1, float3 v2, float3 v3)
     float b = plane(p, c1, n1);
     float c = plane(p, c2, n2);
     float d = plane(p, c3, n3);
-    float f1 = fmaxf(fmaxf(a, b), fmaxf(c, d));
-    float f = length(p - ct) - rad;
-    return fmaxf(f, f1);
+    return fmaxf(fmaxf(a, b), fmaxf(c, d));
+}
+__device__
+inline float TetraWire(float3 p, float3 v0, float3 v1, float3 v2, float3 v3)
+{
+    float f1 = bond(p, v0, v1, 0.4);
+    float f2 = bond(p, v0, v2, 0.4);
+    float f3 = bond(p, v0, v3, 0.4);
+    float f4 = bond(p, v1, v2, 0.4);
+    float f5 = bond(p, v1, v3, 0.4);
+
+    f1 = sminp(f2, f1, 0.4);
+    f1 = sminp(f3, f1, 0.4);
+    f1 = sminp(f4, f1, 0.4);
+    f1 = sminp(f5, f1, 0.4);
+    return f1;
 }
 
-inline __device__  void sampleVolume(int pN, PerRayData& prd, float3 origin, float3 direction)
+__device__
+inline float TetraWire2(float3 p, float3 v0, float3 v1, float3 v2, float3 v3)
+{
+    float3 ct = (v0 + v1 + v2 + v3) / 4.0f;
+    float3 c0 = getCenter(v0, v2, v1);
+    float3 c1 = getCenter(v0, v3, v2);
+    float3 c2 = getCenter(v1, v3, v0);
+    float3 c3 = getCenter(v1, v2, v3);
+    float r = length(ct - v0) / 20;
+
+    float f1 = bond(p, ct, c1, r);
+    float f2 = bond(p, ct, c2, r);
+    float f3 = bond(p, ct, c3, r);
+    float f4 = bond(p, ct, c0, r);
+
+    f1 = sminp(f2, f1, 0.8);
+    f1 = sminp(f3, f1, 0.8);
+    f1 = sminp(f4, f1, 0.8);
+    return f1;
+}
+__device__
+inline float3 computeColTriangle(float3 p, float3 v0, float3 v1, float3 v2, float3 col10, float3 col11, float3 col12, float3 n0)
+{
+    float3 c0 = (v0 + v1 + v2) / 3;
+    float dn = abs(plane(p, c0, n0));
+
+    float3 p0 = v0 - p;
+    float d0 = length(p0 - n0*dn);
+    float3 p1 = v1 - p;
+    float d1 = length(p1 - n0);
+
+    float td = length(v0 - v1);
+    //float cos2=normalize(dot(desc.pos[2] - desc.pos[0], dir));
+    float3 colB1 = col10*d1 / td + col11*d0 / td;
+
+    float3 p2 = v2 - p;
+    float d2 = length(p2 - n0);
+
+    float td2 = length(v0 - v2);
+    float3 colB2 = col10*d2 / td2 + col12*d0 / td2;
+
+    float td3 = length(v1 - v2);
+    colB1 = colB1*d2 / td3 + colB2*d1 / td3;
+    return colB1;
+}
+__device__
+inline float computeTrTriangle(float3 p, float3 v0, float3 v1, float3 v2, float col10, float col11, float col12, float3 n0)
+{
+    float3 c0 = (v0 + v1 + v2) / 3;
+    float dn = abs(plane(p, c0, n0));
+
+    float3 p0 = v0 - p;
+    float d0 = length(p0 - n0*dn);
+    float3 p1 = v1 - p;
+    float d1 = length(p1 - n0);
+
+    float td = length(v0 - v1);
+    //float cos2=normalize(dot(desc.pos[2] - desc.pos[0], dir));
+    float colB1 = col10*d1 / td + col11*d0 / td;
+
+    float3 p2 = v2 - p;
+    float d2 = length(p2 - n0);
+
+    float td2 = length(v0 - v2);
+    float colB2 = col10*d2 / td2 + col12*d0 / td2;
+
+    float td3 = length(v1 - v2);
+    colB1 = colB1*d2 / td3 + colB2*d1 / td3;
+    return colB1;
+}
+
+inline __device__  float3  GetColor(float3 x, float3 v0, float3 v1, float3 v2, float3 v3, float s0, float s1, float s2, float s3)
+{
+    float3 col10;
+    float3 col11;
+    float3 col12;
+    float3 col13;
+    float scale = 400;
+    float4 col = translucent_grays(s0 / scale, s0 / scale, 1); //abs(f / 30), 1);////translucent_grays2(color_id, abs(f / 100));
+    col10 = make_float3(col.x, col.y, col.z);
+    col = translucent_grays(s1 / scale, s1 / scale, 1);
+    col11 = make_float3(col.x, col.y, col.z);
+
+    col = translucent_grays(s2 / scale, s2 / scale, 1);
+    col12 = make_float3(col.x, col.y, col.z);
+
+    col = translucent_grays(s3 / scale, s3 / scale, 1);
+    col13 = make_float3(col.x, col.y, col.z);
+
+    float3 c0 = getCenter(v0, v2, v1);
+    float3 c1 = getCenter(v0, v3, v2);
+    float3 c2 = getCenter(v1, v3, v0);
+    float3 c3 = getCenter(v1, v2, v3);
+
+    float3 ct = (v0 + v1 + v2 + v3) / 4.0f;
+    //float rad1 = length(ct - c0);
+    float rad = length(ct - v0);
+    //rad = (rad + rad1) / (2.0*t);
+    float3 n0 = getNormal(v0, v2, v1, c0, ct);
+    float3 n1 = getNormal(v0, v3, v2, c1, ct);
+    float3 n2 = getNormal(v1, v3, v0, c2, ct);
+    float3 n3 = getNormal(v1, v2, v3, c3, ct);
+
+    float3 col0 = computeColTriangle(x, v0, v1, v2, col10, col11, col12, n0);
+    float3 col1 = computeColTriangle(x, v0, v2, v3, col10, col12, col13, n1);
+    float3 col2 = computeColTriangle(x, v1, v0, v3, col11, col10, col13, n2);
+    float3 col3 = computeColTriangle(x, v1, v2, v3, col11, col12, col13, n3);
+
+    float d0 = abs(plane(x, c0, n0));
+    float d1 = abs(plane(x, c1, n1));
+    float d2 = abs(plane(x, c2, n2));
+    float d3 = abs(plane(x, c3, n3));
+
+    float dmax = max(d0, max(d1, (max(d2, d3))));
+    float dmin = min(d0, min(d1, (min(d2, d3))));
+
+    if (d0 >= 0.001) return col0;
+    if (d1 >= 0.001) return col1;
+    if (d2 >= 0.001) return col2;
+    if (d3 >= 0.001) return col3;
+    float3 colB1 = (col1 / d1 + col0 / d0 + col3 / d3 + col2 / d2) / (d1 + d0 + d3 + d2);
+
+    return colB1;
+}
+
+inline __device__  float  GetIso(float3 x, float3 v0, float3 v1, float3 v2, float3 v3, float s0, float s1, float s2, float s3)
+{
+    float4 col;
+
+    float scale = 450;
+    col = make_float4(s0, s1, s2, s3);
+    col /= scale;
+
+    float3 c0 = getCenter(v0, v2, v1);
+    float3 c1 = getCenter(v0, v3, v2);
+    float3 c2 = getCenter(v1, v3, v0);
+    float3 c3 = getCenter(v1, v2, v3);
+
+    float3 ct = (v0 + v1 + v2 + v3) / 4.0f;
+    //float rad1 = length(ct - c0);
+    float rad = length(ct - v0);
+    //rad = (rad + rad1) / (2.0*t);
+    float3 n0 = getNormal(v0, v2, v1, c0, ct);
+    float3 n1 = getNormal(v0, v3, v2, c1, ct);
+    float3 n2 = getNormal(v1, v3, v0, c2, ct);
+    float3 n3 = getNormal(v1, v2, v3, c3, ct);
+
+    float col0 = computeTrTriangle(x, v0, v1, v2, col.x, col.y, col.z, n0);
+    float col1 = computeTrTriangle(x, v0, v2, v3, col.x, col.z, col.w, n1);
+    float col2 = computeTrTriangle(x, v1, v0, v3, col.y, col.x, col.w, n2);
+    float col3 = computeTrTriangle(x, v1, v2, v3, col.y, col.z, col.w, n3);
+
+    float d0 = abs(plane(x, c0, n0));
+    float d1 = abs(plane(x, c1, n1));
+    float d2 = abs(plane(x, c2, n2));
+    float d3 = abs(plane(x, c3, n3));
+
+    float dmax = max(d0, max(d1, (max(d2, d3))));
+    float dmin = min(d0, min(d1, (min(d2, d3))));
+
+    if (d0 >= 0.001) return col.x;
+    if (d1 >= 0.001) return col.y;
+    if (d2 >= 0.001) return col.z;
+    if (d3 >= 0.001) return col.w;
+    float colB1 = (col.y / d1 + col.x / d0 + col.w / d3 + col.z / d2) / (d1 + d0 + d3 + d2);
+
+    return colB1;
+}
+
+inline __device__
+float sdTetraD(float3 p, float3 v0, float3 v1, float3 v2, float3 v3)
+{
+    float f = Tetra(p, v0, v1, v2, v3); //compute tetra
+    return f;
+}
+
+inline __device__
+float sdTetra(float3 p, float3 v0, float3 v1, float3 v2, float3 v3)
+{
+    float t = TimeSound;// +1.0f;
+
+    return Tetra(p, v0, v1, v2, v3); //compute tetra
+}
+inline __device__
+float sdTetra2(float3 p, float3 v0, float3 v1, float3 v2, float3 v3)
+{
+    float t = TimeSound;// +1.0f;
+
+    if (t < 2.0) {
+        float f = Tetra(p, v0, v1, v2, v3); //compute tetra
+        if (t < 1.0) {
+            float3 ct = (v0 + v1 + v2 + v3) / 4.0f;
+            float3 c0 = getCenter(v0, v2, v1);
+            //float rad1 = length(ct - c0);
+            float rad = length(ct - c0) / 2.0;
+            float f1 = length(p - ct) - rad;
+            //interpolation
+            return (1 - t)*f1 + t*f;
+        }
+        else { //other time frame
+            float f1 = TetraWire2(p, v0, v1, v2, v3);
+
+            //interpolation
+            float tt = t - 1;
+            return (1 - (tt*tt*tt))*f + (tt*tt*tt)*f1;
+        }
+    }
+    else {
+        float f = TetraWire2(p, v0, v1, v2, v3);
+        float3 ct = (v0 + v1 + v2 + v3) / 4.0f;
+        float3 c0 = getCenter(v0, v2, v1);
+        float rad = length(ct - c0);
+
+        if (rad < 1.4) {
+            //float f1 = Tetra(p, v0, v1, v2, v3);
+            float3 ct = (v0 + v1 + v2 + v3) / 4.0f;
+            float3 c0 = getCenter(v0, v2, v1);
+            //float rad1 = length(ct - c0);
+            float rad = length(ct - c0);
+            float f1 = length(p - ct) - rad;
+            //interpolation
+            float tt = t - 2;
+            return (1 - (tt))*f + (tt)*f1;
+        }
+        else {
+            float f1 = TetraWire(p, v0, v1, v2, v3);
+            float fs1 = length(p - v0) - 1.1;
+            float fs2 = length(p - v1) - 1.1;
+            float fs3 = length(p - v2) - 1.1;
+            float fs4 = length(p - v3) - 1.1;
+
+            float tt = (t - 2) * 4;
+
+            float f2 = sminp(f, fs1, 0.8);
+            f2 = sminp(f2, fs2, 0.8);
+            f2 = sminp(f2, fs3, 0.8);
+            f2 = sminp(f2, fs4, 0.8);
+            f1 = sminp(f1, f2, 0.8);
+
+            if (tt < 1.0)
+            {
+                return (1 - (tt))*f + (tt)*f2;
+            }
+            else {
+                float tt2 = (tt - 1) / 3;
+                //interpolation
+                return (1 - (tt2*tt2))*f2 + (tt2*tt2)*f1;
+            }
+        }
+        /*
+       else {
+           float3 c1 = getCenter(v0, v3, v2);
+           float3 c2 = getCenter(v1, v3, v0);
+           float3 c3 = getCenter(v1, v2, v3);
+
+           float f1 = bond(p, ct, c1, 0.4);
+           float f2 = bond(p, ct, c2, 0.4);
+           float f3 = bond(p, ct, c3, 0.4);
+           float f4 = bond(p, ct, c0, 0.4);
+
+           f1 = sminp(f2, f1, 0.8);
+           f1 = sminp(f3, f1, 0.8);
+           f1 = sminp(f4, f1, 0.8);
+           //interpolation
+           return (1 - (t - 2))*f + (t - 2)*f1;
+       }*/
+    }
+    /*if (TimeSound < 3.0) {
+        float3 c0 = getCenter(v0, v2, v1);
+        float3 c1 = getCenter(v0, v3, v2);
+        float3 c2 = getCenter(v1, v3, v0);
+        float3 c3 = getCenter(v1, v2, v3);
+
+        float3 ct = (v0 + v1 + v2 + v3) / 4.0f;
+        float rad1 = length(ct - c0);
+        float rad = length(ct - v0);
+        rad = (rad + rad1) / (2.0*t);
+        float3 n0 = getNormal(v0, v2, v1, c0, ct);
+        float3 n1 = getNormal(v0, v3, v2, c1, ct);
+        float3 n2 = getNormal(v1, v3, v0, c2, ct);
+        float3 n3 = getNormal(v1, v2, v3, c3, ct);
+
+        float a = plane(p, c0, n0);
+        float b = plane(p, c1, n1);
+        float c = plane(p, c2, n2);
+        float d = plane(p, c3, n3);
+        float f1 = fmaxf(fmaxf(a, b), fmaxf(c, d));
+        float3 ct2 = ct - (t - 1) / 10 * v0;
+        float f = length(p - ct2) - rad;
+        return smaxp(-f, f1, 1.8);
+    }
+    else*/
+}
+
+inline __device__  void sampleVolume(int pN, PerRayData& prd, float3 origin, float3 direction, float rayMin)
 {
     float Ka = 0.5;
     float Kd = 0.9;
     float Ks = 0.9;
     cellPrimDesc cell = prd.cellPrimitives[pN];
     primParamDesc prim = prd.prims[pN];
-    float initialStep = 0.05;
+    float initialStep = 0.1;
     float tstep = initialStep;
-    float dist = cell.intersectionDist - prim.rad[0] - 0.1;
+    float3 c = (prim.pos[0] + prim.pos[1] + prim.pos[2] + prim.pos[3]) / 4.0;
+    float rad = length(c - prim.pos[0]);
+    float primNorm = rad / ((TimeSound + 1) / 2);
+    float dist = cell.intersectionDist - rad;
 
-    float3 pos = origin + direction*dist;
-    float3 step = direction*tstep;
-
-    float4 sum = prd.result;// make_float4(prd.radiance.x, prd.radiance.y, prd.radiance.z, 0.1); //TODO: get background color here
-
-    float s1 = sdTetra(pos, prim.pos[0], prim.pos[1], prim.pos[2], prim.pos[3]);
-    //evalF(pos, prim);
-    //int numSteps = 10;
-    float i = 0.0;
-    float max = cell.maxDist;// *2 + 0.4; //bounding box size
-
-    while (i < max) //s2 < 0.01)
+    if (dist >= rayMin)
     {
-        if (s1 < initialStep)
-        {
-            //	optix::float3 hit_point = origin + theIntersectionDistance * direction;
-            float4 col = cell.color;// make_float4(color2.x, color2.y, color2.z, trp*Ka);
-            col.w = 0.01;
-            // if (tstep > initialStep)
-            {
-                float F = exp(-col.w*abs(s1) * 10);
-                col = col*(1.0 - F);
-                col.w = (1.0 - F);
-            }
-            /*else {
-                col.x *= col.w;
-                col.y *= col.w;
-                col.z *= col.w;
-            }*/
+        float3 pos = origin + direction*dist;
+        float3 step = direction*tstep;
 
-            float t = sum.w;
-            // "over" operator for front-to-back blending
-            sum = sum + col*(1.0f - sum.w);
-        }
-        tstep = fmax(initialStep, abs(s1));
-        step = direction*tstep;
-        i += tstep;
-        pos += step;
-        if (sum.w >= 1.0) {
-            i = max + 1;
-        }
-        else
-            s1 = sdTetra(pos, prim.pos[0], prim.pos[1], prim.pos[2], prim.pos[3]);
+        float4 sum = prd.result;// make_float4(prd.radiance.x, prd.radiance.y, prd.radiance.z, 0.1); //TODO: get background color here
+
+        float s1 = sdTetra(pos, prim.pos[0], prim.pos[1], prim.pos[2], prim.pos[3]);
         //evalF(pos, prim);
-    }
+        //int numSteps = 10;
+        float i = 0.0;
+        float max = cell.maxDist;// *2 + 0.4; //bounding box size
 
-    prd.result = sum;
+        while (i < max) //s2 < 0.01)
+        {
+            float ftr = GetIso(pos, prim.pos[0], prim.pos[1], prim.pos[2], prim.pos[3], prim.rad[0], prim.rad[1], prim.rad[2], prim.rad[3]);//cell.color;// make_float4(color2.x, color2.y, color2.z, trp*Ka);
+            if (abs(ftr) < 2.2)
+            {
+                if (s1 < initialStep)
+                {
+                    //	optix::float3 hit_point = origin + theIntersectionDistance * direction;
+                    //float3 cc = translucent_grays(ftr,ftr, 1); //GetColor(pos, prim.pos[0], prim.pos[1], prim.pos[2], prim.pos[3], prim.rad[0], prim.rad[1], prim.rad[2], prim.rad[3]);//cell.color;// make_float4(color2.x, color2.y, color2.z, trp*Ka);
+                    float4 col = translucent_grays(ftr, ftr, 1); //make_float4(cc.x, cc.y, cc.z, cell.color.w);
+                    col.w = cell.color.w;
+                    if (tstep > initialStep)
+                    {
+                        float F = exp(-col.w*abs(s1) * 40 / primNorm);
+                        col = col*(1.0 - F);
+                        col.w = (1.0 - F);
+                    }
+                    else {
+                        col.x *= col.w;
+                        col.y *= col.w;
+                        col.z *= col.w;
+                    }
+
+                    float t = sum.w;
+                    // "over" operator for front-to-back blending
+                    sum = sum + col*(1.0f - sum.w);
+                }
+            }
+            tstep = fmax(initialStep, abs(s1));
+            step = direction*tstep;
+            i += tstep;
+            pos += step;
+            if (sum.w >= 1.0) {
+                i = max + 1;
+            }
+            else
+                s1 = sdTetra(pos, prim.pos[0], prim.pos[1], prim.pos[2], prim.pos[3]);
+            //evalF(pos, prim);
+        }
+
+        prd.result = sum;
+    }
 }
 
 inline __device__  void render_HeteroVolume(int pN, PerRayData& prd, float3 origin, float3 direction)
 {
     float Ka = 0.5;
     float Kd = 0.9;
-    float Ks = 0.9;
+    float Ks = 0.5;
     cellPrimDesc cell = prd.cellPrimitives[pN];
     primParamDesc prim = prd.prims[pN];
     float tstep = 0.05;
@@ -164,6 +509,13 @@ inline __device__  void render_HeteroVolume(int pN, PerRayData& prd, float3 orig
     float max = cell.maxDist;// *2 + 0.4; //bounding box size
     float4 sumcol = make_float4(0.0);
     float tracedDist = 0;
+
+    BasicLight lights2[2];
+    lights2[0].color = optix::make_float3(1.0);
+    lights2[0].pos = optix::make_float3(10.0);
+
+    lights2[1].color = optix::make_float3(1.0);
+    lights2[1].pos = optix::make_float3(0, 0, 10.0);
 
     //float4 col1 = translucent_grays(0.5, 0.01, 0);
     int VolInt = 1;
@@ -189,7 +541,34 @@ inline __device__  void render_HeteroVolume(int pN, PerRayData& prd, float3 orig
                 //float3 color2 = Ka *  cell.color;
                 float3 c = evalCol(pos, prim);//	optix::float3 hit_point = origin + theIntersectionDistance * direction;
                 float4 col = make_float4(c.x, c.y, c.z, cell.color.w);// make_float4(color2.x, color2.y, color2.z, trp*Ka);
-                //col.w = trp*Ka;
+                col *= Ka;
+                if (i < tstep * 2) //surface
+                {
+                    float3 color = make_float3(col.x, col.y, col.z);                                          //	optix::float3 hit_point = theRay.origin + theIntersectionDistance * theRay.direction;
+
+                    for (int i = 0; i < 2; ++i)
+                    {
+                        BasicLight light = lights2[i];
+                        float3 L = optix::normalize(light.pos - pos);
+                        float nDl = optix::dot(cell.normal, L);
+
+                        //if (nDl > 0)
+                        //    color += Kd * nDl * light.color; // make_float3(1.0);//
+
+                        float phong_exp = 0.1;
+                        if (nDl > 0) {
+                            color += Kd * nDl * light.color;
+
+                            optix::float3 H = optix::normalize(L - direction);
+                            float nDh = optix::dot(cell.normal, H);
+                            if (nDh > 0)
+                                color += Ks * light.color * pow(nDh, phong_exp);
+                        }
+                    }
+                    col.x = color.x;
+                    col.y = color.y;
+                    col.z = color.z;
+                }
 
                 //Beer–Lambert law
                 float F = exp(-cell.color.w*abs(s1) * 200);
@@ -349,11 +728,14 @@ __device__ int skipOverlap2(const int pN, PerRayData& prd)
     if ((type1 == type2) && (type1 != 4))
     {
         //if ((curDist - dmin2 > 0.001f) && (dmax2 - curDist > 0.001f)) {//(abs(dmin1 - dmin2) < 0.1) &&
-        if (abs(dmin1 - dmin2) < 0.01) //&& (abs(dmax1 - dmax2) < 0.001)) {
+        if (abs(dmin1 - dmin2) < 0.3) //&& (abs(dmax1 - dmax2) < 0.001)) {
                                        //skip cell
         {
-            if (dmax1 > dmax2) return i;
-            else return j;
+            if (dmax1 > dmax2) { //should trace the max cell
+                prd.cellPrimitives[j] = prd.cellPrimitives[i];
+                prd.prims[j] = prd.prims[i];
+            }
+            return j;
         }
     }
     return i;
@@ -381,7 +763,7 @@ __device__ void basic_sort(PerRayData& prd) {
         }
 }
 
-__device__ void render_Tetra(PerRayData& prd, float3 origin, float3 direction)
+__device__ void render_Tetra(PerRayData& prd, float3 origin, float3 direction, float tmin)
 {
     if (prd.result.w > 0.7)
         return;
@@ -402,7 +784,7 @@ __device__ void render_Tetra(PerRayData& prd, float3 origin, float3 direction)
         //skip overlap
         //int j = skipOverlap2(i, prd);
 
-        sampleVolume(i, prd, origin, direction);
+        sampleVolume(i, prd, origin, direction, tmin);
 
         i++;
         if (prd.result.w > 0.7) i = N;
@@ -506,7 +888,7 @@ RT_PROGRAM void raygeneration0()
     //prd.radiance *= 2.5 + make_float3(prd.result); //worked previously. instead
     // prd.result = prd.result + col*(1.0f - prd.result.w);
 
-    // prd.result *= 1.5;
+    //prd.result *= 1.5;
     //prd.result += col;
     prd.radiance = make_float3(prd.result.x, prd.result.y, prd.result.z);
 
@@ -550,16 +932,17 @@ RT_PROGRAM void raygeneration1()
     if (tenter < texit)
     {
         float tbuffer = 0.f;
-
+        float step = 5.0;
         while (tbuffer < texit && prd.result.w < 0.7)
         {
             ray.tmin = tenter;
             ray.tmax = texit;
             ray.tmin = fmaxf(tenter, tbuffer);
-            ray.tmax = fminf(texit, tbuffer + 1.0);
+            ray.tmax = fminf(texit, tbuffer + step);
 
             if (ray.tmax > tenter)    //doing this will keep rays more coherent
             {
+                prd.cur_prim = 0;
                 // Start tracing ray from the camera and further
                 rtTrace(sysTopObject, ray, prd);
 
@@ -568,14 +951,14 @@ RT_PROGRAM void raygeneration1()
                 if (prd.renderType > 2)
                 {
                     //tetra or molecules
-                    render_Tetra(prd, ray.origin, ray.direction);
+                    render_Tetra(prd, ray.origin, ray.direction, tenter);
                 }
 
                 //if (prd.renderType > 0)
                 //    postRender(ray, prd, prd.normal, prd.last_hit_point);
             }
 
-            tbuffer += 1.0;
+            tbuffer += step;
         }
     }
 

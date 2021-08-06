@@ -1,0 +1,2 @@
+D:/nvidia/volume/VAAPI/rtmidi/build/rtmidi.dir/RelWithDebInfo/RtMidi.obj
+D:/nvidia/volume/VAAPI/rtmidi/build/rtmidi.dir/RelWithDebInfo/rtmidi_c.obj

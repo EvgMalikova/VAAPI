@@ -1,0 +1,49 @@
+﻿  Building Custom Rule D:/nvidia/volume/VAAPI/rtmidi/CMakeLists.txt
+  CMake does not need to re-run because D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/generate.stamp is up-to-date.
+  RtMidi.cpp
+d:\nvidia\volume\vaapi\rtmidi\RtMidi.h(79): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'RtMidiError'
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_exception.h(43): note: see declaration of 'std::exception'
+  d:\nvidia\volume\vaapi\rtmidi\RtMidi.h(78): note: see declaration of 'RtMidiError'
+d:\nvidia\volume\vaapi\rtmidi\RtMidi.h(116): warning C4251: 'RtMidiError::message_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'RtMidiError'
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+d:\nvidia\volume\vaapi\rtmidi\RtMidi.h(522): warning C4251: 'MidiApi::errorString_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'MidiApi'
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+d:\nvidia\volume\vaapi\rtmidi\RtMidi.h(587): warning C4251: 'MidiInApi::inputData_': struct 'MidiInApi::RtMidiInData' needs to have dll-interface to be used by clients of class 'MidiInApi'
+  d:\nvidia\volume\vaapi\rtmidi\RtMidi.h(568): note: see declaration of 'MidiInApi::RtMidiInData'
+  rtmidi_c.cpp
+d:\nvidia\volume\vaapi\rtmidi\RtMidi.h(79): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'RtMidiError'
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_exception.h(43): note: see declaration of 'std::exception'
+  d:\nvidia\volume\vaapi\rtmidi\RtMidi.h(78): note: see declaration of 'RtMidiError'
+d:\nvidia\volume\vaapi\rtmidi\RtMidi.h(116): warning C4251: 'RtMidiError::message_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'RtMidiError'
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+d:\nvidia\volume\vaapi\rtmidi\RtMidi.h(522): warning C4251: 'MidiApi::errorString_': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'MidiApi'
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+d:\nvidia\volume\vaapi\rtmidi\RtMidi.h(587): warning C4251: 'MidiInApi::inputData_': struct 'MidiInApi::RtMidiInData' needs to have dll-interface to be used by clients of class 'MidiInApi'
+  d:\nvidia\volume\vaapi\rtmidi\RtMidi.h(568): note: see declaration of 'MidiInApi::RtMidiInData'
+D:\nvidia\volume\VAAPI\rtmidi\rtmidi_c.cpp(139): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(552): note: see declaration of 'strdup'
+  Generating Code...
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_get_compiled_api' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_api_name' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_api_display_name' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_compiled_api_by_name' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_open_port' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_open_virtual_port' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_close_port' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_get_port_count' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_get_port_name' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_in_create_default' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_in_create' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_in_free' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_in_get_current_api' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_in_set_callback' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_in_cancel_callback' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_in_ignore_types' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_in_get_message' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_out_create_default' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_out_create' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_out_free' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_out_get_current_api' specified multiple times; using first specification
+rtmidi_c.obj : warning LNK4197: export 'rtmidi_out_send_message' specified multiple times; using first specification
+     Creating library D:/nvidia/volume/VAAPI/rtmidi/build/Release/rtmidi.lib and object D:/nvidia/volume/VAAPI/rtmidi/build/Release/rtmidi.exp
+  rtmidi.vcxproj -> D:\nvidia\volume\VAAPI\rtmidi\build\Release\rtmidi.dll

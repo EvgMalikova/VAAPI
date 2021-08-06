@@ -1,0 +1,6 @@
+<map id="sdfHTetra" name="sdfHTetra">
+<area shape="rect" id="node1" title="Class for tetrahedral meshes Redefines: *SDF primitive Bounding box as center is to be evaluated Cons..." alt="" coords="33,229,111,256"/>
+<area shape="rect" id="node2" href="$classsdf_heterogeneous.html" title="Main class for heterogeneous objects with simple molecular geometry." alt="" coords="9,155,135,181"/>
+<area shape="rect" id="node3" href="$classoptix_s_d_f_geometry.html" title="Abstract class for SDF Geometry. A basic class. All SDF geometry inherits it&#39;s functions." alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node4" href="$classva_basic_object.html" title=" " alt="" coords="19,5,125,32"/>
+</map>

@@ -44,6 +44,7 @@ typedef struct {
 typedef struct {
     std::vector<optix::float3> centers;
     std::vector<int> type;
+    std::vector<float> rad;
     optix::float3 bbox_min;
     optix::float3 bbox_max;
     std::vector<optix::int4> tetra;
@@ -64,6 +65,7 @@ public:
     sdfReader()
     {
         optixReader<MOL>::optixReader();
+        m_delta = 2.0;
     };
     ~sdfReader() {};
 
@@ -84,19 +86,21 @@ public:
         return (bmax + bmin) / 2;
     };
 
-    optix::float3 GetBMax() {
+    optix::float3 GetBMax(bool d) {
         optix::float3 f = optixReader<MOL>::GetOutput()->bbox_max;
-        f += optix::make_float3(17);
+        if (d)
+            f += optix::make_float3(m_delta);
         return f;
     }
 
-    optix::float3 GetBMin() {
+    optix::float3 GetBMin(bool d) {
         optix::float3 f = optixReader<MOL>::GetOutput()->bbox_min;
-        f -= optix::make_float3(17);
+        if (d)
+            f -= optix::make_float3(m_delta);
         return f;
     };
 protected:
-
+    float m_delta;
     virtual void ReadFile();
     int GetAtomNumber(std::string type);
     float GetAtomRadii(std::string type);
@@ -123,6 +127,9 @@ public:
     std::vector<int> GetOutput3() {
         return optixReader<TETRAHEDRAS>::GetOutput()->type;
     };
+    std::vector<float> GetOutput4() {
+        return optixReader<TETRAHEDRAS>::GetOutput()->rad;
+    };
 
     optix::float3 GetCenter() {
         optix::float3 bmax = optixReader<TETRAHEDRAS>::GetOutput()->bbox_max;
@@ -133,13 +140,13 @@ public:
 
     optix::float3 GetBMax() {
         optix::float3 f = optixReader<TETRAHEDRAS>::GetOutput()->bbox_max;
-        f += optix::make_float3(7);
+        f += optix::make_float3(6);
         return f;
     }
 
     optix::float3 GetBMin() {
         optix::float3 f = optixReader<TETRAHEDRAS>::GetOutput()->bbox_min;
-        f -= optix::make_float3(7);
+        f -= optix::make_float3(6);
         return f;
     };
 

@@ -1,0 +1,167 @@
+\hypertarget{classoptix_tri_geometry}{}\doxysection{optix\+Tri\+Geometry Class Reference}
+\label{classoptix_tri_geometry}\index{optixTriGeometry@{optixTriGeometry}}
+
+
+Abstract class for Triangulated Geometry.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Geometry.\+h$>$}
+
+
+
+Inheritance diagram for optix\+Tri\+Geometry\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{classoptix_tri_geometry__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for optix\+Tri\+Geometry\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{classoptix_tri_geometry__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoptix_tri_geometry_af9eb88311b933805bb946805a60d38d1}{optix\+Tri\+Geometry}} ()
+\item 
+\mbox{\hyperlink{classoptix_tri_geometry_acf0207f043728537d648063e8f101a6c}{$\sim$optix\+Tri\+Geometry}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_tri_geometry_a17a8aff386907c6f578a0062236e6311}{Update}} ()
+\item 
+virtual optix\+::\+Geometry \mbox{\hyperlink{classoptix_tri_geometry_affe05758e8564cce36ae371922eded5e}{Get\+Output}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classoptix_tri_geometry_ab1baa3bd252fd29dad2e8f09d413b56a}{Modified}} ()
+\item 
+void \mbox{\hyperlink{classoptix_tri_geometry_af66167f674d0301ff85d730e0bc93d0e}{Create\+Geometry}} (std\+::vector$<$ \mbox{\hyperlink{struct_vertex_attributes}{Vertex\+Attributes}} $>$ const \&attributes, std\+::vector$<$ unsigned int $>$ const \&indices)
+\item 
+void \mbox{\hyperlink{classoptix_tri_geometry_a4ea47f07fef99a0f67742edcbc9c51db}{Initialize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Abstract class for Triangulated Geometry. 
+
+The visualisation of triangulated meshes is a direction that is not highly developed by this A\+PI. However, this class implements basic features for such objects integration \hypertarget{classoptix_tri_geometry_autotoc_md25}{}\doxysubsubsection{within A\+P\+I and further developmet}\label{classoptix_tri_geometry_autotoc_md25}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoptix_tri_geometry_af9eb88311b933805bb946805a60d38d1}\label{classoptix_tri_geometry_af9eb88311b933805bb946805a60d38d1}} 
+\index{optixTriGeometry@{optixTriGeometry}!optixTriGeometry@{optixTriGeometry}}
+\index{optixTriGeometry@{optixTriGeometry}!optixTriGeometry@{optixTriGeometry}}
+\doxysubsubsection{\texorpdfstring{optixTriGeometry()}{optixTriGeometry()}}
+{\footnotesize\ttfamily optix\+Tri\+Geometry\+::optix\+Tri\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_tri_geometry_af9eb88311b933805bb946805a60d38d1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_tri_geometry_af9eb88311b933805bb946805a60d38d1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_tri_geometry_acf0207f043728537d648063e8f101a6c}\label{classoptix_tri_geometry_acf0207f043728537d648063e8f101a6c}} 
+\index{optixTriGeometry@{optixTriGeometry}!````~optixTriGeometry@{$\sim$optixTriGeometry}}
+\index{````~optixTriGeometry@{$\sim$optixTriGeometry}!optixTriGeometry@{optixTriGeometry}}
+\doxysubsubsection{\texorpdfstring{$\sim$optixTriGeometry()}{~optixTriGeometry()}}
+{\footnotesize\ttfamily optix\+Tri\+Geometry\+::$\sim$optix\+Tri\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classoptix_tri_geometry_af66167f674d0301ff85d730e0bc93d0e}\label{classoptix_tri_geometry_af66167f674d0301ff85d730e0bc93d0e}} 
+\index{optixTriGeometry@{optixTriGeometry}!CreateGeometry@{CreateGeometry}}
+\index{CreateGeometry@{CreateGeometry}!optixTriGeometry@{optixTriGeometry}}
+\doxysubsubsection{\texorpdfstring{CreateGeometry()}{CreateGeometry()}}
+{\footnotesize\ttfamily void optix\+Tri\+Geometry\+::\+Create\+Geometry (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_vertex_attributes}{Vertex\+Attributes}} $>$ const \&}]{attributes,  }\item[{std\+::vector$<$ unsigned int $>$ const \&}]{indices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_tri_geometry_af66167f674d0301ff85d730e0bc93d0e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_tri_geometry_af66167f674d0301ff85d730e0bc93d0e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_tri_geometry_affe05758e8564cce36ae371922eded5e}\label{classoptix_tri_geometry_affe05758e8564cce36ae371922eded5e}} 
+\index{optixTriGeometry@{optixTriGeometry}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!optixTriGeometry@{optixTriGeometry}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily virtual optix\+::\+Geometry optix\+Tri\+Geometry\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptix_plane_af44c1c3ab0e1a556f4c0b7efe74976cc}{optix\+Plane}}, and \mbox{\hyperlink{classoptix_geom_basic_a3822d2fada4845c058954b1ea94f2337}{optix\+Geom\+Basic}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_tri_geometry_affe05758e8564cce36ae371922eded5e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_tri_geometry_a4ea47f07fef99a0f67742edcbc9c51db}\label{classoptix_tri_geometry_a4ea47f07fef99a0f67742edcbc9c51db}} 
+\index{optixTriGeometry@{optixTriGeometry}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!optixTriGeometry@{optixTriGeometry}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void optix\+Tri\+Geometry\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_tri_geometry_a4ea47f07fef99a0f67742edcbc9c51db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_tri_geometry_a4ea47f07fef99a0f67742edcbc9c51db_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_tri_geometry_ab1baa3bd252fd29dad2e8f09d413b56a}\label{classoptix_tri_geometry_ab1baa3bd252fd29dad2e8f09d413b56a}} 
+\index{optixTriGeometry@{optixTriGeometry}!Modified@{Modified}}
+\index{Modified@{Modified}!optixTriGeometry@{optixTriGeometry}}
+\doxysubsubsection{\texorpdfstring{Modified()}{Modified()}}
+{\footnotesize\ttfamily virtual void optix\+Tri\+Geometry\+::\+Modified (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classoptix_tri_geometry_a17a8aff386907c6f578a0062236e6311}\label{classoptix_tri_geometry_a17a8aff386907c6f578a0062236e6311}} 
+\index{optixTriGeometry@{optixTriGeometry}!Update@{Update}}
+\index{Update@{Update}!optixTriGeometry@{optixTriGeometry}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void optix\+Tri\+Geometry\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptix_geom_basic_afb9b648f01e49e0d000d13feb315f0c1}{optix\+Geom\+Basic}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{optix_geometry_8h}{optix\+Geometry.\+h}}\item 
+src/\mbox{\hyperlink{optix_geometry_8cpp}{optix\+Geometry.\+cpp}}\end{DoxyCompactItemize}

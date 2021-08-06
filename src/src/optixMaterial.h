@@ -160,6 +160,7 @@ public:
         }
         m_hType = type;
     };
+    sdfHeterogeneous::ObjectType GetHeteroObjType() { return m_hType; };
     void SetPostprocess(int post) { m_postprocess = post; };
     optix::Program GetEvalProg();
     optix::Program GetColorProg();

@@ -1,0 +1,6 @@
+<map id="texReader&lt; T &gt;" name="texReader&lt; T &gt;">
+<area shape="rect" id="node1" title=" " alt="" coords="129,80,241,107"/>
+<area shape="rect" id="node3" href="$classply_sdf_texture_reader.html" title="Basic class for reading Mesh from file and returning an SDFtexture from file operates itk::MeshFileRe..." alt="" coords="5,155,179,181"/>
+<area shape="rect" id="node4" href="$classsdf_texture_reader.html" title="Read texture from file and applies signed distance transfrom to generate SDF texture." alt="" coords="203,155,357,181"/>
+<area shape="rect" id="node2" href="$classoptix_reader.html" title="The class creates a basic triangular plane for Optix use. Architecture much inspired by VTK (http://v..." alt="" coords="124,5,247,32"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="auditoryModel" name="auditoryModel">
+<area shape="rect" id="node1" title="The class responsible for rendering auditory propertis." alt="" coords="28,580,215,877"/>
+<area shape="rect" id="node2" href="$classva_basic_model.html" title="The class responsible for rendering auditory propertis." alt="" coords="5,220,136,517"/>
+<area shape="rect" id="node3" href="$classauditory_mapper.html" title=" " alt="" coords="160,301,299,437"/>
+<area shape="rect" id="node4" href="$classva_basic_object.html" title=" " alt="" coords="148,5,311,171"/>
+</map>

@@ -21,7 +21,7 @@
 void  vaAdvancedRenderer::InitDefaultModels()
 {
     opticM = std::unique_ptr<antiAlizedModel>(new antiAlizedModel());
-    //    audioM = std::unique_ptr<auditoryModel>(new auditoryModel());
+    audioM = std::unique_ptr<auditoryModel>(new auditoryModel());
     std::cout << "NEW INITED" << std::endl;
 }
 

@@ -1,0 +1,5 @@
+﻿  Building Custom Rule D:/nvidia/volume/VAAPI/rtmidi/CMakeLists.txt
+  CMake does not need to re-run because D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/generate.stamp is up-to-date.
+  qmidiin.cpp
+D:\nvidia\volume\VAAPI\rtmidi\tests\qmidiin.cpp(83): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  qmidiin.vcxproj -> D:\nvidia\volume\VAAPI\rtmidi\build\tests\Release\qmidiin.exe

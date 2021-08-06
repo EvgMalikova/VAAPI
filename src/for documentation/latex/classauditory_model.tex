@@ -1,0 +1,445 @@
+\hypertarget{classauditory_model}{}\doxysection{auditory\+Model Class Reference}
+\label{classauditory_model}\index{auditoryModel@{auditoryModel}}
+
+
+Architecture much inspired by V\+TK Renderer(\href{http://vtk.org}{\texttt{ http\+://vtk.\+org}}) implementation The classes are mainly responsible for open\+G\+L/open\+AL interop.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Audio\+Optic.\+h$>$}
+
+
+
+Inheritance diagram for auditory\+Model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classauditory_model__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for auditory\+Model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classauditory_model__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45d}{Audio\+Scan\+Mode}} \{ \mbox{\hyperlink{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45da46fa2be95024f8322d6935061417b3c3}{L\+I\+NE}}, 
+\mbox{\hyperlink{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45da634d14b718010e466b43691f49638aaf}{G\+R\+ID}}, 
+\mbox{\hyperlink{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45da19497cbe2f722be2bea71b6ca463f38f}{C\+O\+NE}}
+ \}
+\item 
+enum \mbox{\hyperlink{classauditory_model_adb3f00eda6322a72a8f3710399940c3a}{Audio\+Map\+Mode}} \{ \mbox{\hyperlink{classauditory_model_adb3f00eda6322a72a8f3710399940c3aa9029a95f03b2bba2ad32541555148beb}{C\+M\+A\+J\+S\+C\+A\+LE}}, 
+\mbox{\hyperlink{classauditory_model_adb3f00eda6322a72a8f3710399940c3aaee2a7e6c3dac179354058f6e035e490c}{Pl\+U\+C\+K\+ED}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classauditory_model_a48aa1566fcc55a157815276105e1f184}{auditory\+Model}} ()
+\item 
+\mbox{\hyperlink{classauditory_model_a75020b89e58db9105e80d7b16659c298}{$\sim$auditory\+Model}} ()
+\item 
+void \mbox{\hyperlink{classauditory_model_a2aa470ad66857b8154ce7fbebed21f13}{Render}} ()
+\item 
+void \mbox{\hyperlink{classauditory_model_a707860c223ce72eb847038a3e81fcffb}{Bind\+Buffer}} (optix\+::\+Context context)
+\item 
+void \mbox{\hyperlink{classauditory_model_a83a5fab48fd1ba953f7954fb26b120f5}{Get\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{classauditory_model_a39d4000d37b928db7fb765ad40265cbe}{Reshape}} (int width, int height)
+\item 
+int \mbox{\hyperlink{classauditory_model_a941ad544554c0221ba7c4acc85ed9f96}{Get\+Width}} ()
+\item 
+int \mbox{\hyperlink{classauditory_model_a9d1c53aff520a2832355fdc62faa9111}{Get\+Height}} ()
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classauditory_model_ad356591296ebb7466e3c8d64f9830768}{Get\+Output}} ()
+\item 
+\mbox{\hyperlink{classauditory_model_a48aa1566fcc55a157815276105e1f184}{auditory\+Model}} ()
+\item 
+\mbox{\hyperlink{classauditory_model_a75020b89e58db9105e80d7b16659c298}{$\sim$auditory\+Model}} ()
+\item 
+\mbox{\hyperlink{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45d}{Audio\+Scan\+Mode}} \mbox{\hyperlink{classauditory_model_aefc0879ec392c740c4eda396fd581ec6}{Get\+Mode}} ()
+\item 
+virtual void \mbox{\hyperlink{classauditory_model_a086406bf0497992f75ae1c6c127a5619}{Init}} ()
+\item 
+void \mbox{\hyperlink{classauditory_model_abef63e0f04636630d50a2bfb8e468073}{Set\+Auditory\+Mapper}} (\mbox{\hyperlink{classauditory_mapper}{auditory\+Mapper}} $\ast$mm)
+\item 
+virtual void \mbox{\hyperlink{classauditory_model_a890b44708f3f7808c6b12ee1a7ca0b8c}{Update\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{classauditory_model_a5249d1ca9e3cc5fb47222284144f700b}{Map\+Buffer}} ()
+\item 
+virtual void \mbox{\hyperlink{classauditory_model_a7da67e1b4fce2b78fbffabce6aee25d2}{Render}} ()
+\item 
+virtual void \mbox{\hyperlink{classauditory_model_a5ae3ffc945b89327e163354ed82d97da}{Bind\+Buffer}} (optix\+::\+Context context)
+\item 
+virtual void \mbox{\hyperlink{classauditory_model_af4dc551e9abceb3079e21bfdc028d84d}{Reshape}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classauditory_model_a502e95a6d3ebfa66b5dcf06cf8af2008}{Set\+Audio\+Scanning\+Param}} (\mbox{\hyperlink{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45d}{Audio\+Scan\+Mode}} m)
+\item 
+float \mbox{\hyperlink{classauditory_model_a022d249819672210dfbb16a068b42971}{Get\+Norma\+Koeff}} ()
+\item 
+void \mbox{\hyperlink{classauditory_model_acab00059a6697ea87f89a5595daf67ce}{Check\+All\+Audio}} (float time)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classauditory_mapper}{auditory\+Mapper}} $\ast$ \mbox{\hyperlink{classauditory_model_a5b9c53244ec94ff9b1215e56fdbee50d}{map}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classauditory_model_a294d1486ab34027db867d2adc68e7ed9}{Compute\+Sound\+Raycast}} (float dist\+Norm, float dist\+Comp)
+\item 
+void \mbox{\hyperlink{classauditory_model_ab3e46adcbcfd93252e1a35149159acc1}{Configure\+H\+R\+TF}} ()
+\item 
+void \mbox{\hyperlink{classauditory_model_ac11a216b13371a14a8ac3a4febbb5295}{Compute\+Sound\+Raycast}} (float dist\+Comp)
+\item 
+void \mbox{\hyperlink{classauditory_model_ab3e46adcbcfd93252e1a35149159acc1}{Configure\+H\+R\+TF}} ()
+\item 
+void \mbox{\hyperlink{classauditory_model_a928ee5b67d991d7cbd9d612c8b163256}{Clear\+All\+Audio}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classauditory_model_aa8d7c2ad4313142c195384daf146fd30}{m\+\_\+buffer\+Output}}
+\item 
+int \mbox{\hyperlink{classauditory_model_a21aee27eee833d39a03c3fc80b818cf6}{m\+\_\+width}}
+\item 
+int \mbox{\hyperlink{classauditory_model_a389a0eecbb0a42075ad6b87289af7ecb}{m\+\_\+height}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Architecture much inspired by V\+TK Renderer(\href{http://vtk.org}{\texttt{ http\+://vtk.\+org}}) implementation The classes are mainly responsible for open\+G\+L/open\+AL interop. 
+
+The class responsible for rendering auditory propertis.
+
+The model is used by \mbox{\hyperlink{classva_renderer}{va\+Renderer}} to render auditory image of data The class is mainly responsible for cuda/open\+AL interop 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classauditory_model_adb3f00eda6322a72a8f3710399940c3a}\label{classauditory_model_adb3f00eda6322a72a8f3710399940c3a}} 
+\index{auditoryModel@{auditoryModel}!AudioMapMode@{AudioMapMode}}
+\index{AudioMapMode@{AudioMapMode}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{AudioMapMode}{AudioMapMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classauditory_model_adb3f00eda6322a72a8f3710399940c3a}{auditory\+Model\+::\+Audio\+Map\+Mode}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMAJSCALE@{CMAJSCALE}!auditoryModel@{auditoryModel}}\index{auditoryModel@{auditoryModel}!CMAJSCALE@{CMAJSCALE}}}\mbox{\Hypertarget{classauditory_model_adb3f00eda6322a72a8f3710399940c3aa9029a95f03b2bba2ad32541555148beb}\label{classauditory_model_adb3f00eda6322a72a8f3710399940c3aa9029a95f03b2bba2ad32541555148beb}} 
+C\+M\+A\+J\+S\+C\+A\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PlUCKED@{PlUCKED}!auditoryModel@{auditoryModel}}\index{auditoryModel@{auditoryModel}!PlUCKED@{PlUCKED}}}\mbox{\Hypertarget{classauditory_model_adb3f00eda6322a72a8f3710399940c3aaee2a7e6c3dac179354058f6e035e490c}\label{classauditory_model_adb3f00eda6322a72a8f3710399940c3aaee2a7e6c3dac179354058f6e035e490c}} 
+Pl\+U\+C\+K\+ED&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45d}\label{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45d}} 
+\index{auditoryModel@{auditoryModel}!AudioScanMode@{AudioScanMode}}
+\index{AudioScanMode@{AudioScanMode}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{AudioScanMode}{AudioScanMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45d}{auditory\+Model\+::\+Audio\+Scan\+Mode}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LINE@{LINE}!auditoryModel@{auditoryModel}}\index{auditoryModel@{auditoryModel}!LINE@{LINE}}}\mbox{\Hypertarget{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45da46fa2be95024f8322d6935061417b3c3}\label{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45da46fa2be95024f8322d6935061417b3c3}} 
+L\+I\+NE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRID@{GRID}!auditoryModel@{auditoryModel}}\index{auditoryModel@{auditoryModel}!GRID@{GRID}}}\mbox{\Hypertarget{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45da634d14b718010e466b43691f49638aaf}\label{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45da634d14b718010e466b43691f49638aaf}} 
+G\+R\+ID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONE@{CONE}!auditoryModel@{auditoryModel}}\index{auditoryModel@{auditoryModel}!CONE@{CONE}}}\mbox{\Hypertarget{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45da19497cbe2f722be2bea71b6ca463f38f}\label{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45da19497cbe2f722be2bea71b6ca463f38f}} 
+C\+O\+NE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classauditory_model_a48aa1566fcc55a157815276105e1f184}\label{classauditory_model_a48aa1566fcc55a157815276105e1f184}} 
+\index{auditoryModel@{auditoryModel}!auditoryModel@{auditoryModel}}
+\index{auditoryModel@{auditoryModel}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{auditoryModel()}{auditoryModel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily auditory\+Model\+::auditory\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classauditory_model_a75020b89e58db9105e80d7b16659c298}\label{classauditory_model_a75020b89e58db9105e80d7b16659c298}} 
+\index{auditoryModel@{auditoryModel}!````~auditoryModel@{$\sim$auditoryModel}}
+\index{````~auditoryModel@{$\sim$auditoryModel}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{$\sim$auditoryModel()}{~auditoryModel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily auditory\+Model\+::$\sim$auditory\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classauditory_model_a48aa1566fcc55a157815276105e1f184}\label{classauditory_model_a48aa1566fcc55a157815276105e1f184}} 
+\index{auditoryModel@{auditoryModel}!auditoryModel@{auditoryModel}}
+\index{auditoryModel@{auditoryModel}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{auditoryModel()}{auditoryModel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily auditory\+Model\+::auditory\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classauditory_model_a75020b89e58db9105e80d7b16659c298}\label{classauditory_model_a75020b89e58db9105e80d7b16659c298}} 
+\index{auditoryModel@{auditoryModel}!````~auditoryModel@{$\sim$auditoryModel}}
+\index{````~auditoryModel@{$\sim$auditoryModel}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{$\sim$auditoryModel()}{~auditoryModel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily auditory\+Model\+::$\sim$auditory\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classauditory_model_a75020b89e58db9105e80d7b16659c298_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classauditory_model_a707860c223ce72eb847038a3e81fcffb}\label{classauditory_model_a707860c223ce72eb847038a3e81fcffb}} 
+\index{auditoryModel@{auditoryModel}!BindBuffer@{BindBuffer}}
+\index{BindBuffer@{BindBuffer}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{BindBuffer()}{BindBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Bind\+Buffer (\begin{DoxyParamCaption}\item[{optix\+::\+Context}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_model_aacdca8b20e787a051ba3f07eb87d6f56}{va\+Basic\+Model}}.
+
+\mbox{\Hypertarget{classauditory_model_a5ae3ffc945b89327e163354ed82d97da}\label{classauditory_model_a5ae3ffc945b89327e163354ed82d97da}} 
+\index{auditoryModel@{auditoryModel}!BindBuffer@{BindBuffer}}
+\index{BindBuffer@{BindBuffer}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{BindBuffer()}{BindBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void auditory\+Model\+::\+Bind\+Buffer (\begin{DoxyParamCaption}\item[{optix\+::\+Context}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_model_aacdca8b20e787a051ba3f07eb87d6f56}{va\+Basic\+Model}}.
+
+\mbox{\Hypertarget{classauditory_model_acab00059a6697ea87f89a5595daf67ce}\label{classauditory_model_acab00059a6697ea87f89a5595daf67ce}} 
+\index{auditoryModel@{auditoryModel}!CheckAllAudio@{CheckAllAudio}}
+\index{CheckAllAudio@{CheckAllAudio}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{CheckAllAudio()}{CheckAllAudio()}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Check\+All\+Audio (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classauditory_model_acab00059a6697ea87f89a5595daf67ce_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classauditory_model_a928ee5b67d991d7cbd9d612c8b163256}\label{classauditory_model_a928ee5b67d991d7cbd9d612c8b163256}} 
+\index{auditoryModel@{auditoryModel}!ClearAllAudio@{ClearAllAudio}}
+\index{ClearAllAudio@{ClearAllAudio}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{ClearAllAudio()}{ClearAllAudio()}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Clear\+All\+Audio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classauditory_model_a928ee5b67d991d7cbd9d612c8b163256_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classauditory_model_ac11a216b13371a14a8ac3a4febbb5295}\label{classauditory_model_ac11a216b13371a14a8ac3a4febbb5295}} 
+\index{auditoryModel@{auditoryModel}!ComputeSoundRaycast@{ComputeSoundRaycast}}
+\index{ComputeSoundRaycast@{ComputeSoundRaycast}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{ComputeSoundRaycast()}{ComputeSoundRaycast()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Compute\+Sound\+Raycast (\begin{DoxyParamCaption}\item[{float}]{dist\+Comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classauditory_model_ac11a216b13371a14a8ac3a4febbb5295_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classauditory_model_a294d1486ab34027db867d2adc68e7ed9}\label{classauditory_model_a294d1486ab34027db867d2adc68e7ed9}} 
+\index{auditoryModel@{auditoryModel}!ComputeSoundRaycast@{ComputeSoundRaycast}}
+\index{ComputeSoundRaycast@{ComputeSoundRaycast}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{ComputeSoundRaycast()}{ComputeSoundRaycast()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Compute\+Sound\+Raycast (\begin{DoxyParamCaption}\item[{float}]{dist\+Norm,  }\item[{float}]{dist\+Comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classauditory_model_a294d1486ab34027db867d2adc68e7ed9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classauditory_model_ab3e46adcbcfd93252e1a35149159acc1}\label{classauditory_model_ab3e46adcbcfd93252e1a35149159acc1}} 
+\index{auditoryModel@{auditoryModel}!ConfigureHRTF@{ConfigureHRTF}}
+\index{ConfigureHRTF@{ConfigureHRTF}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{ConfigureHRTF()}{ConfigureHRTF()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Configure\+H\+R\+TF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classauditory_model_ab3e46adcbcfd93252e1a35149159acc1}\label{classauditory_model_ab3e46adcbcfd93252e1a35149159acc1}} 
+\index{auditoryModel@{auditoryModel}!ConfigureHRTF@{ConfigureHRTF}}
+\index{ConfigureHRTF@{ConfigureHRTF}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{ConfigureHRTF()}{ConfigureHRTF()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Configure\+H\+R\+TF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classauditory_model_a83a5fab48fd1ba953f7954fb26b120f5}\label{classauditory_model_a83a5fab48fd1ba953f7954fb26b120f5}} 
+\index{auditoryModel@{auditoryModel}!GetBuffer@{GetBuffer}}
+\index{GetBuffer@{GetBuffer}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{GetBuffer()}{GetBuffer()}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Get\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classauditory_model_a9d1c53aff520a2832355fdc62faa9111}\label{classauditory_model_a9d1c53aff520a2832355fdc62faa9111}} 
+\index{auditoryModel@{auditoryModel}!GetHeight@{GetHeight}}
+\index{GetHeight@{GetHeight}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
+{\footnotesize\ttfamily int auditory\+Model\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classauditory_model_aefc0879ec392c740c4eda396fd581ec6}\label{classauditory_model_aefc0879ec392c740c4eda396fd581ec6}} 
+\index{auditoryModel@{auditoryModel}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{GetMode()}{GetMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45d}{Audio\+Scan\+Mode}} auditory\+Model\+::\+Get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classauditory_model_a022d249819672210dfbb16a068b42971}\label{classauditory_model_a022d249819672210dfbb16a068b42971}} 
+\index{auditoryModel@{auditoryModel}!GetNormaKoeff@{GetNormaKoeff}}
+\index{GetNormaKoeff@{GetNormaKoeff}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{GetNormaKoeff()}{GetNormaKoeff()}}
+{\footnotesize\ttfamily float auditory\+Model\+::\+Get\+Norma\+Koeff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classauditory_model_ad356591296ebb7466e3c8d64f9830768}\label{classauditory_model_ad356591296ebb7466e3c8d64f9830768}} 
+\index{auditoryModel@{auditoryModel}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily optix\+::\+Buffer auditory\+Model\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classauditory_model_a941ad544554c0221ba7c4acc85ed9f96}\label{classauditory_model_a941ad544554c0221ba7c4acc85ed9f96}} 
+\index{auditoryModel@{auditoryModel}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
+{\footnotesize\ttfamily int auditory\+Model\+::\+Get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classauditory_model_a086406bf0497992f75ae1c6c127a5619}\label{classauditory_model_a086406bf0497992f75ae1c6c127a5619}} 
+\index{auditoryModel@{auditoryModel}!Init@{Init}}
+\index{Init@{Init}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_model_a80796e5073c8ded7e73f3e6e4af71504}{va\+Basic\+Model}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classauditory_model_a086406bf0497992f75ae1c6c127a5619_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classauditory_model_a5249d1ca9e3cc5fb47222284144f700b}\label{classauditory_model_a5249d1ca9e3cc5fb47222284144f700b}} 
+\index{auditoryModel@{auditoryModel}!MapBuffer@{MapBuffer}}
+\index{MapBuffer@{MapBuffer}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{MapBuffer()}{MapBuffer()}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Map\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classauditory_model_a5249d1ca9e3cc5fb47222284144f700b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classauditory_model_a2aa470ad66857b8154ce7fbebed21f13}\label{classauditory_model_a2aa470ad66857b8154ce7fbebed21f13}} 
+\index{auditoryModel@{auditoryModel}!Render@{Render}}
+\index{Render@{Render}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_model_a527c4e4789be7edcdcca658a6ae27450}{va\+Basic\+Model}}.
+
+\mbox{\Hypertarget{classauditory_model_a7da67e1b4fce2b78fbffabce6aee25d2}\label{classauditory_model_a7da67e1b4fce2b78fbffabce6aee25d2}} 
+\index{auditoryModel@{auditoryModel}!Render@{Render}}
+\index{Render@{Render}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void auditory\+Model\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_model_a527c4e4789be7edcdcca658a6ae27450}{va\+Basic\+Model}}.
+
+\mbox{\Hypertarget{classauditory_model_a39d4000d37b928db7fb765ad40265cbe}\label{classauditory_model_a39d4000d37b928db7fb765ad40265cbe}} 
+\index{auditoryModel@{auditoryModel}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{Reshape()}{Reshape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_model_afdedda8cfb876fc1c5c58e69b8923452}{va\+Basic\+Model}}.
+
+\mbox{\Hypertarget{classauditory_model_af4dc551e9abceb3079e21bfdc028d84d}\label{classauditory_model_af4dc551e9abceb3079e21bfdc028d84d}} 
+\index{auditoryModel@{auditoryModel}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{Reshape()}{Reshape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void auditory\+Model\+::\+Reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_model_afdedda8cfb876fc1c5c58e69b8923452}{va\+Basic\+Model}}.
+
+\mbox{\Hypertarget{classauditory_model_a502e95a6d3ebfa66b5dcf06cf8af2008}\label{classauditory_model_a502e95a6d3ebfa66b5dcf06cf8af2008}} 
+\index{auditoryModel@{auditoryModel}!SetAudioScanningParam@{SetAudioScanningParam}}
+\index{SetAudioScanningParam@{SetAudioScanningParam}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{SetAudioScanningParam()}{SetAudioScanningParam()}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Set\+Audio\+Scanning\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classauditory_model_ab7486e572001c6ec46d2c9e1a94da45d}{Audio\+Scan\+Mode}}}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classauditory_model_abef63e0f04636630d50a2bfb8e468073}\label{classauditory_model_abef63e0f04636630d50a2bfb8e468073}} 
+\index{auditoryModel@{auditoryModel}!SetAuditoryMapper@{SetAuditoryMapper}}
+\index{SetAuditoryMapper@{SetAuditoryMapper}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryMapper()}{SetAuditoryMapper()}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Set\+Auditory\+Mapper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classauditory_mapper}{auditory\+Mapper}} $\ast$}]{mm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classauditory_model_a890b44708f3f7808c6b12ee1a7ca0b8c}\label{classauditory_model_a890b44708f3f7808c6b12ee1a7ca0b8c}} 
+\index{auditoryModel@{auditoryModel}!UpdateBuffer@{UpdateBuffer}}
+\index{UpdateBuffer@{UpdateBuffer}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{UpdateBuffer()}{UpdateBuffer()}}
+{\footnotesize\ttfamily void auditory\+Model\+::\+Update\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_model_ad5ff69a20c739b941ef58e48e6010353}{va\+Basic\+Model}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classauditory_model_aa8d7c2ad4313142c195384daf146fd30}\label{classauditory_model_aa8d7c2ad4313142c195384daf146fd30}} 
+\index{auditoryModel@{auditoryModel}!m\_bufferOutput@{m\_bufferOutput}}
+\index{m\_bufferOutput@{m\_bufferOutput}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{m\_bufferOutput}{m\_bufferOutput}}
+{\footnotesize\ttfamily optix\+::\+Buffer auditory\+Model\+::m\+\_\+buffer\+Output\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classauditory_model_a389a0eecbb0a42075ad6b87289af7ecb}\label{classauditory_model_a389a0eecbb0a42075ad6b87289af7ecb}} 
+\index{auditoryModel@{auditoryModel}!m\_height@{m\_height}}
+\index{m\_height@{m\_height}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{m\_height}{m\_height}}
+{\footnotesize\ttfamily int auditory\+Model\+::m\+\_\+height\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classauditory_model_a21aee27eee833d39a03c3fc80b818cf6}\label{classauditory_model_a21aee27eee833d39a03c3fc80b818cf6}} 
+\index{auditoryModel@{auditoryModel}!m\_width@{m\_width}}
+\index{m\_width@{m\_width}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{m\_width}{m\_width}}
+{\footnotesize\ttfamily int auditory\+Model\+::m\+\_\+width\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classauditory_model_a5b9c53244ec94ff9b1215e56fdbee50d}\label{classauditory_model_a5b9c53244ec94ff9b1215e56fdbee50d}} 
+\index{auditoryModel@{auditoryModel}!map@{map}}
+\index{map@{map}!auditoryModel@{auditoryModel}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classauditory_mapper}{auditory\+Mapper}}$\ast$ auditory\+Model\+::map}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/src/\mbox{\hyperlink{optix_audio_optic_8h}{optix\+Audio\+Optic.\+h}}\item 
+core/src/\mbox{\hyperlink{va_audio_model_8h}{va\+Audio\+Model.\+h}}\item 
+core/src/\mbox{\hyperlink{optix_audio_optic_8cpp}{optix\+Audio\+Optic.\+cpp}}\item 
+core/src/\mbox{\hyperlink{va_audio_model_8cpp}{va\+Audio\+Model.\+cpp}}\end{DoxyCompactItemize}

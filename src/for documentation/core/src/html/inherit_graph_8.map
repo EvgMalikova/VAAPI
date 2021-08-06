@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classva_basic_model.html" title="The class responsible for rendering auditory propertis." alt="" coords="5,31,108,57"/>
+<area shape="rect" id="node2" href="$classauditory_model.html" title="The class responsible for rendering auditory propertis." alt="" coords="156,5,259,32"/>
+<area shape="rect" id="node3" href="$classoptical_model.html" title="Actual binding through texture of the cuda output." alt="" coords="160,56,255,83"/>
+</map>

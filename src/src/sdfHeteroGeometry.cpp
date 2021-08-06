@@ -34,6 +34,9 @@ std::string sdfHeterogeneous::GetPrimProgramName(ObjectType type)
     case ObjectType::DIM_4D:
         return "sdfPrim4";
         break;
+    case ObjectType::CELL:
+        return "sdfPrim5";
+        break;
     }
 }
 
@@ -370,6 +373,28 @@ void sdfHeterogeneous0D::SetType(std::vector<int> type) {
     SetPrimNumber((int)(type.size()));
 }
 
+void sdfHeterogeneous0D::SetCenterRad(MPoints p)
+{
+    std::vector<float> rad;
+    std::vector<optix::float3> center;
+    int size = p.cols()*p.rows();
+    for (int i = 0; i < size; i += 4) {
+        optix::float3 l = optix::make_float3(p.data()[i], p.data()[i + 1], p.data()[i + 2]);
+        center.push_back(l);
+        rad.push_back(p.data()[i + 3]);
+    }
+    SetCenter(center);
+    SetRadius(rad);
+}
+
+void sdfHeterogeneous0D::SetTypes(MTypes t) {
+    std::vector<int> type;
+    type.reserve(t.cols()*t.rows());
+    memcpy(type.data(), t.data(), sizeof(int) * (size_t)(t.rows() * t.cols()));
+
+    SetType(type);
+}
+
 void sdfHeterogeneous0D::SetRadius(std::vector<float> rad) {
     /* radBuffer = vaBasicObject::GetContext()->createBuffer(RT_BUFFER_INPUT, RT_FORMAT_FLOAT, rad.size());
     void *dst = radBuffer->map(0, RT_BUFFER_MAP_WRITE_DISCARD);
@@ -493,16 +518,34 @@ void sdfMoleculeBallSticks::Initialize()
     {
         try
         {
-            optixSDFGeometry::InitProg("boundingbox_molecules", "intersection_molecules.cu", "boundingbox_molecules");
-            optixSDFGeometry::InitProg("intersection_molecules", "intersection_molecules.cu", "intersection_molecules");
-            //m_mapOfPrograms["boundingbox_sdf_sphere"] = vaBasicObject::GetContext()->createProgramFromPTXFile(vaBasicObject::ptxPath("boundingbox_triangle_indexed.cu"), "boundingbox_sdf_sphere");
-            // m_mapOfPrograms["intersection_sdf_sphere"] = vaBasicObject::GetContext()->createProgramFromPTXFile(vaBasicObject::ptxPath("intersection_triangle_indexed.cu"), "intersection_sdf_sphere");
-            optixSDFGeometry::SetBoundingBoxProgName("boundingbox_molecules");
-            optixSDFGeometry::SetIntersectionProgName("intersection_molecules");
+            if (m_MolSize == 4) {
+                SetPrimType(sdfHeterogeneous::ObjectType::CELL);
 
-            //compile primitive program
-            optixSDFGeometry::InitProg("sdfMolBondSphere", "intersection_sdfPrimLib.cu", "sdfMolBondSphere");
-            optixSDFGeometry::SetCallableProgName("sdfMolBondSphere");
+                optixSDFGeometry::InitProg("boundingbox_molecules", "intersection_molecules4.cu", "boundingbox_molecules");
+                optixSDFGeometry::InitProg("intersection_molecules", "intersection_molecules4.cu", "intersection_molecules");
+                //m_mapOfPrograms["boundingbox_sdf_sphere"] = vaBasicObject::GetContext()->createProgramFromPTXFile(vaBasicObject::ptxPath("boundingbox_triangle_indexed.cu"), "boundingbox_sdf_sphere");
+                // m_mapOfPrograms["intersection_sdf_sphere"] = vaBasicObject::GetContext()->createProgramFromPTXFile(vaBasicObject::ptxPath("intersection_triangle_indexed.cu"), "intersection_sdf_sphere");
+                optixSDFGeometry::SetBoundingBoxProgName("boundingbox_molecules");
+                optixSDFGeometry::SetIntersectionProgName("intersection_molecules");
+
+                //compile primitive program
+                optixSDFGeometry::InitProg("sdfMicroCell", "intersection_sdfPrimLib.cu", "sdfMicroCell");
+                optixSDFGeometry::SetCallableProgName("sdfMicroCell");
+                std::cout << "CELL prog inited" << std::endl;
+            }
+            else
+            {
+                optixSDFGeometry::InitProg("boundingbox_molecules", "intersection_molecules.cu", "boundingbox_molecules");
+                optixSDFGeometry::InitProg("intersection_molecules", "intersection_molecules.cu", "intersection_molecules");
+                //m_mapOfPrograms["boundingbox_sdf_sphere"] = vaBasicObject::GetContext()->createProgramFromPTXFile(vaBasicObject::ptxPath("boundingbox_triangle_indexed.cu"), "boundingbox_sdf_sphere");
+                // m_mapOfPrograms["intersection_sdf_sphere"] = vaBasicObject::GetContext()->createProgramFromPTXFile(vaBasicObject::ptxPath("intersection_triangle_indexed.cu"), "intersection_sdf_sphere");
+                optixSDFGeometry::SetBoundingBoxProgName("boundingbox_molecules");
+                optixSDFGeometry::SetIntersectionProgName("intersection_molecules");
+
+                //compile primitive program
+                optixSDFGeometry::InitProg("sdfMolBondSphere", "intersection_sdfPrimLib.cu", "sdfMolBondSphere");
+                optixSDFGeometry::SetCallableProgName("sdfMolBondSphere");
+            }
         }
         catch (optix::Exception& e)
         {
@@ -519,22 +562,75 @@ void sdfMoleculeBallSticks::Initialize()
 
 void sdfMoleculeBallSticks::SetMols(std::vector<Molecule> c, int maxMolSize) {
     //fill the positions
-    molsBuffer = vaBasicObject::GetContext()->createBuffer(RT_BUFFER_INPUT, RT_FORMAT_INT2, c.size());
+    int realN = 0;
+    switch (maxMolSize) {
+    case 2:
+    {
+        molsBuffer = vaBasicObject::GetContext()->createBuffer(RT_BUFFER_INPUT, RT_FORMAT_INT2, c.size());
 
-    int *pos = reinterpret_cast<int*> (molsBuffer->map());
-    for (int i = 0, index = 0; i < static_cast<int>(c.size()); ++i) {
-        optix::int2 p = optix::make_int2(c[i].bond_id[0], c[i].bond_id[1]);
+        int *pos = reinterpret_cast<int*> (molsBuffer->map());
+        for (int i = 0, index = 0; i < static_cast<int>(c.size()); ++i) {
+            if (c[i].size > 1) {
+                optix::int2 p = optix::make_int2(c[i].bond_id[0], c[i].bond_id[1]);
 
-        pos[index++] = (p.x);
-        pos[index++] = (p.y);
+                pos[index++] = (p.x);
+                pos[index++] = (p.y);
+                realN++;
+            }
+            //skip all bonds like structures
+        }
+        molsBuffer->unmap();
+
+        optixSDFGeometry::GetOutput()["Mols"]->setBuffer(molsBuffer);
     }
-    molsBuffer->unmap();
+    break;
+    case 3:
+    {
+        molsBuffer = vaBasicObject::GetContext()->createBuffer(RT_BUFFER_INPUT, RT_FORMAT_INT3, c.size());
 
-    optixSDFGeometry::GetOutput()["Mols"]->setBuffer(molsBuffer);
+        int *pos = reinterpret_cast<int*> (molsBuffer->map());
+        for (int i = 0, index = 0; i < static_cast<int>(c.size()); ++i) {
+            optix::int3 p = optix::make_int3(c[i].bond_id[0], c[i].bond_id[1], c[i].bond_id[2]);
+
+            pos[index++] = (p.x);
+            pos[index++] = (p.y);
+            pos[index++] = (p.z);
+        }
+        molsBuffer->unmap();
+
+        optixSDFGeometry::GetOutput()["Mols3"]->setBuffer(molsBuffer);
+    }
+    break;
+    case 4:
+    {
+        molsBuffer = vaBasicObject::GetContext()->createBuffer(RT_BUFFER_INPUT, RT_FORMAT_INT4, c.size());
+
+        int *pos = reinterpret_cast<int*> (molsBuffer->map());
+        for (int i = 0, index = 0; i < static_cast<int>(c.size()); ++i) {
+            if (c[i].size > 3) {
+                optix::int4 p = optix::make_int4(c[i].bond_id[0], c[i].bond_id[1], c[i].bond_id[2], c[i].bond_id[3]);
+
+                pos[index++] = (p.x);
+                pos[index++] = (p.y);
+                pos[index++] = (p.z);
+                pos[index++] = (p.w);
+                realN++;
+                // std::cout << " " << p.x << " " << p.y << " " << p.z << " " << p.w << std::endl;
+            }
+        }
+        molsBuffer->unmap();
+
+        optixSDFGeometry::GetOutput()["Mols"]->setBuffer(molsBuffer);
+        std::cout << "Buffer is set " << realN << std::endl;
+    }
+
+    break;
+    }
+
     std::cout << "Molecules set" << std::endl;
 
     //total number of primities are molecules
-    SetPrimNumber(int(c.size()));
+    SetPrimNumber(realN);
 }
 
 /*----------

@@ -1,0 +1,91 @@
+\hypertarget{auditory__rendering_8h}{}\doxysection{shaders/renderer/auditory\+\_\+rendering.h File Reference}
+\label{auditory__rendering_8h}\index{shaders/renderer/auditory\_rendering.h@{shaders/renderer/auditory\_rendering.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{auditory__rendering_8h_afe6f52e395a245ff836411633a858d9d}{rt\+Declare\+Variable}} (float, Time\+Sound,,)
+\item 
+\mbox{\hyperlink{auditory__rendering_8h_af8f8e5c7909fd039a6316550474e736f}{rt\+Declare\+Variable}} (float, line\+\_\+scan,,)
+\item 
+\mbox{\hyperlink{auditory__rendering_8h_afe69c7792f9dbdb1e9e6a73954bffc28}{rt\+Declare\+Variable}} (int, scan\+\_\+all,,)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ bool \mbox{\hyperlink{auditory__rendering_8h_a6fdbac7f3aa27365cf78e69519c1bfec}{fills\+Condition}} (float y)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ bool \mbox{\hyperlink{auditory__rendering_8h_aa8bff4694cc4e0eadd14b00192433ec3}{is\+Sound\+Ray}} (int \&num, optix\+::float2 d, optix\+::float2 launch\+\_\+index, optix\+::float2 screen)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+rt\+Buffer$<$ float2 $>$ \mbox{\hyperlink{auditory__rendering_8h_a84effdd05626454df4c069834116c320}{sound\+\_\+trace}}
+\item 
+rt\+Buffer$<$ float $>$ \mbox{\hyperlink{auditory__rendering_8h_aa3b628c618a7c09b477b150ba59975e0}{sound\+\_\+touch}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{auditory__rendering_8h_a6fdbac7f3aa27365cf78e69519c1bfec}\label{auditory__rendering_8h_a6fdbac7f3aa27365cf78e69519c1bfec}} 
+\index{auditory\_rendering.h@{auditory\_rendering.h}!fillsCondition@{fillsCondition}}
+\index{fillsCondition@{fillsCondition}!auditory\_rendering.h@{auditory\_rendering.h}}
+\doxysubsubsection{\texorpdfstring{fillsCondition()}{fillsCondition()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ bool fills\+Condition (\begin{DoxyParamCaption}\item[{float}]{y }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{auditory__rendering_8h_a6fdbac7f3aa27365cf78e69519c1bfec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{auditory__rendering_8h_a6fdbac7f3aa27365cf78e69519c1bfec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{auditory__rendering_8h_aa8bff4694cc4e0eadd14b00192433ec3}\label{auditory__rendering_8h_aa8bff4694cc4e0eadd14b00192433ec3}} 
+\index{auditory\_rendering.h@{auditory\_rendering.h}!isSoundRay@{isSoundRay}}
+\index{isSoundRay@{isSoundRay}!auditory\_rendering.h@{auditory\_rendering.h}}
+\doxysubsubsection{\texorpdfstring{isSoundRay()}{isSoundRay()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ bool is\+Sound\+Ray (\begin{DoxyParamCaption}\item[{int \&}]{num,  }\item[{optix\+::float2}]{d,  }\item[{optix\+::float2}]{launch\+\_\+index,  }\item[{optix\+::float2}]{screen }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{auditory__rendering_8h_aa8bff4694cc4e0eadd14b00192433ec3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{auditory__rendering_8h_af8f8e5c7909fd039a6316550474e736f}\label{auditory__rendering_8h_af8f8e5c7909fd039a6316550474e736f}} 
+\index{auditory\_rendering.h@{auditory\_rendering.h}!rtDeclareVariable@{rtDeclareVariable}}
+\index{rtDeclareVariable@{rtDeclareVariable}!auditory\_rendering.h@{auditory\_rendering.h}}
+\doxysubsubsection{\texorpdfstring{rtDeclareVariable()}{rtDeclareVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily rt\+Declare\+Variable (\begin{DoxyParamCaption}\item[{float}]{,  }\item[{line\+\_\+scan}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{auditory__rendering_8h_afe6f52e395a245ff836411633a858d9d}\label{auditory__rendering_8h_afe6f52e395a245ff836411633a858d9d}} 
+\index{auditory\_rendering.h@{auditory\_rendering.h}!rtDeclareVariable@{rtDeclareVariable}}
+\index{rtDeclareVariable@{rtDeclareVariable}!auditory\_rendering.h@{auditory\_rendering.h}}
+\doxysubsubsection{\texorpdfstring{rtDeclareVariable()}{rtDeclareVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily rt\+Declare\+Variable (\begin{DoxyParamCaption}\item[{float}]{,  }\item[{Time\+Sound}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{auditory__rendering_8h_afe69c7792f9dbdb1e9e6a73954bffc28}\label{auditory__rendering_8h_afe69c7792f9dbdb1e9e6a73954bffc28}} 
+\index{auditory\_rendering.h@{auditory\_rendering.h}!rtDeclareVariable@{rtDeclareVariable}}
+\index{rtDeclareVariable@{rtDeclareVariable}!auditory\_rendering.h@{auditory\_rendering.h}}
+\doxysubsubsection{\texorpdfstring{rtDeclareVariable()}{rtDeclareVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily rt\+Declare\+Variable (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{scan\+\_\+all}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{auditory__rendering_8h_aa3b628c618a7c09b477b150ba59975e0}\label{auditory__rendering_8h_aa3b628c618a7c09b477b150ba59975e0}} 
+\index{auditory\_rendering.h@{auditory\_rendering.h}!sound\_touch@{sound\_touch}}
+\index{sound\_touch@{sound\_touch}!auditory\_rendering.h@{auditory\_rendering.h}}
+\doxysubsubsection{\texorpdfstring{sound\_touch}{sound\_touch}}
+{\footnotesize\ttfamily rt\+Buffer$<$float$>$ sound\+\_\+touch}
+
+\mbox{\Hypertarget{auditory__rendering_8h_a84effdd05626454df4c069834116c320}\label{auditory__rendering_8h_a84effdd05626454df4c069834116c320}} 
+\index{auditory\_rendering.h@{auditory\_rendering.h}!sound\_trace@{sound\_trace}}
+\index{sound\_trace@{sound\_trace}!auditory\_rendering.h@{auditory\_rendering.h}}
+\doxysubsubsection{\texorpdfstring{sound\_trace}{sound\_trace}}
+{\footnotesize\ttfamily rt\+Buffer$<$float2$>$ sound\+\_\+trace}
+

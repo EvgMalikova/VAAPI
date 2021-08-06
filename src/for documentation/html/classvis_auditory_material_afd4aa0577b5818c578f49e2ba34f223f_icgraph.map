@@ -1,0 +1,10 @@
+<map id="visAuditoryMaterial::visAuditoryMaterial" name="visAuditoryMaterial::visAuditoryMaterial">
+<area shape="rect" id="node1" title=" " alt="" coords="268,188,407,229"/>
+<area shape="rect" id="node2" href="$class_audio_texture_volume_material.html#a0471b0e8711220394a94571efec1ae00" title=" " alt="" coords="15,5,211,47"/>
+<area shape="rect" id="node3" href="$class_dynamic_texture_volume_material.html#abc7e1892fc1ad995a28df4fa01eb36c9" title=" " alt="" coords="5,71,220,112"/>
+<area shape="rect" id="node4" href="$class_lambertian.html#a9a6eb485fd890f0873ed144ed8cbbfb2" title=" " alt="" coords="33,137,192,163"/>
+<area shape="rect" id="node5" href="$class_s_d_f_audio_volume_material.html#a64dc7d625a577f512a67a040856a9fb9" title=" " alt="" coords="23,188,202,229"/>
+<area shape="rect" id="node6" href="$class_s_d_f_material.html#a604de89cb360d6866580d154534a2a16" title=" " alt="" coords="25,254,200,281"/>
+<area shape="rect" id="node7" href="$class_s_d_f_material2.html#a602a3078f274e6d08835549b8391c2e4" title=" " alt="" coords="19,305,207,331"/>
+<area shape="rect" id="node8" href="$class_s_d_f_volume_material.html#aaad17c34b75c1e2a90ab02b78d057f4f" title=" " alt="" coords="39,356,186,397"/>
+</map>

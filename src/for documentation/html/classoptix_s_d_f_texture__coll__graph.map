@@ -1,0 +1,6 @@
+<map id="optixSDFTexture" name="optixSDFTexture">
+<area shape="rect" id="node1" title="Generates a dynamic SDF primitive on base of sdf textures." alt="" coords="13,229,131,256"/>
+<area shape="rect" id="node2" href="$classoptix_s_d_f_geometry.html" title="Abstract class for SDF Geometry. A basic class. All SDF geometry inherits it&#39;s functions." alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node4" href="$classoptix_s_d_f_primitive.html" title="A basic class for all sdf primitives." alt="" coords="60,155,185,181"/>
+<area shape="rect" id="node3" href="$classoptix_object.html" title=" " alt="" coords="28,5,116,32"/>
+</map>

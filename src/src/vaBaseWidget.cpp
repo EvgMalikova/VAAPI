@@ -110,13 +110,13 @@ void vaBaseWidget::CreateGeometryHandle()
             //as further bounding box is not updated
             m_geo["varRadius"]->setFloat(m_BBVisibility, m_BBVisibility, m_BBVisibility);
 
-            map21 = new vaMapper();
+            map21 = std::shared_ptr<vaMapper>(new vaMapper());
             map21->SetContext(vaBasicObject::GetContext());
             map21->SetInput(sdfT->GetOutput());
             map21->AddMaterial(mSdf.GetOutput(), mSdf.GetType());
             map21->Update();
 
-            acSdf1 = new vaActor();
+            acSdf1 = std::shared_ptr<vaActor>(new vaActor());
             acSdf1->SetContext(vaBasicObject::GetContext()); //sets context and initialize acceleration properties
 
                                                //TODO: overwrite with mapper function that returns it's instance

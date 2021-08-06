@@ -1,0 +1,184 @@
+\doxysection{glsl\+Ray\+Cast Class Reference}
+\label{classglsl_ray_cast}\index{glslRayCast@{glslRayCast}}
+
+
+The class responsible for glsl shaders.  
+
+
+
+
+{\ttfamily \#include $<$glsl\+Procedures.\+h$>$}
+
+
+
+Inheritance diagram for glsl\+Ray\+Cast\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classglsl_ray_cast__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for glsl\+Ray\+Cast\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classglsl_ray_cast__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ glsl\+Ray\+Cast} ()
+\item 
+\textbf{ $\sim$glsl\+Ray\+Cast} ()
+\item 
+void \textbf{ init\+Texture} ()
+\item 
+void \textbf{ init\+G\+L\+SL} ()
+\item 
+void \textbf{ Display} ()
+\item 
+void \textbf{ Activate\+Texture} ()
+\item 
+void \textbf{ Set\+Vs} (std\+::string s)
+\item 
+void \textbf{ Set\+Fs} (std\+::string s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Set\+G\+L\+S\+L\+Vars} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \textbf{ m\+\_\+glsl\+VS}
+\item 
+G\+Luint \textbf{ m\+\_\+glsl\+FS}
+\item 
+G\+Luint \textbf{ m\+\_\+glsl\+Program}
+\item 
+G\+Luint \textbf{ m\+\_\+hdr\+Texture}
+\item 
+std\+::string \textbf{ vs\+Source}
+\item 
+std\+::string \textbf{ fs\+Source}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class responsible for glsl shaders. 
+
+The shaders can include post processing procedures and other staff. This class provides basic facilities for whitted style ray tracing 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classglsl_ray_cast_acba8ae1f71d7dcfeb9f5fc2ed6fddade}} 
+\index{glslRayCast@{glslRayCast}!glslRayCast@{glslRayCast}}
+\index{glslRayCast@{glslRayCast}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{glslRayCast()}
+{\footnotesize\ttfamily glsl\+Ray\+Cast\+::glsl\+Ray\+Cast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classglsl_ray_cast_aa243b017df655f6bfb2dad5897f4da8e}} 
+\index{glslRayCast@{glslRayCast}!````~glslRayCast@{$\sim$glslRayCast}}
+\index{````~glslRayCast@{$\sim$glslRayCast}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{$\sim$glslRayCast()}
+{\footnotesize\ttfamily glsl\+Ray\+Cast\+::$\sim$glsl\+Ray\+Cast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classglsl_ray_cast_aca5382b78b11d10c873843573d75d302}} 
+\index{glslRayCast@{glslRayCast}!ActivateTexture@{ActivateTexture}}
+\index{ActivateTexture@{ActivateTexture}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{ActivateTexture()}
+{\footnotesize\ttfamily void glsl\+Ray\+Cast\+::\+Activate\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classglsl_ray_cast_aa3ea65faecbb113b654425c393f64e50}} 
+\index{glslRayCast@{glslRayCast}!Display@{Display}}
+\index{Display@{Display}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{Display()}
+{\footnotesize\ttfamily void glsl\+Ray\+Cast\+::\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classglsl_ray_cast_a52c3ce63b61362e02f196299933c5d58}} 
+\index{glslRayCast@{glslRayCast}!initGLSL@{initGLSL}}
+\index{initGLSL@{initGLSL}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{initGLSL()}
+{\footnotesize\ttfamily void glsl\+Ray\+Cast\+::init\+G\+L\+SL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classglsl_ray_cast_a63f6850c33d0cf179198a0d24d9cdabf}} 
+\index{glslRayCast@{glslRayCast}!initTexture@{initTexture}}
+\index{initTexture@{initTexture}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{initTexture()}
+{\footnotesize\ttfamily void glsl\+Ray\+Cast\+::init\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classglsl_ray_cast_ad82c4ba5780b4243b751679ff39173b3}} 
+\index{glslRayCast@{glslRayCast}!SetFs@{SetFs}}
+\index{SetFs@{SetFs}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{SetFs()}
+{\footnotesize\ttfamily void glsl\+Ray\+Cast\+::\+Set\+Fs (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classglsl_ray_cast_a2f9990061ebbc6b3ce75689f315a47f8}} 
+\index{glslRayCast@{glslRayCast}!SetGLSLVars@{SetGLSLVars}}
+\index{SetGLSLVars@{SetGLSLVars}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{SetGLSLVars()}
+{\footnotesize\ttfamily void glsl\+Ray\+Cast\+::\+Set\+G\+L\+S\+L\+Vars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ glsl\+Anti\+Alized\+Ray\+Cast} \doxyref{}{p.}{classglsl_anti_alized_ray_cast_a7938d9cc3429ed412a42c482fb17eebd}.
+
+\mbox{\label{classglsl_ray_cast_a24d452342c8aa98ed032c9d8023aceb3}} 
+\index{glslRayCast@{glslRayCast}!SetVs@{SetVs}}
+\index{SetVs@{SetVs}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{SetVs()}
+{\footnotesize\ttfamily void glsl\+Ray\+Cast\+::\+Set\+Vs (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classglsl_ray_cast_a2251e7927417a6dafd179fd096df4c2d}} 
+\index{glslRayCast@{glslRayCast}!fsSource@{fsSource}}
+\index{fsSource@{fsSource}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{fsSource}
+{\footnotesize\ttfamily std\+::string glsl\+Ray\+Cast\+::fs\+Source\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classglsl_ray_cast_ace5ef20b6e625c0878498163f93e8a3a}} 
+\index{glslRayCast@{glslRayCast}!m\_glslFS@{m\_glslFS}}
+\index{m\_glslFS@{m\_glslFS}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{m\_glslFS}
+{\footnotesize\ttfamily G\+Luint glsl\+Ray\+Cast\+::m\+\_\+glsl\+FS\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classglsl_ray_cast_a93f848e2c34f975dbe6fc9826dacc0c9}} 
+\index{glslRayCast@{glslRayCast}!m\_glslProgram@{m\_glslProgram}}
+\index{m\_glslProgram@{m\_glslProgram}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{m\_glslProgram}
+{\footnotesize\ttfamily G\+Luint glsl\+Ray\+Cast\+::m\+\_\+glsl\+Program\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classglsl_ray_cast_a3ec85badb8eea117e592b81047c464bf}} 
+\index{glslRayCast@{glslRayCast}!m\_glslVS@{m\_glslVS}}
+\index{m\_glslVS@{m\_glslVS}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{m\_glslVS}
+{\footnotesize\ttfamily G\+Luint glsl\+Ray\+Cast\+::m\+\_\+glsl\+VS\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classglsl_ray_cast_ac5f3ef1f3698bd8535cd7aeb5d039d9c}} 
+\index{glslRayCast@{glslRayCast}!m\_hdrTexture@{m\_hdrTexture}}
+\index{m\_hdrTexture@{m\_hdrTexture}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{m\_hdrTexture}
+{\footnotesize\ttfamily G\+Luint glsl\+Ray\+Cast\+::m\+\_\+hdr\+Texture\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classglsl_ray_cast_afcc85f1976b81604ff8f07fc62beafc2}} 
+\index{glslRayCast@{glslRayCast}!vsSource@{vsSource}}
+\index{vsSource@{vsSource}!glslRayCast@{glslRayCast}}
+\doxysubsubsection{vsSource}
+{\footnotesize\ttfamily std\+::string glsl\+Ray\+Cast\+::vs\+Source\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ glsl\+Procedures.\+h}\item 
+\textbf{ glsl\+Procedures.\+cpp}\end{DoxyCompactItemize}

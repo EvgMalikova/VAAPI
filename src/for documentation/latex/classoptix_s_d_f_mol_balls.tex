@@ -1,0 +1,220 @@
+\hypertarget{classoptix_s_d_f_mol_balls}{}\doxysection{optix\+S\+D\+F\+Mol\+Balls Class Reference}
+\label{classoptix_s_d_f_mol_balls}\index{optixSDFMolBalls@{optixSDFMolBalls}}
+
+
+Example class for simple molecular geometry.  
+
+
+
+
+{\ttfamily \#include $<$optix\+S\+D\+F\+Primitives.\+h$>$}
+
+
+
+Inheritance diagram for optix\+S\+D\+F\+Mol\+Balls\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classoptix_s_d_f_mol_balls__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for optix\+S\+D\+F\+Mol\+Balls\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classoptix_s_d_f_mol_balls__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoptix_s_d_f_mol_balls_a080dcd26036540eae084714662820eed}{optix\+S\+D\+F\+Mol\+Balls}} ()
+\item 
+\mbox{\hyperlink{classoptix_s_d_f_mol_balls_a9d6e0fda7cd9c4817717bb66d530cece}{$\sim$optix\+S\+D\+F\+Mol\+Balls}} ()
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_mol_balls_af59b1c934ba407495a2e2bc4c087ad68}{Set\+Radius}} (std\+::vector$<$ float $>$ rad)
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classoptix_s_d_f_mol_balls_a81c4472644acca122ed498dccd9948ae}{Get\+Radius}} ()
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_mol_balls_a4c0c77a7652199c9530ba57cb936bc4d}{Set\+Center}} (std\+::vector$<$ optix\+::float3 $>$ c)
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classoptix_s_d_f_mol_balls_a1e7bba3f81b766f46745ad0e52fe115c}{Get\+Center}} ()
+\item 
+virtual optix\+::\+Geometry \mbox{\hyperlink{classoptix_s_d_f_mol_balls_a89c786488da68ce8abee869f7515e7c5}{Get\+Output}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_mol_balls_ac90ad3f5b9e076e116882f5b2d3c475b}{Create\+Geometry}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_mol_balls_a6c453d98d0e144f4069424d96ec127d7}{Initialize}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_mol_balls_a4f8870d189415588951f13dc9b066c41}{Set\+Callable\+Prog}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classoptix_s_d_f_mol_balls_ab16cc44662beee19fa6e0ca699955ca4}{rad\+Buffer}}
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classoptix_s_d_f_mol_balls_a255b5e4c79a472619edf0bcf67e87b9d}{centers\+Buffer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Example class for simple molecular geometry. 
+
+Uses S\+DF sphere primitive to render molecule atoms. A simple Balls and Sticks model 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoptix_s_d_f_mol_balls_a080dcd26036540eae084714662820eed}\label{classoptix_s_d_f_mol_balls_a080dcd26036540eae084714662820eed}} 
+\index{optixSDFMolBalls@{optixSDFMolBalls}!optixSDFMolBalls@{optixSDFMolBalls}}
+\index{optixSDFMolBalls@{optixSDFMolBalls}!optixSDFMolBalls@{optixSDFMolBalls}}
+\doxysubsubsection{\texorpdfstring{optixSDFMolBalls()}{optixSDFMolBalls()}}
+{\footnotesize\ttfamily optix\+S\+D\+F\+Mol\+Balls\+::optix\+S\+D\+F\+Mol\+Balls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_mol_balls_a080dcd26036540eae084714662820eed_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_mol_balls_a9d6e0fda7cd9c4817717bb66d530cece}\label{classoptix_s_d_f_mol_balls_a9d6e0fda7cd9c4817717bb66d530cece}} 
+\index{optixSDFMolBalls@{optixSDFMolBalls}!````~optixSDFMolBalls@{$\sim$optixSDFMolBalls}}
+\index{````~optixSDFMolBalls@{$\sim$optixSDFMolBalls}!optixSDFMolBalls@{optixSDFMolBalls}}
+\doxysubsubsection{\texorpdfstring{$\sim$optixSDFMolBalls()}{~optixSDFMolBalls()}}
+{\footnotesize\ttfamily optix\+S\+D\+F\+Mol\+Balls\+::$\sim$optix\+S\+D\+F\+Mol\+Balls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classoptix_s_d_f_mol_balls_ac90ad3f5b9e076e116882f5b2d3c475b}\label{classoptix_s_d_f_mol_balls_ac90ad3f5b9e076e116882f5b2d3c475b}} 
+\index{optixSDFMolBalls@{optixSDFMolBalls}!CreateGeometry@{CreateGeometry}}
+\index{CreateGeometry@{CreateGeometry}!optixSDFMolBalls@{optixSDFMolBalls}}
+\doxysubsubsection{\texorpdfstring{CreateGeometry()}{CreateGeometry()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Mol\+Balls\+::\+Create\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_a7fbf3dfeda08ee137b3253522ef6a8e3}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_mol_balls_ac90ad3f5b9e076e116882f5b2d3c475b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_mol_balls_a1e7bba3f81b766f46745ad0e52fe115c}\label{classoptix_s_d_f_mol_balls_a1e7bba3f81b766f46745ad0e52fe115c}} 
+\index{optixSDFMolBalls@{optixSDFMolBalls}!GetCenter@{GetCenter}}
+\index{GetCenter@{GetCenter}!optixSDFMolBalls@{optixSDFMolBalls}}
+\doxysubsubsection{\texorpdfstring{GetCenter()}{GetCenter()}}
+{\footnotesize\ttfamily optix\+::\+Buffer optix\+S\+D\+F\+Mol\+Balls\+::\+Get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_s_d_f_mol_balls_a89c786488da68ce8abee869f7515e7c5}\label{classoptix_s_d_f_mol_balls_a89c786488da68ce8abee869f7515e7c5}} 
+\index{optixSDFMolBalls@{optixSDFMolBalls}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!optixSDFMolBalls@{optixSDFMolBalls}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily virtual optix\+::\+Geometry optix\+S\+D\+F\+Mol\+Balls\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_a8e7e0dc61bfa442a258725473c2fbc28}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_mol_balls_a89c786488da68ce8abee869f7515e7c5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_mol_balls_a81c4472644acca122ed498dccd9948ae}\label{classoptix_s_d_f_mol_balls_a81c4472644acca122ed498dccd9948ae}} 
+\index{optixSDFMolBalls@{optixSDFMolBalls}!GetRadius@{GetRadius}}
+\index{GetRadius@{GetRadius}!optixSDFMolBalls@{optixSDFMolBalls}}
+\doxysubsubsection{\texorpdfstring{GetRadius()}{GetRadius()}}
+{\footnotesize\ttfamily optix\+::\+Buffer optix\+S\+D\+F\+Mol\+Balls\+::\+Get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_s_d_f_mol_balls_a6c453d98d0e144f4069424d96ec127d7}\label{classoptix_s_d_f_mol_balls_a6c453d98d0e144f4069424d96ec127d7}} 
+\index{optixSDFMolBalls@{optixSDFMolBalls}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!optixSDFMolBalls@{optixSDFMolBalls}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Mol\+Balls\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+T\+O\+DO\+: potentialy read file with points here 
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_ae4487610c220bc743d042fda69d73a0b}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_mol_balls_a6c453d98d0e144f4069424d96ec127d7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_mol_balls_a4f8870d189415588951f13dc9b066c41}\label{classoptix_s_d_f_mol_balls_a4f8870d189415588951f13dc9b066c41}} 
+\index{optixSDFMolBalls@{optixSDFMolBalls}!SetCallableProg@{SetCallableProg}}
+\index{SetCallableProg@{SetCallableProg}!optixSDFMolBalls@{optixSDFMolBalls}}
+\doxysubsubsection{\texorpdfstring{SetCallableProg()}{SetCallableProg()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Mol\+Balls\+::\+Set\+Callable\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Is called for setting callable prog 
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_a4a3e346306d620d5cd16d20a39141503}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_mol_balls_a4f8870d189415588951f13dc9b066c41_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_mol_balls_a4c0c77a7652199c9530ba57cb936bc4d}\label{classoptix_s_d_f_mol_balls_a4c0c77a7652199c9530ba57cb936bc4d}} 
+\index{optixSDFMolBalls@{optixSDFMolBalls}!SetCenter@{SetCenter}}
+\index{SetCenter@{SetCenter}!optixSDFMolBalls@{optixSDFMolBalls}}
+\doxysubsubsection{\texorpdfstring{SetCenter()}{SetCenter()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Mol\+Balls\+::\+Set\+Center (\begin{DoxyParamCaption}\item[{std\+::vector$<$ optix\+::float3 $>$}]{c }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_mol_balls_a4c0c77a7652199c9530ba57cb936bc4d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_mol_balls_af59b1c934ba407495a2e2bc4c087ad68}\label{classoptix_s_d_f_mol_balls_af59b1c934ba407495a2e2bc4c087ad68}} 
+\index{optixSDFMolBalls@{optixSDFMolBalls}!SetRadius@{SetRadius}}
+\index{SetRadius@{SetRadius}!optixSDFMolBalls@{optixSDFMolBalls}}
+\doxysubsubsection{\texorpdfstring{SetRadius()}{SetRadius()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Mol\+Balls\+::\+Set\+Radius (\begin{DoxyParamCaption}\item[{std\+::vector$<$ float $>$}]{rad }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_mol_balls_af59b1c934ba407495a2e2bc4c087ad68_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classoptix_s_d_f_mol_balls_a255b5e4c79a472619edf0bcf67e87b9d}\label{classoptix_s_d_f_mol_balls_a255b5e4c79a472619edf0bcf67e87b9d}} 
+\index{optixSDFMolBalls@{optixSDFMolBalls}!centersBuffer@{centersBuffer}}
+\index{centersBuffer@{centersBuffer}!optixSDFMolBalls@{optixSDFMolBalls}}
+\doxysubsubsection{\texorpdfstring{centersBuffer}{centersBuffer}}
+{\footnotesize\ttfamily optix\+::\+Buffer optix\+S\+D\+F\+Mol\+Balls\+::centers\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classoptix_s_d_f_mol_balls_ab16cc44662beee19fa6e0ca699955ca4}\label{classoptix_s_d_f_mol_balls_ab16cc44662beee19fa6e0ca699955ca4}} 
+\index{optixSDFMolBalls@{optixSDFMolBalls}!radBuffer@{radBuffer}}
+\index{radBuffer@{radBuffer}!optixSDFMolBalls@{optixSDFMolBalls}}
+\doxysubsubsection{\texorpdfstring{radBuffer}{radBuffer}}
+{\footnotesize\ttfamily optix\+::\+Buffer optix\+S\+D\+F\+Mol\+Balls\+::rad\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+frep/src/\mbox{\hyperlink{optix_s_d_f_primitives_8h}{optix\+S\+D\+F\+Primitives.\+h}}\item 
+frep/src/\mbox{\hyperlink{optix_s_d_f_primitives_8cpp}{optix\+S\+D\+F\+Primitives.\+cpp}}\end{DoxyCompactItemize}

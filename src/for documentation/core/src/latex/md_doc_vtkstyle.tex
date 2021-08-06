@@ -1,0 +1,141 @@
+The basics of A\+PI use and main concept that is much simillar to {\texttt{ Visualisation Toolkit}}. V\+TK is defacto a standard for general proglems of visual analysis solving. It\textquotesingle{}s integration with V\+T\+K-\/m provides other dimension to the A\+PI efficient computation and integration with simulation software.
+
+The proposed Visual-\/auditory A\+PI targets multisensory interaction problem, unified on base of ray-\/casting. It is first of all is a research project that targets to explore a unified approach to multisensory feedback on base of ray-\/casting procedure. Similarity to V\+TK syntacsis targets to provide user and potential further developers easy entry access to A\+PI and of course the author is quite familiar with V\+TK and that\textquotesingle{}s why providing similar sintacsis in A\+PI seemed to him quite logical. The main target of the proposed A\+PI\+: provide a base for further Multisensory interfaces development on base of Ray-\/casting procedure.
+
+The core of the V\+TK is a visualisation pipeline of data, that starts from data source and ends up with image rendered on screen.
+
+Below are basic similarities and differences with V\+TK in the main concept The basic classes of V\+TK A\+PI are\+:
+\begin{DoxyItemize}
+\item Sources
+\item Filters
+\item Mappers
+\item Actors
+\item Renderers
+\item Interactors
+\item Windows
+\end{DoxyItemize}
+
+The proposed solution targets visual-\/auditory ray-\/casting of scalar fields. We believe that for this type of data, there is no need to reimplement a large \char`\"{}filtering\char`\"{} part in visualisation pipeline of V\+TK. The most of scalar fields data preprecessing tasks are already addressed with Image Processing tookit {\texttt{ I\+TK}}. As a result the A\+PI mainly provides only targets mapping and rendering tasts and suggests some data reading and preprocessing procedures can be implemented on base of I\+TK or from scratch.
+
+The Visual-\/auditory A\+PI implements basic Mappers, Actors, Renderers and Windows that are intended to support ray-\/casting of mainly Signed Distance Fields, althought triangulated geometry is also supported and can be integrated within pipeline. Similarly to V\+TK the pipeline is constructed through \char`\"{}input-\/output\char`\"{} concept. The scalar field data is provided by file Readers that eighter output structured data or directly create Optix Buffers and Texture\+Samplers on G\+PU. The inputs and outputs are usually Optix objects, like optix\+::\+Geometry, optix\+::\+Material, optix\+::\+Geometry\+Instance and etc.. As all this objects are created through optix\+::\+Context, the reference to it is given to each class. For context creation a Context\+Manager class is responsible.\doxysection{Data readers and S\+D\+F geometry creation}\label{md_doc_vtkstyle_autotoc_md13}
+In the example below, the Reader that reads molecular data described in {\texttt{ X\+YZ file format}} and transfers it to \char`\"{}ball\char`\"{} like representation, when atoms represented as spheres (balls). This is current version of {\texttt{ C\+PK molecule representation}}. For info on {\texttt{ molecule representation types}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{contextManager m; }
+\DoxyCodeLine{m.Update();\textcolor{comment}{//creates context}}
+\DoxyCodeLine{}
+\DoxyCodeLine{xyzReader read;  \textcolor{comment}{//reads data}}
+\DoxyCodeLine{read.Setfile(\textcolor{stringliteral}{"molecule.xyz"});}
+\DoxyCodeLine{read.Update();}
+\DoxyCodeLine{}
+\DoxyCodeLine{sdfCPKMol mol;  \textcolor{comment}{//}}
+\DoxyCodeLine{mol.SetContext(m.GetOutput());}
+\DoxyCodeLine{mol.SetCenter(read.GetOutput1()); \textcolor{comment}{//centers, data stored in std::vector}}
+\DoxyCodeLine{mol.SetTypes(read.GetOutput2()); \textcolor{comment}{//set types of atoms, data stored in std::vector}}
+\DoxyCodeLine{mol.SetMaterialType(0); }
+\DoxyCodeLine{mol.Update();}
+\end{DoxyCode}
+
+
+The other example is reading dynamic scalar data, that represents . Gamess files. The reader performs signed distance transform of data on base of {\texttt{ Image Processing Toolkit}}. It generates optix Buffers and Textures Samplers. The optix\+S\+D\+F\+Texture gets Texture Samplers describing initial and final states of molecule dynamic electron density field and forms dynamic S\+DF geometry object. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{contextManager m;}
+\DoxyCodeLine{m.Update();\textcolor{comment}{//creates context}}
+\DoxyCodeLine{}
+\DoxyCodeLine{sdfTextureReader<float> readSDFTex1;}
+\DoxyCodeLine{readSDFTex1.SetContext(m.GetOutput());}
+\DoxyCodeLine{readSDFTex1.SetSize(139, 150, 160); \textcolor{comment}{//data dimensions}}
+\DoxyCodeLine{}
+\DoxyCodeLine{readSDFTex1.SetThreshold(0.1); \textcolor{comment}{//isolevel of scalar field}}
+\DoxyCodeLine{readSDFTex1.Setfile(\textcolor{stringliteral}{"ed1.txt"});}
+\DoxyCodeLine{readSDFTex1.Update();}
+\DoxyCodeLine{}
+\DoxyCodeLine{sdfTextureReader<float> readSDFTex2;}
+\DoxyCodeLine{readSDFTex2.SetContext(m.GetOutput());}
+\DoxyCodeLine{readSDFTex2.SetSize(138, 150, 160);}
+\DoxyCodeLine{}
+\DoxyCodeLine{readSDFTex2.SetThreshold(0.1);}
+\DoxyCodeLine{readSDFTex2.Setfile(\textcolor{stringliteral}{"ed2.txt"});}
+\DoxyCodeLine{readSDFTex2.Update();}
+\DoxyCodeLine{}
+\DoxyCodeLine{sdfTexture tex; \textcolor{comment}{//dynamic SDF object creation}}
+\DoxyCodeLine{tex.SetContext(m.GetOutput());}
+\DoxyCodeLine{tex.SetTexture(readSDFTex1.GetTexture(), readSDFTex1.GetParam());}
+\DoxyCodeLine{tex.SetTexture(readSDFTex2.GetTexture(), readSDFTex1.GetParam());}
+\DoxyCodeLine{tex.Update();}
+\end{DoxyCode}
+\doxysection{Mapper, Actor, Renderer}\label{md_doc_vtkstyle_autotoc_md14}
+Mapper, Actor and Renderer classes are much simillar to V\+TK in concept and syntacsis. The Mapper applies a material to the objects (in current implementation with optical or auditory properties). The Mapper is can activate optical or auditory material, depending on type of rendering procedure\+: rendering optical or auditory properties. For this, in current implementation the Mapper receives optix\+::\+Material from Material class (material.\+Get\+Output() procedure ) and description of it\textquotesingle{}s properties in , material.\+Get\+Type() procedure.
+
+The Renderer is responsible for rendering visual and auditory properties. Whether optical or auditory properties should be rendered, the Renderer operates its actors to activate the necessary visual or auditory model for all created pipelines of data.
+
+Below the code demonstrating the above concepts and syntacsis of Mapper, Actor and Renderer classes basic usage. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vaMaterial mSdf;}
+\DoxyCodeLine{mSdf.SetContext(m.GetOutput());}
+\DoxyCodeLine{mSdf.Update();}
+\DoxyCodeLine{}
+\DoxyCodeLine{vaMapper map21;}
+\DoxyCodeLine{map21.SetContext(m.GetOutput());}
+\DoxyCodeLine{map21.SetInput(sdf.GetOutput());}
+\DoxyCodeLine{map21.AddMaterial(mSdf.GetOutput(), mSdf.GetType());}
+\DoxyCodeLine{map21.Update();}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{vaActor acSdf1;}
+\DoxyCodeLine{acSdf1.SetContext(m.GetOutput());}
+\DoxyCodeLine{acSdf1.AddMapper(\&map21);}
+\DoxyCodeLine{acSdf1.Update();}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ren.AddActor(\&acSdf1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{....}
+\DoxyCodeLine{ren.LaunchAuditoryContext(); \textcolor{comment}{//compute auditory ray-\/tracing}}
+\DoxyCodeLine{}
+\DoxyCodeLine{...}
+\DoxyCodeLine{ren.LaunchOpticContext();\textcolor{comment}{// compute optical ray-\/tracing}}
+\end{DoxyCode}
+\doxysection{G\+U\+I  and interaction}\label{md_doc_vtkstyle_autotoc_md15}
+The G\+UI procedures are implemented on base of {\texttt{ G\+L\+FW}} and {\texttt{ Im\+G\+UI}} libraries. A custom G\+UI can be easily implemented on base of those libraries and integrated to A\+PI pipeline.
+
+The A\+PI provides a basic Renderer, G\+L\+FW window and Interactor. As far the basic class of Pinhole\+Camera from N\+V\+I\+D\+IA O\+P\+T\+IX A\+D\+V\+A\+N\+C\+ED examples was used to render data\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{contextManager m;}
+\DoxyCodeLine{m.Update();\textcolor{comment}{//creates context}}
+\DoxyCodeLine{}
+\DoxyCodeLine{PinholeCamera pinholeCamera;  \textcolor{comment}{//basic camera}}
+\DoxyCodeLine{}
+\DoxyCodeLine{optixRenderer ren;}
+\DoxyCodeLine{ren.SetValid(m.GetValid());}
+\DoxyCodeLine{ren.SetContext(m.GetOutput());}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ren.SetOpticalDims(windowWidth, windowWidth);}
+\DoxyCodeLine{ren.SetCamera(\&pinholeCamera);}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//set not dynamic}}
+\DoxyCodeLine{ren.SetDynamic(\textcolor{keyword}{false});}
+\DoxyCodeLine{ren.SetAuditory(\textcolor{keyword}{false});}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//window procedure}}
+\DoxyCodeLine{}
+\DoxyCodeLine{vaWindow optixWindowProc; }
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{optixWindowProc.SetDim(windowWidth, windowHeight);}
+\DoxyCodeLine{optixWindowProc.SetRenderer(\&ren);}
+\DoxyCodeLine{optixWindowProc.SetContext(m.GetOutput()); \textcolor{comment}{//returns context}}
+\DoxyCodeLine{optixWindowProc.SetCamera(\&pinholeCamera);}
+\DoxyCodeLine{}
+\DoxyCodeLine{vaRenderWindowInteractor iren; \textcolor{comment}{//TODO always check that basic still works}}
+\DoxyCodeLine{iren.SetWindow(\&optixWindowProc);}
+\end{DoxyCode}
+ 

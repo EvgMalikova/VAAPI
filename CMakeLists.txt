@@ -32,6 +32,8 @@ set(BUILD_SHARED_LIBS ON)
 ##########
 # Process our custom setup scripts here.
 
+# Process our custom setup scripts here.
+
 # Include all CMake Macros.
 include(Macros)
 # Determine information about the compiler
@@ -57,13 +59,6 @@ if ( OPENGL_FOUND AND OPENGL_INCLUDE_DIR )
   include_directories( ${OPENGL_INCLUDE_DIR} )
 endif()
 
-find_package( ITK REQUIRED )
- include_directories(  ${ITK_INCLUDE_DIRS} )
-
-include(${ITK_USE_FILE})
-
-
-
 
 LINK_DIRECTORIES(${INSTALL_DEPENDENCIES_DIR}/lib/)
 
@@ -88,15 +83,14 @@ ENDIF()
 #set(NVFlEX_LIB3  ${NVFLEX_LIB_DIR}/NvFlexDeviceRelease${LIB_POSTFIX})
 #set (NVFlEX_LIBRARIES ${NVFlEX_LIB1} ${NVFlEX_LIB2} ${NVFlEX_LIB3})
 
-SET(LIBRARIES  ${ITK_LIBRARIES} ) #${NVFlEX_LIBRARIES}
+
 
 #include_directories(${NVFLEX_INCLUDE_DIR})
 
 
 #message("Flex library: ${NVFlEX_LIBRARIES}")
 
-set(leapdir ${CMAKE_CURRENT_SOURCE_DIR}/LeapSDK/ )
-include_directories(${leapdir}/include)
+
 
 
 
@@ -109,7 +103,7 @@ mark_as_advanced(CLEAR CUDA_64_BIT_DEVICE_CODE)
 # wish from the GUI or from ccmake.
 if(NOT PASSED_FIRST_CONFIGURE)
 
-  list(APPEND default_nvcc_flags "--use_fast_math" "-arch sm_30" "-lineinfo")
+  list(APPEND default_nvcc_flags "--use_fast_math" "-arch sm_75" "-lineinfo")
 
   if( APPLE )
     # Undef'ing __BLOCKS__ for OSX builds.  This is due to a name clash between OSX 10.6
@@ -156,6 +150,8 @@ if( APPLE )
   set( CUDA_TOOLKIT_RPATH_FLAG "-Wl,-rpath,${CUDA_TOOLKIT_ROOT_DIR}/lib" )
 endif()
 
+# Locate the NVRT distribution.  Search the SDK first, then look in the system.
+set(OptiX_INSTALL_DIR "${CMAKE_SOURCE_DIR}/../" CACHE PATH "Path to OptiX installed location.")
 
 # Search for the OptiX libraries and include files.
 find_package(OptiX REQUIRED)
@@ -251,10 +247,10 @@ function(OPTIX_add_sample_executable target_name)
     imgui
 	VAAPIcore
 	VAAPIfrep
-	${LIBRARIES}
+	
     ${OPENGL_gl_LIBRARY}
     ${optix_rpath}
-	${leapdir}/lib/x64/Leap.lib
+	
     )
 	
   if(USING_GNU_CXX)
@@ -307,12 +303,71 @@ target_link_libraries( ${target_name}
     optix
     glfw
     imgui
-	${LIBRARIES}
+	
     ${OPENGL_gl_LIBRARY}
     ${optix_rpath}
     )
 
 endfunction()
+
+
+
+#########################################################
+# OPTIX_add_sample_python_lib
+#
+# Convience function for adding samples to the code.  You can copy the contents of this
+# funtion into your individual project if you wish to customize the behavior.  Note that
+# in CMake, functions have their own scope, whereas macros use the scope of the caller.
+function(OPTIX_add_sample_python_lib target_name)
+
+  # These calls will group PTX and CUDA files into their own directories in the Visual
+  # Studio projects.
+  source_group("PTX Files"  REGULAR_EXPRESSION ".+\\.ptx$")
+  source_group("CUDA Files" REGULAR_EXPRESSION ".+\\.cu$")
+
+  # Separate the sources from the CMake and CUDA options fed to the macro.  This code
+  # comes from the CUDA_COMPILE_PTX macro found in FindCUDA.cmake.  We are copying the
+  # code here, so that we can use our own name for the target.  target_name is used in the
+  # creation of the output file names, and we want this to be unique for each target in
+  # the SDK.
+  CUDA_GET_SOURCES_AND_OPTIONS(source_files cmake_options options ${ARGN})
+
+  # Create the rules to build the PTX from the CUDA files.
+  CUDA_WRAP_SRCS( ${target_name} PTX generated_files ${source_files} ${cmake_options}
+    OPTIONS ${options} )
+
+  # Here is where we create the rule to make the executable.  We define a target name and
+  # list all the source files used to create the target.  In addition we also pass along
+  # the cmake_options parsed out of the arguments.
+  
+  add_subdirectory(lib/pybind11)
+  pybind11_add_module(${target_name} ${source_files}
+    ${generated_files}
+    ${cmake_options})
+
+   # Most of the samples link against sutil, optix, and glfw.  Here is the
+  # rule that specifies this linkage.
+  target_link_libraries( ${target_name}
+    sutil_sdk
+    optix
+    glfw
+    imgui
+
+    ${OPENGL_gl_LIBRARY}
+    ${optix_rpath}
+    )
+	
+  if(USING_GNU_CXX)
+    target_link_libraries( ${target_name} m ) # Explicitly link against math library (C samples don't do that by default)
+	
+  endif()
+  
+  
+
+
+endfunction()
+
+
 
 
 #########################################################

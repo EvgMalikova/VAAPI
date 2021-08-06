@@ -9,6 +9,7 @@ rtDeclareVariable(float3, sysCameraPosition, , );
 rtBuffer<float3>    Positions;
 rtBuffer<int2>    Bonds;
 rtBuffer<int2>    Mols;
+
 rtBuffer<float>    BSRadius;
 rtBuffer<int>    BSType;
 rtDeclareVariable(float, MultiscaleParam, , );

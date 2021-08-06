@@ -345,7 +345,6 @@ RT_PROGRAM void volume_hetero_any()
     thePrd.renderType = 3; //for postprocessing
     if (thePrd.cur_prim < MAX_PRIM_ALONG_RAY)
     { //push intersections
-        thePrd.cur_prim++;
         cellPrimDesc cell;
         cell.intersectionDist = infoH.tmin;
         cell.type = 3; //tracing with primitives and compute bounds
@@ -354,11 +353,12 @@ RT_PROGRAM void volume_hetero_any()
         float3 col = GetColor(infoH.hit_point);
 
         //thePrd.result += make_float4(col.x, col.y, col.z, 0.1);
-        cell.color = make_float4(col.x, col.y, col.z, 0.01);
+        cell.color = make_float4(col.x, col.y, col.z, 0.03); //0.003 - for tetra
         cell.maxDist = infoH.maxDist;
 
-        thePrd.cellPrimitives[thePrd.cur_prim - 1] = cell;
-        thePrd.prims[thePrd.cur_prim - 1] = infoH.desc;
+        thePrd.cellPrimitives[thePrd.cur_prim] = cell;
+        thePrd.prims[thePrd.cur_prim] = infoH.desc;
+        thePrd.cur_prim++;
         rtIgnoreIntersection();
     }
     else {

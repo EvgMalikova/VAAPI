@@ -1,0 +1,137 @@
+Paragraphs are separated by a blank line.
+
+2nd paragraph. {\itshape Italic}, {\bfseries{bold}}, and {\ttfamily monospace}. Itemized lists look like\+:
+
+
+\begin{DoxyItemize}
+\item this one
+\item that one
+\item the other one
+\end{DoxyItemize}
+
+Note that --- not considering the asterisk --- the actual text content starts at 4-\/columns in.
+
+\begin{quote}
+Block quotes are written like so.
+
+They can span multiple paragraphs, if you like. \end{quote}
+
+
+Use 3 dashes for an em-\/dash. Use 2 dashes for ranges (ex., \char`\"{}it\textquotesingle{}s all
+in chapters 12-\/-\/14\char`\"{}). Three dots ... will be converted to an ellipsis. Unicode is supported. ☺\hypertarget{md_core_src_doc_tutorial_s_d_f_autotoc_md11}{}\doxysection{An h2 header}\label{md_core_src_doc_tutorial_s_d_f_autotoc_md11}
+Here\textquotesingle{}s a numbered list\+:
+
+
+\begin{DoxyEnumerate}
+\item first item
+\item second item
+\item third item
+\end{DoxyEnumerate}
+
+Note again how the actual text starts at 4 columns in (4 characters from the left side). Here\textquotesingle{}s a code sample\+: \begin{DoxyVerb}# Let me re-iterate ...
+for i in 1 .. 10 { do-something(i) }
+\end{DoxyVerb}
+
+
+As you probably guessed, indented 4 spaces. By the way, instead of indenting the block, you can use delimited blocks, if you like\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{define foobar() \{}
+\DoxyCodeLine{    print "Welcome to flavor country!";}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+(which makes copying \& pasting easier). You can optionally mark the delimited block for Pandoc to syntax highlight it\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{import time}
+\DoxyCodeLine{\# Quick, count to ten!}
+\DoxyCodeLine{for i in range(10):}
+\DoxyCodeLine{    \# (but not *too* quick)}
+\DoxyCodeLine{    time.sleep(0.5)}
+\DoxyCodeLine{    print(i)}
+\end{DoxyCode}
+\hypertarget{md_core_src_doc_tutorial_s_d_f_autotoc_md12}{}\doxysubsection{An h3 header}\label{md_core_src_doc_tutorial_s_d_f_autotoc_md12}
+Now a nested list\+:
+
+
+\begin{DoxyEnumerate}
+\item First, get these ingredients\+:
+\begin{DoxyItemize}
+\item carrots
+\item celery
+\item lentils
+\end{DoxyItemize}
+\item Boil some water.
+\item Dump everything in the pot and follow this algorithm\+: \begin{DoxyVerb}find wooden spoon
+uncover pot
+stir
+cover pot
+balance wooden spoon precariously on pot handle
+wait 10 minutes
+goto first step (or shut off burner when done)
+\end{DoxyVerb}
+
+
+Do not bump wooden spoon or it will fall.
+\end{DoxyEnumerate}
+
+Notice again how text always lines up on 4-\/space indents (including that last line which continues item 3 above).
+
+Here\textquotesingle{}s a link to \href{http://foo.bar}{\texttt{ a website}}, to a \href{local-doc.html}{\texttt{ local doc}}, and to a \href{\#an-h2-header}{\texttt{ section heading in the current doc}}. Here\textquotesingle{}s a footnote \mbox{[}$^\wedge$1\mbox{]}.
+
+\mbox{[}$^\wedge$1\mbox{]}\+: Some footnote text.
+
+Tables can look like this\+:
+
+Name Size Material Color
+
+\DoxyHorRuler
+ All Business 9 leather brown Roundabout 10 hemp canvas natural Cinderella 11 glass transparent
+
+Table\+: Shoes sizes, materials, and colors.
+
+(The above is the caption for the table.) Pandoc also supports multi-\/line tables\+:
+
+\DoxyHorRuler
+ Keyword Text
+
+\DoxyHorRuler
+ red Sunsets, apples, and other red or reddish things.
+
+green Leaves, grass, frogs and other things it\textquotesingle{}s not easy being.
+
+\DoxyHorRuler
+
+
+A horizontal rule follows.
+
+\DoxyHorRuler
+
+
+Here\textquotesingle{}s a definition list\+:
+
+apples \+: Good for making applesauce.
+
+oranges \+: Citrus!
+
+tomatoes \+: There\textquotesingle{}s no \char`\"{}e\char`\"{} in tomatoe.
+
+Again, text is indented 4 spaces. (Put a blank line between each term and its definition to spread things out more.)
+
+Here\textquotesingle{}s a \char`\"{}line block\char`\"{} (note how whitespace is honored)\+:
+
+$\vert$ Line one $\vert$ Line too $\vert$ Line tree
+
+and images can be specified like so\+:
+
+
+
+Inline math equation\+: \$\textbackslash{}omega = d\textbackslash{}phi / dt\$. Display math should get its own line like so\+:
+
+\$\$I = \textbackslash{}int \textbackslash{}rho R$^\wedge$\{2\} dV\$\$
+
+And note that you can backslash-\/escape any punctuation characters which you wish to be displayed literally, ex.\+: \`{}foo\`{}, $\ast$bar$\ast$, etc. 

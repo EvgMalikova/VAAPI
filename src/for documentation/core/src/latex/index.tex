@@ -1,0 +1,39 @@
+\doxysection{Introduction}\label{index_autotoc_md16}
+Scalar fields are used in many research areas, where computer simulations or experimental studies are involved, such as computational chemistry, medical data analysis and physical phenomena studies. Visualisation of scalar fields usually employs Volume Rendering techniques as for the computer systems the scalar fields data is often converted to data volumes stored in the texture memory. The visual analysis of scalar fields is not always straightforward, especially when a complex dynamic phenomenon is represented. In Volume Rendering the Multidimensional Transfer functions (TF) and consideration of more complex object-\/light interaction processes in the optical model is used to address the issues of visual analysis quality improvement and highlight features of interest. ~\newline
+
+
+However, the visual perception limitations not always can be overcome solely with the enhancement of the optical model. The visual system can be overloaded and perturbed due to fatigue. An additional introduction of auditory sensory stimuli to address a problem of visual analysis limitations is a well-\/known technique, called {\texttt{ sonification}}. ~\newline
+
+
+This A\+PI targets the problems of the visual-\/auditory interactive study of the dynamic scalar fields using the concept of a heterogeneous object influencing various sensory stimuli. The A\+PI takes advantages of the similarities between light and sound propagation to suggest a novel procedure of a visual-\/auditory rendering based on the ray-\/casting procedure. It makes it possible to conduct a simultaneous visual analysis along with spatial positioning/measuring. The A\+PI suggests rendering and modelling of both surface and solid geometry with visual and auditory properties. However mainly it is concentrated on the Volume scene representation based on the Hyper\+Volume (HV) model and take advantage of the Signed Distance Fields (S\+DF) for rendering. ~\newline
+ The concept introduces three separate parts of the HV model for Volume Rendering that can be evaluated independently on demand to speed up the rendering process of complex dynamic volume objects and a general visual-\/auditory scene representation for interactive Volume Rendering.
+
+For more details, on heterogeneous objects modelling and Hyper\+Volume approach look at \doxyref{Approach Overview}{p.}{md_doc_approach} Section\+:\doxysection{Optix engine and V\+TK}\label{index_autotoc_md17}
+The A\+PI is based on Optix Engine and takes advantage of it\textquotesingle{}s native rendering acceleration structures like B\+VH. The A\+PI syntacsis is mainly a \char`\"{}copy\char`\"{} of {\texttt{ Visualization Toolkit}}. As well it much inherits the standard visualisation concepts reflected in V\+TK A\+PI, like visualisation pipeline, replacing it with notion of visual-\/auditory pipeline, unified on base of ray-\/casting procedure. Thus, A\+PI targets to provide high level access to geometric modelling and rendering, allowing the researcher or programmer to operate familiar visualisation concepts and terminology. At the same time it is very lightweight and fast as all core procedures are C\+U\+DA kernals running on N\+V\+I\+D\+IA G\+PU card. The A\+PI it mostly oriented to support geometry modelling on base of {\texttt{ F\+Rep concept}} and targets various aspects of multisensory interaction, like collision detection, interactive manipulations and etc.
+
+For concept of basic use, similarities and differencec to V\+TK see \doxyref{A\+PI basics}{p.}{md_doc_vtkstyle} For F\+Rep modelling example look \doxyref{F\+Rep tutorial}{p.}{md_doc_freptutorial}\doxysection{Examples}\label{index_autotoc_md18}
+There are several basic tutorials for users and developers in \doxyref{Tutorials }{p.}{md_doc_alltutorials}
+
+Some featured examples\+:
+\begin{DoxyItemize}
+\item For examples of Visual-\/auditory volume and S\+DF geometry ray-\/casting see \doxyref{Examples}{p.}{md_doc_examples}
+\end{DoxyItemize}\doxysection{Naming structure}\label{index_autotoc_md19}
+Most of A\+PI classes have preffix \char`\"{}va\char`\"{} (for example \doxyref{va\+Basic\+Renderer}{p.}{classva_basic_renderer}). The data Readers names are formed with prefix of file format. For example xyz\+Reader. All primitives and operations of F\+Rep geometric modelling and Readers that return S\+DF representation, in other words can be directly used within F\+Rep modelling pipeline without any mapping, have \char`\"{}sdf\char`\"{} prefix. For example sdf\+Sphere, sdf\+Box, sdf\+Texture\+Reader and etc.\doxysection{Presequencies}\label{index_autotoc_md20}
+The A\+PI is based on {\texttt{ Optix engine}}. The visual and auditory rendering is performed through use of {\texttt{ Open\+Gl}} and {\texttt{ Open\+AL}} accordingly. For details on visual-\/auditory rendering interopability see implementation of \doxyref{optical\+Model}{p.}{classoptical_model} class\+: for optical model and \doxyref{auditory\+Model}{p.}{classauditory_model} class\+: for 3D sound rendering. Additionally, some of the A\+PI classes use the following open source libraries (those procedures might be not used and libraries excluded from the project)\+:
+
+
+\begin{DoxyItemize}
+\item Readers\+: {\texttt{ I\+TK}} for data preprocessing
+\item \doxyref{stk\+Sound}{p.}{namespacestk_sound} class\+: \+:{\texttt{ S\+TK}} for sound synthesis
+\end{DoxyItemize}\doxysection{T\+O\+DO}\label{index_autotoc_md21}
+
+\begin{DoxyItemize}
+\item Haptic implementation
+\begin{DoxyItemize}
+\item Collision detection
+\end{DoxyItemize}
+\item Practical examples
+\begin{DoxyItemize}
+\item Molecular haptics -\/Visual-\/auditory tutorials -\/Extending A\+PI (advanced tutorials) 
+\end{DoxyItemize}
+\end{DoxyItemize}

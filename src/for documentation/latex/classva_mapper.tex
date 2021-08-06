@@ -1,0 +1,234 @@
+\hypertarget{classva_mapper}{}\doxysection{va\+Mapper Class Reference}
+\label{classva_mapper}\index{vaMapper@{vaMapper}}
+
+
+A basic mapper that suggest application of one visual and one auditory material to one geometry instance.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Abstract\+Material.\+h$>$}
+
+
+
+Inheritance diagram for va\+Mapper\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classva_mapper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for va\+Mapper\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classva_mapper__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classva_mapper_a840064e5c0c1af154d46cdd9ec4f19ca}{Update}} ()
+\item 
+void \mbox{\hyperlink{classva_mapper_a778f09202a3f15a52170f3ad433612f8}{Set\+Input}} (optix\+::\+Geometry g)
+\item 
+optix\+::\+Geometry\+Instance \mbox{\hyperlink{classva_mapper_ae9309eb077ed5dfa28b89f9b80b216c3}{Get\+Output}} ()
+\item 
+void \mbox{\hyperlink{classva_mapper_a65b37ff5ddba831488d26e5c45ae60ee}{Set\+Desc\+Input}} (\mbox{\hyperlink{structsdf_geo}{sdf\+Geo}} $\ast$g)
+\item 
+void \mbox{\hyperlink{classva_mapper_afb58ff0eab04bac61f76a0134c7a7ae8}{Set\+Scalar\+Mode\+On}} ()
+\item 
+\mbox{\hyperlink{classva_mapper_a0dfb3a49635b7d55c64a0236e775cafe}{va\+Mapper}} ()
+\item 
+\mbox{\hyperlink{classva_mapper_aaffaba5c7e7b60156a766c94291042e8}{$\sim$va\+Mapper}} ()
+\item 
+void \mbox{\hyperlink{classva_mapper_aea3ef068acdb6b1b86f7b5ff8b8e38e2}{Add\+Material}} (optix\+::\+Material m, \mbox{\hyperlink{struct_material_desc}{Material\+Desc}} desc)
+\item 
+optix\+::\+Material \mbox{\hyperlink{classva_mapper_a1aeaeca1054c8a1a032b220b266bc5ba}{Get\+Material}} (int i)
+\item 
+\mbox{\hyperlink{struct_material_desc}{Material\+Desc}} \mbox{\hyperlink{classva_mapper_af8ca73dc3ee6c0bc221157bef2699f05}{Get\+Material\+Desc}} (int i)
+\item 
+void \mbox{\hyperlink{classva_mapper_a47c1fe03dbaef077d6d753c994c9fac5}{Set\+Optical\+Model}} ()
+\item 
+void \mbox{\hyperlink{classva_mapper_a7f94d76ef960c3eed249c95c23709b2b}{Set\+Auditory\+Model}} ()
+\item 
+void \mbox{\hyperlink{classva_mapper_ab1e21ed72b41824986762ab2a160df94}{Set\+Time}} (float time)
+\item 
+void \mbox{\hyperlink{classva_mapper_a56ff10dbc7a8c79dacbc29062fd27e5a}{Print\+Info}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classva_mapper_a308f38a8664909f78880da06cefd70e9}{Set\+Material\+Parameters}} (int i)
+\item 
+virtual void \mbox{\hyperlink{classva_mapper_a3ebf7bffe272ec038a661d12e68b4c0b}{Modified}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A basic mapper that suggest application of one visual and one auditory material to one geometry instance. 
+
+The codes inspired by vtk\+Mapper class. Returns optix\+::\+Geometry\+Instance with assigned material. Each material suggests definition of optical model , that treats geometry defined object as a sufrace or takes geometry and hetegoreneously defined attributes and maps them to optical and/or auditory properties for more details see ..heterogeneous objects modelling.
+
+The codes inspired by vtk\+Mapper class. Returns optix\+::\+Geometry\+Instance with assigned material. Each material suggests definition of optical model , that treats geometry defined object as a sufrace or takes geometry and hetegoreneously defined attributes and maps them to optical and/or auditory properties for more details see ..heterogeneous objects modelling
+
+The class takes optix geometry as input, assigns materials and returns optix Geometry\+Instance. Class also handles switching between optical and auditory material to perform visual and auditory rendering accordingly 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classva_mapper_a0dfb3a49635b7d55c64a0236e775cafe}\label{classva_mapper_a0dfb3a49635b7d55c64a0236e775cafe}} 
+\index{vaMapper@{vaMapper}!vaMapper@{vaMapper}}
+\index{vaMapper@{vaMapper}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{vaMapper()}{vaMapper()}}
+{\footnotesize\ttfamily va\+Mapper\+::va\+Mapper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_mapper_aaffaba5c7e7b60156a766c94291042e8}\label{classva_mapper_aaffaba5c7e7b60156a766c94291042e8}} 
+\index{vaMapper@{vaMapper}!````~vaMapper@{$\sim$vaMapper}}
+\index{````~vaMapper@{$\sim$vaMapper}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{$\sim$vaMapper()}{~vaMapper()}}
+{\footnotesize\ttfamily va\+Mapper\+::$\sim$va\+Mapper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classva_mapper_aea3ef068acdb6b1b86f7b5ff8b8e38e2}\label{classva_mapper_aea3ef068acdb6b1b86f7b5ff8b8e38e2}} 
+\index{vaMapper@{vaMapper}!AddMaterial@{AddMaterial}}
+\index{AddMaterial@{AddMaterial}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{AddMaterial()}{AddMaterial()}}
+{\footnotesize\ttfamily void va\+Mapper\+::\+Add\+Material (\begin{DoxyParamCaption}\item[{optix\+::\+Material}]{m,  }\item[{\mbox{\hyperlink{struct_material_desc}{Material\+Desc}}}]{desc }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_mapper_aea3ef068acdb6b1b86f7b5ff8b8e38e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_mapper_a1aeaeca1054c8a1a032b220b266bc5ba}\label{classva_mapper_a1aeaeca1054c8a1a032b220b266bc5ba}} 
+\index{vaMapper@{vaMapper}!GetMaterial@{GetMaterial}}
+\index{GetMaterial@{GetMaterial}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{GetMaterial()}{GetMaterial()}}
+{\footnotesize\ttfamily optix\+::\+Material va\+Mapper\+::\+Get\+Material (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_mapper_af8ca73dc3ee6c0bc221157bef2699f05}\label{classva_mapper_af8ca73dc3ee6c0bc221157bef2699f05}} 
+\index{vaMapper@{vaMapper}!GetMaterialDesc@{GetMaterialDesc}}
+\index{GetMaterialDesc@{GetMaterialDesc}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{GetMaterialDesc()}{GetMaterialDesc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material_desc}{Material\+Desc}} va\+Mapper\+::\+Get\+Material\+Desc (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_mapper_ae9309eb077ed5dfa28b89f9b80b216c3}\label{classva_mapper_ae9309eb077ed5dfa28b89f9b80b216c3}} 
+\index{vaMapper@{vaMapper}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily optix\+::\+Geometry\+Instance va\+Mapper\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_mapper_ae9309eb077ed5dfa28b89f9b80b216c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_mapper_a3ebf7bffe272ec038a661d12e68b4c0b}\label{classva_mapper_a3ebf7bffe272ec038a661d12e68b4c0b}} 
+\index{vaMapper@{vaMapper}!Modified@{Modified}}
+\index{Modified@{Modified}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{Modified()}{Modified()}}
+{\footnotesize\ttfamily virtual void va\+Mapper\+::\+Modified (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classva_mapper_a56ff10dbc7a8c79dacbc29062fd27e5a}\label{classva_mapper_a56ff10dbc7a8c79dacbc29062fd27e5a}} 
+\index{vaMapper@{vaMapper}!PrintInfo@{PrintInfo}}
+\index{PrintInfo@{PrintInfo}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{PrintInfo()}{PrintInfo()}}
+{\footnotesize\ttfamily void va\+Mapper\+::\+Print\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_mapper_a7f94d76ef960c3eed249c95c23709b2b}\label{classva_mapper_a7f94d76ef960c3eed249c95c23709b2b}} 
+\index{vaMapper@{vaMapper}!SetAuditoryModel@{SetAuditoryModel}}
+\index{SetAuditoryModel@{SetAuditoryModel}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryModel()}{SetAuditoryModel()}}
+{\footnotesize\ttfamily void va\+Mapper\+::\+Set\+Auditory\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_mapper_a65b37ff5ddba831488d26e5c45ae60ee}\label{classva_mapper_a65b37ff5ddba831488d26e5c45ae60ee}} 
+\index{vaMapper@{vaMapper}!SetDescInput@{SetDescInput}}
+\index{SetDescInput@{SetDescInput}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{SetDescInput()}{SetDescInput()}}
+{\footnotesize\ttfamily void va\+Mapper\+::\+Set\+Desc\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsdf_geo}{sdf\+Geo}} $\ast$}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_mapper_a65b37ff5ddba831488d26e5c45ae60ee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_mapper_a778f09202a3f15a52170f3ad433612f8}\label{classva_mapper_a778f09202a3f15a52170f3ad433612f8}} 
+\index{vaMapper@{vaMapper}!SetInput@{SetInput}}
+\index{SetInput@{SetInput}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{SetInput()}{SetInput()}}
+{\footnotesize\ttfamily void va\+Mapper\+::\+Set\+Input (\begin{DoxyParamCaption}\item[{optix\+::\+Geometry}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_mapper_a778f09202a3f15a52170f3ad433612f8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_mapper_a308f38a8664909f78880da06cefd70e9}\label{classva_mapper_a308f38a8664909f78880da06cefd70e9}} 
+\index{vaMapper@{vaMapper}!SetMaterialParameters@{SetMaterialParameters}}
+\index{SetMaterialParameters@{SetMaterialParameters}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{SetMaterialParameters()}{SetMaterialParameters()}}
+{\footnotesize\ttfamily virtual void va\+Mapper\+::\+Set\+Material\+Parameters (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classva_mapper_a47c1fe03dbaef077d6d753c994c9fac5}\label{classva_mapper_a47c1fe03dbaef077d6d753c994c9fac5}} 
+\index{vaMapper@{vaMapper}!SetOpticalModel@{SetOpticalModel}}
+\index{SetOpticalModel@{SetOpticalModel}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{SetOpticalModel()}{SetOpticalModel()}}
+{\footnotesize\ttfamily void va\+Mapper\+::\+Set\+Optical\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_mapper_afb58ff0eab04bac61f76a0134c7a7ae8}\label{classva_mapper_afb58ff0eab04bac61f76a0134c7a7ae8}} 
+\index{vaMapper@{vaMapper}!SetScalarModeOn@{SetScalarModeOn}}
+\index{SetScalarModeOn@{SetScalarModeOn}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{SetScalarModeOn()}{SetScalarModeOn()}}
+{\footnotesize\ttfamily void va\+Mapper\+::\+Set\+Scalar\+Mode\+On (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_mapper_ab1e21ed72b41824986762ab2a160df94}\label{classva_mapper_ab1e21ed72b41824986762ab2a160df94}} 
+\index{vaMapper@{vaMapper}!SetTime@{SetTime}}
+\index{SetTime@{SetTime}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{SetTime()}{SetTime()}}
+{\footnotesize\ttfamily void va\+Mapper\+::\+Set\+Time (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{classva_mapper_ab1e21ed72b41824986762ab2a160df94_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_mapper_a840064e5c0c1af154d46cdd9ec4f19ca}\label{classva_mapper_a840064e5c0c1af154d46cdd9ec4f19ca}} 
+\index{vaMapper@{vaMapper}!Update@{Update}}
+\index{Update@{Update}!vaMapper@{vaMapper}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void va\+Mapper\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classva_mapper_a840064e5c0c1af154d46cdd9ec4f19ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_mapper_a840064e5c0c1af154d46cdd9ec4f19ca_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/src/\mbox{\hyperlink{optix_abstract_material_8h}{optix\+Abstract\+Material.\+h}}\item 
+core/src/\mbox{\hyperlink{optix_abstract_material_8cpp}{optix\+Abstract\+Material.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,16 @@
+<map id="optixBasicActor::GetAcceleration" name="optixBasicActor::GetAcceleration">
+<area shape="rect" id="node1" title=" " alt="" coords="836,89,1051,115"/>
+<area shape="rect" id="node2" href="$classva_actor.html#a4e1a3f029183ed3bc23fd2830bf5b465" title=" " alt="" coords="613,9,763,35"/>
+<area shape="rect" id="node3" href="$classoptix_sdf_actor.html#a5af2c17d528618239014c45186c70ce5" title=" " alt="" coords="596,59,780,86"/>
+<area shape="rect" id="node4" href="$classoptix_t_r_i_actor.html#a9776f69820937067fa4443cb9d3cf52f" title=" " alt="" coords="588,111,788,152"/>
+<area shape="rect" id="node5" href="$classoptix_basic_actor.html#afa46b76f029abca941b2d80c46422fef" title=" " alt="" coords="607,177,769,203"/>
+<area shape="rect" id="node6" href="$class_scene_manager.html#a02f6cc82400eaeb3072055d9c0f42199" title=" " alt="" coords="327,5,531,47"/>
+<area shape="rect" id="node7" href="$class_scene_manager.html#af6a75717f60fa2fb0814f66507b31563" title=" " alt="" coords="339,71,518,112"/>
+<area shape="rect" id="node8" href="$classva_base_widget.html#a0c9da7941545243d68a8e6ed82087593" title=" " alt="" coords="325,136,533,177"/>
+<area shape="rect" id="node12" href="$class_scene_manager.html#acc63df8ad92992f7150493779b9d908d" title=" " alt="" coords="321,201,537,243"/>
+<area shape="rect" id="node13" href="$class_scene_manager.html#ab7991c3d1ad4c98ac44b44400e889d96" title=" " alt="" coords="317,267,540,308"/>
+<area shape="rect" id="node14" href="$main_8cpp.html#afd4ccc2bd1285e2d24fcabc414c83bb3" title=" " alt="" coords="387,333,470,359"/>
+<area shape="rect" id="node9" href="$classva_ray_cast_base_widget.html#a1078b1e2eca31cabfee5cd4e81fd0a17" title=" " alt="" coords="104,107,269,148"/>
+<area shape="rect" id="node10" href="$main_8cpp.html#a0b9e239c8889734711f29fe45551605b" title=" " alt="" coords="140,173,233,199"/>
+<area shape="rect" id="node11" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,173,56,199"/>
+</map>

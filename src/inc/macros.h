@@ -82,4 +82,5 @@ virtual void Set##name (float _arg1, float _arg2, float _arg3) \
 typedef struct {
     int id;
     std::vector<int> bond_id;
+    int size;
 } Molecule;

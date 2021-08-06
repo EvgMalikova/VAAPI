@@ -239,6 +239,7 @@ void tetReader::ReadFile()
         std::istringstream in(line);      //make a stream for the line itself
         std::string header;
         in >> header; //"POINTS"
+       // std::cout << header << std::endl;
         int Num;
         if (header == "POINTS")
             // processPoints()
@@ -263,11 +264,11 @@ void tetReader::ReadFile()
                 //std::cout << ids << "points " << x << "," << y << "," << z << std::endl;
             }
         }
-
+        int numTr;
         if (header == "CELLS")
             // processPoints()
         {
-            in >> numAt;
+            in >> numAt >> numTr;
             int id = 4;
             while (id == 4) {
                 ifs.getline(&buf[0], maxchars);
@@ -280,6 +281,46 @@ void tetReader::ReadFile()
                 if (id == 4)
                     d->tetra.push_back(optix::make_int4(v1, v2, v3, v4));
             }
+
+            /*  while (id == 3) {
+                  ifs.getline(&buf[0], maxchars);
+                  std::string line(&buf[0]);
+
+                  std::istringstream in(line);
+                  int  v1, v2, v3, v4;
+                  in >> id >> v1 >> v2 >> v3;
+              }
+            for (int i = 0; i < numTr - 2; i++) {
+                ifs.getline(&buf[0], maxchars);
+            }*/
+            std::string line(&buf[0]);
+            std::cout << line << std::endl;
+        }
+        // std::cout << "Found" << std::endl;
+        if (header == "POINTDATA")
+        {
+            std::cout << "Found" << std::endl;
+            in >> Num;
+            ifs.getline(&buf[0], maxchars);
+            ifs.getline(&buf[0], maxchars);
+
+            int ids = 0;
+            while (ids < Num) {
+                ifs.getline(&buf[0], maxchars);
+                std::string line(&buf[0]);
+
+                std::stringstream in(line);
+                float x;
+
+                while (!in.eof()) {
+                    in >> x;
+                    int length = in.tellg();
+                    if (length > 0)
+                        d->rad.push_back(x);
+                }
+                ids = d->rad.size();
+                //std::cout << ids << "points " << x << "," << y << "," << z << std::endl;
+            }
         }
 
         //skip last line
@@ -288,9 +329,11 @@ void tetReader::ReadFile()
 
     const size_t numParticles = d->centers.size();
     const size_t numTet = d->tetra.size();
+    const size_t numR = d->rad.size();
 
     std::cout << "# points = " << numParticles << std::endl;
     std::cout << "# tetras = " << numTet << std::endl;
+    std::cout << "# scalars = " << numR << std::endl;
 
     optix::float3 pmin, pmax;
     pmin.x = pmin.y = pmin.z = 1e16f;
@@ -428,7 +471,7 @@ void sdfMolReader::ReadFile()
         int idMol;
         //int idBond;
         //Molecule m;
-
+        int molSize = 0;
         for (int i = 0; i < numBt; i++)
         {
             ifs.getline(&buf[0], maxchars);
@@ -444,6 +487,7 @@ void sdfMolReader::ReadFile()
                 {
                     // m.id = 0;
                     d->mols[idMol].bond_id.push_back(i);
+                    d->mols[idMol].size++;
                 }
                 else
                 {
@@ -452,6 +496,7 @@ void sdfMolReader::ReadFile()
 
                     d->mols.push_back(Molecule());
                     d->mols[idMol].id = idMol;
+                    d->mols[idMol].size = 1;
                     d->mols[idMol].bond_id.push_back(i);
                     //next molecule
                    // idPrev = id1;
@@ -461,6 +506,7 @@ void sdfMolReader::ReadFile()
                 idMol = 0;
                 d->mols.push_back(Molecule());
                 d->mols[idMol].id = idMol;
+                d->mols[idMol].size = 1;
                 d->mols[idMol].bond_id.push_back(i);
             }
             idPrev = id1;

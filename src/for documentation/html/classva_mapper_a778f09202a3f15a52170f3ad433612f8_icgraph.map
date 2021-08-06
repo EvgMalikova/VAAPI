@@ -1,0 +1,10 @@
+<map id="vaMapper::SetInput" name="vaMapper::SetInput">
+<area shape="rect" id="node1" title=" " alt="" coords="588,111,721,138"/>
+<area shape="rect" id="node2" href="$class_scene_manager.html#af6a75717f60fa2fb0814f66507b31563" title=" " alt="" coords="339,5,518,47"/>
+<area shape="rect" id="node3" href="$classva_base_widget.html#a0c9da7941545243d68a8e6ed82087593" title=" " alt="" coords="325,71,533,112"/>
+<area shape="rect" id="node7" href="$class_scene_manager.html#ab7991c3d1ad4c98ac44b44400e889d96" title=" " alt="" coords="317,136,540,177"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#afd4ccc2bd1285e2d24fcabc414c83bb3" title=" " alt="" coords="387,202,470,229"/>
+<area shape="rect" id="node4" href="$classva_ray_cast_base_widget.html#a1078b1e2eca31cabfee5cd4e81fd0a17" title=" " alt="" coords="104,41,269,83"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a0b9e239c8889734711f29fe45551605b" title=" " alt="" coords="140,107,233,134"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,107,56,134"/>
+</map>

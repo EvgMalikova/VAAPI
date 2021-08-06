@@ -1,0 +1,29 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CTest.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CTestTargets.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/CTestUseLaunchers.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/DartConfiguration.tcl.in
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/FindPkgConfig.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/GNUInstallDirs.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.14/Modules/Platform/WindowsPaths.cmake
+D:/nvidia/volume/VAAPI/rtmidi/CMakeLists.txt
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/3.14.0-rc2/CMakeCXXCompiler.cmake
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/3.14.0-rc2/CMakeRCCompiler.cmake
+D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/3.14.0-rc2/CMakeSystem.cmake
+D:/nvidia/volume/VAAPI/rtmidi/cmake/RtMidiConfigUninstall.cmake.in
+D:/nvidia/volume/VAAPI/rtmidi/rtmidi.pc.in

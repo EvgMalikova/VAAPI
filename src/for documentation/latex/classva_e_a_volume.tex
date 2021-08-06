@@ -1,0 +1,191 @@
+\hypertarget{classva_e_a_volume}{}\doxysection{va\+E\+A\+Volume Class Reference}
+\label{classva_e_a_volume}\index{vaEAVolume@{vaEAVolume}}
+
+
+Emission-\/absorption Volume.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Material.\+h$>$}
+
+
+
+Inheritance diagram for va\+E\+A\+Volume\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classva_e_a_volume__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for va\+E\+A\+Volume\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classva_e_a_volume__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classva_e_a_volume_ae11169af649acf7a63baed1ac0286535}{Material\+Type}} \{ \mbox{\hyperlink{classva_e_a_volume_ae11169af649acf7a63baed1ac0286535a8e1c1790b6f6a9ad2a5ce8e081cf59bf}{S\+U\+R\+F\+A\+CE}}, 
+\mbox{\hyperlink{classva_e_a_volume_ae11169af649acf7a63baed1ac0286535a153f590e1668d1c2e414c8588d11b07f}{V\+O\+L\+U\+ME}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classva_e_a_volume_ace5c84c397788f9ac9ac1b457483790d}{va\+E\+A\+Volume}} ()
+\item 
+\mbox{\hyperlink{classva_e_a_volume_adc12c36ea4e45d875cadd973ebcfe9e6}{$\sim$va\+E\+A\+Volume}} ()
+\item 
+void \mbox{\hyperlink{classva_e_a_volume_afc58ec2cdb79292783c8920eb5c71498}{Set\+Texture}} (optix\+::\+Texture\+Sampler samp)
+\item 
+void \mbox{\hyperlink{classva_e_a_volume_abfb611203443dee15fd11c6fecb0e0cc}{Add\+Light}} (\mbox{\hyperlink{struct_basic_light}{Basic\+Light}} $\ast$l)
+\item 
+void \mbox{\hyperlink{classva_e_a_volume_a50d6f1b2523e4806c2c93c5a3acf4526}{Set\+Type}} (\mbox{\hyperlink{classva_e_a_volume_ae11169af649acf7a63baed1ac0286535}{Material\+Type}} m)
+\item 
+void \mbox{\hyperlink{classva_e_a_volume_aa3f9820a0128fa28887d9302248bdc1d}{Set\+S\+D\+F\+Prog}} (optix\+::\+Program sdf\+Prog)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classva_e_a_volume_a0499e1e5783d945fa8ddc8e93470a3cb}{Set\+Material\+Parameters}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_e_a_volume_a09402d7b9647c321c54dced86ead9431}{Initialize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Emission-\/absorption Volume. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classva_e_a_volume_ae11169af649acf7a63baed1ac0286535}\label{classva_e_a_volume_ae11169af649acf7a63baed1ac0286535}} 
+\index{vaEAVolume@{vaEAVolume}!MaterialType@{MaterialType}}
+\index{MaterialType@{MaterialType}!vaEAVolume@{vaEAVolume}}
+\doxysubsubsection{\texorpdfstring{MaterialType}{MaterialType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classva_e_a_volume_ae11169af649acf7a63baed1ac0286535}{va\+E\+A\+Volume\+::\+Material\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SURFACE@{SURFACE}!vaEAVolume@{vaEAVolume}}\index{vaEAVolume@{vaEAVolume}!SURFACE@{SURFACE}}}\mbox{\Hypertarget{classva_e_a_volume_ae11169af649acf7a63baed1ac0286535a8e1c1790b6f6a9ad2a5ce8e081cf59bf}\label{classva_e_a_volume_ae11169af649acf7a63baed1ac0286535a8e1c1790b6f6a9ad2a5ce8e081cf59bf}} 
+S\+U\+R\+F\+A\+CE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VOLUME@{VOLUME}!vaEAVolume@{vaEAVolume}}\index{vaEAVolume@{vaEAVolume}!VOLUME@{VOLUME}}}\mbox{\Hypertarget{classva_e_a_volume_ae11169af649acf7a63baed1ac0286535a153f590e1668d1c2e414c8588d11b07f}\label{classva_e_a_volume_ae11169af649acf7a63baed1ac0286535a153f590e1668d1c2e414c8588d11b07f}} 
+V\+O\+L\+U\+ME&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classva_e_a_volume_ace5c84c397788f9ac9ac1b457483790d}\label{classva_e_a_volume_ace5c84c397788f9ac9ac1b457483790d}} 
+\index{vaEAVolume@{vaEAVolume}!vaEAVolume@{vaEAVolume}}
+\index{vaEAVolume@{vaEAVolume}!vaEAVolume@{vaEAVolume}}
+\doxysubsubsection{\texorpdfstring{vaEAVolume()}{vaEAVolume()}}
+{\footnotesize\ttfamily va\+E\+A\+Volume\+::va\+E\+A\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_e_a_volume_adc12c36ea4e45d875cadd973ebcfe9e6}\label{classva_e_a_volume_adc12c36ea4e45d875cadd973ebcfe9e6}} 
+\index{vaEAVolume@{vaEAVolume}!````~vaEAVolume@{$\sim$vaEAVolume}}
+\index{````~vaEAVolume@{$\sim$vaEAVolume}!vaEAVolume@{vaEAVolume}}
+\doxysubsubsection{\texorpdfstring{$\sim$vaEAVolume()}{~vaEAVolume()}}
+{\footnotesize\ttfamily va\+E\+A\+Volume\+::$\sim$va\+E\+A\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classva_e_a_volume_abfb611203443dee15fd11c6fecb0e0cc}\label{classva_e_a_volume_abfb611203443dee15fd11c6fecb0e0cc}} 
+\index{vaEAVolume@{vaEAVolume}!AddLight@{AddLight}}
+\index{AddLight@{AddLight}!vaEAVolume@{vaEAVolume}}
+\doxysubsubsection{\texorpdfstring{AddLight()}{AddLight()}}
+{\footnotesize\ttfamily void va\+E\+A\+Volume\+::\+Add\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_basic_light}{Basic\+Light}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_e_a_volume_abfb611203443dee15fd11c6fecb0e0cc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_e_a_volume_a09402d7b9647c321c54dced86ead9431}\label{classva_e_a_volume_a09402d7b9647c321c54dced86ead9431}} 
+\index{vaEAVolume@{vaEAVolume}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!vaEAVolume@{vaEAVolume}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void va\+E\+A\+Volume\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_auditory_material_a59fd566e70f7892fc15c6b6fd80bd35a}{va\+Auditory\+Material}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_e_a_volume_a09402d7b9647c321c54dced86ead9431_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_e_a_volume_a0499e1e5783d945fa8ddc8e93470a3cb}\label{classva_e_a_volume_a0499e1e5783d945fa8ddc8e93470a3cb}} 
+\index{vaEAVolume@{vaEAVolume}!SetMaterialParameters@{SetMaterialParameters}}
+\index{SetMaterialParameters@{SetMaterialParameters}!vaEAVolume@{vaEAVolume}}
+\doxysubsubsection{\texorpdfstring{SetMaterialParameters()}{SetMaterialParameters()}}
+{\footnotesize\ttfamily void va\+E\+A\+Volume\+::\+Set\+Material\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_auditory_material_a9b860091c807eb66930578cfe4d108d6}{va\+Auditory\+Material}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_e_a_volume_a0499e1e5783d945fa8ddc8e93470a3cb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_e_a_volume_aa3f9820a0128fa28887d9302248bdc1d}\label{classva_e_a_volume_aa3f9820a0128fa28887d9302248bdc1d}} 
+\index{vaEAVolume@{vaEAVolume}!SetSDFProg@{SetSDFProg}}
+\index{SetSDFProg@{SetSDFProg}!vaEAVolume@{vaEAVolume}}
+\doxysubsubsection{\texorpdfstring{SetSDFProg()}{SetSDFProg()}}
+{\footnotesize\ttfamily void va\+E\+A\+Volume\+::\+Set\+S\+D\+F\+Prog (\begin{DoxyParamCaption}\item[{optix\+::\+Program}]{sdf\+Prog }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_e_a_volume_aa3f9820a0128fa28887d9302248bdc1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_e_a_volume_afc58ec2cdb79292783c8920eb5c71498}\label{classva_e_a_volume_afc58ec2cdb79292783c8920eb5c71498}} 
+\index{vaEAVolume@{vaEAVolume}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!vaEAVolume@{vaEAVolume}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}}
+{\footnotesize\ttfamily void va\+E\+A\+Volume\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{optix\+::\+Texture\+Sampler}]{samp }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_e_a_volume_afc58ec2cdb79292783c8920eb5c71498_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_e_a_volume_a50d6f1b2523e4806c2c93c5a3acf4526}\label{classva_e_a_volume_a50d6f1b2523e4806c2c93c5a3acf4526}} 
+\index{vaEAVolume@{vaEAVolume}!SetType@{SetType}}
+\index{SetType@{SetType}!vaEAVolume@{vaEAVolume}}
+\doxysubsubsection{\texorpdfstring{SetType()}{SetType()}}
+{\footnotesize\ttfamily void va\+E\+A\+Volume\+::\+Set\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classva_e_a_volume_ae11169af649acf7a63baed1ac0286535}{Material\+Type}}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_e_a_volume_a50d6f1b2523e4806c2c93c5a3acf4526_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{optix_material_8h}{optix\+Material.\+h}}\item 
+src/\mbox{\hyperlink{optix_material_8cpp}{optix\+Material.\+cpp}}\end{DoxyCompactItemize}

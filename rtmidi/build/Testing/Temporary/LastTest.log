@@ -1,0 +1,18 @@
+Start testing: Nov 16 18:26 GMT Standard Time
+----------------------------------------------------------
+1/1 Testing: apinames
+1/1 Test: apinames
+Command: "D:/nvidia/volume/VAAPI/rtmidi/build/tests/Release/apinames.exe"
+Directory: D:/nvidia/volume/VAAPI/rtmidi/build
+"apinames" start time: Nov 16 18:26 GMT Standard Time
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"apinames" end time: Nov 16 18:26 GMT Standard Time
+"apinames" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 16 18:26 GMT Standard Time

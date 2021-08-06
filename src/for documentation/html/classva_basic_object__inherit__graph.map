@@ -1,0 +1,50 @@
+<map id="vaBasicObject" name="vaBasicObject">
+<area shape="rect" id="node1" title=" " alt="" coords="5,841,111,868"/>
+<area shape="rect" id="node2" href="$classauditory_mapper.html" title=" " alt="" coords="197,56,307,83"/>
+<area shape="rect" id="node5" href="$classoptix_basic_actor.html" title="basic abstract actor class" alt="" coords="195,157,309,184"/>
+<area shape="rect" id="node9" href="$classoptix_s_d_f_geometry.html" title="Abstract class for SDF Geometry. A basic class. All SDF geometry inherits it&#39;s functions." alt="" coords="185,512,319,539"/>
+<area shape="rect" id="node26" href="$classoptix_tri_geometry.html" title="Abstract class for Triangulated Geometry." alt="" coords="191,715,313,741"/>
+<area shape="rect" id="node29" href="$classva_auditory_material.html" title="A basic class for auditory material." alt="" coords="188,841,316,868"/>
+<area shape="rect" id="node39" href="$classva_base_programmable_object.html" title=" " alt="" coords="159,892,345,919"/>
+<area shape="rect" id="node45" href="$classva_basic_renderer.html" title="Abstract visual&#45;auditory renderer." alt="" coords="193,943,311,969"/>
+<area shape="rect" id="node47" href="$classva_mapper.html" title="A basic mapper that suggest application of one visual and one auditory material to one geometry insta..." alt="" coords="213,993,291,1020"/>
+<area shape="rect" id="node48" href="$classva_widget_handle.html" title="A base class for handles of the widgets." alt="" coords="195,1044,309,1071"/>
+<area shape="rect" id="node3" href="$classauditory_mapper_cmaj.html" title=" " alt="" coords="426,5,567,32"/>
+<area shape="rect" id="node4" href="$classauditory_mapper_plucked.html" title=" " alt="" coords="417,56,576,83"/>
+<area shape="rect" id="node6" href="$classoptix_sdf_actor.html" title=" " alt="" coords="447,107,547,133"/>
+<area shape="rect" id="node7" href="$classoptix_t_r_i_actor.html" title=" " alt="" coords="447,157,547,184"/>
+<area shape="rect" id="node8" href="$classva_actor.html" title=" " alt="" coords="464,208,529,235"/>
+<area shape="rect" id="node10" href="$classoptix_s_d_f_binary_op.html" title="Binary operation." alt="" coords="431,259,562,285"/>
+<area shape="rect" id="node15" href="$classoptix_s_d_f_primitive.html" title="A basic class for all sdf primitives." alt="" coords="434,411,559,437"/>
+<area shape="rect" id="node20" href="$classoptix_s_d_f_unary_op.html" title="Unary operation." alt="" coords="433,512,560,539"/>
+<area shape="rect" id="node23" href="$classsdf_c_p_k_mol.html" title="Example class for simple molecular geometry." alt="" coords="453,563,540,589"/>
+<area shape="rect" id="node11" href="$class_s_d_f_blend_intersection_op.html" title=" " alt="" coords="648,107,813,133"/>
+<area shape="rect" id="node12" href="$class_s_d_f_blend_subtraction_op.html" title=" " alt="" coords="649,157,813,184"/>
+<area shape="rect" id="node13" href="$class_s_d_f_blend_union_op.html" title="Blending union operation." alt="" coords="665,208,796,235"/>
+<area shape="rect" id="node14" href="$class_s_d_f_subtraction_op.html" title=" " alt="" coords="665,259,796,285"/>
+<area shape="rect" id="node16" href="$classoptix_s_d_f_box.html" title="SDF Box primitive." alt="" coords="681,309,780,336"/>
+<area shape="rect" id="node17" href="$classoptix_s_d_f_sphere.html" title="SDF sphere primitive." alt="" coords="672,360,789,387"/>
+<area shape="rect" id="node18" href="$classoptix_s_d_f_torus.html" title="SDF Torus primitive." alt="" coords="677,411,785,437"/>
+<area shape="rect" id="node19" href="$classsdf_texture.html" title="Generates a dynamic SDF primitive on base of sdf textures." alt="" coords="689,461,772,488"/>
+<area shape="rect" id="node21" href="$class_s_d_f_elongate_op.html" title="Elongation operation." alt="" coords="673,512,789,539"/>
+<area shape="rect" id="node22" href="$class_s_d_f_rounding_op.html" title="Smoothing operation." alt="" coords="671,563,790,589"/>
+<area shape="rect" id="node24" href="$classsdf_ball_sticks_mol.html" title=" " alt="" coords="671,613,790,640"/>
+<area shape="rect" id="node25" href="$classsdf_c_p_k_dyn_mol.html" title="Example class for dynamic molecular geometry." alt="" coords="675,664,786,691"/>
+<area shape="rect" id="node27" href="$classoptix_geom_basic.html" title=" " alt="" coords="437,613,556,640"/>
+<area shape="rect" id="node28" href="$classoptix_plane.html" title=" " alt="" coords="689,715,772,741"/>
+<area shape="rect" id="node30" href="$class_audio_texture_volume_material.html" title=" " alt="" coords="403,664,591,691"/>
+<area shape="rect" id="node31" href="$class_dynamic_texture_volume_material.html" title=" " alt="" coords="393,715,600,741"/>
+<area shape="rect" id="node32" href="$class_lambertian.html" title="Example of material for triangulated surfaces." alt="" coords="453,765,540,792"/>
+<area shape="rect" id="node33" href="$class_s_d_f_audio_ray_trace_material.html" title=" " alt="" coords="405,816,588,843"/>
+<area shape="rect" id="node34" href="$class_s_d_f_audio_volume_material.html" title=" " alt="" coords="411,867,582,893"/>
+<area shape="rect" id="node35" href="$class_s_d_f_material2.html" title=" " alt="" coords="446,917,547,944"/>
+<area shape="rect" id="node36" href="$class_s_d_f_volume_material.html" title="Simple Volume material with interactive highlighting, applied to several objects of various types." alt="" coords="427,968,566,995"/>
+<area shape="rect" id="node37" href="$classva_basic_material.html" title="Simple Blin&#45;Phong shading for whitted ray&#45;tracing." alt="" coords="440,1019,553,1045"/>
+<area shape="rect" id="node38" href="$classva_e_a_volume.html" title="Emission&#45;absorption Volume." alt="" coords="449,1069,545,1096"/>
+<area shape="rect" id="node40" href="$classva_base_map_scheme.html" title=" " alt="" coords="428,1120,565,1147"/>
+<area shape="rect" id="node43" href="$classva_base_widget.html" title=" " alt="" coords="444,1171,549,1197"/>
+<area shape="rect" id="node41" href="$classva_color_scheme.html" title=" " alt="" coords="675,1069,787,1096"/>
+<area shape="rect" id="node42" href="$classva_sound_map_scheme.html" title=" " alt="" coords="659,1120,803,1147"/>
+<area shape="rect" id="node44" href="$classva_ray_cast_base_widget.html" title=" " alt="" coords="653,1171,808,1197"/>
+<area shape="rect" id="node46" href="$classva_renderer.html" title="Architecture much inspired by VTK Renderer(http://vtk.org) implementation An example of interactive r..." alt="" coords="453,1221,540,1248"/>
+</map>

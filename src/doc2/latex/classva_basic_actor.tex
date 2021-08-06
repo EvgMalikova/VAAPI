@@ -1,0 +1,289 @@
+\hypertarget{classva_basic_actor}{}\doxysection{va\+Basic\+Actor Class Reference}
+\label{classva_basic_actor}\index{vaBasicActor@{vaBasicActor}}
+
+
+basic abstract actor class  
+
+
+
+
+{\ttfamily \#include $<$optix\+Basic\+Actor.\+h$>$}
+
+
+
+Inheritance diagram for va\+Basic\+Actor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classva_basic_actor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for va\+Basic\+Actor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classva_basic_actor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classva_basic_actor_ad310e12655386dfe70a7f38e3a4fc678}{va\+Basic\+Actor}} ()
+\item 
+\mbox{\hyperlink{classva_basic_actor_a1c5746d27046b1f654d72a715bf0fca0}{$\sim$va\+Basic\+Actor}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_actor_af3c54b025cbceb8e1ffffcf8b7b4327b}{Set\+Context}} (optix\+::\+Context \&context)
+\item 
+void \mbox{\hyperlink{classva_basic_actor_a6fc2fc28aa7585768cf3b083224b0c3e}{Add\+Mapper}} (\mbox{\hyperlink{classva_mapper}{va\+Mapper}} $\ast$map)
+\item 
+void \mbox{\hyperlink{classva_basic_actor_ab3a9ffbf8813c71a9825efba6d0105df}{Set\+Auditory\+Model}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_actor_a466073fe20eece898a2b2411ce4fbcbc}{Set\+Optical\+Model}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_actor_aaab78113ac80441c1cc774f187b1b385}{Update}} ()
+\item 
+optix\+::\+Geometry\+Group \mbox{\hyperlink{classva_basic_actor_a9c58da1211b4e45c66174d5ba6d7193b}{Get\+Output}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_actor_a736a4a83eab185c0d075ce08a76dedcc}{Set\+Time}} (float time)
+\item 
+void \mbox{\hyperlink{classva_basic_actor_ad139dd8b5e37dc29eeaceb4a3de8c1c1}{Print\+Info}} ()
+\item 
+optix\+::\+Acceleration \mbox{\hyperlink{classva_basic_actor_a7e0601ff8eca4e3c6863ed0a9185493f}{Get\+Acceleration}} ()
+\item 
+void \mbox{\hyperlink{classva_basic_actor_acab3a4c82b4107f85bc337f1d5b626ee}{Set\+Acceleration\+Type}} (std\+::string type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classva_basic_actor_a7e0facc96d63e822eecd842000cd923e}{Set\+Acceleration\+Properties}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_basic_actor_a54766f3c92506a4b87965209bf3d7947}{Rebuild\+Accel}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classva_basic_actor_aa4801f48bc7ff8fbeafae48a4101c9a5}{m\+\_\+builder}}
+\item 
+optix\+::\+Geometry\+Group \mbox{\hyperlink{classva_basic_actor_a1e6090348334b4fffa8b7462c6e424d3}{gg}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+basic abstract actor class 
+
+The class creates a basic Actor for Optix use. Architecture much inspired by V\+TK (\href{http://vtk.org}{\texttt{ http\+://vtk.\+org}}) implementation 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classva_basic_actor_ad310e12655386dfe70a7f38e3a4fc678}\label{classva_basic_actor_ad310e12655386dfe70a7f38e3a4fc678}} 
+\index{vaBasicActor@{vaBasicActor}!vaBasicActor@{vaBasicActor}}
+\index{vaBasicActor@{vaBasicActor}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{vaBasicActor()}{vaBasicActor()}}
+{\footnotesize\ttfamily va\+Basic\+Actor\+::va\+Basic\+Actor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_actor_ad310e12655386dfe70a7f38e3a4fc678_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_actor_a1c5746d27046b1f654d72a715bf0fca0}\label{classva_basic_actor_a1c5746d27046b1f654d72a715bf0fca0}} 
+\index{vaBasicActor@{vaBasicActor}!````~vaBasicActor@{$\sim$vaBasicActor}}
+\index{````~vaBasicActor@{$\sim$vaBasicActor}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{$\sim$vaBasicActor()}{~vaBasicActor()}}
+{\footnotesize\ttfamily va\+Basic\+Actor\+::$\sim$va\+Basic\+Actor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classva_basic_actor_a6fc2fc28aa7585768cf3b083224b0c3e}\label{classva_basic_actor_a6fc2fc28aa7585768cf3b083224b0c3e}} 
+\index{vaBasicActor@{vaBasicActor}!AddMapper@{AddMapper}}
+\index{AddMapper@{AddMapper}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{AddMapper()}{AddMapper()}}
+{\footnotesize\ttfamily void va\+Basic\+Actor\+::\+Add\+Mapper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classva_mapper}{va\+Mapper}} $\ast$}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_actor_a6fc2fc28aa7585768cf3b083224b0c3e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_actor_a7e0601ff8eca4e3c6863ed0a9185493f}\label{classva_basic_actor_a7e0601ff8eca4e3c6863ed0a9185493f}} 
+\index{vaBasicActor@{vaBasicActor}!GetAcceleration@{GetAcceleration}}
+\index{GetAcceleration@{GetAcceleration}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{GetAcceleration()}{GetAcceleration()}}
+{\footnotesize\ttfamily optix\+::\+Acceleration va\+Basic\+Actor\+::\+Get\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_actor_a7e0601ff8eca4e3c6863ed0a9185493f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_actor_a9c58da1211b4e45c66174d5ba6d7193b}\label{classva_basic_actor_a9c58da1211b4e45c66174d5ba6d7193b}} 
+\index{vaBasicActor@{vaBasicActor}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily optix\+::\+Geometry\+Group va\+Basic\+Actor\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_actor_a9c58da1211b4e45c66174d5ba6d7193b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_actor_ad139dd8b5e37dc29eeaceb4a3de8c1c1}\label{classva_basic_actor_ad139dd8b5e37dc29eeaceb4a3de8c1c1}} 
+\index{vaBasicActor@{vaBasicActor}!PrintInfo@{PrintInfo}}
+\index{PrintInfo@{PrintInfo}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{PrintInfo()}{PrintInfo()}}
+{\footnotesize\ttfamily void va\+Basic\+Actor\+::\+Print\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_actor_a54766f3c92506a4b87965209bf3d7947}\label{classva_basic_actor_a54766f3c92506a4b87965209bf3d7947}} 
+\index{vaBasicActor@{vaBasicActor}!RebuildAccel@{RebuildAccel}}
+\index{RebuildAccel@{RebuildAccel}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{RebuildAccel()}{RebuildAccel()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Actor\+::\+Rebuild\+Accel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classva_actor_a4e1a3f029183ed3bc23fd2830bf5b465}{va\+Actor}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_actor_a54766f3c92506a4b87965209bf3d7947_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_actor_a7e0facc96d63e822eecd842000cd923e}\label{classva_basic_actor_a7e0facc96d63e822eecd842000cd923e}} 
+\index{vaBasicActor@{vaBasicActor}!SetAccelerationProperties@{SetAccelerationProperties}}
+\index{SetAccelerationProperties@{SetAccelerationProperties}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{SetAccelerationProperties()}{SetAccelerationProperties()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Actor\+::\+Set\+Acceleration\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classva_t_r_i_actor_a96946656d0b058de5af03ca8a3620d67}{va\+T\+R\+I\+Actor}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_actor_a7e0facc96d63e822eecd842000cd923e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_actor_acab3a4c82b4107f85bc337f1d5b626ee}\label{classva_basic_actor_acab3a4c82b4107f85bc337f1d5b626ee}} 
+\index{vaBasicActor@{vaBasicActor}!SetAccelerationType@{SetAccelerationType}}
+\index{SetAccelerationType@{SetAccelerationType}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{SetAccelerationType()}{SetAccelerationType()}}
+{\footnotesize\ttfamily void va\+Basic\+Actor\+::\+Set\+Acceleration\+Type (\begin{DoxyParamCaption}\item[{std\+::string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_basic_actor_ab3a9ffbf8813c71a9825efba6d0105df}\label{classva_basic_actor_ab3a9ffbf8813c71a9825efba6d0105df}} 
+\index{vaBasicActor@{vaBasicActor}!SetAuditoryModel@{SetAuditoryModel}}
+\index{SetAuditoryModel@{SetAuditoryModel}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryModel()}{SetAuditoryModel()}}
+{\footnotesize\ttfamily void va\+Basic\+Actor\+::\+Set\+Auditory\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_actor_ab3a9ffbf8813c71a9825efba6d0105df_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_actor_af3c54b025cbceb8e1ffffcf8b7b4327b}\label{classva_basic_actor_af3c54b025cbceb8e1ffffcf8b7b4327b}} 
+\index{vaBasicActor@{vaBasicActor}!SetContext@{SetContext}}
+\index{SetContext@{SetContext}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{SetContext()}{SetContext()}}
+{\footnotesize\ttfamily virtual void va\+Basic\+Actor\+::\+Set\+Context (\begin{DoxyParamCaption}\item[{optix\+::\+Context \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_object_a084579231006f44f03b6834e723316b6}{va\+Basic\+Object}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_actor_af3c54b025cbceb8e1ffffcf8b7b4327b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_actor_a466073fe20eece898a2b2411ce4fbcbc}\label{classva_basic_actor_a466073fe20eece898a2b2411ce4fbcbc}} 
+\index{vaBasicActor@{vaBasicActor}!SetOpticalModel@{SetOpticalModel}}
+\index{SetOpticalModel@{SetOpticalModel}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{SetOpticalModel()}{SetOpticalModel()}}
+{\footnotesize\ttfamily void va\+Basic\+Actor\+::\+Set\+Optical\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_actor_a466073fe20eece898a2b2411ce4fbcbc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_actor_a736a4a83eab185c0d075ce08a76dedcc}\label{classva_basic_actor_a736a4a83eab185c0d075ce08a76dedcc}} 
+\index{vaBasicActor@{vaBasicActor}!SetTime@{SetTime}}
+\index{SetTime@{SetTime}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{SetTime()}{SetTime()}}
+{\footnotesize\ttfamily void va\+Basic\+Actor\+::\+Set\+Time (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_actor_a736a4a83eab185c0d075ce08a76dedcc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_basic_actor_aaab78113ac80441c1cc774f187b1b385}\label{classva_basic_actor_aaab78113ac80441c1cc774f187b1b385}} 
+\index{vaBasicActor@{vaBasicActor}!Update@{Update}}
+\index{Update@{Update}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void va\+Basic\+Actor\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_basic_actor_aaab78113ac80441c1cc774f187b1b385_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classva_basic_actor_a1e6090348334b4fffa8b7462c6e424d3}\label{classva_basic_actor_a1e6090348334b4fffa8b7462c6e424d3}} 
+\index{vaBasicActor@{vaBasicActor}!gg@{gg}}
+\index{gg@{gg}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{gg}{gg}}
+{\footnotesize\ttfamily optix\+::\+Geometry\+Group va\+Basic\+Actor\+::gg\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classva_basic_actor_aa4801f48bc7ff8fbeafae48a4101c9a5}\label{classva_basic_actor_aa4801f48bc7ff8fbeafae48a4101c9a5}} 
+\index{vaBasicActor@{vaBasicActor}!m\_builder@{m\_builder}}
+\index{m\_builder@{m\_builder}!vaBasicActor@{vaBasicActor}}
+\doxysubsubsection{\texorpdfstring{m\_builder}{m\_builder}}
+{\footnotesize\ttfamily std\+::string va\+Basic\+Actor\+::m\+\_\+builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/src/\mbox{\hyperlink{optix_basic_actor_8h}{optix\+Basic\+Actor.\+h}}\item 
+core/src/\mbox{\hyperlink{optix_basic_actor_8cpp}{optix\+Basic\+Actor.\+cpp}}\end{DoxyCompactItemize}

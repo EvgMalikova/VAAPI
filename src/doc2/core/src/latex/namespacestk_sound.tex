@@ -1,0 +1,141 @@
+\doxysection{stk\+Sound Namespace Reference}
+\label{namespacestk_sound}\index{stkSound@{stkSound}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ sound\+Desc}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ Init\+AL} (char $\ast$$\ast$$\ast$argv, int $\ast$argc)
+\item 
+void \textbf{ Close\+AL} (void)
+\item 
+void \textbf{ Apply\+Sin} (A\+Lfloat $\ast$data, A\+Ldouble g, A\+Luint srate, A\+Luint freq)
+\item 
+void \textbf{ Create\+Wave} (Stk\+Float $\ast$ptr, int srate2, int duration, A\+Luint \&buffer)
+\item 
+void \textbf{ Init\+Env} ()
+\item 
+void \textbf{ Exit\+Env} ()
+\item 
+Stk\+Frames \textbf{ Generate\+Noise} (double time, double srate2, float seed)
+\item 
+void \textbf{ Waitfor\+Sound} (float scale)
+\item 
+void \textbf{ Play\+Sel\+Sound} (A\+Luint source)
+\item 
+void \textbf{ Move\+Sounds} (std\+::vector$<$ \textbf{ stk\+Sound\+::sound\+Desc} $>$ \&desc\+Ss, std\+::vector$<$ float $>$ \&xpos, int scale)
+\item 
+void \textbf{ Rotate\+Test} (int scale)
+\item 
+\textbf{ sound\+Desc} \textbf{ Play\+Buffer} (Stk\+Float $\ast$ptr, int time, int size, int j, optix\+::float2 xpos)
+\item 
+void \textbf{ Rotate\+Angle} (double angle, A\+Luint \&source)
+\item 
+void \textbf{ Apply\+A\+D\+SR} (stk\+::\+Stk\+Frames \&frames, int release\+Count)
+\item 
+Stk\+Frames \textbf{ Generate\+Plucked} (int time, double srate2, double freq, double amplitude)
+\item 
+\textbf{ sound\+Desc} \textbf{ Play\+Buffer} (stk\+::\+Stk\+Float $\ast$ptr, int time, int size, int j, optix\+::float2 xpos)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{namespacestk_sound_aa8338fa0bd04a2c7f616a4526edaa4b3}} 
+\index{stkSound@{stkSound}!ApplyADSR@{ApplyADSR}}
+\index{ApplyADSR@{ApplyADSR}!stkSound@{stkSound}}
+\doxysubsubsection{ApplyADSR()}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Apply\+A\+D\+SR (\begin{DoxyParamCaption}\item[{stk\+::\+Stk\+Frames \&}]{frames,  }\item[{int}]{release\+Count }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_a9928864a97a20d31cbcd7bc996924882}} 
+\index{stkSound@{stkSound}!ApplySin@{ApplySin}}
+\index{ApplySin@{ApplySin}!stkSound@{stkSound}}
+\doxysubsubsection{ApplySin()}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Apply\+Sin (\begin{DoxyParamCaption}\item[{A\+Lfloat $\ast$}]{data,  }\item[{A\+Ldouble}]{g,  }\item[{A\+Luint}]{srate,  }\item[{A\+Luint}]{freq }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_adb4279d1f42946b978c2ead97f14877c}} 
+\index{stkSound@{stkSound}!CloseAL@{CloseAL}}
+\index{CloseAL@{CloseAL}!stkSound@{stkSound}}
+\doxysubsubsection{CloseAL()}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Close\+AL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_a895275035c088bf412fd2e2acff513a2}} 
+\index{stkSound@{stkSound}!CreateWave@{CreateWave}}
+\index{CreateWave@{CreateWave}!stkSound@{stkSound}}
+\doxysubsubsection{CreateWave()}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Create\+Wave (\begin{DoxyParamCaption}\item[{Stk\+Float $\ast$}]{ptr,  }\item[{int}]{srate2,  }\item[{int}]{duration,  }\item[{A\+Luint \&}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_adf56ecacdee397b09bae332360e6bcdd}} 
+\index{stkSound@{stkSound}!ExitEnv@{ExitEnv}}
+\index{ExitEnv@{ExitEnv}!stkSound@{stkSound}}
+\doxysubsubsection{ExitEnv()}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Exit\+Env (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_a46fa59f0c2cc58d0996cd2b115752c0b}} 
+\index{stkSound@{stkSound}!GenerateNoise@{GenerateNoise}}
+\index{GenerateNoise@{GenerateNoise}!stkSound@{stkSound}}
+\doxysubsubsection{GenerateNoise()}
+{\footnotesize\ttfamily stk\+::\+Stk\+Frames stk\+Sound\+::\+Generate\+Noise (\begin{DoxyParamCaption}\item[{double}]{time,  }\item[{double}]{srate2,  }\item[{float}]{seed }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_af26aff86da8bebe9304980b124d5671a}} 
+\index{stkSound@{stkSound}!GeneratePlucked@{GeneratePlucked}}
+\index{GeneratePlucked@{GeneratePlucked}!stkSound@{stkSound}}
+\doxysubsubsection{GeneratePlucked()}
+{\footnotesize\ttfamily stk\+::\+Stk\+Frames stk\+Sound\+::\+Generate\+Plucked (\begin{DoxyParamCaption}\item[{int}]{time,  }\item[{double}]{srate2,  }\item[{double}]{freq,  }\item[{double}]{amplitude }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_a2b54aaea58d4033258535243df43cf57}} 
+\index{stkSound@{stkSound}!InitAL@{InitAL}}
+\index{InitAL@{InitAL}!stkSound@{stkSound}}
+\doxysubsubsection{InitAL()}
+{\footnotesize\ttfamily int stk\+Sound\+::\+Init\+AL (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$$\ast$}]{argv,  }\item[{int $\ast$}]{argc }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_af7d212086ace0bb4857648f6087365c9}} 
+\index{stkSound@{stkSound}!InitEnv@{InitEnv}}
+\index{InitEnv@{InitEnv}!stkSound@{stkSound}}
+\doxysubsubsection{InitEnv()}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Init\+Env (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_ac59ece5f25eda653d84f58a64178ce79}} 
+\index{stkSound@{stkSound}!MoveSounds@{MoveSounds}}
+\index{MoveSounds@{MoveSounds}!stkSound@{stkSound}}
+\doxysubsubsection{MoveSounds()}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Move\+Sounds (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \textbf{ stk\+Sound\+::sound\+Desc} $>$ \&}]{desc\+Ss,  }\item[{std\+::vector$<$ float $>$ \&}]{xpos,  }\item[{int}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_a3a87b5f27ff06744d6bd0450ea8f47a9}} 
+\index{stkSound@{stkSound}!PlayBuffer@{PlayBuffer}}
+\index{PlayBuffer@{PlayBuffer}!stkSound@{stkSound}}
+\doxysubsubsection{PlayBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \textbf{ sound\+Desc} stk\+Sound\+::\+Play\+Buffer (\begin{DoxyParamCaption}\item[{stk\+::\+Stk\+Float $\ast$}]{ptr,  }\item[{int}]{time,  }\item[{int}]{size,  }\item[{int}]{j,  }\item[{optix\+::float2}]{xpos }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_a90bf1d26df0a89886a3f9d60fb28dfb9}} 
+\index{stkSound@{stkSound}!PlayBuffer@{PlayBuffer}}
+\index{PlayBuffer@{PlayBuffer}!stkSound@{stkSound}}
+\doxysubsubsection{PlayBuffer()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ sound\+Desc} stk\+Sound\+::\+Play\+Buffer (\begin{DoxyParamCaption}\item[{Stk\+Float $\ast$}]{ptr,  }\item[{int}]{time,  }\item[{int}]{size,  }\item[{int}]{j,  }\item[{optix\+::float2}]{xpos }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_a41081c932e20559c57775bd7846f96f2}} 
+\index{stkSound@{stkSound}!PlaySelSound@{PlaySelSound}}
+\index{PlaySelSound@{PlaySelSound}!stkSound@{stkSound}}
+\doxysubsubsection{PlaySelSound()}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Play\+Sel\+Sound (\begin{DoxyParamCaption}\item[{A\+Luint}]{source }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_a561adfedf528246fe05d14bdd6507dfb}} 
+\index{stkSound@{stkSound}!RotateAngle@{RotateAngle}}
+\index{RotateAngle@{RotateAngle}!stkSound@{stkSound}}
+\doxysubsubsection{RotateAngle()}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Rotate\+Angle (\begin{DoxyParamCaption}\item[{double}]{angle,  }\item[{A\+Luint \&}]{source }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_a7d9cad64df340ee72d088f8ad2b7adae}} 
+\index{stkSound@{stkSound}!RotateTest@{RotateTest}}
+\index{RotateTest@{RotateTest}!stkSound@{stkSound}}
+\doxysubsubsection{RotateTest()}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Rotate\+Test (\begin{DoxyParamCaption}\item[{int}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacestk_sound_a2bbd6bf3025f8c18a6d523f9582d4993}} 
+\index{stkSound@{stkSound}!WaitforSound@{WaitforSound}}
+\index{WaitforSound@{WaitforSound}!stkSound@{stkSound}}
+\doxysubsubsection{WaitforSound()}
+{\footnotesize\ttfamily void stk\+Sound\+::\+Waitfor\+Sound (\begin{DoxyParamCaption}\item[{float}]{scale }\end{DoxyParamCaption})}
+

@@ -1,0 +1,376 @@
+\hypertarget{classva_renderer}{}\doxysection{va\+Renderer Class Reference}
+\label{classva_renderer}\index{vaRenderer@{vaRenderer}}
+
+
+Architecture much inspired by V\+TK Renderer(\href{http://vtk.org}{\texttt{ http\+://vtk.\+org}}) implementation An example of interactive renderer with non-\/progressive rendering approach.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Renderer.\+h$>$}
+
+
+
+Inheritance diagram for va\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classva_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for va\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classva_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classva_renderer_aefd1cbbe0b119bfb6f9aff0dd180f721}{Set\+Interop}} (bool inter)
+\item 
+\mbox{\hyperlink{classva_renderer_a7fa08c45296ee8696a155b74d5404ec3}{va\+Renderer}} ()
+\item 
+\mbox{\hyperlink{classva_renderer_ab053db3b3f2cb588fc23890e68339e4a}{$\sim$va\+Renderer}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_renderer_ab4de714ae92c90063864177f8f620870}{Set\+Context}} (optix\+::\+Context \&context)
+\item 
+\mbox{\hyperlink{classva_renderer_aebc0b7e5c575174c3c03bb4dfc0f6a16}{opx\+Set\+Macro}} (m\+\_\+stack\+Size, unsigned int)
+\item 
+\mbox{\hyperlink{classva_renderer_a3353ca81faf88beac1a2a875f798c35c}{opx\+Get\+Macro}} (m\+\_\+stack\+Size, unsigned int)
+\item 
+\mbox{\hyperlink{classva_renderer_a526362449ca7d7a5ded36be204985c72}{opx\+Set\+Macro}} (m\+\_\+devices\+Encoding, unsigned int)
+\item 
+\mbox{\hyperlink{classva_renderer_aec750cc7c6c6740c4b17e4b580113466}{opx\+Get\+Macro}} (m\+\_\+devices\+Encoding, unsigned int)
+\item 
+bool \mbox{\hyperlink{classva_renderer_a3fcf6d69ffd328b572845e634803f268}{Is\+Valid}} ()
+\item 
+virtual bool \mbox{\hyperlink{classva_renderer_a5a9b7f5e8255165707ef8a88dace00fe}{Render}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_renderer_adc496d7d470942b0be6309d86ed3fb93}{Display}} ()
+\item 
+void \mbox{\hyperlink{classva_renderer_a3fe990de07f25eb82daa71900bffb9b7}{Reshape}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classva_renderer_aead7c8156dbc48b28f0c69c6fdab1617}{Set\+Valid}} (bool t)
+\item 
+void \mbox{\hyperlink{classva_renderer_a778cd756f7f6c8ac29190098f480b366}{Set\+Camera}} (\mbox{\hyperlink{class_pinhole_camera}{Pinhole\+Camera}} $\ast$pinhole\+Camera)
+\item 
+void \mbox{\hyperlink{classva_renderer_a1f0b21c3c3f1dbd26e1587715c0237cb}{Set\+Widget}} (\mbox{\hyperlink{classva_base_widget}{va\+Base\+Widget}} $\ast$v)
+\item 
+virtual void \mbox{\hyperlink{classva_renderer_a83d914da1ee6facd14e2fb2e564915ae}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classva_renderer_a7770efa35e8a3412091bfae08931c042}{Init\+Renderer}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_renderer_aeee6213bbcb0ef1989a3a2639cf6f549}{Modified}} ()
+\item 
+void \mbox{\hyperlink{classva_renderer_a26d395d4c80a353b03b35b00bc46738d}{Set\+Camera\+Default\+Parameters}} ()
+\item 
+void \mbox{\hyperlink{classva_renderer_ad3417fb348be4b6103467ccbd4d50ed2}{Update\+Camera}} ()
+\item 
+void \mbox{\hyperlink{classva_renderer_a3dbb8169d2954a09fe85d28dbc30f36d}{Update\+Widget}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Architecture much inspired by V\+TK Renderer(\href{http://vtk.org}{\texttt{ http\+://vtk.\+org}}) implementation An example of interactive renderer with non-\/progressive rendering approach. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classva_renderer_a7fa08c45296ee8696a155b74d5404ec3}\label{classva_renderer_a7fa08c45296ee8696a155b74d5404ec3}} 
+\index{vaRenderer@{vaRenderer}!vaRenderer@{vaRenderer}}
+\index{vaRenderer@{vaRenderer}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{vaRenderer()}{vaRenderer()}}
+{\footnotesize\ttfamily va\+Renderer\+::va\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_a7fa08c45296ee8696a155b74d5404ec3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_renderer_ab053db3b3f2cb588fc23890e68339e4a}\label{classva_renderer_ab053db3b3f2cb588fc23890e68339e4a}} 
+\index{vaRenderer@{vaRenderer}!````~vaRenderer@{$\sim$vaRenderer}}
+\index{````~vaRenderer@{$\sim$vaRenderer}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{$\sim$vaRenderer()}{~vaRenderer()}}
+{\footnotesize\ttfamily va\+Renderer\+::$\sim$va\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classva_renderer_adc496d7d470942b0be6309d86ed3fb93}\label{classva_renderer_adc496d7d470942b0be6309d86ed3fb93}} 
+\index{vaRenderer@{vaRenderer}!Display@{Display}}
+\index{Display@{Display}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{Display()}{Display()}}
+{\footnotesize\ttfamily virtual void va\+Renderer\+::\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_renderer_abaaa7b7530160ff43391b824b35bb73c}{va\+Basic\+Renderer}}.
+
+\mbox{\Hypertarget{classva_renderer_a7770efa35e8a3412091bfae08931c042}\label{classva_renderer_a7770efa35e8a3412091bfae08931c042}} 
+\index{vaRenderer@{vaRenderer}!InitRenderer@{InitRenderer}}
+\index{InitRenderer@{InitRenderer}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{InitRenderer()}{InitRenderer()}}
+{\footnotesize\ttfamily void va\+Renderer\+::\+Init\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_renderer_a10fd3be163c1aac620e59a95cfdfd50a}{va\+Basic\+Renderer}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_a7770efa35e8a3412091bfae08931c042_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_renderer_a3fcf6d69ffd328b572845e634803f268}\label{classva_renderer_a3fcf6d69ffd328b572845e634803f268}} 
+\index{vaRenderer@{vaRenderer}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily bool va\+Renderer\+::\+Is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_a3fcf6d69ffd328b572845e634803f268_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_renderer_aeee6213bbcb0ef1989a3a2639cf6f549}\label{classva_renderer_aeee6213bbcb0ef1989a3a2639cf6f549}} 
+\index{vaRenderer@{vaRenderer}!Modified@{Modified}}
+\index{Modified@{Modified}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{Modified()}{Modified()}}
+{\footnotesize\ttfamily virtual void va\+Renderer\+::\+Modified (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classva_renderer_aec750cc7c6c6740c4b17e4b580113466}\label{classva_renderer_aec750cc7c6c6740c4b17e4b580113466}} 
+\index{vaRenderer@{vaRenderer}!opxGetMacro@{opxGetMacro}}
+\index{opxGetMacro@{opxGetMacro}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{opxGetMacro()}{opxGetMacro()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily va\+Renderer\+::opx\+Get\+Macro (\begin{DoxyParamCaption}\item[{m\+\_\+devices\+Encoding}]{,  }\item[{unsigned int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_renderer_a3353ca81faf88beac1a2a875f798c35c}\label{classva_renderer_a3353ca81faf88beac1a2a875f798c35c}} 
+\index{vaRenderer@{vaRenderer}!opxGetMacro@{opxGetMacro}}
+\index{opxGetMacro@{opxGetMacro}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{opxGetMacro()}{opxGetMacro()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily va\+Renderer\+::opx\+Get\+Macro (\begin{DoxyParamCaption}\item[{m\+\_\+stack\+Size}]{,  }\item[{unsigned int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_renderer_a526362449ca7d7a5ded36be204985c72}\label{classva_renderer_a526362449ca7d7a5ded36be204985c72}} 
+\index{vaRenderer@{vaRenderer}!opxSetMacro@{opxSetMacro}}
+\index{opxSetMacro@{opxSetMacro}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{opxSetMacro()}{opxSetMacro()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily va\+Renderer\+::opx\+Set\+Macro (\begin{DoxyParamCaption}\item[{m\+\_\+devices\+Encoding}]{,  }\item[{unsigned int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_renderer_aebc0b7e5c575174c3c03bb4dfc0f6a16}\label{classva_renderer_aebc0b7e5c575174c3c03bb4dfc0f6a16}} 
+\index{vaRenderer@{vaRenderer}!opxSetMacro@{opxSetMacro}}
+\index{opxSetMacro@{opxSetMacro}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{opxSetMacro()}{opxSetMacro()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily va\+Renderer\+::opx\+Set\+Macro (\begin{DoxyParamCaption}\item[{m\+\_\+stack\+Size}]{,  }\item[{unsigned int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classva_renderer_a5a9b7f5e8255165707ef8a88dace00fe}\label{classva_renderer_a5a9b7f5e8255165707ef8a88dace00fe}} 
+\index{vaRenderer@{vaRenderer}!Render@{Render}}
+\index{Render@{Render}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily bool va\+Renderer\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_renderer_a263ec75ed17e17f3d84317fe4e5430a3}{va\+Basic\+Renderer}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_a5a9b7f5e8255165707ef8a88dace00fe_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_renderer_a3fe990de07f25eb82daa71900bffb9b7}\label{classva_renderer_a3fe990de07f25eb82daa71900bffb9b7}} 
+\index{vaRenderer@{vaRenderer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{Reshape()}{Reshape()}}
+{\footnotesize\ttfamily void va\+Renderer\+::\+Reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_renderer_aa18b42581e83c941e425749fd21674c5}{va\+Basic\+Renderer}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_a3fe990de07f25eb82daa71900bffb9b7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_renderer_a778cd756f7f6c8ac29190098f480b366}\label{classva_renderer_a778cd756f7f6c8ac29190098f480b366}} 
+\index{vaRenderer@{vaRenderer}!SetCamera@{SetCamera}}
+\index{SetCamera@{SetCamera}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{SetCamera()}{SetCamera()}}
+{\footnotesize\ttfamily void va\+Renderer\+::\+Set\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pinhole_camera}{Pinhole\+Camera}} $\ast$}]{pinhole\+Camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_a778cd756f7f6c8ac29190098f480b366_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_renderer_a26d395d4c80a353b03b35b00bc46738d}\label{classva_renderer_a26d395d4c80a353b03b35b00bc46738d}} 
+\index{vaRenderer@{vaRenderer}!SetCameraDefaultParameters@{SetCameraDefaultParameters}}
+\index{SetCameraDefaultParameters@{SetCameraDefaultParameters}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{SetCameraDefaultParameters()}{SetCameraDefaultParameters()}}
+{\footnotesize\ttfamily void va\+Renderer\+::\+Set\+Camera\+Default\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_a26d395d4c80a353b03b35b00bc46738d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_a26d395d4c80a353b03b35b00bc46738d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_renderer_ab4de714ae92c90063864177f8f620870}\label{classva_renderer_ab4de714ae92c90063864177f8f620870}} 
+\index{vaRenderer@{vaRenderer}!SetContext@{SetContext}}
+\index{SetContext@{SetContext}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{SetContext()}{SetContext()}}
+{\footnotesize\ttfamily void va\+Renderer\+::\+Set\+Context (\begin{DoxyParamCaption}\item[{optix\+::\+Context \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_object_a084579231006f44f03b6834e723316b6}{va\+Basic\+Object}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_ab4de714ae92c90063864177f8f620870_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_ab4de714ae92c90063864177f8f620870_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_renderer_aefd1cbbe0b119bfb6f9aff0dd180f721}\label{classva_renderer_aefd1cbbe0b119bfb6f9aff0dd180f721}} 
+\index{vaRenderer@{vaRenderer}!SetInterop@{SetInterop}}
+\index{SetInterop@{SetInterop}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{SetInterop()}{SetInterop()}}
+{\footnotesize\ttfamily void va\+Renderer\+::\+Set\+Interop (\begin{DoxyParamCaption}\item[{bool}]{inter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_aefd1cbbe0b119bfb6f9aff0dd180f721_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_renderer_aead7c8156dbc48b28f0c69c6fdab1617}\label{classva_renderer_aead7c8156dbc48b28f0c69c6fdab1617}} 
+\index{vaRenderer@{vaRenderer}!SetValid@{SetValid}}
+\index{SetValid@{SetValid}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{SetValid()}{SetValid()}}
+{\footnotesize\ttfamily void va\+Renderer\+::\+Set\+Valid (\begin{DoxyParamCaption}\item[{bool}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_aead7c8156dbc48b28f0c69c6fdab1617_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_renderer_a1f0b21c3c3f1dbd26e1587715c0237cb}\label{classva_renderer_a1f0b21c3c3f1dbd26e1587715c0237cb}} 
+\index{vaRenderer@{vaRenderer}!SetWidget@{SetWidget}}
+\index{SetWidget@{SetWidget}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{SetWidget()}{SetWidget()}}
+{\footnotesize\ttfamily void va\+Renderer\+::\+Set\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classva_base_widget}{va\+Base\+Widget}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_a1f0b21c3c3f1dbd26e1587715c0237cb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_a1f0b21c3c3f1dbd26e1587715c0237cb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_renderer_a83d914da1ee6facd14e2fb2e564915ae}\label{classva_renderer_a83d914da1ee6facd14e2fb2e564915ae}} 
+\index{vaRenderer@{vaRenderer}!Update@{Update}}
+\index{Update@{Update}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void va\+Renderer\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_renderer_aecf71df595f929b009ef12e4b3639c0d}{va\+Basic\+Renderer}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_a83d914da1ee6facd14e2fb2e564915ae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_renderer_ad3417fb348be4b6103467ccbd4d50ed2}\label{classva_renderer_ad3417fb348be4b6103467ccbd4d50ed2}} 
+\index{vaRenderer@{vaRenderer}!UpdateCamera@{UpdateCamera}}
+\index{UpdateCamera@{UpdateCamera}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{UpdateCamera()}{UpdateCamera()}}
+{\footnotesize\ttfamily void va\+Renderer\+::\+Update\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_ad3417fb348be4b6103467ccbd4d50ed2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_ad3417fb348be4b6103467ccbd4d50ed2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_renderer_a3dbb8169d2954a09fe85d28dbc30f36d}\label{classva_renderer_a3dbb8169d2954a09fe85d28dbc30f36d}} 
+\index{vaRenderer@{vaRenderer}!UpdateWidget@{UpdateWidget}}
+\index{UpdateWidget@{UpdateWidget}!vaRenderer@{vaRenderer}}
+\doxysubsubsection{\texorpdfstring{UpdateWidget()}{UpdateWidget()}}
+{\footnotesize\ttfamily void va\+Renderer\+::\+Update\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_renderer_a3dbb8169d2954a09fe85d28dbc30f36d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classva_renderer_a3dbb8169d2954a09fe85d28dbc30f36d_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{optix_renderer_8h}{optix\+Renderer.\+h}}\item 
+src/\mbox{\hyperlink{optix_renderer_8cpp}{optix\+Renderer.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,929 @@
+\hypertarget{classoptix_basic_renderer}{}\doxysection{optix\+Basic\+Renderer Class Reference}
+\label{classoptix_basic_renderer}\index{optixBasicRenderer@{optixBasicRenderer}}
+
+
+Architecture much inspired by V\+TK Renderer(\href{http://vtk.org}{\texttt{ http\+://vtk.\+org}}) implementation Abstract visual-\/auditory renderer.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Basic\+Renderer.\+h$>$}
+
+
+
+Inheritance diagram for optix\+Basic\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classoptix_basic_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for optix\+Basic\+Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classoptix_basic_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classoptix_basic_renderer_a39dd12d4baea1a590e4a0ab57a0b5c96a4f7db3e0c21cc114e3602d4a9a224fc9}{O\+P\+T\+I\+C\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG}}, 
+\mbox{\hyperlink{classoptix_basic_renderer_a39dd12d4baea1a590e4a0ab57a0b5c96a46495eec625d0de1097644bce5b233c2}{A\+U\+D\+I\+T\+O\+R\+Y\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG}}
+ \}
+\item 
+enum \mbox{\hyperlink{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214}{Render\+Modes}} \{ \mbox{\hyperlink{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214aae7f1ea3739eecbe3a6436c12bd1a0f8}{I\+N\+T\+E\+R\+A\+C\+T\+I\+V\+E\+\_\+\+C\+A\+M\+E\+RA}}, 
+\mbox{\hyperlink{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214a7e268f6011b8e46c95d41349a0541835}{C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+O\+U\+ND}}, 
+\mbox{\hyperlink{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214ae515fc31e8be8c0ca92ba7137f8df6d1}{P\+L\+A\+Y\+\_\+\+A\+N\+I\+M\+A\+T\+I\+ON}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classoptix_basic_renderer_a11c94d3349df33c5298e677a74054897}{Get\+Output\+Sound\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a6deeaecbdcfc6b95b1152f027b4a103a}{set\+Audio\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_ada862c4c6580a82425a6990d1f4fd7ca}{Get\+Audio\+Dim}} (int \&w, int \&h)
+\item 
+\mbox{\hyperlink{classoptix_basic_renderer_ac20c7dde41d7f289f93874d736bf6212}{optix\+Basic\+Renderer}} ()
+\item 
+\mbox{\hyperlink{classoptix_basic_renderer_a04ae3a0b372a8fd4b71d6c3474438367}{$\sim$optix\+Basic\+Renderer}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a538eb453c3df0719cb890655a37dd7fb}{Set\+Optical\+Dims}} (int width, int height)
+\item 
+\mbox{\hyperlink{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214}{Render\+Modes}} \mbox{\hyperlink{classoptix_basic_renderer_a50230aad7a3a906fbd44da1a3026b60b}{Get\+Mode}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a735dd31802e84e03ddd22e5478cc2f1b}{Set\+Mode}} (\mbox{\hyperlink{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214}{Render\+Modes}} m)
+\item 
+virtual void \mbox{\hyperlink{classoptix_basic_renderer_adcd9a2518f21e6b357c4f89bb22fdefd}{Update}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a206a6899cefdb6db2c5d94648b17a74a}{Set\+Up\+Renderer}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a1ef681fb1643bd87a49d334e840e19dd}{Set\+Dynamic}} (bool type)
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_ae5cbc1f624c7bc76e632c6ebf9e8ced8}{Set\+Auditory}} (bool type)
+\item 
+bool \mbox{\hyperlink{classoptix_basic_renderer_aa8119896697a263a95b0144356724ca9}{is\+Dynamic}} ()
+\item 
+bool \mbox{\hyperlink{classoptix_basic_renderer_aad26759876aa6d12f4b12b5620244a8a}{is\+Auditory}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a569a136530a53f9e0e93a8f26772a0b8}{Set\+Time}} (float time)
+\item 
+float \mbox{\hyperlink{classoptix_basic_renderer_a19269f4155fc16cdcdf4c71147b5f804}{Get\+Time}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a1bb5dc0000982811c0d5b87987075bf0}{Add\+Actor}} (\mbox{\hyperlink{classoptix_basic_actor}{optix\+Basic\+Actor}} $\ast$act)
+\item 
+\mbox{\hyperlink{classoptix_basic_actor}{optix\+Basic\+Actor}} $\ast$ \mbox{\hyperlink{classoptix_basic_renderer_a50a675aa6e9ed0e0322120c2d1148c7f}{Get\+Actor}} (int i)
+\item 
+int \mbox{\hyperlink{classoptix_basic_renderer_a3516acb930c834979c9869a7334133d2}{Get\+Num\+Of\+Actors}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a6d838ae4e599ef4f889711304e63fbed}{Launch\+Optic\+Context}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a83ba846ce5f6c1d51a4edb4d7f705d39}{Launch\+Auditory\+Context}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_basic_renderer_a172bbca9202d5ee341c61baa3f8b2526}{Reshape}} (int width, int height)
+\item 
+virtual bool \mbox{\hyperlink{classoptix_basic_renderer_a25a8a7b594c917a3f034a61bf31e45c3}{Render}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_basic_renderer_a3e3f177ea19b871a46fedeaea546451d}{Display}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classauditory_model}{auditory\+Model}} $>$ \mbox{\hyperlink{classoptix_basic_renderer_ac257864861b1b6e09ab63b278d4aa0a5}{audioM}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbasic_optical_model}{basic\+Optical\+Model}} $>$ \mbox{\hyperlink{classoptix_basic_renderer_a13439b4ad5019d5639fa6140dc73a201}{opticM}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classoptix_basic_renderer_a54732a1f3209767b0ce5006aeb2f8d6e}{Init\+Renderer}} ()
+\item 
+bool \mbox{\hyperlink{classoptix_basic_renderer_a485d3910f4d4ea3ad817c13ad3426e3d}{Play\+Animation}} (float play\+\_\+time)
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_ad4f712d4265eff4026e82be4294f0448}{Init\+Prog}} (std\+::string prog, std\+::string file, std\+::string name)
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_afee2ae4b2efd36a5e6f89d53a2712f35}{Set\+Ray\+Generation\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a62bd275be248844ce5fedc60f6381c8d}{Set\+Exception\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a7c16181629fb9f53af931b85de548d32}{Set\+Miss\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a2164676f6a09fc3b968ff921c5585ae4}{Set\+Auditory\+Ray\+Generation\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a74988f8665441fd1bb781f0818e3117a}{Set\+Auditory\+Exception\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a35c84b01215fa11ef668e08f1cbff535}{Set\+Auditory\+Miss\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a95ab959da011161f8282201cc1874670}{Set\+Ray\+Generation\+Prog\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a05c898dda5ea7d639009f4a9e1c1edac}{Set\+Exception\+Prog\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_aabc93859994ffcc2aac3b1e9d4ff41fb}{Set\+Miss\+Prog\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a51b47bcba01930d3e0304019e69f5179}{Set\+Auditory\+Ray\+Generation\+Prog\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a17b7d72cc6946b5e90d3018b9d2b4101}{Set\+Auditory\+Exception\+Prog\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a8cde327d8977319d9d8801b00a8c4f16}{Set\+Auditory\+Miss\+Prog\+Name}} (std\+::string name)
+\item 
+std\+::string \mbox{\hyperlink{classoptix_basic_renderer_ad8c6f7c86a575655ae1eef9b7ad02ee8}{Get\+Ray\+Generation\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classoptix_basic_renderer_ab64fd07866f8fdc5a1991f6585d5db82}{Get\+Exception\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classoptix_basic_renderer_a34034b65a0db51fe7e199ee0023df8de}{Get\+Miss\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classoptix_basic_renderer_a73777963c3ccc2b2f702b15b680044f1}{Get\+Auditory\+Ray\+Generation\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classoptix_basic_renderer_aeddbd219c79042d3e665f935eb546499}{Get\+Auditory\+Exception\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classoptix_basic_renderer_af4bd9a6df6d6198d257b3a92b5a69d8f}{Get\+Auditory\+Miss\+Prog\+Name}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_aaab078bbe57528730804c03edc4de5ab}{Init\+Acceleration}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a9c551fc7db3ca8db23d40bf0b2d2ed88}{Set\+Programs}} ()
+\item 
+void \mbox{\hyperlink{classoptix_basic_renderer_a1a557b7c6ae9a03301e98474d1bea5d5}{Initialize\+Programs}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, optix\+::\+Program $>$ \mbox{\hyperlink{classoptix_basic_renderer_acc26a2dc8a8611bb51feaacedb4c230e}{m\+\_\+map\+Of\+Programs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Architecture much inspired by V\+TK Renderer(\href{http://vtk.org}{\texttt{ http\+://vtk.\+org}}) implementation Abstract visual-\/auditory renderer. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classoptix_basic_renderer_a39dd12d4baea1a590e4a0ab57a0b5c96}\label{classoptix_basic_renderer_a39dd12d4baea1a590e4a0ab57a0b5c96}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPTIC\_RAYCASTING@{OPTIC\_RAYCASTING}!optixBasicRenderer@{optixBasicRenderer}}\index{optixBasicRenderer@{optixBasicRenderer}!OPTIC\_RAYCASTING@{OPTIC\_RAYCASTING}}}\mbox{\Hypertarget{classoptix_basic_renderer_a39dd12d4baea1a590e4a0ab57a0b5c96a4f7db3e0c21cc114e3602d4a9a224fc9}\label{classoptix_basic_renderer_a39dd12d4baea1a590e4a0ab57a0b5c96a4f7db3e0c21cc114e3602d4a9a224fc9}} 
+O\+P\+T\+I\+C\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AUDITORY\_RAYCASTING@{AUDITORY\_RAYCASTING}!optixBasicRenderer@{optixBasicRenderer}}\index{optixBasicRenderer@{optixBasicRenderer}!AUDITORY\_RAYCASTING@{AUDITORY\_RAYCASTING}}}\mbox{\Hypertarget{classoptix_basic_renderer_a39dd12d4baea1a590e4a0ab57a0b5c96a46495eec625d0de1097644bce5b233c2}\label{classoptix_basic_renderer_a39dd12d4baea1a590e4a0ab57a0b5c96a46495eec625d0de1097644bce5b233c2}} 
+A\+U\+D\+I\+T\+O\+R\+Y\+\_\+\+R\+A\+Y\+C\+A\+S\+T\+I\+NG&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214}\label{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!RenderModes@{RenderModes}}
+\index{RenderModes@{RenderModes}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{RenderModes}{RenderModes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214}{optix\+Basic\+Renderer\+::\+Render\+Modes}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTERACTIVE\_CAMERA@{INTERACTIVE\_CAMERA}!optixBasicRenderer@{optixBasicRenderer}}\index{optixBasicRenderer@{optixBasicRenderer}!INTERACTIVE\_CAMERA@{INTERACTIVE\_CAMERA}}}\mbox{\Hypertarget{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214aae7f1ea3739eecbe3a6436c12bd1a0f8}\label{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214aae7f1ea3739eecbe3a6436c12bd1a0f8}} 
+I\+N\+T\+E\+R\+A\+C\+T\+I\+V\+E\+\_\+\+C\+A\+M\+E\+RA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPUTE\_SOUND@{COMPUTE\_SOUND}!optixBasicRenderer@{optixBasicRenderer}}\index{optixBasicRenderer@{optixBasicRenderer}!COMPUTE\_SOUND@{COMPUTE\_SOUND}}}\mbox{\Hypertarget{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214a7e268f6011b8e46c95d41349a0541835}\label{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214a7e268f6011b8e46c95d41349a0541835}} 
+C\+O\+M\+P\+U\+T\+E\+\_\+\+S\+O\+U\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAY\_ANIMATION@{PLAY\_ANIMATION}!optixBasicRenderer@{optixBasicRenderer}}\index{optixBasicRenderer@{optixBasicRenderer}!PLAY\_ANIMATION@{PLAY\_ANIMATION}}}\mbox{\Hypertarget{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214ae515fc31e8be8c0ca92ba7137f8df6d1}\label{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214ae515fc31e8be8c0ca92ba7137f8df6d1}} 
+P\+L\+A\+Y\+\_\+\+A\+N\+I\+M\+A\+T\+I\+ON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoptix_basic_renderer_ac20c7dde41d7f289f93874d736bf6212}\label{classoptix_basic_renderer_ac20c7dde41d7f289f93874d736bf6212}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!optixBasicRenderer@{optixBasicRenderer}}
+\index{optixBasicRenderer@{optixBasicRenderer}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{optixBasicRenderer()}{optixBasicRenderer()}}
+{\footnotesize\ttfamily optix\+Basic\+Renderer\+::optix\+Basic\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_basic_renderer_a04ae3a0b372a8fd4b71d6c3474438367}\label{classoptix_basic_renderer_a04ae3a0b372a8fd4b71d6c3474438367}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!````~optixBasicRenderer@{$\sim$optixBasicRenderer}}
+\index{````~optixBasicRenderer@{$\sim$optixBasicRenderer}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{$\sim$optixBasicRenderer()}{~optixBasicRenderer()}}
+{\footnotesize\ttfamily optix\+Basic\+Renderer\+::$\sim$optix\+Basic\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classoptix_basic_renderer_a1bb5dc0000982811c0d5b87987075bf0}\label{classoptix_basic_renderer_a1bb5dc0000982811c0d5b87987075bf0}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!AddActor@{AddActor}}
+\index{AddActor@{AddActor}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{AddActor()}{AddActor()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Add\+Actor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoptix_basic_actor}{optix\+Basic\+Actor}} $\ast$}]{act }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a1bb5dc0000982811c0d5b87987075bf0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a3e3f177ea19b871a46fedeaea546451d}\label{classoptix_basic_renderer_a3e3f177ea19b871a46fedeaea546451d}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!Display@{Display}}
+\index{Display@{Display}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{Display()}{Display()}}
+{\footnotesize\ttfamily virtual void optix\+Basic\+Renderer\+::\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptix_renderer_abb2f0f93b67bc602b3e93fdddab0d969}{optix\+Renderer}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a3e3f177ea19b871a46fedeaea546451d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a50a675aa6e9ed0e0322120c2d1148c7f}\label{classoptix_basic_renderer_a50a675aa6e9ed0e0322120c2d1148c7f}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetActor@{GetActor}}
+\index{GetActor@{GetActor}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetActor()}{GetActor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_basic_actor}{optix\+Basic\+Actor}}$\ast$ optix\+Basic\+Renderer\+::\+Get\+Actor (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a50a675aa6e9ed0e0322120c2d1148c7f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_ada862c4c6580a82425a6990d1f4fd7ca}\label{classoptix_basic_renderer_ada862c4c6580a82425a6990d1f4fd7ca}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetAudioDim@{GetAudioDim}}
+\index{GetAudioDim@{GetAudioDim}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetAudioDim()}{GetAudioDim()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Get\+Audio\+Dim (\begin{DoxyParamCaption}\item[{int \&}]{w,  }\item[{int \&}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_basic_renderer_aeddbd219c79042d3e665f935eb546499}\label{classoptix_basic_renderer_aeddbd219c79042d3e665f935eb546499}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetAuditoryExceptionProgName@{GetAuditoryExceptionProgName}}
+\index{GetAuditoryExceptionProgName@{GetAuditoryExceptionProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetAuditoryExceptionProgName()}{GetAuditoryExceptionProgName()}}
+{\footnotesize\ttfamily std\+::string optix\+Basic\+Renderer\+::\+Get\+Auditory\+Exception\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classoptix_basic_renderer_af4bd9a6df6d6198d257b3a92b5a69d8f}\label{classoptix_basic_renderer_af4bd9a6df6d6198d257b3a92b5a69d8f}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetAuditoryMissProgName@{GetAuditoryMissProgName}}
+\index{GetAuditoryMissProgName@{GetAuditoryMissProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetAuditoryMissProgName()}{GetAuditoryMissProgName()}}
+{\footnotesize\ttfamily std\+::string optix\+Basic\+Renderer\+::\+Get\+Auditory\+Miss\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classoptix_basic_renderer_a73777963c3ccc2b2f702b15b680044f1}\label{classoptix_basic_renderer_a73777963c3ccc2b2f702b15b680044f1}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetAuditoryRayGenerationProgName@{GetAuditoryRayGenerationProgName}}
+\index{GetAuditoryRayGenerationProgName@{GetAuditoryRayGenerationProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetAuditoryRayGenerationProgName()}{GetAuditoryRayGenerationProgName()}}
+{\footnotesize\ttfamily std\+::string optix\+Basic\+Renderer\+::\+Get\+Auditory\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classoptix_basic_renderer_ab64fd07866f8fdc5a1991f6585d5db82}\label{classoptix_basic_renderer_ab64fd07866f8fdc5a1991f6585d5db82}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetExceptionProgName@{GetExceptionProgName}}
+\index{GetExceptionProgName@{GetExceptionProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetExceptionProgName()}{GetExceptionProgName()}}
+{\footnotesize\ttfamily std\+::string optix\+Basic\+Renderer\+::\+Get\+Exception\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classoptix_basic_renderer_a34034b65a0db51fe7e199ee0023df8de}\label{classoptix_basic_renderer_a34034b65a0db51fe7e199ee0023df8de}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetMissProgName@{GetMissProgName}}
+\index{GetMissProgName@{GetMissProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetMissProgName()}{GetMissProgName()}}
+{\footnotesize\ttfamily std\+::string optix\+Basic\+Renderer\+::\+Get\+Miss\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classoptix_basic_renderer_a50230aad7a3a906fbd44da1a3026b60b}\label{classoptix_basic_renderer_a50230aad7a3a906fbd44da1a3026b60b}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetMode()}{GetMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214}{Render\+Modes}} optix\+Basic\+Renderer\+::\+Get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a50230aad7a3a906fbd44da1a3026b60b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a3516acb930c834979c9869a7334133d2}\label{classoptix_basic_renderer_a3516acb930c834979c9869a7334133d2}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetNumOfActors@{GetNumOfActors}}
+\index{GetNumOfActors@{GetNumOfActors}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetNumOfActors()}{GetNumOfActors()}}
+{\footnotesize\ttfamily int optix\+Basic\+Renderer\+::\+Get\+Num\+Of\+Actors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a3516acb930c834979c9869a7334133d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a11c94d3349df33c5298e677a74054897}\label{classoptix_basic_renderer_a11c94d3349df33c5298e677a74054897}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetOutputSoundBuffer@{GetOutputSoundBuffer}}
+\index{GetOutputSoundBuffer@{GetOutputSoundBuffer}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetOutputSoundBuffer()}{GetOutputSoundBuffer()}}
+{\footnotesize\ttfamily optix\+::\+Buffer optix\+Basic\+Renderer\+::\+Get\+Output\+Sound\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a11c94d3349df33c5298e677a74054897_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_ad8c6f7c86a575655ae1eef9b7ad02ee8}\label{classoptix_basic_renderer_ad8c6f7c86a575655ae1eef9b7ad02ee8}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetRayGenerationProgName@{GetRayGenerationProgName}}
+\index{GetRayGenerationProgName@{GetRayGenerationProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetRayGenerationProgName()}{GetRayGenerationProgName()}}
+{\footnotesize\ttfamily std\+::string optix\+Basic\+Renderer\+::\+Get\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classoptix_basic_renderer_a19269f4155fc16cdcdf4c71147b5f804}\label{classoptix_basic_renderer_a19269f4155fc16cdcdf4c71147b5f804}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!GetTime@{GetTime}}
+\index{GetTime@{GetTime}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{GetTime()}{GetTime()}}
+{\footnotesize\ttfamily float optix\+Basic\+Renderer\+::\+Get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classoptix_basic_renderer_a19269f4155fc16cdcdf4c71147b5f804_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_aaab078bbe57528730804c03edc4de5ab}\label{classoptix_basic_renderer_aaab078bbe57528730804c03edc4de5ab}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!InitAcceleration@{InitAcceleration}}
+\index{InitAcceleration@{InitAcceleration}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{InitAcceleration()}{InitAcceleration()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Init\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classoptix_basic_renderer_aaab078bbe57528730804c03edc4de5ab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_aaab078bbe57528730804c03edc4de5ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a1a557b7c6ae9a03301e98474d1bea5d5}\label{classoptix_basic_renderer_a1a557b7c6ae9a03301e98474d1bea5d5}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!InitializePrograms@{InitializePrograms}}
+\index{InitializePrograms@{InitializePrograms}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{InitializePrograms()}{InitializePrograms()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Initialize\+Programs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a1a557b7c6ae9a03301e98474d1bea5d5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a1a557b7c6ae9a03301e98474d1bea5d5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_ad4f712d4265eff4026e82be4294f0448}\label{classoptix_basic_renderer_ad4f712d4265eff4026e82be4294f0448}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!InitProg@{InitProg}}
+\index{InitProg@{InitProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{InitProg()}{InitProg()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Init\+Prog (\begin{DoxyParamCaption}\item[{std\+::string}]{prog,  }\item[{std\+::string}]{file,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classoptix_basic_renderer_ad4f712d4265eff4026e82be4294f0448_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_ad4f712d4265eff4026e82be4294f0448_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a54732a1f3209767b0ce5006aeb2f8d6e}\label{classoptix_basic_renderer_a54732a1f3209767b0ce5006aeb2f8d6e}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!InitRenderer@{InitRenderer}}
+\index{InitRenderer@{InitRenderer}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{InitRenderer()}{InitRenderer()}}
+{\footnotesize\ttfamily virtual void optix\+Basic\+Renderer\+::\+Init\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptix_renderer_a2a053d318201ba20de97685689a7a71a}{optix\+Renderer}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a54732a1f3209767b0ce5006aeb2f8d6e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_aad26759876aa6d12f4b12b5620244a8a}\label{classoptix_basic_renderer_aad26759876aa6d12f4b12b5620244a8a}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!isAuditory@{isAuditory}}
+\index{isAuditory@{isAuditory}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{isAuditory()}{isAuditory()}}
+{\footnotesize\ttfamily bool optix\+Basic\+Renderer\+::is\+Auditory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_aad26759876aa6d12f4b12b5620244a8a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_aa8119896697a263a95b0144356724ca9}\label{classoptix_basic_renderer_aa8119896697a263a95b0144356724ca9}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!isDynamic@{isDynamic}}
+\index{isDynamic@{isDynamic}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{isDynamic()}{isDynamic()}}
+{\footnotesize\ttfamily bool optix\+Basic\+Renderer\+::is\+Dynamic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classoptix_basic_renderer_aa8119896697a263a95b0144356724ca9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a83ba846ce5f6c1d51a4edb4d7f705d39}\label{classoptix_basic_renderer_a83ba846ce5f6c1d51a4edb4d7f705d39}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!LaunchAuditoryContext@{LaunchAuditoryContext}}
+\index{LaunchAuditoryContext@{LaunchAuditoryContext}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{LaunchAuditoryContext()}{LaunchAuditoryContext()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Launch\+Auditory\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a83ba846ce5f6c1d51a4edb4d7f705d39_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a83ba846ce5f6c1d51a4edb4d7f705d39_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a6d838ae4e599ef4f889711304e63fbed}\label{classoptix_basic_renderer_a6d838ae4e599ef4f889711304e63fbed}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!LaunchOpticContext@{LaunchOpticContext}}
+\index{LaunchOpticContext@{LaunchOpticContext}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{LaunchOpticContext()}{LaunchOpticContext()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Launch\+Optic\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classoptix_basic_renderer_a6d838ae4e599ef4f889711304e63fbed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classoptix_basic_renderer_a6d838ae4e599ef4f889711304e63fbed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a485d3910f4d4ea3ad817c13ad3426e3d}\label{classoptix_basic_renderer_a485d3910f4d4ea3ad817c13ad3426e3d}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!PlayAnimation@{PlayAnimation}}
+\index{PlayAnimation@{PlayAnimation}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{PlayAnimation()}{PlayAnimation()}}
+{\footnotesize\ttfamily bool optix\+Basic\+Renderer\+::\+Play\+Animation (\begin{DoxyParamCaption}\item[{float}]{play\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classoptix_basic_renderer_a485d3910f4d4ea3ad817c13ad3426e3d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a25a8a7b594c917a3f034a61bf31e45c3}\label{classoptix_basic_renderer_a25a8a7b594c917a3f034a61bf31e45c3}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!Render@{Render}}
+\index{Render@{Render}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily virtual bool optix\+Basic\+Renderer\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptix_renderer_a54c22f066b1a0e5f3eb83d49e73916b8}{optix\+Renderer}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a25a8a7b594c917a3f034a61bf31e45c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a172bbca9202d5ee341c61baa3f8b2526}\label{classoptix_basic_renderer_a172bbca9202d5ee341c61baa3f8b2526}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{Reshape()}{Reshape()}}
+{\footnotesize\ttfamily virtual void optix\+Basic\+Renderer\+::\+Reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptix_renderer_ae3b25995493b156da48abb0b303aae71}{optix\+Renderer}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a172bbca9202d5ee341c61baa3f8b2526_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a6deeaecbdcfc6b95b1152f027b4a103a}\label{classoptix_basic_renderer_a6deeaecbdcfc6b95b1152f027b4a103a}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!setAudioBuffer@{setAudioBuffer}}
+\index{setAudioBuffer@{setAudioBuffer}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{setAudioBuffer()}{setAudioBuffer()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::set\+Audio\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classoptix_basic_renderer_a6deeaecbdcfc6b95b1152f027b4a103a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a6deeaecbdcfc6b95b1152f027b4a103a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_ae5cbc1f624c7bc76e632c6ebf9e8ced8}\label{classoptix_basic_renderer_ae5cbc1f624c7bc76e632c6ebf9e8ced8}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditory@{SetAuditory}}
+\index{SetAuditory@{SetAuditory}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditory()}{SetAuditory()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory (\begin{DoxyParamCaption}\item[{bool}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classoptix_basic_renderer_ae5cbc1f624c7bc76e632c6ebf9e8ced8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classoptix_basic_renderer_ae5cbc1f624c7bc76e632c6ebf9e8ced8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a74988f8665441fd1bb781f0818e3117a}\label{classoptix_basic_renderer_a74988f8665441fd1bb781f0818e3117a}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditoryExceptionProg@{SetAuditoryExceptionProg}}
+\index{SetAuditoryExceptionProg@{SetAuditoryExceptionProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryExceptionProg()}{SetAuditoryExceptionProg()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory\+Exception\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a74988f8665441fd1bb781f0818e3117a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a74988f8665441fd1bb781f0818e3117a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a17b7d72cc6946b5e90d3018b9d2b4101}\label{classoptix_basic_renderer_a17b7d72cc6946b5e90d3018b9d2b4101}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditoryExceptionProgName@{SetAuditoryExceptionProgName}}
+\index{SetAuditoryExceptionProgName@{SetAuditoryExceptionProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryExceptionProgName()}{SetAuditoryExceptionProgName()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory\+Exception\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a17b7d72cc6946b5e90d3018b9d2b4101_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a35c84b01215fa11ef668e08f1cbff535}\label{classoptix_basic_renderer_a35c84b01215fa11ef668e08f1cbff535}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditoryMissProg@{SetAuditoryMissProg}}
+\index{SetAuditoryMissProg@{SetAuditoryMissProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryMissProg()}{SetAuditoryMissProg()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory\+Miss\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a35c84b01215fa11ef668e08f1cbff535_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a35c84b01215fa11ef668e08f1cbff535_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a8cde327d8977319d9d8801b00a8c4f16}\label{classoptix_basic_renderer_a8cde327d8977319d9d8801b00a8c4f16}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditoryMissProgName@{SetAuditoryMissProgName}}
+\index{SetAuditoryMissProgName@{SetAuditoryMissProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryMissProgName()}{SetAuditoryMissProgName()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory\+Miss\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a8cde327d8977319d9d8801b00a8c4f16_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a2164676f6a09fc3b968ff921c5585ae4}\label{classoptix_basic_renderer_a2164676f6a09fc3b968ff921c5585ae4}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditoryRayGenerationProg@{SetAuditoryRayGenerationProg}}
+\index{SetAuditoryRayGenerationProg@{SetAuditoryRayGenerationProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryRayGenerationProg()}{SetAuditoryRayGenerationProg()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory\+Ray\+Generation\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a2164676f6a09fc3b968ff921c5585ae4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a2164676f6a09fc3b968ff921c5585ae4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a51b47bcba01930d3e0304019e69f5179}\label{classoptix_basic_renderer_a51b47bcba01930d3e0304019e69f5179}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetAuditoryRayGenerationProgName@{SetAuditoryRayGenerationProgName}}
+\index{SetAuditoryRayGenerationProgName@{SetAuditoryRayGenerationProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryRayGenerationProgName()}{SetAuditoryRayGenerationProgName()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Auditory\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a51b47bcba01930d3e0304019e69f5179_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a1ef681fb1643bd87a49d334e840e19dd}\label{classoptix_basic_renderer_a1ef681fb1643bd87a49d334e840e19dd}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetDynamic@{SetDynamic}}
+\index{SetDynamic@{SetDynamic}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetDynamic()}{SetDynamic()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Dynamic (\begin{DoxyParamCaption}\item[{bool}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classoptix_basic_renderer_a1ef681fb1643bd87a49d334e840e19dd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classoptix_basic_renderer_a1ef681fb1643bd87a49d334e840e19dd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a62bd275be248844ce5fedc60f6381c8d}\label{classoptix_basic_renderer_a62bd275be248844ce5fedc60f6381c8d}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetExceptionProg@{SetExceptionProg}}
+\index{SetExceptionProg@{SetExceptionProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetExceptionProg()}{SetExceptionProg()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Exception\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a62bd275be248844ce5fedc60f6381c8d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a62bd275be248844ce5fedc60f6381c8d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a05c898dda5ea7d639009f4a9e1c1edac}\label{classoptix_basic_renderer_a05c898dda5ea7d639009f4a9e1c1edac}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetExceptionProgName@{SetExceptionProgName}}
+\index{SetExceptionProgName@{SetExceptionProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetExceptionProgName()}{SetExceptionProgName()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Exception\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a05c898dda5ea7d639009f4a9e1c1edac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a7c16181629fb9f53af931b85de548d32}\label{classoptix_basic_renderer_a7c16181629fb9f53af931b85de548d32}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetMissProg@{SetMissProg}}
+\index{SetMissProg@{SetMissProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetMissProg()}{SetMissProg()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Miss\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a7c16181629fb9f53af931b85de548d32_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a7c16181629fb9f53af931b85de548d32_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_aabc93859994ffcc2aac3b1e9d4ff41fb}\label{classoptix_basic_renderer_aabc93859994ffcc2aac3b1e9d4ff41fb}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetMissProgName@{SetMissProgName}}
+\index{SetMissProgName@{SetMissProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetMissProgName()}{SetMissProgName()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Miss\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_aabc93859994ffcc2aac3b1e9d4ff41fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a735dd31802e84e03ddd22e5478cc2f1b}\label{classoptix_basic_renderer_a735dd31802e84e03ddd22e5478cc2f1b}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetMode@{SetMode}}
+\index{SetMode@{SetMode}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetMode()}{SetMode()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoptix_basic_renderer_a00660193db0952f8d67b97511ab6a214}{Render\+Modes}}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{classoptix_basic_renderer_a735dd31802e84e03ddd22e5478cc2f1b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a538eb453c3df0719cb890655a37dd7fb}\label{classoptix_basic_renderer_a538eb453c3df0719cb890655a37dd7fb}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetOpticalDims@{SetOpticalDims}}
+\index{SetOpticalDims@{SetOpticalDims}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetOpticalDims()}{SetOpticalDims()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Optical\+Dims (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classoptix_basic_renderer_a538eb453c3df0719cb890655a37dd7fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a9c551fc7db3ca8db23d40bf0b2d2ed88}\label{classoptix_basic_renderer_a9c551fc7db3ca8db23d40bf0b2d2ed88}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetPrograms@{SetPrograms}}
+\index{SetPrograms@{SetPrograms}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetPrograms()}{SetPrograms()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Programs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classoptix_basic_renderer_a9c551fc7db3ca8db23d40bf0b2d2ed88_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a9c551fc7db3ca8db23d40bf0b2d2ed88_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_afee2ae4b2efd36a5e6f89d53a2712f35}\label{classoptix_basic_renderer_afee2ae4b2efd36a5e6f89d53a2712f35}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetRayGenerationProg@{SetRayGenerationProg}}
+\index{SetRayGenerationProg@{SetRayGenerationProg}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetRayGenerationProg()}{SetRayGenerationProg()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Ray\+Generation\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_afee2ae4b2efd36a5e6f89d53a2712f35_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_afee2ae4b2efd36a5e6f89d53a2712f35_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a95ab959da011161f8282201cc1874670}\label{classoptix_basic_renderer_a95ab959da011161f8282201cc1874670}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetRayGenerationProgName@{SetRayGenerationProgName}}
+\index{SetRayGenerationProgName@{SetRayGenerationProgName}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetRayGenerationProgName()}{SetRayGenerationProgName()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Ray\+Generation\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a95ab959da011161f8282201cc1874670_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a569a136530a53f9e0e93a8f26772a0b8}\label{classoptix_basic_renderer_a569a136530a53f9e0e93a8f26772a0b8}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetTime@{SetTime}}
+\index{SetTime@{SetTime}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetTime()}{SetTime()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Time (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classoptix_basic_renderer_a569a136530a53f9e0e93a8f26772a0b8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a569a136530a53f9e0e93a8f26772a0b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_a206a6899cefdb6db2c5d94648b17a74a}\label{classoptix_basic_renderer_a206a6899cefdb6db2c5d94648b17a74a}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!SetUpRenderer@{SetUpRenderer}}
+\index{SetUpRenderer@{SetUpRenderer}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{SetUpRenderer()}{SetUpRenderer()}}
+{\footnotesize\ttfamily void optix\+Basic\+Renderer\+::\+Set\+Up\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a206a6899cefdb6db2c5d94648b17a74a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_a206a6899cefdb6db2c5d94648b17a74a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_basic_renderer_adcd9a2518f21e6b357c4f89bb22fdefd}\label{classoptix_basic_renderer_adcd9a2518f21e6b357c4f89bb22fdefd}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!Update@{Update}}
+\index{Update@{Update}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void optix\+Basic\+Renderer\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classoptix_renderer_a7384ac3f59071ef1f6194edcbe4add73}{optix\+Renderer}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_basic_renderer_adcd9a2518f21e6b357c4f89bb22fdefd_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classoptix_basic_renderer_ac257864861b1b6e09ab63b278d4aa0a5}\label{classoptix_basic_renderer_ac257864861b1b6e09ab63b278d4aa0a5}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!audioM@{audioM}}
+\index{audioM@{audioM}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{audioM}{audioM}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classauditory_model}{auditory\+Model}}$>$ optix\+Basic\+Renderer\+::audioM}
+
+\mbox{\Hypertarget{classoptix_basic_renderer_acc26a2dc8a8611bb51feaacedb4c230e}\label{classoptix_basic_renderer_acc26a2dc8a8611bb51feaacedb4c230e}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!m\_mapOfPrograms@{m\_mapOfPrograms}}
+\index{m\_mapOfPrograms@{m\_mapOfPrograms}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_mapOfPrograms}{m\_mapOfPrograms}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, optix\+::\+Program$>$ optix\+Basic\+Renderer\+::m\+\_\+map\+Of\+Programs\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classoptix_basic_renderer_a13439b4ad5019d5639fa6140dc73a201}\label{classoptix_basic_renderer_a13439b4ad5019d5639fa6140dc73a201}} 
+\index{optixBasicRenderer@{optixBasicRenderer}!opticM@{opticM}}
+\index{opticM@{opticM}!optixBasicRenderer@{optixBasicRenderer}}
+\doxysubsubsection{\texorpdfstring{opticM}{opticM}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classbasic_optical_model}{basic\+Optical\+Model}}$>$ optix\+Basic\+Renderer\+::opticM}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/src/\mbox{\hyperlink{optix_basic_renderer_8h}{optix\+Basic\+Renderer.\+h}}\item 
+core/src/\mbox{\hyperlink{optix_basic_renderer_8cpp}{optix\+Basic\+Renderer.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="optixSDFTextureReader&lt; T &gt;" name="optixSDFTextureReader&lt; T &gt;">
+<area shape="rect" id="node1" title=" " alt="" coords="5,155,196,181"/>
+<area shape="rect" id="node2" href="$classoptix_texture_reader.html" title="Basic class for reading texture from file." alt="" coords="18,80,183,107"/>
+<area shape="rect" id="node3" href="$classoptix_reader.html" title="The class creates a basic triangular plane for Optix use. Architecture much inspired by VTK (http://v..." alt="" coords="39,5,162,32"/>
+</map>

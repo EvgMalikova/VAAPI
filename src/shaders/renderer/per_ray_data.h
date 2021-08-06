@@ -23,7 +23,7 @@
 // FLAG_DIFFUSE is reset in the closesthit program.
 #define FLAG_CLEAR_MASK     FLAG_DIFFUSE
 
-const int MAX_PRIM_ALONG_RAY = 60;
+const int MAX_PRIM_ALONG_RAY = 30;
 typedef optix::float2 auditoryPrim[MAX_PRIM_ALONG_RAY];
 
 typedef primParamDesc sdfPrims[MAX_PRIM_ALONG_RAY];

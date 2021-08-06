@@ -1,0 +1,257 @@
+\doxysection{optix\+S\+D\+F\+Binary\+Op Class Reference}
+\label{classoptix_s_d_f_binary_op}\index{optixSDFBinaryOp@{optixSDFBinaryOp}}
+
+
+Binary operation.  
+
+
+
+
+{\ttfamily \#include $<$optix\+S\+D\+F\+Basic\+Operations.\+h$>$}
+
+
+
+Inheritance diagram for optix\+S\+D\+F\+Binary\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classoptix_s_d_f_binary_op__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for optix\+S\+D\+F\+Binary\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classoptix_s_d_f_binary_op__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ optix\+S\+D\+F\+Binary\+Op} ()
+\item 
+\textbf{ $\sim$optix\+S\+D\+F\+Binary\+Op} ()
+\item 
+virtual void \textbf{ Update} ()
+\item 
+virtual optix\+::\+Geometry \textbf{ Get\+Output} ()
+\item 
+virtual void \textbf{ Set\+Context} (optix\+::\+Context \&context)
+\item 
+virtual void \textbf{ Set\+Input1} (optix\+::\+Geometry geo1)
+\item 
+optix\+::\+Geometry \textbf{ Get\+Input1} ()
+\item 
+virtual void \textbf{ Set\+Input2} (optix\+::\+Geometry geo1)
+\item 
+optix\+::\+Geometry \textbf{ Get\+Input2} ()
+\item 
+void \textbf{ Add\+Opperand1} (\textbf{ optix\+S\+D\+F\+Geometry} $\ast$sdf)
+\item 
+void \textbf{ Add\+Opperand2} (\textbf{ optix\+S\+D\+F\+Geometry} $\ast$sdf)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Create\+Geometry} ()
+\item 
+virtual void \textbf{ Initialize} ()
+\item 
+virtual void \textbf{ Set\+Callable\+Prog} ()
+\item 
+virtual void \textbf{ Set\+Main\+Programs} ()
+\item 
+virtual void \textbf{ Init\+Callable\+Prog} ()
+\item 
+virtual void \textbf{ Adjust\+Center\+And\+Bounding\+Box} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ optix\+S\+D\+F\+Geometry} $\ast$ \textbf{ m\+\_\+sdf1}
+\item 
+\textbf{ optix\+S\+D\+F\+Geometry} $\ast$ \textbf{ m\+\_\+sdf2}
+\item 
+sdf\+Geo $\ast$ \textbf{ geo\+Desc1}
+\item 
+sdf\+Geo $\ast$ \textbf{ geo\+Desc2}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Binary operation. 
+
+Abstract class. Defines sdf Binary operation for F\+Rep tree construction pipeline 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classoptix_s_d_f_binary_op_a0a2a3a2577d0a2fb039bce18d45a39f1}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{optixSDFBinaryOp()}
+{\footnotesize\ttfamily optix\+S\+D\+F\+Binary\+Op\+::optix\+S\+D\+F\+Binary\+Op (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_s_d_f_binary_op_ac63191fb15afcc4cba81a2b17f3a607b}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!````~optixSDFBinaryOp@{$\sim$optixSDFBinaryOp}}
+\index{````~optixSDFBinaryOp@{$\sim$optixSDFBinaryOp}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{$\sim$optixSDFBinaryOp()}
+{\footnotesize\ttfamily optix\+S\+D\+F\+Binary\+Op\+::$\sim$optix\+S\+D\+F\+Binary\+Op (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classoptix_s_d_f_binary_op_a7b8ffd562dedd102c226557f8ba58144}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!AddOpperand1@{AddOpperand1}}
+\index{AddOpperand1@{AddOpperand1}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{AddOpperand1()}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Binary\+Op\+::\+Add\+Opperand1 (\begin{DoxyParamCaption}\item[{\textbf{ optix\+S\+D\+F\+Geometry} $\ast$}]{sdf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_s_d_f_binary_op_a0e06ed2a450ffe25a2dac721a3ddf29d}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!AddOpperand2@{AddOpperand2}}
+\index{AddOpperand2@{AddOpperand2}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{AddOpperand2()}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Binary\+Op\+::\+Add\+Opperand2 (\begin{DoxyParamCaption}\item[{\textbf{ optix\+S\+D\+F\+Geometry} $\ast$}]{sdf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_s_d_f_binary_op_a2b0693c2f28d5e33870bb777991df5fc}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!AdjustCenterAndBoundingBox@{AdjustCenterAndBoundingBox}}
+\index{AdjustCenterAndBoundingBox@{AdjustCenterAndBoundingBox}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{AdjustCenterAndBoundingBox()}
+{\footnotesize\ttfamily virtual void optix\+S\+D\+F\+Binary\+Op\+::\+Adjust\+Center\+And\+Bounding\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classoptix_s_d_f_binary_op_aceb3e2c322ca2c1c9cbac17737cac7c3}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!CreateGeometry@{CreateGeometry}}
+\index{CreateGeometry@{CreateGeometry}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{CreateGeometry()}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Binary\+Op\+::\+Create\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ optix\+S\+D\+F\+Geometry} \doxyref{}{p.}{classoptix_s_d_f_geometry_a7fbf3dfeda08ee137b3253522ef6a8e3}.
+
+\mbox{\label{classoptix_s_d_f_binary_op_a3e8ca2f464fc417353bd6ec760a85636}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!GetInput1@{GetInput1}}
+\index{GetInput1@{GetInput1}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{GetInput1()}
+{\footnotesize\ttfamily optix\+::\+Geometry optix\+S\+D\+F\+Binary\+Op\+::\+Get\+Input1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_s_d_f_binary_op_a87c2c0e8008c237e6033066d6b8507ea}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!GetInput2@{GetInput2}}
+\index{GetInput2@{GetInput2}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{GetInput2()}
+{\footnotesize\ttfamily optix\+::\+Geometry optix\+S\+D\+F\+Binary\+Op\+::\+Get\+Input2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classoptix_s_d_f_binary_op_af9aa9b472106c919755db37804d38952}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{GetOutput()}
+{\footnotesize\ttfamily virtual optix\+::\+Geometry optix\+S\+D\+F\+Binary\+Op\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \textbf{ optix\+S\+D\+F\+Geometry} \doxyref{}{p.}{classoptix_s_d_f_geometry_a8e7e0dc61bfa442a258725473c2fbc28}.
+
+\mbox{\label{classoptix_s_d_f_binary_op_aa391998f63ecff4a75bc91371cd92e45}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!InitCallableProg@{InitCallableProg}}
+\index{InitCallableProg@{InitCallableProg}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{InitCallableProg()}
+{\footnotesize\ttfamily virtual void optix\+S\+D\+F\+Binary\+Op\+::\+Init\+Callable\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classoptix_s_d_f_binary_op_abba3120603115be84acd329ad55a8d1e}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{Initialize()}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Binary\+Op\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+T\+O\+DO\+: potentialy read file with points here 
+
+Reimplemented from \textbf{ optix\+S\+D\+F\+Geometry} \doxyref{}{p.}{classoptix_s_d_f_geometry_ae4487610c220bc743d042fda69d73a0b}.
+
+\mbox{\label{classoptix_s_d_f_binary_op_a4025f802979ec340cf6d32cb441c5bbe}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!SetCallableProg@{SetCallableProg}}
+\index{SetCallableProg@{SetCallableProg}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{SetCallableProg()}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Binary\+Op\+::\+Set\+Callable\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Is called for setting callable prog 
+
+Reimplemented from \textbf{ optix\+S\+D\+F\+Geometry} \doxyref{}{p.}{classoptix_s_d_f_geometry_a4a3e346306d620d5cd16d20a39141503}.
+
+\mbox{\label{classoptix_s_d_f_binary_op_ab0fa8e4cd564e995ad906067ed9d2ebb}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!SetContext@{SetContext}}
+\index{SetContext@{SetContext}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{SetContext()}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Binary\+Op\+::\+Set\+Context (\begin{DoxyParamCaption}\item[{optix\+::\+Context \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets optix context that will store all generated optix geometry 
+
+Reimplemented from \textbf{ optix\+S\+D\+F\+Geometry} \doxyref{}{p.}{classoptix_s_d_f_geometry_a63249e61355407ec0d41d59d05e1838c}.
+
+\mbox{\label{classoptix_s_d_f_binary_op_abee1464971449c85eceffb0c03a7d414}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!SetInput1@{SetInput1}}
+\index{SetInput1@{SetInput1}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{SetInput1()}
+{\footnotesize\ttfamily virtual void optix\+S\+D\+F\+Binary\+Op\+::\+Set\+Input1 (\begin{DoxyParamCaption}\item[{optix\+::\+Geometry}]{geo1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classoptix_s_d_f_binary_op_a00152209e42b3e9778f59951272cd7a5}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!SetInput2@{SetInput2}}
+\index{SetInput2@{SetInput2}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{SetInput2()}
+{\footnotesize\ttfamily virtual void optix\+S\+D\+F\+Binary\+Op\+::\+Set\+Input2 (\begin{DoxyParamCaption}\item[{optix\+::\+Geometry}]{geo1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classoptix_s_d_f_binary_op_a75e2ccd0a88f97709bd82b4749f95b15}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!SetMainPrograms@{SetMainPrograms}}
+\index{SetMainPrograms@{SetMainPrograms}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{SetMainPrograms()}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Binary\+Op\+::\+Set\+Main\+Programs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+sets all main programs 
+
+Reimplemented from \textbf{ optix\+S\+D\+F\+Geometry} \doxyref{}{p.}{classoptix_s_d_f_geometry_a994075a972269f9d904eb00dff1a96fc}.
+
+\mbox{\label{classoptix_s_d_f_binary_op_a59e852dd10a95493f3dc6e68426377ab}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!Update@{Update}}
+\index{Update@{Update}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily virtual void optix\+S\+D\+F\+Binary\+Op\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Runs the process of computation of optix geometry and setting up all necessary cuda programs and geometry parameters 
+
+Reimplemented from \textbf{ optix\+S\+D\+F\+Geometry} \doxyref{}{p.}{classoptix_s_d_f_geometry_af866243d89ffb3ed211d8e8408ee859b}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classoptix_s_d_f_binary_op_ab07568f2d11ae47356237d67206ab5c5}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!geoDesc1@{geoDesc1}}
+\index{geoDesc1@{geoDesc1}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{geoDesc1}
+{\footnotesize\ttfamily sdf\+Geo$\ast$ optix\+S\+D\+F\+Binary\+Op\+::geo\+Desc1\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_s_d_f_binary_op_a9f1de6fea435f07a9f4f10ec5e579e27}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!geoDesc2@{geoDesc2}}
+\index{geoDesc2@{geoDesc2}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{geoDesc2}
+{\footnotesize\ttfamily sdf\+Geo$\ast$ optix\+S\+D\+F\+Binary\+Op\+::geo\+Desc2\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_s_d_f_binary_op_a0529ca49590cbd73322814adff350ac2}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!m\_sdf1@{m\_sdf1}}
+\index{m\_sdf1@{m\_sdf1}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{m\_sdf1}
+{\footnotesize\ttfamily \textbf{ optix\+S\+D\+F\+Geometry}$\ast$ optix\+S\+D\+F\+Binary\+Op\+::m\+\_\+sdf1\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classoptix_s_d_f_binary_op_a6dd597635439b8ec34094ec15fe020cf}} 
+\index{optixSDFBinaryOp@{optixSDFBinaryOp}!m\_sdf2@{m\_sdf2}}
+\index{m\_sdf2@{m\_sdf2}!optixSDFBinaryOp@{optixSDFBinaryOp}}
+\doxysubsubsection{m\_sdf2}
+{\footnotesize\ttfamily \textbf{ optix\+S\+D\+F\+Geometry}$\ast$ optix\+S\+D\+F\+Binary\+Op\+::m\+\_\+sdf2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ optix\+S\+D\+F\+Basic\+Operations.\+h}\item 
+\textbf{ optix\+S\+D\+F\+Basic\+Operations.\+cpp}\end{DoxyCompactItemize}

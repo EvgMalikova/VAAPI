@@ -47,11 +47,13 @@ OPTIX_add_library( ${PROJECT_NAME}
 	
   src/vaOpticModel.h
   src/vaOpticModel.cpp
+  src/vaAudioModel.h
+  src/vaAudioModel.cpp
 
   
   src/vaWidgetHandle.h
   src/vaWidgetHandle.cpp
-  
+
   src/vaActor.h
   src/vaActor.cpp
 

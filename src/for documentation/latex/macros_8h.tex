@@ -1,0 +1,133 @@
+\hypertarget{macros_8h}{}\doxysection{inc/macros.h File Reference}
+\label{macros_8h}\index{inc/macros.h@{inc/macros.h}}
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$sutil.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}version\+\_\+config.\+h\char`\"{}}\newline
+Include dependency graph for macros.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{macros_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{macros_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsdf_geo}{sdf\+Geo}}
+\item 
+class \mbox{\hyperlink{classoptix_object}{optix\+Object}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{macros_8h_acb2006c5ffdf53d5a70166c2577b769f}{opx\+Set\+Macro}}(name,  type)
+\item 
+\#define \mbox{\hyperlink{macros_8h_a59017a4d7205ac688dae0e18d6fccb7a}{opx\+Get\+Macro}}(name,  type)
+\item 
+\#define \mbox{\hyperlink{macros_8h_a5b43fb5f6b151f72a82a677140a243c7}{vtk\+Set\+Vector\+Macro}}(name,  type,  count)
+\item 
+\#define \mbox{\hyperlink{macros_8h_ac0b54355cdd9f7e8c884f7c6ca55d86f}{vtk\+Get\+Vector\+Macro}}(name,  type,  count)
+\item 
+\#define \mbox{\hyperlink{macros_8h_aeeddc3bfd6f0f043852427ecf9fee144}{vtk\+Set\+Optix\+Float3\+Macro}}(name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{macros_8h_a59017a4d7205ac688dae0e18d6fccb7a}\label{macros_8h_a59017a4d7205ac688dae0e18d6fccb7a}} 
+\index{macros.h@{macros.h}!opxGetMacro@{opxGetMacro}}
+\index{opxGetMacro@{opxGetMacro}!macros.h@{macros.h}}
+\doxysubsubsection{\texorpdfstring{opxGetMacro}{opxGetMacro}}
+{\footnotesize\ttfamily \#define opx\+Get\+Macro(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{virtual} type Get\#\#name () \{ \(\backslash\)}
+\DoxyCodeLine{  return this-\/>name; \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{macros_8h_acb2006c5ffdf53d5a70166c2577b769f}\label{macros_8h_acb2006c5ffdf53d5a70166c2577b769f}} 
+\index{macros.h@{macros.h}!opxSetMacro@{opxSetMacro}}
+\index{opxSetMacro@{opxSetMacro}!macros.h@{macros.h}}
+\doxysubsubsection{\texorpdfstring{opxSetMacro}{opxSetMacro}}
+{\footnotesize\ttfamily \#define opx\+Set\+Macro(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Set\#\#name (type \_arg) \(\backslash\)}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{  if (this-\/>name != \_arg) \(\backslash\)}
+\DoxyCodeLine{  \{ \(\backslash\)}
+\DoxyCodeLine{    this-\/>name = \_arg; \(\backslash\)}
+\DoxyCodeLine{    this-\/>Modified(); \(\backslash\)}
+\DoxyCodeLine{  \} \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{macros_8h_ac0b54355cdd9f7e8c884f7c6ca55d86f}\label{macros_8h_ac0b54355cdd9f7e8c884f7c6ca55d86f}} 
+\index{macros.h@{macros.h}!vtkGetVectorMacro@{vtkGetVectorMacro}}
+\index{vtkGetVectorMacro@{vtkGetVectorMacro}!macros.h@{macros.h}}
+\doxysubsubsection{\texorpdfstring{vtkGetVectorMacro}{vtkGetVectorMacro}}
+{\footnotesize\ttfamily \#define vtk\+Get\+Vector\+Macro(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{type,  }\item[{}]{count }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{virtual} type *Get\#\#name () \(\backslash\)}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{return this-\/>name; \(\backslash\)}
+\DoxyCodeLine{\} \(\backslash\)}
+\DoxyCodeLine{virtual \textcolor{keywordtype}{void} Get\#\#name(type data[count]) \(\backslash\)}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{for (\textcolor{keywordtype}{int} i=0; i<count; i++) \{ data[i] = this-\/>name[i]; \}\(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{macros_8h_aeeddc3bfd6f0f043852427ecf9fee144}\label{macros_8h_aeeddc3bfd6f0f043852427ecf9fee144}} 
+\index{macros.h@{macros.h}!vtkSetOptixFloat3Macro@{vtkSetOptixFloat3Macro}}
+\index{vtkSetOptixFloat3Macro@{vtkSetOptixFloat3Macro}!macros.h@{macros.h}}
+\doxysubsubsection{\texorpdfstring{vtkSetOptixFloat3Macro}{vtkSetOptixFloat3Macro}}
+{\footnotesize\ttfamily \#define vtk\+Set\+Optix\+Float3\+Macro(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Set\#\#name (\textcolor{keywordtype}{float} \_arg1, \textcolor{keywordtype}{float} \_arg2, \textcolor{keywordtype}{float} \_arg3) \(\backslash\)}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{  if ((this-\/>name.x != \_arg1)||(this-\/>name.y != \_arg2)||(this-\/>name.z != \_arg3)) \(\backslash\)}
+\DoxyCodeLine{   \{ \(\backslash\)}
+\DoxyCodeLine{     this-\/>Modified(); \(\backslash\)}
+\DoxyCodeLine{     this-\/>name.x = \_arg1; \(\backslash\)}
+\DoxyCodeLine{    this-\/>name.y = \_arg2; \(\backslash\)}
+\DoxyCodeLine{    this-\/>name.z = \_arg3; \(\backslash\)}
+\DoxyCodeLine{     \} \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{macros_8h_a5b43fb5f6b151f72a82a677140a243c7}\label{macros_8h_a5b43fb5f6b151f72a82a677140a243c7}} 
+\index{macros.h@{macros.h}!vtkSetVectorMacro@{vtkSetVectorMacro}}
+\index{vtkSetVectorMacro@{vtkSetVectorMacro}!macros.h@{macros.h}}
+\doxysubsubsection{\texorpdfstring{vtkSetVectorMacro}{vtkSetVectorMacro}}
+{\footnotesize\ttfamily \#define vtk\+Set\+Vector\+Macro(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{type,  }\item[{}]{count }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Set\#\#name(type data[]) \(\backslash\)}
+\DoxyCodeLine{\{ \(\backslash\)}
+\DoxyCodeLine{  int i; \(\backslash\)}
+\DoxyCodeLine{   for (i=0; i<count; i++) \{ \textcolor{keywordflow}{if} ( data[i] != this-\/>name[i] ) \{ \textcolor{keywordflow}{break}; \}\} \(\backslash\)}
+\DoxyCodeLine{  if ( i < count ) \(\backslash\)}
+\DoxyCodeLine{     \{ \(\backslash\)}
+\DoxyCodeLine{     this-\/>Modified(); \(\backslash\)}
+\DoxyCodeLine{     for (i=0; i<count; i++) \{ this-\/>name[i] = data[i]; \}\(\backslash\)}
+\DoxyCodeLine{     \} \(\backslash\)}
+\DoxyCodeLine{ \}}
+
+\end{DoxyCode}

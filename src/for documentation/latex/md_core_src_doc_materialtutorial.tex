@@ -1,0 +1,86 @@
+Example of custom optical material creation on base of Emission-\/absorption Volume.\hypertarget{md_core_src_doc_materialtutorial_autotoc_md6}{}\doxysection{C++ files}\label{md_core_src_doc_materialtutorial_autotoc_md6}
+The Material class will be defined as \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }SdfEmAbsorbVolume : \textcolor{keyword}{public} visAuditoryMaterial \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{    SdfEmAbsorbVolume() \{ \};}
+\DoxyCodeLine{    ~SdfEmAbsorbVolume() \{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{protected}:}
+\DoxyCodeLine{    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} SetMaterialParameters();}
+\DoxyCodeLine{    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Initialize();}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+
+
+In this tutorial the following 2 functions inherited from vis\+Auditory\+Material class\+: would be reimplemented\+: Initialize(); -\/ defines Optix closest\+\_\+hit, any\+\_\+hit and potentially callable programs to render the optix material. For more information reference Optix documentation
+
+Set\+Material\+Parameters(); -\/ sets custom variables, called from cuda programs
+
+Any cuda program can be inited and after called by name through procedure\+: void Init\+Prog(std\+::string prog/$\ast$$<$name of program in cuda file$\ast$/, std\+::string file/$\ast$$<$name of cuda file$\ast$/, std\+::string name /$\ast$$<$assigned name of program for further reference$\ast$/);
+
+After program can be referenced by assigned to it name.
+
+There are only three main programs for material, defined with reserved names 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::string anyhit\_prog; \textcolor{comment}{/*<Any hit optix program name */}}
+\DoxyCodeLine{std::string closesthit\_prog; \textcolor{comment}{/*<Closest hit optix program name */}}
+\DoxyCodeLine{std::string dynamic\_prog; \textcolor{comment}{/*<Name for callable procedure defining some dynamic changes to material*/}}
+\end{DoxyCode}
+ The names of those programs for further reference are assigned through procedures\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} SetClosestHitProgName(std::string name); \textcolor{comment}{/*<Sets closest hit program name for further reference with GetClosestHitProgName()*/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \textcolor{keywordtype}{void} SetAnyHitProgName(std::string name); \textcolor{comment}{/*<Sets any hit program name for further reference*/}}
+\DoxyCodeLine{ \textcolor{keywordtype}{void} SetDynamicProgName(std::string name);\textcolor{comment}{/*<Sets dynamic highlight program name*/}}
+\end{DoxyCode}
+
+
+For example the initialisation procedure for closest hit program will look like
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{InitProg(\textcolor{stringliteral}{"closesthit\_sdf"}, \textcolor{stringliteral}{"closesthit.cu"}, \textcolor{stringliteral}{"closesthit\_sdf"});}
+\DoxyCodeLine{SetClosestHitProgName(\textcolor{stringliteral}{"closesthit\_sdf"}); \textcolor{comment}{//sets closesthit to true;}}
+\end{DoxyCode}
+
+
+In this tutorial the any hit program will be initialised as
+
+void Sdf\+Em\+Absorb\+Volume\+::\+Initialize() \{ \begin{DoxyVerb}if (optixObject::GetContext()->get() != nullptr)
+{
+    try
+    {
+        InitProg("closesthit_sdf", "closesthit.cu", "closesthit_sdf");
+        SetClosestHitProgName("closesthit_sdf"); //sets closesthit to true;
+
+    }
+    catch (optix::Exception& e)
+    {
+        std::cerr << e.getErrorString() << std::endl;
+    }
+}
+else std::cerr << "no context defined" << std::endl;
+\end{DoxyVerb}
+
+
+\}
+
+An example of setting custom parameters\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} SdfEmAbsorbVolume::SetMaterialParameters()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{//optix::Material m = GetMaterial(i);}}
+\DoxyCodeLine{    GetOutput()[\textcolor{stringliteral}{"ambient\_light\_color"}]-\/>setFloat(1.0, 1.0, 0.0);}
+\DoxyCodeLine{    \textcolor{comment}{//m["albedo"]-\/>setFloat(1.0f, 0.5f, 0.0f);}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{//TODO: setupLights}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+\hypertarget{md_core_src_doc_materialtutorial_autotoc_md7}{}\doxysection{Cuda files}\label{md_core_src_doc_materialtutorial_autotoc_md7}

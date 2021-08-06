@@ -148,23 +148,23 @@ public:
     //---------
 
     virtual void Update();
-    void SetRenderer(vaBasicRenderer* ren) { m_ren = ren; }
+    void SetRenderer(std::shared_ptr<vaBasicRenderer> ren) { m_ren = ren; }
     // std::shared_ptr<optixBasicRenderer>(ren);};
     void SetContext(optix::Context cont) { m_context = cont; }
     //TODO: badly made
-    void SetCamera(PinholeCamera* cam) { m_pinholeCamera = cam; };
+    void SetCamera(std::shared_ptr<PinholeCamera> cam) { m_pinholeCamera = cam; };
 
     //PinholeCamera* GetCamera() { return m_pinholeCamera.get(); };
 
-    PinholeCamera* m_pinholeCamera;
+    std::shared_ptr<PinholeCamera> m_pinholeCamera;
     //vaBaseWidget* m_widget;
 
-    vaBasicRenderer* GetRenderer() { return m_ren; };
+    vaBasicRenderer* GetRenderer() { return m_ren.get(); };
     int GetWidth() { return m_width; };
     int GetHeight() { return m_height; };
 private:
-    //std::shared_ptr<optixBasicRenderer> m_ren;
-    vaBasicRenderer*m_ren;
+
+    std::shared_ptr<vaBasicRenderer> m_ren;
     optix::Context m_context;
 };
 
@@ -181,7 +181,9 @@ public:
         m_controller = nullptr;
     };
     ~BasicRenderWindowInteractor() { glfwTerminate(); };
-    void SetWindow(GLFW_Window*window) { m_window = window; };
+    void SetWindow(std::shared_ptr<GLFW_Window> window) {
+        m_window = window;
+    };
     virtual bool SetUp();
     virtual void Start();
     void SetController(Leap::Controller* control);
@@ -190,17 +192,17 @@ public:
         GLFWwindow* window = m_window->GetOutput();
         glfwSetKeyCallback(window, (*f));
     }
-    void SetWidget(vaBaseWidget* v) { m_widget = v; };
-    vaBaseWidget* GetWidget() { return m_widget; };
+    void SetWidget(std::shared_ptr<vaBaseWidget> v) { m_widget = v; };
+    std::shared_ptr<vaBaseWidget> GetWidget() { return m_widget; };
 private:
 
     bool m_isWindowVisible;
     Leap::Controller* m_controller;
     GuiState m_guiState;
-    vaBaseWidget* m_widget;
+    std::shared_ptr<vaBaseWidget> m_widget;
 protected:
 
-    GLFW_Window*m_window;
+    std::shared_ptr<GLFW_Window> m_window;
 
     virtual void guiWindow() {}; //draws all necessary windows with imGUI
 
@@ -250,13 +252,18 @@ private:
 class SceneManager
 {
 public:
-    std::vector<vaMapper *> mappers;
-    std::vector<vaActor *> actorSdf;
+    std::vector<std::shared_ptr<vaMapper >> mappers;
+    std::vector<std::shared_ptr<vaActor >> actorSdf;
     std::vector<vaTRIActor* > actorTri;
     contextManager m;
     vaWidgetHandle w;
 
+    std::vector<float> rad;
+    std::vector<optix::float3> center;
+    std::vector<int> type;
     //scenes creation
+
+    void SetXYZData(MPoints p, MTypes t);
 
     void createDynamicHeterogeneousObjectScene();
     void createFrepScene();
@@ -268,11 +275,13 @@ public:
     sdfHetoreneous vs sdfHeterogeneous0D
     Note: Material optimisation was not done*/
     void Example0();
+    void Example10();
     void Example1();
     /*Fully optimised simple molecular data volume rendering*/
     void Example2();
     void Example31();
     void Example3();
+    void Example6();
     void ExampleTetra();
 
     void createAuditoryMoleculeSceneMolDynam();
@@ -290,8 +299,11 @@ public:
         const bool interop);
     ~SceneManager();
 
+    std::shared_ptr<vaRenderer> GetRenderer() { return ren; };
+    std::shared_ptr<PinholeCamera> GetCamera() { return m_pinholeCamera; };
+
     bool isValid();
-    vaRenderer* ren;
+    std::shared_ptr<vaRenderer> ren;
     //to share between applications and later make
     std::shared_ptr<PinholeCamera> m_pinholeCamera;
     std::shared_ptr<vaBaseWidget> m_widget;
@@ -299,6 +311,43 @@ public:
 private:
     int m_example;
     void createScene();
+
+    Timer m_timer;
+};
+
+class SceneManager2
+{
+public:
+    //  std::vector<std::shared_ptr<vaMapper >> mappers;
+   //   std::vector<std::shared_ptr<vaActor >> actorSdf;
+
+    contextManager m;
+    vaWidgetHandle w;
+
+    //scenes creation
+
+    void Example2();
+
+    optix::Context GetContext() { return m.GetOutput(); };
+
+    void Init();
+    SceneManager2();
+
+    ~SceneManager2();
+
+    std::shared_ptr<vaRenderer> GetRenderer() { return ren; };
+    std::shared_ptr<PinholeCamera> GetCamera() { return m_pinholeCamera; };
+    std::shared_ptr<vaBaseWidget> GetWidget() { return m_widget; };
+
+    bool isValid();
+
+    std::shared_ptr<vaBaseWidget> m_widget;
+private:
+    int m_example;
+    void createScene();
+    std::shared_ptr<vaRenderer> ren;
+    //to share between applications and later make
+    std::shared_ptr<PinholeCamera> m_pinholeCamera;
 
     Timer m_timer;
 };

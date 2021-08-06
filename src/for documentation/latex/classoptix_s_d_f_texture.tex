@@ -1,0 +1,279 @@
+\hypertarget{classoptix_s_d_f_texture}{}\doxysection{optix\+S\+D\+F\+Texture Class Reference}
+\label{classoptix_s_d_f_texture}\index{optixSDFTexture@{optixSDFTexture}}
+
+
+Generates a dynamic S\+DF primitive on base of sdf textures.  
+
+
+
+
+{\ttfamily \#include $<$optix\+S\+D\+F\+Primitives.\+h$>$}
+
+
+
+Inheritance diagram for optix\+S\+D\+F\+Texture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classoptix_s_d_f_texture__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for optix\+S\+D\+F\+Texture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classoptix_s_d_f_texture__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoptix_s_d_f_texture_a18ccf5d94538121289aeaca0c3fa4003}{optix\+S\+D\+F\+Texture}} ()
+\item 
+\mbox{\hyperlink{classoptix_s_d_f_texture_aa18d6982504ad5d7c7309a04eb342ba2}{$\sim$optix\+S\+D\+F\+Texture}} ()
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_texture_ac567e95a14f29d16aeb1cb5dc8347e07}{Set\+Texture}} (optix\+::\+Texture\+Sampler samp, \mbox{\hyperlink{structsdf_params}{sdf\+Params}} $\ast$param)
+\item 
+\mbox{\hyperlink{classoptix_s_d_f_texture_a18ccf5d94538121289aeaca0c3fa4003}{optix\+S\+D\+F\+Texture}} ()
+\item 
+\mbox{\hyperlink{classoptix_s_d_f_texture_aa18d6982504ad5d7c7309a04eb342ba2}{$\sim$optix\+S\+D\+F\+Texture}} ()
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_texture_a4fb42e25484a0eacbebecdd4256ccf1a}{Set\+Texture\+Input}} (std\+::string file)
+\item 
+void \mbox{\hyperlink{classoptix_s_d_f_texture_aaaa5a4ce2e110ca3fa2207fbe05ca9b3}{Set\+Center}} (optix\+::float3 c)
+\item 
+optix\+::float3 \mbox{\hyperlink{classoptix_s_d_f_texture_a6c3b93a2219d49dabcb5fcc6daec1acb}{Get\+Center}} ()
+\item 
+virtual optix\+::\+Geometry \mbox{\hyperlink{classoptix_s_d_f_texture_aa9f6a70cd0fd0ce4de25a10fa1dd4071}{Get\+Output}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_texture_aab2d0890da53a10574555f58c8e1123b}{Init\+Callable\+Prog}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_texture_a771891f135c9a71d2d02a3da063a65dd}{Set\+Parameters}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_texture_aa9e9aa3b86255093ad8326f28a06e145}{Create\+Geometry}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_texture_af02c31b80369c9f7cf09044a8f3f5793}{Initialize}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_texture_a8e42609537cf81ba65a3c8ed2f60b5f5}{Set\+Callable\+Prog}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptix_s_d_f_texture_a5e44e780b254198f9baf92de9b482d26}{Read\+Textures}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classoptix_s_d_f_texture_ad9bdc47b7f28e073811ddb9870f13153}{filenames}}
+\item 
+optix\+::float3 \mbox{\hyperlink{classoptix_s_d_f_texture_ad8fddd35adb2dfe7f25b4b5cb23c382a}{center}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Generates a dynamic S\+DF primitive on base of sdf textures. 
+
+The sdf textures can be obtained on base of signed distance transform procedure. In the A\+PI the I\+TK signed distance transform is used to obtain such textures. See \mbox{\hyperlink{classoptix_s_d_f_texture_reader}{optix\+S\+D\+F\+Texture\+Reader}} class\+: \mbox{\hyperlink{classoptix_s_d_f_texture_reader_a1bb8c59f4ddbff1515a2b37874b74cbc}{optix\+S\+D\+F\+Texture\+Reader\+::optix\+S\+D\+F\+Texture\+Reader()}} for example. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoptix_s_d_f_texture_a18ccf5d94538121289aeaca0c3fa4003}\label{classoptix_s_d_f_texture_a18ccf5d94538121289aeaca0c3fa4003}} 
+\index{optixSDFTexture@{optixSDFTexture}!optixSDFTexture@{optixSDFTexture}}
+\index{optixSDFTexture@{optixSDFTexture}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{optixSDFTexture()}{optixSDFTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily optix\+S\+D\+F\+Texture\+::optix\+S\+D\+F\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_s_d_f_texture_aa18d6982504ad5d7c7309a04eb342ba2}\label{classoptix_s_d_f_texture_aa18d6982504ad5d7c7309a04eb342ba2}} 
+\index{optixSDFTexture@{optixSDFTexture}!````~optixSDFTexture@{$\sim$optixSDFTexture}}
+\index{````~optixSDFTexture@{$\sim$optixSDFTexture}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{$\sim$optixSDFTexture()}{~optixSDFTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily optix\+S\+D\+F\+Texture\+::$\sim$optix\+S\+D\+F\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_s_d_f_texture_a18ccf5d94538121289aeaca0c3fa4003}\label{classoptix_s_d_f_texture_a18ccf5d94538121289aeaca0c3fa4003}} 
+\index{optixSDFTexture@{optixSDFTexture}!optixSDFTexture@{optixSDFTexture}}
+\index{optixSDFTexture@{optixSDFTexture}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{optixSDFTexture()}{optixSDFTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily optix\+S\+D\+F\+Texture\+::optix\+S\+D\+F\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_s_d_f_texture_aa18d6982504ad5d7c7309a04eb342ba2}\label{classoptix_s_d_f_texture_aa18d6982504ad5d7c7309a04eb342ba2}} 
+\index{optixSDFTexture@{optixSDFTexture}!````~optixSDFTexture@{$\sim$optixSDFTexture}}
+\index{````~optixSDFTexture@{$\sim$optixSDFTexture}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{$\sim$optixSDFTexture()}{~optixSDFTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily optix\+S\+D\+F\+Texture\+::$\sim$optix\+S\+D\+F\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classoptix_s_d_f_texture_aa9e9aa3b86255093ad8326f28a06e145}\label{classoptix_s_d_f_texture_aa9e9aa3b86255093ad8326f28a06e145}} 
+\index{optixSDFTexture@{optixSDFTexture}!CreateGeometry@{CreateGeometry}}
+\index{CreateGeometry@{CreateGeometry}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{CreateGeometry()}{CreateGeometry()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Texture\+::\+Create\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_primitive_ab7c1cf531e440646a8af4c40122ccf43}{optix\+S\+D\+F\+Primitive}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_texture_aa9e9aa3b86255093ad8326f28a06e145_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_texture_a6c3b93a2219d49dabcb5fcc6daec1acb}\label{classoptix_s_d_f_texture_a6c3b93a2219d49dabcb5fcc6daec1acb}} 
+\index{optixSDFTexture@{optixSDFTexture}!GetCenter@{GetCenter}}
+\index{GetCenter@{GetCenter}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{GetCenter()}{GetCenter()}}
+{\footnotesize\ttfamily optix\+::float3 optix\+S\+D\+F\+Texture\+::\+Get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptix_s_d_f_texture_aa9f6a70cd0fd0ce4de25a10fa1dd4071}\label{classoptix_s_d_f_texture_aa9f6a70cd0fd0ce4de25a10fa1dd4071}} 
+\index{optixSDFTexture@{optixSDFTexture}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily virtual optix\+::\+Geometry optix\+S\+D\+F\+Texture\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_primitive_accfbb540768936ec293c626e6a3ccca4}{optix\+S\+D\+F\+Primitive}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_texture_aa9f6a70cd0fd0ce4de25a10fa1dd4071_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_texture_aab2d0890da53a10574555f58c8e1123b}\label{classoptix_s_d_f_texture_aab2d0890da53a10574555f58c8e1123b}} 
+\index{optixSDFTexture@{optixSDFTexture}!InitCallableProg@{InitCallableProg}}
+\index{InitCallableProg@{InitCallableProg}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{InitCallableProg()}{InitCallableProg()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Texture\+::\+Init\+Callable\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_primitive_a3158ddeb53e3f989b2d83ba13a25d6ab}{optix\+S\+D\+F\+Primitive}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_texture_aab2d0890da53a10574555f58c8e1123b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_texture_af02c31b80369c9f7cf09044a8f3f5793}\label{classoptix_s_d_f_texture_af02c31b80369c9f7cf09044a8f3f5793}} 
+\index{optixSDFTexture@{optixSDFTexture}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Texture\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+T\+O\+DO\+: potentialy read file with points here 
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_primitive_a055f160d6ecb9bdc7bb49a605e0bb8b9}{optix\+S\+D\+F\+Primitive}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_texture_af02c31b80369c9f7cf09044a8f3f5793_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_texture_a5e44e780b254198f9baf92de9b482d26}\label{classoptix_s_d_f_texture_a5e44e780b254198f9baf92de9b482d26}} 
+\index{optixSDFTexture@{optixSDFTexture}!ReadTextures@{ReadTextures}}
+\index{ReadTextures@{ReadTextures}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{ReadTextures()}{ReadTextures()}}
+{\footnotesize\ttfamily virtual void optix\+S\+D\+F\+Texture\+::\+Read\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classoptix_s_d_f_texture_a8e42609537cf81ba65a3c8ed2f60b5f5}\label{classoptix_s_d_f_texture_a8e42609537cf81ba65a3c8ed2f60b5f5}} 
+\index{optixSDFTexture@{optixSDFTexture}!SetCallableProg@{SetCallableProg}}
+\index{SetCallableProg@{SetCallableProg}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{SetCallableProg()}{SetCallableProg()}}
+{\footnotesize\ttfamily virtual void optix\+S\+D\+F\+Texture\+::\+Set\+Callable\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Is called for setting callable prog 
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_primitive_a19b4e4ecb944e296a29a4c9603bb1770}{optix\+S\+D\+F\+Primitive}}.
+
+\mbox{\Hypertarget{classoptix_s_d_f_texture_aaaa5a4ce2e110ca3fa2207fbe05ca9b3}\label{classoptix_s_d_f_texture_aaaa5a4ce2e110ca3fa2207fbe05ca9b3}} 
+\index{optixSDFTexture@{optixSDFTexture}!SetCenter@{SetCenter}}
+\index{SetCenter@{SetCenter}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{SetCenter()}{SetCenter()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Texture\+::\+Set\+Center (\begin{DoxyParamCaption}\item[{optix\+::float3}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_texture_aaaa5a4ce2e110ca3fa2207fbe05ca9b3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_texture_aaaa5a4ce2e110ca3fa2207fbe05ca9b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_texture_a771891f135c9a71d2d02a3da063a65dd}\label{classoptix_s_d_f_texture_a771891f135c9a71d2d02a3da063a65dd}} 
+\index{optixSDFTexture@{optixSDFTexture}!SetParameters@{SetParameters}}
+\index{SetParameters@{SetParameters}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{SetParameters()}{SetParameters()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Texture\+::\+Set\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+for setting custom cuda variables values 
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_a8b7aaecf7e2a6878865b192b66ab367d}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_texture_a771891f135c9a71d2d02a3da063a65dd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_texture_ac567e95a14f29d16aeb1cb5dc8347e07}\label{classoptix_s_d_f_texture_ac567e95a14f29d16aeb1cb5dc8347e07}} 
+\index{optixSDFTexture@{optixSDFTexture}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Texture\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{optix\+::\+Texture\+Sampler}]{samp,  }\item[{\mbox{\hyperlink{structsdf_params}{sdf\+Params}} $\ast$}]{param }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptix_s_d_f_texture_ac567e95a14f29d16aeb1cb5dc8347e07_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptix_s_d_f_texture_a4fb42e25484a0eacbebecdd4256ccf1a}\label{classoptix_s_d_f_texture_a4fb42e25484a0eacbebecdd4256ccf1a}} 
+\index{optixSDFTexture@{optixSDFTexture}!SetTextureInput@{SetTextureInput}}
+\index{SetTextureInput@{SetTextureInput}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{SetTextureInput()}{SetTextureInput()}}
+{\footnotesize\ttfamily void optix\+S\+D\+F\+Texture\+::\+Set\+Texture\+Input (\begin{DoxyParamCaption}\item[{std\+::string}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classoptix_s_d_f_texture_ad8fddd35adb2dfe7f25b4b5cb23c382a}\label{classoptix_s_d_f_texture_ad8fddd35adb2dfe7f25b4b5cb23c382a}} 
+\index{optixSDFTexture@{optixSDFTexture}!center@{center}}
+\index{center@{center}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{center}{center}}
+{\footnotesize\ttfamily optix\+::float3 optix\+S\+D\+F\+Texture\+::center\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classoptix_s_d_f_texture_ad9bdc47b7f28e073811ddb9870f13153}\label{classoptix_s_d_f_texture_ad9bdc47b7f28e073811ddb9870f13153}} 
+\index{optixSDFTexture@{optixSDFTexture}!filenames@{filenames}}
+\index{filenames@{filenames}!optixSDFTexture@{optixSDFTexture}}
+\doxysubsubsection{\texorpdfstring{filenames}{filenames}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ optix\+S\+D\+F\+Texture\+::filenames\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+frep/src/\mbox{\hyperlink{optix_s_d_f_primitives_8h}{optix\+S\+D\+F\+Primitives.\+h}}\item 
+src/\+New folder/\mbox{\hyperlink{optix_s_d_f_dynamic_texture_8h}{optix\+S\+D\+F\+Dynamic\+Texture.\+h}}\item 
+frep/src/\mbox{\hyperlink{optix_s_d_f_primitives_8cpp}{optix\+S\+D\+F\+Primitives.\+cpp}}\item 
+src/\+New folder/\mbox{\hyperlink{optix_s_d_f_dynamic_texture_8cpp}{optix\+S\+D\+F\+Dynamic\+Texture.\+cpp}}\end{DoxyCompactItemize}

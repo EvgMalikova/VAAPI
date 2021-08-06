@@ -1,0 +1,8 @@
+<map id="sdfHeterogeneous" name="sdfHeterogeneous">
+<area shape="rect" id="node1" title="Main class for heterogeneous objects with simple molecular geometry." alt="" coords="62,155,189,181"/>
+<area shape="rect" id="node4" href="$classsdf_h_c_p_k_mol.html" title=" " alt="" coords="23,229,119,256"/>
+<area shape="rect" id="node6" href="$classsdf_h_tetra.html" title="Class for tetrahedral meshes Redefines: *SDF primitive Bounding box as center is to be evaluated Cons..." alt="" coords="143,229,220,256"/>
+<area shape="rect" id="node2" href="$classoptix_s_d_f_geometry.html" title="Abstract class for SDF Geometry. A basic class. All SDF geometry inherits it&#39;s functions." alt="" coords="59,80,192,107"/>
+<area shape="rect" id="node3" href="$classva_basic_object.html" title=" " alt="" coords="73,5,178,32"/>
+<area shape="rect" id="node5" href="$classsdf_h_microstructure.html" title="Example class that redefines mapping with just microstructure prim." alt="" coords="5,304,136,331"/>
+</map>

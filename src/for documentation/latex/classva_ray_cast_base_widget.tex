@@ -1,0 +1,339 @@
+\hypertarget{classva_ray_cast_base_widget}{}\doxysection{va\+Ray\+Cast\+Base\+Widget Class Reference}
+\label{classva_ray_cast_base_widget}\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+
+
+{\ttfamily \#include $<$va\+Ray\+Cast\+Base\+Widget.\+h$>$}
+
+
+
+Inheritance diagram for va\+Ray\+Cast\+Base\+Widget\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classva_ray_cast_base_widget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for va\+Ray\+Cast\+Base\+Widget\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef itk\+::\+Point\+Set$<$ float, 3 $>$ \mbox{\hyperlink{classva_ray_cast_base_widget_a6130f20e5e1384f97a0e886e1b91360e}{Point\+Set\+Type}}
+\item 
+typedef Point\+Set\+Type\+::\+Point\+Type \mbox{\hyperlink{classva_ray_cast_base_widget_a82ad896b52afe746dd7764519e56ae14}{Point\+Type}}
+\item 
+typedef Point\+Set\+Type\+::\+Points\+Container \mbox{\hyperlink{classva_ray_cast_base_widget_af16ade8e6061b163554d09b76e31f60a}{Points\+Container}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classva_ray_cast_base_widget_a302f909d3d36a8c32c675b357acec5e4}{Set\+Context}} (optix\+::\+Context \&context)
+\item 
+\mbox{\hyperlink{classva_ray_cast_base_widget_a1461a3712224cc572131ea728273e119}{va\+Ray\+Cast\+Base\+Widget}} ()
+\item 
+\mbox{\hyperlink{classva_ray_cast_base_widget_ae3adb6020d2858fe96945c22e9d40742}{$\sim$va\+Ray\+Cast\+Base\+Widget}} ()
+\item 
+virtual void \mbox{\hyperlink{classva_ray_cast_base_widget_a7260bc27dfc0da713fe4a2d60f40f897}{Update\+Handle\+Position}} ()
+\item 
+void \mbox{\hyperlink{classva_ray_cast_base_widget_a17b04f2b5f929d1b938d834fd4330e9a}{Set\+Ray\+Cast\+Prog\+Name}} (std\+::string c)
+\item 
+\mbox{\hyperlink{classva_ray_cast_base_widget_a82ad896b52afe746dd7764519e56ae14}{Point\+Type}} \mbox{\hyperlink{classva_ray_cast_base_widget_a73be78f5b9d1f9222ebecb870848ba86}{Get\+Point}} (optix\+::float3 pp)
+\item 
+virtual void \mbox{\hyperlink{classva_ray_cast_base_widget_a1078b1e2eca31cabfee5cd4e81fd0a17}{Create\+Geometry\+Handle}} ()
+\item 
+void \mbox{\hyperlink{classva_ray_cast_base_widget_aafb13c4696f60a87211d662de9024e3b}{Bind\+Ray\+Cast\+Buffers}} ()
+\item 
+void \mbox{\hyperlink{classva_ray_cast_base_widget_acf1a7cf9ad013e5f2d2a1698dbe43784}{Update\+Ray\+Cast\+Buffers}} (\mbox{\hyperlink{classva_ray_cast_base_widget_af16ade8e6061b163554d09b76e31f60a}{Points\+Container}} $\ast$f\+Points, \mbox{\hyperlink{classva_ray_cast_base_widget_af16ade8e6061b163554d09b76e31f60a}{Points\+Container}} $\ast$m\+Points)
+\item 
+std\+::string \mbox{\hyperlink{classva_ray_cast_base_widget_ad3b8e02faa7ea3c7a91e5e33bf6851e5}{Get\+Ray\+Cast\+Prog\+Name}} ()
+\item 
+optix\+::\+Program \mbox{\hyperlink{classva_ray_cast_base_widget_ad293de91d5ee55ef6cce1b734dbb4507}{Get\+Ray\+Cast\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classva_ray_cast_base_widget_a70d28202b3e67b0b2e48354a99e8172c}{Set\+Ray\+Cast\+Size}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classva_ray_cast_base_widget_a56a13f433ac6a44a1d5285a5dde8cafa}{Set\+Ray\+Cast\+Prog\+Manually}} (optix\+::\+Program pr)
+\item 
+void \mbox{\hyperlink{classva_ray_cast_base_widget_a2a4ca3b0602a6a35bff4a8fbb191ddc7}{Register\+Buffers}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classva_ray_cast_base_widget_ad888c0cb86afce2848bb0e48f5ed23a4}{Update\+Widget\+Pos}} ()
+\item 
+void \mbox{\hyperlink{classva_ray_cast_base_widget_a9a2064bdc135be1fcc5b3339709d20ca}{Set\+Handle\+As\+Callable\+Prog}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_af16ade8e6061b163554d09b76e31f60a}\label{classva_ray_cast_base_widget_af16ade8e6061b163554d09b76e31f60a}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!PointsContainer@{PointsContainer}}
+\index{PointsContainer@{PointsContainer}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{PointsContainer}{PointsContainer}}
+{\footnotesize\ttfamily typedef Point\+Set\+Type\+::\+Points\+Container \mbox{\hyperlink{classva_ray_cast_base_widget_af16ade8e6061b163554d09b76e31f60a}{va\+Ray\+Cast\+Base\+Widget\+::\+Points\+Container}}}
+
+\mbox{\Hypertarget{classva_ray_cast_base_widget_a6130f20e5e1384f97a0e886e1b91360e}\label{classva_ray_cast_base_widget_a6130f20e5e1384f97a0e886e1b91360e}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!PointSetType@{PointSetType}}
+\index{PointSetType@{PointSetType}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{PointSetType}{PointSetType}}
+{\footnotesize\ttfamily typedef itk\+::\+Point\+Set$<$float, 3$>$ \mbox{\hyperlink{classva_ray_cast_base_widget_a6130f20e5e1384f97a0e886e1b91360e}{va\+Ray\+Cast\+Base\+Widget\+::\+Point\+Set\+Type}}}
+
+\mbox{\Hypertarget{classva_ray_cast_base_widget_a82ad896b52afe746dd7764519e56ae14}\label{classva_ray_cast_base_widget_a82ad896b52afe746dd7764519e56ae14}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!PointType@{PointType}}
+\index{PointType@{PointType}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{PointType}{PointType}}
+{\footnotesize\ttfamily typedef Point\+Set\+Type\+::\+Point\+Type \mbox{\hyperlink{classva_ray_cast_base_widget_a82ad896b52afe746dd7764519e56ae14}{va\+Ray\+Cast\+Base\+Widget\+::\+Point\+Type}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_a1461a3712224cc572131ea728273e119}\label{classva_ray_cast_base_widget_a1461a3712224cc572131ea728273e119}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{vaRayCastBaseWidget()}{vaRayCastBaseWidget()}}
+{\footnotesize\ttfamily va\+Ray\+Cast\+Base\+Widget\+::va\+Ray\+Cast\+Base\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_a1461a3712224cc572131ea728273e119_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_ae3adb6020d2858fe96945c22e9d40742}\label{classva_ray_cast_base_widget_ae3adb6020d2858fe96945c22e9d40742}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!````~vaRayCastBaseWidget@{$\sim$vaRayCastBaseWidget}}
+\index{````~vaRayCastBaseWidget@{$\sim$vaRayCastBaseWidget}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{$\sim$vaRayCastBaseWidget()}{~vaRayCastBaseWidget()}}
+{\footnotesize\ttfamily va\+Ray\+Cast\+Base\+Widget\+::$\sim$va\+Ray\+Cast\+Base\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_aafb13c4696f60a87211d662de9024e3b}\label{classva_ray_cast_base_widget_aafb13c4696f60a87211d662de9024e3b}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!BindRayCastBuffers@{BindRayCastBuffers}}
+\index{BindRayCastBuffers@{BindRayCastBuffers}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{BindRayCastBuffers()}{BindRayCastBuffers()}}
+{\footnotesize\ttfamily void va\+Ray\+Cast\+Base\+Widget\+::\+Bind\+Ray\+Cast\+Buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_aafb13c4696f60a87211d662de9024e3b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_aafb13c4696f60a87211d662de9024e3b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_a1078b1e2eca31cabfee5cd4e81fd0a17}\label{classva_ray_cast_base_widget_a1078b1e2eca31cabfee5cd4e81fd0a17}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!CreateGeometryHandle@{CreateGeometryHandle}}
+\index{CreateGeometryHandle@{CreateGeometryHandle}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{CreateGeometryHandle()}{CreateGeometryHandle()}}
+{\footnotesize\ttfamily void va\+Ray\+Cast\+Base\+Widget\+::\+Create\+Geometry\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_base_widget_a0c9da7941545243d68a8e6ed82087593}{va\+Base\+Widget}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_a1078b1e2eca31cabfee5cd4e81fd0a17_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_a73be78f5b9d1f9222ebecb870848ba86}\label{classva_ray_cast_base_widget_a73be78f5b9d1f9222ebecb870848ba86}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!GetPoint@{GetPoint}}
+\index{GetPoint@{GetPoint}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{GetPoint()}{GetPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classva_ray_cast_base_widget_a82ad896b52afe746dd7764519e56ae14}{va\+Ray\+Cast\+Base\+Widget\+::\+Point\+Type}} va\+Ray\+Cast\+Base\+Widget\+::\+Get\+Point (\begin{DoxyParamCaption}\item[{optix\+::float3}]{pp }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_a73be78f5b9d1f9222ebecb870848ba86_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_ad293de91d5ee55ef6cce1b734dbb4507}\label{classva_ray_cast_base_widget_ad293de91d5ee55ef6cce1b734dbb4507}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!GetRayCastProg@{GetRayCastProg}}
+\index{GetRayCastProg@{GetRayCastProg}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{GetRayCastProg()}{GetRayCastProg()}}
+{\footnotesize\ttfamily optix\+::\+Program va\+Ray\+Cast\+Base\+Widget\+::\+Get\+Ray\+Cast\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_ad293de91d5ee55ef6cce1b734dbb4507_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_ad293de91d5ee55ef6cce1b734dbb4507_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_ad3b8e02faa7ea3c7a91e5e33bf6851e5}\label{classva_ray_cast_base_widget_ad3b8e02faa7ea3c7a91e5e33bf6851e5}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!GetRayCastProgName@{GetRayCastProgName}}
+\index{GetRayCastProgName@{GetRayCastProgName}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{GetRayCastProgName()}{GetRayCastProgName()}}
+{\footnotesize\ttfamily std\+::string va\+Ray\+Cast\+Base\+Widget\+::\+Get\+Ray\+Cast\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_ray_cast_base_widget_a2a4ca3b0602a6a35bff4a8fbb191ddc7}\label{classva_ray_cast_base_widget_a2a4ca3b0602a6a35bff4a8fbb191ddc7}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!RegisterBuffers@{RegisterBuffers}}
+\index{RegisterBuffers@{RegisterBuffers}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{RegisterBuffers()}{RegisterBuffers()}}
+{\footnotesize\ttfamily void va\+Ray\+Cast\+Base\+Widget\+::\+Register\+Buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_a2a4ca3b0602a6a35bff4a8fbb191ddc7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_a302f909d3d36a8c32c675b357acec5e4}\label{classva_ray_cast_base_widget_a302f909d3d36a8c32c675b357acec5e4}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!SetContext@{SetContext}}
+\index{SetContext@{SetContext}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{SetContext()}{SetContext()}}
+{\footnotesize\ttfamily void va\+Ray\+Cast\+Base\+Widget\+::\+Set\+Context (\begin{DoxyParamCaption}\item[{optix\+::\+Context \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_base_widget_a9bb6221eebc377a73ed483499fb1f65e}{va\+Base\+Widget}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_a302f909d3d36a8c32c675b357acec5e4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_a9a2064bdc135be1fcc5b3339709d20ca}\label{classva_ray_cast_base_widget_a9a2064bdc135be1fcc5b3339709d20ca}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!SetHandleAsCallableProg@{SetHandleAsCallableProg}}
+\index{SetHandleAsCallableProg@{SetHandleAsCallableProg}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{SetHandleAsCallableProg()}{SetHandleAsCallableProg()}}
+{\footnotesize\ttfamily void va\+Ray\+Cast\+Base\+Widget\+::\+Set\+Handle\+As\+Callable\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_a9a2064bdc135be1fcc5b3339709d20ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_a9a2064bdc135be1fcc5b3339709d20ca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_a56a13f433ac6a44a1d5285a5dde8cafa}\label{classva_ray_cast_base_widget_a56a13f433ac6a44a1d5285a5dde8cafa}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!SetRayCastProgManually@{SetRayCastProgManually}}
+\index{SetRayCastProgManually@{SetRayCastProgManually}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{SetRayCastProgManually()}{SetRayCastProgManually()}}
+{\footnotesize\ttfamily void va\+Ray\+Cast\+Base\+Widget\+::\+Set\+Ray\+Cast\+Prog\+Manually (\begin{DoxyParamCaption}\item[{optix\+::\+Program}]{pr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classva_ray_cast_base_widget_a17b04f2b5f929d1b938d834fd4330e9a}\label{classva_ray_cast_base_widget_a17b04f2b5f929d1b938d834fd4330e9a}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!SetRayCastProgName@{SetRayCastProgName}}
+\index{SetRayCastProgName@{SetRayCastProgName}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{SetRayCastProgName()}{SetRayCastProgName()}}
+{\footnotesize\ttfamily void va\+Ray\+Cast\+Base\+Widget\+::\+Set\+Ray\+Cast\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_a17b04f2b5f929d1b938d834fd4330e9a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_a70d28202b3e67b0b2e48354a99e8172c}\label{classva_ray_cast_base_widget_a70d28202b3e67b0b2e48354a99e8172c}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!SetRayCastSize@{SetRayCastSize}}
+\index{SetRayCastSize@{SetRayCastSize}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{SetRayCastSize()}{SetRayCastSize()}}
+{\footnotesize\ttfamily void va\+Ray\+Cast\+Base\+Widget\+::\+Set\+Ray\+Cast\+Size (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_a70d28202b3e67b0b2e48354a99e8172c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_a7260bc27dfc0da713fe4a2d60f40f897}\label{classva_ray_cast_base_widget_a7260bc27dfc0da713fe4a2d60f40f897}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!UpdateHandlePosition@{UpdateHandlePosition}}
+\index{UpdateHandlePosition@{UpdateHandlePosition}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{UpdateHandlePosition()}{UpdateHandlePosition()}}
+{\footnotesize\ttfamily void va\+Ray\+Cast\+Base\+Widget\+::\+Update\+Handle\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_base_widget_a2329587011cbe408832615328472fb75}{va\+Base\+Widget}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_a7260bc27dfc0da713fe4a2d60f40f897_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_acf1a7cf9ad013e5f2d2a1698dbe43784}\label{classva_ray_cast_base_widget_acf1a7cf9ad013e5f2d2a1698dbe43784}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!UpdateRayCastBuffers@{UpdateRayCastBuffers}}
+\index{UpdateRayCastBuffers@{UpdateRayCastBuffers}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{UpdateRayCastBuffers()}{UpdateRayCastBuffers()}}
+{\footnotesize\ttfamily void va\+Ray\+Cast\+Base\+Widget\+::\+Update\+Ray\+Cast\+Buffers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classva_ray_cast_base_widget_af16ade8e6061b163554d09b76e31f60a}{Points\+Container}} $\ast$}]{f\+Points,  }\item[{\mbox{\hyperlink{classva_ray_cast_base_widget_af16ade8e6061b163554d09b76e31f60a}{Points\+Container}} $\ast$}]{m\+Points }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_acf1a7cf9ad013e5f2d2a1698dbe43784_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_acf1a7cf9ad013e5f2d2a1698dbe43784_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classva_ray_cast_base_widget_ad888c0cb86afce2848bb0e48f5ed23a4}\label{classva_ray_cast_base_widget_ad888c0cb86afce2848bb0e48f5ed23a4}} 
+\index{vaRayCastBaseWidget@{vaRayCastBaseWidget}!UpdateWidgetPos@{UpdateWidgetPos}}
+\index{UpdateWidgetPos@{UpdateWidgetPos}!vaRayCastBaseWidget@{vaRayCastBaseWidget}}
+\doxysubsubsection{\texorpdfstring{UpdateWidgetPos()}{UpdateWidgetPos()}}
+{\footnotesize\ttfamily void va\+Ray\+Cast\+Base\+Widget\+::\+Update\+Widget\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_ad888c0cb86afce2848bb0e48f5ed23a4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classva_ray_cast_base_widget_ad888c0cb86afce2848bb0e48f5ed23a4_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{va_ray_cast_base_widget_8h}{va\+Ray\+Cast\+Base\+Widget.\+h}}\item 
+src/\mbox{\hyperlink{va_ray_cast_base_widget_8cpp}{va\+Ray\+Cast\+Base\+Widget.\+cpp}}\end{DoxyCompactItemize}

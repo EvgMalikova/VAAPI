@@ -1,0 +1,175 @@
+\hypertarget{vec_8h}{}\doxysection{programs/vec.h File Reference}
+\label{vec_8h}\index{programs/vec.h@{programs/vec.h}}
+{\ttfamily \#include $<$cuda.\+h$>$}\newline
+{\ttfamily \#include $<$optix.\+h$>$}\newline
+{\ttfamily \#include $<$optixu/optixu\+\_\+math\+\_\+namespace.\+h$>$}\newline
+Include dependency graph for vec.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{vec_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vec_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structvec3f}{vec3f}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \mbox{\hyperlink{vec_8h_a55ee39277e56536714b7fa94cde1c8f2}{operator$\ast$}} (const \mbox{\hyperlink{structvec3f}{vec3f}} \&a, const \mbox{\hyperlink{structvec3f}{vec3f}} \&b)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \mbox{\hyperlink{vec_8h_a902310d98ae7777dd2967afd0f04c877}{operator/}} (const \mbox{\hyperlink{structvec3f}{vec3f}} \&a, const \mbox{\hyperlink{structvec3f}{vec3f}} \&b)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \mbox{\hyperlink{vec_8h_a2431aaec8810370300373183885b2895}{operator-\/}} (const \mbox{\hyperlink{structvec3f}{vec3f}} \&a, const \mbox{\hyperlink{structvec3f}{vec3f}} \&b)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \mbox{\hyperlink{vec_8h_a1457e5e3394e590c3960a3a2c1bd9d38}{operator-\/}} (const \mbox{\hyperlink{structvec3f}{vec3f}} \&a)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \mbox{\hyperlink{vec_8h_a2038732dbcd5c4757e96cbe824d391f3}{operator+}} (const \mbox{\hyperlink{structvec3f}{vec3f}} \&a, const \mbox{\hyperlink{structvec3f}{vec3f}} \&b)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \& \mbox{\hyperlink{vec_8h_ad64a3d0182fbd6fbe27c98f11679f99e}{operator+=}} (\mbox{\hyperlink{structvec3f}{vec3f}} \&a, const \mbox{\hyperlink{structvec3f}{vec3f}} \&b)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ float \mbox{\hyperlink{vec_8h_a112c3fc947448633dc703779305dd9b9}{dot}} (const \mbox{\hyperlink{structvec3f}{vec3f}} \&a, const \mbox{\hyperlink{structvec3f}{vec3f}} \&b)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \mbox{\hyperlink{vec_8h_ac6b6b8e6dd1eaad02e16449161c81eb7}{cross}} (const \mbox{\hyperlink{structvec3f}{vec3f}} \&a, const \mbox{\hyperlink{structvec3f}{vec3f}} \&b)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \mbox{\hyperlink{vec_8h_a34eb5bc6d1372bbb3963676e0c2424da}{normalize}} (const \mbox{\hyperlink{structvec3f}{vec3f}} \&v)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \mbox{\hyperlink{vec_8h_a264e1de6e327f97222be012a0a9d5f27}{unit\+\_\+vector}} (const \mbox{\hyperlink{structvec3f}{vec3f}} \&v)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \mbox{\hyperlink{vec_8h_a71a3e0a199bb5bf56b865cdb8e20d16c}{abs}} (const \mbox{\hyperlink{structvec3f}{vec3f}} \&v)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} \mbox{\hyperlink{vec_8h_a5e269f5e2c9e18b899e82eddad1a82f4}{mod}} (const \mbox{\hyperlink{structvec3f}{vec3f}} \&a, const \mbox{\hyperlink{structvec3f}{vec3f}} \&b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vec_8h_a71a3e0a199bb5bf56b865cdb8e20d16c}\label{vec_8h_a71a3e0a199bb5bf56b865cdb8e20d16c}} 
+\index{vec.h@{vec.h}!abs@{abs}}
+\index{abs@{abs}!vec.h@{vec.h}}
+\doxysubsubsection{\texorpdfstring{abs()}{abs()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} abs (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+return absolute value of each component Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vec_8h_a71a3e0a199bb5bf56b865cdb8e20d16c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vec_8h_ac6b6b8e6dd1eaad02e16449161c81eb7}\label{vec_8h_ac6b6b8e6dd1eaad02e16449161c81eb7}} 
+\index{vec.h@{vec.h}!cross@{cross}}
+\index{cross@{cross}!vec.h@{vec.h}}
+\doxysubsubsection{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} cross (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{vec_8h_a112c3fc947448633dc703779305dd9b9}\label{vec_8h_a112c3fc947448633dc703779305dd9b9}} 
+\index{vec.h@{vec.h}!dot@{dot}}
+\index{dot@{dot}!vec.h@{vec.h}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ float dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vec_8h_a112c3fc947448633dc703779305dd9b9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vec_8h_a5e269f5e2c9e18b899e82eddad1a82f4}\label{vec_8h_a5e269f5e2c9e18b899e82eddad1a82f4}} 
+\index{vec.h@{vec.h}!mod@{mod}}
+\index{mod@{mod}!vec.h@{vec.h}}
+\doxysubsubsection{\texorpdfstring{mod()}{mod()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} mod (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vec_8h_a5e269f5e2c9e18b899e82eddad1a82f4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vec_8h_a34eb5bc6d1372bbb3963676e0c2424da}\label{vec_8h_a34eb5bc6d1372bbb3963676e0c2424da}} 
+\index{vec.h@{vec.h}!normalize@{normalize}}
+\index{normalize@{normalize}!vec.h@{vec.h}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} normalize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{vec_8h_a34eb5bc6d1372bbb3963676e0c2424da_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vec_8h_a34eb5bc6d1372bbb3963676e0c2424da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vec_8h_a55ee39277e56536714b7fa94cde1c8f2}\label{vec_8h_a55ee39277e56536714b7fa94cde1c8f2}} 
+\index{vec.h@{vec.h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!vec.h@{vec.h}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{vec_8h_a2038732dbcd5c4757e96cbe824d391f3}\label{vec_8h_a2038732dbcd5c4757e96cbe824d391f3}} 
+\index{vec.h@{vec.h}!operator+@{operator+}}
+\index{operator+@{operator+}!vec.h@{vec.h}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{vec_8h_ad64a3d0182fbd6fbe27c98f11679f99e}\label{vec_8h_ad64a3d0182fbd6fbe27c98f11679f99e}} 
+\index{vec.h@{vec.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!vec.h@{vec.h}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}}\& operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvec3f}{vec3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{vec_8h_a1457e5e3394e590c3960a3a2c1bd9d38}\label{vec_8h_a1457e5e3394e590c3960a3a2c1bd9d38}} 
+\index{vec.h@{vec.h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!vec.h@{vec.h}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{vec_8h_a2431aaec8810370300373183885b2895}\label{vec_8h_a2431aaec8810370300373183885b2895}} 
+\index{vec.h@{vec.h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!vec.h@{vec.h}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{vec_8h_a902310d98ae7777dd2967afd0f04c877}\label{vec_8h_a902310d98ae7777dd2967afd0f04c877}} 
+\index{vec.h@{vec.h}!operator/@{operator/}}
+\index{operator/@{operator/}!vec.h@{vec.h}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{vec_8h_a264e1de6e327f97222be012a0a9d5f27}\label{vec_8h_a264e1de6e327f97222be012a0a9d5f27}} 
+\index{vec.h@{vec.h}!unit\_vector@{unit\_vector}}
+\index{unit\_vector@{unit\_vector}!vec.h@{vec.h}}
+\doxysubsubsection{\texorpdfstring{unit\_vector()}{unit\_vector()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \mbox{\hyperlink{structvec3f}{vec3f}} unit\+\_\+vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvec3f}{vec3f}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{vec_8h_a264e1de6e327f97222be012a0a9d5f27_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{vec_8h_a264e1de6e327f97222be012a0a9d5f27_icgraph}
+\end{center}
+\end{figure}

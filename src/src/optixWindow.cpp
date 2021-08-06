@@ -248,6 +248,8 @@ bool BasicRenderWindowInteractor::SetUp()
 {
     if (m_window != nullptr)//&&(m_window.isValid())
     {
+        //std::cout << "DONE WITH SCENE" << std::endl;
+
         m_window->Update();
         if (m_window->isValid()) { //successfully created
             //TODO other staff with loop
@@ -256,17 +258,17 @@ bool BasicRenderWindowInteractor::SetUp()
 
             //Basic procedure that inits everything
             m_window->GetRenderer()->SetUpRenderer();//start initialisation of all openGL and OpenAL procedures and rendering
+           // std::cout << "Renderer" << std::endl;
+            /*  if (m_window->createScene())
+              {
+                  glfwTerminate();
+                  //m_failed = true;
+                  return;
+              }*/
 
-         /*  if (m_window->createScene())
-           {
-               glfwTerminate();
-               //m_failed = true;
-               return;
-           }*/
-
-           //currently not set
-            //https://stackoverflow.com/questions/7676971/pointing-to-a-function-that-is-a-class-member-glfw-setkeycallback
-            //glfwSetKeyCallback(window, this->keyCallback);
+              //currently not set
+               //https://stackoverflow.com/questions/7676971/pointing-to-a-function-that-is-a-class-member-glfw-setkeycallback
+               //glfwSetKeyCallback(window, this->keyCallback);
 
             return true;
         }
@@ -375,27 +377,30 @@ void RenderWindowInteractor::guiSoundRenderingProc()
 {
     std::cout << "Prepare for registering " << std::endl;
     int w, h;
-    //    m_window->GetRenderer()->GetAuditoryDims(w, h);
+    m_window->GetRenderer()->GetAuditoryDims(w, h);
     if (GetWidget()->isRayCast()) {
-        dynamic_cast<vaRayCastBaseWidget*>(GetWidget())->SetRayCastSize(w, h);
+        std::dynamic_pointer_cast<vaRayCastBaseWidget>(GetWidget())->SetRayCastSize(w, h);
     }
 
     for (int i = 0; i < m_window->GetRenderer()->GetNumOfActors(); i++) {
-        vaBasicActor* a = m_window->GetRenderer()->GetActor(i);
+        std::shared_ptr<vaBasicActor> a = m_window->GetRenderer()->GetActor(i);
         //a->PrintInfo();  - works
-    //    a->SetAuditoryModel();
+        a->SetAuditoryModel();
     }
     std::cout << "auditory model is set" << std::endl;
     //TODO: now context should be launched
-   // m_window->GetRenderer()->LaunchAuditoryContext();
+    m_window->GetRenderer()->LaunchAuditoryContext();
     //change to next node to make sure we do it only once
 
     //GEt sound Buffer
+    m_window->GetRenderer()->UpdateAudioBuffer();  //compute auditory Rays
+
+    m_window->GetRenderer()->RenderAudio();
 
     //---------------------
     std::cout << "START registering " << std::endl;
     if (GetWidget()->isRegistration()) {
-        dynamic_cast<vaRayCastBaseWidget*>(GetWidget())->RegisterBuffers();
+        std::dynamic_pointer_cast<vaRayCastBaseWidget>(GetWidget())->RegisterBuffers();
     }
     //GetWidget()
 

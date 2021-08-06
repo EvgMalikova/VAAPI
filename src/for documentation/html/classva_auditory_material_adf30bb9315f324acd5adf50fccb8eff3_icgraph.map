@@ -1,0 +1,9 @@
+<map id="vaAuditoryMaterial::SetClosestHitProgName" name="vaAuditoryMaterial::SetClosestHitProgName">
+<area shape="rect" id="node1" title=" " alt="" coords="435,99,605,141"/>
+<area shape="rect" id="node2" href="$class_lambertian.html#a7c63cf1adc4cf85a7ef7a25eb31b4924" title=" " alt="" coords="225,5,366,32"/>
+<area shape="rect" id="node3" href="$classva_basic_material.html#a51969ae6a9956f0656bb675538542ad0" title=" " alt="" coords="211,56,379,83"/>
+<area shape="rect" id="node4" href="$classva_e_a_volume.html#a09402d7b9647c321c54dced86ead9431" title=" " alt="" coords="220,107,371,133"/>
+<area shape="rect" id="node5" href="$class_s_d_f_material2.html#a66baa55f099c36e49785e59d2dffad6d" title=" " alt="" coords="217,157,373,184"/>
+<area shape="rect" id="node7" href="$class_s_d_f_audio_ray_trace_material.html#adc50aaeea98a87521a18a69224b5c423" title=" " alt="" coords="204,209,387,250"/>
+<area shape="rect" id="node6" href="$class_s_d_f_material2.html#aeb6574eb67cdc9a6c52b8a44b40eb02e" title=" " alt="" coords="5,157,156,184"/>
+</map>

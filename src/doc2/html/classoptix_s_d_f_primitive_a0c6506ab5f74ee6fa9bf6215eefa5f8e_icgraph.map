@@ -1,0 +1,10 @@
+<map id="optixSDFPrimitive::SetRadius" name="optixSDFPrimitive::SetRadius">
+<area shape="rect" id="node1" title=" " alt="" coords="245,181,379,223"/>
+<area shape="rect" id="node2" href="$classoptix_s_d_f_primitive.html#a055f160d6ecb9bdc7bb49a605e0bb8b9" title=" " alt="" coords="35,5,168,47"/>
+<area shape="rect" id="node3" href="$classoptix_s_d_f_box.html#ae93f41ac27ef78b781a64ea09a5d1045" title=" " alt="" coords="23,71,180,98"/>
+<area shape="rect" id="node4" href="$classsdf_microsturcture.html#aee86dd0475b49d115bf7dec30159c870" title=" " alt="" coords="36,123,167,164"/>
+<area shape="rect" id="node5" href="$classoptix_s_d_f_sphere.html#a04888730372a3009bf248237c9fcac41" title=" " alt="" coords="5,189,197,215"/>
+<area shape="rect" id="node6" href="$classoptix_s_d_f_torus.html#a4a444d08d9fc5dd476697478efbddc6f" title=" " alt="" coords="10,239,193,266"/>
+<area shape="rect" id="node7" href="$classoptix_s_d_f_hand.html#a2b4e6337379a00f5526c7404be648aa4" title=" " alt="" coords="11,290,192,317"/>
+<area shape="rect" id="node8" href="$classsdf_texture.html#acf500b78fc2c909fbcf299cf6cec6eff" title=" " alt="" coords="25,341,178,367"/>
+</map>

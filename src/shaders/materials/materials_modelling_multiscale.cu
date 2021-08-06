@@ -36,6 +36,10 @@ rtDeclareVariable(float3, sysCameraPosition, , );
 
 typedef rtCallableProgramId<float(float3, primParamDesc)> callM;
 rtDeclareVariable(callM, evalF, , );
+
+rtDeclareVariable(float3, sCell1, , );
+rtDeclareVariable(float3, sCell2, , );
+rtDeclareVariable(float3, sCell3, , );
 /*
 For heterogeneous objects
 */
@@ -84,6 +88,21 @@ RT_CALLABLE_PROGRAM  float eval3(float3 x, primParamDesc descPrim)
     float rad3 = descPrim.rad[2];
 
     f = sdfPrim3(x, pos1, pos2, pos3, rad1, rad2, rad3);//length(x - pos1) - rad1; //sdfPrim1(x, pos1, pos2, rad1, rad2);
+    return f;
+}
+RT_CALLABLE_PROGRAM  float eval5(float3 x, primParamDesc descPrim)
+{
+    int type = descPrim.type;
+    float f = 10000.0;
+    float3 pos1 = descPrim.pos[0];
+    float3 pos2 = descPrim.pos[1];
+    float3 pos3 = descPrim.pos[2];
+    float3 pos4 = descPrim.pos[3];
+
+    float rad1 = descPrim.rad[0];
+    float rad2 = descPrim.rad[1];
+
+    f = sdfPrim5(x, pos1, pos2, pos3, pos4, rad1, rad2);//length(x - pos1) - rad1; //sdfPrim1(x, pos1, pos2, rad1, rad2);
     return f;
 }
 
@@ -189,8 +208,8 @@ RT_CALLABLE_PROGRAM float3 GetColorBlend(float3 x, primParamDesc desc)
     float3 col2 = transfer_function(desc.types[1], d);
     float3 col3 = transfer_function(desc.types[2], d);
 
-    float3 col11 = InterpolateColorRad(x, desc.pos[0], desc.pos[1], desc.rad[0], desc.rad[1], col1, col2);
-    float3 col12 = InterpolateColorRad(x, desc.pos[0], desc.pos[2], desc.rad[0], desc.rad[2], col1, col3);
+    float3 col11 = InterpolateColorRad(x, desc.pos[0], desc.pos[1], desc.rad[0] / 2, desc.rad[1] / 2, col1, col2);
+    float3 col12 = InterpolateColorRad(x, desc.pos[0], desc.pos[2], desc.rad[0] / 2, desc.rad[2] / 2, col1, col3);
 
     float3 dir = normalize(x - desc.pos[0]);
     float3 dir2 = normalize(desc.pos[1] - desc.pos[0]);
@@ -224,121 +243,342 @@ RT_CALLABLE_PROGRAM float3 GetColorBlend(float3 x, primParamDesc desc)
 
     float3 resCol = colB1;
 
-    if (d <= 1.0)
+    //block currently for cells
+    if (desc.type != 5) {
+        if (d <= 1.0)
+        {
+            float3 pos = desc.pos[0];
+            float3 pos2 = desc.pos[1];
+            float3 pos3 = desc.pos[2];
+            //first vibration vector in molecule
+            float3 vib2[3];
+            float3 vib3[3];
+
+            vib2[0] = (pos2 - pos) / 3.5 * -cos(TimeSound * 20)*(1 - d);
+            vib3[0] = (pos3 - pos) / 3.5 * (cos(TimeSound * 20))*(1 - d);
+
+            vib2[1] = (pos2 - pos) / 3.5 * sin(TimeSound * 20)*(1 - d);
+            vib3[1] = (pos3 - pos) / 3.5 * (sin(TimeSound * 20))*(1 - d);
+
+            float3 vib_dir = pos2 - 2 * pos + pos3;
+
+            vib2[2] = vib_dir / 3.5 * sin(TimeSound * 20)*(1 - d);
+            vib3[2] = vib_dir / 3.5 * (sin(TimeSound * 20))*(1 - d);
+
+            float d_min = 0;
+            int vib_min = 0;
+
+            int l = 0;
+            float dmax = 0;
+            float dmin = 100;
+            float dminprev = 100;
+
+            float num = 3;
+            if (MultiscaleParam <= 1)  num = 1;
+            else
+            {
+                if (MultiscaleParam <= 2)
+                    num = 2;
+            }
+
+            for (int i = 0; i < num; i++)
+            {
+                float3 pp3 = pos3 + vib3[i];
+                float3 pp2 = pos2 + vib2[i];
+                float d1 = length(x - pp2);
+                float d2 = length(x - pp3);
+
+                dmin = fminf(fminf(d1, dmin), d2);
+                if (dmin < dminprev) {
+                    l = i;
+                    dminprev = dmin;
+                }
+                dmax = fmaxf(fmaxf(d1, dmin), d2);
+            }
+            weights[0] = 0.1;
+            weights[1] = 0.1;
+            weights[2] = 0.1;
+            weights[l] = 1.5;
+
+            float3 cols[3];
+            for (int j = 0; j < num; j++)
+            {
+                cols[j] = make_float3(0);
+                //Get current position
+                float3 pp3 = pos3 + vib3[j];
+                float3 pp2 = pos2 + vib2[j];
+
+                float3 col21 = InterpolateColorRad(x, desc.pos[0], pp2, desc.rad[0] / 2, desc.rad[1] / 2, col1, vib_color[j]);
+                float3 col31 = InterpolateColorRad(x, desc.pos[0], pp3, desc.rad[0] / 2, desc.rad[2] / 2, col1, vib_color[j]);
+
+                //col31 = d*col3 + (1 - d)*vib_color[i] * 1.5;
+                //col21 = d*col2 + (1 - d)*vib_color[i] * 1.5;
+
+                float3 dir = normalize(x - desc.pos[0]);
+                float3 dir2 = normalize(pp2 - desc.pos[0]);
+                float3 dir3 = normalize(pp3 - desc.pos[0]);
+                cos1 = dot(dir2, dir);
+                float cos2 = dot(dir3, dir);
+                //float cos2=normalize(dot(desc.pos[2] - desc.pos[0], dir));
+                colB2 = (1 - cos2)*col31 + (1 - cos1)*col21;
+
+                bool interpolate = true;
+                float d1 = length(x - pp2);// -rad2 / 4;
+                float d2 = length(x - pp3);// -rad3 / 4;
+                if (d1 <= 0) {
+                    cols[j] = col21;
+                    interpolate = false;
+                }
+                if (d2 <= 0) {
+                    cols[j] = col31;
+                    interpolate = false;
+                }
+
+                if (interpolate) {
+                    float dt = length(pp2 - pp3);
+
+                    float dmin1 = fminf(d1, d2);
+                    cols[j] = d1 / dt*col31 + d2 / dt*col21;
+                    weights[j] = dmin / (dmin1*dmin1);
+                }
+                else {
+                    //d1 = length(x - pp2);
+                    //d2 = length(x - pp3);
+                    weights[j] = 1.0;// dmin / fminf(d1, d2);
+                }
+
+                // colB2 += colB21;
+                 //color += blendColor(d, x, theRay.direction, pos, pp2, pp3, r1, r2, r3, col1, col21, col31);
+            }
+            for (int j = 0; j < num; j++)
+            {
+                colB2 += weights[j] * cols[j];
+            }
+            colB2 /= 3.0;
+
+            resCol = d*colB1 + (1 - d)*colB2;
+        }
+    }
+    return resCol;
+}
+
+__device__
+inline float  plane(float3 p, float3 c, float3 n)
+{
+    return optix::dot(p - c, n);
+}
+__device__
+inline float3 getNormal(float3 v1, float3 v2, float3 v3, float3 c, float3 ct)
+{
+    float3 a = v3 - v2;
+    float3 b = v1 - v2;
+    float3 n = cross(a, b);
+
+    float3 nt = c - ct;
+
+    //normalize(n);
+    //normalize(nt);
+
+    n = n*dot(n, nt);
+
+    return normalize(n);
+}
+__device__
+inline float3 getCenter(float3 p1, float3 p2, float3 p3)
+
+{
+    float3 center = (p1 + p2 + p3) / 3.0;
+    return center;
+}
+
+__device__
+inline float3 getCenterTetra(float4 p0, float4 p1, float4 p2, float4 p3)
+
+{
+    float3 center = make_float3((p0 + p1 + p2 + p3) / 4.0);
+    return center;
+}
+
+RT_CALLABLE_PROGRAM float3 GetColorBlendCell(float3 x, primParamDesc desc)
+{
+    //---level of detail
+    float dist_cam = length(sysCameraPosition - (desc.pos[0] + desc.pos[1] + desc.pos[2]) / 3);
+    float d;
+    if (dist_cam < 20.0)
     {
-        float3 pos = desc.pos[0];
-        float3 pos2 = desc.pos[1];
-        float3 pos3 = desc.pos[2];
-        //first vibration vector in molecule
-        float3 vib2[3];
-        float3 vib3[3];
+        float interp = (dist_cam - 10) / 10.0;
+        d = optix::clamp(interp, 0.0, 1.0);
+    }
+    else d = 1;
 
-        vib2[0] = (pos2 - pos) / 3.5 * -cos(TimeSound * 20)*(1 - d);
-        vib3[0] = (pos3 - pos) / 3.5 * (cos(TimeSound * 20))*(1 - d);
+    float3 a = (desc.pos[0] + desc.pos[1] + desc.pos[2] + desc.pos[3]) / 4.0;
 
-        vib2[1] = (pos2 - pos) / 3.5 * sin(TimeSound * 20)*(1 - d);
-        vib3[1] = (pos3 - pos) / 3.5 * (sin(TimeSound * 20))*(1 - d);
+    //--------
+    float cel1Rad = 3.3 * 2;// 1.65 + 3.3;
+    float cel1Rad2 = 3.3;
 
-        float3 vib_dir = pos2 - 2 * pos + pos3;
+    float t = clamp(TimeSound, 2.0, 4.0) - 1.0;
+    float3 cCell3 = sCell3 - make_float3(3.3*t, 3.3, 3.3);
+    float3 cCell2 = sCell2 + make_float3(3.3*t, 3.3, 3.3*t);
+    float3 cCell1 = sCell1 - make_float3(3.3, 3.3*t, 3.3*t);
 
-        vib2[2] = vib_dir / 3.5 * sin(TimeSound * 20)*(1 - d);
-        vib3[2] = vib_dir / 3.5 * (sin(TimeSound * 20))*(1 - d);
+    int comp1 = 0;
+    float3 addCol = make_float3(0);
 
-        float d_min = 0;
-        int vib_min = 0;
+    if ((length(x - cCell1) - cel1Rad) <= 0)
+        addCol = make_float3(0.5, 0.5, 0);
+    if ((length(x - cCell2) - cel1Rad2) <= 0)
+        addCol = make_float3(0, 0.5, 0);
+    if ((length(x - cCell3) - cel1Rad) <= 0)
+        addCol = make_float3(0, 0, 0.5);
 
-        int l = 0;
-        float dmax = 0;
-        float dmin = 100;
-        float dminprev = 100;
+    addCol *= clamp(TimeSound, 0.0, 1.0f);
 
-        float num = 3;
-        if (MultiscaleParam <= 1)  num = 1;
-        else
-        {
-            if (MultiscaleParam <= 2)
-                num = 2;
-        }
+    //MultiscaleParam=d;
 
-        for (int i = 0; i < num; i++)
-        {
-            float3 pp3 = pos3 + vib3[i];
-            float3 pp2 = pos2 + vib2[i];
-            float d1 = length(x - pp2);
-            float d2 = length(x - pp3);
+    float3 colE1 = transfer_function(desc.types[0], d);
+    float3 colE2 = transfer_function(desc.types[1], d);
 
-            dmin = fminf(fminf(d1, dmin), d2);
-            if (dmin < dminprev) {
-                l = i;
-                dminprev = dmin;
-            }
-            dmax = fmaxf(fmaxf(d1, dmin), d2);
-        }
-        weights[0] = 0.1;
-        weights[1] = 0.1;
-        weights[2] = 0.1;
-        weights[l] = 1.5;
+    float3 v0 = desc.pos[0];
+    float3 v1 = desc.pos[1];
+    float3 v2 = desc.pos[2];
+    float3 v3 = desc.pos[3];
 
-        float3 cols[3];
-        for (int j = 0; j < num; j++)
-        {
-            cols[j] = make_float3(0);
-            //Get current position
-            float3 pp3 = pos3 + vib3[j];
-            float3 pp2 = pos2 + vib2[j];
+    float r = desc.rad[1];
+    float radBB = length(a - desc.pos[0]) + r / 2;
+    if (length(x - a) >= radBB) {
+        // col10 = colE1;
+        // col11 = colE1;
+        // col12 = colE1;
+        // col13 = colE1;
 
-            float3 col21 = InterpolateColorRad(x, desc.pos[0], pp2, desc.rad[0], desc.rad[1], col1, vib_color[j]);
-            float3 col31 = InterpolateColorRad(x, desc.pos[0], pp3, desc.rad[0], desc.rad[2], col1, vib_color[j]);
-
-            //col31 = d*col3 + (1 - d)*vib_color[i] * 1.5;
-            //col21 = d*col2 + (1 - d)*vib_color[i] * 1.5;
-
-            float3 dir = normalize(x - desc.pos[0]);
-            float3 dir2 = normalize(pp2 - desc.pos[0]);
-            float3 dir3 = normalize(pp3 - desc.pos[0]);
-            cos1 = dot(dir2, dir);
-            float cos2 = dot(dir3, dir);
-            //float cos2=normalize(dot(desc.pos[2] - desc.pos[0], dir));
-            colB2 = (1 - cos2)*col31 + (1 - cos1)*col21;
-
-            bool interpolate = true;
-            float d1 = length(x - pp2);// -rad2 / 4;
-            float d2 = length(x - pp3);// -rad3 / 4;
-            if (d1 <= 0) {
-                cols[j] = col21;
-                interpolate = false;
-            }
-            if (d2 <= 0) {
-                cols[j] = col31;
-                interpolate = false;
-            }
-
-            if (interpolate) {
-                float dt = length(pp2 - pp3);
-
-                float dmin1 = fminf(d1, d2);
-                cols[j] = d1 / dt*col31 + d2 / dt*col21;
-                weights[j] = dmin / (dmin1*dmin1);
-            }
-            else {
-                //d1 = length(x - pp2);
-                //d2 = length(x - pp3);
-                weights[j] = 1.0;// dmin / fminf(d1, d2);
-            }
-
-            // colB2 += colB21;
-             //color += blendColor(d, x, theRay.direction, pos, pp2, pp3, r1, r2, r3, col1, col21, col31);
-        }
-        for (int j = 0; j < num; j++)
-        {
-            colB2 += weights[j] * cols[j];
-        }
-        colB2 /= 3.0;
-
-        resCol = d*colB1 + (1 - d)*colB2;
+        return colE2;
     }
 
-    return resCol;
+    float3 p0 = v0 - x;
+    float d0 = length(p0);
+    float3 p1 = v1 - x;
+    float d1 = length(p1);
+    float3 p2 = v2 - x;
+    float d2 = length(p2);
+    float3 p3 = v3 - x;
+    float d3 = length(p3);
+
+    float dmin = min(d0, min(d1, (min(d2, d3))));
+    float3 col;
+    if (d0 == dmin)
+        col = InterpolateColorRad(x, a, desc.pos[0], desc.rad[0] / 2, desc.rad[1] / 2, colE1, colE2);
+    if (d1 == dmin)
+        col = InterpolateColorRad(x, a, desc.pos[1], desc.rad[0] / 2, desc.rad[1] / 2, colE1, colE2);
+
+    if (d2 == dmin)
+        col = InterpolateColorRad(x, a, desc.pos[2], desc.rad[0] / 2, desc.rad[1] / 2, colE1, colE2);
+
+    if (d3 == dmin)
+        col = InterpolateColorRad(x, a, desc.pos[3], desc.rad[0] / 2, desc.rad[1] / 2, colE1, colE2);
+
+    /*float3 col11 = InterpolateColorRad(x, a, desc.pos[1], desc.rad[0], desc.rad[1], colE1, colE2);
+    float3 col12 = InterpolateColorRad(x, a, desc.pos[2], desc.rad[0], desc.rad[1], colE1, colE2);
+    float3 col13 = InterpolateColorRad(x, a, desc.pos[3], desc.rad[0], desc.rad[1], colE1, colE2);
+    float3 col10 = InterpolateColorRad(x, a, desc.pos[0], desc.rad[0], desc.rad[1], colE1, colE2);
+    */
+
+    // float3 colB1 = (col11 / d1 + col10 / d0 + col13 / d3 + col12 / d2) / (d1 + d0 + d3 + d2);
+
+    return col + addCol;
+    /*
+    float3 c0 = getCenter(v0, v2, v1);
+    float3 c1 = getCenter(v0, v3, v2);
+    float3 c2 = getCenter(v1, v3, v0);
+    float3 c3 = getCenter(v1, v2, v3);
+
+    float3 ct = (v0 + v1 + v2 + v3) / 4.0f;
+    //float rad1 = length(ct - c0);
+    float rad = length(ct - v0);
+    //rad = (rad + rad1) / (2.0*t);
+    float3 n0 = getNormal(v0, v2, v1, c0, ct);
+    float3 n1 = getNormal(v0, v3, v2, c1, ct);
+    float3 n2 = getNormal(v1, v3, v0, c2, ct);
+    float3 n3 = getNormal(v1, v2, v3, c3, ct);
+
+    float3 col0 = computeColTriangle(x, v0, v1, v2, col10, col11, col12, n0);
+    float3 col1 = computeColTriangle(x, v0, v2, v3, col10, col12, col13, n1);
+    float3 col2 = computeColTriangle(x, v1, v0, v3, col11, col10, col13, n2);
+    float3 col3 = computeColTriangle(x, v1, v2, v3, col11, col12, col13, n3);
+
+    float d0 = abs(plane(x, c0, n0));
+    float d1 = abs(plane(x, c1, n1));
+    float d2 = abs(plane(x, c2, n2));
+    float d3 = abs(plane(x, c3, n3));
+
+    float dmax = max(d0, max(d1, (max(d2, d3))));
+    float dmin = min(d0, min(d1, (min(d2, d3))));
+
+    if (d0 >= 0.001) return col0;
+    if (d1 >= 0.001) return col1;
+    if (d2 >= 0.001) return col2;
+    if (d3 >= 0.001) return col3;
+    */
+
+    //    float3 colB1 = (col11 / d1 + col10 / d0 + col13 / d3 + col12 / d2) / (d1 + d0 + d3 + d2);
+
+      //  return colB1;
+
+        /*
+        float d01 = length(d0*n0 - d1*n1);
+        float d23 = length(d2*n2 - d3*n3);
+        float d03 = length(d0*n0 - d3*n3);
+
+        if (length )
+        float3  colB1 = col1*d0 / (d01)+col0*d1 / (d01);
+        float3 colB2 = col3*d2 / (d23)+col2*d3 / (d23);
+        colB1 = colB1*d3 / d03 + colB2*d0 / d03;
+        return colB1;*/
+        /* float3 p0 = v0 - x;
+        float d0 = length(p0 - n0);
+        float3 p1 = v1 - x;
+        float d1 = length(p1 - n1);
+        float3 p2 = v2 - x;
+        float d2 = length(p2 - n2);
+        float3 p3 = v3 - x;
+        float d3 = length(p3 - n3);
+
+        //  triangle interp
+        float dmax = max(d0, max(d1, (max(d2, d3))));
+
+            float3 colB1 = col1*(1 - d1 / dmax) + col0*(1 - d0 / dmax) + col2*(1 - d2 / dmax) + col3*(1 - d3 / dmax);
+            */
+            /*
+            float3 p0 = v0 - x;
+            float d0 = length(p0);
+            float3 p1 = v1 - x;
+            float d1 = length(p1);
+            float3 p2 = v2 - x;
+            float d2 = length(p2);
+            float3 p3 = v3 - x;
+            float d3 = length(p3);
+            float dmax = max(d0, max(d1, (max(d2, d3))));
+            float dmin = min(d0, min(d1, (min(d2, d3))));
+            float3 colB1 = make_float3(1, 1, 1);*/
+            /* if (d0 == 0) return col0;
+             if (d1 == 0) return col1;
+             if (d2 == 0) return col2;
+             if (d3 == 0) return col3;
+
+             // colB1 = col1*(dmin / d1) + col0*(dmin / d2) + col2*(dmin / d2) + col3*(dmin / d3);
+             // colB1 /= 4.0;
+
+             float3  colB1 = col1*d0 / (d1 + d0) + col0*d1 / (d1 + d0);
+             float3 colB2 = col3*d0 / (d3 + d0) + col0*d3 / (d3 + d0);
+             float3 colB3 = colB1*d1 / (d3 + d1) + colB2*d3 / (d3 + d1);
+
+             colB1 = col1*d2 / (d1 + d2) + col2*d1 / (d1 + d2);
+             colB2 = col3*d2 / (d3 + d2) + col2*d3 / (d3 + d2);
+             float3 colB4 = colB1*d1 / (d3 + d1) + colB2*d3 / (d3 + d1);
+
+             colB1 = (colB3 + colB4) / 2;
+
+             return colB3;*/
 }
 
 inline __device__  float4  GetColor(float3 x)

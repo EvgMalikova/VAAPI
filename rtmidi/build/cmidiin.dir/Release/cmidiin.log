@@ -1,0 +1,6 @@
+﻿  Building Custom Rule D:/nvidia/volume/VAAPI/rtmidi/CMakeLists.txt
+  CMake does not need to re-run because D:/nvidia/volume/VAAPI/rtmidi/build/CMakeFiles/generate.stamp is up-to-date.
+  cmidiin.cpp
+D:\nvidia\volume\VAAPI\rtmidi\tests\cmidiin.cpp(22): warning C4138: '*/' found outside of comment
+D:\nvidia\volume\VAAPI\rtmidi\tests\cmidiin.cpp(24): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+  cmidiin.vcxproj -> D:\nvidia\volume\VAAPI\rtmidi\build\tests\Release\cmidiin.exe

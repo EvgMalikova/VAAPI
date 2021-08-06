@@ -1,0 +1,329 @@
+\doxysection{va\+Auditory\+Material Class Reference}
+\label{classva_auditory_material}\index{vaAuditoryMaterial@{vaAuditoryMaterial}}
+
+
+A basic class for auditory material.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Abstract\+Material.\+h$>$}
+
+
+
+Inheritance diagram for va\+Auditory\+Material\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classva_auditory_material__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for va\+Auditory\+Material\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classva_auditory_material__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Update} ()
+\item 
+\textbf{ Material\+Desc} \textbf{ Get\+Type} ()
+\item 
+optix\+::\+Material \textbf{ Get\+Output} ()
+\item 
+\textbf{ va\+Auditory\+Material} ()
+\item 
+\textbf{ $\sim$va\+Auditory\+Material} ()
+\item 
+bool \textbf{ is\+Dynamic} ()
+\item 
+bool \textbf{ is\+Any\+Hit} ()
+\item 
+bool \textbf{ is\+Closest\+Hit} ()
+\item 
+bool \textbf{ is\+Auditory} ()
+\item 
+bool \textbf{ is\+Scalar} ()
+\item 
+void \textbf{ Set\+Dynamic\+Type\+On} ()
+\item 
+void \textbf{ Set\+Dynamic\+Type\+Off} ()
+\item 
+void \textbf{ Set\+Auditory\+Type\+On} ()
+\item 
+void \textbf{ Set\+Auditory\+Type\+Off} ()
+\item 
+void \textbf{ Set\+Closest\+Hit} (bool type)
+\item 
+void \textbf{ Set\+Any\+Hit} (bool type)
+\item 
+void \textbf{ Set\+Scalar\+Mode} (bool t)
+\item 
+std\+::string \textbf{ Get\+Closest\+Hit\+Prog\+Name} ()
+\item 
+std\+::string \textbf{ Get\+Any\+Hit\+Prog\+Name} ()
+\item 
+std\+::string \textbf{ Get\+Dynamic\+Prog\+Name} ()
+\item 
+void \textbf{ Set\+Closest\+Hit\+Prog\+Name} (std\+::string name)
+\item 
+void \textbf{ Set\+Any\+Hit\+Prog\+Name} (std\+::string name)
+\item 
+void \textbf{ Set\+Dynamic\+Prog\+Name} (std\+::string name)
+\item 
+std\+::string \textbf{ Get\+Prog\+Name} (int i)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Set\+Closest\+Hit\+Prog} (optix\+::\+Material m)
+\item 
+void \textbf{ Set\+Any\+Hit\+Prog} (optix\+::\+Material m)
+\item 
+void \textbf{ Set\+Dynamic\+Prog} (optix\+::\+Material m)
+\item 
+void \textbf{ Init\+Prog} (std\+::string prog, std\+::string file, std\+::string name)
+\item 
+virtual void \textbf{ Initialize} ()
+\item 
+void \textbf{ Apply\+Scalar\+Mode} ()
+\item 
+virtual void \textbf{ Set\+Material\+Parameters} ()
+\item 
+virtual void \textbf{ Init\+Lights} ()
+\item 
+void \textbf{ Set\+Lights} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ Basic\+Light $>$ \textbf{ m\+\_\+lights}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A basic class for auditory material. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classva_auditory_material_a7daec93817d07362c70bd87e26d742da}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{vaAuditoryMaterial()}
+{\footnotesize\ttfamily va\+Auditory\+Material\+::va\+Auditory\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_a2844b432c7157c52a37b0997b6d621d3}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!````~vaAuditoryMaterial@{$\sim$vaAuditoryMaterial}}
+\index{````~vaAuditoryMaterial@{$\sim$vaAuditoryMaterial}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{$\sim$vaAuditoryMaterial()}
+{\footnotesize\ttfamily va\+Auditory\+Material\+::$\sim$va\+Auditory\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classva_auditory_material_a08d15b51cf3fb53e1a7d9877dc92180c}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!ApplyScalarMode@{ApplyScalarMode}}
+\index{ApplyScalarMode@{ApplyScalarMode}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{ApplyScalarMode()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Apply\+Scalar\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\label{classva_auditory_material_a93255d97e588dbc548e6cca7480230b8}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!GetAnyHitProgName@{GetAnyHitProgName}}
+\index{GetAnyHitProgName@{GetAnyHitProgName}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{GetAnyHitProgName()}
+{\footnotesize\ttfamily std\+::string va\+Auditory\+Material\+::\+Get\+Any\+Hit\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_ad8c9d0d030a70117e7e071312ba7dee4}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!GetClosestHitProgName@{GetClosestHitProgName}}
+\index{GetClosestHitProgName@{GetClosestHitProgName}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{GetClosestHitProgName()}
+{\footnotesize\ttfamily std\+::string va\+Auditory\+Material\+::\+Get\+Closest\+Hit\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_a1964615f76e4de6aac5db20b2ee10036}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!GetDynamicProgName@{GetDynamicProgName}}
+\index{GetDynamicProgName@{GetDynamicProgName}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{GetDynamicProgName()}
+{\footnotesize\ttfamily std\+::string va\+Auditory\+Material\+::\+Get\+Dynamic\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_a15fadc1f1b43e4530f6b9a789f119c76}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{GetOutput()}
+{\footnotesize\ttfamily optix\+::\+Material va\+Auditory\+Material\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_afa8c88640dd437c36713a07a8800a188}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!GetProgName@{GetProgName}}
+\index{GetProgName@{GetProgName}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{GetProgName()}
+{\footnotesize\ttfamily std\+::string va\+Auditory\+Material\+::\+Get\+Prog\+Name (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_abbaed9f80e51941e5ec3c21dd16d5980}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!GetType@{GetType}}
+\index{GetType@{GetType}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{GetType()}
+{\footnotesize\ttfamily \textbf{ Material\+Desc} va\+Auditory\+Material\+::\+Get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_a59fd566e70f7892fc15c6b6fd80bd35a}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{Initialize()}
+{\footnotesize\ttfamily virtual void va\+Auditory\+Material\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classva_auditory_material_ac9226d5880ff8b47d788fbfffd9b4088}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!InitLights@{InitLights}}
+\index{InitLights@{InitLights}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{InitLights()}
+{\footnotesize\ttfamily virtual void va\+Auditory\+Material\+::\+Init\+Lights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classva_auditory_material_a7e00cf87ff3b2340f28e48f2fbe3ea9f}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!InitProg@{InitProg}}
+\index{InitProg@{InitProg}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{InitProg()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Init\+Prog (\begin{DoxyParamCaption}\item[{std\+::string}]{prog,  }\item[{std\+::string}]{file,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_auditory_material_a4aa0a817ee5ce7008c0de1e587b8426e}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!isAnyHit@{isAnyHit}}
+\index{isAnyHit@{isAnyHit}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{isAnyHit()}
+{\footnotesize\ttfamily bool va\+Auditory\+Material\+::is\+Any\+Hit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_a931ac46ff9ff7148332eb296f84d1e46}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!isAuditory@{isAuditory}}
+\index{isAuditory@{isAuditory}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{isAuditory()}
+{\footnotesize\ttfamily bool va\+Auditory\+Material\+::is\+Auditory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_a10efeb9e124c508daee19340554bed75}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!isClosestHit@{isClosestHit}}
+\index{isClosestHit@{isClosestHit}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{isClosestHit()}
+{\footnotesize\ttfamily bool va\+Auditory\+Material\+::is\+Closest\+Hit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_a75f47eb9fbf1d88d1e507974bd6e77b4}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!isDynamic@{isDynamic}}
+\index{isDynamic@{isDynamic}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{isDynamic()}
+{\footnotesize\ttfamily bool va\+Auditory\+Material\+::is\+Dynamic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_a9013c770f0ddbcbc3121036e7f230d3d}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!isScalar@{isScalar}}
+\index{isScalar@{isScalar}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{isScalar()}
+{\footnotesize\ttfamily bool va\+Auditory\+Material\+::is\+Scalar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_ae6e3939edb57aaecd2e4ec3063c6f616}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetAnyHit@{SetAnyHit}}
+\index{SetAnyHit@{SetAnyHit}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetAnyHit()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Any\+Hit (\begin{DoxyParamCaption}\item[{bool}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_abebe495b4fcd6189962b194352f39eef}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetAnyHitProg@{SetAnyHitProg}}
+\index{SetAnyHitProg@{SetAnyHitProg}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetAnyHitProg()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Any\+Hit\+Prog (\begin{DoxyParamCaption}\item[{optix\+::\+Material}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_auditory_material_a173886241a06021bb6f489b346b4a6c5}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetAnyHitProgName@{SetAnyHitProgName}}
+\index{SetAnyHitProgName@{SetAnyHitProgName}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetAnyHitProgName()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Any\+Hit\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\mbox{\label{classva_auditory_material_a57c699f4632bd11c5c2c0831cdcf462b}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetAuditoryTypeOff@{SetAuditoryTypeOff}}
+\index{SetAuditoryTypeOff@{SetAuditoryTypeOff}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetAuditoryTypeOff()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Auditory\+Type\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_ad35bb4315b796c6ae3e88d4ea4fff82a}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetAuditoryTypeOn@{SetAuditoryTypeOn}}
+\index{SetAuditoryTypeOn@{SetAuditoryTypeOn}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetAuditoryTypeOn()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Auditory\+Type\+On (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Defines material as auditory \mbox{\label{classva_auditory_material_a1bacfe1ee2cbd4a17fc299f5852e7bf1}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetClosestHit@{SetClosestHit}}
+\index{SetClosestHit@{SetClosestHit}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetClosestHit()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Closest\+Hit (\begin{DoxyParamCaption}\item[{bool}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_a9eb66833d2fb771cfdb924c04cd99295}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetClosestHitProg@{SetClosestHitProg}}
+\index{SetClosestHitProg@{SetClosestHitProg}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetClosestHitProg()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Closest\+Hit\+Prog (\begin{DoxyParamCaption}\item[{optix\+::\+Material}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_auditory_material_adf30bb9315f324acd5adf50fccb8eff3}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetClosestHitProgName@{SetClosestHitProgName}}
+\index{SetClosestHitProgName@{SetClosestHitProgName}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetClosestHitProgName()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Closest\+Hit\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\mbox{\label{classva_auditory_material_a90a1c22c9fe0dea686b57ed8377ec1e0}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetDynamicProg@{SetDynamicProg}}
+\index{SetDynamicProg@{SetDynamicProg}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetDynamicProg()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Dynamic\+Prog (\begin{DoxyParamCaption}\item[{optix\+::\+Material}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_auditory_material_aaa92dbca7ee990dd0e0d4cdf27bb24c2}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetDynamicProgName@{SetDynamicProgName}}
+\index{SetDynamicProgName@{SetDynamicProgName}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetDynamicProgName()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Dynamic\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\mbox{\label{classva_auditory_material_aebba8823d346332c78a10c17b97ef009}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetDynamicTypeOff@{SetDynamicTypeOff}}
+\index{SetDynamicTypeOff@{SetDynamicTypeOff}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetDynamicTypeOff()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Dynamic\+Type\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_ae0fe8464c89e43781a0348d7f0210643}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetDynamicTypeOn@{SetDynamicTypeOn}}
+\index{SetDynamicTypeOn@{SetDynamicTypeOn}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetDynamicTypeOn()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Dynamic\+Type\+On (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Defines material as dynamic \mbox{\label{classva_auditory_material_a8e56efb4fa650ea1967250601e66ad27}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetLights@{SetLights}}
+\index{SetLights@{SetLights}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetLights()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Lights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classva_auditory_material_a9b860091c807eb66930578cfe4d108d6}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetMaterialParameters@{SetMaterialParameters}}
+\index{SetMaterialParameters@{SetMaterialParameters}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetMaterialParameters()}
+{\footnotesize\ttfamily virtual void va\+Auditory\+Material\+::\+Set\+Material\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classva_auditory_material_a542013e43c8bf11bd990d09520bd9e26}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!SetScalarMode@{SetScalarMode}}
+\index{SetScalarMode@{SetScalarMode}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{SetScalarMode()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Set\+Scalar\+Mode (\begin{DoxyParamCaption}\item[{bool}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classva_auditory_material_a01ee816d1474fea493409dbae151e761}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!Update@{Update}}
+\index{Update@{Update}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{Update()}
+{\footnotesize\ttfamily void va\+Auditory\+Material\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classva_auditory_material_a1095ddebdfc538c1b630d2af0954ce37}} 
+\index{vaAuditoryMaterial@{vaAuditoryMaterial}!m\_lights@{m\_lights}}
+\index{m\_lights@{m\_lights}!vaAuditoryMaterial@{vaAuditoryMaterial}}
+\doxysubsubsection{m\_lights}
+{\footnotesize\ttfamily std\+::vector$<$Basic\+Light$>$ va\+Auditory\+Material\+::m\+\_\+lights\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ optix\+Abstract\+Material.\+h}\item 
+\textbf{ optix\+Abstract\+Material.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,349 @@
+\hypertarget{classsdf_c_p_k_mol}{}\doxysection{sdf\+C\+P\+K\+Mol Class Reference}
+\label{classsdf_c_p_k_mol}\index{sdfCPKMol@{sdfCPKMol}}
+
+
+Example class for simple molecular geometry.  
+
+
+
+
+{\ttfamily \#include $<$optix\+S\+D\+F\+Primitives.\+h$>$}
+
+
+
+Inheritance diagram for sdf\+C\+P\+K\+Mol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classsdf_c_p_k_mol__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sdf\+C\+P\+K\+Mol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classsdf_c_p_k_mol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsdf_c_p_k_mol_acd58326fe18763803b36677b2a9ca14b}{sdf\+C\+P\+K\+Mol}} ()
+\item 
+\mbox{\hyperlink{classsdf_c_p_k_mol_aa13ed602a20cc359c06fd147524e52f2}{$\sim$sdf\+C\+P\+K\+Mol}} ()
+\item 
+void \mbox{\hyperlink{classsdf_c_p_k_mol_a9e4d39ca58a114d1eff90ba3c10af1d9}{Set\+Radius}} (std\+::vector$<$ float $>$ rad)
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classsdf_c_p_k_mol_a2d0fabba3a225bfd52d88df8ae3bf520}{Get\+Radius}} ()
+\item 
+void \mbox{\hyperlink{classsdf_c_p_k_mol_a58dd4c76159371ce3938f2bf4ab05e16}{Set\+Center}} (std\+::vector$<$ optix\+::float3 $>$ c)
+\item 
+void \mbox{\hyperlink{classsdf_c_p_k_mol_ad9b345f0e56b85b5ba4a070fde937567}{Set\+Center}} (std\+::vector$<$ optix\+::float3 $>$ c, int frame)
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classsdf_c_p_k_mol_a18971a6d493e0129055936437a539073}{Get\+Center}} ()
+\item 
+void \mbox{\hyperlink{classsdf_c_p_k_mol_ad12652a5641f7760150eb109ad7a0b2f}{Simulate\+Dynamic}} (int num\+Frames, std\+::vector$<$ optix\+::float3 $>$ c)
+\item 
+void \mbox{\hyperlink{classsdf_c_p_k_mol_a3cde4e17ccf2803dd7670fcefb4b5234}{Set\+Type}} (std\+::vector$<$ int $>$ type)
+\item 
+virtual optix\+::\+Geometry \mbox{\hyperlink{classsdf_c_p_k_mol_ae56d7bc2a0d7cf74e6139e1a372ee1c4}{Get\+Output}} ()
+\item 
+void \mbox{\hyperlink{classsdf_c_p_k_mol_a919c249b5bf31cbeccd2e18825eb4915}{Set\+Scale}} (float sc)
+\item 
+void \mbox{\hyperlink{classsdf_c_p_k_mol_a072a5d9bac1bf00d0a2e0c2897d1af53}{Set\+Shift}} (optix\+::float3 sc)
+\item 
+optix\+::float2 \mbox{\hyperlink{classsdf_c_p_k_mol_abec0d6f7e4ba5653795fa7c057c5aac6}{Get\+Type\+Range}} ()
+\item 
+void \mbox{\hyperlink{classsdf_c_p_k_mol_ad87f32f825fdec89a97b08af6ce3294c}{Set\+Num\+Frames}} (int fr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classsdf_c_p_k_mol_aa6b452199dff1072bebcc9256903a1dd}{Create\+Geometry}} ()
+\item 
+virtual void \mbox{\hyperlink{classsdf_c_p_k_mol_ac314d0d441071f7a8c155681a6d8dff1}{Initialize}} ()
+\item 
+virtual void \mbox{\hyperlink{classsdf_c_p_k_mol_a31d18eb4162d8278d6783bb493714696}{Set\+Callable\+Prog}} ()
+\item 
+void \mbox{\hyperlink{classsdf_c_p_k_mol_af6703a1f8227388136b75ded646587ee}{Set\+Prim\+Number}} (int n)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classsdf_c_p_k_mol_af00dc22086ec64ea4998614b8c04dacb}{m\+\_\+scale}}
+\item 
+optix\+::float3 \mbox{\hyperlink{classsdf_c_p_k_mol_a05cd3152ebd015dc1ec06f60ce275200}{m\+\_\+shift}}
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classsdf_c_p_k_mol_a483a7da85af2b7b417be3f613170de14}{rad\+Buffer}}
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classsdf_c_p_k_mol_a4aee31d8c8546bb6ce98c893798c369e}{centers\+Buffer}}
+\item 
+optix\+::\+Buffer \mbox{\hyperlink{classsdf_c_p_k_mol_a4394ef50a9da7694655be92e16338f02}{type\+Buffer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Example class for simple molecular geometry. 
+
+Uses S\+DF sphere primitive to render molecule atoms. A simple C\+PK molecule representation 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsdf_c_p_k_mol_acd58326fe18763803b36677b2a9ca14b}\label{classsdf_c_p_k_mol_acd58326fe18763803b36677b2a9ca14b}} 
+\index{sdfCPKMol@{sdfCPKMol}!sdfCPKMol@{sdfCPKMol}}
+\index{sdfCPKMol@{sdfCPKMol}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{sdfCPKMol()}{sdfCPKMol()}}
+{\footnotesize\ttfamily sdf\+C\+P\+K\+Mol\+::sdf\+C\+P\+K\+Mol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsdf_c_p_k_mol_aa13ed602a20cc359c06fd147524e52f2}\label{classsdf_c_p_k_mol_aa13ed602a20cc359c06fd147524e52f2}} 
+\index{sdfCPKMol@{sdfCPKMol}!````~sdfCPKMol@{$\sim$sdfCPKMol}}
+\index{````~sdfCPKMol@{$\sim$sdfCPKMol}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{$\sim$sdfCPKMol()}{~sdfCPKMol()}}
+{\footnotesize\ttfamily sdf\+C\+P\+K\+Mol\+::$\sim$sdf\+C\+P\+K\+Mol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsdf_c_p_k_mol_aa6b452199dff1072bebcc9256903a1dd}\label{classsdf_c_p_k_mol_aa6b452199dff1072bebcc9256903a1dd}} 
+\index{sdfCPKMol@{sdfCPKMol}!CreateGeometry@{CreateGeometry}}
+\index{CreateGeometry@{CreateGeometry}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{CreateGeometry()}{CreateGeometry()}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Mol\+::\+Create\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_a7fbf3dfeda08ee137b3253522ef6a8e3}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_mol_aa6b452199dff1072bebcc9256903a1dd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_c_p_k_mol_a18971a6d493e0129055936437a539073}\label{classsdf_c_p_k_mol_a18971a6d493e0129055936437a539073}} 
+\index{sdfCPKMol@{sdfCPKMol}!GetCenter@{GetCenter}}
+\index{GetCenter@{GetCenter}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{GetCenter()}{GetCenter()}}
+{\footnotesize\ttfamily optix\+::\+Buffer sdf\+C\+P\+K\+Mol\+::\+Get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsdf_c_p_k_mol_ae56d7bc2a0d7cf74e6139e1a372ee1c4}\label{classsdf_c_p_k_mol_ae56d7bc2a0d7cf74e6139e1a372ee1c4}} 
+\index{sdfCPKMol@{sdfCPKMol}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily virtual optix\+::\+Geometry sdf\+C\+P\+K\+Mol\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_a8e7e0dc61bfa442a258725473c2fbc28}{optix\+S\+D\+F\+Geometry}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_mol_ae56d7bc2a0d7cf74e6139e1a372ee1c4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_c_p_k_mol_a2d0fabba3a225bfd52d88df8ae3bf520}\label{classsdf_c_p_k_mol_a2d0fabba3a225bfd52d88df8ae3bf520}} 
+\index{sdfCPKMol@{sdfCPKMol}!GetRadius@{GetRadius}}
+\index{GetRadius@{GetRadius}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{GetRadius()}{GetRadius()}}
+{\footnotesize\ttfamily optix\+::\+Buffer sdf\+C\+P\+K\+Mol\+::\+Get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsdf_c_p_k_mol_abec0d6f7e4ba5653795fa7c057c5aac6}\label{classsdf_c_p_k_mol_abec0d6f7e4ba5653795fa7c057c5aac6}} 
+\index{sdfCPKMol@{sdfCPKMol}!GetTypeRange@{GetTypeRange}}
+\index{GetTypeRange@{GetTypeRange}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{GetTypeRange()}{GetTypeRange()}}
+{\footnotesize\ttfamily optix\+::float2 sdf\+C\+P\+K\+Mol\+::\+Get\+Type\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsdf_c_p_k_mol_ac314d0d441071f7a8c155681a6d8dff1}\label{classsdf_c_p_k_mol_ac314d0d441071f7a8c155681a6d8dff1}} 
+\index{sdfCPKMol@{sdfCPKMol}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Mol\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+T\+O\+DO\+: potentialy read file with points here 
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_ae4487610c220bc743d042fda69d73a0b}{optix\+S\+D\+F\+Geometry}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classsdf_mol_ball_sticks_mol_ac91e5692f9b6b51cf9c481e9f5efaf61}{sdf\+Mol\+Ball\+Sticks\+Mol}}, \mbox{\hyperlink{classsdf_ball_sticks_mol_a9934c25ec6f352d6367b3c091ea4ea28}{sdf\+Ball\+Sticks\+Mol}}, and \mbox{\hyperlink{classsdf_c_p_k_dyn_mol_a9b46912317dfa09530fe6a6d3f792cfa}{sdf\+C\+P\+K\+Dyn\+Mol}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_mol_ac314d0d441071f7a8c155681a6d8dff1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_c_p_k_mol_a31d18eb4162d8278d6783bb493714696}\label{classsdf_c_p_k_mol_a31d18eb4162d8278d6783bb493714696}} 
+\index{sdfCPKMol@{sdfCPKMol}!SetCallableProg@{SetCallableProg}}
+\index{SetCallableProg@{SetCallableProg}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{SetCallableProg()}{SetCallableProg()}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Mol\+::\+Set\+Callable\+Prog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Is called for setting callable prog 
+
+Reimplemented from \mbox{\hyperlink{classoptix_s_d_f_geometry_a4a3e346306d620d5cd16d20a39141503}{optix\+S\+D\+F\+Geometry}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classsdf_ball_sticks_mol_ab8610c17278ce09adfa974266c3dec72}{sdf\+Ball\+Sticks\+Mol}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_mol_a31d18eb4162d8278d6783bb493714696_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_c_p_k_mol_a58dd4c76159371ce3938f2bf4ab05e16}\label{classsdf_c_p_k_mol_a58dd4c76159371ce3938f2bf4ab05e16}} 
+\index{sdfCPKMol@{sdfCPKMol}!SetCenter@{SetCenter}}
+\index{SetCenter@{SetCenter}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{SetCenter()}{SetCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Mol\+::\+Set\+Center (\begin{DoxyParamCaption}\item[{std\+::vector$<$ optix\+::float3 $>$}]{c }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_mol_a58dd4c76159371ce3938f2bf4ab05e16_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_c_p_k_mol_ad9b345f0e56b85b5ba4a070fde937567}\label{classsdf_c_p_k_mol_ad9b345f0e56b85b5ba4a070fde937567}} 
+\index{sdfCPKMol@{sdfCPKMol}!SetCenter@{SetCenter}}
+\index{SetCenter@{SetCenter}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{SetCenter()}{SetCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Mol\+::\+Set\+Center (\begin{DoxyParamCaption}\item[{std\+::vector$<$ optix\+::float3 $>$}]{c,  }\item[{int}]{frame }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_mol_ad9b345f0e56b85b5ba4a070fde937567_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_c_p_k_mol_ad87f32f825fdec89a97b08af6ce3294c}\label{classsdf_c_p_k_mol_ad87f32f825fdec89a97b08af6ce3294c}} 
+\index{sdfCPKMol@{sdfCPKMol}!SetNumFrames@{SetNumFrames}}
+\index{SetNumFrames@{SetNumFrames}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{SetNumFrames()}{SetNumFrames()}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Mol\+::\+Set\+Num\+Frames (\begin{DoxyParamCaption}\item[{int}]{fr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsdf_c_p_k_mol_af6703a1f8227388136b75ded646587ee}\label{classsdf_c_p_k_mol_af6703a1f8227388136b75ded646587ee}} 
+\index{sdfCPKMol@{sdfCPKMol}!SetPrimNumber@{SetPrimNumber}}
+\index{SetPrimNumber@{SetPrimNumber}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{SetPrimNumber()}{SetPrimNumber()}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Mol\+::\+Set\+Prim\+Number (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_mol_af6703a1f8227388136b75ded646587ee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_c_p_k_mol_a9e4d39ca58a114d1eff90ba3c10af1d9}\label{classsdf_c_p_k_mol_a9e4d39ca58a114d1eff90ba3c10af1d9}} 
+\index{sdfCPKMol@{sdfCPKMol}!SetRadius@{SetRadius}}
+\index{SetRadius@{SetRadius}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{SetRadius()}{SetRadius()}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Mol\+::\+Set\+Radius (\begin{DoxyParamCaption}\item[{std\+::vector$<$ float $>$}]{rad }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_mol_a9e4d39ca58a114d1eff90ba3c10af1d9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_c_p_k_mol_a919c249b5bf31cbeccd2e18825eb4915}\label{classsdf_c_p_k_mol_a919c249b5bf31cbeccd2e18825eb4915}} 
+\index{sdfCPKMol@{sdfCPKMol}!SetScale@{SetScale}}
+\index{SetScale@{SetScale}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Mol\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{float}]{sc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsdf_c_p_k_mol_a072a5d9bac1bf00d0a2e0c2897d1af53}\label{classsdf_c_p_k_mol_a072a5d9bac1bf00d0a2e0c2897d1af53}} 
+\index{sdfCPKMol@{sdfCPKMol}!SetShift@{SetShift}}
+\index{SetShift@{SetShift}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{SetShift()}{SetShift()}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Mol\+::\+Set\+Shift (\begin{DoxyParamCaption}\item[{optix\+::float3}]{sc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsdf_c_p_k_mol_a3cde4e17ccf2803dd7670fcefb4b5234}\label{classsdf_c_p_k_mol_a3cde4e17ccf2803dd7670fcefb4b5234}} 
+\index{sdfCPKMol@{sdfCPKMol}!SetType@{SetType}}
+\index{SetType@{SetType}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{SetType()}{SetType()}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Mol\+::\+Set\+Type (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{type }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_mol_a3cde4e17ccf2803dd7670fcefb4b5234_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsdf_c_p_k_mol_ad12652a5641f7760150eb109ad7a0b2f}\label{classsdf_c_p_k_mol_ad12652a5641f7760150eb109ad7a0b2f}} 
+\index{sdfCPKMol@{sdfCPKMol}!SimulateDynamic@{SimulateDynamic}}
+\index{SimulateDynamic@{SimulateDynamic}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{SimulateDynamic()}{SimulateDynamic()}}
+{\footnotesize\ttfamily void sdf\+C\+P\+K\+Mol\+::\+Simulate\+Dynamic (\begin{DoxyParamCaption}\item[{int}]{num\+Frames,  }\item[{std\+::vector$<$ optix\+::float3 $>$}]{c }\end{DoxyParamCaption})}
+
+v1 in the range 0 to 99Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsdf_c_p_k_mol_ad12652a5641f7760150eb109ad7a0b2f_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsdf_c_p_k_mol_a4aee31d8c8546bb6ce98c893798c369e}\label{classsdf_c_p_k_mol_a4aee31d8c8546bb6ce98c893798c369e}} 
+\index{sdfCPKMol@{sdfCPKMol}!centersBuffer@{centersBuffer}}
+\index{centersBuffer@{centersBuffer}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{centersBuffer}{centersBuffer}}
+{\footnotesize\ttfamily optix\+::\+Buffer sdf\+C\+P\+K\+Mol\+::centers\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsdf_c_p_k_mol_af00dc22086ec64ea4998614b8c04dacb}\label{classsdf_c_p_k_mol_af00dc22086ec64ea4998614b8c04dacb}} 
+\index{sdfCPKMol@{sdfCPKMol}!m\_scale@{m\_scale}}
+\index{m\_scale@{m\_scale}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{m\_scale}{m\_scale}}
+{\footnotesize\ttfamily float sdf\+C\+P\+K\+Mol\+::m\+\_\+scale\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsdf_c_p_k_mol_a05cd3152ebd015dc1ec06f60ce275200}\label{classsdf_c_p_k_mol_a05cd3152ebd015dc1ec06f60ce275200}} 
+\index{sdfCPKMol@{sdfCPKMol}!m\_shift@{m\_shift}}
+\index{m\_shift@{m\_shift}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{m\_shift}{m\_shift}}
+{\footnotesize\ttfamily optix\+::float3 sdf\+C\+P\+K\+Mol\+::m\+\_\+shift\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsdf_c_p_k_mol_a483a7da85af2b7b417be3f613170de14}\label{classsdf_c_p_k_mol_a483a7da85af2b7b417be3f613170de14}} 
+\index{sdfCPKMol@{sdfCPKMol}!radBuffer@{radBuffer}}
+\index{radBuffer@{radBuffer}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{radBuffer}{radBuffer}}
+{\footnotesize\ttfamily optix\+::\+Buffer sdf\+C\+P\+K\+Mol\+::rad\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsdf_c_p_k_mol_a4394ef50a9da7694655be92e16338f02}\label{classsdf_c_p_k_mol_a4394ef50a9da7694655be92e16338f02}} 
+\index{sdfCPKMol@{sdfCPKMol}!typeBuffer@{typeBuffer}}
+\index{typeBuffer@{typeBuffer}!sdfCPKMol@{sdfCPKMol}}
+\doxysubsubsection{\texorpdfstring{typeBuffer}{typeBuffer}}
+{\footnotesize\ttfamily optix\+::\+Buffer sdf\+C\+P\+K\+Mol\+::type\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+frep/src/\mbox{\hyperlink{optix_s_d_f_primitives_8h}{optix\+S\+D\+F\+Primitives.\+h}}\item 
+frep/src/\mbox{\hyperlink{optix_s_d_f_primitives_8cpp}{optix\+S\+D\+F\+Primitives.\+cpp}}\end{DoxyCompactItemize}

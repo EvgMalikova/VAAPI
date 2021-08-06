@@ -1,0 +1,286 @@
+\hypertarget{classoptical_model}{}\doxysection{optical\+Model Class Reference}
+\label{classoptical_model}\index{opticalModel@{opticalModel}}
+
+
+Actual binding through texture of the cuda output.  
+
+
+
+
+{\ttfamily \#include $<$optix\+Audio\+Optic.\+h$>$}
+
+
+
+Inheritance diagram for optical\+Model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classoptical_model__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for optical\+Model\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptical_model__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoptical_model_ad5860b7d8d53abd35c5d6bbce3669b70}{optical\+Model}} ()
+\item 
+\mbox{\hyperlink{classoptical_model_a8e6dd60cb12d3f6be83492cc8c27c7a0}{$\sim$optical\+Model}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptical_model_a54ede96686a346ff89d354fe22c50fda}{Init\+Open\+GL}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptical_model_ab2b930feaaead24c7640519f64ed3c7f}{Render}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptical_model_abe62f18aaeff4cd1fcac05c9f61abfcd}{Bind\+Buffer}} (optix\+::\+Context context)
+\item 
+virtual void \mbox{\hyperlink{classoptical_model_a80e3ce111bfb51ca7f57e998d971c904}{Update\+Optical\+Buffer}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptical_model_ac6b4dd1076034bd973d8cbd05383bd71}{Reshape}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classoptical_model_aa2d32e900012cdb3e3ac39229b75874c}{Modified}} ()
+\item 
+\mbox{\hyperlink{classoptical_model_ad5860b7d8d53abd35c5d6bbce3669b70}{optical\+Model}} ()
+\item 
+\mbox{\hyperlink{classoptical_model_a8e6dd60cb12d3f6be83492cc8c27c7a0}{$\sim$optical\+Model}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptical_model_aa30d6682e06cecfb05541d15ee4ce4e7}{Init}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptical_model_ab2b930feaaead24c7640519f64ed3c7f}{Render}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptical_model_ad4188a348f9c0b4d2354eef0d6f10b04}{Bind\+Buffer}} (optix\+::\+Context context)
+\item 
+virtual void \mbox{\hyperlink{classoptical_model_a1d7c939d8d66801a56f15ae93fbd86c8}{Update\+Buffer}} ()
+\item 
+virtual void \mbox{\hyperlink{classoptical_model_a0860dc50c13a5fad3062aad4e0b2582d}{Reshape}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classoptical_model_aa2d32e900012cdb3e3ac39229b75874c}{Modified}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classglsl_ray_cast}{glsl\+Ray\+Cast}} \mbox{\hyperlink{classoptical_model_a8ca75d3bd5420020b1b2ba40ca8b40e6}{glsl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \mbox{\hyperlink{classoptical_model_ae5de3097bd68588ff625712b5b028177}{m\+\_\+pbo\+Output\+Buffer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Actual binding through texture of the cuda output. 
+
+Brings together glsl shaders and open\+GL output buffer 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoptical_model_ad5860b7d8d53abd35c5d6bbce3669b70}\label{classoptical_model_ad5860b7d8d53abd35c5d6bbce3669b70}} 
+\index{opticalModel@{opticalModel}!opticalModel@{opticalModel}}
+\index{opticalModel@{opticalModel}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{opticalModel()}{opticalModel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily optical\+Model\+::optical\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptical_model_ad5860b7d8d53abd35c5d6bbce3669b70_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptical_model_a8e6dd60cb12d3f6be83492cc8c27c7a0}\label{classoptical_model_a8e6dd60cb12d3f6be83492cc8c27c7a0}} 
+\index{opticalModel@{opticalModel}!````~opticalModel@{$\sim$opticalModel}}
+\index{````~opticalModel@{$\sim$opticalModel}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{$\sim$opticalModel()}{~opticalModel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily optical\+Model\+::$\sim$optical\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptical_model_ad5860b7d8d53abd35c5d6bbce3669b70}\label{classoptical_model_ad5860b7d8d53abd35c5d6bbce3669b70}} 
+\index{opticalModel@{opticalModel}!opticalModel@{opticalModel}}
+\index{opticalModel@{opticalModel}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{opticalModel()}{opticalModel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily optical\+Model\+::optical\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptical_model_a8e6dd60cb12d3f6be83492cc8c27c7a0}\label{classoptical_model_a8e6dd60cb12d3f6be83492cc8c27c7a0}} 
+\index{opticalModel@{opticalModel}!````~opticalModel@{$\sim$opticalModel}}
+\index{````~opticalModel@{$\sim$opticalModel}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{$\sim$opticalModel()}{~opticalModel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily optical\+Model\+::$\sim$optical\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classoptical_model_ad4188a348f9c0b4d2354eef0d6f10b04}\label{classoptical_model_ad4188a348f9c0b4d2354eef0d6f10b04}} 
+\index{opticalModel@{opticalModel}!BindBuffer@{BindBuffer}}
+\index{BindBuffer@{BindBuffer}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{BindBuffer()}{BindBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void optical\+Model\+::\+Bind\+Buffer (\begin{DoxyParamCaption}\item[{optix\+::\+Context}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbasic_optical_model_ad16191cd6b50a7803cbd57fdd7a9d6a6}{basic\+Optical\+Model}}.
+
+\mbox{\Hypertarget{classoptical_model_abe62f18aaeff4cd1fcac05c9f61abfcd}\label{classoptical_model_abe62f18aaeff4cd1fcac05c9f61abfcd}} 
+\index{opticalModel@{opticalModel}!BindBuffer@{BindBuffer}}
+\index{BindBuffer@{BindBuffer}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{BindBuffer()}{BindBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void optical\+Model\+::\+Bind\+Buffer (\begin{DoxyParamCaption}\item[{optix\+::\+Context}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbasic_optical_model_ad16191cd6b50a7803cbd57fdd7a9d6a6}{basic\+Optical\+Model}}.
+
+\mbox{\Hypertarget{classoptical_model_aa30d6682e06cecfb05541d15ee4ce4e7}\label{classoptical_model_aa30d6682e06cecfb05541d15ee4ce4e7}} 
+\index{opticalModel@{opticalModel}!Init@{Init}}
+\index{Init@{Init}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void optical\+Model\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_model_a80796e5073c8ded7e73f3e6e4af71504}{va\+Basic\+Model}}.
+
+\mbox{\Hypertarget{classoptical_model_a54ede96686a346ff89d354fe22c50fda}\label{classoptical_model_a54ede96686a346ff89d354fe22c50fda}} 
+\index{opticalModel@{opticalModel}!InitOpenGL@{InitOpenGL}}
+\index{InitOpenGL@{InitOpenGL}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{InitOpenGL()}{InitOpenGL()}}
+{\footnotesize\ttfamily void optical\+Model\+::\+Init\+Open\+GL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbasic_optical_model_ae4f51c91f19288b70433e605b40b7c6d}{basic\+Optical\+Model}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptical_model_a54ede96686a346ff89d354fe22c50fda_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptical_model_aa2d32e900012cdb3e3ac39229b75874c}\label{classoptical_model_aa2d32e900012cdb3e3ac39229b75874c}} 
+\index{opticalModel@{opticalModel}!Modified@{Modified}}
+\index{Modified@{Modified}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{Modified()}{Modified()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void optical\+Model\+::\+Modified (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptical_model_aa2d32e900012cdb3e3ac39229b75874c}\label{classoptical_model_aa2d32e900012cdb3e3ac39229b75874c}} 
+\index{opticalModel@{opticalModel}!Modified@{Modified}}
+\index{Modified@{Modified}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{Modified()}{Modified()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void optical\+Model\+::\+Modified (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoptical_model_ab2b930feaaead24c7640519f64ed3c7f}\label{classoptical_model_ab2b930feaaead24c7640519f64ed3c7f}} 
+\index{opticalModel@{opticalModel}!Render@{Render}}
+\index{Render@{Render}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void optical\+Model\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbasic_optical_model_aed1efcaf88780966c9299aaef28b5d6b}{basic\+Optical\+Model}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{classoptical_model_ab2b930feaaead24c7640519f64ed3c7f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptical_model_ab2b930feaaead24c7640519f64ed3c7f}\label{classoptical_model_ab2b930feaaead24c7640519f64ed3c7f}} 
+\index{opticalModel@{opticalModel}!Render@{Render}}
+\index{Render@{Render}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void optical\+Model\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbasic_optical_model_aed1efcaf88780966c9299aaef28b5d6b}{basic\+Optical\+Model}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{classoptical_model_ab2b930feaaead24c7640519f64ed3c7f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptical_model_a0860dc50c13a5fad3062aad4e0b2582d}\label{classoptical_model_a0860dc50c13a5fad3062aad4e0b2582d}} 
+\index{opticalModel@{opticalModel}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{Reshape()}{Reshape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void optical\+Model\+::\+Reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbasic_optical_model_a59a87e40747eb6019ccd20e6afaf102a}{basic\+Optical\+Model}}.
+
+\mbox{\Hypertarget{classoptical_model_ac6b4dd1076034bd973d8cbd05383bd71}\label{classoptical_model_ac6b4dd1076034bd973d8cbd05383bd71}} 
+\index{opticalModel@{opticalModel}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{Reshape()}{Reshape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void optical\+Model\+::\+Reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbasic_optical_model_a59a87e40747eb6019ccd20e6afaf102a}{basic\+Optical\+Model}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{classoptical_model_ac6b4dd1076034bd973d8cbd05383bd71_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classoptical_model_a1d7c939d8d66801a56f15ae93fbd86c8}\label{classoptical_model_a1d7c939d8d66801a56f15ae93fbd86c8}} 
+\index{opticalModel@{opticalModel}!UpdateBuffer@{UpdateBuffer}}
+\index{UpdateBuffer@{UpdateBuffer}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{UpdateBuffer()}{UpdateBuffer()}}
+{\footnotesize\ttfamily void optical\+Model\+::\+Update\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classva_basic_model_ad5ff69a20c739b941ef58e48e6010353}{va\+Basic\+Model}}.
+
+\mbox{\Hypertarget{classoptical_model_a80e3ce111bfb51ca7f57e998d971c904}\label{classoptical_model_a80e3ce111bfb51ca7f57e998d971c904}} 
+\index{opticalModel@{opticalModel}!UpdateOpticalBuffer@{UpdateOpticalBuffer}}
+\index{UpdateOpticalBuffer@{UpdateOpticalBuffer}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{UpdateOpticalBuffer()}{UpdateOpticalBuffer()}}
+{\footnotesize\ttfamily void optical\+Model\+::\+Update\+Optical\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbasic_optical_model_a757a9a7e77fbe15b03fcd6021e2b0f41}{basic\+Optical\+Model}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classoptical_model_a80e3ce111bfb51ca7f57e998d971c904_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classoptical_model_a8ca75d3bd5420020b1b2ba40ca8b40e6}\label{classoptical_model_a8ca75d3bd5420020b1b2ba40ca8b40e6}} 
+\index{opticalModel@{opticalModel}!glsl@{glsl}}
+\index{glsl@{glsl}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{glsl}{glsl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classglsl_ray_cast}{glsl\+Ray\+Cast}} optical\+Model\+::glsl}
+
+\mbox{\Hypertarget{classoptical_model_ae5de3097bd68588ff625712b5b028177}\label{classoptical_model_ae5de3097bd68588ff625712b5b028177}} 
+\index{opticalModel@{opticalModel}!m\_pboOutputBuffer@{m\_pboOutputBuffer}}
+\index{m\_pboOutputBuffer@{m\_pboOutputBuffer}!opticalModel@{opticalModel}}
+\doxysubsubsection{\texorpdfstring{m\_pboOutputBuffer}{m\_pboOutputBuffer}}
+{\footnotesize\ttfamily G\+Luint optical\+Model\+::m\+\_\+pbo\+Output\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+Open\+GL variable 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/src/\mbox{\hyperlink{optix_audio_optic_8h}{optix\+Audio\+Optic.\+h}}\item 
+core/src/\mbox{\hyperlink{va_optic_model_8h}{va\+Optic\+Model.\+h}}\item 
+core/src/\mbox{\hyperlink{optix_audio_optic_8cpp}{optix\+Audio\+Optic.\+cpp}}\item 
+core/src/\mbox{\hyperlink{va_optic_model_8cpp}{va\+Optic\+Model.\+cpp}}\end{DoxyCompactItemize}

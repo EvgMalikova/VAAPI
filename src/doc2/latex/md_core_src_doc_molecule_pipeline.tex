@@ -1,0 +1,229 @@
+\hypertarget{md_core_src_doc_molecule_pipeline_autotoc_md8}{}\doxysection{Pipeline}\label{md_core_src_doc_molecule_pipeline_autotoc_md8}
+\hypertarget{md_core_src_doc_molecule_pipeline_autotoc_md9}{}\doxysection{Scene creation}\label{md_core_src_doc_molecule_pipeline_autotoc_md9}
+Below is the example of how such dynamic scene can be constructed with V\+A\+A\+PI 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} Scene\_create(vaRenderer\&ren)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{/*}}
+\DoxyCodeLine{\textcolor{comment}{    *Reading dynamic electron density and electrostatic potential fields data: initial and final state}}
+\DoxyCodeLine{\textcolor{comment}{    */}}
+\DoxyCodeLine{    \textcolor{comment}{/*<Basic file reader of scalar field data on structural grid, those output is an SDF Texture Sampler*/}}
+\DoxyCodeLine{    \textcolor{comment}{/* Reading electron density field, in the initial state, before geometry optimisation*/}}
+\DoxyCodeLine{    \mbox{\hyperlink{classsdf_texture_reader}{sdfTextureReader<float>}} readSDFTex1; }
+\DoxyCodeLine{    readSDFTex1.\mbox{\hyperlink{classtex_reader_af6e08e80678f006effcb6a2bf0de9bac}{SetContext}}(m.GetOutput());}
+\DoxyCodeLine{    readSDFTex1.\mbox{\hyperlink{classtex_reader_a7439702c99e2037d9c204941b3943ce2}{SetSize}}(139, 150, 160);}
+\DoxyCodeLine{    readSDFTex1.\mbox{\hyperlink{classsdf_texture_reader_acf968f12553363600c0cf306f8e8d45f}{SetThreshold}}(0.1);\textcolor{comment}{/*<defines field isosurface that will define the molecule boundary*/}}
+\DoxyCodeLine{    readSDFTex1.Setfile(\textcolor{stringliteral}{"ed1.txt"});}
+\DoxyCodeLine{    readSDFTex1.\mbox{\hyperlink{classoptix_reader_aede6a13fd818d3d3d39b9d1f122394d1}{Update}}();}
+\DoxyCodeLine{    \textcolor{comment}{/* Reading electron density field, in the final state, after geometry optimisation*/}}
+\DoxyCodeLine{    \mbox{\hyperlink{classsdf_texture_reader}{sdfTextureReader<float>}} readSDFTex2;}
+\DoxyCodeLine{    readSDFTex2.\mbox{\hyperlink{classtex_reader_af6e08e80678f006effcb6a2bf0de9bac}{SetContext}}(m.GetOutput());}
+\DoxyCodeLine{    readSDFTex2.\mbox{\hyperlink{classtex_reader_a7439702c99e2037d9c204941b3943ce2}{SetSize}}(138, 150, 160);}
+\DoxyCodeLine{    readSDFTex2.\mbox{\hyperlink{classsdf_texture_reader_acf968f12553363600c0cf306f8e8d45f}{SetThreshold}}(0.1);}
+\DoxyCodeLine{    readSDFTex2.Setfile(\textcolor{stringliteral}{"ed2.txt"});}
+\DoxyCodeLine{    readSDFTex2.\mbox{\hyperlink{classoptix_reader_aede6a13fd818d3d3d39b9d1f122394d1}{Update}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/*<Basic file reader of scalar field data on structural grid, those output is an optix Texture Sampler*/}}
+\DoxyCodeLine{    \textcolor{comment}{/* Reading electrostatic potential field, in the initial state, before geometry optimisation*/}}
+\DoxyCodeLine{    \mbox{\hyperlink{classtex_reader}{texReader<float>}} readR1;}
+\DoxyCodeLine{    readR1.\mbox{\hyperlink{classtex_reader_af6e08e80678f006effcb6a2bf0de9bac}{SetContext}}(m.GetOutput());}
+\DoxyCodeLine{    readR1.\mbox{\hyperlink{classtex_reader_a7439702c99e2037d9c204941b3943ce2}{SetSize}}(139, 150, 160);}
+\DoxyCodeLine{    readR1.Setfile(\textcolor{stringliteral}{"p1.txt"});}
+\DoxyCodeLine{    readR1.\mbox{\hyperlink{classoptix_reader_aede6a13fd818d3d3d39b9d1f122394d1}{Update}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/* Reading electrostatic potential field, in the final state, after geometry optimisation*/}}
+\DoxyCodeLine{    \mbox{\hyperlink{classtex_reader}{texReader<float>}} readR2; }
+\DoxyCodeLine{    readR2.\mbox{\hyperlink{classtex_reader_af6e08e80678f006effcb6a2bf0de9bac}{SetContext}}(m.GetOutput());}
+\DoxyCodeLine{    readR2.\mbox{\hyperlink{classtex_reader_a7439702c99e2037d9c204941b3943ce2}{SetSize}}(138, 150, 160);}
+\DoxyCodeLine{    readR2.Setfile(\textcolor{stringliteral}{"p2.txt"});}
+\DoxyCodeLine{    readR2.\mbox{\hyperlink{classoptix_reader_aede6a13fd818d3d3d39b9d1f122394d1}{Update}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/* Creating a dynamic sdf primitive on GPU, representing molecule boundary, described with electron density field}}
+\DoxyCodeLine{\textcolor{comment}{    *The primitive properties are automatically set to static/dynamic, depending on 1 or more input textures are}}
+\DoxyCodeLine{\textcolor{comment}{    *set with sdfTexture::SetTexture function}}
+\DoxyCodeLine{\textcolor{comment}{    */}}
+\DoxyCodeLine{    \mbox{\hyperlink{classsdf_texture}{sdfTexture}} tex; }
+\DoxyCodeLine{    tex.\mbox{\hyperlink{classoptix_s_d_f_geometry_a63249e61355407ec0d41d59d05e1838c}{SetContext}}(m.GetOutput());}
+\DoxyCodeLine{    tex.\mbox{\hyperlink{classsdf_texture_acf500b78fc2c909fbcf299cf6cec6eff}{SetTexture}}(readSDFTex1.\mbox{\hyperlink{classtex_reader_add4bc13d89aac2937792703f1e213534}{GetTexture}}(), readSDFTex1.\mbox{\hyperlink{classsdf_texture_reader_a0da1cc5f98f9ef9870ec3d2e0cccab9b}{GetParam}}());}
+\DoxyCodeLine{    tex.\mbox{\hyperlink{classsdf_texture_acf500b78fc2c909fbcf299cf6cec6eff}{SetTexture}}(readSDFTex2.\mbox{\hyperlink{classtex_reader_add4bc13d89aac2937792703f1e213534}{GetTexture}}(), readSDFTex1.\mbox{\hyperlink{classsdf_texture_reader_a0da1cc5f98f9ef9870ec3d2e0cccab9b}{GetParam}}());}
+\DoxyCodeLine{    tex.\mbox{\hyperlink{classoptix_s_d_f_geometry_af866243d89ffb3ed211d8e8408ee859b}{Update}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    BasicLight l1;}
+\DoxyCodeLine{    l1.color = optix::make\_float3(1.0);}
+\DoxyCodeLine{    l1.pos = optix::make\_float3(1.0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    BasicLight l2;}
+\DoxyCodeLine{    l2.color = optix::make\_float3(1.0);}
+\DoxyCodeLine{    l2.pos = optix::make\_float3(0, 0, 1.0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/*A general material, that implements rendering of two scalar fields in following modes:}}
+\DoxyCodeLine{\textcolor{comment}{    * -\/Emission-\/absorption optical model for Volume Rendering with transfer function that }}
+\DoxyCodeLine{\textcolor{comment}{    *  highlights the internal structure of both electron density and electrostaric potential fields}}
+\DoxyCodeLine{\textcolor{comment}{    *}}
+\DoxyCodeLine{\textcolor{comment}{    * -\/Colors geometry surface with mapped to color values of  electrostaric potential field}}
+\DoxyCodeLine{\textcolor{comment}{    * }}
+\DoxyCodeLine{\textcolor{comment}{    *The material property is automatically set to static/dynamic, depending on 1 or more input textures are}}
+\DoxyCodeLine{\textcolor{comment}{    *set with vaEAVolume::SetTexture function}}
+\DoxyCodeLine{\textcolor{comment}{    */}}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    vaEAVolume texMaterial; }
+\DoxyCodeLine{    texMaterial.SetContext(m.GetOutput());}
+\DoxyCodeLine{    texMaterial.AddLight(\&l1);}
+\DoxyCodeLine{    texMaterial.AddLight(\&l2);}
+\DoxyCodeLine{    texMaterial.SetSDFProg(tex.\mbox{\hyperlink{classoptix_s_d_f_geometry_a10ba3c6b42184e6a4010db7e8d69efb1}{GetCallableProg}}()); \textcolor{comment}{/*<Gets sdf primitive optix callable program reference for static/dynamic description of SDF field*/}}
+\DoxyCodeLine{    texMaterial.SetType(vaEAVolume::MaterialType::VOLUME); \textcolor{comment}{/*<Volume rendering mode*/}}
+\DoxyCodeLine{    texMaterial.SetTexture(readR1.\mbox{\hyperlink{classtex_reader_add4bc13d89aac2937792703f1e213534}{GetTexture}}());}
+\DoxyCodeLine{    texMaterial.SetTexture(readR2.\mbox{\hyperlink{classtex_reader_add4bc13d89aac2937792703f1e213534}{GetTexture}}());}
+\DoxyCodeLine{    texMaterial.Update();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/* Mapper, simillar to vtkMapper*/}}
+\DoxyCodeLine{    \mbox{\hyperlink{classva_mapper}{vaMapper}} map2;}
+\DoxyCodeLine{    map2.\mbox{\hyperlink{classva_basic_object_a084579231006f44f03b6834e723316b6}{SetContext}}(m.GetOutput());}
+\DoxyCodeLine{    map2.\mbox{\hyperlink{classva_mapper_a65b37ff5ddba831488d26e5c45ae60ee}{SetDescInput}}(tex.\mbox{\hyperlink{classoptix_s_d_f_geometry_a9005fe019545d2e93b76d6a84fa8e8bc}{GetOutputDesc}}());}
+\DoxyCodeLine{    map2.\mbox{\hyperlink{classva_mapper_aea3ef068acdb6b1b86f7b5ff8b8e38e2}{AddMaterial}}(texMaterial.GetOutput(), texMaterial.GetType());}
+\DoxyCodeLine{    map2.\mbox{\hyperlink{classva_mapper_a840064e5c0c1af154d46cdd9ec4f19ca}{Update}}();}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/*Actor, simillar to vtkActor*/}}
+\DoxyCodeLine{    optixSdfActor acSdf;}
+\DoxyCodeLine{    acSdf.SetContext(m.GetOutput()); }
+\DoxyCodeLine{    acSdf.AddMapper(\&map2);}
+\DoxyCodeLine{    acSdf.Update();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/*Add actor to the rendere*/}}
+\DoxyCodeLine{    ren.AddActor(\&acSdf);}
+\DoxyCodeLine{    \}}
+\end{DoxyCode}
+\hypertarget{md_core_src_doc_molecule_pipeline_autotoc_md10}{}\doxysection{Interface implementation for interactive/dynamic rendering}\label{md_core_src_doc_molecule_pipeline_autotoc_md10}
+The above scene is generated within the following main program 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main\_tutor(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int}  windowWidth = 512;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int}  windowHeight = 512;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{class_pinhole_camera}{PinholeCamera}} pinholeCamera; \textcolor{comment}{//creates basic camera}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    contextManager m;}
+\DoxyCodeLine{    m.Update();\textcolor{comment}{//creates context}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    vaRenderer ren;}
+\DoxyCodeLine{    ren.SetValid(m.GetValid());}
+\DoxyCodeLine{    ren.SetContext(m.GetOutput());}
+\DoxyCodeLine{}
+\DoxyCodeLine{    ren.SetOpticalDims(windowWidth, windowWidth);}
+\DoxyCodeLine{    ren.SetCamera(\&pinholeCamera);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{//set not dynamic}}
+\DoxyCodeLine{    ren.SetDynamic(\textcolor{keyword}{false});}
+\DoxyCodeLine{    ren.SetAuditory(\textcolor{keyword}{false});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{//window procedure}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    GLFW\_Window optixWindowProc;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    optixWindowProc.SetDim(windowWidth, windowHeight);}
+\DoxyCodeLine{    optixWindowProc.SetRenderer(\&ren);}
+\DoxyCodeLine{    optixWindowProc.SetContext(m.GetOutput()); \textcolor{comment}{//returns context}}
+\DoxyCodeLine{    optixWindowProc.SetCamera(\&pinholeCamera);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    RenderWindowInteractor iren; \textcolor{comment}{//TODO always check that basic still works}}
+\DoxyCodeLine{    iren.SetWindow(\&optixWindowProc);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"DONE WITH WINDOW"} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    }
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (iren.SetUp()) \textcolor{comment}{//everything is ok}}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} accumulation\_frame = 0; \textcolor{comment}{//for progressive rendering}}
+\DoxyCodeLine{       \textcolor{keywordflow}{try}}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{        Scene\_Create(ren);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{       \textcolor{comment}{/*}}
+\DoxyCodeLine{\textcolor{comment}{       * set callback data}}
+\DoxyCodeLine{\textcolor{comment}{       */}}
+\DoxyCodeLine{        Render::CallbackData cb = \{ (g\_app.m\_pinholeCamera).get(), \&(g\_app.ren), accumulation\_frame \};}
+\DoxyCodeLine{        glfwSetWindowUserPointer(optixWindowProc.GetOutput(), \&cb);}
+\DoxyCodeLine{        \textcolor{comment}{/* }}
+\DoxyCodeLine{\textcolor{comment}{        *set user defined key callback}}
+\DoxyCodeLine{\textcolor{comment}{        */}}
+\DoxyCodeLine{        iren.SetKeyCallback(keyCallback);}
+\DoxyCodeLine{        g\_app.Init(); \textcolor{comment}{//scene creation}}
+\DoxyCodeLine{                       \textcolor{comment}{// Main loop}}
+\DoxyCodeLine{        iren.Start();}
+\DoxyCodeLine{    \}}
+\end{DoxyCode}
+ Let us consider more in details the key\+Callback procedure. In the current implementation, the va\+Renderer can operate in the following modes, defined in \mbox{\hyperlink{classva_basic_renderer}{va\+Basic\+Renderer}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{enum} \mbox{\hyperlink{classva_basic_renderer_a9e30e278e6a5e518fba1ca4e9871cf9f}{vaBasicRenderer::RenderModes}} \{}
+\DoxyCodeLine{        INTERACTIVE\_CAMERA, \textcolor{comment}{/*<Mode by default. Rendering through defined camera with interactive manipulation}}
+\DoxyCodeLine{\textcolor{comment}{                            of its parameter (pan, zoom, etc.). In this mode the optix context launches rendering}}
+\DoxyCodeLine{\textcolor{comment}{                            of optical model. In this mode only scene geometry and optic materials are rendered.}}
+\DoxyCodeLine{\textcolor{comment}{                            See vaBasicRenderer::LaunchOpticContext() function*/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        COMPUTE\_SOUND, \textcolor{comment}{/*<Auditory ray-\/casting. In this mode the optix context launches rendering}}
+\DoxyCodeLine{\textcolor{comment}{                       of optical model. See vaBasicRenderer::LaunchAudioContext() function.}}
+\DoxyCodeLine{\textcolor{comment}{                       The result of procedure is the computed by ray-\/casting auditory properties}}
+\DoxyCodeLine{\textcolor{comment}{                       defined with scene geometry and auditory materials and configured on host OpenAL}}
+\DoxyCodeLine{\textcolor{comment}{                       auditory scene representation ready for playing  : set of sound sources,}}
+\DoxyCodeLine{\textcolor{comment}{                       sampled sound waves, configured HRTF and etc.}}
+\DoxyCodeLine{\textcolor{comment}{}}
+\DoxyCodeLine{\textcolor{comment}{                       If the following scene was computed, it would be automatically played if the RenderModes::PLAY\_ANIMATION}}
+\DoxyCodeLine{\textcolor{comment}{                       is activated}}
+\DoxyCodeLine{\textcolor{comment}{                       */}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        PLAY\_ANIMATION,  \textcolor{comment}{/*<Rendering of visual-\/auditory dynamic scene. */}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        INTERACTIVE\_WIDGET  \textcolor{comment}{/*<Interactive manipulation through assigned widget. The widgets are similar to VTK widgets and are used for}}
+\DoxyCodeLine{\textcolor{comment}{                            interactive definition of various optical/geometry/auditory parameters, that are considered once the renderer}}
+\DoxyCodeLine{\textcolor{comment}{                            */}}
+\DoxyCodeLine{    \};}
+\end{DoxyCode}
+
+
+To render the dynamic scene we just need to activate the va\+Basic\+Renderer\+::\+Render\+Modes\+::\+P\+L\+A\+Y\+\_\+\+A\+N\+I\+M\+A\+T\+I\+ON mode in the assigned key callback procedure below. The Render\+Window\+Interactor will read va\+Rendere modes and initiate according procedures of renderer to perfor visual/auditory or dynamic scene ray-\/casting.
+
+Below the example of key\+Callback(\+G\+L\+F\+Wwindow$\ast$ window, int key, int scancode, int action, int mods) procedure that gets renderer through Render\+::\+Callback\+Data.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{namespace }Render \{}
+\DoxyCodeLine{    \textcolor{keyword}{struct }CallbackData}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        vaRenderer* ren;}
+\DoxyCodeLine{      }
+\DoxyCodeLine{    \};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} keyCallback(GLFWwindow* window, \textcolor{keywordtype}{int} key, \textcolor{keywordtype}{int} scancode, \textcolor{keywordtype}{int} action, \textcolor{keywordtype}{int} mods)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} handled = \textcolor{keyword}{false};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (action == GLFW\_PRESS)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{switch} (key)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{case}(GLFW\_KEY\_S):}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            Render::CallbackData* cab = static\_cast<Render::CallbackData*>(glfwGetWindowUserPointer(window));}
+\DoxyCodeLine{            \textcolor{keywordflow}{if}(cab-\/>ren-\/>isDynamic())\{}
+\DoxyCodeLine{            std::cout << \textcolor{stringliteral}{"Playing the dynamic scene"} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{            cab-\/>ren-\/>SetMode(vaBasicRenderer::RenderModes::PLAY\_ANIMATION);}
+\DoxyCodeLine{            cab-\/>ren-\/>SetTime(0.0); \textcolor{comment}{/*<Set initial time to 0*/}}
+\DoxyCodeLine{            \textcolor{keywordflow}{break};}
+\DoxyCodeLine{            }
+\DoxyCodeLine{            }
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (!handled) \{}
+\DoxyCodeLine{        \textcolor{comment}{// forward key event to imgui}}
+\DoxyCodeLine{        ImGui\_ImplGlfw\_KeyCallback(window, key, scancode, action, mods);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ Dynamic rendering is presented in video ...
+
+The described above multisensory pip 

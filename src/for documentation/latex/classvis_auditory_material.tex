@@ -1,0 +1,410 @@
+\hypertarget{classvis_auditory_material}{}\doxysection{vis\+Auditory\+Material Class Reference}
+\label{classvis_auditory_material}\index{visAuditoryMaterial@{visAuditoryMaterial}}
+
+
+{\ttfamily \#include $<$optix\+Abstract\+Material.\+h$>$}
+
+
+
+Inheritance diagram for vis\+Auditory\+Material\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvis_auditory_material__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for vis\+Auditory\+Material\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classvis_auditory_material__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classvis_auditory_material_a810767a928d649c976c785cb76a7f46b}{Update}} ()
+\item 
+\mbox{\hyperlink{struct_material_desc}{Material\+Desc}} \mbox{\hyperlink{classvis_auditory_material_ad28559aac98bee615f7f5f886fe6dd8d}{Get\+Type}} ()
+\item 
+optix\+::\+Material \mbox{\hyperlink{classvis_auditory_material_a9d45f1bdf10bad74661ffb1e5ab302eb}{Get\+Output}} ()
+\item 
+\mbox{\hyperlink{classvis_auditory_material_afd4aa0577b5818c578f49e2ba34f223f}{vis\+Auditory\+Material}} ()
+\item 
+\mbox{\hyperlink{classvis_auditory_material_a34fddba5a5e7529aaeedf63677796363}{$\sim$vis\+Auditory\+Material}} ()
+\item 
+bool \mbox{\hyperlink{classvis_auditory_material_a9b6e88b6e6d94026158e7ce9af830c0a}{is\+Dynamic}} ()
+\item 
+bool \mbox{\hyperlink{classvis_auditory_material_aca45c2b49030252495694ecc52223817}{is\+Any\+Hit}} ()
+\item 
+bool \mbox{\hyperlink{classvis_auditory_material_a01f6a9d71954ea70c91d401e13bce9c0}{is\+Closest\+Hit}} ()
+\item 
+bool \mbox{\hyperlink{classvis_auditory_material_a8a9aca89506c8eb41cc8815bae2cdde3}{is\+Auditory}} ()
+\item 
+void \mbox{\hyperlink{classvis_auditory_material_a64a221381d4f57120193ee85411b9266}{Set\+Auditory\+Type\+On}} ()
+\item 
+void \mbox{\hyperlink{classvis_auditory_material_a42631c2f90c428c0ce2afd76ec9c65b8}{Set\+Auditory\+Type\+Off}} ()
+\item 
+void \mbox{\hyperlink{classvis_auditory_material_a475a4ca9af41d29cff6c0075d0ef4662}{Set\+Closest\+Hit}} (bool type)
+\item 
+void \mbox{\hyperlink{classvis_auditory_material_a00f420ae71aec819c2c300519e6d5d66}{Set\+Any\+Hit}} (bool type)
+\item 
+std\+::string \mbox{\hyperlink{classvis_auditory_material_a869e7a9e3a26f9fb74ce85ac4db5b2a4}{Get\+Closest\+Hit\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classvis_auditory_material_aa687a185e6096b3325344ae51d5df07b}{Get\+Any\+Hit\+Prog\+Name}} ()
+\item 
+std\+::string \mbox{\hyperlink{classvis_auditory_material_a321da35f069a42d9a16b2d9799db8bbc}{Get\+Dynamic\+Prog\+Name}} ()
+\item 
+void \mbox{\hyperlink{classvis_auditory_material_aaf37b1815e12597f736d92a62fc61c33}{Set\+Closest\+Hit\+Prog\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classvis_auditory_material_ac6718d9f3a13c327399fa5731faa352e}{Set\+Any\+Hit\+Prog\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classvis_auditory_material_abfff09f432b1e53f7ef142be2687d605}{Set\+Dynamic\+Prog\+Name}} (std\+::string name)
+\item 
+std\+::string \mbox{\hyperlink{classvis_auditory_material_accd20db6167614bca0b1260c05d75824}{Get\+Prog\+Name}} (int i)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classvis_auditory_material_a38df023a305282934e5c7c1f4ef34b22}{Set\+Closest\+Hit\+Prog}} (optix\+::\+Material m)
+\item 
+void \mbox{\hyperlink{classvis_auditory_material_a686ad6c4cbedb0564978c5c2e127d85c}{Set\+Any\+Hit\+Prog}} (optix\+::\+Material m)
+\item 
+void \mbox{\hyperlink{classvis_auditory_material_a9c099b4b47de0db5578e0c58d835562d}{Set\+Dynamic\+Prog}} (optix\+::\+Material m)
+\item 
+void \mbox{\hyperlink{classvis_auditory_material_afbd5257fcc62ec5cd15c63fe91ebae53}{Init\+Prog}} (std\+::string prog, std\+::string file, std\+::string name)
+\item 
+virtual void \mbox{\hyperlink{classvis_auditory_material_ac84d2dab8d53d18fca6a26f8ea50b3ed}{Initialize}} ()
+\item 
+virtual void \mbox{\hyperlink{classvis_auditory_material_a2bf912901ac3470a4c539c5ec4117f73}{Set\+Material\+Parameters}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classvis_auditory_material_afd4aa0577b5818c578f49e2ba34f223f}\label{classvis_auditory_material_afd4aa0577b5818c578f49e2ba34f223f}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!visAuditoryMaterial@{visAuditoryMaterial}}
+\index{visAuditoryMaterial@{visAuditoryMaterial}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{visAuditoryMaterial()}{visAuditoryMaterial()}}
+{\footnotesize\ttfamily vis\+Auditory\+Material\+::vis\+Auditory\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classvis_auditory_material_afd4aa0577b5818c578f49e2ba34f223f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvis_auditory_material_afd4aa0577b5818c578f49e2ba34f223f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_a34fddba5a5e7529aaeedf63677796363}\label{classvis_auditory_material_a34fddba5a5e7529aaeedf63677796363}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!````~visAuditoryMaterial@{$\sim$visAuditoryMaterial}}
+\index{````~visAuditoryMaterial@{$\sim$visAuditoryMaterial}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{$\sim$visAuditoryMaterial()}{~visAuditoryMaterial()}}
+{\footnotesize\ttfamily vis\+Auditory\+Material\+::$\sim$vis\+Auditory\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classvis_auditory_material_aa687a185e6096b3325344ae51d5df07b}\label{classvis_auditory_material_aa687a185e6096b3325344ae51d5df07b}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!GetAnyHitProgName@{GetAnyHitProgName}}
+\index{GetAnyHitProgName@{GetAnyHitProgName}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{GetAnyHitProgName()}{GetAnyHitProgName()}}
+{\footnotesize\ttfamily std\+::string vis\+Auditory\+Material\+::\+Get\+Any\+Hit\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvis_auditory_material_aa687a185e6096b3325344ae51d5df07b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_a869e7a9e3a26f9fb74ce85ac4db5b2a4}\label{classvis_auditory_material_a869e7a9e3a26f9fb74ce85ac4db5b2a4}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!GetClosestHitProgName@{GetClosestHitProgName}}
+\index{GetClosestHitProgName@{GetClosestHitProgName}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{GetClosestHitProgName()}{GetClosestHitProgName()}}
+{\footnotesize\ttfamily std\+::string vis\+Auditory\+Material\+::\+Get\+Closest\+Hit\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvis_auditory_material_a869e7a9e3a26f9fb74ce85ac4db5b2a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_a321da35f069a42d9a16b2d9799db8bbc}\label{classvis_auditory_material_a321da35f069a42d9a16b2d9799db8bbc}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!GetDynamicProgName@{GetDynamicProgName}}
+\index{GetDynamicProgName@{GetDynamicProgName}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{GetDynamicProgName()}{GetDynamicProgName()}}
+{\footnotesize\ttfamily std\+::string vis\+Auditory\+Material\+::\+Get\+Dynamic\+Prog\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvis_auditory_material_a321da35f069a42d9a16b2d9799db8bbc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_a9d45f1bdf10bad74661ffb1e5ab302eb}\label{classvis_auditory_material_a9d45f1bdf10bad74661ffb1e5ab302eb}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily optix\+::\+Material vis\+Auditory\+Material\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classvis_auditory_material_a9d45f1bdf10bad74661ffb1e5ab302eb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_accd20db6167614bca0b1260c05d75824}\label{classvis_auditory_material_accd20db6167614bca0b1260c05d75824}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!GetProgName@{GetProgName}}
+\index{GetProgName@{GetProgName}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{GetProgName()}{GetProgName()}}
+{\footnotesize\ttfamily std\+::string vis\+Auditory\+Material\+::\+Get\+Prog\+Name (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classvis_auditory_material_ad28559aac98bee615f7f5f886fe6dd8d}\label{classvis_auditory_material_ad28559aac98bee615f7f5f886fe6dd8d}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!GetType@{GetType}}
+\index{GetType@{GetType}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_material_desc}{Material\+Desc}} vis\+Auditory\+Material\+::\+Get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classvis_auditory_material_ac84d2dab8d53d18fca6a26f8ea50b3ed}\label{classvis_auditory_material_ac84d2dab8d53d18fca6a26f8ea50b3ed}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual void vis\+Auditory\+Material\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_audio_texture_volume_material_a10bd469aecbcc3054e8d584132a3e56b}{Audio\+Texture\+Volume\+Material}}, \mbox{\hyperlink{class_dynamic_texture_volume_material_a7686549c28b4c4bd726ed59cc1ce9cd2}{Dynamic\+Texture\+Volume\+Material}}, \mbox{\hyperlink{class_s_d_f_audio_volume_material_a3c45834e62f1687d426b4676cff9d7c2}{S\+D\+F\+Audio\+Volume\+Material}}, \mbox{\hyperlink{class_s_d_f_volume_material_afa35adf24e56f762b3927c791fe9a3d8}{S\+D\+F\+Volume\+Material}}, \mbox{\hyperlink{class_s_d_f_material2_a66baa55f099c36e49785e59d2dffad6d}{S\+D\+F\+Material2}}, \mbox{\hyperlink{class_s_d_f_material_aed2f647ed63218db453f7fb20c74df7e}{S\+D\+F\+Material}}, and \mbox{\hyperlink{class_lambertian_a7c63cf1adc4cf85a7ef7a25eb31b4924}{Lambertian}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classvis_auditory_material_ac84d2dab8d53d18fca6a26f8ea50b3ed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_afbd5257fcc62ec5cd15c63fe91ebae53}\label{classvis_auditory_material_afbd5257fcc62ec5cd15c63fe91ebae53}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!InitProg@{InitProg}}
+\index{InitProg@{InitProg}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{InitProg()}{InitProg()}}
+{\footnotesize\ttfamily void vis\+Auditory\+Material\+::\+Init\+Prog (\begin{DoxyParamCaption}\item[{std\+::string}]{prog,  }\item[{std\+::string}]{file,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classvis_auditory_material_afbd5257fcc62ec5cd15c63fe91ebae53_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvis_auditory_material_afbd5257fcc62ec5cd15c63fe91ebae53_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_aca45c2b49030252495694ecc52223817}\label{classvis_auditory_material_aca45c2b49030252495694ecc52223817}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!isAnyHit@{isAnyHit}}
+\index{isAnyHit@{isAnyHit}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{isAnyHit()}{isAnyHit()}}
+{\footnotesize\ttfamily bool vis\+Auditory\+Material\+::is\+Any\+Hit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classvis_auditory_material_a8a9aca89506c8eb41cc8815bae2cdde3}\label{classvis_auditory_material_a8a9aca89506c8eb41cc8815bae2cdde3}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!isAuditory@{isAuditory}}
+\index{isAuditory@{isAuditory}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{isAuditory()}{isAuditory()}}
+{\footnotesize\ttfamily bool vis\+Auditory\+Material\+::is\+Auditory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classvis_auditory_material_a01f6a9d71954ea70c91d401e13bce9c0}\label{classvis_auditory_material_a01f6a9d71954ea70c91d401e13bce9c0}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!isClosestHit@{isClosestHit}}
+\index{isClosestHit@{isClosestHit}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{isClosestHit()}{isClosestHit()}}
+{\footnotesize\ttfamily bool vis\+Auditory\+Material\+::is\+Closest\+Hit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classvis_auditory_material_a9b6e88b6e6d94026158e7ce9af830c0a}\label{classvis_auditory_material_a9b6e88b6e6d94026158e7ce9af830c0a}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!isDynamic@{isDynamic}}
+\index{isDynamic@{isDynamic}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{isDynamic()}{isDynamic()}}
+{\footnotesize\ttfamily bool vis\+Auditory\+Material\+::is\+Dynamic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classvis_auditory_material_a00f420ae71aec819c2c300519e6d5d66}\label{classvis_auditory_material_a00f420ae71aec819c2c300519e6d5d66}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!SetAnyHit@{SetAnyHit}}
+\index{SetAnyHit@{SetAnyHit}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{SetAnyHit()}{SetAnyHit()}}
+{\footnotesize\ttfamily void vis\+Auditory\+Material\+::\+Set\+Any\+Hit (\begin{DoxyParamCaption}\item[{bool}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classvis_auditory_material_a686ad6c4cbedb0564978c5c2e127d85c}\label{classvis_auditory_material_a686ad6c4cbedb0564978c5c2e127d85c}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!SetAnyHitProg@{SetAnyHitProg}}
+\index{SetAnyHitProg@{SetAnyHitProg}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{SetAnyHitProg()}{SetAnyHitProg()}}
+{\footnotesize\ttfamily void vis\+Auditory\+Material\+::\+Set\+Any\+Hit\+Prog (\begin{DoxyParamCaption}\item[{optix\+::\+Material}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{classvis_auditory_material_a686ad6c4cbedb0564978c5c2e127d85c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classvis_auditory_material_a686ad6c4cbedb0564978c5c2e127d85c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_ac6718d9f3a13c327399fa5731faa352e}\label{classvis_auditory_material_ac6718d9f3a13c327399fa5731faa352e}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!SetAnyHitProgName@{SetAnyHitProgName}}
+\index{SetAnyHitProgName@{SetAnyHitProgName}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{SetAnyHitProgName()}{SetAnyHitProgName()}}
+{\footnotesize\ttfamily void vis\+Auditory\+Material\+::\+Set\+Any\+Hit\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvis_auditory_material_ac6718d9f3a13c327399fa5731faa352e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_a42631c2f90c428c0ce2afd76ec9c65b8}\label{classvis_auditory_material_a42631c2f90c428c0ce2afd76ec9c65b8}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!SetAuditoryTypeOff@{SetAuditoryTypeOff}}
+\index{SetAuditoryTypeOff@{SetAuditoryTypeOff}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryTypeOff()}{SetAuditoryTypeOff()}}
+{\footnotesize\ttfamily void vis\+Auditory\+Material\+::\+Set\+Auditory\+Type\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classvis_auditory_material_a64a221381d4f57120193ee85411b9266}\label{classvis_auditory_material_a64a221381d4f57120193ee85411b9266}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!SetAuditoryTypeOn@{SetAuditoryTypeOn}}
+\index{SetAuditoryTypeOn@{SetAuditoryTypeOn}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{SetAuditoryTypeOn()}{SetAuditoryTypeOn()}}
+{\footnotesize\ttfamily void vis\+Auditory\+Material\+::\+Set\+Auditory\+Type\+On (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvis_auditory_material_a64a221381d4f57120193ee85411b9266_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_a475a4ca9af41d29cff6c0075d0ef4662}\label{classvis_auditory_material_a475a4ca9af41d29cff6c0075d0ef4662}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!SetClosestHit@{SetClosestHit}}
+\index{SetClosestHit@{SetClosestHit}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{SetClosestHit()}{SetClosestHit()}}
+{\footnotesize\ttfamily void vis\+Auditory\+Material\+::\+Set\+Closest\+Hit (\begin{DoxyParamCaption}\item[{bool}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classvis_auditory_material_a38df023a305282934e5c7c1f4ef34b22}\label{classvis_auditory_material_a38df023a305282934e5c7c1f4ef34b22}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!SetClosestHitProg@{SetClosestHitProg}}
+\index{SetClosestHitProg@{SetClosestHitProg}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{SetClosestHitProg()}{SetClosestHitProg()}}
+{\footnotesize\ttfamily void vis\+Auditory\+Material\+::\+Set\+Closest\+Hit\+Prog (\begin{DoxyParamCaption}\item[{optix\+::\+Material}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classvis_auditory_material_a38df023a305282934e5c7c1f4ef34b22_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classvis_auditory_material_a38df023a305282934e5c7c1f4ef34b22_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_aaf37b1815e12597f736d92a62fc61c33}\label{classvis_auditory_material_aaf37b1815e12597f736d92a62fc61c33}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!SetClosestHitProgName@{SetClosestHitProgName}}
+\index{SetClosestHitProgName@{SetClosestHitProgName}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{SetClosestHitProgName()}{SetClosestHitProgName()}}
+{\footnotesize\ttfamily void vis\+Auditory\+Material\+::\+Set\+Closest\+Hit\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvis_auditory_material_aaf37b1815e12597f736d92a62fc61c33_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_a9c099b4b47de0db5578e0c58d835562d}\label{classvis_auditory_material_a9c099b4b47de0db5578e0c58d835562d}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!SetDynamicProg@{SetDynamicProg}}
+\index{SetDynamicProg@{SetDynamicProg}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{SetDynamicProg()}{SetDynamicProg()}}
+{\footnotesize\ttfamily void vis\+Auditory\+Material\+::\+Set\+Dynamic\+Prog (\begin{DoxyParamCaption}\item[{optix\+::\+Material}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classvis_auditory_material_a9c099b4b47de0db5578e0c58d835562d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classvis_auditory_material_a9c099b4b47de0db5578e0c58d835562d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_abfff09f432b1e53f7ef142be2687d605}\label{classvis_auditory_material_abfff09f432b1e53f7ef142be2687d605}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!SetDynamicProgName@{SetDynamicProgName}}
+\index{SetDynamicProgName@{SetDynamicProgName}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{SetDynamicProgName()}{SetDynamicProgName()}}
+{\footnotesize\ttfamily void vis\+Auditory\+Material\+::\+Set\+Dynamic\+Prog\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classvis_auditory_material_abfff09f432b1e53f7ef142be2687d605_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_a2bf912901ac3470a4c539c5ec4117f73}\label{classvis_auditory_material_a2bf912901ac3470a4c539c5ec4117f73}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!SetMaterialParameters@{SetMaterialParameters}}
+\index{SetMaterialParameters@{SetMaterialParameters}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{SetMaterialParameters()}{SetMaterialParameters()}}
+{\footnotesize\ttfamily virtual void vis\+Auditory\+Material\+::\+Set\+Material\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_audio_texture_volume_material_a0a816f68636da21fccb118ae64b32d9b}{Audio\+Texture\+Volume\+Material}}, \mbox{\hyperlink{class_dynamic_texture_volume_material_a08919e77148efcdad77881bc71f7ba57}{Dynamic\+Texture\+Volume\+Material}}, \mbox{\hyperlink{class_s_d_f_audio_volume_material_a7fca8c6194b3da406e2a37ed8d07346b}{S\+D\+F\+Audio\+Volume\+Material}}, \mbox{\hyperlink{class_s_d_f_volume_material_a9ce0edcc7c8ff2ec39a455f2a6afa223}{S\+D\+F\+Volume\+Material}}, \mbox{\hyperlink{class_s_d_f_material2_ac09eabe51d0bb632947b21e2ad6bd763}{S\+D\+F\+Material2}}, \mbox{\hyperlink{class_s_d_f_material_aa17f370a06f83e2f7ad8ef753caa562a}{S\+D\+F\+Material}}, and \mbox{\hyperlink{class_lambertian_ac6e7a5ff7b10f6eb5e044897502a7947}{Lambertian}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classvis_auditory_material_a2bf912901ac3470a4c539c5ec4117f73_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvis_auditory_material_a810767a928d649c976c785cb76a7f46b}\label{classvis_auditory_material_a810767a928d649c976c785cb76a7f46b}} 
+\index{visAuditoryMaterial@{visAuditoryMaterial}!Update@{Update}}
+\index{Update@{Update}!visAuditoryMaterial@{visAuditoryMaterial}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void vis\+Auditory\+Material\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_s_d_f_material2_aeb6574eb67cdc9a6c52b8a44b40eb02e}{S\+D\+F\+Material2}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvis_auditory_material_a810767a928d649c976c785cb76a7f46b_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/src/\mbox{\hyperlink{optix_abstract_material_8h}{optix\+Abstract\+Material.\+h}}\item 
+core/src/\mbox{\hyperlink{optix_abstract_material_8cpp}{optix\+Abstract\+Material.\+cpp}}\end{DoxyCompactItemize}

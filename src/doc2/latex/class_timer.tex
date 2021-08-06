@@ -1,0 +1,124 @@
+\hypertarget{class_timer}{}\doxysection{Timer Class Reference}
+\label{class_timer}\index{Timer@{Timer}}
+
+
+A simple timer class. This timer class can be used on Windows and Linux systems to measure time intervals in seconds. The timer can be started and stopped several times and accumulates time elapsed between the \mbox{\hyperlink{class_timer_a3a8b5272198d029779dc9302a54305a8}{start()}} and \mbox{\hyperlink{class_timer_a63f0eb44b27402196590a03781515dba}{stop()}} calls.  
+
+
+
+
+{\ttfamily \#include $<$Timer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_timer_a5f16e8da27d2a5a5242dead46de05d97}{Timer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Constructs a \mbox{\hyperlink{class_timer}{Timer}}, but does not start it yet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_timer_a14fa469c4c295c5fa6e66a4ad1092146}{$\sim$\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_timer_a3a8b5272198d029779dc9302a54305a8}{start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_timer_a63f0eb44b27402196590a03781515dba}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stops the timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_timer_a9020542d73357a4eef512eefaf57524b}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_timer_aa3f7871196bb56202af2bc982bfbfff6}{restart}} ()
+\begin{DoxyCompactList}\small\item\em Resets the timer and starts it. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_timer_a9cc8ec533e81f5115c1d8a52bf4d7f7d}{get\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current time in seconds. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_timer_a5941489845ec3d8395d7027c2df396ad}{is\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Return whether the timer is still running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple timer class. This timer class can be used on Windows and Linux systems to measure time intervals in seconds. The timer can be started and stopped several times and accumulates time elapsed between the \mbox{\hyperlink{class_timer_a3a8b5272198d029779dc9302a54305a8}{start()}} and \mbox{\hyperlink{class_timer_a63f0eb44b27402196590a03781515dba}{stop()}} calls. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_timer_a5f16e8da27d2a5a5242dead46de05d97}\label{class_timer_a5f16e8da27d2a5a5242dead46de05d97}} 
+\index{Timer@{Timer}!Timer@{Timer}}
+\index{Timer@{Timer}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{Timer()}{Timer()}}
+{\footnotesize\ttfamily Timer\+::\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. Constructs a \mbox{\hyperlink{class_timer}{Timer}}, but does not start it yet. 
+
+\mbox{\Hypertarget{class_timer_a14fa469c4c295c5fa6e66a4ad1092146}\label{class_timer_a14fa469c4c295c5fa6e66a4ad1092146}} 
+\index{Timer@{Timer}!````~Timer@{$\sim$Timer}}
+\index{````~Timer@{$\sim$Timer}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{$\sim$Timer()}{~Timer()}}
+{\footnotesize\ttfamily Timer\+::$\sim$\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_timer_a9cc8ec533e81f5115c1d8a52bf4d7f7d}\label{class_timer_a9cc8ec533e81f5115c1d8a52bf4d7f7d}} 
+\index{Timer@{Timer}!getTime@{getTime}}
+\index{getTime@{getTime}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily double Timer\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the current time in seconds. 
+
+\mbox{\Hypertarget{class_timer_a5941489845ec3d8395d7027c2df396ad}\label{class_timer_a5941489845ec3d8395d7027c2df396ad}} 
+\index{Timer@{Timer}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily bool Timer\+::is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return whether the timer is still running. 
+
+\mbox{\Hypertarget{class_timer_a9020542d73357a4eef512eefaf57524b}\label{class_timer_a9020542d73357a4eef512eefaf57524b}} 
+\index{Timer@{Timer}!reset@{reset}}
+\index{reset@{reset}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Timer\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the timer. 
+
+\mbox{\Hypertarget{class_timer_aa3f7871196bb56202af2bc982bfbfff6}\label{class_timer_aa3f7871196bb56202af2bc982bfbfff6}} 
+\index{Timer@{Timer}!restart@{restart}}
+\index{restart@{restart}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}}
+{\footnotesize\ttfamily void Timer\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the timer and starts it. 
+
+\mbox{\Hypertarget{class_timer_a3a8b5272198d029779dc9302a54305a8}\label{class_timer_a3a8b5272198d029779dc9302a54305a8}} 
+\index{Timer@{Timer}!start@{start}}
+\index{start@{start}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Timer\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the timer. 
+
+\mbox{\Hypertarget{class_timer_a63f0eb44b27402196590a03781515dba}\label{class_timer_a63f0eb44b27402196590a03781515dba}} 
+\index{Timer@{Timer}!stop@{stop}}
+\index{stop@{stop}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Timer\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stops the timer. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/\mbox{\hyperlink{_timer_8h}{Timer.\+h}}\end{DoxyCompactItemize}
